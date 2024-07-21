@@ -114,7 +114,7 @@
         #wrap{
             font-size: 0;
             border: 1px solid red;
-            padding: 30px 150px;
+            padding: 50px 150px;
         }
         
         .section{
@@ -124,11 +124,48 @@
             box-sizing: border-box;
             width: 50%;
             padding: 10px;
+            vertical-align: top;
         }
         
-        #calendar{
-            vertical-align: top;
-            height: 300px;
+        /* 달력 */
+        #calendar {
+            text-align: center;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-radius: 5%;
+            padding: 10px;
+        }
+
+        #calendar .calHeader {
+            padding-bottom: 10px;
+        }
+
+        #calendar #days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            /* 
+            grid-template-columns : CSS의 Grid 레이아웃에서 사용되는 속성 중 하나로, 
+            그리드 컨테이너(grid container)의 열(column) 크기를 지정하는 것을 말한다.
+            repeat(7, 1fr) : 1행에 7개의 열이 있으며, 
+            각 열의 크기를 동일하게 1분의 1(fractional unit, fr)로 설정하라는 의미한다. 
+            */
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        #calendar #dates {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+
+        #calendar #dates .date {
+            padding: 5px 5px 15px 5px;
+            font-size: 15px;
+        }
+
+        .toDay{
+            border-bottom: 1px solid #a5a5a5;
         }
         
         /* 검색 */
@@ -171,8 +208,7 @@
         .page{
             margin-top: 20px;
             text-align: center;
-            border: 1px solid red;
-            
+            border: 1px solid red;           
             width: 80px;
             height: 80px;
         }
@@ -211,7 +247,33 @@
 <!-- 메인페이지 -->
     <div id="wrap">
 
-        <div id="calendar" class="section">휴관일 안내</div>
+        <div class="section">
+
+            <div id="calendar">
+
+                <div class="calHeader">
+                    <h2 id="YearMonth">
+                        <!-- YYYY년 M월 -->
+                    </h2>
+                </div>
+
+                <div id="days">
+                    <div>일</div>
+                    <div>월</div>
+                    <div>화</div>
+                    <div>수</div>
+                    <div>목</div>
+                    <div>금</div>
+                    <div>토</div>
+                </div>
+
+                <div id="dates">
+                    <!-- 날짜들 들어오는 곳 -->
+                </div>
+            </div>
+            <script src="./calendar.js"></script>
+
+        </div>
 
         <div class="section">
 
