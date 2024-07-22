@@ -136,6 +136,7 @@
             line-height: 50px;
         }
 
+        /* ------------------------------------------------- */
         #main_page_1 {
             border: 1px solid red;
             display: inline-block;
@@ -175,10 +176,11 @@
         table {
             border-collapse: collapse;
             border: 0;
-            
+
         }
 
-        th,td {
+        th,
+        td {
             border: 1px solid #aaa;
             background-clip: padding-box;
             scroll-snap-align: start;
@@ -193,11 +195,13 @@
             z-index: 1000;
             position: relative;
         }
+
         th {
             padding: 0.6rem;
             text-align: center;
             margin: 0;
         }
+
         td {
             padding: 0.6rem;
             min-width: 10rem;
@@ -233,7 +237,15 @@
             left: 0;
         }
 
+        #main_page_2 {
+            display: none;
+        }
+
+        #main_page_3 {
+            display: none;
+        }
     </style>
+    <script src="./admin_stock.js"></script>
 </head>
 
 <body>
@@ -271,9 +283,9 @@
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
     <div id="left_menu">
         <div class="l_menu" id="l_menu_1">실시간 재고 현황</div>
-        <div class="l_menu" id="l_menu_2">도서관 별 재고 현황</div>
-        <div class="l_menu" id="l_menu_3">실시간 도서 예약,반납 관리</div>
-        <div class="l_menu" id="l_menu_4">도서 구매</div>
+        <div class="l_menu" id="l_menu_2"><a id="page_1">도서관 별 재고 현황</a></div>
+        <div class="l_menu" id="l_menu_3"><a id="page_2">실시간 도서 예약,반납 관리</a></div>
+        <div class="l_menu" id="l_menu_4"><a id="page_3">도서 구매</a></div>
     </div>
 
     <div id="main_page_1">
@@ -346,23 +358,30 @@
         </div>
         <div></div>
     </div>
-
-    <!-- 가장 아래 고정 -->
-    <footer>
-        <div id="bottom" class="clearfix">
-
-            <div id="logoall">
-                <div id="logo" class="left">로고</div>
-                <div id="name" class="left">행복만땅 <br>도서관</div>
-            </div>
-
-            <div id="footerinfo">
-                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
-                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
-            </div>
-
+    <div id="main_page_2">
+        <div id="main_title">
+            실시간 도서 예약,반납 관리
         </div>
-    </footer>
+
+    </div>
+
+        <!-- 가장 아래 고정 -->
+        <footer>
+            <div id="bottom" class="clearfix">
+
+                <div id="logoall">
+                    <div id="logo" class="left">로고</div>
+                    <div id="name" class="left">행복만땅 <br>도서관</div>
+                </div>
+
+                <div id="footerinfo">
+                    Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
+                    청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 :
+                    041-521-3735
+                </div>
+
+            </div>
+        </footer>
 </body>
 
 </html>

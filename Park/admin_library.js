@@ -3,6 +3,7 @@
             // page1---------------------------------------------------------
             document.querySelector('#page_1').addEventListener('click', function () {
                 document.querySelector('#main_page_1').style.display = 'inline-block';
+                // document.querySelector('#page_1').style.
                 document.querySelector('#main_page_2').style.display = 'none';
                 document.querySelector('#main_page_3').style.display = 'none';
             });
