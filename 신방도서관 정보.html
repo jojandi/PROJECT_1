@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* @media screen and (max-width: 1100px){
+            header #items{
+                display: none;
+            }
+        } */
+
+        body{
+            /* height: 1000px; */
+            margin: 0;
+        }
+
+        #top{
+            /* border: 1px solid red; */
+            background-color: rgb(165, 224, 144);
+
+            width: 100%;
+            height: 100px;
+            color:rgba(255, 255, 255, 0.847);
+        }
+
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        body .left{
+            float:left;
+        }
+
+        body .right{
+            float:right;
+        }
+        
+        header #logoall #logo{
+            margin: 5px 5px 0 40px;
+            border: 1px solid red;
+            width: 120px;
+            height: 90px;
+        }
+            
+        header #logoall #name{
+            margin: 25px 40px 0 0 ;
+            text-align: center;
+            font-size: 20px;
+            width: 130px;
+            font-weight: 900;
+        }
+
+        header #menu{
+            width: 100%;
+            padding: 40px 0;
+        }
+            
+        header #menu #items .item{
+            /* border: 1px solid red; */
+            font-size: 14px;
+            margin: 0 5px;
+            display: inline-block;
+            width: 100px;
+        }
+
+        header #menu #userall{
+            /* border: 1px solid red; */
+            width:130px;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        header #menu #userall .inb{
+            display: inline-block;
+        }
+/*--------------------------도서관정보 추가----------------------------------------*/
+        #left_menu{
+            display: inline-block;
+        }
+
+        #infor_top_box{
+            margin-top: 10px;
+        }
+
+        #library_infor{
+            width:50%;
+            height:50%;
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 10px;
+        }
+        #infor_img{
+            width:800px;
+        }
+        #infor_table{
+            font-size: 17px;
+            margin-top : 50px;
+        }
+        #infor_map{
+            margin-top: 50px;
+        }
+        #daumRoughmapContainer1721612623091{
+            margin-top: 50px;
+        }
+
+        #library_infor{
+            margin-left: 80px;
+        }
+        #infor_adress {
+            width: 640px;
+            border:1px solid gray;
+        }
+
+/* ------------------------------------------------------------------ */
+        footer #bottom{
+            background-color: rgb(73, 73, 73);
+  
+            width: 100%;
+            height: 90px;
+
+            color: rgba(255, 255, 255, 0.808);
+        }
+
+        footer #logoall #logo{
+            margin: 10px 10px 0 40px;
+            border: 1px solid white;
+            width: 90px;
+            height: 70px;
+        }
+            
+        footer #logoall #name{
+            margin: 25px 30px 0 0;
+            text-align: center;
+            font-size: 17px;
+            width: 100px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.401);
+
+        }
+
+        footer #footerinfo{
+            padding: 40px 30px 0 0;
+            font-size: 13px;
+        }
+        #left_menu{
+            border: 1px solid red;
+            width: 200px;
+            height: 700px;
+        }
+        #left_menu .l_menu{
+            border: 1px solid red;
+            text-align: center;
+        }
+        #l_menu_1{
+            height: 100px;
+            line-height: 100px; 
+        }
+        #l_menu_2,#l_menu_3,#l_menu_4,#l_menu_5,#l_menu_6{
+            height: 50px;
+            line-height: 50px; 
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+        
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <div id="name" class="left">행복만땅 <br>도서관</div>
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <div class="item" id="i1">실시간 재고</div>
+                <div class="item" id="i2">도서관 관리</div>
+                <div class="item" id="i3">인기 도서 관리</div>
+                <div class="item" id="i4">불량 도서 관리</div>
+                <div class="item" id="i5">회원 관리</div>
+                <div class="item" id="i6">정보 광장 관리</div>
+            </div>
+            
+            <div class="right" id="userall">
+                <div>OOO관리자</div>
+                <!-- <div class="inb" id="login">로그인</div>
+                <div class="inb">|</div>
+                <div class="inb" id="userin">회원가입</div>
+                <div class="inb" id="menus"></div> -->
+            </div>
+        </div>
+
+    </header>
+
+<!-- 여기 사이에 이것 저것 코딩하세용 >< -->
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1">도서관 소개</div>
+        <div class="l_menu" id="l_menu_2">중앙도서관</div>
+        <div class="l_menu" id="l_menu_3">쌍용도서관</div>
+        <div class="l_menu" id="l_menu_4">두정도서관</div>
+        <div class="l_menu" id="l_menu_5"><strong>신방도서관</strong></div>
+        <div class="l_menu" id="l_menu_6">청수도서관</div>
+    </div>
+
+<div id = "library_infor">
+    <div id = "infor_top_box">
+        <h1>신방 도서관 정보</h1>
+    </div>
+    
+    <div>
+        <img id = "infor_img" src= "https://cdn.discordapp.com/attachments/1128320143232077876/1264783271825244215/2024-07-22_12.16.52.png?ex=669f20b6&is=669dcf36&hm=aa3752b9be0bce70e43abf0d621bafdb6eabb415cba06f373173425756719f97&">
+    </div>
+
+    <div>
+        <ul style="line-height:200%;">
+            <li>
+            <strong>위치</strong>
+            천안시 동남구 통정4로 7
+            </li> 
+            
+            <li>
+            <strong>연면적</strong>
+            5,390.63㎡(지하1층/지상3층)
+            </li> 
+            
+            <li>
+            <strong>개관일</strong>
+            2013.01.21.            
+            </li> 
+            
+            <li>
+            <strong>총사업비 </strong>
+            10,051백만원(국도비 3600, 도비 600, 시비 5851)
+            </li> 
+            
+            <li>
+            <strong>주요시설</strong>
+            아동열람실, 북카페, 종합자료실, 디지털실, 열람실, 다목적홀, 문화강좌실 등
+            </li> 
+
+        </ul>
+    </div>
+
+    <div id = "infor_map">
+        <h3>오시는길</h3>
+      <!-- * 카카오맵 -->
+
+        <div id="daumRoughmapContainer1721618390148" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+        <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+        <!-- 3. 실행 스크립트 -->
+        <script charset="UTF-8">
+            new daum.roughmap.Lander({
+                "timestamp" : "1721618390148",
+                "key" : "2k4yu",
+                "mapWidth" : "640",
+                "mapHeight" : "360"
+            }).render();
+        </script>
+    </div>
+    <div id="infor_adress">
+        <h2>신방도서관</h2>
+        <ul style="line-height:200%;">
+            <li>
+            <strong>전화</strong>
+                041-521-3724
+            </li>
+            <li>
+            <strong>주소</strong>
+            충청남도 천안시 동남구 통정4로 7
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>
