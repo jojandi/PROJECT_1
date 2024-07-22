@@ -1,0 +1,46 @@
+#wrap{
+    font-size: 0;
+    /* border: 1px solid red; */
+    padding: 50px 150px;
+}
+/* aside CSS */
+aside #items .item .material-symbols-outlined{
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    float: right;
+    
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+#side{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20%;
+    border: 1px solid red;
+}
+
+aside #sideleft{
+    float: left;
+    padding: 10px;
+}
+
+aside #title{
+    font-size: 22px;
+    margin: 0;
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #666666;
+}
+
+aside #items .item{
+    font-size: 16px;
+    padding: 10px 0;
+    width: 170px;
+    border-bottom: 1px solid #ccc;
+}
