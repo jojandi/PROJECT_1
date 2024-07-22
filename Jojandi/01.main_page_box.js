@@ -1,6 +1,6 @@
 
 let page = document.querySelectorAll(".page");
-let icon = document.querySelectorAll(".material-symbols-outlined")
+let icon = document.querySelectorAll(".section1 #pageall .pages .page .material-symbols-outlined")
 
 
 function hover(){
