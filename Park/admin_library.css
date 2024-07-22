@@ -1,0 +1,242 @@
+
+/* @media screen and (max-width: 1100px){
+    header #items{
+        display: none;
+    }
+} */
+
+body {
+    /* height: 1000px; */
+    margin: 0;
+}
+
+#top {
+    /* border: 1px solid red; */
+    background-color: rgb(165, 224, 144);
+
+    width: 100%;
+    height: 100px;
+    color: rgba(255, 255, 255, 0.847);
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body .left {
+    float: left;
+}
+
+body .right {
+    float: right;
+}
+
+header #logoall #logo {
+    margin: 5px 5px 0 40px;
+    border: 1px solid red;
+    width: 120px;
+    height: 90px;
+}
+
+header #logoall #name {
+    margin: 25px 40px 0 0;
+    text-align: center;
+    font-size: 20px;
+    width: 130px;
+    font-weight: 900;
+}
+
+header #menu {
+    width: 100%;
+    padding: 40px 0;
+}
+
+header #menu #items .item {
+    /* border: 1px solid red; */
+    font-size: 14px;
+    margin: 0 5px;
+    display: inline-block;
+    width: 100px;
+}
+
+header #menu #userall {
+    /* border: 1px solid red; */
+    width: 130px;
+    margin: 5px 0;
+    font-size: 12px;
+}
+
+header #menu #userall .inb {
+    display: inline-block;
+}
+
+/* ------------------------------------------------------------------ */
+footer #bottom {
+    background-color: rgb(73, 73, 73);
+
+    width: 100%;
+    height: 90px;
+
+    color: rgba(255, 255, 255, 0.808);
+}
+
+footer #logoall #logo {
+    margin: 10px 10px 0 40px;
+    border: 1px solid white;
+    width: 90px;
+    height: 70px;
+}
+
+footer #logoall #name {
+    margin: 25px 30px 0 0;
+    text-align: center;
+    font-size: 17px;
+    width: 100px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.401);
+
+}
+
+footer #footerinfo {
+    padding: 30px 30px 0 0;
+    font-size: 13px;
+}
+
+/* ----------------------------------------------- */
+#left_menu {
+    border: 1px solid red;
+    width: 200px;
+    height: 700px;
+    display: inline-block;
+}
+
+#left_menu .l_menu {
+    border: 1px solid red;
+    text-align: center;
+}
+
+#l_menu_1 {
+    height: 100px;
+    line-height: 100px;
+}
+
+#l_menu_2,
+#l_menu_3,
+#l_menu_4 {
+    height: 50px;
+    line-height: 50px;
+}
+
+.main_page {
+    border: 1px solid red;
+    display: inline-block;
+    width: 1000px;
+    height: 700px;
+    text-align: center;
+    vertical-align: top;
+    /* position: relative; */
+    /* top: -200px; */
+}
+
+#main_page_2 {
+    display: none;
+}
+
+#main_page_3 {
+    display: none;
+}
+
+#main_title {
+    border: 1px solid red;
+    display: inline-block;
+    width: 800px;
+    height: 50px;
+    font-size: 30px;
+    font-weight: 1000;
+    /* position: relative; */
+}
+
+/* ------------------------------------------------------- */
+body {
+    padding: 1.5em;
+    background: #f5f5f5
+}
+
+table {
+    border: 1px #a39485 solid;
+    font-size: .9em;
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+th {
+    text-align: center;
+}
+
+thead {
+    font-weight: bold;
+    /* color: #fff; */
+    background: #73685d;
+}
+
+td,
+th {
+    padding: 1em .5em;
+    vertical-align: middle;
+}
+
+td {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    background: #fff;
+}
+
+a {
+    color: #73685d;
+}
+
+@media all and (max-width: 768px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+
+    th {
+        text-align: right;
+    }
+
+    table {
+        position: relative;
+        padding-bottom: 0;
+        border: none;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, .2); */
+    }
+
+    thead {
+        float: left;
+        white-space: nowrap;
+    }
+
+    tbody {
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: relative;
+        white-space: nowrap;
+    }
+
+
+}
+
+#p2_add_table,
+#p3_add_table {
+    display: none;
+}
+
