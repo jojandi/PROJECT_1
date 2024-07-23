@@ -53,6 +53,16 @@ aside #items .item{
     border-bottom: 1px solid #ccc;
 }
 
+aside #items .item a:link{
+    color: inherit;
+    text-decoration: none;
+}
+
+aside #items .item a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
 #wrap section {
     width: 80%;
     font-size: 14px;

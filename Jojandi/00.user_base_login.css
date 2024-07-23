@@ -47,6 +47,16 @@
             font-weight: 900;
         }
 
+        header #logoall a:link{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header #logoall a:visited{
+            color: inherit;
+            text-decoration: none;
+        }
+
         header #menu{
             width: 100%;
             padding: 40px 0;
