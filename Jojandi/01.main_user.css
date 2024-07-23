@@ -109,7 +109,7 @@
     font-size: 18px;
 }
 
-.section1 #librarys #back{
+.section1 #librarys .back{
     width: 40px;
     margin: 0 auto;
     background: rgb(105, 170, 82);
@@ -178,6 +178,16 @@
     'GRAD' 0,
     'opsz' 24
 }
+
+.section1 #pageall .pages .page a{
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 80px;
+    height: 80px;
+    position: relative;
+    bottom: 80px;
+}
+
 
 /* ------------------------------------------------------------------ */
 /* section2 */

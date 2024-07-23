@@ -7,9 +7,8 @@ let overdue = document.querySelector("#overdue");
 let t1 = document.querySelector("#t1");
 let t2 = document.querySelector("#t2");
 
-let b1 = document.querySelector("#b1");
-let b2 = document.querySelector("#b2");
-let b3 = document.querySelector("#b3");
+let minbnt = document.querySelectorAll(".minbnt");
+let parent = document.querySelectorAll(".parent");
 
 
 
@@ -58,14 +57,34 @@ function bntColor(){
     for(let i = 0; i < ing.length; i++){
         ing[i].style.background = "rgb(233, 29, 29)";
         ing[i].style.color = "white";
+        ing[i].setAttribute("ing", "ing");
     }
     for(let i = 0; i < end.length; i++){
         end[i].style.background = "rgb(185, 185, 185)";
     }
 }
 
+function del(){
+    for(let i = 0; i < minbnt.length; i++){
+        minbnt[i].addEventListener('click', function(){
+
+            let ing = minbnt[i].hasAttribute("ing");
+            
+            console.log(ing)
+
+            if(ing){
+                alert("해당 민원을 취하합니다. ");
+                parent[i].innerHTML="";
+            } else{
+                alert("취하할 수 없는 민원입니다. ")
+            }
+        })
+
+    }
+}
 
 iconon();
 loanOn();
 overdueOn();
 bntColor();
+del();

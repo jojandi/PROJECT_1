@@ -192,6 +192,7 @@ section #information #infoedit #info2{
 section #information #infoedit #info2 table{
     width: 100%;
     border-collapse: collapse;
+    table-layout:fixed;
 }
 
 section #information #infoedit #info2 table td{
@@ -199,13 +200,20 @@ section #information #infoedit #info2 table td{
     border-bottom: 1px solid #929292;
     border-top: 1px solid #929292;
     text-align: left;
+    height: 25px;
 }
 
 section #information #infoedit #info2 table .center{
     border-right: 1px solid #929292;
     text-align: center;
+    width: 20%;
 }
 
 section #information #infoedit #info2 table .right{
     text-align: right;
+}
+
+section #information #infoedit #info2 table input[type=text]{
+    width: 60%;
+    height: 18px;
 }

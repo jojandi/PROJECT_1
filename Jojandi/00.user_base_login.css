@@ -59,6 +59,16 @@
             display: inline-block;
         }
 
+        header #menu #items a:link{
+            color: inherit;
+            text-decoration: none;
+        }
+
+        header #menu #items a:visited{
+            color: inherit;
+            text-decoration: none;
+        }
+
         header #menu #userall{
             /* border: 1px solid red; */
             width:130px;

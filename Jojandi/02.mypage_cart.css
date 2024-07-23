@@ -177,7 +177,8 @@ section #bntall #reserchk{
     margin-bottom: 5px;
 }
 
-section #bntall #reserall{
+section #bntall #reserall,
+section #bntall #delall{
     background: rgb(165, 224, 144);
     border: 1px solid rgb(106, 170, 82);
 }

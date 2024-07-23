@@ -14,8 +14,8 @@
         #items #i2 span{
             font-weight: 900;
         }  
-
     </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
 
@@ -102,8 +102,8 @@
                     </colgroup>
                     <thead> 
                         <tr>
-                            <td id="chk">
-                                <input type="checkbox">
+                            <td>
+                                <input type="checkbox" id="chkall">
                             </td>
                             <td colspan="2">상품명</td>
                             <!-- <td id="tw"></td> -->
@@ -113,9 +113,9 @@
                     </thead>
 
                     <tbody>
-                        <tr>
+                        <tr class="cart">
                             <td rowspan="2">
-                                <input type="checkbox">
+                                <input type="checkbox" class="chk"> 
                             </td>
                             <td rowspan="2" class="bookCover">
                                 <img src="https://image.aladin.co.kr/product/33845/80/covermini/k132930705_1.jpg">
@@ -136,13 +136,13 @@
                                 <input type="button" class="del" value="삭제">
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cart">
                             <td class="wirter book">(지은이) 박코</td>
                         </tr>
 
-                        <tr>
+                        <tr class="cart">
                             <td rowspan="2">
-                                <input type="checkbox">
+                                <input type="checkbox" class="chk">
                             </td>
                             <td rowspan="2" class="bookCover">
                                 <img src="https://image.aladin.co.kr/product/33077/71/coversum/k572937407_1.jpg">
@@ -163,7 +163,7 @@
                                 <input type="button" class="del" value="삭제">
                             </td>
                         </tr>
-                        <tr>
+                        <tr class="cart">
                             <td class="wirter book">(지은이) 비욘 나티코 린데블라드</td>
                         </tr>
                     </tbody>
@@ -172,6 +172,7 @@
 
             <div id="bntall">
                 <input type="button" id="reserchk" class="bnt" value="선택 도서 예약하기"><br>
+                <input type="button" id="delall" class="bnt" value="전체 도서 삭제하기">
                 <input type="button" id="reserall" class="bnt" value="전체 도서 예약하기">
             </div>
         
