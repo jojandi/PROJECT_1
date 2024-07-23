@@ -53,7 +53,7 @@
             });
             document.querySelector('#p2_add_comp').addEventListener('click', function () {
                 const table = document.querySelector('#main_Privacy');
-
+                console.log('클릭');
                 const newRow = table.insertRow();
 
                 const newCell1 = newRow.insertCell(0);
