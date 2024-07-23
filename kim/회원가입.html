@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사용자용 페이지 베이스_로그인 완료</title>
+    
+
     <style>
         /* @media screen and (max-width: 1100px){
             header #items{
@@ -27,7 +29,7 @@
 
         .label {
             font-weight: bold;
-            background-color: #f9f9f9;
+            /* background-color: #f9f9f9; */
         }
 
         input[type="text"],
@@ -165,9 +167,8 @@
         .name {
             font-size: 25px;
             margin: 5%;
+            text-align: center;
         }
-
-
 
         /* ------------------------------------------------------------------ */
         footer #bottom {
@@ -200,10 +201,14 @@
             padding: 40px 30px 0 0;
             font-size: 13px;
         }
-        /* .gaip_1{
-            margin: auto;
-        } */
-    </style>
+        #gaip_1{
+            margin-bottom: 100px;
+            margin-top: 10px;
+        }
+
+        #hg{
+            padding: 50px 150px;
+        }
     </style>
 </head>
 
@@ -227,26 +232,25 @@
                 <div class="item" id="i5">마이페이지</div>
             </div>
 
-            <!-- <div class="right" id="userall">
+            <div class="right" id="userall">
                 <div class="inb" id="login">로그인</div>
                 <div class="inb">|</div>
                 <div class="inb" id="userin">회원가입</div>
                 <div class="inb" id="menus"></div>
-            </div> -->
+            </div>
 
-            <link rel="stylesheet"
+            <!-- <link rel="stylesheet"
                 href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
             <div class="right" id="userall">
                 <div class="inb" id="user">조잔디님</div>
                 <span class="material-symbols-outlined">person</span>
-            </div>
-
+            </div> -->
     </header>
 
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
 
-    <div class="hg">
+    <div id="hg">
         <div class="name"><strong>행복만땅 회원가입</strong></div>
 
         <div>
@@ -254,7 +258,7 @@
                 <tr>
                     <td class="label">이름</td>
                     <td>
-                        <input type="text" id="name" value="조잔디">
+                        <input type="text" id="name" placeholder="이름을 입력하세요.">
                     </td>
                 </tr>
                 <tr>
@@ -323,45 +327,43 @@
                     <td class="label">아이디</td>
                     <td>
                         <div id="seob">
-                            <input type="text" placeholder="아이디">
-                            <div class="red">아이디를 적어주세요</div>
+                            <input type="text" id="username" placeholder="아이디">
+                            <div class="red" id="username-message">아이디를 적어주세요</div>
                         </div>
                         <div class="gaip">
-                            <input type="button" value="아이디 중복확인">
+                            <input type="button" value="아이디 중복확인" id="check-username">
                         </div>
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="gaip">
-
-                    </td>
+                    
                 </tr>
                 <tr>
                     <td class="label">비밀번호</td>
                     <td>
-                        <input class="label" type="password" placeholder="비밀번호">
-                        <div class="red">비밀번호를 적어주세요</div>
+                        <input type="password" id="password" placeholder="비밀번호">
+                        <div class="red" id="password-message">비밀번호를 적어주세요</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="label">비밀번호 확인</td>
                     <td>
-                        <input class="label" type="password" placeholder="비밀번호 재입력">
-                        <div class="red">비밀번호가 일치하지 않습니다</div>
+                        <input  type="password" id="confirm-password" placeholder="비밀번호 재입력">
+                        <div class="red" id="confirm-password-message">비밀번호가 일치하지 않습니다</div>
                     </td>
                 </tr>
                 <tr>
                     <td class="label">전화번호</td>
                     <td>
-                        <input type="text" placeholder="휴대폰 번호 입력">
+                        <input type="text" id="phone" placeholder="휴대폰 번호 입력">
                     </td>
                 </tr>
                 <tr>
                     <td class="label">e_mail</td>
                     <td>
-                        <input class="email-input" type="text" placeholder="이메일주소">
+                        <input class="email-input" type="text" id="email-user" placeholder="이메일주소">
                         <div class="email-domain">@</div>
-                        <input class="email-input" type="text" placeholder="naver.com">
+                        <input class="email-input" type="text" id="email-domain" placeholder="naver.com">
                     </td>
                 </tr>
                 <!-- <tr> -->
@@ -372,8 +374,10 @@
                     </div> -->
                 <!-- </tr> -->
         </table>
-        <div style="text-align: center;"><input id="gaip_1"type="button" value="회원가입 완료"></div>
+        <div style="text-align: center;"><input id="gaip_1" type="button" value="회원가입 완료"></div>
         </div>
+    
+    </div>
 
 
         <!-- 가장 아래 고정 -->
@@ -392,6 +396,40 @@
 
             </div>
         </footer>
+        <script>
+            document.getElementById("check-username").addEventListener("click", function() {
+                const username = document.getElementById("username").value;
+                if (username === "") {
+                    alert("아이디를 입력하세요.");
+                } else {
+                    alert(`아이디 ${username}은(는) 사용 가능합니다.`);
+                }
+            });
+    
+            document.getElementById("gaip_1").addEventListener("click", function() {
+                const name = document.getElementById("name").value;
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+                const confirmPassword = document.getElementById("confirm-password").value;
+                const phone = document.getElementById("phone").value;
+                const emailUser = document.getElementById("email-user").value;
+                const emailDomain = document.getElementById("email-domain").value;
+    
+                if (!name || !username || !password || !confirmPassword || !phone || !emailUser || !emailDomain) {
+                    alert("모든 필드를 입력하세요.");
+                    return;
+                }
+    
+                if (password !== confirmPassword) {
+                    alert("비밀번호가 일치하지 않습니다.");
+                    return;
+                }
+    
+                alert("회원가입이 완료되었습니다.");
+            });
+        </script>
+
+
 </body>
 
 </html>
