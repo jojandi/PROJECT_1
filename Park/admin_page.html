@@ -6,7 +6,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="admin.css" rel="stylesheet">
-    
+    <link href="admin_library.css" rel="stylesheet">
+    <style>
+        .page {
+            border: 1px solid red;
+            width: 80%;
+            height: 40%;
+            margin: 15px auto;
+        }
+
+        .page_title {
+            border: 1px solid red;
+        }
+
+        .table_wrap {
+            border: 1px solid red;
+            /* width: 80%; */
+            height: 80%;
+        }
+
+        .bot_btn {
+            text-align: right;
+        }
+
+        /* 모달 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 500px;
+            top: 100px;
+            width: 500px;
+            height: 40%;
+            overflow: auto;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <script src="./admin_page.js"></script>
 </head>
 
 <body>
@@ -43,16 +100,196 @@
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
     <div id="left_menu">
-        <div class="l_menu" id="l_menu_1">불량 도서 관리</div>
-        <div class="l_menu" id="l_menu_2"><a id="page_1">불량 도서 목록</a></div>
-        <div class="l_menu" id="l_menu_3"><a id="page_2">작업 지시 목록</a></div>
-        <div class="l_menu" id="l_menu_4"><a id="page_3">불량 도서 처리 내역</a></div>
+        <div class="l_menu" id="l_menu_1"><a id="page_1">불량 도서 관리</a></div>
+        <div class="l_menu" id="l_menu_2"><a id="page_2">불량 도서 목록</a></div>
+        <div class="l_menu" id="l_menu_3"><a id="page_3">작업 지시 목록</a></div>
+        <div class="l_menu" id="l_menu_4"><a id="page_4">불량 도서 처리 내역</a></div>
     </div>
     <div class="main_page" id="main_page_1">
         <div id="main_title">
             불량 도서 관리
         </div>
+        <div class="page" id="page_top">
+            <div class="page_title">실시간 불량 도서 현황</div>
+            <div class="table_wrap">
+                <table id="main_library">
+                    <thead>
+                        <tr>
+                            <th><input id="p1_checkAll" type="checkbox"></th>
+                            <th>도서명</th>
+                            <th>도서 ID</th>
+                            <th>불량 유형</th>
+                            <th>발생 일자</th>
+                            <th>위치</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input class="p1_main_chack" type="checkbox"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bot_btn">
+                <input id="openForm" type="button" value="작업 지시">
+                <input type="button" value="새 불량 도서 추가">
+                <input type="button" value="불량 도서 수정">
+
+            </div>
+        </div>
+        <div class="page" id="page_bottom">
+            <div class="page_title">불량 도서 작업 현황</div>
+            <div class="table_wrap">
+                <table id="main_library">
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>도서명</th>
+                            <th>도서 ID</th>
+                            <th>불량 유형</th>
+                            <th>발생 일자</th>
+                            <th>처리 상태</th>
+                            <th>처리 담당자</th>
+                            <th>처리 방법</th>
+                            <th>처리 기한</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="checkbox"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="bot_btn">
+                <input type="button" value="처리 완료">
+            </div>
+        </div>
     </div>
+
+    <div class="main_page" id="main_page_2">
+        <div id="main_title">
+            불량 도서 목록
+        </div>
+        <div class="table_wrap">
+            <table id="main_library">
+                <thead>
+                    <tr>
+                        <th><input id="p1_checkAll" type="checkbox"></th>
+                        <th>도서명</th>
+                        <th>도서 ID</th>
+                        <th>불량 유형</th>
+                        <th>발생 일자</th>
+                        <th>위치</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="p1_main_chack" type="checkbox"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="main_page" id="main_page_3">
+        <div id="main_title">
+            작업 지시 목록
+        </div>
+        <div class="table_wrap">
+            <table id="main_library">
+                <thead>
+                    <tr>
+                        <th><input id="p1_checkAll" type="checkbox"></th>
+                        <th>도서명</th>
+                        <th>도서 ID</th>
+                        <th>불량 유형</th>
+                        <th>발생 일자</th>
+                        <th>위치</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="p1_main_chack" type="checkbox"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="main_page" id="main_page_4">
+        <div id="main_title">
+            불량 도서 처리 내역
+        </div>
+        <div class="table_wrap">
+            <table id="main_library">
+                <thead>
+                    <tr>
+                        <th><input id="p1_checkAll" type="checkbox"></th>
+                        <th>도서명</th>
+                        <th>도서 ID</th>
+                        <th>불량 유형</th>
+                        <th>발생 일자</th>
+                        <th>위치</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input class="p1_main_chack" type="checkbox"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>작업 지시 입력</h2>
+            <form id="workForm">
+                <label for="bookId">도서 ID:</label>
+                <input type="text" id="bookId" name="bookId" required>
+                <br>
+                <label for="workDetails">작업 내용:</label>
+                <textarea id="workDetails" name="workDetails" required></textarea>
+                <br>
+                <label for="workDate">작업 날짜:</label>
+                <input type="date" id="workDate" name="workDate" required>
+                <br>
+                <button type="submit">확인</button>
+            </form>
+        </div>
+    </div>
+
+
 
 
 
