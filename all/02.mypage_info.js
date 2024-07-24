@@ -13,6 +13,9 @@ let pweditIn = document.querySelector("#pweditIn");
 let in2 = document.querySelector("#in2");
 let in3 = document.querySelector("#in3");
 
+let nick = document.querySelector("#nick");
+let nickname = document.querySelector("#nickname")
+
 function info1On(){
     pwBnt.addEventListener('click', function(){
 
@@ -29,21 +32,27 @@ function info1On(){
     })
 }
 
-// nick.value 값 어떻게 읽어야할까
-let nick = document.querySelector("#nick");
+
 function edit(){
     nickBtn.addEventListener('click', function(){
         in1.innerHTML="";
         let click = in1.classList.contains("click");
         if(click){
+            in1.innerHTML = nick.value;
+            nickname.innerHTML = "";
+            nickname.innerHTML = nick.value;
+
             in1.classList.remove("click");
-            console.log(nick);
-            in1.innerHTML=nick;
+            in1.style.display="inline-block";
+            nick.style.display="none";
+            console.log(nick.value);
         } else{
-            let html='<input type="text" id=nick placeholder="변경할 닉네임을 입력하세요.">'
-            in1.innerHTML=html;
+            nick.innerHTML = "";
+
             in1.classList.add("click");
-            console.log(nick);
+            in1.style.display="none";
+            nick.style.display="inline-block";
+            console.log(nick.value);
         }
     })
 
@@ -67,14 +76,21 @@ function edit(){
         in3.innerHTML="";
         let click = in3.classList.contains("click");
         if(click){
+            in1.innerHTML = number.value;
+
             in3.classList.remove("click");
-            console.log(number);
-            in3.innerHTML=number;
+            in3.style.display="inline-block";
+            number.style.display="none";
+            
+            console.log(number.value);
+            in3.innerHTML=number.value;
         } else{
-            let html='<input type="text" id=number placeholder="변경할 전화번호를 입력하세요.">'
-            in3.innerHTML=html;
+            number.value="";
+
+            in3.style.display="none";
+            number.style.display="inline-block";
             in3.classList.add("click");
-            console.log(number);
+            console.log(number.value);
         }
     })
 
