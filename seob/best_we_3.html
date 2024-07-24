@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     
-    
+    <link href="00.user_side_base.css" rel="stylesheet">
     <style>
         
 
@@ -80,6 +80,20 @@
         header #menu #userall .inb{
             display: inline-block;
         }
+        #wrap section {
+        width: 80%;
+        font-size: 14px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
+        padding-left: 30px;
+        /* border: 1px solid red; */
+        }
+        #wrap{
+        font-size: 0;
+        /* border: 1px solid red; */
+        padding: 30px 150px;
+    }
 /* -------------------------------관리자 도서관 정보------------------------------ */
         #left_menu{
             display : inline-block;
@@ -89,14 +103,12 @@
             display: inline-block;
             vertical-align: top;
             width: 50%;
-        }
-        #imoge{
-            font-size: 70px;
+            margin:0 auto;
         }
         #table{
+            margin-left:150px;
             text-align: center;
-            width:100%;
-            padding: 20px;
+            width:50%;
         }
         .age-range-bar {
             display: flex;
@@ -114,29 +126,39 @@
             cursor: pointer;
             outline: none;
         }
-        #button_1{
-            background-color:  rgb(165, 224, 144);
-        }
         .age-range-bar button.active {
             background-color:  rgb(165, 224, 144);
             color: white;
         }
-        .material-symbols-outlined{
+        .best_infor .material-symbols-outlined{
             display: flex;
             justify-content: space-between;
             width: 80%;
             margin: 10px auto;
             padding: 10px;
             border-radius: 5px;
+            
         }
-        #imoge {
+        #imoge_1 {
+            color:rgb(165, 224, 144);
             background-color: white;
             border-radius: 3px;
             padding: 8px 15px;
             cursor: pointer;
             outline: none;
+            font-size: 70px;
         }
-        .material-symbols-outlined.active {
+        #imoge_2 {
+            background-color: white;
+            border-radius: 3px;
+            padding: 10px 15px;
+            cursor: pointer;
+            outline: none;
+            font-size: 70px;
+        }
+        
+
+        .best_infor .material-symbols-outlined.active {
             color: rgb(165, 224, 144);
         }
 
@@ -178,8 +200,6 @@
             letter-spacing: -0.01em;
 
         }
-
-
         #best_box {
             margin-top: 10px;
             color: #156a27;
@@ -220,7 +240,9 @@
         #input_res {
             display: inline-block;
         }
-      
+        #button_1{
+            background-color: rgb(165, 224, 144);
+        }
 
         
 /* ------------------------------------------------------------------ */
@@ -275,6 +297,7 @@
     </style>
     <!-- 이모티콘 삽입-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 
    
 </head>
@@ -308,24 +331,43 @@
 
 </header>
 
-<!-- 여기 사이에 이것 저것 코딩하세용 >< -->
-<div id="left_menu">
-    <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>베스트 도서</strong></div>
-</div>
-<!-- 인기도서 관리창 코딩시작 >< -->
+<!-- 여기 사이에 이것 저것 코딩하세용 >< 
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>남/녀별 베스트도서</strong></div>
+    <div class="l_menu" id="l_menu_1" style="font-size: 20px;">연령별 베스트도서</div>
+    </div> 인기도서 관리창 코딩시작 >< 
+    
+-->
 
-    <div class = "best_infor">
-        <div>
-            <table id = "table">
-                <tr>
-                    <td colspan="3"><h2>성별, 연령대별 베스트를 확인하세요!</h2></td>
-                </tr>
-                <td>
-                    <span id = "imoge" class="material-symbols-outlined" data-gender = "male">face_6</span><br>남성
-                </td>       
-                <td>
-                    <span id = "imoge" class="material-symbols-outlined" data-gender = "female">face_3</span><br>여성 
-                </td>       
+<div id = "wrap">
+    <!-- 사이드 -->
+    <aside class="clearfix" id="side">
+            
+        <div id="sideleft">
+            <h2 id="title">베스트 도서</h2>
+            
+            <div id="items">
+                
+                <div class="item" id="i1">
+                    <span>종합 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span> 
+                </div>
+                <div class="item" id="i2">
+                    <span>남/ 녀별 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </div>
+                <div class="item" id="i3">
+                    <span>연령별 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span> 
+                </div>
+            </div>
+        </div>
+        
+    </aside>
+    <section class = "best_infor">
+            <div>
+                <table id = "table">
                     <td>
                         <div class="age-range-bar">
                         <button class="age-button" id = button_1 data-age="10s">10대</button>
@@ -334,22 +376,73 @@
                         <button class="age-button" id = button_4 data-age="40s">40대</button>
                         <button class="age-button" id = button_5 data-age="50s">50대</button>
                         </div>
-                    </td>
-             </table>
-        </div>
-        <div id = "show_box_3"> <!--가져와서 출력될 div -->
-            <div id="best">
-                <div id="best_top_box">
-                    <h1>이달의 베스트 도서</h1>
-                </div>
-                <div id=img_box>
+                    </td>        
+                </table>
+            </div>
+            <div id = "show_box_4"> <!--가져와서 출력될 div -->
+                <div id="best">
+                    <div id="best_top_box">
+                        <h1>이달의 베스트 도서</h1>
+                    </div>
+                    <div id=img_box>
+                        <img id="best_img"
+                            src="https://cdn.discordapp.com/attachments/1128320143232077876/1265332900145004574/2024-07-24_12.41.02.png?ex=66a12098&is=669fcf18&hm=475fe8ccbdb7fe1b8b468f6c9ebb777b2723f2795cb15c30b7a35e5437f3e8b7&">
+                    </div>
+            
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>천안도서관 전체 best 1</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="line-height:500%; font-size: 24px;">
+                            <strong>돈의 심리학(30만 부 기념 스페셜 에디션)</strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            모건 하우절 · 인플루엔셜 · 2023.11.06
+                        </div>
+                        <div>
+                            월스트리트저널에서 10년 넘게 금융과 투자에 대한 글을 써온 칼럼니스트이자 콜라보레이티브 펀드 파트너로 활동중인 모건 하우절의 첫 책이다. 출간 즉시 아마존 투자 분야 1위를 차지했고 개인...
+                        </div>
+            
+                        <div style="line-height:500%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.36(250개의 리뷰)
+                                    </td>
+                                    <td>
+                                        최고에요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+            
+                    </div>
+                    <div id=input_res>
+                        <div id="input_top">
+                            <input type="button" value="장바구니 담기" id="input_1">
+                        </div>
+                        <div id="input_bottom">
+                            <input type="button" value="대출 예약하기" id="input_2">
+                        </div>
+                    </div>
+                <div id="best">
+                    <div id=img_box>
                     <img id="best_img"
-                        src="https://cdn.discordapp.com/attachments/1128320143232077876/1265330030309937194/2024-07-24_12.27.12.png?ex=66a11deb&is=669fcc6b&hm=f8b61027c1b3b4a5ef827cc64cddcb589b13686a54dc9e960cbb9e529c9b0e84&">
-                </div>
-        
-                <div id=best_infor>
+                        src="https://cdn.discordapp.com/attachments/1128320143232077876/1265330030570115103/2024-07-24_12.27.20.png?ex=66a11deb&is=669fcc6b&hm=8321a9a85f687db1ebb2282718ef07537eb13d368db78d5bf53826cd396aa207&">
+                    </div>
+            
+                    <div id=best_infor>
                     <div id=in_top style="line-height:200%;">
-                        <strong>천안도서관 전체 best 1</strong>
+                        <strong>천안도서관 전체 best 2</strong>
                     </div>
                     <div id="best_box">
                         <table>
@@ -361,7 +454,7 @@
                         </table>
                     </div>
                     <div style="line-height:500%; font-size: 24px;">
-                        <strong>파친코 1</strong>
+                    <strong>파친코 2</strong>
                     </div>
                     <div style="line-height:300%;">
                         이민진 · 문학사상 · 2018.03.09
@@ -369,177 +462,20 @@
                     <div>
                         한국계 1.5세인 미국 작가 이민진의 장편소설 『파친코』 제1권. 내국인이면서 끝내 이방인일 수밖에 없었던 자이니치(재일동포)들의 처절한 생애를 깊이 있는 필체로 담아낸 작품이다. 저자가 자이...
                     </div>
-        
-                    <div style="line-height:500%;">
-                        <table>
-                            <tr>
-                                <td>
-                                    9.36(250개의 리뷰)
-                                </td>
-                                <td>
-                                    최고에요
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-        
-                </div>
-                <div id=input_res>
-                    <div id="input_top">
-                        <input type="button" value="장바구니 담기" id="input_1">
-                    </div>
-                    <div id="input_bottom">
-                        <input type="button" value="대출 예약하기" id="input_2">
-                    </div>
-                </div>
-            <div id="best">
-                <div id=img_box>
-                <img id="best_img"
-                    src="https://cdn.discordapp.com/attachments/1128320143232077876/1265332451828568126/2024-07-24_12.39.13.png?ex=66a1202d&is=669fcead&hm=523c364c8549f3eefaa833bcae7f471766b6f1e336fe97af4cc460cac9cf7a99&">
-                </div>
-        
-                <div id=best_infor>
-                <div id=in_top style="line-height:200%;">
-                    <strong>천안도서관 전체 best 2</strong>
-                </div>
-                <div id="best_box">
-                    <table>
-                        <tr>
-                            <td id=box_1>북플릭스 구독자의 선택</td>
-                            <td id=box_1>천안시 도서관 전체 1위</td>
-                            <td id=box_1>대여 200회 돌파</td>
-                        </tr>
-                    </table>
-                </div>
-                <div style="line-height:500%; font-size: 24px;">
-                <strong>소크라테스 익스프레스</strong>
-                </div>
-                <div style="line-height:300%;">
-                    에릭 와이너 · 어크로스 · 2021.04.28
-                </div>
-                <div>
-                    《소크라테스 익스프레스》는 마르쿠스 아우렐리우스부터 몽테뉴까지 역사상 가장 위대한 철학자들을 만나러 떠나는 여행기이자, 그들의 삶과 작품 속의 지혜가 우리 인생을 개선하는 데 어떻게 도...
-                </div>
-        
-                <div style="line-height:500%;">
-                    <table>
-                        <tr>
-                            <td>
-                                9.01(120개의 리뷰)
-                            </td>
-                            <td>
-                                좋아요
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-        
-            </div>
-            <div id=input_res>
-                <div id="input_top">
-                    <input type="button" value="장바구니 담기" id="input_1">
-                </div>
-                <div id="input_bottom">
-                    <input type="button" value="대출 예약하기" id="input_2">
-                </div>
-            </div>
             
-            <div id="best">
-                </div>
-                <div id=img_box>
-                    <img id="best_img"
-                        src="https://media.discordapp.net/attachments/1128320143232077876/1264791606620590110/2024-07-22_12.49.05.png?ex=669fd139&is=669e7fb9&hm=919093274af16fb216b9d320310ebd3367567fc4d2feb2ef46108356c1724839&=&format=webp&quality=lossless&width=544&height=824">
-                </div>
-        
-                <div id=best_infor>
-                    <div id=in_top style="line-height:200%;">
-                        <strong>천안도서관 전체 best 3</strong>
-                    </div>
-                    <div id="best_box">
-                        <table>
-                            <tr>
-                                <td id=box_1>북플릭스 구독자의 선택</td>
-                                <td id=box_1>천안시 도서관 전체 1위</td>
-                                <td id=box_1>대여 200회 돌파</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="line-height:500%; font-size: 24px;">
-                        <strong>만일 나에게 단 한 번의 아침이 남아 있다면
-                        </strong>
-                    </div>
-                    <div style="line-height:300%;">
-                        존 릴런드 · 북모먼트 · 2024.06.26
-                    </div>
-                    <div>
-                        무심히 흘러가는 나날, 늘 그렇듯 당연하게 맞이하는 아침. 당신의 인생에서 몇 번의 아침을 더 맞게 될지 궁금해한 적이 있는가? 그런데 설상가상으로 당신에게 만일 단 한 번의 아침만이 남아 있다면...
-                    </div>
-        
                     <div style="line-height:500%;">
                         <table>
                             <tr>
                                 <td>
-                                    9.36(250개의 리뷰)
+                                    9.01(120개의 리뷰)
                                 </td>
                                 <td>
-                                    최고에요
+                                    좋아요
                                 </td>
                             </tr>
                         </table>
                     </div>
-        
-            </div>
-            <div id=input_res>
-                <div id="input_top">
-                    <input type="button" value="장바구니 담기" id="input_1">
-                </div>
-                <div id="input_bottom">
-                    <input type="button" value="대출 예약하기" id="input_2">
-                </div>
-            </div>
             
-            <div id="best">
-                <div id=img_box>
-                    <img id="best_img"
-                        src="https://media.discordapp.net/attachments/1128320143232077876/1264791631220183111/2024-07-22_12.49.23.png?ex=669fd13f&is=669e7fbf&hm=b649683c152ea47eb5a6007bed1dbecc0ac28a10d87bd8c5f1062c1772f432c7&=&format=webp&quality=lossless&width=540&height=792">
-                </div>
-        
-                <div id=best_infor>
-                    <div id=in_top style="line-height:200%;">
-                        <strong>천안도서관 전체 best 4</strong>
-                    </div>
-                    <div id="best_box">
-                        <table>
-                            <tr>
-                                <td id=box_1>북플릭스 구독자의 선택</td>
-                                <td id=box_1>천안시 도서관 전체 1위</td>
-                                <td id=box_1>대여 200회 돌파</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div style="line-height:500%; font-size: 24px;">
-                        <strong>나는 도대체 왜 피곤할까</strong>
-                    </div>
-                    <div style="line-height:300%;">
-                        에이미 샤 · 북플레저 · 2024.07.10
-                    </div>
-                    <div>
-                        침대에서 일어나 바닥에 발을 딛는 순간부터 베개를 머리에 묻을 때까지 피곤을 달고 사는 일상은 너무나 흔하다. 의사나 누군가에게 ‘내 컨디션이 왜 이렇게 망가졌는지’ 물어봐도, 돌아오는 대답은 늘 ‘정상’이니 ‘괜찮다’라고 한다. 이제 내일은 개운하게 일어날 준비가 되었는가?
-                    </div>
-        
-                    <div style="line-height:500%;">
-                        <table>
-                            <tr>
-                                <td>
-                                    9.36(250개의 리뷰)
-                                </td>
-                                <td>
-                                    최고에요
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-        
                 </div>
                 <div id=input_res>
                     <div id="input_top">
@@ -549,49 +485,51 @@
                         <input type="button" value="대출 예약하기" id="input_2">
                     </div>
                 </div>
-            <div id="best">
-                </div>
-                <div id=img_box>
-                    <img id="best_img"
-                        src="https://media.discordapp.net/attachments/1128320143232077876/1264791649322537113/2024-07-22_12.49.35.png?ex=669fd143&is=669e7fc3&hm=b3c73f461aebfe9b626ca70f20c9e66537513c28726f3b90b6fe2e640caa96a4&=&format=webp&quality=lossless&width=458&height=700">
-                </div>
-        
-                <div id=best_infor>
-                    <div id=in_top style="line-height:200%;">
-                        <strong>천안도서관 전체 best 5</strong>
+                
+                <div id="best">
                     </div>
-                    <div id="best_box">
-                        <table>
-                            <tr>
-                                <td id=box_1>북플릭스 구독자의 선택</td>
-                                <td id=box_1>천안시 도서관 전체 1위</td>
-                                <td id=box_1>대여 200회 돌파</td>
-                            </tr>
-                        </table>
+                    <div id=img_box>
+                        <img id="best_img"
+                            src="https://media.discordapp.net/attachments/1128320143232077876/1264791606620590110/2024-07-22_12.49.05.png?ex=669fd139&is=669e7fb9&hm=919093274af16fb216b9d320310ebd3367567fc4d2feb2ef46108356c1724839&=&format=webp&quality=lossless&width=544&height=824">
                     </div>
-                    <div style="line-height:500%; font-size: 24px;">
-                        <strong>챔피언처럼 생각하고 거래하라</strong>
-                    </div>
-                    <div style="line-height:300%;">
-                        마크 미너비니 · 이레미디어 · 2024.08.15
-                    </div>
-                    <div>
-                        이제 막 주식시장에 입문한 사람이 아닌 이상 단 하나뿐이더라도 본인만의 규칙은 있을 것이다. PER이 낮은 주식을 산다든가, 어느 이동평균선에 주가가 걸치면 산다든가 하는 것이다. 알다시피 주식...
-                    </div>
-        
-                    <div style="line-height:500%;">
-                        <table>
-                            <tr>
-                                <td>
-                                    9.36(250개의 리뷰)
-                                </td>
-                                <td>
-                                    최고에요
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-        
+            
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>천안도서관 전체 best 3</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="line-height:500%; font-size: 24px;">
+                            <strong>만일 나에게 단 한 번의 아침이 남아 있다면
+                            </strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            존 릴런드 · 북모먼트 · 2024.06.26
+                        </div>
+                        <div>
+                            무심히 흘러가는 나날, 늘 그렇듯 당연하게 맞이하는 아침. 당신의 인생에서 몇 번의 아침을 더 맞게 될지 궁금해한 적이 있는가? 그런데 설상가상으로 당신에게 만일 단 한 번의 아침만이 남아 있다면...
+                        </div>
+            
+                        <div style="line-height:500%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.36(250개의 리뷰)
+                                    </td>
+                                    <td>
+                                        최고에요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+            
                 </div>
                 <div id=input_res>
                     <div id="input_top">
@@ -601,8 +539,112 @@
                         <input type="button" value="대출 예약하기" id="input_2">
                     </div>
                 </div>
-            </div>
-        </div>
+                
+                <div id="best">
+                    <div id=img_box>
+                        <img id="best_img"
+                            src="https://media.discordapp.net/attachments/1128320143232077876/1264791631220183111/2024-07-22_12.49.23.png?ex=669fd13f&is=669e7fbf&hm=b649683c152ea47eb5a6007bed1dbecc0ac28a10d87bd8c5f1062c1772f432c7&=&format=webp&quality=lossless&width=540&height=792">
+                    </div>
+            
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>천안도서관 전체 best 4</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="line-height:500%; font-size: 24px;">
+                            <strong>나는 도대체 왜 피곤할까</strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            에이미 샤 · 북플레저 · 2024.07.10
+                        </div>
+                        <div>
+                            침대에서 일어나 바닥에 발을 딛는 순간부터 베개를 머리에 묻을 때까지 피곤을 달고 사는 일상은 너무나 흔하다. 의사나 누군가에게 ‘내 컨디션이 왜 이렇게 망가졌는지’ 물어봐도, 돌아오는 대답은 늘 ‘정상’이니 ‘괜찮다’라고 한다. 이제 내일은 개운하게 일어날 준비가 되었는가?
+                        </div>
+            
+                        <div style="line-height:500%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.36(250개의 리뷰)
+                                    </td>
+                                    <td>
+                                        최고에요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+            
+                    </div>
+                    <div id=input_res>
+                        <div id="input_top">
+                            <input type="button" value="장바구니 담기" id="input_1">
+                        </div>
+                        <div id="input_bottom">
+                            <input type="button" value="대출 예약하기" id="input_2">
+                        </div>
+                    </div>
+                <div id="best">
+                    </div>
+                    <div id=img_box>
+                        <img id="best_img"
+                            src="https://media.discordapp.net/attachments/1128320143232077876/1264791649322537113/2024-07-22_12.49.35.png?ex=669fd143&is=669e7fc3&hm=b3c73f461aebfe9b626ca70f20c9e66537513c28726f3b90b6fe2e640caa96a4&=&format=webp&quality=lossless&width=458&height=700">
+                    </div>
+            
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>천안도서관 전체 best 5</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="line-height:500%; font-size: 24px;">
+                            <strong>챔피언처럼 생각하고 거래하라</strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            마크 미너비니 · 이레미디어 · 2024.08.15
+                        </div>
+                        <div>
+                            이제 막 주식시장에 입문한 사람이 아닌 이상 단 하나뿐이더라도 본인만의 규칙은 있을 것이다. PER이 낮은 주식을 산다든가, 어느 이동평균선에 주가가 걸치면 산다든가 하는 것이다. 알다시피 주식...
+                        </div>
+            
+                        <div style="line-height:500%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.36(250개의 리뷰)
+                                    </td>
+                                    <td>
+                                        최고에요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+            
+                    </div>
+                    <div id=input_res>
+                        <div id="input_top">
+                            <input type="button" value="장바구니 담기" id="input_1">
+                        </div>
+                        <div id="input_bottom">
+                            <input type="button" value="대출 예약하기" id="input_2">
+                        </div>
+                    </div>
+                </div>
+        </div>     
 <!--자바 스크립트 영역-->
     <script>
         const imoge = document.querySelectorAll('.material-symbols-outlined');
@@ -645,6 +687,31 @@
                 }
             });
         });
+
+                let pi1 = document.querySelector("#sideleft #i1");
+                let pi2 = document.querySelector("#sideleft #i2");
+                let pi3 = document.querySelector("#sideleft #i3");
+                let pi4 = document.querySelector("#sideleft #i4");
+
+                function pageOn(){
+                    pi1.addEventListener('click', function(){
+                        window.location.href="best_we_all.html"
+                    })
+                    pi2.addEventListener('click', function(){
+                        window.location.href="best_we.html"
+                    })
+                    pi3.addEventListener('click', function(){
+                        window.location.href="best_we_3.html"
+                    })
+
+                };
+
+
+
+                pageOn();
+
+
+
     </script>
 
 
