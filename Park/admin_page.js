@@ -17,28 +17,33 @@ window.onload = function () {
             }
         }
     })
-    document.querySelector('#page_1').addEventListener('click', function () {
+    let pi1 = document.querySelector("#side #title");
+    let pi2 = document.querySelector("#side #i1");
+    let pi3 = document.querySelector("#side #i2");
+    let pi4 = document.querySelector("#side #i3");
+
+    pi1.addEventListener('click', function () {
         document.querySelector('#main_page_1').style.display = 'inline-block';
         document.querySelector('#main_page_2').style.display = 'none';
         document.querySelector('#main_page_3').style.display = 'none';
         document.querySelector('#main_page_4').style.display = 'none';
     });
     // page2
-    document.querySelector('#page_2').addEventListener('click', function () {
+    pi2.addEventListener('click', function () {
         document.querySelector('#main_page_2').style.display = 'inline-block';
         document.querySelector('#main_page_1').style.display = 'none';
         document.querySelector('#main_page_3').style.display = 'none';
         document.querySelector('#main_page_4').style.display = 'none';
     });
     // page3
-    document.querySelector('#page_3').addEventListener('click', function () {
+    pi3.addEventListener('click', function () {
         document.querySelector('#main_page_3').style.display = 'inline-block';
         document.querySelector('#main_page_1').style.display = 'none';
         document.querySelector('#main_page_2').style.display = 'none';
         document.querySelector('#main_page_4').style.display = 'none';
     });
     // page4
-    document.querySelector('#page_4').addEventListener('click', function () {
+    pi4.addEventListener('click', function () {
         document.querySelector('#main_page_4').style.display = 'inline-block';
         document.querySelector('#main_page_1').style.display = 'none';
         document.querySelector('#main_page_2').style.display = 'none';
@@ -68,31 +73,53 @@ window.onload = function () {
     });
 
     // 폼 제출 시 데이터 추가
-    form.addEventListener('submit', function (event) {
+    document.querySelector('#workFormBtn').addEventListener('click', function (event) {
         event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
-
+        console.log('서밋');
+        const bookName = document.getElementById('bookName').value;
         const bookId = document.getElementById('bookId').value;
-        const workDetails = document.getElementById('workDetails').value;
+        const workType = document.getElementById('workType').value;
         const workDate = document.getElementById('workDate').value;
+        const bookLocation = document.getElementById('bookLocation').value;
+        const manager = document.getElementById('manager').value;
 
-        // 테이블에 새로운 행 추가
-        const tableBody = document.querySelector('#workTable tbody');
+        const tableBody = document.querySelector('.main_tbody');
         const newRow = tableBody.insertRow();
 
         const cell1 = newRow.insertCell(0);
         const cell2 = newRow.insertCell(1);
         const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+        const cell6 = newRow.insertCell(5);
+        const cell7 = newRow.insertCell(6);
+        const cell8 = newRow.insertCell(7);
+        const cell9 = newRow.insertCell(8);
 
-        cell1.textContent = bookId;
-        cell2.textContent = workDetails;
-        cell3.textContent = workDate;
 
-        // 모달 닫기
+        cell1.innerHTML = '<input type="checkbox" class="p2_main_chack">';
+        cell2.textContent = bookName;
+        cell3.textContent = bookId;
+        cell4.textContent = workType;
+        cell5.textContent = workDate;
+        cell6.innerHTML = '<input type="checkbox" class="p2_main_chack">'
+        cell7.textContent = manager;
+        cell8.innerHTML = '<input type="checkbox" class="p2_main_chack">'
+
+        const date = new Date(workDate);
+        date.setDate(date.getDate() + 7);
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+        const newDate = `${year}-${month}-${day}`;
+
+        cell9.innerText = newDate;
+
+
         modal.style.display = 'none';
 
-        // 폼 초기화
         form.reset();
     });
 
-    
+
 };
