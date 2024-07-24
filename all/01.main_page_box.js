@@ -11,6 +11,8 @@ let p6 = document.querySelector("#p6");
 let p7 = document.querySelector("#p7");
 let p8 = document.querySelector("#p8");
 
+let searchBnt = document.querySelector("#searchBnt");
+
 function hover(){
     for(let i = 0; i < page.length; i++){
         page[i].addEventListener('mouseover', function(){
@@ -57,6 +59,9 @@ function pageMove(){
     })
     p8.addEventListener('click', function(){
         window.location.href=""
+    })
+    searchBnt.addEventListener('click', function(){
+        window.location.href="03.search_loan.html"
     })
 }
 

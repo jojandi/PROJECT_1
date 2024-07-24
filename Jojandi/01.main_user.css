@@ -15,6 +15,7 @@
     width: 50%;
     padding: 20px;
     vertical-align: top;
+    /* height: 510px; */
 }
 
 /* ------------------------------------------------------------------ */
@@ -87,6 +88,9 @@
     background: rgb(106, 170, 82);
     border-radius: 50%;
     color: white;
+    box-sizing: border-box;
+    width: 30px;
+    height: 30px;
 }
 
 .section1 #librarys {
@@ -130,9 +134,10 @@
 }
 
 .section1 #search #searchIn{
-    font-size: 17px;
+    font-size: 18px;
     height: 50px;
     width: 85%;
+    padding-left: 5px;
 }
 
 .section1 #search #searchBnt{
@@ -179,13 +184,14 @@
     'opsz' 24
 }
 
-/* .section1 #pageall .pages .page a{
+.section1 #pageall .pages .page a{
+    /* border: 1px solid red; */
     display: inline-block;
     width: 80px;
     height: 80px;
     position: relative;
     bottom: 80px;
-} */
+}
 
 
 /* ------------------------------------------------------------------ */

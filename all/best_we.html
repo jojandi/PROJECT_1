@@ -4,9 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="00.user_base_login.css" rel="stylesheet">
     
+    <link href="00.user_side_base.css" rel="stylesheet">
     <style>
+        
+
+        /* @media screen and (max-width: 1100px){
+            header #items{
+                display: none;
+            }
+        } */
+
+        body{
+            /* height: 1000px; */
+            margin: 0;
+        }
+      
+        #top{
+            /* border: 1px solid red; */
+            background-color: rgb(165, 224, 144);
+
+            width: 100%;
+            height: 100px;
+            color:rgba(255, 255, 255, 0.847);
+        }
+
+        .clearfix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        body .left{
+            float:left;
+        }
+
+        body .right{
+            float:right;
+        }
+        
+        header #logoall #logo{
+            margin: 5px 5px 0 40px;
+            border: 1px solid red;
+            width: 120px;
+            height: 90px;
+        }
+            
+        header #logoall #name{
+            margin: 25px 40px 0 0 ;
+            text-align: center;
+            font-size: 20px;
+            width: 130px;
+            font-weight: 900;
+        }
+
+        header #menu{
+            width: 100%;
+            padding: 40px 0;
+        }
+            
+        header #menu #items .item{
+            /* border: 1px solid red; */
+            font-size: 20px;
+            margin: 0 40px;
+            display: inline-block;
+        }
+
+        header #menu #userall{
+            /* border: 1px solid red; */
+            width:130px;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        header #menu #userall .inb{
+            display: inline-block;
+        }
+        #wrap section {
+        width: 80%;
+        font-size: 14px;
+        display: inline-block;
+        box-sizing: border-box;
+        vertical-align: top;
+        padding-left: 30px;
+        /* border: 1px solid red; */
+        }
+        #wrap{
+        font-size: 0;
+        /* border: 1px solid red; */
+        padding: 30px 150px;
+    }
 /* -------------------------------관리자 도서관 정보------------------------------ */
         #left_menu{
             display : inline-block;
@@ -16,11 +103,13 @@
             display: inline-block;
             vertical-align: top;
             width: 50%;
+            margin:0 auto;
         }
         #table{
+            margin-left:150px;
             text-align: center;
-            width:100%;
-            padding: 20px;
+
+            width:130px;
         }
         .age-range-bar {
             display: flex;
@@ -42,7 +131,7 @@
             background-color:  rgb(165, 224, 144);
             color: white;
         }
-        .material-symbols-outlined{
+        .best_infor .material-symbols-outlined{
             display: flex;
             justify-content: space-between;
             width: 80%;
@@ -63,14 +152,14 @@
         #imoge_2 {
             background-color: white;
             border-radius: 3px;
-            padding: 8px 15px;
+            padding: 10px 15px;
             cursor: pointer;
             outline: none;
             font-size: 70px;
         }
+        
 
-
-        .material-symbols-outlined.active {
+        .best_infor .material-symbols-outlined.active {
             color: rgb(165, 224, 144);
         }
 
@@ -112,8 +201,6 @@
             letter-spacing: -0.01em;
 
         }
-
-
         #best_box {
             margin-top: 10px;
             color: #156a27;
@@ -157,9 +244,58 @@
 
         
 /* ------------------------------------------------------------------ */
+        footer #bottom{
+            background-color: rgb(73, 73, 73);
+  
+            width: 100%;
+            height: 90px;
+
+            color: rgba(255, 255, 255, 0.808);
+        }
+
+        footer #logoall #logo{
+            margin: 10px 10px 0 40px;
+            border: 1px solid white;
+            width: 90px;
+            height: 70px;
+        }
+            
+        footer #logoall #name{
+            margin: 25px 30px 0 0;
+            text-align: center;
+            font-size: 17px;
+            width: 100px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.401);
+
+        }
+
+        footer #footerinfo{
+            padding: 30px 30px 0 0;
+            font-size: 13px;
+        }
+        #left_menu{
+            border: 1px solid red;
+            width: 200px;
+            height: 700px;
+        }
+        #left_menu .l_menu{
+            border: 1px solid red;
+            text-align: center;
+        }
+        #l_menu_1{
+            height: 100px;
+            line-height: 100px; 
+        }
+        #l_menu_2,#l_menu_3,#l_menu_4{
+            height: 50px;
+            line-height: 50px; 
+        }
+
     </style>
     <!-- 이모티콘 삽입-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 
    
 </head>
@@ -167,71 +303,87 @@
 
 <!-- 가장 위 고정 -->
 <header id="top" class="clearfix">
-        
+
     <div id="logoall">
         <div id="logo" class="left">로고</div>
-        <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a>
-        <!-- <a href="01.main_user.html" id="name" class="left">행복만땅 <br>도서관</a> -->
+        <div id="name" class="left">행복만땅 <br>도서관</div>
     </div>
 
     <div id="menu">
         <div id="items" class="left">
             <div class="item" id="i1">도서관</div>
-            <div class="item" id="i2">베스트</div>
+            <div class="item" id="i2"><strong>베스트</strong></div>
             <div class="item" id="i3">대출</div>
             <div class="item" id="i4">정보광장</div>
             <div class="item" id="i5">마이페이지</div>
         </div>
 
-        <!-- <div class="right" id="userall">
-            <div class="inb" id="login">로그인</div>
+        <div class="right" id="userall">
+            <div>OOO관리자</div>
+            <!-- <div class="inb" id="login">로그인</div>
             <div class="inb">|</div>
             <div class="inb" id="userin">회원가입</div>
-            <div class="inb" id="menus"></div>
-        </div> -->
-
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-        <div class="right" id="userall">
-            <div class="inb" id="user">조잔디님</div>
-            <span class="material-symbols-outlined">person</span>
+            <div class="inb" id="menus"></div> -->
         </div>
     </div>
-    <script src="./00.user_base.js"></script>
+
 </header>
 
-<!-- 여기 사이에 이것 저것 코딩하세용 >< -->
-<div id="left_menu">
-    <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>베스트 도서</strong></div>
-</div>
-<!-- 인기도서 관리창 코딩시작 >< -->
+<!-- 여기 사이에 이것 저것 코딩하세용 >< 
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>남/녀별 베스트도서</strong></div>
+    <div class="l_menu" id="l_menu_1" style="font-size: 20px;">연령별 베스트도서</div>
+    </div> 인기도서 관리창 코딩시작 >< 
+    
+-->
 
-    <div class = "best_infor">
-        <div>
-            <table id = "table">
-                <tr>
-                    <td colspan="3"><h2>성별, 연령대별 베스트를 확인하세요!</h2></td>
-                </tr>
-                <td>
-                    <span id = "imoge_1" class="material-symbols-outlined" data-gender = "male">face_6</span><br>남성
-                </td>       
-                <td>
-                    <span id = "imoge_2" class="material-symbols-outlined" data-gender = "female">face_3</span><br>여성 
-                </td>       
-                    <td>
-                        <div class="age-range-bar">
-                        <button class="age-button" data-age="10s">10대</button>
-                        <button class="age-button" data-age="20s">20대</button>
-                        <button class="age-button" data-age="30s">30대</button>
-                        <button class="age-button" data-age="40s">40대</button>
-                        <button class="age-button" data-age="50s">50대</button>
-                        </div>
-                    </td>
-             </table>
+<div id = "wrap">
+    <!-- 사이드 -->
+    <aside class="clearfix" id="side">
+            
+        <div id="sideleft">
+            <h2 id="title">베스트 도서</h2>
+            
+            <div id="items">
+                
+                <div class="item" id="i1">
+                    <span>종합 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span> 
+                </div>
+                <div class="item" id="i2">
+                    <span>남/ 녀별 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </div>
+                <div class="item" id="i3">
+                    <span>연령별 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span> 
+                </div>
+            </div>
         </div>
+        
+    </aside>
+    <section class = "best_infor">
+            <div>
+                <table id = "table">
+                    <tr>    
+                        <td>
+                            <span id = "imoge_1" class="material-symbols-outlined" data-gender = "male">face_6</span>
+                        </td>       
+                        <td>
+                            <span id = "imoge_2" class="material-symbols-outlined" data-gender = "female">face_3</span>
+                        </td>
+                    </tr>
+                <tr>
+                    <td>남성</td>
+                    <td>여성</td>
+                </tr>           
+                </table>
+            </div>
         <div id = "show_box_1"> <!--가져와서 출력될 div -->
             <div id="best">
                 <div id="best_top_box">
-                    <h1>이달의 베스트 도서</h1>
+                    <h1>종합 베스트 도서</h1>
                 </div>
                 <div id=img_box>
                     <img id="best_img"
@@ -240,14 +392,14 @@
         
                 <div id=best_infor>
                     <div id=in_top style="line-height:200%;">
-                        <strong>천안도서관 전체 best 1</strong>
+                        <strong>전체 best 1</strong>
                     </div>
                     <div id="best_box">
                         <table>
                             <tr>
-                                <td id=box_1>북플릭스 구독자의 선택</td>
-                                <td id=box_1>천안시 도서관 전체 1위</td>
-                                <td id=box_1>대여 200회 돌파</td>
+                                <td id=box_1>북플릭스 구독자 추천</td>
+                                <td id=box_1>도서관장 추천</td>
+                                <td id=box_1>대여 150회 돌파</td>
                             </tr>
                         </table>
                     </div>
@@ -495,7 +647,7 @@
                 </div>
             </div>
         </div>
-       
+</div>     
 <!--자바 스크립트 영역-->
     <script>
         const imoge = document.querySelectorAll('.material-symbols-outlined');
@@ -538,7 +690,28 @@
                 }
             });
         });
-        
+
+                let pi1 = document.querySelector("#sideleft #i1");
+                let pi2 = document.querySelector("#sideleft #i2");
+                let pi3 = document.querySelector("#sideleft #i3");
+                let pi4 = document.querySelector("#sideleft #i4");
+
+                function pageOn(){
+                    pi1.addEventListener('click', function(){
+                        window.location.href="best_we_all.html"
+                    })
+                    pi2.addEventListener('click', function(){
+                        window.location.href="best_we.html"
+                    })
+                    pi3.addEventListener('click', function(){
+                        window.location.href="best_we_3.html"
+                    })
+
+                };
+
+
+                pageOn();
+
 
     </script>
 

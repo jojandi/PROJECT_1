@@ -47,12 +47,12 @@
             font-weight: 900;
         }
 
-        header #logoall a:link{
+        a:link{
             color: inherit;
             text-decoration: none;
         }
 
-        header #logoall a:visited{
+        a:visited{
             color: inherit;
             text-decoration: none;
         }
@@ -69,22 +69,12 @@
             display: inline-block;
         }
 
-        header #menu #items a:link{
-            color: inherit;
-            text-decoration: none;
-        }
-
-        header #menu #items a:visited{
-            color: inherit;
-            text-decoration: none;
-        }
-
         header #menu #userall{
             /* border: 1px solid red; */
             width:130px;
             height: 20px;
             margin: 5px 0;
-            margin-right: 8px;
+            margin-right: 15px;
             font-size: 16px;
         }
         
