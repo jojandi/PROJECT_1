@@ -17,10 +17,10 @@ window.onload = function () {
             }
         }
     })
-    document.querySelector('#btn_1').addEventListener('click',function(){
+    document.querySelector('#btn_1').addEventListener('click', function () {
         const isChecked = document.querySelector('.p1_main_chack')
-        if(isChecked){
-            
+        if (isChecked) {
+
         }
     })
     let pi1 = document.querySelector("#side #title");
@@ -126,6 +126,88 @@ window.onload = function () {
 
         form.reset();
     });
+
+    document.querySelector('#btn_1').addEventListener('click', function () {
+        console.log('check');
+        const table1 = document.querySelector('#main_page_1 .page .table_wrap #main_library tbody');
+        const table2 = document.querySelector('#main_page_2 .table_wrap #main_library tbody');
+        const checkboxes = document.querySelectorAll('#main_page_1 .page .table_wrap #main_library .p1_main_chack');
+
+        const statusOptions = `
+        <option value="검수중">검수중</option>
+        <option value="검수 완료">검수 완료</option>
+        `;
+        const assigneeOptions = `
+        <option value="박규태">박규태</option>
+        <option value="이제섭">이제섭</option>
+        <option value="조민정">조민정</option>
+        `;
+        const methodOptions = `
+        <option value="폐기">폐기</option>
+        <option value="수리">수리</option>
+        <option value="기부">기부</option>
+        `;
+
+        for (let i = checkboxes.length - 1; i >= 0; i--) {
+            console.log('작동');
+            if (checkboxes[i].checked) {
+                const row = checkboxes[i].closest('tr'); // 체크박스의 상위 <tr> 요소를 찾습니다.
+    
+                if (row) {
+                    // 테이블1에서 행 제거
+                    table1.removeChild(row);
+    
+                    // 새로운 셀을 생성하여 추가합니다.
+                    const statusCell = document.createElement('td');
+                    const statusSelect = document.createElement('select');
+                    statusSelect.innerHTML = statusOptions;
+                    statusCell.appendChild(statusSelect);
+    
+                    const assigneeCell = document.createElement('td');
+                    const assigneeSelect = document.createElement('select');
+                    assigneeSelect.innerHTML = assigneeOptions;
+                    assigneeCell.appendChild(assigneeSelect);
+    
+                    const methodCell = document.createElement('td');
+                    const methodSelect = document.createElement('select');
+                    methodSelect.innerHTML = methodOptions;
+                    methodCell.appendChild(methodSelect);
+    
+                    const dueDateCell = document.createElement('td');
+                    const dueDateInput = document.createElement('input');
+                    dueDateInput.type = 'date';
+                    dueDateCell.appendChild(dueDateInput);
+    
+                    // 기존 행의 내용을 복사하여 새 행을 생성합니다.
+                    const newRow = document.createElement('tr');
+                    newRow.innerHTML = row.innerHTML; // 기존의 셀을 복사합니다.
+                    newRow.appendChild(statusCell);
+                    newRow.appendChild(assigneeCell);
+                    newRow.appendChild(methodCell);
+                    newRow.appendChild(dueDateCell);
+    
+                    // 테이블2에 새 행 추가
+                    table2.appendChild(newRow);
+    
+                    console.log('작동');
+                }
+            }
+        }
+        // for (let i = checkboxes.length - 1; i >= 0; i--) {
+        //     console.log('작동');
+        //     if (checkboxes[i].checked) {
+        //         const row = checkboxes[i].closest('tr'); // 체크박스의 상위 <tr> 요소를 찾습니다.
+
+        //         table1.removeChild(row);
+        //         table2.appendChild(row);
+
+        //         console.log('작동');
+        //     }
+        // }
+
+    });
+
+
 
 
 };
