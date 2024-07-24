@@ -184,11 +184,13 @@ section #bntall .bnt{
 section #bntall #reserchk{
     background: white;
     border: 1px solid rgb(106, 170, 82);
+    border-radius: 5%;
     margin-bottom: 5px;
 }
 
 section #bntall #reserall,
 section #bntall #delall{
+    border-radius: 5%;
     background: rgb(165, 224, 144);
     border: 1px solid rgb(106, 170, 82);
 }

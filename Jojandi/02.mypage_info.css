@@ -213,6 +213,11 @@ section #information #infoedit #info2 table td{
     height: 25px;
 }
 
+section #information #infoedit #info2 table #nick,
+section #information #infoedit #info2 table #number{
+    display: none;
+}
+
 section #information #infoedit #info2 table .center{
     border-right: 1px solid #929292;
     text-align: center;

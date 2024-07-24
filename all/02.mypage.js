@@ -14,7 +14,7 @@ function pageOn(){
         window.location.href="02.mypage_min.html"
     })
     pi4.addEventListener('click', function(){
-        window.location.href="02.mypage_min.html"
+        window.location.href="02.mypage_info.html"
     })
 }
 
