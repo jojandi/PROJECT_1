@@ -46,7 +46,10 @@ function renderCalendar() {
     // 휴관일 표시
     function hu1(){
       if(i == 8 || i == 22){
-        dateElement.classList.add("hu_2")
+        dateElement.classList.add("hu_2");
+      }
+      if(i == 1 || i == 15){
+        dateElement.classList.remove("hu_1");
       }
     }
     
@@ -54,35 +57,63 @@ function renderCalendar() {
       if(i == 1 || i == 15){
         dateElement.classList.add("hu_1");
       }
+      if(i == 8 || i == 22){
+        dateElement.classList.remove("hu_2");
+      }
     }
 
     joong.addEventListener('click', function(){
       console.log("joong")
-      joong.id="back"
+      joong.classList.add("back")
+
+      ssang.classList.remove("back")
+      du.classList.remove("back")
+      sin.classList.remove("back")
+      cheong.classList.remove("back")
       hu1();
     })
 
     ssang.addEventListener('click', function(){
       console.log("ssang")
-      ssang.id="back"
+      ssang.classList.add("back")
+
+      joong.classList.remove("back")
+      du.classList.remove("back")
+      sin.classList.remove("back")
+      cheong.classList.remove("back")
       hu2();
     })
 
     du.addEventListener('click', function(){
       console.log("du")
-      du.id="back"
+      du.classList.add("back")
+
+      joong.classList.remove("back")
+      ssang.classList.remove("back")
+      sin.classList.remove("back")
+      cheong.classList.remove("back")
       hu2();
     })
 
     sin.addEventListener('click', function(){
       console.log("sin")
-      sin.id="back"
+      sin.classList.add("back")
+
+      joong.classList.remove("back")
+      du.classList.remove("back")
+      ssang.classList.remove("back")
+      cheong.classList.remove("back")
       hu1();
     })
 
     cheong.addEventListener('click', function(){
       console.log("cheong")
-      cheong.id="back"
+      cheong.classList.add("back")
+
+      joong.classList.remove("back")
+      du.classList.remove("back")
+      ssang.classList.remove("back")
+      sin.classList.remove("back")
       hu2();
     })
 }

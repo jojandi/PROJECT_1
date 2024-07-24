@@ -17,16 +17,17 @@
             })
             document.querySelector('#p2_checkAll').addEventListener('click', function () {
                 const isChecked = document.querySelector('#p2_checkAll').checked;
+                const checkboxes = document.querySelectorAll('.p2_main_chack');
                 if (isChecked) {
-                    const checkboxes = document.querySelectorAll('.p2_main_chack');
-
+                    // const checkboxes = document.querySelectorAll('.p2_main_chack');
+                    console.log(checkboxes)
                     for (const checkbox of checkboxes) {
                         checkbox.checked = true;
                     }
                 }
 
                 else {
-                    const checkboxes = document.querySelectorAll('.p2_main_chack');
+                    // const checkboxes = document.querySelectorAll('.p2_main_chack');
                     for (const checkbox of checkboxes) {
                         checkbox.checked = false;
                     }
@@ -53,7 +54,7 @@
             });
             document.querySelector('#p2_add_comp').addEventListener('click', function () {
                 const table = document.querySelector('#main_Privacy');
-
+                console.log('클릭');
                 const newRow = table.insertRow();
 
                 const newCell1 = newRow.insertCell(0);
