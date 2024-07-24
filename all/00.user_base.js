@@ -14,7 +14,7 @@ function pageMove(){
         window.location.href="두정도서관 정보.html"
     })
     i2.addEventListener('click', function(){
-        window.location.href="best.html"
+        window.location.href="best_we.html"
     })
     i3.addEventListener('click', function(){
         window.location.href=""

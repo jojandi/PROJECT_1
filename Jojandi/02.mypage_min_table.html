@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지_민원내역</title>
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="02.mypage_min.css" rel="stylesheet">
+    <style>
+        aside #items #i3 .material-symbols-outlined{
+            background: rgb(165, 224, 144);
+        }
+
+        section #smenu #loan{
+            font-weight: 900;
+            text-decoration: underline;
+        }
+
+        #items #i3 a{
+            font-weight: 900;
+        }
+
+        section #t2{
+            display: none;
+        }
+
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+
+<!-- 가장 위 고정 -->
+
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <div id="wrap">
+
+        <section id="min">
+
+            <div id="stitle">
+                <h3>조잔디님의 민원내역</h3>
+            </div>
+            
+            <div id="smenu"> 
+                <span class="text on" id="loan">도서 신청 내역</span>
+                <span class="text" id="line">|</span>
+                <span class="text on" id="overdue">민원 처리 현황</span>
+            </div>
+
+            <div id="t1" class="table">
+                <table>
+                    <thead> 
+                        <tr>
+                            <td id="bnameall">도서명</td>
+                            <td>신청 도서관</td>
+                            <td>신청일</td>
+                            <td>신청현황</td>
+                            <td>
+                            </td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="parent">
+                            <td class="bname">마녀와의 7일</td>
+                            <td>두정도서관</td>
+                            <td>24.07.01</td>
+                            <td>구비완료</td>
+                            <td>
+                                <input type="button" class="minbnt end" id="b1" value="신청취하">
+                            </td>
+                        </tr>
+                        <tr class="parent">
+                            <td class="bname">파도의 아이들</td>
+                            <td>청수도서관</td>
+                            <td>24.07.15</td>
+                            <td>신청완료</td>
+                            <td>
+                                <input type="button" class="minbnt end" id="b2" value="신청취하">
+                            </td>
+                        </tr>
+                        <tr class="parent">
+                            <td class="bname">사랑받는 이기주의자</td>
+                            <td>중앙도서관</td>
+                            <td>24.07.19</td>
+                            <td>진행 중</td>
+                            <td>
+                                <input type="button" class="minbnt ing" id="b3" value="신청취하">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="t2" class="table">
+                <table>
+                    <thead> 
+                        <tr>
+                            <td id="bnameall">제목</td>
+                            <td >민원 도서관</td>
+                            <td>신청일</td>
+                            <td>처리현황</td>
+                            <td></td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr class="parent">
+                            <td class="bname">도서관 에어컨이 안 시원해요</td>
+                            <td>두정도서관</td>
+                            <td>24.07.19</td>
+                            <td>처리완료</td>
+                            <td>
+                                <input type="button" class="minbnt end" id="b1" value="민원취하">
+                            </td>
+                        </tr>
+                        <tr class="parent">
+                            <td class="bname">열람실 사물함 개수를 늘려주세요</td>
+                            <td>두정도서관</td>
+                            <td>24.07.15</td>
+                            <td>대기</td>
+                            <td>
+                                <input type="button" class="minbnt ing" id="b2" value="민원취하">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="movepage">
+                <span class="material-symbols-outlined">chevron_left</span>
+                <span class="chap">1</span>
+                <span class="material-symbols-outlined">chevron_right</span>
+            </div>
+        </section>
+        <script src="./02.mypage.js"></script>
+        <script src="./02.mypage_min.js"></script>
+    <!-- wrap -->
+    </div>
+</body>
+</html>
