@@ -1,4 +1,23 @@
 window.onload = function () {
+    const searchInput = document.getElementById('searchInput');
+    const showAllBtn = document.getElementById('showAllBtn');
+    const table = document.querySelector('#main_page_1 #main_library tbody');
+    const rows = table.querySelectorAll('tr');
+
+    // 검색 기능
+    searchInput.addEventListener('input', function () {
+        const query = searchInput.value.toLowerCase();
+
+        rows.forEach(row => {
+            const bookTitle = row.querySelector('td').textContent.toLowerCase();
+            if (bookTitle.includes(query)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+
     let pi1 = document.querySelector("#side #title");
     let pi2 = document.querySelector("#side #i1");
     let pi3 = document.querySelector("#side #i2");
