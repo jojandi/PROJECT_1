@@ -17,6 +17,12 @@ window.onload = function () {
             }
         }
     })
+    document.querySelector('#btn_1').addEventListener('click',function(){
+        const isChecked = document.querySelector('.p1_main_chack')
+        if(isChecked){
+            
+        }
+    })
     let pi1 = document.querySelector("#side #title");
     let pi2 = document.querySelector("#side #i1");
     let pi3 = document.querySelector("#side #i2");
