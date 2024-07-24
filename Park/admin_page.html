@@ -15,6 +15,7 @@
             width: 100%;
             height: 45%;
             margin: auto;
+            margin-top: 10px;
         }
 
         /* .page_title {
@@ -79,16 +80,16 @@
     <header id="top" class="clearfix">
 
         <div id="logoall">
-            <div id="logo" class="left">로고</div>
+            <div id="logo" class="left"><a href="admin_main.html">로고</a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
         <div id="menu">
             <div id="items" class="left">
-                <div class="item" id="i1">실시간 재고</div>
-                <div class="item" id="i2">도서관 관리</div>
+                <div class="item" id="i1"><a href="admin_stock.html">실시간 재고</a></div>
+                <div class="item" id="i2"><a href="admin_library.html">도서관 관리</a></div>
                 <div class="item" id="i3">인기 도서 관리</div>
-                <div class="item" id="i4">불량 도서 관리</div>
+                <div class="item" id="i4"><a href="admin_page.html">불량 도서 관리</a></div>
                 <div class="item" id="i5">회원 관리</div>
                 <div class="item" id="i6">정보 광장 관리</div>
             </div>
@@ -114,10 +115,10 @@
     </div> -->
     <div id="wrap">
         <aside class="clearfix" id="side">
-            <h2 id="title">불량 도서 관리</h2>
+            <h2 id="title">도서 관리</h2>
             <div id="items">
                 <div class="item" id="i1">
-                    <span>불량 도서 목록</span>
+                    <span>도서 검수</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </div>
                 <div class="item" id="i2">
@@ -134,10 +135,10 @@
         <section>
             <div class="main_page" id="main_page_1">
                 <div id="main_title">
-                    불량 도서 관리
+                    도서 관리
                 </div>
                 <div class="page" id="page_top">
-                    <div class="page_title">실시간 불량 도서 민원 및 검수 요청</div>
+                    <div class="page_title">실시간 도서 입고, 반납 현황</div>
                     <div class="table_wrap">
                         <table id="main_library">
                             <thead>
@@ -145,7 +146,7 @@
                                     <th><input id="p1_checkAll" type="checkbox"></th>
                                     <th>도서명</th>
                                     <th>도서 ID</th>
-                                    <th>불량 유형</th>
+                                    <th>유형</th>
                                     <th>발생 일자</th>
                                     <th>위치</th>
                                 </tr>
@@ -155,7 +156,23 @@
                                     <td><input class="p1_main_chack" type="checkbox"></td>
                                     <td>총,균,쇠</td>
                                     <td>a123</td>
-                                    <td>표지회손</td>
+                                    <td>입고</td>
+                                    <td>0000.00.00</td>
+                                    <td>두정도서관</td>
+                                </tr>
+                                <tr>
+                                    <td><input class="p1_main_chack" type="checkbox"></td>
+                                    <td>총,균,쇠</td>
+                                    <td>a123</td>
+                                    <td>반납</td>
+                                    <td>0000.00.00</td>
+                                    <td>두정도서관</td>
+                                </tr>
+                                <tr>
+                                    <td><input class="p1_main_chack" type="checkbox"></td>
+                                    <td>총,균,쇠</td>
+                                    <td>a123</td>
+                                    <td>반납</td>
                                     <td>0000.00.00</td>
                                     <td>두정도서관</td>
                                 </tr>
@@ -164,6 +181,7 @@
                     </div>
                     <div class="bot_btn">
                         <input id="openForm" type="button" value="작업 지시">
+                        <input id="btn_1" type="button" value="검수 요청">
                         <input type="button" value="불량 도서 수정">
 
                     </div>
@@ -197,29 +215,24 @@
 
             <div class="main_page" id="main_page_2">
                 <div id="main_title">
-                    불량 도서 목록
+                    검수 도서 목록
                 </div>
                 <div class="table_wrap">
                     <table id="main_library">
                         <thead>
                             <tr>
-                                <th><input id="p1_checkAll" type="checkbox"></th>
-                                <th>도서명</th>
-                                <th>도서 ID</th>
-                                <th>불량 유형</th>
-                                <th>발생 일자</th>
-                                <th>위치</th>
+                                <th><input type="checkbox"></th>
+                                    <th>도서명</th>
+                                    <th>도서 ID</th>
+                                    <th>발생 일자</th>
+                                    <th>진행 상태</th>
+                                    <th>처리 담당자</th>
+                                    <th>처리 방법</th>
+                                    <th>처리 기한</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><input class="p1_main_chack" type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
