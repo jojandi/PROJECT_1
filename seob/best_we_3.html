@@ -350,14 +350,17 @@
             <div id="items">
                 
                 <div class="item" id="i1">
+                    <span>종합 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span> 
+                </div>
+                <div class="item" id="i2">
                     <span>남/ 녀별 베스트도서</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </div>
-                <div class="item" id="i2">
+                <div class="item" id="i3">
                     <span>연령별 베스트도서</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span> 
                 </div>
-                
             </div>
         </div>
         
@@ -692,9 +695,12 @@
 
                 function pageOn(){
                     pi1.addEventListener('click', function(){
-                        window.location.href="best_we.html"
+                        window.location.href="best_we_all.html"
                     })
                     pi2.addEventListener('click', function(){
+                        window.location.href="best_we.html"
+                    })
+                    pi3.addEventListener('click', function(){
                         window.location.href="best_we_3.html"
                     })
 

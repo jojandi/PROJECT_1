@@ -348,10 +348,14 @@
             <div id="items">
                 
                 <div class="item" id="i1">
+                    <span>종합 베스트도서</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span> 
+                </div>
+                <div class="item" id="i2">
                     <span>남/ 녀별 베스트도서</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </div>
-                <div class="item" id="i2">
+                <div class="item" id="i3">
                     <span>연령별 베스트도서</span>
                     <span class="material-symbols-outlined">arrow_forward_ios</span> 
                 </div>
@@ -379,7 +383,7 @@
         <div id = "show_box_1"> <!--가져와서 출력될 div -->
             <div id="best">
                 <div id="best_top_box">
-                    <h1>이달의 베스트 도서</h1>
+                    <h1>종합 베스트 도서</h1>
                 </div>
                 <div id=img_box>
                     <img id="best_img"
@@ -388,14 +392,14 @@
         
                 <div id=best_infor>
                     <div id=in_top style="line-height:200%;">
-                        <strong>천안도서관 전체 best 1</strong>
+                        <strong>전체 best 1</strong>
                     </div>
                     <div id="best_box">
                         <table>
                             <tr>
-                                <td id=box_1>북플릭스 구독자의 선택</td>
-                                <td id=box_1>천안시 도서관 전체 1위</td>
-                                <td id=box_1>대여 200회 돌파</td>
+                                <td id=box_1>북플릭스 구독자 추천</td>
+                                <td id=box_1>도서관장 추천</td>
+                                <td id=box_1>대여 150회 돌파</td>
                             </tr>
                         </table>
                     </div>
@@ -694,14 +698,16 @@
 
                 function pageOn(){
                     pi1.addEventListener('click', function(){
-                        window.location.href="best_we.html"
+                        window.location.href="best_we_all.html"
                     })
                     pi2.addEventListener('click', function(){
+                        window.location.href="best_we.html"
+                    })
+                    pi3.addEventListener('click', function(){
                         window.location.href="best_we_3.html"
                     })
 
                 };
-
 
 
                 pageOn();
