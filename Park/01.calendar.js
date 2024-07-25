@@ -52,13 +52,19 @@ function renderCalendar() {
         dateElement.classList.remove("hu_1");
       }
     }
-    
+      
     function hu2(){
       if(i == 1 || i == 15){
         dateElement.classList.add("hu_1");
       }
       if(i == 8 || i == 22){
         dateElement.classList.remove("hu_2");
+      }
+    }
+    // 도서 입고일
+    function hu3(){
+      if(i == 30){
+        dateElement.classList.add("hu_3");
       }
     }
 
@@ -71,6 +77,7 @@ function renderCalendar() {
       sin.classList.remove("back")
       cheong.classList.remove("back")
       hu1();
+      hu3()
     })
 
     ssang.addEventListener('click', function(){
@@ -82,6 +89,7 @@ function renderCalendar() {
       sin.classList.remove("back")
       cheong.classList.remove("back")
       hu2();
+      hu3()
     })
 
     du.addEventListener('click', function(){
@@ -93,6 +101,7 @@ function renderCalendar() {
       sin.classList.remove("back")
       cheong.classList.remove("back")
       hu2();
+      hu3()
     })
 
     sin.addEventListener('click', function(){
@@ -104,6 +113,7 @@ function renderCalendar() {
       ssang.classList.remove("back")
       cheong.classList.remove("back")
       hu1();
+      hu3()
     })
 
     cheong.addEventListener('click', function(){
@@ -115,6 +125,7 @@ function renderCalendar() {
       ssang.classList.remove("back")
       sin.classList.remove("back")
       hu2();
+      hu3()
     })
 }
 /* 
