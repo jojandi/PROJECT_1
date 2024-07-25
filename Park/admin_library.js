@@ -15,6 +15,29 @@ window.onload = function () {
     //         document.querySelector('#p2_add_table').style.display = 'block';
     //     }
     // })
+    
+    // page1 전체선택
+    document.querySelector('#p1_checkAll').addEventListener('click', function () {
+        const isChecked = document.querySelector('#p1_checkAll').checked;
+        const checkboxes = document.querySelectorAll('.p1_main_chack');
+        if (isChecked) {
+            // const checkboxes = document.querySelectorAll('.p2_main_chack');
+            console.log(checkboxes)
+            for (const checkbox of checkboxes) {
+                checkbox.checked = true;
+            }
+        }
+
+        else {
+            // const checkboxes = document.querySelectorAll('.p2_main_chack');
+            for (const checkbox of checkboxes) {
+                checkbox.checked = false;
+            }
+        }
+    });
+
+
+    // page2 전체선택
     document.querySelector('#p2_checkAll').addEventListener('click', function () {
         const isChecked = document.querySelector('#p2_checkAll').checked;
         const checkboxes = document.querySelectorAll('.p2_main_chack');

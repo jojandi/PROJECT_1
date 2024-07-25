@@ -55,5 +55,7 @@ aside #items .item a:visited{
     box-sizing: border-box;
     vertical-align: top;
     padding-left: 30px;
+
+    /* overflow: scroll; */
     /* border: 1px solid blue; */
 }

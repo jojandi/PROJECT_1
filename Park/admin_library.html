@@ -11,6 +11,9 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./admin_library.js"></script>
+    <style>
+        
+    </style>
 </head>
 
 <body>
@@ -97,29 +100,29 @@
                                     <td>50(10)</td>
                                 </tr>
                                 <tr>
-                                    <td>청수도서관</td>
-                                    <td>200(50)</td>
+                                    <td>두정도서관</td>
+                                    <td>230(100)</td>
                                     <td>30(10)</td>
                                     <td>5(5)</td>
                                     <td>50(10)</td>
                                 </tr>
                                 <tr>
-                                    <td>청수도서관</td>
-                                    <td>200(50)</td>
+                                    <td>쌍용도서관</td>
+                                    <td>100(30)</td>
                                     <td>30(10)</td>
                                     <td>5(5)</td>
                                     <td>50(10)</td>
                                 </tr>
                                 <tr>
-                                    <td>청수도서관</td>
-                                    <td>200(50)</td>
+                                    <td>신방도서관</td>
+                                    <td>120(70)</td>
                                     <td>30(10)</td>
                                     <td>5(5)</td>
                                     <td>50(10)</td>
                                 </tr>
                                 <tr>
-                                    <td>청수도서관</td>
-                                    <td>200(50)</td>
+                                    <td>중앙도서관</td>
+                                    <td>350(50)</td>
                                     <td>30(10)</td>
                                     <td>5(5)</td>
                                     <td>50(10)</td>
@@ -127,182 +130,210 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="library_1">
-                        유지보수 신청 목록
+                    <div id="main_title">
+                        시설 점검 요청 목록
                     </div>
                     <div class="library_1">
-                        유지 보수 처리 현황<br>
-                        작업지시
-                    </div>
-                </div>
-            </div>
-
-            <div class="main_page" id="main_page_2">
-                <div id="main_title">
-                    도서관 직원 정보
-                </div>
-                <div>
-                    <table id="main_Privacy">
-                        <thead>
-                            <tr>
-                                <th>근무지</th>
-                                <th>이름</th>
-                                <th>전화번호</th>
-                                <th>주소</th>
-                                <th>이메일</th>
-                                <th>생년월일</th>
-                                <th><input type="checkbox" id="p2_checkAll"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>중앙도서관</td>
-                                <td>박규태</td>
-                                <td>010-4476-9935</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>1995.03.07</td>
-                                <td><input type="checkbox" class="p2_main_chack"></td>
-                            </tr>
-                            <tr>
-                                <td>중앙도서관</td>
-                                <td>조민정</td>
-                                <td>010-4476-9935</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>2004.03.07</td>
-                                <td><input type="checkbox" class="p2_main_chack"></td>
-                            </tr>
-                            <tr>
-                                <td>중앙도서관</td>
-                                <td>이제섭</td>
-                                <td>010-4476-9935</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>1995.03.07</td>
-                                <td><input type="checkbox" class="p2_main_chack"></td>
-                            </tr>
-                            <tr>
-                                <td>중앙도서관</td>
-                                <td>김아영</td>
-                                <td>010-4476-9935</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>1995.03.07</td>
-                                <td><input type="checkbox" class="p2_main_chack"></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <div style="text-align: right;">
-                        <input id="p2_add" type="button" value="직원추가">
-                        <input id="p2_del" type="button" value="제거">
-                    </div>
-                    <div id="p2_add_table">
-                        <table>
+                        <table id="main_library">
                             <thead>
                                 <tr>
-                                    <th>근무지</th>
-                                    <th>이름</th>
-                                    <th>전화번호</th>
-                                    <th>주소</th>
-                                    <th>이메일</th>
-                                    <th>생년월일</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td><input id="p_td_0" type="text"></td>
-                                    <td><input id="p_td_1" type="text"></td>
-                                    <td><input id="p_td_2" type="text"></td>
-                                    <td><input id="p_td_3" type="text"></td>
-                                    <td><input id="p_td_4" type="text"></td>
-                                    <td><input id="p_td_5" type="text"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <input id="p2_add_comp" type="button" value="완료">
-                    </div>
-                </div>
-            </div>
-
-            <div class="main_page" id="main_page_3">
-                <div id="main_title">
-                    도서관 추가,제거
-                </div>
-                <div>
-                    <table id="main_table">
-                        <thead>
-                            <tr>
-                                <th><input type="checkbox" id="p3_checkAll"></th>
-                                <th>도서관명</th>
-                                <th>주소</th>
-                                <th>전화번호</th>
-                                <th>개관일</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="checkbox" class="p3_main_chack"></td>
-                                <td>중앙도서관</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>1995.03.07</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="p3_main_chack"></td>
-                                <td>신방도서관</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>2004.03.07</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="p3_main_chack"></td>
-                                <td>청수도서관</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>1995.03.07</td>
-                            </tr>
-                            <tr>
-                                <td><input type="checkbox" class="p3_main_chack"></td>
-                                <td>쌍용도서관</td>
-                                <td>풍세로770</td>
-                                <td>qsz3737@naver.com</td>
-                                <td>1995.03.07</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div>
-                    <div style="text-align: right;">
-                        <input id="p3_add" type="button" value="추가">
-                        <input id="p3_del" type="button" value="제거">
-                    </div>
-                    <div id="p3_add_table">
-                        <table>
-                            <thead>
-                                <tr>
+                                    <th><input type="checkbox" id="p1_checkAll"></th>
                                     <th>도서관명</th>
-                                    <th>주소</th>
-                                    <th>전화번호</th>
-                                    <th>개관일</th>
+                                    <th>점검 장소</th>
+                                    <th>발생 일자</th>
+                                    <th>우선도</th>
+                                    <!-- <th>물품보관실</th> -->
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td><input id="td_1" type="text"></td>
-                                    <td><input id="td_2" type="text"></td>
-                                    <td><input id="td_3" type="text"></td>
-                                    <td><input id="td_4" type="text"></td>
+                                    <td><input type="checkbox" class="p1_main_chack"></td>
+                                    <td>청수도서관</td>
+                                    <td>3F열람실</td>
+                                    <td>2024</td>
+                                    <td>5(5)</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="p1_main_chack"></td>
+                                    <td>두정도서관</td>
+                                    <td>2F자료실</td>
+                                    <td>30(10)</td>
+                                    <td>5(5)</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <input id="p3_add_comp" type="button" value="완료">
+                        <div style="text-align: right;">
+                            <input type="button" value="작업 지시">
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+    <div class="main_page" id="main_page_2">
+        <div id="main_title">
+            도서관 직원 정보
+        </div>
+        <div>
+            <table id="main_Privacy">
+                <thead>
+                    <tr>
+                        <th>근무지</th>
+                        <th>이름</th>
+                        <th>전화번호</th>
+                        <th>주소</th>
+                        <th>이메일</th>
+                        <th>생년월일</th>
+                        <th><input type="checkbox" id="p2_checkAll"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>중앙도서관</td>
+                        <td>박규태</td>
+                        <td>010-4476-9935</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>1995.03.07</td>
+                        <td><input type="checkbox" class="p2_main_chack"></td>
+                    </tr>
+                    <tr>
+                        <td>중앙도서관</td>
+                        <td>조민정</td>
+                        <td>010-4476-9935</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>2004.03.07</td>
+                        <td><input type="checkbox" class="p2_main_chack"></td>
+                    </tr>
+                    <tr>
+                        <td>중앙도서관</td>
+                        <td>이제섭</td>
+                        <td>010-4476-9935</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>1995.03.07</td>
+                        <td><input type="checkbox" class="p2_main_chack"></td>
+                    </tr>
+                    <tr>
+                        <td>중앙도서관</td>
+                        <td>김아영</td>
+                        <td>010-4476-9935</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>1995.03.07</td>
+                        <td><input type="checkbox" class="p2_main_chack"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div style="text-align: right;">
+                <input id="p2_add" type="button" value="직원추가">
+                <input id="p2_del" type="button" value="제거">
+            </div>
+            <div id="p2_add_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>근무지</th>
+                            <th>이름</th>
+                            <th>전화번호</th>
+                            <th>주소</th>
+                            <th>이메일</th>
+                            <th>생년월일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input id="p_td_0" type="text"></td>
+                            <td><input id="p_td_1" type="text"></td>
+                            <td><input id="p_td_2" type="text"></td>
+                            <td><input id="p_td_3" type="text"></td>
+                            <td><input id="p_td_4" type="text"></td>
+                            <td><input id="p_td_5" type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="p2_add_comp" type="button" value="완료">
+            </div>
+        </div>
+    </div>
+
+    <div class="main_page" id="main_page_3">
+        <div id="main_title">
+            도서관 추가,제거
+        </div>
+        <div>
+            <table id="main_table">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="p3_checkAll"></th>
+                        <th>도서관명</th>
+                        <th>주소</th>
+                        <th>전화번호</th>
+                        <th>개관일</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="p3_main_chack"></td>
+                        <td>중앙도서관</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>1995.03.07</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="p3_main_chack"></td>
+                        <td>신방도서관</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>2004.03.07</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="p3_main_chack"></td>
+                        <td>청수도서관</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>1995.03.07</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="p3_main_chack"></td>
+                        <td>쌍용도서관</td>
+                        <td>풍세로770</td>
+                        <td>qsz3737@naver.com</td>
+                        <td>1995.03.07</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div style="text-align: right;">
+                <input id="p3_add" type="button" value="추가">
+                <input id="p3_del" type="button" value="제거">
+            </div>
+            <div id="p3_add_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>도서관명</th>
+                            <th>주소</th>
+                            <th>전화번호</th>
+                            <th>개관일</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input id="td_1" type="text"></td>
+                            <td><input id="td_2" type="text"></td>
+                            <td><input id="td_3" type="text"></td>
+                            <td><input id="td_4" type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input id="p3_add_comp" type="button" value="완료">
+            </div>
+        </div>
+    </div>
+    </section>
     </div>
     <!-- 가장 아래 고정 -->
     <footer>

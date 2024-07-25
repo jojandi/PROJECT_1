@@ -1,6 +1,5 @@
 window.onload = function () {
     const searchInput = document.getElementById('searchInput');
-    const showAllBtn = document.getElementById('showAllBtn');
     const table = document.querySelector('#main_page_1 #main_library tbody');
     const rows = table.querySelectorAll('tr');
 
@@ -197,6 +196,26 @@ window.onload = function () {
         // 정렬된 행을 테이블에 다시 추가
         rows.forEach(row => tbody.appendChild(row));
     }
+    //완료 버튼으로 일단 삭제
+    document.querySelector('#comp_btn').addEventListener('click', function () {
+        const list = document.querySelectorAll('.page #main_library_2 .p2_main_chack:checked');
+
+        if (list.length === 0) {
+            alert("삭제할 항목을 선택해주세요.");
+            return;
+        }
+
+        const confirmDelete = confirm("선택한 항목을 삭제하시겠습니까?");
+
+        if (confirmDelete) {
+            list.forEach(checkbox => {
+                const row = checkbox.closest('tr');
+                if (row) {
+                    row.remove();
+                }
+            });
+        }
+    });
     // page4
     // pi4.addEventListener('click', function () {
     //     document.querySelector('#main_page_4').style.display = 'inline-block';
