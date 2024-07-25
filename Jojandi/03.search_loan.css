@@ -87,7 +87,8 @@
     border: 2px solid rgb(106, 170, 82);
     color: rgb(99, 109, 95);
     border-radius: 10%;
-    padding: 2px 5px;
+    padding: 3px 6px;
+    font-size: 14px;
 }
 
 .searchEnd .books table .bookTitle{
@@ -103,6 +104,8 @@
 
 .searchEnd .books table .information .wirter{
     color: gray;
+    font-size: 15px;
+    line-height: 25px;
 }
 
 .searchEnd .books table .information .review{
@@ -126,7 +129,7 @@
     margin: 0 auto;
     background-color: white;
     border: 1px solid rgb(51, 51, 51);
-    width: 400px;
+    width: 500px;
     text-align: left;
     position: absolute;
     bottom: 200px;
@@ -193,12 +196,17 @@
 
 .searchEnd .books .new .library_{
     display: inline-block;
-    width: 85%;
+    width: 80%;
     /* border: 1px solid red; */
 }
 
-.searchEnd .books .new .realReserBnt{
-    position: relative;
-    bottom: 25px;
-    padding: 3px 8px;
+.searchEnd .books .new .btnbox{
+    display: inline-block;
+    width: 15%;
+    text-align: center;
+}
+
+.searchEnd .books .new .btnbox .realReserBnt{
+    padding: 5px;
+    width: 80px;
 }

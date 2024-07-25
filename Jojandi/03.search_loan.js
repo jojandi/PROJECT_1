@@ -8,11 +8,11 @@ let cartBnt = document.querySelectorAll(".cartBnt");
 let inven = document.querySelectorAll(".inven");
 let reser = document.querySelectorAll(".reser");
 
-let joong = document.querySelector("#joong");
-let sin = document.querySelector("#sin");
-let du = document.querySelector("#du");
-let cheong = document.querySelector("#cheong");
-let ssang = document.querySelector("#ssang");
+let joong = document.querySelectorAll(".btnbox .joong");
+let sin = document.querySelectorAll(".btnbox .sin");
+let du = document.querySelectorAll(".btnbox .du");
+let cheong = document.querySelectorAll(".btnbox .cheong");
+let ssang = document.querySelectorAll(".btnbox .ssang");
 
 function invenOn(){
     for(let i = 0 ; i < invenBnt.length; i++){
@@ -46,21 +46,51 @@ function reserOn(){
             reser[i].style.display = "block";
         })   
     }
-    joong.addEventListener('click', function(){
-        alert("해당 책 대출이 예약되었습니다. (중앙도서관)");
-    })
-    sin.addEventListener('click', function(){
-        alert("해당 책 대출이 예약되었습니다. (신방도서관)");
-    })
-    du.addEventListener('click', function(){
-        alert("해당 책 대출이 예약되었습니다. (두정도서관)");
-    })
-    cheong.addEventListener('click', function(){
-        alert("해당 책 대출이 예약되었습니다. (청수도서관)");
-    })
-    ssang.addEventListener('click', function(){
-        alert("해당 책 대출이 예약되었습니다. (쌍용도서관)");
-    })
+
+    for(let i = 0 ; i < joong.length; i++){
+        joong[i].addEventListener('click', function(){
+            console.log("중앙");
+            if(joong[i].value == "예약"){
+                alert("해당 책 대출이 예약되었습니다. (중앙도서관)");
+            } else{
+                alert("예약할 수 없습니다. ");
+            }
+        })
+        sin[i].addEventListener('click', function(){
+            console.log("신방");
+            if(sin[i].value == "예약"){
+                alert("해당 책 대출이 예약되었습니다. (신방도서관)");
+            } else{
+                alert("예약할 수 없습니다. ");
+            }
+        })
+        du[i].addEventListener('click', function(){
+            console.log("두정");
+            if(du[i].value == "예약"){
+                alert("해당 책 대출이 예약되었습니다. (두정도서관)");
+            } else{
+                alert("예약할 수 없습니다. ");
+            }
+        })
+        cheong[i].addEventListener('click', function(){
+            console.log("청수");
+            if(cheong[i].value == "예약"){
+                alert("해당 책 대출이 예약되었습니다. (청수도서관)");
+            } else{
+                alert("예약할 수 없습니다. ");
+            }
+        })
+        ssang[i].addEventListener('click', function(){
+            console.log("쌍용");
+            console.log("예약")
+            if(ssang[i].value == "예약"){
+                alert("해당 책 대출이 예약되었습니다. (쌍용도서관)");
+            } else{
+                alert("예약할 수 없습니다. ");
+            }
+        })
+    }
+
 }
 
 invenOn();

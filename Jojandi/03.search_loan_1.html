@@ -21,7 +21,7 @@
 <body>
     <!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
-        
+            
         <div id="logoall">
             <div id="logo" class="left">로고</div>
             <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a>
@@ -30,22 +30,21 @@
 
         <div id="menu">
             <div id="items" class="left">
-                <div class="item" id="i1">도서관</div>
-                <div class="item" id="i2">베스트</div>
-                <div class="item" id="i3">정보광장</div>
-                <div class="item" id="i4">마이페이지</div>
+                <a href="" class="item" id="i1">도서관</a>
+                <a href="" class="item" id="i2">베스트</a>
+                <a href="" class="item" id="i3">정보광장</a>
+                <a href="./02.mypage_use.html" class="item" id="i4">마이페이지</a>
             </div>
-    
+
             <!-- <div class="right" id="userall">
-                <div class="inb" id="login">로그인</div>
+                <a href="" class="inb" id="login">로그인</a>
                 <div class="inb">|</div>
-                <div class="inb" id="userin">회원가입</div>
-                <div class="inb" id="menus"></div>
+                <a href="" class="inb" id="userin">회원가입</a>
             </div> -->
 
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
             <div class="right" id="userall">
-                <div class="inb" id="user">조잔디님</div>
+                <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
                 <span class="material-symbols-outlined">person</span>
             </div>
         </div>
@@ -58,7 +57,7 @@
             <input type="text" id="searchIn" placeholder=" 검색어를 입력해주세요. " value="파친코">
             <div id="searchBnt">⌕</div>
         </div>
-        <script src="./01.search.js"></script>
+        
 
         <div class="searchEnd">
 
@@ -88,11 +87,11 @@
                         <td class="information">
                             <div class="bookInfo wirter">
                                 이민진 (지은이) | 신승미 (옮긴이) <br> 
-                                인플루엔셜(주) | 2022년 7월
+                                인플루엔셜(주) | 2022년 08월
                             </div>
                             <div class="bookInfo review">
                                 <span class="material-symbols-outlined">hotel_class</span>
-                                    9.36 (250개의 리뷰)
+                                    9.75 (1,032개의 리뷰)
                             </div>
                         </td>
                     </tr>
@@ -190,7 +189,10 @@
                             </div>
                             <div class="realInven">재고 <span>5</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="joong" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt joong" value="예약">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -206,7 +208,10 @@
                             </div>
                             <div class="realInven">재고 <span>0</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="ssang" value="예약">
+                        
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt ssang" value="예약불가">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -222,7 +227,10 @@
                             </div>
                             <div class="realInven">해당 도서 운영 안함</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="du" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt du" value="예약불가">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -238,7 +246,10 @@
                             </div>
                             <div class="realInven">재고 <span>3</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="sin" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt sin" value="예약">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -254,7 +265,10 @@
                             </div>
                             <div class="realInven">재고 <span>2</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="cheong" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt cheong" value="예약">
+                        </div>
                     </div>
                     
                 </div>
@@ -265,7 +279,7 @@
 
         <div class="searchEnd">
 
-            <div class="books">
+            <div class="books" id="b2">
 
                 <table>
                     <tr>
@@ -291,11 +305,11 @@
                         <td class="information">
                             <div class="bookInfo wirter">
                                 이민진 (지은이) | 신승미 (옮긴이) <br> 
-                                인플루엔셜(주) | 2022년 8월
+                                인플루엔셜(주) | 2022년 08월
                             </div>
                             <div class="bookInfo review">
                                 <span class="material-symbols-outlined">hotel_class</span>
-                                    9.72 (222개의 리뷰)
+                                    9.75 (585개의 리뷰)
                             </div>
                         </td>
                     </tr>
@@ -317,7 +331,7 @@
                             <span class="material-symbols-outlined">call</span>
                                 041-521-3721
                         </div>
-                        <div class="realInven">재고 <span>2</span> 권</div>
+                        <div class="realInven">재고 <span>3</span> 권</div>
                     </div>
 
                     <div class="invenLibrary">
@@ -330,7 +344,7 @@
                             <span class="material-symbols-outlined">call</span>
                             041-521-3731
                         </div>
-                        <div class="realInven">재고 <span>0</span> 권</div>
+                        <div class="realInven">재고 <span>5</span> 권</div>
                     </div>
 
                     <div class="invenLibrary">
@@ -356,7 +370,7 @@
                             <span class="material-symbols-outlined">call</span>
                             041-521-3724
                         </div>
-                        <div class="realInven">재고 <span>5</span> 권</div>
+                        <div class="realInven">재고 <span>4</span> 권</div>
                     </div>
 
                     <div class="invenLibrary">
@@ -369,7 +383,7 @@
                             <span class="material-symbols-outlined">call</span>
                             041-521-3725
                         </div>
-                        <div class="realInven">재고 <span>4</span> 권</div>
+                        <div class="realInven">재고 <span>1</span> 권</div>
                     </div>
                     
                 </div>
@@ -391,9 +405,12 @@
                                 <span class="material-symbols-outlined">call</span>
                                     041-521-3721
                             </div>
-                            <div class="realInven">재고 <span>5</span> 권</div>
+                            <div class="realInven">재고 <span>3</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="joong" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt joong" value="예약">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -407,9 +424,12 @@
                                 <span class="material-symbols-outlined">call</span>
                                 041-521-3731
                             </div>
-                            <div class="realInven">재고 <span>0</span> 권</div>
+                            <div class="realInven">재고 <span>5</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="sshang" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt ssang" value="예약">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -425,7 +445,10 @@
                             </div>
                             <div class="realInven">해당 도서 운영 안함</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="du" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt du" value="예약불가">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -439,9 +462,12 @@
                                 <span class="material-symbols-outlined">call</span>
                                 041-521-3724
                             </div>
-                            <div class="realInven">재고 <span>3</span> 권</div>
+                            <div class="realInven">재고 <span>4</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="sin" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt sin" value="예약">
+                        </div>
                     </div>
 
                     <div class="invenLibrary">
@@ -455,9 +481,12 @@
                                 <span class="material-symbols-outlined">call</span>
                                 041-521-3725
                             </div>
-                            <div class="realInven">재고 <span>2</span> 권</div>
+                            <div class="realInven">재고 <span>1</span> 권</div>
                         </div>
-                        <input type="button" class="realReserBnt" id="gheong" value="예약">
+
+                        <div class="btnbox">
+                            <input type="button" class="realReserBnt cheong" value="예약">
+                        </div>
                     </div>
                     
                 </div>
@@ -466,6 +495,7 @@
 
         </div>
         <script src="./03.search_loan.js"></script>
+        <script src="./01.search.js"></script>
     </div>
     
         
