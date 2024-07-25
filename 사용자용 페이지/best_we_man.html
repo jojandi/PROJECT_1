@@ -4,67 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>남자 베스트 도서</title>
 
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="best_we.css" rel="stylesheet">
     <style>
-        /* -------------------------------관리자 도서관 정보------------------------------ */
-        #left_menu {
-            display: inline-block;
-        }
-
-        .best_infor {
-            display: inline-block;
-            vertical-align: top;
-            width: 50%;
-            margin: 0 auto;
-            
-        }
-
-        #table {
-            margin-left: 150px;
-            text-align: center;
-
-            width: 130px;
-        }
-
-        .age-range-bar {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .age-range-bar button {
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 8px 15px;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .age-range-bar button.active {
-            background-color: rgb(165, 224, 144);
-            color: white;
-        }
-
-        .best_infor .material-symbols-outlined {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-
-        }
-
+        
         #imoge_1 {
-            color: rgb(165, 224, 144);
+            color: rgb(106, 170, 82);
             background-color: white;
             border-radius: 3px;
             padding: 8px 15px;
@@ -72,89 +20,10 @@
             outline: none;
             font-size: 70px;
         }
-
-        #imoge_2 {
-            background-color: white;
-            border-radius: 3px;
-            padding: 10px 15px;
-            cursor: pointer;
-            outline: none;
-            font-size: 70px;
-        }
-
-
-        .best_infor .material-symbols-outlined.active {
-            color: rgb(165, 224, 144);
-        }
-
-        #best_infor {
-            width: 500px;
-            display: inline-block;
-            vertical-align: top;
-            margin-left: 20px;
-        }
-
-        #in_top {
-            width: 112px;
-            color: white;
-            background-color: #489158;
-            padding: 1px 5px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 18px;
-            letter-spacing: -0.01em;
-            text-align: center;
-
-        }
-
-        #best_box {
-            margin-top: 10px;
-            color: #156a27;
-            background: #fff;
-        }
-
-        #box_1 {
-            border: 1px solid #489158;
-            min-height: 22px;
-            padding: 1px 5px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 18px;
-            letter-spacing: -0.01em;
-        }
-
-        #input_top {
-            margin-top: 30px;
-            margin-left: 50px;
-        }
-
-        #input_bottom {
-            margin-top: 10px;
-            margin-left: 50px;
-
-        }
-
-        #input_1,
-        #input_2 {
-            font-size: 20px;
-            padding: 10px;
-            color: white;
-            background: #489158;
-            border-radius: 4px;
-            border: 1px solid #489158;
-        }
-
-        #input_res {
-            display: inline-block;
-        }
-
-        /* ------------------------------------------------------------------- */
 
         aside #items #i2 .material-symbols-outlined{
             background: rgb(165, 224, 144);
         }
-
-        /* ------------------------------------------------------------------ */
     </style>
     <!-- 이모티콘 삽입-->
     <link rel="stylesheet"
@@ -236,25 +105,21 @@
         </aside>
         <section class="best_infor">
             <div>
-                <table id="table">
+                <table id="table_mf">
                     <tr>
-                        <td>
+                        <td class="cen">
                             <span id="imoge_1" class="material-symbols-outlined" data-gender="male">face_6</span>
                         </td>
-                        <td>
+                        <td class="cen">
                             <span id="imoge_2" class="material-symbols-outlined" data-gender="female">face_3</span>
                         </td>
-                    </tr>
-                    <tr>
-                        <td>남성</td>
-                        <td>여성</td>
                     </tr>
                 </table>
             </div>
             <div id="show_box_1"> <!--가져와서 출력될 div -->
+                <h1>남성 베스트 도서</h1>
                 <div id="best">
                     <div id="best_top_box">
-                        <h1>남성 베스트 도서</h1>
                     </div>
                     <div id=img_box>
                         <img id="best_img"
@@ -274,7 +139,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>THE MONEY BOOK(더 머니북)</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -286,7 +151,7 @@
                             한국이 유일했...
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -309,6 +174,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div id="best">
                     <div id=img_box>
                         <img id="best_img"
@@ -328,7 +194,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>그의 운명에 대한 아주 개인적인 생각</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -338,7 +204,7 @@
                             “시민들은 서로 묻는다. 집권당이 역사적인 총선 참패를 당했는데도 대통령은 아무 일 없는 듯 행동한다. 윤석열은 임기를 마칠 수 있을까? 임기를 마치게 해도 대한민국
                             괜찮을까? 그 질문에 대답해...
                         </div>
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -360,6 +226,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div id="best">
                     <div id=img_box>
                         <img id="best_img"
@@ -379,7 +246,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>만일 나에게 단 한 번의 아침이 남아 있다면
                             </strong>
                         </div>
@@ -391,7 +258,7 @@
                             만일 단 한 번의 아침만이 남아 있다면...
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -414,6 +281,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div id="best">
                     <div id=img_box>
                         <img id="best_img"
@@ -433,7 +301,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>나는 도대체 왜 피곤할까</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -444,7 +312,7 @@
                             이렇게 망가졌는지’ 물어봐도, 돌아오는 대답은 늘 ‘정상’이니 ‘괜찮다’라고 한다. 이제 내일은 개운하게 일어날 준비가 되었는가?
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -467,6 +335,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div id="best">
                     <div id=img_box>
                         <img id="best_img"
@@ -486,7 +355,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>챔피언처럼 생각하고 거래하라</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -497,7 +366,7 @@
                             걸치면 산다든가 하는 것이다. 알다시피 주식...
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>

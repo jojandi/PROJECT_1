@@ -4,150 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>종합 베스트 도서</title>
 
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="best_we.css" rel="stylesheet">
     <style>
-        /* -------------------------------관리자 도서관 정보------------------------------ */
-        #left_menu {
-            display: inline-block;
-        }
-
-        .best_infor {
-            display: inline-block;
-            vertical-align: top;
-            width: 50%;
-            margin: 0 auto;
-        }
-
-        #table {
-            margin-left: 150px;
-            text-align: center;
-
-            width: 130px;
-        }
-
-        .age-range-bar {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        .age-range-bar button {
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            padding: 8px 15px;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .age-range-bar button.active {
-            background-color: rgb(165, 224, 144);
-            color: white;
-        }
-
-        .best_infor .material-symbols-outlined {
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-            margin: 10px auto;
-            padding: 10px;
-            border-radius: 5px;
-
-        }
-
-        #imoge_1 {
-            background-color: white;
-            border-radius: 3px;
-            padding: 8px 15px;
-            cursor: pointer;
-            outline: none;
-            font-size: 70px;
-        }
-
-        #imoge_2 {
-            background-color: white;
-            border-radius: 3px;
-            padding: 10px 15px;
-            cursor: pointer;
-            outline: none;
-            font-size: 70px;
-        }
-
-
-        .best_infor .material-symbols-outlined.active {
-            color: rgb(165, 224, 144);
-        }
-
-        #best_infor {
-            width: 500px;
-            display: inline-block;
-            vertical-align: top;
-            margin-left: 20px;
-        }
-
-        #in_top {
-            width: 112px;
-            color: white;
-            background-color: #489158;
-            padding: 1px 5px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 18px;
-            letter-spacing: -0.01em;
-            text-align: center;
-
-        }
-
-        #best_box {
-            margin-top: 10px;
-            color: #156a27;
-            background: #fff;
-        }
-
-        #box_1 {
-            border: 1px solid #489158;
-            min-height: 22px;
-            padding: 1px 5px;
-            border-radius: 4px;
-            font-size: 12px;
-            line-height: 18px;
-            letter-spacing: -0.01em;
-        }
-
-        #input_top {
-            margin-top: 30px;
-            margin-left: 50px;
-        }
-
-        #input_bottom {
-            margin-top: 10px;
-            margin-left: 50px;
-
-        }
-
-        #input_1,
-        #input_2 {
-            font-size: 20px;
-            padding: 10px;
-            color: white;
-            background: #489158;
-            border-radius: 4px;
-            border: 1px solid #489158;
-        }
-
-        #input_res {
-            display: inline-block;
-        }
-
-        /* ------------------------------------------------------------------- */
-
         aside #items #i1 .material-symbols-outlined{
             background: rgb(165, 224, 144);
         }
@@ -233,10 +95,10 @@
 
         </aside>
         <section class="best_infor">
-            <div id="show_box_1"> <!--가져와서 출력될 div -->
+            <div id="show_box_"> <!--가져와서 출력될 div -->
+                <h1>종합 베스트 도서</h1>
                 <div id="best">
                     <div id="best_top_box">
-                        <h1>종합 베스트 도서</h1>
                     </div>
                     <div id=img_box>
                         <img id="best_img"
@@ -256,7 +118,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>술술 읽히는 군주론</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -267,7 +129,7 @@
                             떠나 현대 독자들에게는 접근..
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -309,7 +171,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>화를 이기는 불편한 심리학</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -320,7 +182,7 @@
                             통제할 수 없는 분노가 있다. 평범한 사람...
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -362,7 +224,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>만일 나에게 단 한 번의 아침이 남아 있다면
                             </strong>
                         </div>
@@ -374,7 +236,7 @@
                             한 번의 아침만이 남아 있다면...
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -416,7 +278,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>나는 도대체 왜 피곤할까</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -427,7 +289,7 @@
                             망가졌는지’ 물어봐도, 돌아오는 대답은 늘 ‘정상’이니 ‘괜찮다’라고 한다. 이제 내일은 개운하게 일어날 준비가 되었는가?
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
@@ -469,7 +331,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="line-height:500%; font-size: 24px;">
+                        <div style="font-size: 24px;">
                             <strong>챔피언처럼 생각하고 거래하라</strong>
                         </div>
                         <div style="line-height:300%;">
@@ -480,7 +342,7 @@
                             산다든가 하는 것이다. 알다시피 주식...
                         </div>
 
-                        <div style="line-height:500%;">
+                        <div style="line-height:400%;">
                             <table>
                                 <tr>
                                     <td>
