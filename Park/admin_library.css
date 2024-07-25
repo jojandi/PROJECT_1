@@ -89,6 +89,9 @@ a {
 
 #p2_add_table,
 #p3_add_table {
+    width: 400px;
     display: none;
 }
-
+.main_page {
+    width: 100%;
+}

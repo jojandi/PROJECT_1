@@ -7,7 +7,7 @@ window.onload = function () {
     //     document.querySelector('#main_page_2').style.display = 'none';
     //     document.querySelector('#main_page_3').style.display = 'none';
     // });
-    // // page2---------------------------------------------------------
+    // page2---------------------------------------------------------
     // document.querySelector('#p2_add').addEventListener('click', function () {
     //     if (document.querySelector('#p2_add_table').style.display !== 'none') {
     //         document.querySelector('#p2_add_table').style.display = 'none';
@@ -75,26 +75,26 @@ window.onload = function () {
             });
         }
     });
-    document.querySelector('#p2_add_comp').addEventListener('click', function () {
-        const table = document.querySelector('#main_Privacy');
-        console.log('클릭');
-        const newRow = table.insertRow();
+    // document.querySelector('#p2_add_comp').addEventListener('click', function () {
+    //     const table = document.querySelector('#main_Privacy');
+    //     console.log('클릭');
+    //     const newRow = table.insertRow();
 
-        const newCell1 = newRow.insertCell(0);
-        const newCell2 = newRow.insertCell(1);
-        const newCell3 = newRow.insertCell(2);
-        const newCell4 = newRow.insertCell(3);
-        const newCell5 = newRow.insertCell(4);
-        const newCell6 = newRow.insertCell(5);
+    //     const newCell1 = newRow.insertCell(0);
+    //     const newCell2 = newRow.insertCell(1);
+    //     const newCell3 = newRow.insertCell(2);
+    //     const newCell4 = newRow.insertCell(3);
+    //     const newCell5 = newRow.insertCell(4);
+    //     const newCell6 = newRow.insertCell(5);
 
 
-        newCell1.innerText = document.querySelector('#p_td_1').value;
-        newCell2.innerText = document.querySelector('#p_td_2').value;
-        newCell3.innerText = document.querySelector('#p_td_3').value;
-        newCell4.innerText = document.querySelector('#p_td_4').value;
-        newCell5.innerText = document.querySelector('#p_td_5').value;
-        newCell6.innerHTML = '<input type="checkbox" class="p2_main_chack">';
-    });
+    //     newCell1.innerText = document.querySelector('#p_td_1').value;
+    //     newCell2.innerText = document.querySelector('#p_td_2').value;
+    //     newCell3.innerText = document.querySelector('#p_td_3').value;
+    //     newCell4.innerText = document.querySelector('#p_td_4').value;
+    //     newCell5.innerText = document.querySelector('#p_td_5').value;
+    //     newCell6.innerHTML = '<input type="checkbox" class="p2_main_chack">';
+    // });
     // page3-----------------------------------------------------------
     document.querySelector('#p3_add').addEventListener('click', function () {
         if (document.querySelector('#p3_add_table').style.display !== 'none') {
@@ -164,27 +164,86 @@ window.onload = function () {
         document.querySelector('#main_page_1').style.display = 'inline-block';
         document.querySelector('#main_page_2').style.display = 'none';
         document.querySelector('#main_page_3').style.display = 'none';
-        document.querySelector('#main_page_4').style.display = 'none';
+        // document.querySelector('#main_page_4').style.display = 'none';
     });
     // page2
     pi3.addEventListener('click', function () {
         document.querySelector('#main_page_2').style.display = 'inline-block';
         document.querySelector('#main_page_1').style.display = 'none';
         document.querySelector('#main_page_3').style.display = 'none';
-        document.querySelector('#main_page_4').style.display = 'none';
+        // document.querySelector('#main_page_4').style.display = 'none';
     });
     // page3
     pi4.addEventListener('click', function () {
         document.querySelector('#main_page_3').style.display = 'inline-block';
         document.querySelector('#main_page_1').style.display = 'none';
         document.querySelector('#main_page_2').style.display = 'none';
-        document.querySelector('#main_page_4').style.display = 'none';
+        // document.querySelector('#main_page_4').style.display = 'none';
     });
     // page4
-    pi4.addEventListener('click', function () {
-        document.querySelector('#main_page_4').style.display = 'inline-block';
-        document.querySelector('#main_page_1').style.display = 'none';
-        document.querySelector('#main_page_2').style.display = 'none';
-        document.querySelector('#main_page_3').style.display = 'none';
+    // pi4.addEventListener('click', function () {
+    //     document.querySelector('#main_page_4').style.display = 'inline-block';
+    //     document.querySelector('#main_page_1').style.display = 'none';
+    //     document.querySelector('#main_page_2').style.display = 'none';
+    //     document.querySelector('#main_page_3').style.display = 'none';
+    // });
+    const modal = document.getElementById('formModal');
+    const openFormButton = document.getElementById('openForm');
+    const closeButton = document.querySelector('.close');
+    const form = document.getElementById('workForm');
+
+    // 버튼 클릭 시 모달 열기
+    openFormButton.addEventListener('click', function () {
+        modal.style.display = 'block';
+    });
+
+    // 모달 닫기
+    closeButton.addEventListener('click', function () {
+        modal.style.display = 'none';
+    });
+
+    // 창 외부 클릭 시 모달 닫기
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // 폼 제출 시 데이터 추가
+    document.querySelector('#workFormBtn').addEventListener('click', function (event) {
+        event.preventDefault(); // 폼 제출 시 페이지 새로고침 방지
+        console.log('서밋');
+        const library = document.getElementById('library').value;
+        const name = document.getElementById('name').value;
+        const number = document.getElementById('number').value;
+        const address = document.getElementById('address').value;
+        const e_mail = document.getElementById('e_mail').value;
+        const date_1 = document.getElementById('date_1').value;
+
+        const tableBody = document.querySelector('.main_tbody');
+        const newRow = tableBody.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+        const cell6 = newRow.insertCell(5);
+        const cell7 = newRow.insertCell(6);
+
+
+
+        cell1.textContent = library;
+        cell2.textContent = name;
+        cell3.textContent = number;
+        cell4.textContent = address;
+        cell5.textContent = e_mail;
+        cell6.textContent = date_1;
+        cell7.innerHTML = '<input type="checkbox" class="p2_main_chack">';
+
+
+        modal.style.display = 'none';
+
+        form.reset();
     });
 };
