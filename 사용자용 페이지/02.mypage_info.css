@@ -147,6 +147,8 @@ section #information #miniInfo #num{
 
 section #information #miniInfo #out{
     font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 section #information #booksub{
@@ -231,4 +233,11 @@ section #information #infoedit #info2 table .right{
 section #information #infoedit #info2 table input[type=text]{
     width: 60%;
     height: 18px;
+}
+
+section #information #infoedit #info2 #realout{
+    margin-top: 20px;
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
 }

@@ -2,7 +2,6 @@
 let page = document.querySelectorAll(".page");
 let icon = document.querySelectorAll(".section1 #pageall .pages .page .material-symbols-outlined")
 
-let my = document.querySelector("#i4");
 
 function hover(){
     for(let i = 0; i < page.length; i++){
@@ -26,11 +25,5 @@ function hover(){
     }
 }
 
-function mypageNo(){
-    my.addEventListener('click', function(){
-        alert("로그인 후 이용 가능한 페이지입니다. ")
-    })
-}
 
 hover();
-mypageNo();

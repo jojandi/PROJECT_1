@@ -11,13 +11,4 @@ document.getElementById('loginBtn').addEventListener('click', function() {
     } else {
         alert('ID 또는 비밀번호가 잘못되었습니다.');
     }
-
-    // 관리자 아이디 비번도 만들어 주세용
-    if (username === 'user' && password === '1234') {
-        alert('로그인 성공!');
-        window.location.href="01.main_user_login.html";
-        // 로그인 성공 후 수행할 작업 추가
-    } else {
-        alert('ID 또는 비밀번호가 잘못되었습니다.');
-    }
 });

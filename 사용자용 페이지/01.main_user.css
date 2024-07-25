@@ -226,6 +226,14 @@
 .section2 #noticewrap #noticetitle{
     font-size: 20px;
     font-weight: 700;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.section2 #noticewrap #noticetitle span{
+    vertical-align: bottom;
+    font-size: 30px;
 }
 
 .section2 #noticewrap ul {
