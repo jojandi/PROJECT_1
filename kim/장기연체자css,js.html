@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="admin.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            margin-bottom: 20px;
+        }
+
+        table thead {
+            background-color: #f0f0f0;
+        }
+
+        table thead th {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        table tbody td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        input[type="checkbox"] {
+            cursor: pointer;
+        }
+
+        .click {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .click button {
+            padding: 10px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            background-color: #f0f0f0;
+            margin-right: 10px;
+        }
+
+        .click button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="top" class="clearfix">
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <div id="name" class="left">행복만땅 <br>도서관</div>
+        </div>
+        <div id="menu">
+            <div id="items" class="left">
+                <div class="item" id="i1">실시간 재고</div>
+                <div class="item" id="i2">도서관 관리</div>
+                <div class="item" id="i3">인기 도서 관리</div>
+                <div class="item" id="i4">불량 도서 관리</div>
+                <div class="item" id="i5">회원 관리</div>
+                <div class="item" id="i6">정보 광장 관리</div>
+            </div>
+            <div class="right" id="userall">
+                <div>OOO관리자</div>
+            </div>
+        </div>
+    </header>
+
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1">도서 회원 관리</div>
+        <div class="l_menu" id="l_menu_2"><a id="page_1">회원등록</a></div>
+        <div class="l_menu" id="l_menu_3"><a id="page_2">장기연체자관리</a></div>
+        <div class="l_menu" id="l_menu_4"><a id="page_3">구독서비스이용자관리</a></div>
+    </div>
+    <div class="main_page" id="main_page_1">
+        <div id="main_title">장기연체자</div>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" id="selectAllCheckbox" onclick="toggleSelectAll(this)"></th>
+                        <th>이름</th>
+                        <th>생년월일</th>
+                        <th>아이디</th>
+                        <th>전화번호</th>
+                        <th>빌린 권 수</th>
+                        <th>대여일</th>
+                        <th>반납일</th>
+                        <th>연체정보</th>
+                        <th>문자알림</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="rowCheckbox"></td>
+                        <td>이제섭</td>
+                        <td>1995-12-30</td>
+                        <td>Lee789</td>
+                        <td>010-5555-6666</td>
+                        <td>2</td>
+                        <td>2024-06-25</td>
+                        <td>2024-07-09</td>
+                        <td>미반납</td>
+                        <td><input type="button" value="문자알림미완료"></td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="rowCheckbox"></td>
+                        <td>김아영</td>
+                        <td>1997-12-30</td>
+                        <td>Kim459</td>
+                        <td>010-5555-6666</td>
+                        <td>2</td>
+                        <td>2024-06-25</td>
+                        <td>2024-07-09</td>
+                        <td>미반납</td>
+                        <td><input type="button" value="문자알림완료"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="click">
+                <button onclick="selectAll()">전체선택</button>
+                <button onclick="deselectAll()">전체삭제</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div id="bottom" class="clearfix">
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSelectAll(selectAllCheckbox) {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        }
+
+        function selectAll() {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = true;
+            });
+
+            const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            selectAllCheckbox.checked = true;
+        }
+
+        function deselectAll() {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+            });
+
+            const selectAllCheckbox = document.getElementById('selectAllCheckbox');
+            selectAllCheckbox.checked = false;
+        }
+    </script>
+</body>
+
+</html>
