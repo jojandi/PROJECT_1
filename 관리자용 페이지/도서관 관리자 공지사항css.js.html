@@ -19,11 +19,6 @@
         }
 
 
-
-
-
-
-
     /* 공지사항 */
     #main_title {
         /* border: 1px solid red; */
@@ -33,17 +28,6 @@
         font-size: 30px;
         font-weight: 1000;
         /* position: relative; */
-    }
-
-    #admin_controls {
-        /* height: 500px; */
-        width: 600px;
-        margin: 12px 100px;
-        padding: 20px;
-        max-width: 800px;
-        background-color: #fff;
-        border-radius: 8px;
-
     }
 
     #admin_controls input,
@@ -57,9 +41,8 @@
 
     #admin_controls button {
         padding: 10px 20px;
+        background: rgb(165, 224, 144);
         border: none;
-        background-color: #5cb85c;
-        color: white;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
@@ -77,12 +60,6 @@
         padding: 8px;
     }
 
-    #section {
-        vertical-align: top;
-        display: inline-block;
-        /* border: 1px solid red; */
-
-    }
 
     .report {
         font-size: 13px;
@@ -92,25 +69,13 @@
 
 
     /* **********테이블 추가 ***************** */
-    body {
-        font-family: Arial, sans-serif;
-        /* margin: 20px; */
-        background-color: #f9f9f9;
-    }
 
-    #section {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        padding: 20px;
-    }
-
-    #section>div {
+    section>div {
         margin-bottom: 20px;
     }
 
 
-    #section>div:nth-child(2) {
+    section>div:nth-child(2) {
         font-size: 20px;
         font-weight: bold;
         margin-bottom: 20px;
@@ -148,9 +113,7 @@
     input[type="button"] {
         /* padding: 8px 16px; */
         margin-right: 10px;
-        background-color: #27ac15;
-        color: rgb(19, 2, 2);
-        border: none;
+        background: rgb(165, 224, 144);
         border-radius: 4px;
         cursor: pointer;
     }
@@ -187,10 +150,6 @@
         color: white;
         padding: 10px 20px;
         margin: auto;
-
-
-
-
     }
 
 
@@ -225,28 +184,6 @@
         margin: auto;
     }
 
-    /* -------------------------------- */
-
-
-    .main_page {
-        /* border: 1px solid red; */
-        display: inline-block;
-        width: 1000px;
-        height: 700px;
-        text-align: center;
-        vertical-align: top;
-
-        /* position: relative; */
-        /* top: -200px; */
-    }
-
-
-    /* --------------------------------------------------------------------- */
-
-
-    /* -------------------------------- */
-
-
 
     .report table,
     .report th,
@@ -260,34 +197,46 @@
         text-align: left;
     }
 
-    #section {
-        vertical-align: top;
-        display: inline-block;
-        /* border: 1px solid red; */
-
-    }
-
     .report {
         font-size: 15px;
 
     }
 
-    #section {
-        font-size: 50px;
-        margin-left: 20px;
-    }
-
+ 
     .name {
         font-size: 30px;
     }
+
+    .main_page {
+        /* border: 1px solid red; */
+        display: inline-block;
+        height: auto;
+        width: 100%;
+
+        /* position: relative;
+        top: -200px; */
+    }
+
+    section h3{
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 17px;
+    box-sizing: border-box;
+    }
+
+
+
 </style>
 
 <body>
 
     <!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
+
         <div id="logoall">
-            <div id="logo" class="left">로고</div>
+            <div id="logo" class="left"><a href="admin_main.html">로고</a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
@@ -300,9 +249,12 @@
                 <div class="item" id="i5"><a href="회원관리.html">회원 관리</a></div>
                 <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">정보 광장 관리</a></div>
             </div>
-
             <div class="right" id="userall">
                 <div>OOO관리자</div>
+                <!-- <div class="inb" id="login">로그인</div>
+                <div class="inb">|</div>
+                <div class="inb" id="userin">회원가입</div>
+                <div class="inb" id="menus"></div> -->
             </div>
         </div>
     </header>
@@ -336,6 +288,8 @@
         </aside>
         <section>
             <div class="main_page" id="main_page_1">
+
+                <h3>공지사항 관리</h3>
 
                 <div id="admin_controls">
 
@@ -389,7 +343,7 @@
                         <div class="color"><input type="button" value="삭제"></div>
                     </div>
                     <div>
-                        <h2>공지사항 추가</h2>
+                        <h3>공지사항 추가</h3>
                         <input type="text" id="new_notice_title" placeholder="공지사항 제목">
                         <input type="date" id="new_notice_date">
                         <textarea id="new_notice_content" rows="5" placeholder="공지사항 내용"></textarea>
@@ -411,8 +365,8 @@
             </div>
 
             <div id="footerinfo">
-                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
-                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
             </div>
 
         </div>
