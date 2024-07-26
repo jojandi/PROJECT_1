@@ -1,9 +1,13 @@
-.table_1 {
+
+
+
+  #table_1 {
     font: 90%/1.4 system-ui;
     margin-top: 80px;
-    font-family: sans-serif;
+    margin-left:0;
+    width:80%;
   }
-  
+
   header h1,
   header p {
     margin: 0;
@@ -28,7 +32,6 @@
   }
   table {
     border-collapse: collapse;
-    border: 0;
   }
   th,
   td {
@@ -36,19 +39,16 @@
     background-clip: padding-box;
     scroll-snap-align: start;
   }
-  tbody tr:last-child th,
-  tbody tr:last-child td {
-    border-bottom: 0;
-  }
   thead {
     position: relative;
   }
-  th,
+  #table_1 th,
   td {
-    padding: 0.6rem;
-    min-width: 6rem;
-    text-align: left;
+    padding: 0.2rem;
     margin: 0;
+    text-align: center;
+    height:10px;
+    
   }
   thead th {
     position: sticky;
@@ -63,9 +63,11 @@
   tbody th {
     background-clip: padding-box;
     border-left: 0;
+    
   }
   tbody {
     position: relative;
+    text-align: center;
   }
   tbody th {
     position: sticky;
@@ -74,4 +76,34 @@
   thead th,
   tbody th {
     background-color: #f8f8f8;
+  }
+  #bestBooksTable{
+    width:80%;
+  }
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 300px;
+    font-size: 15px;
+  }
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+  .popup-header h2 {
+    margin: 0 auto;
+  }
+  .popup-close {
+    cursor: pointer;
   }
