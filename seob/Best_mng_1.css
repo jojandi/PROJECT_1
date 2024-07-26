@@ -1,9 +1,13 @@
+
+
+
 #table_1 {
     font: 90%/1.4 system-ui;
     margin-top: 80px;
     margin-left:0;
+    width:80%;
   }
-  
+
   header h1,
   header p {
     margin: 0;
@@ -38,12 +42,13 @@
   thead {
     position: relative;
   }
-  th,
+  #table_1 th,
   td {
-    padding: 0.6rem;
-    min-width: 6rem;
+    padding: 0.2rem;
     margin: 0;
     text-align: center;
+    height:10px;
+    
   }
   thead th {
     position: sticky;
@@ -71,6 +76,9 @@
   thead th,
   tbody th {
     background-color: #f8f8f8;
+  }
+  #bestBooksTable{
+    width:80%;
   }
   .popup {
     display: none;
