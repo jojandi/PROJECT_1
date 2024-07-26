@@ -241,6 +241,8 @@
     padding: 20px;
     vertical-align: top;
     text-align: center;
+    border-top: 1px solid #ccc;
+    margin: 50px;
 }
 #wrap .section3{
     border: 1px solid red;
