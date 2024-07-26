@@ -17,6 +17,23 @@
             height: 100%;
             margin: auto;
             margin-top: 10px;
+            overflow: scroll;
+        }
+        .page_1 {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 250px;
+            margin: auto;
+            margin-top: 10px;
+            overflow: scroll;
+        }
+        .page_2 {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 500px;
+            overflow: scroll; height: 500px;
+            margin: auto;
+            margin-top: 10px;
         }
 
         .table_wrap {
@@ -49,6 +66,10 @@
 
         .main_page {
             width: 100%;
+        }
+        .input_style {
+            width: 30px;
+            text-align: center;
         }
     </style>
     <script src="./admin_stock.js"></script>
@@ -108,7 +129,7 @@
                     실시간 재고 현황
                 </div>
                 <div>
-                    <div class="page" style="overflow: scroll; height: 500px;">
+                    <div class="page_2">
                         <table id="main_library">
                             <thead>
                                 <tr>
@@ -262,7 +283,7 @@
                     실시간 도서 예약
                 </div>
                 <div>
-                    <div class="page" style="overflow: scroll; height: 500px;">
+                    <div class="page_2">
                         <table id="main_library">
                             <thead>
                                 <tr>
@@ -336,7 +357,7 @@
                 </div>
                 <div>
                     <div class="table_wrap">
-                        <div class="page" style="height: 250px;overflow: scroll;">
+                        <div class="page_1">
                             <table id="main_library_1">
                                 <thead>
                                     <tr>
@@ -357,7 +378,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -366,7 +387,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style"" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -375,7 +396,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style"" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -384,7 +405,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -393,7 +414,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -402,7 +423,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -411,7 +432,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -421,7 +442,7 @@
                             <input id="page3_btn_1" type="button" value="발주">
                         </div>
 
-                        <div class="page" style="height: 250px;;overflow: scroll;">
+                        <div class="page_1">
                             <table id="main_library_2">
                                 <thead>
                                     <tr>
