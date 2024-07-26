@@ -15,18 +15,18 @@ function pageMove(){
         console.log("검색어 : " + s);
         
         if(s == "파친코"){
-            window.location.href="03.search_loan_1.html";
+            window.location.href="03.search_loan_1_login.html";
         } else if(s == "군주론"){
-            window.location.href="03.search_loan_2.html";
+            window.location.href="03.search_loan_2_login.html";
         }else if(s == "곰탕"){
-            window.location.href="03.search_loan_3.html";
+            window.location.href="03.search_loan_3_login.html";
         }else if(s == "나는 도대체 왜 피곤할까"){
-            window.location.href="03.search_loan_4.html";
+            window.location.href="03.search_loan_4_login.html";
         }else if(s == "피터 스완슨"){
-            window.location.href="03.search_loan_5.html";
+            window.location.href="03.search_loan_5_login.html";
         }
         else {
-            window.location.href="03.search_loan_none.html";
+            window.location.href="03.search_loan_none_login.html";
         }
     })
 }
