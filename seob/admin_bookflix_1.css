@@ -1,7 +1,8 @@
 #memberTable {
     
-    width: 60%;
+    width: 100%;
     border-collapse: collapse;
+    font-size: 15px;
 
 }
 

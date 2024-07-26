@@ -3,9 +3,9 @@
 
   #table_1 {
     font: 90%/1.4 system-ui;
-    margin-top: 80px;
+    margin-top: 30px;
     margin-left:0;
-    width:80%;
+    width:100%;
   }
 
   header h1,
@@ -38,6 +38,7 @@
     border: 1px solid #aaa;
     background-clip: padding-box;
     scroll-snap-align: start;
+    font-size: 15px;
   }
   thead {
     position: relative;
@@ -78,7 +79,7 @@
     background-color: #f8f8f8;
   }
   #bestBooksTable{
-    width:80%;
+    width:100%;
   }
   .popup {
     display: none;
