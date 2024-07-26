@@ -1,5 +1,5 @@
 #memberTable {
-    width: 60%;
+    width: 100%;
     border-collapse: collapse;
 }
 table, th, td {
@@ -16,7 +16,8 @@ th {
 }
 canvas {
     border: 1px solid #ddd;
+
 }
 .chart-container{
-    margin-left:50px;
+    width: 100%;
 }

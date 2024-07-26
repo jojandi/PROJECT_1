@@ -98,7 +98,7 @@
             font-size: 0;
             /* border: 1px solid red; */
             padding: 30px 150px;
-            width: 100%;
+            
         }
 
         /* -------------------------------베스트관리자------------------------------ */
@@ -239,11 +239,15 @@
                 <div id="items">
 
                     <div class="item" id="i1">
-                        <span>베스트도서 관리</span>
+                        <span><a href="Best_mng_1.html">베스트도서 관리</a></span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
                     <div class="item" id="i2">
-                        <span>구독서비스 관리</span>
+                        <span><a href="admin_bookflix_1.html">북플릭스 관리</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span><a href ="admin_bookflix_2.html">북플릭스 회원 통계</a></span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
                 </div>
@@ -258,9 +262,9 @@
                         <th class="pin"><input type="checkbox" id="selectAll" onchange="selectAllBooks(this)"></th>
                         <th>도서명</th>
                         <th>도서정보</th>
-                        <th>30일 이내 대여횟수</th>
-                        <th>도서관별 대여횟수</th>
-                        <th>북플릭스 대여횟수</th>
+                        <th>30일 이내<br>대여횟수</th>
+                        <th>도서관별<br>대여횟수</th>
+                        <th>북플릭스<br>대여횟수</th>
                         <th>성별 통계</th>
                         <th>연령별 통계</th>
                     </tr>
@@ -271,7 +275,7 @@
                         <th><input type="checkbox" data-delete="checkbox"></th>
                         <td>화를 이기는 불편한 심리학</td>
                         <td>
-                            <button onclick="openPopup(1)">도서정보 보기</button>
+                            <button onclick="openPopup(1)">보기</button>
                             <div id="popup1" class="popup">
                                 <div class="popup-header">
                                     <h2>화를 이기는 불편한 심리학</h2>
@@ -288,7 +292,7 @@
                         </td>
                         <td>330</td>
                         <td>
-                            <button onclick="openPopup(6)">통계보기</button>
+                            <button onclick="openPopup(6)">보기</button>
                             <div id="popup6" class="popup">
                                 <div class="popup-header">
                                     <h2>도서관별 대여 통계</h2>
@@ -332,7 +336,7 @@
                         </td>
                         <td>304</td>
                         <td>
-                            <button onclick="openGender()">통계 보기</button>
+                            <button onclick="openGender()">보기</button>
                             <div id="myGender" class="gender">
                                 <div class="gender-content">
                                     <span class="close" onclick="closeGender()">&times;</span>
@@ -342,7 +346,7 @@
                             </div>
                         </td>
                         <td>
-                            <button onclick="openModal()">통계보기</button>
+                            <button onclick="openModal()">보기</button>
                             <div id="myGraph" class="graph">
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal()">&times;</span>
@@ -356,7 +360,7 @@
                         <th><input type="checkbox" data-delete="checkbox"></th>
                         <td>술술 읽히는 군주론</td>
                         <td>
-                            <button onclick="openPopup(2)">도서정보 보기</button>
+                            <button onclick="openPopup(2)">보기</button>
                             <div id="popup2" class="popup">
                                 <div class="popup-header">
                                     <h2>술술 읽히는 군주론</h2>
@@ -373,7 +377,7 @@
                         </td>
                         <td>320</td>
                         <td>
-                            <button onclick="openPopup(7)">통계보기</button>
+                            <button onclick="openPopup(7)">보기</button>
                             <div id="popup7" class="popup">
                                 <div class="popup-header">
                                     <h2>도서관별 대여 통계</h2>
@@ -417,7 +421,7 @@
                         </td>
                         <td>260</td>
                         <td>
-                            <button onclick="openGender()">통계 보기</button>
+                            <button onclick="openGender()">보기</button>
                             <div id="myGender" class="gender">
                                 <div class="gender-content">
                                     <span class="close" onclick="closeGender()">&times;</span>
@@ -427,7 +431,7 @@
                             </div>
                         </td>
                         <td>
-                            <button onclick="openModal()">통계보기</button>
+                            <button onclick="openModal()">보기</button>
                             <div id="myGraph" class="graph">
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal()">&times;</span>
@@ -440,7 +444,7 @@
                         <th><input type="checkbox" data-delete="checkbox"></th>
                         <td>만일 나에게 단 한 번의 아침이 남아 있다면</td>
                         <td>
-                            <button onclick="openPopup(3)">도서정보 보기</button>
+                            <button onclick="openPopup(3)">보기</button>
                             <div id="popup3" class="popup">
                                 <div class="popup-header">
                                     <h2>만일 나에게 단 한 번의 아침이 남아 있다면</h2>
@@ -457,7 +461,7 @@
                         </td>
                         <td>280</td>
                         <td>
-                            <button onclick="openPopup(8)">통계보기</button>
+                            <button onclick="openPopup(8)">보기</button>
                             <div id="popup8" class="popup">
                                 <div class="popup-header">
                                     <h2>도서관별 대여 통계</h2>
@@ -500,7 +504,7 @@
                         </td>
                         <td>259</td>
                         <td>
-                            <button onclick="openGender()">통계 보기</button>
+                            <button onclick="openGender()">보기</button>
                             <div id="myGender" class="gender">
                                 <div class="gender-content">
                                     <span class="close" onclick="closeGender()">&times;</span>
@@ -510,7 +514,7 @@
                             </div>
                         </td>
                         <td>
-                            <button onclick="openModal()">통계보기</button>
+                            <button onclick="openModal()">보기</button>
                             <div id="myGraph" class="graph">
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal()">&times;</span>
@@ -523,7 +527,7 @@
                         <th><input type="checkbox" data-delete="checkbox"></th>
                         <td>나는 도대체 왜 피곤할까</td>
                         <td>
-                            <button onclick="openPopup(4)">도서정보 보기</button>
+                            <button onclick="openPopup(4)">보기</button>
                             <div id="popup4" class="popup">
                                 <div class="popup-header">
                                     <h2>나는 도대체 왜 피곤할까</h2>
@@ -540,7 +544,7 @@
                         </td>
                         <td>270</td>
                         <td>
-                            <button onclick="openPopup(8)">통계보기</button>
+                            <button onclick="openPopup(8)">보기</button>
                             <div id="popup8" class="popup">
                                 <div class="popup-header">
                                     <h2>도서관별 대여 통계</h2>
@@ -583,7 +587,7 @@
                         </td>
                         <td>250</td>
                         <td>
-                            <button onclick="openGender()">통계 보기</button>
+                            <button onclick="openGender()">보기</button>
                             <div id="myGender" class="gender">
                                 <div class="gender-content">
                                     <span class="close" onclick="closeGender()">&times;</span>
@@ -593,7 +597,7 @@
                             </div>
                         </td>
                         <td>
-                            <button onclick="openModal()">통계보기</button>
+                            <button onclick="openModal()">보기</button>
                             <div id="myGraph" class="graph">
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal()">&times;</span>
@@ -606,7 +610,7 @@
                         <th><input type="checkbox" data-delete="checkbox"></th>
                         <td>THE MONEY BOOK(더 머니북)</td>
                         <td>
-                            <button onclick="openPopup(5)">도서정보 보기</button>
+                            <button onclick="openPopup(5)">보기</button>
                             <div id="popup5" class="popup">
                                 <div class="popup-header">
                                     <h2>THE MONEY BOOK(더 머니북)</h2>
@@ -623,7 +627,7 @@
                         </td>
                         <td>260</td>
                         <td>
-                            <button onclick="openPopup(8)">통계보기</button>
+                            <button onclick="openPopup(8)">보기</button>
                             <div id="popup8" class="popup">
                                 <div class="popup-header">
                                     <h2>도서관별 대여 통계</h2>
@@ -666,7 +670,7 @@
                         </td>
                         <td>240</td>
                         <td>
-                            <button onclick="openGender()">통계 보기</button>
+                            <button onclick="openGender()">보기</button>
                             <div id="myGender" class="gender">
                                 <div class="gender-content">
                                     <span class="close" onclick="closeGender()">&times;</span>
@@ -676,7 +680,7 @@
                             </div>
                         </td>
                         <td>
-                            <button onclick="openModal()">통계보기</button>
+                            <button onclick="openModal()">보기</button>
                             <div id="myGraph" class="graph">
                                 <div class="modal-content">
                                     <span class="close" onclick="closeModal()">&times;</span>
@@ -896,7 +900,7 @@
 
             cells[0].innerHTML = '<input type="checkbox" data-delete="checkbox">';
             cells[1].innerText = document.getElementById("newBookName").value;
-            cells[2].innerHTML = `<button onclick="openPopup(1)">도서정보 보기</button>
+            cells[2].innerHTML = `<button onclick="openPopup(1)">보기</button>
                                     <div id="popup1" class="popup">
                                         <div class="popup-header">
                                             <h2>화를 이기는 불편한 심리학</h2>
@@ -912,7 +916,7 @@
                                     </div>`
             cells[3].innerText = document.getElementById("newRentalCount").value;
             cells[4].innerHTML = `
-                <button onclick="openPopup(6)">통계보기</button>
+                <button onclick="openPopup(6)">보기</button>
                 <div id="popup6" class="popup" style="display:none;">
                     <h2>도서관별 대여 통계</h2>
                     <table>
@@ -940,13 +944,13 @@
                 </div>`;
             cells[5].innerText = document.getElementById("newNetflixCount").value;
             cells[6].innerHTML = `
-                <button onclick="openGender()">통계 보기</button>
+                <button onclick="openGender()">보기</button>
                 <div id="myGender" class="gender" style="display:none;">
                     <h2>성별 통계</h2>
                     <canvas id="genderChart" width="400" height="400"></canvas>
                 </div>`;
             cells[7].innerHTML = `
-                <button onclick="openModal()">통계보기</button>
+                <button onclick="openModal()">보기</button>
                 <div id="myGraph" class="graph" style="display:none;">
                     <h2>연령별 통계</h2>
                     <div id="chartContainer"></div>
