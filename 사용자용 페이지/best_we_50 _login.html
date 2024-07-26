@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>종합 베스트 도서</title>
+    <title>50대 베스트 도서</title>
 
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="best_we.css" rel="stylesheet">
     <style>
-        aside #items #i1 .material-symbols-outlined{
+        #button_5 {
+            background-color: rgb(165, 224, 144);
+        }
+        aside #items #i3 .material-symbols-outlined{
             background: rgb(165, 224, 144);
         }
 
-        /* ------------------------------------------------------------------ */
     </style>
     <!-- 이모티콘 삽입-->
     <link rel="stylesheet"
@@ -29,37 +31,35 @@
 
     <!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
-                
+                    
         <div id="logoall">
             <div id="logo" class="left">로고</div>
             <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
-            <a href="01.main_user.html" id="name" class="left">행복만땅 <br>도서관</a>
+            <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a>
         </div>
 
         <div id="menu">
             <div id="items" class="left">
-                <a href="./도서관 정보(중앙).html" class="item" id="i1">도서관</a>
-                <a href="./best_we_all.html" class="item" id="i2">베스트</a>
-                <a href="./공지사항_사용자.html" class="item" id="i3">정보광장</a>
-                <a href="./로그인css.html" class="item" id="i4">마이페이지</a>
+                <a href="./도서관 정보(중앙)_로그인.html" class="item" id="i1">도서관</a>
+                <a href="./best_we_all_login.html" class="item" id="i2">베스트</a>
+                <a href="./공지사항_사용자_로그인.html" class="item" id="i3">정보광장</a>
+                <a href="./02.mypage_use.html" class="item" id="i4">마이페이지</a>
             </div>
 
-            <div class="right" id="userall">
+            <!-- <div class="right" id="userall">
                 <a href="./로그인css.html" class="inb" id="login">로그인</a>
                 <div class="inb">|</div>
                 <a href="./회원가입.html" class="inb" id="userin">회원가입</a>
-            </div>
+            </div> -->
 
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-            <!-- <div class="right" id="userall">
+            <div class="right" id="userall">
                 <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
                 <span class="material-symbols-outlined">person</span>
-            </div> -->
+            </div>
         </div>
         <script src="./00.user_base.js"></script>
-        <script src="./01.isLogin.js"></script>
     </header>
-
     <!-- 여기 사이에 이것 저것 코딩하세용 >< 
     <div id="left_menu">
         <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
@@ -90,43 +90,57 @@
                         <span>연령별 베스트도서</span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
+
                 </div>
             </div>
 
         </aside>
         <section class="best_infor">
-            <div id="show_box_"> <!--가져와서 출력될 div -->
-                <h1>종합 베스트 도서</h1>
+            <div>
+                <table id="table">
+                    <td>
+                        <div class="age-range-bar">
+                            <button class="age-button" id=button_1 data-age="10s">10대</button>
+                            <button class="age-button" id=button_2 data-age="20s">20대</button>
+                            <button class="age-button" id=button_3 data-age="30s">30대</button>
+                            <button class="age-button" id=button_4 data-age="40s">40대</button>
+                            <button class="age-button" id=button_5 data-age="50s">50대</button>
+                        </div>
+                    </td>
+                </table>
+            </div>
+            <div id="show_box_7"> <!--가져와서 출력될 div -->
+                <div id="best_top_box">
+                    <h1>50대 베스트 도서</h1>
+                </div>
                 <div id="best">
-                    <div id="best_top_box">
-                    </div>
                     <div id=img_box>
                         <img id="best_img"
-                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791190227476.jpg">
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788997396870.jpg">
                     </div>
 
                     <div id=best_infor>
                         <div id=in_top style="line-height:200%;">
-                            <strong>전체 best 1</strong>
+                            <strong>50대 전체 best 1</strong>
                         </div>
                         <div id="best_box">
                             <table>
                                 <tr>
-                                    <td id=box_1>북플릭스 구독자 추천</td>
-                                    <td id=box_1>도서관장 추천</td>
-                                    <td id=box_1>대여 150회 돌파</td>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
                                 </tr>
                             </table>
                         </div>
-                        <div style="font-size: 24px;">
-                            <strong>술술 읽히는 군주론</strong>
+                        <div style="font-size: 22px;">
+                            <strong>오은영의 화해</strong>
                         </div>
                         <div style="line-height:300%;">
-                            니콜로 마키아벨리 · 힘찬북스 · 2024.08.08
+                            오은영 · 코리아닷컴 · 2019.01.10
                         </div>
                         <div>
-                            《군주론》은 지난 500년 동안 꿋꿋하게 지켜온 명성에도 불구하고, 책을 쓸 당시 이탈리아의 복잡한 정세를 이해하는 데 필요한 본문 속 수많은 각주로 인해 동서양을
-                            떠나 현대 독자들에게는 접근..
+                            겉으로는 아무렇지도 않은 듯 살아가지만, 우리 모두는 마음속에 자신을 찌르는 가시를 안고 살아간다. 우리 중 아프지 않은 사람이 있을까? 부모와 자녀, 그 절대적인
+                            관계 속에서 때론 미움, 고통, 원...
                         </div>
 
                         <div style="line-height:400%;">
@@ -155,12 +169,12 @@
                 <div id="best">
                     <div id=img_box>
                         <img id="best_img"
-                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791191777796.jpg">
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791192519883.jpg">
                     </div>
 
                     <div id=best_infor>
                         <div id=in_top style="line-height:200%;">
-                            <strong>전체 best 2</strong>
+                            <strong>50대 전체 best 2</strong>
                         </div>
                         <div id="best_box">
                             <table>
@@ -171,15 +185,15 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="font-size: 24px;">
-                            <strong>화를 이기는 불편한 심리학</strong>
+                        <div style="font-size: 22px;">
+                            <strong>돈, 뜨겁게 사랑하고 차갑게 다루어라</strong>
                         </div>
                         <div style="line-height:300%;">
-                            다카시나 다카유키 · 밀리언서재 · 2024.07.20
+                            앙드레 코스톨라니 · 미래의창 · 2015.09.30
                         </div>
                         <div>
-                            학교 친구, 교사와 학생, 동호회, 직장, 연인, 부모와 가족, 이웃 등 누군가 괴롭히거나 공격하는 일들이 우리 일상에서 급증하고 있다. 이 모든 것의 배후에는
-                            통제할 수 없는 분노가 있다. 평범한 사람...
+                            앙드레 코스톨라니 최후의 역작으로 증권 거래와 투자심리에 중요한 변수인 투자의 근본적인 비밀과 기술 등을 안내한 돈 관리 지침서다. 저자는 투자자들에게
+                            21세기 증권시장에 있어서 기회와...
                         </div>
 
                         <div style="line-height:400%;">
@@ -214,7 +228,7 @@
     
                     <div id=best_infor>
                         <div id=in_top style="line-height:200%;">
-                            <strong>전체 best 3</strong>
+                            <strong>50대 전체 best 3</strong>
                         </div>
                         <div id="best_box">
                             <table>
@@ -268,7 +282,7 @@
     
                         <div id=best_infor>
                             <div id=in_top style="line-height:200%;">
-                                <strong>전체 best 4</strong>
+                                <strong>50대 전체 best 4</strong>
                             </div>
                             <div id="best_box">
                                 <table>
@@ -321,7 +335,7 @@
     
                         <div id=best_infor>
                             <div id=in_top style="line-height:200%;">
-                                <strong>전체 best 5</strong>
+                                <strong>50대 전체 best 5</strong>
                             </div>
                             <div id="best_box">
                                 <table>
@@ -366,7 +380,7 @@
                             </div>
                         </div>
                     </div>
-            </div>    
+            </div>
         </section>
     </div>
     <!--자바 스크립트 영역-->

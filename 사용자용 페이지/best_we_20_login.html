@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>종합 베스트 도서</title>
+    <title>20대 베스트 도서</title>
 
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="best_we.css" rel="stylesheet">
     <style>
-        aside #items #i1 .material-symbols-outlined{
+        #button_2 {
+            background-color: rgb(165, 224, 144);
+        }
+        aside #items #i3 .material-symbols-outlined{
             background: rgb(165, 224, 144);
         }
 
-        /* ------------------------------------------------------------------ */
     </style>
     <!-- 이모티콘 삽입-->
     <link rel="stylesheet"
@@ -29,35 +31,34 @@
 
     <!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
-                
+                    
         <div id="logoall">
             <div id="logo" class="left">로고</div>
             <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
-            <a href="01.main_user.html" id="name" class="left">행복만땅 <br>도서관</a>
+            <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a>
         </div>
 
         <div id="menu">
             <div id="items" class="left">
-                <a href="./도서관 정보(중앙).html" class="item" id="i1">도서관</a>
-                <a href="./best_we_all.html" class="item" id="i2">베스트</a>
-                <a href="./공지사항_사용자.html" class="item" id="i3">정보광장</a>
-                <a href="./로그인css.html" class="item" id="i4">마이페이지</a>
+                <a href="./도서관 정보(중앙)_로그인.html" class="item" id="i1">도서관</a>
+                <a href="./best_we_all_login.html" class="item" id="i2">베스트</a>
+                <a href="./공지사항_사용자_로그인.html" class="item" id="i3">정보광장</a>
+                <a href="./02.mypage_use.html" class="item" id="i4">마이페이지</a>
             </div>
 
-            <div class="right" id="userall">
+            <!-- <div class="right" id="userall">
                 <a href="./로그인css.html" class="inb" id="login">로그인</a>
                 <div class="inb">|</div>
                 <a href="./회원가입.html" class="inb" id="userin">회원가입</a>
-            </div>
+            </div> -->
 
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-            <!-- <div class="right" id="userall">
+            <div class="right" id="userall">
                 <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
                 <span class="material-symbols-outlined">person</span>
-            </div> -->
+            </div>
         </div>
         <script src="./00.user_base.js"></script>
-        <script src="./01.isLogin.js"></script>
     </header>
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< 
@@ -95,38 +96,51 @@
 
         </aside>
         <section class="best_infor">
-            <div id="show_box_"> <!--가져와서 출력될 div -->
-                <h1>종합 베스트 도서</h1>
+            <div>
+                <table id="table">
+                    <td>
+                        <div class="age-range-bar">
+                            <button class="age-button" id=button_1 data-age="10s">10대</button>
+                            <button class="age-button" id=button_2 data-age="20s">20대</button>
+                            <button class="age-button" id=button_3 data-age="30s">30대</button>
+                            <button class="age-button" id=button_4 data-age="40s">40대</button>
+                            <button class="age-button" id=button_5 data-age="50s">50대</button>
+                        </div>
+                    </td>
+                </table>
+            </div>
+            <div id="show_box_3"> <!--가져와서 출력될 div -->
+                <div id="best_top_box">
+                    <h1>20대 베스트 도서</h1>
+                </div>
                 <div id="best">
-                    <div id="best_top_box">
-                    </div>
                     <div id=img_box>
                         <img id="best_img"
-                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791190227476.jpg">
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791168340510.jpg">
                     </div>
 
                     <div id=best_infor>
                         <div id=in_top style="line-height:200%;">
-                            <strong>전체 best 1</strong>
+                            <strong>20대 전체 best 1</strong>
                         </div>
                         <div id="best_box">
                             <table>
                                 <tr>
-                                    <td id=box_1>북플릭스 구독자 추천</td>
-                                    <td id=box_1>도서관장 추천</td>
-                                    <td id=box_1>대여 150회 돌파</td>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
                                 </tr>
                             </table>
                         </div>
-                        <div style="font-size: 24px;">
-                            <strong>술술 읽히는 군주론</strong>
+                        <div style="font-size: 22px;">
+                            <strong>파친코 1</strong>
                         </div>
                         <div style="line-height:300%;">
-                            니콜로 마키아벨리 · 힘찬북스 · 2024.08.08
+                            이민진 · 문학사상 · 2018.03.09
                         </div>
                         <div>
-                            《군주론》은 지난 500년 동안 꿋꿋하게 지켜온 명성에도 불구하고, 책을 쓸 당시 이탈리아의 복잡한 정세를 이해하는 데 필요한 본문 속 수많은 각주로 인해 동서양을
-                            떠나 현대 독자들에게는 접근..
+                            한국계 1.5세인 미국 작가 이민진의 장편소설 『파친코』 제1권. 내국인이면서 끝내 이방인일 수밖에 없었던 자이니치(재일동포)들의 처절한 생애를 깊이 있는 필체로
+                            담아낸 작품이다. 저자가 자이...
                         </div>
 
                         <div style="line-height:400%;">
@@ -155,12 +169,12 @@
                 <div id="best">
                     <div id=img_box>
                         <img id="best_img"
-                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791191777796.jpg">
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791190030922.jpg">
                     </div>
 
                     <div id=best_infor>
                         <div id=in_top style="line-height:200%;">
-                            <strong>전체 best 2</strong>
+                            <strong>20대 전체 best 2</strong>
                         </div>
                         <div id="best_box">
                             <table>
@@ -171,15 +185,15 @@
                                 </tr>
                             </table>
                         </div>
-                        <div style="font-size: 24px;">
-                            <strong>화를 이기는 불편한 심리학</strong>
+                        <div style="font-size: 22px;">
+                            <strong>소크라테스 익스프레스</strong>
                         </div>
                         <div style="line-height:300%;">
-                            다카시나 다카유키 · 밀리언서재 · 2024.07.20
+                            에릭 와이너 · 어크로스 · 2021.04.28
                         </div>
                         <div>
-                            학교 친구, 교사와 학생, 동호회, 직장, 연인, 부모와 가족, 이웃 등 누군가 괴롭히거나 공격하는 일들이 우리 일상에서 급증하고 있다. 이 모든 것의 배후에는
-                            통제할 수 없는 분노가 있다. 평범한 사람...
+                            《소크라테스 익스프레스》는 마르쿠스 아우렐리우스부터 몽테뉴까지 역사상 가장 위대한 철학자들을 만나러 떠나는 여행기이자, 그들의 삶과 작품 속의 지혜가 우리
+                            인생을 개선하는 데 어떻게 도...
                         </div>
 
                         <div style="line-height:400%;">
@@ -214,7 +228,7 @@
     
                     <div id=best_infor>
                         <div id=in_top style="line-height:200%;">
-                            <strong>전체 best 3</strong>
+                            <strong>20대 전체 best 3</strong>
                         </div>
                         <div id="best_box">
                             <table>
@@ -268,7 +282,7 @@
     
                         <div id=best_infor>
                             <div id=in_top style="line-height:200%;">
-                                <strong>전체 best 4</strong>
+                                <strong>20대 전체 best 4</strong>
                             </div>
                             <div id="best_box">
                                 <table>
@@ -321,7 +335,7 @@
     
                         <div id=best_infor>
                             <div id=in_top style="line-height:200%;">
-                                <strong>전체 best 5</strong>
+                                <strong>20대 전체 best 5</strong>
                             </div>
                             <div id="best_box">
                                 <table>
@@ -366,11 +380,12 @@
                             </div>
                         </div>
                     </div>
-            </div>    
+            </div>
         </section>
     </div>
-    <!--자바 스크립트 영역-->
-    <script src="./best_we.js"></script>
+
+        <!--자바 스크립트 영역-->
+        <script src="./best_we.js"></script>
 
 
     <!-- 가장 아래 고정 -->

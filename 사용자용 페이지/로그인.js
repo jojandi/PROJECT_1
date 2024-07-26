@@ -12,3 +12,18 @@ document.getElementById('loginBtn').addEventListener('click', function() {
         alert('ID 또는 비밀번호가 잘못되었습니다.');
     }
 });
+
+let username = document.querySelector("#username");
+let password = document.querySelector("#password");
+let loginBtn = document.querySelector("#loginBtn");
+
+username.addEventListener('keyup', function(event){
+    if(event.keyCode == 13){
+        password.focus();
+    }
+})
+password.addEventListener('keyup', function(event){
+    if(event.keyCode == 13){
+        loginBtn.click();
+    }
+})

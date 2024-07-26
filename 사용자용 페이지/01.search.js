@@ -15,11 +15,11 @@ function pageMove(){
         console.log("검색어 : " + searchInValue);
         
         if(searchInValue == "파친코"){
-            window.location.href="03.search_loan_1.html";
+            window.location.href="03.search_loan_1_login.html";
         } else if(searchInValue == "군주론"){
-            window.location.href="03.search_loan_2.html";
+            window.location.href="03.search_loan_2_login.html";
         }else {
-            window.location.href="03.search_loan_none.html";
+            window.location.href="03.search_loan_none_login.html";
         }
     })
 }
