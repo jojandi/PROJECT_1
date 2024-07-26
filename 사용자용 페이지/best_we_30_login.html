@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30대 베스트 도서</title>
+
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link href="best_we.css" rel="stylesheet">
+    <style>
+        #button_3 {
+            background-color: rgb(165, 224, 144);
+        }
+        aside #items #i3 .material-symbols-outlined{
+            background: rgb(165, 224, 144);
+        }
+
+    </style>
+    <!-- 이모티콘 삽입-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+
+</head>
+
+<body>
+
+    <!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+                    
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
+            <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a>
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <a href="./도서관 정보(중앙)_로그인.html" class="item" id="i1">도서관</a>
+                <a href="./best_we_all_login.html" class="item" id="i2">베스트</a>
+                <a href="./공지사항_사용자_로그인.html" class="item" id="i3">정보광장</a>
+                <a href="./02.mypage_use.html" class="item" id="i4">마이페이지</a>
+            </div>
+
+            <!-- <div class="right" id="userall">
+                <a href="./로그인css.html" class="inb" id="login">로그인</a>
+                <div class="inb">|</div>
+                <a href="./회원가입.html" class="inb" id="userin">회원가입</a>
+            </div> -->
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <div class="right" id="userall">
+                <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
+                <span class="material-symbols-outlined">person</span>
+            </div>
+        </div>
+        <script src="./00.user_base.js"></script>
+    </header>
+
+    <!-- 여기 사이에 이것 저것 코딩하세용 >< 
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>남/녀별 베스트도서</strong></div>
+    <div class="l_menu" id="l_menu_1" style="font-size: 20px;">연령별 베스트도서</div>
+    </div> 인기도서 관리창 코딩시작 >< 
+    
+-->
+
+    <div id="wrap">
+        <!-- 사이드 -->
+        <aside class="clearfix" id="side">
+
+            <div id="sideleft">
+                <h2 id="title">베스트 도서</h2>
+
+                <div id="items">
+
+                    <div class="item" id="i1">
+                        <span>종합 베스트도서</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span>남/녀별 베스트도서</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span>연령별 베스트도서</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </aside>
+        <section class="best_infor">
+            <div>
+                <table id="table">
+                    <td>
+                        <div class="age-range-bar">
+                            <button class="age-button" id=button_1 data-age="10s">10대</button>
+                            <button class="age-button" id=button_2 data-age="20s">20대</button>
+                            <button class="age-button" id=button_3 data-age="30s">30대</button>
+                            <button class="age-button" id=button_4 data-age="40s">40대</button>
+                            <button class="age-button" id=button_5 data-age="50s">50대</button>
+                        </div>
+                    </td>
+                </table>
+            </div>
+            <div id="show_box_5"> <!--가져와서 출력될 div -->
+                <div id="best_top_box">
+                    <h1>30대 베스트 도서</h1>
+                </div>
+                <div id="best">
+                    <div id=img_box>
+                        <img id="best_img"
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791157686179.jpg">
+                    </div>
+
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>30대 전체 best 1</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="font-size: 22px;">
+                            <strong>인스타 브레인</strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            안데르스 한센 · 동양북스 · 2020.05.15
+                        </div>
+                        <div>
+                            미국 퓨리서치센터의 조사 결과에 따르면 “삶에서 가장 가치 있다고 생각하는 것은 무엇인가"라는 질문에 17개 선진국 중 ‘가족'과 ‘직업'을 제치고 ‘물질적 행복'을
+                            1순위로 꼽은 것은
+                            한국이 유일했...
+                        </div>
+
+                        <div style="line-height:400%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.36(250개의 리뷰)
+                                    </td>
+                                    <td>
+                                        최고에요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div id=input_res>
+                        <div id="input_top">
+                            <input type="button" value="장바구니 담기" id="input_1">
+                        </div>
+                        <div id="input_bottom">
+                            <input type="button" value="대출 예약하기" id="input_2">
+                        </div>
+                    </div>
+                </div>
+                <div id="best">
+                    <div id=img_box>
+                        <img id="best_img"
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791187142560.jpg">
+                    </div>
+
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>30대 전체 best 2</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="font-size: 22px;">
+                            <strong>데일 카네기 인간관계론(무삭제 완역본)</strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            데일 카네기 · 현대지성 · 2019.10.07
+                        </div>
+                        <div>
+                            사람을 다루는 핵심 원리는 무엇일까? 어떻게 하면 호감 가는 사람이 될 수 있을까? 원하는 것을 얻어내는 가장 효과적인 방법은 무엇일까? 인간관계는 친구를
+                            만들고 적을 만들지 않는 것에서 시작...
+                        </div>
+
+                        <div style="line-height:400%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.01(120개의 리뷰)
+                                    </td>
+                                    <td>
+                                        좋아요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+                    <div id=input_res>
+                        <div id="input_top">
+                            <input type="button" value="장바구니 담기" id="input_1">
+                        </div>
+                        <div id="input_bottom">
+                            <input type="button" value="대출 예약하기" id="input_2">
+                        </div>
+                    </div>
+                </div>
+                <div id="best">
+                
+                    <div id=img_box>
+                        <img id="best_img"
+                        src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791193937112.jpg">
+                    </div>
+    
+                    <div id=best_infor>
+                        <div id=in_top style="line-height:200%;">
+                            <strong>30대 전체 best 3</strong>
+                        </div>
+                        <div id="best_box">
+                            <table>
+                                <tr>
+                                    <td id=box_1>북플릭스 구독자의 선택</td>
+                                    <td id=box_1>천안시 도서관 전체 1위</td>
+                                    <td id=box_1>대여 200회 돌파</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="font-size: 24px;">
+                            <strong>만일 나에게 단 한 번의 아침이 남아 있다면
+                            </strong>
+                        </div>
+                        <div style="line-height:300%;">
+                            존 릴런드 · 북모먼트 · 2024.06.26
+                        </div>
+                        <div>
+                            무심히 흘러가는 나날, 늘 그렇듯 당연하게 맞이하는 아침. 당신의 인생에서 몇 번의 아침을 더 맞게 될지 궁금해한 적이 있는가? 그런데 설상가상으로 당신에게
+                            만일 단 한 번의 아침만이 남아 있다면...
+                        </div>
+    
+                        <div style="line-height:400%;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        9.36(250개의 리뷰)
+                                    </td>
+                                    <td>
+                                        최고에요
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+    
+                    </div>
+                    <div id=input_res>
+                        <div id="input_top">
+                            <input type="button" value="장바구니 담기" id="input_1">
+                        </div>
+                        <div id="input_bottom">
+                            <input type="button" value="대출 예약하기" id="input_2">
+                        </div>
+                    </div>
+                    </div>
+                    <div id="best">
+                        <div id=img_box>
+                            <img id="best_img"
+                            src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791193937136.jpg">
+                        </div>
+    
+                        <div id=best_infor>
+                            <div id=in_top style="line-height:200%;">
+                                <strong>30대 전체 best 4</strong>
+                            </div>
+                            <div id="best_box">
+                                <table>
+                                    <tr>
+                                        <td id=box_1>북플릭스 구독자의 선택</td>
+                                        <td id=box_1>천안시 도서관 전체 1위</td>
+                                        <td id=box_1>대여 200회 돌파</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="font-size: 24px;">
+                                <strong>나는 도대체 왜 피곤할까</strong>
+                            </div>
+                            <div style="line-height:300%;">
+                                에이미 샤 · 북플레저 · 2024.07.10
+                            </div>
+                            <div>
+                                침대에서 일어나 바닥에 발을 딛는 순간부터 베개를 머리에 묻을 때까지 피곤을 달고 사는 일상은 너무나 흔하다. 의사나 누군가에게 ‘내 컨디션이 왜
+                                이렇게 망가졌는지’ 물어봐도, 돌아오는 대답은 ...
+                            </div>
+    
+                            <div style="line-height:400%;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            9.36(250개의 리뷰)
+                                        </td>
+                                        <td>
+                                            최고에요
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                        </div>
+                        <div id=input_res>
+                            <div id="input_top">
+                                <input type="button" value="장바구니 담기" id="input_1">
+                            </div>
+                            <div id="input_bottom">
+                                <input type="button" value="대출 예약하기" id="input_2">
+                            </div>
+                        </div>
+                    </div>
+                    <div id="best">
+                        <div id=img_box>
+                            <img id="best_img"
+                            src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791193394458.jpg">
+                        </div>
+    
+                        <div id=best_infor>
+                            <div id=in_top style="line-height:200%;">
+                                <strong>30대 전체 best 5</strong>
+                            </div>
+                            <div id="best_box">
+                                <table>
+                                    <tr>
+                                        <td id=box_1>북플릭스 구독자의 선택</td>
+                                        <td id=box_1>천안시 도서관 전체 1위</td>
+                                        <td id=box_1>대여 200회 돌파</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div style="font-size: 24px;">
+                                <strong>챔피언처럼 생각하고 거래하라</strong>
+                            </div>
+                            <div style="line-height:300%;">
+                                마크 미너비니 · 이레미디어 · 2024.08.15
+                            </div>
+                            <div>
+                                이제 막 주식시장에 입문한 사람이 아닌 이상 단 하나뿐이더라도 본인만의 규칙은 있을 것이다. PER이 낮은 주식을 산다든가, 어느 이동평균선에 주가가
+                                걸치면 산다든가 하는 것이다. 알다시피 주식...
+                            </div>
+    
+                            <div style="line-height:400%;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            9.36(250개의 리뷰)
+                                        </td>
+                                        <td>
+                                            최고에요
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+    
+                        </div>
+                        <div id=input_res>
+                            <div id="input_top">
+                                <input type="button" value="장바구니 담기" id="input_1">
+                            </div>
+                            <div id="input_bottom">
+                                <input type="button" value="대출 예약하기" id="input_2">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+    </div>
+    
+        <!--자바 스크립트 영역-->
+        <script src="./best_we.js"></script>
+
+
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

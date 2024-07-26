@@ -26,12 +26,11 @@ section{
     display: inline-block;
     vertical-align: top;
     border-bottom: solid 1px green;
-    height: 260px;
     box-sizing: border-box;
 }
 
 #best_infor {
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 60%;
     display: inline-block;
     vertical-align: top;
@@ -125,6 +124,9 @@ section{
 
 #input_res {
     display: inline-block;
+    /* border: 1px solid red; */
+    vertical-align: bottom;
+    margin-bottom: 10px;
 }
 
 #show_box_ h1{
@@ -145,3 +147,8 @@ h1{
 #table_mf #imoge_2{
     font-size: 40px;
 }
+
+#menu #items #i2{
+    font-weight: 900;
+    text-decoration: underline;
+}  

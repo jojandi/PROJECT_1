@@ -11,14 +11,21 @@ function pageMove(){
     })
 
     searchBnt.addEventListener('click', function(){
-        let searchInValue = searchIn.value;
-        console.log("검색어 : " + searchInValue);
+        let s = searchIn.value;
+        console.log("검색어 : " + s);
         
-        if(searchInValue == "파친코"){
+        if(s == "파친코"){
             window.location.href="03.search_loan_1.html";
-        } else if(searchInValue == "군주론"){
+        } else if(s == "군주론"){
             window.location.href="03.search_loan_2.html";
-        }else {
+        }else if(s == "곰탕"){
+            window.location.href="03.search_loan_3.html";
+        }else if(s == "나는 도대체 왜 피곤할까"){
+            window.location.href="03.search_loan_4.html";
+        }else if(s == "피터 스완슨"){
+            window.location.href="03.search_loan_5.html";
+        }
+        else {
             window.location.href="03.search_loan_none.html";
         }
     })
