@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서관 정보_쌍용</title>
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link href="도서관 정보.css" rel="stylesheet">
+    <style>
+        aside #items #i2 .material-symbols-outlined{
+            background: rgb(165, 224, 144);
+        }
+        
+        
+    </style>
+</head>
+<body>
+
+<!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+                        
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
+            <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a>
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <a href="./도서관 정보(중앙)_로그인.html" class="item" id="i1">도서관</a>
+                <a href="./best_we_all_login.html" class="item" id="i2">베스트</a>
+                <a href="./공지사항_사용자_로그인.html" class="item" id="i3">정보광장</a>
+                <a href="./02.mypage_use.html" class="item" id="i4">마이페이지</a>
+            </div>
+
+            <!-- <div class="right" id="userall">
+                <a href="./로그인css.html" class="inb" id="login">로그인</a>
+                <div class="inb">|</div>
+                <a href="./회원가입.html" class="inb" id="userin">회원가입</a>
+            </div> -->
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <div class="right" id="userall">
+                <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
+                <span class="material-symbols-outlined">person</span>
+            </div>
+        </div>
+        <script src="./00.user_base.js"></script>
+    </header>
+    <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
+    <div id="wrap">
+ 
+        <aside class="clearfix" id="side">
+                    
+            <div id="sideleft">
+                <h2 id="title">도서관정보</h2>
+                
+                <div id="items">
+                    
+                    <div class="item" id="i1">
+                        <span>중앙도서관</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span>쌍용도서관</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span>두정도서관</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i4">
+                        <span>신방도서관</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i5">
+                        <span>청수도서관</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    
+                </div>
+            </div>
+            <script src="./도서관 정보.js"></script>
+        </aside>
+
+        <section id = "library_infor">
+            <div id = "infor_top_box">
+                <h1>쌍용 도서관 정보</h1>
+            </div>
+            
+            <div>
+                <img id = "infor_img" src= "https://www.cheonan.go.kr/images/lib/content/il_06_20190731.jpg">
+            </div>
+
+            <div>
+                <ul style="line-height:200%;">
+                    <li>
+                    <strong>위치</strong>
+                    천안시 서북구 월봉4로 153
+                    </li> 
+                    
+                    <li>
+                    <strong>부지면적</strong>
+                    4,824㎡(지상 4층, 지하1층)
+                    </li> 
+                    
+                    <li>
+                    <strong>건물면적</strong>
+                    4,792㎡(지하 1층, 지상 4층)
+                    </li> 
+                    
+                    <li>
+                    <strong>좌석수</strong>
+                    659석(열람석수 : 481석)
+                    </li> 
+                    
+                    <li>
+                    <strong>공사기간</strong>
+                    2000.05.18.~2001.12.27.(개관 2002.03.15.)
+                    </li> 
+                    
+                    <li>
+                    <strong>총사업비</strong>
+                    5,186백만원(도비 1,250백만 원, 시비 3,936백만 원)
+                    </li> 
+                    
+                    <li>
+                    <strong>주요시설</strong>
+                    어린이자료실, 일반자료실, 북카페, 세미나실, 전시 등 복합문화공간, 이야기뜰, 동아리실 등
+                    </li> 
+
+                </ul>
+            </div>
+
+            <div id="info_map_addr">
+                <div id = "infor_map">
+                    <h3>오시는길</h3>
+                <!-- * 카카오맵 --->
+
+                    <div id="daumRoughmapContainer1721617560534" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+                    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+                    <!-- 3. 실행 스크립트 -->
+                    <script charset="UTF-8">
+                        new daum.roughmap.Lander({
+                            "timestamp" : "1721617560534",
+                            "key" : "2k4yo",
+                            "mapWidth" : "640",
+                            "mapHeight" : "360"
+                        }).render();
+                    </script>
+                </div>
+                <div id="infor_adress">
+                    <div class="addr">
+                        <span class="material-symbols-outlined">home</span>
+                        천안시 서북구 월봉4로 153
+                    </div>
+                    <div class="call">
+                        <span class="material-symbols-outlined">call</span>
+                        041-521-3731
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

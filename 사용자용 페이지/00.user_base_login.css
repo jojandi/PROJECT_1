@@ -15,7 +15,7 @@
 
             width: 100%;
             height: 100px;
-            color:rgba(255, 255, 255, 0.847);
+            color: rgba(0, 0, 0, 0.705);
         }
 
         .clearfix:after{
@@ -89,7 +89,7 @@
         }
 
         header #menu #userall .material-symbols-outlined {
-            color: white;
+            color: rgba(0, 0, 0, 0.705);
             font-variation-settings:
             'FILL' 0,
             'wght' 400,

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사용자용 페이지 베이스_로그인 완료</title>
-    
+
 
     <style>
         /* @media screen and (max-width: 1100px){
@@ -57,7 +57,8 @@
             margin-top: 5px;
         }
 
-        .gaip input, #gaip_1 {
+        .gaip input,
+        #gaip_1 {
             background-color: #4CAF50;
             color: white;
             border: none;
@@ -201,12 +202,13 @@
             padding: 40px 30px 0 0;
             font-size: 13px;
         }
-        #gaip_1{
+
+        #gaip_1 {
             margin-bottom: 100px;
             margin-top: 10px;
         }
 
-        #hg{
+        #hg {
             padding: 50px 150px;
         }
     </style>
@@ -336,7 +338,7 @@
                     </td>
                 </tr>
                 <tr>
-                    
+
                 </tr>
                 <tr>
                     <td class="label">비밀번호</td>
@@ -348,7 +350,7 @@
                 <tr>
                     <td class="label">비밀번호 확인</td>
                     <td>
-                        <input  type="password" id="confirm-password" placeholder="비밀번호 재입력">
+                        <input type="password" id="confirm-password" placeholder="비밀번호 재입력">
                         <div class="red" id="confirm-password-message">비밀번호가 일치하지 않습니다</div>
                     </td>
                 </tr>
@@ -367,69 +369,69 @@
                     </td>
                 </tr>
                 <!-- <tr> -->
-                    <!-- <div class="gaip2">
+                <!-- <div class="gaip2">
                         <td colspan="2" class="gaip">
                             <input id="gaip_1" type="button" value="회원가입 완료">
                         </td>
                     </div> -->
                 <!-- </tr> -->
-        </table>
-        <div style="text-align: center;"><input id="gaip_1" type="button" value="회원가입 완료"></div>
+            </table>
+            <div style="text-align: center;"><input id="gaip_1" type="button" value="회원가입 완료"></div>
         </div>
-    
+
     </div>
 
 
-        <!-- 가장 아래 고정 -->
-        <footer>
-            <div id="bottom" class="clearfix">
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
 
-                <div id="logoall">
-                    <div id="logo" class="left">로고</div>
-                    <div id="name" class="left">행복만땅 <br>도서관</div>
-                </div>
-
-                <div id="footerinfo">
-                    Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
-                    청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
-                </div>
-
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
             </div>
-        </footer>
 
-        <script>
-            document.getElementById("check-username").addEventListener("click", function() {
-                const username = document.getElementById("username").value;
-                if (username === "") {
-                    alert("아이디를 입력하세요.");
-                    document.getElementById("username").focus();
-                } else {
-                    alert(`아이디 ${username}은(는) 사용 가능합니다.`);
-                }
-            });
-    
-            document.getElementById("gaip_1").addEventListener("click", function() {
-                const name = document.getElementById("name").value;
-                const username = document.getElementById("username").value;
-                const password = document.getElementById("password").value;
-                const confirmPassword = document.getElementById("confirm-password").value;
-                const phone = document.getElementById("phone").value;
-                const emailUser = document.getElementById("email-user").value;
-                const emailDomain = document.getElementById("email-domain").value;
-    
-                if (!name || !username || !password || !confirmPassword || !phone || !emailUser || !emailDomain) {
-                    alert("모든 필드를 입력하세요.");
-                    return;
-                }
-    
-                if (password !== confirmPassword) {
-                    alert("비밀번호가 일치하지 않습니다.");
-                    return;
-                }
-    
-                alert("회원가입이 완료되었습니다.");
-            });
-        </script>
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("check-username").addEventListener("click", function () {
+            const username = document.getElementById("username").value;
+            if (username === "") {
+                alert("아이디를 입력하세요.");
+                document.getElementById("username").focus();
+            } else {
+                alert(`아이디 ${username}은(는) 사용 가능합니다.`);
+            }
+        });
+
+        document.getElementById("gaip_1").addEventListener("click", function () {
+            const name = document.getElementById("name").value;
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const confirmPassword = document.getElementById("confirm-password").value;
+            const phone = document.getElementById("phone").value;
+            const emailUser = document.getElementById("email-user").value;
+            const emailDomain = document.getElementById("email-domain").value;
+
+            if (!name || !username || !password || !confirmPassword || !phone || !emailUser || !emailDomain) {
+                alert("모든 필드를 입력하세요.");
+                return;
+            }
+
+            if (password !== confirmPassword) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return;
+            }
+
+            alert("회원가입이 완료되었습니다.");
+        });
+    </script>
 
 
 

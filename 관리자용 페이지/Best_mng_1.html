@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
+    <link href="graph.css" rel="stylesheet">
+    <link href="Gender_graph.css" rel="stylesheet">
+    <!-- <link href="Best_mng_1.css" rel="stylesheet"> -->
+
+    <style>
+        
+        /* -------------------------------베스트관리자------------------------------ */
+        #left_menu {
+            display: inline-block;
+        }
+
+        #btn_1 {
+            width: 100px;
+            height: 50px;
+            background-color: rgb(165, 224, 144);
+        }
+
+        #i1 .material-symbols-outlined {
+            background-color: rgb(165, 224, 144);
+        }
+
+        button {
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+
+        /* ------------------------------------------------------------------ */
+    </style>
+    <!-- 이모티콘 삽입-->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="Best_mng_1.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+</head>
+
+<body>
+
+    <!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <div class="item" id="i1"><a href="admin_stock.html">실시간 재고</a></div>
+                <div class="item" id="i2"><a href="admin_library.html">도서관 관리</a></div>
+                <div class="item" id="i3"><a href="Best_mng_1.html">인기 도서 관리</a></div>
+                <div class="item" id="i4"><a href="admin_page.html">불량 도서 관리</a></div>
+                <div class="item" id="i5"><a href="회원관리.html">회원 관리</a></div>
+                <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">정보 광장 관리</a></div>
+            </div>
+            <div class="right" id="userall">
+                <div>OOO관리자</div>
+                <!-- <div class="inb" id="login">로그인</div>
+                <div class="inb">|</div>
+                <div class="inb" id="userin">회원가입</div>
+                <div class="inb" id="menus"></div> -->
+            </div>
+        </div>
+
+        
+
+
+    </header>
+
+    <!-- 여기 사이에 이것 저것 코딩하세용 >< 
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>남/녀별 베스트도서</strong></div>
+    <div class="l_menu" id="l_menu_1" style="font-size: 20px;">연령별 베스트도서</div>
+    </div> 인기도서 관리창 코딩시작 >< 
+    
+    -->
+
+    <div id="wrap">
+        <!-- 사이드 -->
+        <aside class="clearfix" id="side">
+            <div id="sideleft">
+                <h2 id="title">베스트 도서</h2>
+                <div id="items">
+                    <div class="item" id="i1">
+                        <span><a href="Best_mng_1.html">베스트도서 관리</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span><a href="admin_bookflix_1.html">북플릭스 관리</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span><a href ="admin_bookflix_2.html">북플릭스 회원 통계</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section>
+            <div class="best_text"><strong>베스트도서 관리</strong></div>
+            <table id="table_1">
+                <thead>
+                    <tr>
+                        <th class="pin"><input type="checkbox" id="selectAll" onchange="selectAllBooks(this)"></th>
+                        <th>도서명</th>
+                        <th>도서정보</th>
+                        <th>30일 이내<br>대여횟수</th>
+                        <th>도서관별<br>대여횟수</th>
+                        <th>북플릭스<br>대여횟수</th>
+                        <th>성별 통계</th>
+                        <th>연령별 통계</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th><input type="checkbox" data-delete="checkbox"></th>
+                        <td>화를 이기는 불편한 심리학</td>
+                        <td>
+                            <button onclick="openPopup(1)">보기</button>
+                            <div id="popup1" class="popup">
+                                <div class="popup-header">
+                                    <h2>화를 이기는 불편한 심리학</h2>
+                                    <span class="popup-close" onclick="closePopup(1)">&times;</span>
+                                </div>
+                                <p>
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/1128320143232077876/1265545266891591772/2024-07-24_2.44.42.png?ex=66a1e660&is=66a094e0&hm=7f08d46a4f1e184da2cc114a1821b28011bb55839fc85f40b1bb928e69a0f107&">
+                                </p>
+                                <p>저자: 다카시나 다카유키</p>
+                                <p>출판사: 밀리언서재</p>
+                                <p>출판일: 2024.07.20</p>
+                            </div>
+                        </td>
+                        <td>330</td>
+                        <td>
+                            <button onclick="openPopup(6)">보기</button>
+                            <div id="popup6" class="popup">
+                                <div class="popup-header">
+                                    <h2>도서관별 대여 통계</h2>
+                                    <span class="popup-close" onclick="closePopup(6)">&times;</span>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>도서관명</h3>
+                                            </td>
+                                            <td>
+                                                <h3>대여 횟수</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>중앙도서관</td>
+                                            <td>200회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>청수도서관</td>
+                                            <td>98회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>신방도서관</td>
+                                            <td>102회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>두정도서관</td>
+                                            <td>67회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>쌍용도서관</td>
+                                            <td>87회</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>304</td>
+                        <td>
+                            <button onclick="openGender()">보기</button>
+                            <div id="myGender" class="gender">
+                                <div class="gender-content">
+                                    <span class="close" onclick="closeGender()">&times;</span>
+                                    <h2>성별 통계</h2>
+                                    <canvas id="genderChart"></canvas>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="openModal()">보기</button>
+                            <div id="myGraph" class="graph">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <div id="chartContainer"></div>
+                                </div>
+                            </div>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <th><input type="checkbox" data-delete="checkbox"></th>
+                        <td>술술 읽히는 군주론</td>
+                        <td>
+                            <button onclick="openPopup(2)">보기</button>
+                            <div id="popup2" class="popup">
+                                <div class="popup-header">
+                                    <h2>술술 읽히는 군주론</h2>
+                                    <span class="popup-close" onclick="closePopup(2)">&times;</span>
+                                </div>
+                                <p>
+                                    <img
+                                        src="https://cdn.discordapp.com/attachments/1128320143232077876/1265545241394548816/2024-07-24_2.44.35.png?ex=66a337da&is=66a1e65a&hm=bd55716c41add98c855f455ffaa7714fb6f6a1a4f18ed6366e9a7007f65647cb&">
+                                </p>
+                                <p>저자: 니콜로 마키아벨리</p>
+                                <p>출판사: 힘찬북스</p>
+                                <p>출판일: 2024.08.08</p>
+                            </div>
+                        </td>
+                        <td>320</td>
+                        <td>
+                            <button onclick="openPopup(7)">보기</button>
+                            <div id="popup7" class="popup">
+                                <div class="popup-header">
+                                    <h2>도서관별 대여 통계</h2>
+                                    <span class="popup-close" onclick="closePopup(7)">&times;</span>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>도서관명</h3>
+                                            </td>
+                                            <td>
+                                                <h3>대여 횟수</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>중앙도서관</td>
+                                            <td>192회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>청수도서관</td>
+                                            <td>92회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>신방도서관</td>
+                                            <td>99회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>두정도서관</td>
+                                            <td>101회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>쌍용도서관</td>
+                                            <td>23회</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+
+                            </div>
+                        </td>
+                        <td>260</td>
+                        <td>
+                            <button onclick="openGender()">보기</button>
+                            <div id="myGender" class="gender">
+                                <div class="gender-content">
+                                    <span class="close" onclick="closeGender()">&times;</span>
+                                    <h2>성별 통계</h2>
+                                    <canvas id="genderChart"></canvas>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="openModal()">보기</button>
+                            <div id="myGraph" class="graph">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <div id="chartContainer"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><input type="checkbox" data-delete="checkbox"></th>
+                        <td>만일 나에게 단 한 번의 아침이 남아 있다면</td>
+                        <td>
+                            <button onclick="openPopup(3)">보기</button>
+                            <div id="popup3" class="popup">
+                                <div class="popup-header">
+                                    <h2>만일 나에게 단 한 번의 아침이 남아 있다면</h2>
+                                    <span class="popup-close" onclick="closePopup(3)">&times;</span>
+                                </div>
+                                <p>
+                                    <img
+                                        src="https://media.discordapp.net/attachments/1128320143232077876/1264791606620590110/2024-07-22_12.49.05.png?ex=669fd139&is=669e7fb9&hm=919093274af16fb216b9d320310ebd3367567fc4d2feb2ef46108356c1724839&=&format=webp&quality=lossless&width=544&height=824">
+                                </p>
+                                <p>저자: 존 릴런드</p>
+                                <p>출판사: 북모먼트</p>
+                                <p>출판일: 2024.06.26</p>
+                            </div>
+                        </td>
+                        <td>280</td>
+                        <td>
+                            <button onclick="openPopup(8)">보기</button>
+                            <div id="popup8" class="popup">
+                                <div class="popup-header">
+                                    <h2>도서관별 대여 통계</h2>
+                                    <span class="popup-close" onclick="closePopup(8)">&times;</span>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>도서관명</h3>
+                                            </td>
+                                            <td>
+                                                <h3>대여 횟수</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>중앙도서관</td>
+                                            <td>170회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>청수도서관</td>
+                                            <td>70회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>신방도서관</td>
+                                            <td>98회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>두정도서관</td>
+                                            <td>101회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>쌍용도서관</td>
+                                            <td>70회</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>259</td>
+                        <td>
+                            <button onclick="openGender()">보기</button>
+                            <div id="myGender" class="gender">
+                                <div class="gender-content">
+                                    <span class="close" onclick="closeGender()">&times;</span>
+                                    <h2>성별 통계</h2>
+                                    <canvas id="genderChart"></canvas>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="openModal()">보기</button>
+                            <div id="myGraph" class="graph">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <div id="chartContainer"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><input type="checkbox" data-delete="checkbox"></th>
+                        <td>나는 도대체 왜 피곤할까</td>
+                        <td>
+                            <button onclick="openPopup(4)">보기</button>
+                            <div id="popup4" class="popup">
+                                <div class="popup-header">
+                                    <h2>나는 도대체 왜 피곤할까</h2>
+                                    <span class="popup-close" onclick="closePopup(4)">&times;</span>
+                                </div>
+                                <p>
+                                    <img
+                                        src="https://media.discordapp.net/attachments/1128320143232077876/1264791631220183111/2024-07-22_12.49.23.png?ex=669fd13f&is=669e7fbf&hm=b649683c152ea47eb5a6007bed1dbecc0ac28a10d87bd8c5f1062c1772f432c7&=&format=webp&quality=lossless&width=540&height=792">
+                                </p>
+                                <p>저자: 에이미 샤</p>
+                                <p>출판사: 북플레저</p>
+                                <p>출판일: 2024.07.10</p>
+                            </div>
+                        </td>
+                        <td>270</td>
+                        <td>
+                            <button onclick="openPopup(8)">보기</button>
+                            <div id="popup8" class="popup">
+                                <div class="popup-header">
+                                    <h2>도서관별 대여 통계</h2>
+                                    <span class="popup-close" onclick="closePopup(8)">&times;</span>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>도서관명</h3>
+                                            </td>
+                                            <td>
+                                                <h3>대여 횟수</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>중앙도서관</td>
+                                            <td>150회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>청수도서관</td>
+                                            <td>101회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>신방도서관</td>
+                                            <td>30회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>두정도서관</td>
+                                            <td>77회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>쌍용도서관</td>
+                                            <td>40회</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>250</td>
+                        <td>
+                            <button onclick="openGender()">보기</button>
+                            <div id="myGender" class="gender">
+                                <div class="gender-content">
+                                    <span class="close" onclick="closeGender()">&times;</span>
+                                    <h2>성별 통계</h2>
+                                    <canvas id="genderChart"></canvas>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="openModal()">보기</button>
+                            <div id="myGraph" class="graph">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <div id="chartContainer"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><input type="checkbox" data-delete="checkbox"></th>
+                        <td>THE MONEY BOOK(더 머니북)</td>
+                        <td>
+                            <button onclick="openPopup(5)">보기</button>
+                            <div id="popup5" class="popup">
+                                <div class="popup-header">
+                                    <h2>THE MONEY BOOK(더 머니북)</h2>
+                                    <span class="popup-close" onclick="closePopup(5)">&times;</span>
+                                </div>
+                                <p>
+                                    <img
+                                        src="https://media.discordapp.net/attachments/1128320143232077876/1264791198460018788/2024-07-22_12.48.09.png?ex=669f2818&is=669dd698&hm=e79f29d8cc3b9cbacc6c9e39071ac98c7c42e6cb53569a9f40d1a728db010fa5&=&format=webp&quality=lossless&width=544&height=864">
+                                </p>
+                                <p>저자: 토스</p>
+                                <p>출판사: 비바리퍼블리카</p>
+                                <p>출판일: 2024.05.27</p>
+                            </div>
+                        </td>
+                        <td>260</td>
+                        <td>
+                            <button onclick="openPopup(8)">보기</button>
+                            <div id="popup8" class="popup">
+                                <div class="popup-header">
+                                    <h2>도서관별 대여 통계</h2>
+                                    <span class="popup-close" onclick="closePopup(8)">&times;</span>
+                                </div>
+                                <div>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <h3>도서관명</h3>
+                                            </td>
+                                            <td>
+                                                <h3>대여 횟수</h3>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>중앙도서관</td>
+                                            <td>60회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>청수도서관</td>
+                                            <td>99회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>신방도서관</td>
+                                            <td>31회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>두정도서관</td>
+                                            <td>26회</td>
+                                        </tr>
+                                        <tr>
+                                            <td>쌍용도서관</td>
+                                            <td>99회</td>
+                                        </tr>
+
+                                    </table>
+                                </div>
+                            </div>
+                        </td>
+                        <td>240</td>
+                        <td>
+                            <button onclick="openGender()">보기</button>
+                            <div id="myGender" class="gender">
+                                <div class="gender-content">
+                                    <span class="close" onclick="closeGender()">&times;</span>
+                                    <h2>성별 통계</h2>
+                                    <canvas id="genderChart"></canvas>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <button onclick="openModal()">보기</button>
+                            <div id="myGraph" class="graph">
+                                <div class="modal-content">
+                                    <span class="close" onclick="closeModal()">&times;</span>
+                                    <div id="chartContainer"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="deleteButton" onclick="deleteSelectedBooks()" id="del_book_btn">선택된 도서 삭제</button>
+            <button onclick="openPopup(12)" id="new_book_btn">새로운 도서추가</button>
+            <div id="popup12" class="popup">
+                <div class="popup-header">
+                    <span class="popup-close" onclick="closePopup(12)">&times;</span>
+                </div>
+                <form id="addBookForm">
+                    <label for="newBookName">도서명:</label>
+                    <input type="text" id="newBookName" name="newBookName" required><br><br>
+                    <label for="newBookInfo">도서정보:</label>
+                    <input type="text" id="newBookInfo" name="newBookInfo" required><br><br>
+                    <label for="newRentalCount">30일 이내 대여횟수:</label>
+                    <input type="number" id="newRentalCount" name="newRentalCount" required><br><br>
+                    <label for="newLibraryStats">도서관별 대여횟수:</label>
+                    <input type="text" id="newLibraryStats" name="newLibraryStats" required><br><br>
+                    <label for="newNetflixCount">북플릭스 대여횟수:</label>
+                    <input type="number" id="newNetflixCount" name="newNetflixCount" required><br><br>
+                    <label for="newGenderStats">성별 통계:</label>
+                    <input type="text" id="newGenderStats" name="newGenderStats" required><br><br>
+                    <label for="newAgeStats">연령별 통계:</label>
+                    <input type="text" id="newAgeStats" name="newAgeStats" required><br><br>
+                    <button type="button" onclick="addNewBook()">도서 추가</button>
+                </form>
+            </div>
+            <button id="deleteButton" onclick="deleteSelectedBooks()">선택된 도서 삭제</button>
+            <button onclick="registerBestBooks()">베스트 등록</button>
+            <table id="bestBooksTable">
+                <thead>
+                    <tr>
+                        <th class="pin"><input type="checkbox" id="selectAll" onchange="selectAllBooks(this)"></th>
+                        <th>도서명</th>
+                        <th>도서정보</th>
+                        <th>30일 이내 대여횟수</th>
+                        <th>도서관별 대여횟수</th>
+                        <th>북플릭스 대여횟수</th>
+                        <th>성별 통계</th>
+                        <th>연령별 통계</th>
+                    </tr>
+                </thead>
+                <tbody id="bestBooksBody">
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <!--자바 스크립트 영역-->
+    <script>        let pi1 = document.querySelector("#sideleft #i1");
+        let pi2 = document.querySelector("#sideleft #i2");
+        let pi3 = document.querySelector("#sideleft #i3");
+        let pi4 = document.querySelector("#sideleft #i4");
+
+        function pageOn() {
+            pi1.addEventListener('click', function () {
+                window.location.href = "best_we_all.html"
+            })
+            pi2.addEventListener('click', function () {
+                window.location.href = "best_we.html"
+            })
+            pi3.addEventListener('click', function () {
+                window.location.href = "best_we_3.html"
+            })
+
+        };
+        function openGender() {
+
+            const gender = document.getElementById('myGender');
+            gender.style.display = 'block';
+            const genderData = {
+                labels: ['남성', '여성'],
+                datasets: [{
+                    label: '성별 통계',
+                    data: [60, 40],
+                    backgroundColor: [
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 99, 132, 0.6)',
+                    ],
+                    borderColor: [
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    borderWidth: 1
+                }]
+            };
+            const ctx = document.getElementById('genderChart').getContext('2d');
+            genderChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: genderData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: '성별 통계',
+                        fontSize: 16,
+                    },
+                    animation: {
+                        animateScale: true,
+                        animateRotate: true
+                    }
+                }
+            })
+        }
+
+        function closeGender() {
+            const gender_2 = document.getElementById('myGender');
+            gender_2.style.display = 'none';
+
+        }
+
+
+        function openModal() {
+            const modal = document.getElementById('myGraph');
+            modal.style.display = 'block';
+            const labels = ['10대', '20대', '30대', '40대', '50대'];
+            const data = [20, 50, 30, 40, 70];
+
+            const canvas = document.createElement('canvas');
+            canvas.id = 'myChart';
+            const chartContainer = document.getElementById('chartContainer');
+            chartContainer.innerHTML = '';
+            chartContainer.appendChild(canvas);
+
+            const ctx = canvas.getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '연령별 사용자',
+                        data: data,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('myGraph');
+            modal.style.display = 'none';
+        }
+
+
+        function openPopup(id) {
+            const popup = document.getElementById('popup' + id);
+            if (popup) {
+                popup.style.display = 'block';
+            }
+        }
+
+
+
+        function closePopup(id) {
+            const popup = document.getElementById('popup' + id);
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }
+
+        window.onload = function () {
+            var existingRow = document.querySelector("#bookTable tbody tr");
+            var existingCells = existingRow.querySelectorAll("td");
+
+            document.getElementById("newBookName").value = existingCells[1].textContent.trim();
+            document.getElementById("newBookInfo").value = existingCells[2].textContent.trim();
+            document.getElementById("newRentalCount").value = existingCells[3].textContent.trim();
+            document.getElementById("newLibraryStats").value = existingCells[4].querySelector("button").textContent.trim();
+            document.getElementById("newNetflixCount").value = existingCells[5].textContent.trim();
+            document.getElementById("newGenderStats").value = existingCells[6].querySelector("button").textContent.trim();
+            document.getElementById("newAgeStats").value = existingCells[7].querySelector("button").textContent.trim();
+        };
+
+        function addNewBook() {
+            var table = document.getElementById("table_1").getElementsByTagName('tbody')[0];
+
+            var newRow = table.insertRow();
+            var cells = [];
+
+            for (var i = 0; i < 8; i++) {
+                cells.push(newRow.insertCell(i));
+            }
+
+            cells[0].innerHTML = '<input type="checkbox" data-delete="checkbox">';
+            cells[1].innerText = document.getElementById("newBookName").value;
+            cells[2].innerHTML = `<button onclick="openPopup(1)">보기</button>
+                                    <div id="popup1" class="popup">
+                                        <div class="popup-header">
+                                            <h2>화를 이기는 불편한 심리학</h2>
+                                            <span class="popup-close" onclick="closePopup(1)">&times;</span>
+                                        </div>
+                                        <p>
+                                            <img
+                                                src="https://cdn.discordapp.com/attachments/1128320143232077876/1265545266891591772/2024-07-24_2.44.42.png?ex=66a1e660&is=66a094e0&hm=7f08d46a4f1e184da2cc114a1821b28011bb55839fc85f40b1bb928e69a0f107&">
+                                        </p>
+                                        <p>저자: 다카시나 다카유키</p>
+                                        <p>출판사: 밀리언서재</p>
+                                        <p>출판일: 2024.07.20</p>
+                                    </div>`
+            cells[3].innerText = document.getElementById("newRentalCount").value;
+            cells[4].innerHTML = `
+                <button onclick="openPopup(6)">보기</button>
+                <div id="popup6" class="popup" style="display:none;">
+                    <h2>도서관별 대여 통계</h2>
+                    <table>
+                        <tr>
+                            <td>중앙도서관</td>
+                            <td>200회</td>
+                        </tr>
+                        <tr>
+                            <td>청수도서관</td>
+                            <td>98회</td>
+                        </tr>
+                        <tr>
+                            <td>신방도서관</td>
+                            <td>102회</td>
+                        </tr>
+                        <tr>
+                            <td>두정도서관</td>
+                            <td>67회</td>
+                        </tr>
+                        <tr>
+                            <td>쌍용도서관</td>
+                            <td>87회</td>
+                        </tr>
+                    </table>
+                </div>`;
+            cells[5].innerText = document.getElementById("newNetflixCount").value;
+            cells[6].innerHTML = `
+                <button onclick="openGender()">보기</button>
+                <div id="myGender" class="gender" style="display:none;">
+                    <h2>성별 통계</h2>
+                    <canvas id="genderChart" width="400" height="400"></canvas>
+                </div>`;
+            cells[7].innerHTML = `
+                <button onclick="openModal()">보기</button>
+                <div id="myGraph" class="graph" style="display:none;">
+                    <h2>연령별 통계</h2>
+                    <div id="chartContainer"></div>
+                </div>`;
+        }
+        function selectAllBooks(checkbox) {
+            var checkboxes = document.querySelectorAll('input[type="checkbox"][data-delete="checkbox"]');
+            checkboxes.forEach(function (cb) {
+                cb.checked = checkbox.checked;
+            });
+            toggleDeleteButton();
+
+        }
+
+        function deleteSelectedBooks() {
+            var table = document.getElementById("table_1").getElementsByTagName('tbody')[0];
+            var checkboxes = document.querySelectorAll('input[type="checkbox"][data-delete="checkbox"]:checked');
+
+            checkboxes.forEach(function (checkbox) {
+                var row = checkbox.closest('tr');
+                row.style.display = 'none';
+
+            });
+
+            selectedBooks = [];
+            resetCheckboxes();
+        }
+
+
+        function registerBestBooks() {
+            var bestBooksTable = document.getElementById("bestBooksTable");
+            var bestBooksBody = document.getElementById("bestBooksBody");
+
+
+            var checkboxes = document.querySelectorAll('input[type="checkbox"][data-delete="checkbox"]:checked');
+            checkboxes.forEach(function (checkbox) {
+                var row = checkbox.closest('tr').cloneNode(true);
+                bestBooksBody.appendChild(row);
+                selectedBooks = [];
+                resetCheckboxes();
+            });
+            selectedBooks = [];
+            resetCheckboxes();
+
+            bestBooksTable.style.display = 'table';
+            alert("베스트 도서에 추가되었습니다.");
+
+        }
+
+        function resetCheckboxes() {
+            const checkboxes = document.querySelectorAll('#table_1 tbody input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+        }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>

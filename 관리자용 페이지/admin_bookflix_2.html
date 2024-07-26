@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+
+
+        /* -------------------------------관리자 도서관 정보------------------------------ */
+        #i3 .material-symbols-outlined {
+            background-color: rgb(165, 224, 144);
+        }
+
+        #addscbtn {
+            margin-top: 50px;
+            margin-left: 50%;
+        }
+
+        /* ------------------------------------------------------------------ */
+        
+    </style>
+    <link href="admin_bookflix_2.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+    <!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <div class="item" id="i1"><a href="admin_stock.html">실시간 재고</a></div>
+                <div class="item" id="i2"><a href="admin_library.html">도서관 관리</a></div>
+                <div class="item" id="i3"><a href="Best_mng_1.html">인기 도서 관리</a></div>
+                <div class="item" id="i4"><a href="admin_page.html">불량 도서 관리</a></div>
+                <div class="item" id="i5"><a href="회원관리.html">회원 관리</a></div>
+                <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">정보 광장 관리</a></div>
+            </div>
+            <div class="right" id="userall">
+                <div>OOO관리자</div>
+                <!-- <div class="inb" id="login">로그인</div>
+                <div class="inb">|</div>
+                <div class="inb" id="userin">회원가입</div>
+                <div class="inb" id="menus"></div> -->
+            </div>
+        </div>
+
+    </header>
+
+    <!-- 여기 사이에 이것 저것 코딩하세용 >< 
+    <div id="left_menu">
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
+        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>남/녀별 베스트도서</strong></div>
+    <div class="l_menu" id="l_menu_1" style="font-size: 20px;">연령별 베스트도서</div>
+    </div> 인기도서 관리창 코딩시작 >< 
+    
+-->
+
+    <div id="wrap">
+        <!-- 사이드 -->
+        <aside class="clearfix" id="side">
+            <div id="sideleft">
+                <h2 id="title">베스트 도서</h2>
+                <div id="items">
+                    <div class="item" id="i1">
+                        <span><a href="Best_mng_1.html">베스트도서 관리</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span><a href="admin_bookflix_1.html">북플릭스 관리</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span><a href ="admin_bookflix_2.html">북플릭스 회원 통계</a></span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <section class="best_infor">
+            <div class="chart-container">
+                <h3>회원별 좋아하는 장르 분포</h3>
+                <canvas id="genreChart"></canvas>
+            </div>
+            <div>
+                <h2>북플릭스 회원 관리</h2>
+
+                <table id="memberTable">
+                    <thead>
+                        <tr>
+                            <th>이름</th>
+                            <th>성별</th>
+                            <th>나이</th>
+                            <th>좋아하는 장르</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>이제섭</td>
+                            <td>남성</td>
+                            <td>30대</td>
+                            <td>소설</td>
+                        </tr>
+                        <tr>
+                            <td>김아영</td>
+                            <td>여성</td>
+                            <td>20대</td>
+                            <td>역사</td>
+                        </tr>
+                        <tr>
+                            <td>박규태</td>
+                            <td>남성</td>
+                            <td>30대</td>
+                            <td>자기계발</td>
+                        </tr>
+                        <tr>
+                            <td>정지영</td>
+                            <td>여성</td>
+                            <td>50대</td>
+                            <td>비즈니스</td>
+                        </tr>
+                        <tr>
+                            <td>방국봉</td>
+                            <td>남성</td>
+                            <td>20대</td>
+                            <td>과학</td>
+                        </tr>
+                        <tr>
+                            <td>김준희</td>
+                            <td>남성</td>
+                            <td>30대</td>
+                            <td>역사</td>
+                        </tr>
+                        <tr>
+                            <td>고흥덕</td>
+                            <td>남성</td>
+                            <td>20대</td>
+                            <td>스포츠</td>
+                        </tr>
+                        <tr>
+                            <td>연아리</td>
+                            <td>여성</td>
+                            <td>30대</td>
+                            <td>예술</td>
+                        </tr>
+                        <tr>
+                            <td>햄스터</td>
+                            <td>남성</td>
+                            <td>40대</td>
+                            <td>자연</td>
+                        </tr>
+                        <tr>
+                            <td>크리스</td>
+                            <td>남성</td>
+                            <td>40대</td>
+                            <td>자기계발</td>
+                        </tr>
+                        <tr>
+                            <td>유지태</td>
+                            <td>여성</td>
+                            <td>20대</td>
+                            <td>스포츠</td>
+                        </tr>
+                        <tr>
+                            <td>김태희</td>
+                            <td>여성</td>
+                            <td>30대</td>
+                            <td>예술</td>
+                        </tr>
+                        <tr>
+                            <td>조민정</td>
+                            <td>남성</td>
+                            <td>20대</td>
+                            <td>과학</td>
+                        </tr>
+                        <tr>
+                            <td>규태박</td>
+                            <td>여성</td>
+                            <td>40대</td>
+                            <td>역사</td>
+                        </tr>
+                        <tr>
+                            <td>제섭리</td>
+                            <td>여성</td>
+                            <td>20대</td>
+                            <td>소설</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <!--자바 스크립트 영역-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+
+        let pi1 = document.querySelector("#sideleft #i1");
+        let pi2 = document.querySelector("#sideleft #i2");
+        let pi3 = document.querySelector("#sideleft #i3");
+        let pi4 = document.querySelector("#sideleft #i4");
+
+        const memberData = [
+            { name: '이제섭', gender: '남성', age: '30대', genre: '소설' },
+            { name: '김아영', gender: '여성', age: '20대', genre: '역사' },
+            { name: '박규태', gender: '남성', age: '40대', genre: '자기계발' },
+            { name: '정지영', gender: '여성', age: '50대', genre: '비즈니스' },
+            { name: '방국봉', gender: '남성', age: '20대', genre: '과학' },
+            { name: '김준희', gender: '남성', age: '30대', genre: '역사' },
+            { name: '고흥덕', gender: '남성', age: '20대', genre: '스포츠' },
+            { name: '연아리', gender: '여성', age: '30대', genre: '예술' },
+            { name: '햄스터', gender: '남성', age: '40대', genre: '자연' },
+            { name: '크리스', gender: '남성', age: '40대', genre: '자기계발' },
+            { name: '유지태', gender: '여성', age: '20대', genre: '스포츠' },
+            { name: '김태희', gender: '여성', age: '30대', genre: '예술' },
+            { name: '조민정', gender: '남성', age: '20대', genre: '과학' },
+            { name: '규태박', gender: '여성', age: '40대', genre: '역사' },
+            { name: '제섭리', gender: '여성', age: '20대', genre: '소설' }
+        ];
+
+        // 장르별 선호도를 계산합니다.
+        const genreCount = {
+            '소설': 0,
+            '역사': 0,
+            '자기계발': 0,
+            '비즈니스': 0,
+            '과학': 0,
+            '스포츠': 0,
+            '예술': 0,
+            '자연': 0
+        };
+
+        memberData.forEach(member => {
+            genreCount[member.genre]++;
+        });
+
+        const genres = Object.keys(genreCount);
+        const counts = Object.values(genreCount);
+
+        // 그래프 그리기
+        const ctx = document.getElementById('genreChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: genres,
+                datasets: [{
+                    label: '장르별 선호도',
+                    data: counts,
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)',
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)',
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+
+
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
