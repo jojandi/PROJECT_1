@@ -205,15 +205,7 @@
     padding: 20px;
     vertical-align: top;
 }
-#wrap .section3{
-    border: 1px solid red;
-    font-size: 14px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 30%;
-    padding: 20px;
-    vertical-align: top;
-}
+
 
 /* ------------------------------------------------------------------ */
 /* 공지사항 */
@@ -280,4 +272,49 @@
 
 .section2 #noticewrap .notice .noticeTD .update{
     font-size: 12px;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* 북플릭스 */
+
+#wrap .section3{
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 28%;
+    padding: 15px;
+    vertical-align: top;
+    margin-top: 20px;
+    border: 2px solid #ccc;
+    border-radius: 5%;
+    height: 315px;
+}
+
+.section3 #booksub{
+    text-align: center;
+}
+
+.section3 img{
+    width: 80%;
+}
+
+.section3 #booksubInfoTitle{
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.section3 #booksubInfo{
+    margin: 13px 0;
+    font-size: 14px;
+}
+
+.section3 #booksub #booksubBnt{
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5%;
+    background: rgb(165, 224, 144);
+    border: 1px solid rgb(106, 170, 82);
+    cursor: pointer;
 }
