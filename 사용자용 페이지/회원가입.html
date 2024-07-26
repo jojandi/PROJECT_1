@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사용자용 페이지 베이스_로그인 완료</title>
-    
+
     <link href="00.user_base_login.css" rel="stylesheet">
     <style>
         table {
@@ -50,7 +50,8 @@
             margin-top: 5px;
         }
 
-        .gaip input, #gaip_1 {
+        .gaip input,
+        #gaip_1 {
             background: rgb(165, 224, 144);
             border: none;
             padding: 10px 20px;
@@ -79,12 +80,12 @@
             text-align: center;
         }
 
-        #gaip_1{
+        #gaip_1 {
             margin-bottom: 100px;
-            margin-top: 10px;
+            margin-top: 30px;
         }
 
-        #hg{
+        #hg {
             width: 80%;
             margin: 0 auto;
             box-sizing: border-box;
@@ -97,7 +98,7 @@
 
     <!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
-                
+
         <div id="logoall">
             <div id="logo" class="left">로고</div>
             <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
@@ -118,7 +119,8 @@
                 <a href="./회원가입.html" class="inb" id="userin">회원가입</a>
             </div>
 
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
             <!-- <div class="right" id="userall">
                 <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
                 <span class="material-symbols-outlined">person</span>
@@ -217,7 +219,7 @@
                     </td>
                 </tr>
                 <tr>
-                    
+
                 </tr>
                 <tr>
                     <td class="label">비밀번호</td>
@@ -229,7 +231,7 @@
                 <tr>
                     <td class="label">비밀번호 확인</td>
                     <td>
-                        <input  type="password" id="confirm-password" placeholder="비밀번호 재입력">
+                        <input type="password" id="confirm-password" placeholder="비밀번호 재입력">
                         <div class="red" id="confirm-password-message">비밀번호가 일치하지 않습니다</div>
                     </td>
                 </tr>
@@ -240,6 +242,19 @@
                     </td>
                 </tr>
                 <tr>
+                    <td class="label">주소</td>
+                    <td>
+
+                        <input type="text" id="Home" placeholder="우편번호">
+                        <div class="gaip"><input type="button" value="검색"></div>
+                        <br>
+                        <input type="text" id="Home" placeholder="기본주소 입력">
+                        <input type="text" id="Home" placeholder="상세주소 입력">
+
+
+                    </td>
+                </tr>
+                <tr>
                     <td class="label">e_mail</td>
                     <td>
                         <input class="email-input" type="text" id="email-user" placeholder="이메일주소">
@@ -247,38 +262,58 @@
                         <input class="email-input" type="text" id="email-domain" placeholder="naver.com">
                     </td>
                 </tr>
+                <tr>
+                    <td class="label">선호도 조사</td>
+                    <td>
+                        <input type="checkbox" id="hre" placeholder="">언론
+                        <input type="checkbox" id="hre" placeholder="">소설
+                        <input type="checkbox" id="hre" placeholder="">역사
+                        <input type="checkbox" id="hre" placeholder="">과학
+                        <input type="checkbox" id="hre" placeholder="">인문학
+                        <input type="checkbox" id="hre" placeholder="">자기계발
+                        <br>
+                        <input type="checkbox" id="hre" placeholder="">무협
+                        <input type="checkbox" id="hre" placeholder="">만화
+                        <input type="checkbox" id="hre" placeholder="">판타지
+                        <input type="checkbox" id="hre" placeholder="">오디오
+                        <input type="checkbox" id="hre" placeholder="">로맨스
+                        <input type="checkbox" id="hre" placeholder="">일반
+
+                    </td>
+                </tr>
+
                 <!-- <tr> -->
-                    <!-- <div class="gaip2">
+                <!-- <div class="gaip2">
                         <td colspan="2" class="gaip">
                             <input id="gaip_1" type="button" value="회원가입 완료">
                         </td>
                     </div> -->
                 <!-- </tr> -->
-        </table>
-        <div style="text-align: center;"><input id="gaip_1" type="button" value="회원가입 완료"></div>
+            </table>
+            <div style="text-align: center;"><input id="gaip_1" type="button" value="회원가입 완료"></div>
         </div>
-    
+
     </div>
 
 
-        <!-- 가장 아래 고정 -->
-        <footer>
-            <div id="bottom" class="clearfix">
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
 
-                <div id="logoall">
-                    <div id="logo" class="left">로고</div>
-                    <div id="name" class="left">행복만땅 <br>도서관</div>
-                </div>
-
-                <div id="footerinfo">
-                    Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
-                    청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
-                </div>
-
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
             </div>
-        </footer>
 
-        <script src="./회원가입.js"></script>
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="./회원가입.js"></script>
 
 
 
