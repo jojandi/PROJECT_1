@@ -111,15 +111,9 @@
             height: 50px;
             background-color: rgb(165, 224, 144);
         }
-
-
-
+        
         #i1 .material-symbols-outlined {
             background-color: rgb(165, 224, 144);
-        }
-
-        .all_table {
-            margin: 0 auto;
         }
 
         button {
@@ -258,8 +252,7 @@
         </aside>
         <section>
             <div class="best_text" style="font-size: 30px;"><strong>베스트도서 관리</strong></div>
-            <div class="all_table">
-                <table id="table_1">
+            <table id="table_1">
                     <thead>
                         <tr>
                             <th class="pin"><input type="checkbox" id="selectAll" onchange="selectAllBooks(this)"></th>
@@ -693,53 +686,51 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
-                <button id="deleteButton" onclick="deleteSelectedBooks()" id="del_book_btn">선택된 도서 삭제</button>
-                <button onclick="openPopup(12)" id="new_book_btn">새로운 도서추가</button>
-                <div id="popup12" class="popup">
-                    <div class="popup-header">
-                        <span class="popup-close" onclick="closePopup(12)">&times;</span>
+            </table>
+                    <button id="deleteButton" onclick="deleteSelectedBooks()" id="del_book_btn">선택된 도서 삭제</button>
+                    <button onclick="openPopup(12)" id="new_book_btn">새로운 도서추가</button>
+                    <div id="popup12" class="popup">
+                        <div class="popup-header">
+                            <span class="popup-close" onclick="closePopup(12)">&times;</span>
+                        </div>
+                        <form id="addBookForm">
+                            <label for="newBookName">도서명:</label>
+                            <input type="text" id="newBookName" name="newBookName" required><br><br>
+                            <label for="newBookInfo">도서정보:</label>
+                            <input type="text" id="newBookInfo" name="newBookInfo" required><br><br>
+                            <label for="newRentalCount">30일 이내 대여횟수:</label>
+                            <input type="number" id="newRentalCount" name="newRentalCount" required><br><br>
+                            <label for="newLibraryStats">도서관별 대여횟수:</label>
+                            <input type="text" id="newLibraryStats" name="newLibraryStats" required><br><br>
+                            <label for="newNetflixCount">북플릭스 대여횟수:</label>
+                            <input type="number" id="newNetflixCount" name="newNetflixCount" required><br><br>
+                            <label for="newGenderStats">성별 통계:</label>
+                            <input type="text" id="newGenderStats" name="newGenderStats" required><br><br>
+                            <label for="newAgeStats">연령별 통계:</label>
+                            <input type="text" id="newAgeStats" name="newAgeStats" required><br><br>
+                            <button type="button" onclick="addNewBook()">도서 추가</button>
+                        </form>
                     </div>
-                    <form id="addBookForm">
-                        <label for="newBookName">도서명:</label>
-                        <input type="text" id="newBookName" name="newBookName" required><br><br>
-                        <label for="newBookInfo">도서정보:</label>
-                        <input type="text" id="newBookInfo" name="newBookInfo" required><br><br>
-                        <label for="newRentalCount">30일 이내 대여횟수:</label>
-                        <input type="number" id="newRentalCount" name="newRentalCount" required><br><br>
-                        <label for="newLibraryStats">도서관별 대여횟수:</label>
-                        <input type="text" id="newLibraryStats" name="newLibraryStats" required><br><br>
-                        <label for="newNetflixCount">북플릭스 대여횟수:</label>
-                        <input type="number" id="newNetflixCount" name="newNetflixCount" required><br><br>
-                        <label for="newGenderStats">성별 통계:</label>
-                        <input type="text" id="newGenderStats" name="newGenderStats" required><br><br>
-                        <label for="newAgeStats">연령별 통계:</label>
-                        <input type="text" id="newAgeStats" name="newAgeStats" required><br><br>
-                        <button type="button" onclick="addNewBook()">도서 추가</button>
-                    </form>
-                </div>
-                <button id="deleteButton" onclick="deleteSelectedBooks()" style="display:none;">선택된 도서 삭제</button>
-                <button onclick="registerBestBooks()">베스트 등록</button>
-                <table id="bestBooksTable">
-                    <thead>
-                        <tr>
-                            <th class="pin"><input type="checkbox" id="selectAll" onchange="selectAllBooks(this)"></th>
-                            <th>도서명</th>
-                            <th>도서정보</th>
-                            <th>30일 이내 대여횟수</th>
-                            <th>도서관별 대여횟수</th>
-                            <th>북플릭스 대여횟수</th>
-                            <th>성별 통계</th>
-                            <th>연령별 통계</th>
-                        </tr>
-                    </thead>
-                    <tbody id="bestBooksBody">
-                        <!-- 선택된 도서들이 여기에 추가될 예정 -->
-                    </tbody>
-                </table>
-            </div>
-    </div>
-    </section>
+                    <button id="deleteButton" onclick="deleteSelectedBooks()" style="display:none;">선택된 도서 삭제</button>
+                    <button onclick="registerBestBooks()">베스트 등록</button>
+                    <table id="bestBooksTable">
+                        <thead>
+                            <tr>
+                                <th class="pin"><input type="checkbox" id="selectAll" onchange="selectAllBooks(this)"></th>
+                                <th>도서명</th>
+                                <th>도서정보</th>
+                                <th>30일 이내 대여횟수</th>
+                                <th>도서관별 대여횟수</th>
+                                <th>북플릭스 대여횟수</th>
+                                <th>성별 통계</th>
+                                <th>연령별 통계</th>
+                            </tr>
+                        </thead>
+                        <tbody id="bestBooksBody">
+                            <!-- 선택된 도서들이 여기에 추가될 예정 -->
+                        </tbody>
+                    </table>
+        </section>
     </div>
 
     <!--자바 스크립트 영역-->
