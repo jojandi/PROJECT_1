@@ -108,11 +108,4 @@
   .popup-close {
     cursor: pointer;
   }
-  header #menu #userall{
-    /* border: 1px solid red; */
-    width:130px;
-    height: 20px;
-    margin: 5px 0;
-    margin-right: 15px;
-    font-size: 16px;
-}
+  
