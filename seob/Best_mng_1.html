@@ -255,7 +255,7 @@
 
         </aside>
         <section>
-            <div class="best_text" style="font-size: 30px;"><strong>베스트도서 관리</strong></div>
+            <div class="best_text"><strong>베스트도서 관리</strong></div>
             <table id="table_1">
                 <thead>
                     <tr>
@@ -715,7 +715,7 @@
                     <button type="button" onclick="addNewBook()">도서 추가</button>
                 </form>
             </div>
-            <button id="deleteButton" onclick="deleteSelectedBooks()" style="display:none;">선택된 도서 삭제</button>
+            <button id="deleteButton" onclick="deleteSelectedBooks()">선택된 도서 삭제</button>
             <button onclick="registerBestBooks()">베스트 등록</button>
             <table id="bestBooksTable">
                 <thead>
@@ -731,7 +731,6 @@
                     </tr>
                 </thead>
                 <tbody id="bestBooksBody">
-                    <!-- 선택된 도서들이 여기에 추가될 예정 -->
                 </tbody>
             </table>
         </section>

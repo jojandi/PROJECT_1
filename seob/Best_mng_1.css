@@ -38,6 +38,7 @@
     border: 1px solid #aaa;
     background-clip: padding-box;
     scroll-snap-align: start;
+    font-size: 15px;
   }
   thead {
     position: relative;
