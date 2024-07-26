@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="admin_library.css" rel="stylesheet">
+    <link href="admin_table.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="admin.css" rel="stylesheet">
     <link rel="stylesheet"
@@ -14,7 +14,24 @@
         .page {
             /* border: 1px solid red; */
             width: 100%;
-            height: 45%;
+            height: 100%;
+            margin: auto;
+            margin-top: 10px;
+            overflow: scroll;
+        }
+        .page_1 {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 250px;
+            margin: auto;
+            margin-top: 10px;
+            overflow: scroll;
+        }
+        .page_2 {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 500px;
+            overflow: scroll; height: 500px;
             margin: auto;
             margin-top: 10px;
         }
@@ -22,7 +39,8 @@
         .table_wrap {
             /* border: 1px solid red; */
             /* width: 80%; */
-            height: 80%;
+            height: 100%;
+            /* overflow: scroll; */
         }
 
         .bot_btn {
@@ -44,6 +62,14 @@
 
         th.sorted-desc::after {
             content: " ▼";
+        }
+
+        .main_page {
+            width: 100%;
+        }
+        .input_style {
+            width: 30px;
+            text-align: center;
         }
     </style>
     <script src="./admin_stock.js"></script>
@@ -103,7 +129,7 @@
                     실시간 재고 현황
                 </div>
                 <div>
-                    <div class="page">
+                    <div class="page_2">
                         <table id="main_library">
                             <thead>
                                 <tr>
@@ -257,7 +283,7 @@
                     실시간 도서 예약
                 </div>
                 <div>
-                    <div class="page">
+                    <div class="page_2">
                         <table id="main_library">
                             <thead>
                                 <tr>
@@ -307,6 +333,15 @@
                                     <td>2024.07.10</td>
                                     <td>2024.07.20</td>
                                 </tr>
+                                <tr>
+                                    <th><input type="checkbox" class="p1_main_chack"></th>
+                                    <td>나는 도대체 왜 피곤할까 (이 죽일 놈의 피로와 결별하는 법)</td>
+                                    <td>as123</td>
+                                    <td>김아영</td>
+                                    <td>as123</td>
+                                    <td>2024.07.10</td>
+                                    <td>2024.07.20</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -322,7 +357,7 @@
                 </div>
                 <div>
                     <div class="table_wrap">
-                        <div class="page">
+                        <div class="page_1">
                             <table id="main_library_1">
                                 <thead>
                                     <tr>
@@ -343,7 +378,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -352,7 +387,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style"" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -361,7 +396,7 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style"" type="text"></td>
                                     </tr>
                                     <tr>
                                         <th><input type="checkbox" class="p1_main_chack"></th>
@@ -370,16 +405,44 @@
                                         <td>북플레저</td>
                                         <td>2024.07.10</td>
                                         <td>as123</td>
-                                        <td><input style="width: 30px; text-align: center;" type="text"></td>
+                                        <td><input class="input_style" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="checkbox" class="p1_main_chack"></th>
+                                        <td>나는 도대체 왜 피곤할까 (이 죽일 놈의 피로와 결별하는 법)</td>
+                                        <td>에이미 샤</td>
+                                        <td>북플레저</td>
+                                        <td>2024.07.10</td>
+                                        <td>as123</td>
+                                        <td><input class="input_style" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="checkbox" class="p1_main_chack"></th>
+                                        <td>나는 도대체 왜 피곤할까 (이 죽일 놈의 피로와 결별하는 법)</td>
+                                        <td>에이미 샤</td>
+                                        <td>북플레저</td>
+                                        <td>2024.07.10</td>
+                                        <td>as123</td>
+                                        <td><input class="input_style" type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <th><input type="checkbox" class="p1_main_chack"></th>
+                                        <td>나는 도대체 왜 피곤할까 (이 죽일 놈의 피로와 결별하는 법)</td>
+                                        <td>에이미 샤</td>
+                                        <td>북플레저</td>
+                                        <td>2024.07.10</td>
+                                        <td>as123</td>
+                                        <td><input class="input_style" type="text"></td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="bot_btn">
-                                <input id="page3_btn_1" type="button" value="발주">
 
-                            </div>
                         </div>
-                        <div class="page">
+                        <div class="bot_btn">
+                            <input id="page3_btn_1" type="button" value="발주">
+                        </div>
+
+                        <div class="page_1">
                             <table id="main_library_2">
                                 <thead>
                                     <tr>
@@ -396,10 +459,11 @@
 
                                 </tbody>
                             </table>
-                            <div class="bot_btn">
-                                <input type="button" value="Excel 파일화">
-                                <input type="button" value="완료">
-                            </div>
+
+                        </div>
+                        <div class="bot_btn">
+                            <input type="button" value="Excel 파일화">
+                            <input id="comp_btn" type="button" value="완료">
                         </div>
                     </div>
 

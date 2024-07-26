@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도서관 관리자 정보광장</title>
+    <link href="admin.css" rel="stylesheet">
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <style>
+        /* 기본 스타일 설정 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+
+        #top {
+            background-color: rgb(165, 224, 144);
+            width: 100%;
+            height: 100px;
+            color: rgba(255, 255, 255, 0.847);
+            overflow: hidden;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        header #logoall #logo {
+            margin: 5px 5px 0 40px;
+            width: 120px;
+            height: 90px;
+        }
+
+        header #logoall #name {
+            margin: 25px 40px 0 0;
+            text-align: center;
+            font-size: 20px;
+            width: 130px;
+            font-weight: 900;
+        }
+
+        header #menu {
+            width: 100%;
+            padding: 40px 0;
+        }
+
+        header #menu #items .item {
+            font-size: 14px;
+            margin: 0 5px;
+            display: inline-block;
+            width: 100px;
+        }
+
+        header #menu #userall {
+            width: 130px;
+            margin: 5px 0;
+            font-size: 12px;
+        }
+
+        footer #bottom {
+            background-color: rgb(73, 73, 73);
+            width: 100%;
+            height: 90px;
+            color: rgba(255, 255, 255, 0.808);
+        }
+
+        footer #logoall #logo {
+            margin: 10px 10px 0 40px;
+            width: 90px;
+            height: 70px;
+        }
+
+        footer #logoall #name {
+            margin: 25px 30px 0 0;
+            text-align: center;
+            font-size: 17px;
+            width: 100px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.401);
+        }
+
+        footer #footerinfo {
+            padding: 30px 30px 0 0;
+            font-size: 13px;
+        }
+
+        #MainPage {
+            width: 100%;
+            text-align: center;
+        }
+
+        #MainPage div {
+            display: inline-block;
+        }
+
+        #MainPage #MainPage_cal {
+            width: 300px;
+            height: 300px;
+        }
+
+        #MainPage #MainPage_notice {
+            width: 500px;
+            height: 300px;
+        }
+
+        #MainPage #MainPage_stock {
+            display: block;
+            width: 800px;
+            height: 300px;
+            margin: auto;
+        }
+
+        #left_menu {
+            width: 200px;
+            height: 700px;
+            display: inline-block;
+        }
+
+        #left_menu .l_menu {
+            text-align: center;
+        }
+
+        #l_menu_1 {
+            height: 100px;
+            line-height: 100px;
+        }
+
+        #l_menu_2,
+        #l_menu_3,
+        #l_menu_4 {
+            height: 50px;
+            line-height: 50px;
+        }
+
+        .main_page {
+            display: inline-block;
+            width: 1000px;
+            height: 700px;
+            text-align: center;
+            vertical-align: top;
+        }
+
+        #main_title {
+            display: inline-block;
+            width: 800px;
+            height: 50px;
+            font-size: 30px;
+            font-weight: 1000;
+        }
+
+        #section {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            font-size: 50px;
+            margin-left: 20px;
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        table.report {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table.report th,
+        table.report td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+        }
+
+        table.report th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+                /* 마우스 올리면 색깔 나오게 하는 방법 */
+        table.report tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table.report tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        input[type="button"] {
+            padding: 8px 16px;
+            background-color: #a2f796;
+            color: rgb(19, 2, 2);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="button"]:hover {
+            background-color: #9ae880;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .pagination div {
+            margin: 0 5px;
+            padding: 8px 12px;
+            background-color: #a2f796;
+            color: black;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .pagination div:hover {
+            background-color: #9ae880;
+        }
+
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .search-bar select,
+        .search-bar input[type="search"],
+        .search-bar input[type="button"].search {
+            margin-right: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+        .search-bar input[type="button"].search {
+            background-color: #a2f796;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-bar input[type="button"].search:hover {
+            background-color: #9ae880;
+        }
+
+        .click {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 20px;
+        }
+
+        .click input[type="button"] {
+            margin-left: 10px;
+        }
+
+        #wrap {
+            height: 550px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+        <div id="logoall">
+            <div id="logo" class="left">로고</div>
+            <div id="name" class="left">행복만땅 <br>도서관</div>
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <div class="item" id="i1">실시간 재고</div>
+                <div class="item" id="i2">도서관 관리</div>
+                <div class="item" id="i3">인기 도서 관리</div>
+                <div class="item" id="i4">불량 도서 관리</div>
+                <div class="item" id="i5">회원 관리</div>
+                <div class="item" id="i6">정보 광장 관리</div>
+            </div>
+
+            <div class="right" id="userall">
+                <div>OOO관리자</div>
+            </div>
+        </div>
+    </header>
+
+    <div id="wrap">
+        <aside class="clearfix" id="side">
+            <h2 id="title">정보 광장</h2>
+            <div id="items">
+                <div class="item" id="i1">
+                    <span>공지사항 관리</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </div>
+                <div class="item" id="i2">
+                    <span>도서 신청 목록</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </div>
+                <div class="item" id="i3">
+                    <span>시설물 요청</span>
+                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+                </div>
+            </div>
+        </aside>
+        <section>
+            <!-- 여기에 내용 적기 -->
+            <div>
+                <table class="report" id="reportTable">
+                    <thead>
+                        <tr>
+                            <th>번호</th>
+                            <th>이름</th>
+                            <th>책제목</th>
+                            <th>저자</th>
+                            <th>등록일</th>
+                            <!-- <th>도서구매</th> -->
+                            <th><input type="checkbox" id="selectAll"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>박규태</td>
+                            <td>당신이 누군가를 죽였다</td>
+                            <td>히가시노게이노</td>
+                            <td>2024-07-24</td>
+                            <!-- <td><input type="checkbox" class="purchase"></td> -->
+                            <td><input type="checkbox" class="select"></td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>이제섭</td>
+                            <td>나는 도대체 왜 피곤할까</td>
+                            <td>에이미 샤</td>
+                            <td>2024-07-23</td>
+                            <!-- <td><input type="checkbox" class="purchase"></td> -->
+                            <td><input type="checkbox" class="select"></td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>김아영</td>
+                            <td>불면의 법칙</td>
+                            <td>존 릴런드</td>
+                            <td>2024-07-22</td>
+                            <!-- <td><input type="checkbox" class="purchase"></td> -->
+                            <td><input type="checkbox" class="select"></td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>조민정</td>
+                            <td>돈의 심리학</td>
+                            <td>김훈</td>
+                            <td>2024-07-21</td>
+                            <!-- <td><input type="checkbox" class="purchase"></td> -->
+                            <td><input type="checkbox" class="select"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="click">
+                <input type="button" value="도서구매" class="search" onclick="handleButtonClick('buy')">
+                <input type="button" value="선택삭제" class="search" onclick="handleButtonClick('delete')">
+            </div>
+        </section>
+    </div>
+
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+            <div id="logoall">
+                <div id="logo" class="left">로고</div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 전체 선택/해제 기능
+        document.getElementById('selectAll').addEventListener('change', function () {
+            const isChecked = this.checked;
+            document.querySelectorAll('.select').forEach(checkbox => {
+                checkbox.checked = isChecked;
+            });
+        });
+
+        function handleButtonClick(action) {
+            const selectedRows = document.querySelectorAll('.select:checked');
+            if (selectedRows.length === 0) {
+                alert('선택된 항목이 없습니다.');
+                return;
+            }
+
+            if (action === 'buy') {
+                selectedRows.forEach(row => {
+                    const purchaseCheckbox = row.closest('tr').querySelector('.purchase');
+                    purchaseCheckbox.checked = true;
+                });
+                alert('선택된 도서가 구매 목록에 추가되었습니다.');
+            } else if (action === 'delete') {
+                selectedRows.forEach(row => {
+                    const tr = row.closest('tr');
+                    tr.parentNode.removeChild(tr);
+                });
+                alert('선택된 항목이 삭제되었습니다.');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

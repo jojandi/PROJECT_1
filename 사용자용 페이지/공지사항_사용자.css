@@ -1,0 +1,56 @@
+
+#section .name{
+    text-align: center;
+    font-size: 22px;
+    border: 1px solid #ccc;
+    padding: 17px;
+    box-sizing: border-box;
+    margin-top: 22px;
+}
+
+#section #table{
+    text-align: center;
+    height: 270px;
+}
+
+#section #search{
+    text-align: center;
+    margin-bottom: 110px;
+    font-size: 0;
+}
+
+#section #search select{
+    height: 25px;
+    margin-right: 5px;
+}
+#section #search #searchInput{
+    height: 25px;
+}
+
+/* 페이지 이동 */
+#movepage{
+    /* border: 1px solid red; */
+    margin: 30px 0;
+    text-align: center;
+}
+
+#movepage span{
+    vertical-align: top;
+    color: #666666;
+    /* border: 1px solid red; */
+}
+
+#movepage .chap{
+    display: inline-block;
+    font-size: 16px;
+    width: 20px;
+    color: #1b1b1b;
+}
+
+#movepage #one{
+    border-bottom: 1px solid #1b1b1b;
+}
+
+#movepage .material-symbols-outlined{
+    font-size: 21px;
+}

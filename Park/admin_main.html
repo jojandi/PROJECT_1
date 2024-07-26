@@ -7,6 +7,11 @@
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="admin_main.css" rel="stylesheet">
     <link href="admin.css" rel="stylesheet">
+    <link href="admin_table.css" rel="stylesheet">
+    <link href="modal.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin_main_Chart.js"></script>
+    <script src="modal.js"></script>
 </head>
 <body>
 
@@ -84,124 +89,58 @@
                 <script src="./01.calendar.js"></script>
 
             </div>
-
+            <div id="hukwan_bot"><div class="circle_1"></div>휴관일 <div class="circle_2"></div><small>도서입고일</small></div>
         </section>
 
         <section class="section1">
-
-            <div id="search">
-                <h2 id="searchText">자료 검색</h2><br>
-                <input type="text" id="searchIn" placeholder=" 검색어를 입력해주세요. ">
-                <!-- <input type="button" id="searchBnt" value="⌕"> -->
-                <div id="searchBnt">⌕</div>
-            </div>
-
-            <div id="pageall">
-
-                <div class="pages">
-
-                    <div>
-                        <div class="page" id="p1">
-                            <span class="material-symbols-outlined">home</span>
-                        </div>
-                        <div class="pname">도서관소개</div>
-                    </div>
-                    <div>
-                        <div class="page" id="p2">
-                            <span class="material-symbols-outlined">kid_star</span>
-                        </div>
-                        <div class="pname">베스트도서</div>
-                    </div>
-                    <div>
-                        <div class="page" id="p3">
-                            <span class="material-symbols-outlined">sync_saved_locally</span>
-                        </div>
-                        <div class="pname">대출 예약</div>
-                    </div>
-                    <div>
-                        <div class="page" id="p4">
-                            <span class="material-symbols-outlined">assignment_add</span>
-                        </div>
-                        <div class="pname">도서 신청</div>
-                    </div>
-                    
-                </div>
-
-                <div class="pages">
-
-                    <div>
-                        <div class="page" id="p5">
-                            <span class="material-symbols-outlined">shopping_cart</span>
-                        </div>
-                        <div class="pname">장바구니</div>
-                    </div>
-                    <div>
-                        <div class="page" id="p6">
-                            <span class="material-symbols-outlined">person_edit</span>
-                        </div>
-                        <div class="pname">내 이용정보</div>
-                    </div>
-                    <div>
-                        <div class="page" id="p7">
-                            <span class="material-symbols-outlined">sd_card_alert</span>
-                        </div>
-                        <div class="pname">불량도서 신고</div>
-                    </div>
-                    <div>
-                        <div class="page" id="p8">
-                            <span class="material-symbols-outlined">full_coverage</span>
-                        </div>
-                        <div class="pname">정보광장</div>
-                    </div>
-                    
-                </div>
-
-                <script src="./01.main_page_box.js"></script>
-            </div>
+            <h1>도서관 별 대출률 그래프</h1>
+            <canvas id="loanRateChart"></canvas>
         </section>
 
 
         <section class="section2">
-            
-            <div id="noticewrap">          
-                <div id="noticetitle">공지사항</div>
-
-                <div id="notices">
-
-                    <ul>
-                        <li class="notice" id="n1">
-                            <div class="nbox all">공통</div>
-                            <div class="noticeTD">
-                                <div class="title">중앙도서관 열람실 공사 안내 ( 07/21~07/31 )</div>
-                                <div class="update">2024-07-11</div>
-                            </div>
-                        </li>
-
-                        <li class="notice" id="n2">
-                            <div class="nbox all">공통</div>
-                            <div class="noticeTD">
-                                <div class="title">천안시 도서관 6월 신작 안내</div>
-                                <div class="update">2024-06-29</div>
-                            </div>
-                        </li>
-
-                        <li class="notice" id="n3">
-                            <div class="nbox joong">중앙</div>
-                            <div class="noticeTD">
-                                <div class="title">천안시 도서관 7월 휴관일 안내</div>
-                                <div class="update">2024-06-20</div>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </div>
-            </div>
-
-        </section>
-
-        <section class="section3">
-            북플릭스 홍보
+            <h1>진행중인 작업 리스트</h1>
+            <table id="main_library">
+                <thead>
+                    <tr>
+                        <th>작업내용</th>
+                        <th>작업자</th>
+                        <th>진행상황</th>
+                        <th>발생 일자</th>
+                        <th>위치</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="task-row">
+                        <td>도서 검수</td>
+                        <td>박규태</td>
+                        <td>진행중</td>
+                        <td>2024.01.15</td>
+                        <td>두정도서관</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>도서 복원</td>
+                        <td>조민정</td>
+                        <td>진행중</td>
+                        <td>2024.01.15</td>
+                        <td>중앙도서관</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>열람실 보수</td>
+                        <td>이제섭</td>
+                        <td>진행중</td>
+                        <td>2024.01.15</td>
+                        <td>청수도서관</td>
+                    </tr>
+                    <tr class="task-row">
+                        <td>도서 검수</td>
+                        <td>김아영</td>
+                        <td>진행중</td>
+                        <td>2024.01.15</td>
+                        <td>신방도서관</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
 
@@ -224,5 +163,21 @@
 
         </div>
     </footer>
+    <!-- 모달 -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>작업지시서</h2>
+            <div class="modal-body">
+                <p><strong>작업명:</strong> <span id="taskName"></span></p>
+                <p><strong>작업자:</strong> <span id="taskAssignee"></span></p>
+                <p><strong>진행상황:</strong> <span id="taskStatus"></span></p>
+                <p><strong>발생 일자:</strong> <span id="taskDate"></span></p>
+                <p><strong>위치:</strong> <span id="taskLocation"></span></p>
+                <p><strong>작업 세부사항:</strong></p>
+                <textarea id="taskDetails" rows="4" cols="50" readonly></textarea>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
