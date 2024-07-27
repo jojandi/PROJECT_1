@@ -126,10 +126,12 @@
 <body>
     <!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
+
         <div id="logoall">
-            <div id="logo" class="left">로고</div>
+            <div id="logo" class="left"><a href="admin_main.html">로고</a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
+
         <div id="menu">
             <div id="items" class="left">
                 <div class="item" id="i1"><a href="admin_stock.html">실시간 재고</a></div>
@@ -141,6 +143,10 @@
             </div>
             <div class="right" id="userall">
                 <div>OOO관리자</div>
+                <!-- <div class="inb" id="login">로그인</div>
+                <div class="inb">|</div>
+                <div class="inb" id="userin">회원가입</div>
+                <div class="inb" id="menus"></div> -->
             </div>
         </div>
     </header>
@@ -163,6 +169,7 @@
             </div>
         </aside>
         <section>
+            <h3>시설물 요청 관리</h3>
             <div>
                 <table class="report" id="reportTable">
                     <tr>
@@ -171,6 +178,7 @@
                         <th>요청사항</th>
                         <th>날짜</th>
                         <th>처리유무</th>
+                        <th><input type="checkbox">
                     </tr>
                     <tr>
                         <td>01</td>
@@ -178,6 +186,7 @@
                         <td>1열람식 에어컨 온도 높여주세요</td>
                         <td>2024-07-24</td>
                         <td><input type="button" value="확인중" onclick="updateStatus(this)"></td>
+                        <th><input type="checkbox">
                     </tr>
                     <tr>
                         <td>02</td>
@@ -185,6 +194,7 @@
                         <td>2열람실 5번의자 교체해주세요</td>
                         <td>2024-07-23</td>
                         <td><input type="button" class="color" value="처리완료" onclick="updateStatus(this)"></td>
+                        <th><input type="checkbox">
                     </tr>
                     <tr>
                         <td>03</td>
@@ -192,6 +202,7 @@
                         <td>3열람실 19번 사물함 수리해주세요</td>
                         <td>2024-07-22</td>
                         <td><input type="button" value="확인중" onclick="updateStatus(this)"></td>
+                        <th><input type="checkbox">
                     </tr>
                 </table>
             </div>
@@ -209,9 +220,8 @@
                 <div id="name" class="left">행복만땅 <br>도서관</div>
             </div>
             <div id="footerinfo">
-                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
-                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 :
-                041-521-3734 도솔도서관 : 041-521-3735
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
             </div>
         </div>
     </footer>

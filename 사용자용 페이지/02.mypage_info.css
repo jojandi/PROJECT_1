@@ -151,16 +151,6 @@ section #information #miniInfo #out{
     cursor: pointer;
 }
 
-section #information #booksub{
-    border: 1px solid red;
-    width: 100%;
-    height: 100px;
-    display: inline-block;
-    text-align: center;
-    box-sizing: border-box;
-    padding: 20px;
-}
-
 section #information #infoedit{
     /* border: 1px solid red; */
     width: 100%;
@@ -238,6 +228,69 @@ section #information #infoedit #info2 table input[type=text]{
 section #information #infoedit #info2 #realout{
     margin-top: 20px;
     font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+section #information #booksub{
+    /* border: 1px solid red; */
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+section #information #booksub #booklogo{
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 15%;
+}
+
+section #information #booksub #booklogo > img{
+    width: 100%;
+}
+
+section #information #booksub #bookall{
+    display: inline-block;
+    /* border: 1px solid red; */
+    width: 70%;
+}
+
+section #information #booksub #bookall > span{
+    font-size: 16px;
+    font-weight: 900;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+section #information #booksub #books{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+section #information #booksub #books .book{
+    width: 40%;
+    vertical-align: top;
+    /* border: 1px solid red; */
+}
+
+section #information #booksub #books .booktitle{
+    font-size: 15px;
+}
+
+section #information #booksub #books img{
+    width: 80%;
+}
+
+section #information #booksub #bookout{
+    margin-top: 20px;
     text-decoration: underline;
     cursor: pointer;
 }
