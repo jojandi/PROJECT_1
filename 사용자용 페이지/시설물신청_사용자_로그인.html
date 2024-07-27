@@ -87,6 +87,14 @@
             background: rgb(165, 224, 144);
         }
 
+        select.library-select {
+            width: 270px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 
@@ -102,6 +110,7 @@
 
         <div id="menu">
             <div id="items" class="left">
+                <a href="./bookflix_main.html" class="item" id="i0">북플릭스</a>
                 <a href="./도서관 정보(중앙)_로그인.html" class="item" id="i1">도서관</a>
                 <a href="./best_we_all_login.html" class="item" id="i2">베스트</a>
                 <a href="./공지사항_사용자_로그인.html" class="item" id="i3">정보광장</a>
@@ -157,8 +166,16 @@
             <h2>시설물 요청</h2>
             <div class="request-form">
                 <form id="facility-request-form">
-                    <label for="library-name">도서관명</label>
-                    <input type="text" id="library-name" name="library-name" required>
+                    <div>
+                        <select class="library-select">
+                            <option value="">도서관을 선택해주세요</option>
+                            <option value="central">중앙도서관</option>
+                            <option value="sinbang">신방도서관</option>
+                            <option value="cheongsu">청수도서관</option>
+                            <option value="ssangyong">쌍용도서관</option>
+                            <option value="dujeong">두정도서관</option>
+                        </select>
+                    </div>
 
                     <label for="request-date">날짜</label>
                     <input type="text" id="request-date" name="request-date" required>
