@@ -32,12 +32,13 @@
 .top_for_you{
     margin-top: 50px;
     text-align: center;
-    font-size: 35px;
+    font-size: 40px;
     color: rgb(109, 153, 93);
 }
 #top_in_for_you{
-    margin-top: 10px;
-    font-size : 20px;
+    margin-top: 20px;
+    font-size : 30px;
+    color: black;
 }
 .popup {
     display: none;
