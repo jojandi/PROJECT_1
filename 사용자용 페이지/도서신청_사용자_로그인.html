@@ -304,6 +304,14 @@
             background: rgb(165, 224, 144);
         }
 
+        select.library-select {
+            width: 270px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
     </style>
 </head>
 
@@ -383,16 +391,23 @@
                 <input type="text" placeholder="책이름을 입력해주세요">
                 <input type="button" value="책이름">
 
-                <input type="text" placeholder="저자를 압력해주세요">
+                <input type="text" placeholder="저자를 입력해주세요">
                 <input type="button" value="저자">
 
-                <input type="text" placeholder="출판사를 압력해주세요">
+                <input type="text" placeholder="출판사를 입력해주세요">
                 <input type="button" value="출판사">
-
-                <input type="text" placeholder="도서관을 입력해주세요">
+                <br>
+                <!-- 추가로 수정한거 -->
+                <select class="library-select">
+                    <option value="">도서관을 선택해주세요</option>
+                    <option value="central">중앙도서관</option>
+                    <option value="sinbang">신방도서관</option>
+                    <option value="cheongsu">청수도서관</option>
+                    <option value="ssangyong">쌍용도서관</option>
+                    <option value="dujeong">두정도서관</option>
+                </select>
+                
                 <input type="button" value="도서관 이름">
-
-
 
                 <div>
                     <input type="button" value="도서신청하기">
@@ -418,12 +433,6 @@
         </div>
         </div>
     </footer>
-
-
-
-
-
-
 
 </body>
 
