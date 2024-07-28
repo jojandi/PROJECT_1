@@ -24,7 +24,6 @@
     aside {
       flex: 0 1 20vw;
       order: 1;
-      border-right: 1px solid #ddd;
     }
     .primary {
       order: 2;

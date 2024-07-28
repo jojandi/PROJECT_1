@@ -14,6 +14,10 @@
     <!-- <link href="Best_mng_1.css" rel="stylesheet"> -->
 
     <style>
+
+        #wrap{
+            height: 600px;
+        }
         
         /* -------------------------------베스트관리자------------------------------ */
         #left_menu {
@@ -34,6 +38,11 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+
+        #menu #items #i3{
+            font-weight: 900;
+            text-decoration: underline;
+        }  
 
 
         /* ------------------------------------------------------------------ */
@@ -573,7 +582,7 @@
                     <button type="button" onclick="addNewBook()">도서 추가</button>
                 </form>
             </div>
-            <button id="deleteButton" onclick="deleteSelectedBooks()">선택된 도서 삭제</button>
+            <!-- <button id="deleteButton" onclick="deleteSelectedBooks()">선택된 도서 삭제</button> -->
             <button onclick="registerBestBooks()">베스트 등록</button>
             <table id="bestBooksTable">
                 <thead>
