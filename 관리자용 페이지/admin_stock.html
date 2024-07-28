@@ -118,19 +118,21 @@
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
     <div id="wrap">
         <aside class="clearfix" id="side">
-            <h2 id="title">재고 현황</h2>
-            <div id="items">
-                <div class="item" id="i1">
-                    <span>실시간 재고 현황</span>
-                    <span class="material-symbols-outlined active">arrow_forward_ios</span>
-                </div>
-                <div class="item" id="i2">
-                    <span>도서 예약 현황</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </div>
-                <div class="item" id="i3">
-                    <span>도서 발주</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+            <div id="sideleft">
+                <h2 id="title">재고 현황</h2>
+                <div id="items">
+                    <div class="item" id="i1">
+                        <span>실시간 재고 현황</span>
+                        <span class="material-symbols-outlined active">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span>도서 예약 현황</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span>도서 발주</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -140,6 +142,16 @@
                 <div>
                     <div class="page_2">
                         <table id="main_library">
+                            <colgroup>
+                                <col width="5%">
+                                <col width="25%">
+                                <col width="10%">
+                                <col width="8%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="5%">
+                                <col width="7%">
+                            </colgroup>
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
@@ -149,8 +161,8 @@
                                     <th>출판연도</th>
                                     <th>도서코드</th>
                                     <th>ISBN</th>
-                                    <th>보유 권 수</th>
-                                    <th>보유 도서관</th>
+                                    <th>권 수</th>
+                                    <th>도서관</th>
                                     <th>입고일</th>
                                 </tr>
                             </thead>
