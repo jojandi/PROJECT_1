@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>북플릭스 회원 관리</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .chart-container {
+            width: 50%;
+            margin: 20px auto;
+        }
+        canvas {
+            border: 1px solid #ddd;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+            width: 60%;
+            max-width: 600px;
+        }
+        .popup-close {
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<h2>북플릭스 회원 관리</h2>
+
+<table id="memberTable">
+    <thead>
+        <tr>
+            <th>이름</th>
+            <th>성별</th>
+            <th>나이</th>
+            <th>좋아하는 장르</th>
+            <th>구독 도서 추천</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- 여기에 회원 데이터가 동적으로 추가될 예정 -->
+    </tbody>
+</table>
+
+<button onclick="addSubscriber()">구독자 추가</button>
+
+<div class="popup" id="recommendationPopup">
+    <span class="popup-close" onclick="closePopup()">&times;</span>
+    <h3>구독 도서 추천</h3>
+    <div id="book1">
+        <img src="https://via.placeholder.com/150" alt="책 표지">
+        <p><strong>도서명:</strong> 책 제목</p>
+        <p><strong>저자:</strong> 저자 이름</p>
+        <p><strong>출판사:</strong> 출판사 이름</p>
+        <p><strong>장르:</strong> 장르 이름</p>
+    </div>
+    <div id="book2">
+        <img src="https://via.placeholder.com/150" alt="책 표지">
+        <p><strong>도서명:</strong> 책 제목</p>
+        <p><strong>저자:</strong> 저자 이름</p>
+        <p><strong>출판사:</strong> 출판사 이름</p>
+        <p><strong>장르:</strong> 장르 이름</p>
+    </div>
+</div>
+
+<script>
+    const books = [
+        {
+            title: '데이터와 인공지능',
+            author: '홍길동',
+            publisher: '데이터출판사',
+            genre: '과학',
+            cover: 'https://via.placeholder.com/150'
+        },
+        {
+            title: '소설의 기술',
+            author: '김철수',
+            publisher: '소설출판사',
+            genre: '소설',
+            cover: 'https://via.placeholder.com/150'
+        }
+    ];
+
+    // 구독 도서 추천 버튼 클릭 시 도서 정보를 팝업에 표시
+    function showRecommendations() {
+        const popup = document.getElementById('recommendationPopup');
+        popup.style.display = 'block';
+
+        // 첫 번째 책 정보 표시
+        document.getElementById('book1').innerHTML = `
+            <img src="${books[0].cover}" alt="책 표지">
+            <p><strong>도서명:</strong> ${books[0].title}</p>
+            <p><strong>저자:</strong> ${books[0].author}</p>
+            <p><strong>출판사:</strong> ${books[0].publisher}</p>
+            <p><strong>장르:</strong> ${books[0].genre}</p>
+        `;
+
+        // 두 번째 책 정보 표시
+        document.getElementById('book2').innerHTML = `
+            <img src="${books[1].cover}" alt="책 표지">
+            <p><strong>도서명:</strong> ${books[1].title}</p>
+            <p><strong>저자:</strong> ${books[1].author}</p>
+            <p><strong>출판사:</strong> ${books[1].publisher}</p>
+            <p><strong>장르:</strong> ${books[1].genre}</p>
+        `;
+    }
+
+    // 팝업 닫기
+    function closePopup() {
+        const popup = document.getElementById('recommendationPopup');
+        popup.style.display = 'none';
+    }
+
+    // 구독자 추가 버튼 클릭 시 테이블에 새로운 행 추가
+    function addSubscriber() {
+        const table = document.getElementById('memberTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        const cell1 = newRow.insertCell(0);
+        const cell2 = newRow.insertCell(1);
+        const cell3 = newRow.insertCell(2);
+        const cell4 = newRow.insertCell(3);
+        const cell5 = newRow.insertCell(4);
+
+        cell1.textContent = '신규 구독자';
+        cell2.textContent = '여성';
+        cell3.textContent = '30대';
+        cell4.textContent = '역사';
+
+        const recommendButton = document.createElement('button');
+        recommendButton.textContent = '구독 도서 추천';
+        recommendButton.addEventListener('click', showRecommendations);
+        cell5.appendChild(recommendButton);
+    }
+</script>
+
+</body>
+</html>

@@ -871,7 +871,7 @@
         }
 
         window.onload = function () {
-            var existingRow = document.querySelector("#bookTable tbody tr");
+            existingRow = document.querySelector("#bookTable tbody tr");
             var existingCells = existingRow.querySelectorAll("td");
 
             document.getElementById("newBookName").value = existingCells[1].textContent.trim();
