@@ -14,6 +14,10 @@
     <!-- <link href="Best_mng_1.css" rel="stylesheet"> -->
 
     <style>
+
+        #wrap{
+            height: 600px;
+        }
         
         /* -------------------------------베스트관리자------------------------------ */
         #left_menu {
@@ -35,6 +39,11 @@
             margin-bottom: 10px;
         }
 
+        #menu #items #i3{
+            font-weight: 900;
+            text-decoration: underline;
+        }  
+
 
         /* ------------------------------------------------------------------ */
     </style>
@@ -55,7 +64,7 @@
     <header id="top" class="clearfix">
 
         <div id="logoall">
-            <div id="logo" class="left">로고</div>
+            <div id="logo" class="left"><a href="admin_main.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
@@ -70,6 +79,7 @@
             </div>
             <div class="right" id="userall">
                 <div>OOO관리자</div>
+                <div><a href="../사용자용 페이지/01.main_user.html">로그아웃</a></div>
                 <!-- <div class="inb" id="login">로그인</div>
                 <div class="inb">|</div>
                 <div class="inb" id="userin">회원가입</div>
@@ -573,7 +583,7 @@
                     <button type="button" onclick="addNewBook()">도서 추가</button>
                 </form>
             </div>
-            <button id="deleteButton" onclick="deleteSelectedBooks()">선택된 도서 삭제</button>
+            <!-- <button id="deleteButton" onclick="deleteSelectedBooks()">선택된 도서 삭제</button> -->
             <button onclick="registerBestBooks()">베스트 등록</button>
             <table id="bestBooksTable">
                 <thead>
@@ -881,7 +891,7 @@
         <div id="bottom" class="clearfix">
 
             <div id="logoall">
-                <div id="logo" class="left">로고</div>
+                <div id="logo" class="left"></div>
                 <div id="name" class="left">행복만땅 <br>도서관</div>
             </div>
 

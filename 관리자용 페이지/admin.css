@@ -3,15 +3,15 @@
         header #menu #items .item{
             /* border: 1px solid red; */
             font-size: 20px;
-            margin: 0 20px;
+            margin: 0 15px;
             display: inline-block;
         }
 
-        #userall {
+        /* #userall {
             position: absolute;
             top: 0;
             right: 0;
-        }
+        } */
 
 /* ---------------------------------------------------- */
         .main_page {

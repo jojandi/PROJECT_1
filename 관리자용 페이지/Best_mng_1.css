@@ -24,7 +24,6 @@
     aside {
       flex: 0 1 20vw;
       order: 1;
-      border-right: 1px solid #ddd;
     }
     .primary {
       order: 2;
@@ -38,7 +37,7 @@
     border: 1px solid #aaa;
     background-clip: padding-box;
     scroll-snap-align: start;
-    font-size: 15px;
+    font-size: 14px;
   }
   thead {
     position: relative;

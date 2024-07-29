@@ -34,13 +34,18 @@
         
         header #logoall #logo{
             margin: 5px 5px 0 40px;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             width: 120px;
             height: 90px;
+
+            background-image: url("https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&");
+            background-size: 100%;
+            background-position: 50%;
+            opacity: 0.9;
         }
             
         header #logoall #name{
-            margin: 25px 40px 0 0 ;
+            margin: 25px 25px 0 0 ;
             text-align: center;
             font-size: 20px;
             width: 130px;
@@ -65,7 +70,7 @@
         header #menu #items .item{
             /* border: 1px solid red; */
             font-size: 20px;
-            margin: 0 40px;
+            margin: 0 35px;
             display: inline-block;
         }
 
@@ -109,9 +114,14 @@
 
         footer #logoall #logo{
             margin: 10px 10px 0 40px;
-            border: 1px solid white;
+            /* border: 1px solid white; */
             width: 90px;
             height: 70px;
+
+            background-image: url("https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&");
+            background-size: 100%;
+            background-position: 50%;
+            opacity: 0.6;
         }
             
         footer #logoall #name{

@@ -14,7 +14,14 @@
     <script src="admin_library.js"></script>
     <script src="click.js"></script>
     <link href="click.css" rel="stylesheet">
+    
     <style>
+
+        #menu #items #i2{
+            font-weight: 900;
+            text-decoration: underline;
+        }  
+
         .modal {
             display: none;
             position: fixed;
@@ -54,6 +61,11 @@
         .text_right{
             text-align: right;
         }
+
+        #main_page_2,
+        #main_page_3{
+            height: 600px;
+        }
     </style>
 </head>
 
@@ -63,7 +75,7 @@
     <header id="top" class="clearfix">
 
         <div id="logoall">
-            <div id="logo" class="left"><a href="admin_main.html">로고</a></div>
+            <div id="logo" class="left"><a href="admin_main.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
@@ -79,6 +91,7 @@
 
             <div class="right" id="userall">
                 <div>OOO관리자</div>
+                <div><a href="../사용자용 페이지/01.main_user.html">로그아웃</a></div>
                 <!-- <div class="inb" id="login">로그인</div>
                 <div class="inb">|</div>
                 <div class="inb" id="userin">회원가입</div>
@@ -98,21 +111,23 @@
     </div> -->
     <div id="wrap">
         <aside class="clearfix" id="side">
-            <h2 id="title">도서관 관리</h2>
-            <div id="items">
-                <div class="item" id="i1">
-                    <span>도서관 시설관리</span>
-                    <span class="material-symbols-outlined active">arrow_forward_ios</span>
-                </div>
-                <div class="item" id="i2">
-                    <span>도서관 직원 관리</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </div>
-                <div class="item" id="i3">
-                    <span>도서관 추가,제거</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </div>
+            <div id="sideleft">
+                <h2 id="title">도서관 관리</h2>
+                <div id="items">
+                    <div class="item" id="i1">
+                        <span>도서관 시설관리</span>
+                        <span class="material-symbols-outlined active">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span>도서관 직원 관리</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span>도서관 추가,제거</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
 
+                </div>
             </div>
         </aside>
         <section>
@@ -411,7 +426,7 @@
         <div id="bottom" class="clearfix">
 
             <div id="logoall">
-                <div id="logo" class="left">로고</div>
+                <div id="logo" class="left"></div>
                 <div id="name" class="left">행복만땅 <br>도서관</div>
             </div>
 

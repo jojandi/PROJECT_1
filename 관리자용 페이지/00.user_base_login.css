@@ -34,9 +34,20 @@
         
         header #logoall #logo{
             margin: 5px 5px 0 40px;
-            border: 1px solid red;
+            /* border: 1px solid red; */
             width: 120px;
             height: 90px;
+
+            /* background-image: url("https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"); */
+            background-size: 100%;
+            background-position: 50%;
+            opacity: 0.9;
+            position: relative;
+            top: -15px;
+        }
+        .logo_img {
+            width: 120px;
+            height: 120px;
         }
             
         header #logoall #name{
@@ -72,10 +83,17 @@
         header #menu #userall{
             /* border: 1px solid red; */
             width:130px;
-            height: 20px;
-            margin: 5px 0;
+            position: absolute;
+            left: 1110px;
+            top: 30px;
             margin-right: 15px;
-            font-size: 16px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        header #menu #userall a{
+            font-size: 14px;
+            text-decoration: underline;
         }
         
         header #menu #userall .inb{
@@ -109,9 +127,14 @@
 
         footer #logoall #logo{
             margin: 10px 10px 0 40px;
-            border: 1px solid white;
+            /* border: 1px solid white; */
             width: 90px;
             height: 70px;
+
+            background-image: url("https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&");
+            background-size: 100%;
+            background-position: 50%;
+            opacity: 0.9;
         }
             
         footer #logoall #name{
@@ -128,3 +151,4 @@
             padding: 40px 30px 0 0;
             font-size: 13px;
         }
+

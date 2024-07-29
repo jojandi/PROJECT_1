@@ -74,6 +74,11 @@
             width: 30px;
             text-align: center;
         }
+
+        #menu #items #i1{
+            font-weight: 900;
+            text-decoration: underline;
+        }  
         
     </style>
     <script src="./admin_stock.js"></script>
@@ -85,7 +90,7 @@
     <header id="top" class="clearfix">
 
         <div id="logoall">
-            <div id="logo" class="left"><a href="admin_main.html">로고</a></div>
+            <div id="logo" class="left"><a href="admin_main.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
@@ -100,6 +105,7 @@
             </div>
             <div class="right" id="userall">
                 <div>OOO관리자</div>
+                <div><a href="../사용자용 페이지/01.main_user.html">로그아웃</a></div>
                 <!-- <div class="inb" id="login">로그인</div>
                 <div class="inb">|</div>
                 <div class="inb" id="userin">회원가입</div>
@@ -112,19 +118,21 @@
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
     <div id="wrap">
         <aside class="clearfix" id="side">
-            <h2 id="title">재고 현황</h2>
-            <div id="items">
-                <div class="item" id="i1">
-                    <span>실시간 재고 현황</span>
-                    <span class="material-symbols-outlined active">arrow_forward_ios</span>
-                </div>
-                <div class="item" id="i2">
-                    <span>도서 예약 현황</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
-                </div>
-                <div class="item" id="i3">
-                    <span>도서 발주</span>
-                    <span class="material-symbols-outlined">arrow_forward_ios</span>
+            <div id="sideleft">
+                <h2 id="title">재고 현황</h2>
+                <div id="items">
+                    <div class="item" id="i1">
+                        <span>실시간 재고 현황</span>
+                        <span class="material-symbols-outlined active">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span>도서 예약 현황</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span>도서 발주</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -134,6 +142,16 @@
                 <div>
                     <div class="page_2">
                         <table id="main_library">
+                            <colgroup>
+                                <col width="5%">
+                                <col width="25%">
+                                <col width="10%">
+                                <col width="8%">
+                                <col width="10%">
+                                <col width="10%">
+                                <col width="5%">
+                                <col width="7%">
+                            </colgroup>
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
@@ -143,8 +161,8 @@
                                     <th>출판연도</th>
                                     <th>도서코드</th>
                                     <th>ISBN</th>
-                                    <th>보유 권 수</th>
-                                    <th>보유 도서관</th>
+                                    <th>권 수</th>
+                                    <th>도서관</th>
                                     <th>입고일</th>
                                 </tr>
                             </thead>
@@ -170,7 +188,7 @@
                                     <td>code002</td>
                                     <td>102</td>
                                     <td>12</td>
-                                    <td>두정도서관</td>
+                                    <td>청수도서관</td>
                                     <td>2023.05.20</td>
                                 </tr>
                                 <tr>
@@ -182,7 +200,7 @@
                                     <td>code003</td>
                                     <td>103</td>
                                     <td>25</td>
-                                    <td>두정도서관</td>
+                                    <td>쌍용도서관</td>
                                     <td>2023.07.30</td>
                                 </tr>
                                 <tr>
@@ -194,7 +212,7 @@
                                     <td>code004</td>
                                     <td>104</td>
                                     <td>20</td>
-                                    <td>두정도서관</td>
+                                    <td>중앙도서관</td>
                                     <td>2023.04.10</td>
                                 </tr>
                                 <tr>
@@ -230,7 +248,7 @@
                                     <td>code007</td>
                                     <td>107</td>
                                     <td>30</td>
-                                    <td>두정도서관</td>
+                                    <td>쌍용도서관</td>
                                     <td>2023.06.25</td>
                                 </tr>
                                 <tr>
@@ -242,7 +260,7 @@
                                     <td>code008</td>
                                     <td>108</td>
                                     <td>16</td>
-                                    <td>두정도서관</td>
+                                    <td>신방도서관</td>
                                     <td>2023.08.10</td>
                                 </tr>
                                 <tr>
@@ -254,7 +272,7 @@
                                     <td>code009</td>
                                     <td>109</td>
                                     <td>28</td>
-                                    <td>두정도서관</td>
+                                    <td>쌍용도서관</td>
                                     <td>2023.02.01</td>
                                 </tr>
                                 <tr>
@@ -266,7 +284,7 @@
                                     <td>code010</td>
                                     <td>110</td>
                                     <td>35</td>
-                                    <td>두정도서관</td>
+                                    <td>쌍용도서관</td>
                                     <td>2023.11.01</td>
                                 </tr>
                                 <tr>
@@ -278,7 +296,7 @@
                                     <td>code011</td>
                                     <td>111</td>
                                     <td>10</td>
-                                    <td>두정도서관</td>
+                                    <td>신방도서관</td>
                                     <td>2023.12.15</td>
                                 </tr>
                                 <tr>
@@ -480,7 +498,7 @@
                         </div>
 
                         <div class="page_1">
-                            <h3>도서 내역</h3>
+                            <h3>도서 구매 내역</h3>
                             <table id="main_library_2">
                                 <thead>
                                     <tr>
@@ -514,7 +532,7 @@
         <div id="bottom" class="clearfix">
 
             <div id="logoall">
-                <div id="logo" class="left">로고</div>
+                <div id="logo" class="left"></div>
                 <div id="name" class="left">행복만땅 <br>도서관</div>
             </div>
 

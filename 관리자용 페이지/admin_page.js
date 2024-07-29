@@ -87,7 +87,7 @@ window.onload = function () {
                                                 <option value="복구완료">복구완료</option>
                                                 <option value="기부">기부</option>
                                                 </select>`; // 처리 상태 (빈 값으로 두기)
-                newRow.insertCell().innerText = cells[9].innerText; // 처리 기한
+                newRow.insertCell().innerText = "2024-07-30" // 처리 기한
 
                 // 체크된 행을 페이지 2의 테이블에서 제거
                 row.remove();
@@ -244,11 +244,12 @@ window.onload = function () {
             <option value="박규태">박규태</option>
             <option value="이제섭">이제섭</option>
             <option value="조민정">조민정</option>
+            <option value="김아영">김아영</option>
         `;
         const methodOptions = `
             <option value="표지훼손">표지훼손</option>
             <option value="페이지훼손">페이지훼손</option>
-            <option value="기부">기부</option>
+            <option value="페이지오염">페이지오염</option>
         `;
     
         for (let i = checkboxes.length - 1; i >= 0; i--) {
