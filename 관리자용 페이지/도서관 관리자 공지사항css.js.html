@@ -4,235 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도서관 관리자 정보광장</title>
+    <title>Document</title>
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="admin.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-   
+
 </head>
 <style>
-    /* ---------------------------------------------------------------------  */
     #i1 .material-symbols-outlined {
             background-color: rgb(165, 224, 144);
-        }
-
-        #menu #items #i6{
-            font-weight: 900;
-            text-decoration: underline;
-        }  
-
-
-    /* 공지사항 */
-    #main_title {
-        /* border: 1px solid red; */
-        display: inline-block;
-        width: 800px;
-        height: 50px;
-        font-size: 30px;
-        font-weight: 1000;
-        /* position: relative; */
     }
 
-    #admin_controls input,
-    #admin_controls textarea {
-        width: 80%;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: 1px solid #ddd;
-        border-radius: 4px;
+    #menu #items #i5{
+        font-weight: 900;
+        text-decoration: underline;
+    }  
+
+    #wrap{
+        height: 600px;
     }
 
-    #admin_controls button {
-        padding: 10px 20px;
-        background: rgb(165, 224, 144);
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-    }
+    /* ------------------------ */
 
-    #admin_controls button:hover {
-        background-color: #4cae4c;
-    }
-
-    .report table,
-    .report th,
-    .report td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 8px;
-    }
-
-
-    .report {
-        font-size: 13px;
-
-    }
-
-
-
-    /* **********테이블 추가 ***************** */
-
-    section>div {
-        margin-bottom: 20px;
-    }
-
-
-    section>div:nth-child(2) {
-        font-size: 20px;
-        font-weight: bold;
-        margin-bottom: 20px;
-    }
-
-    table.report {
+    table {
         width: 100%;
         border-collapse: collapse;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: #fff;
+        margin-bottom: 20px;
+        font-size: 13px;
     }
 
-    table.report th,
-    table.report td {
+    table thead {
+        background-color: #f0f0f0;
+    }
+
+    table thead th {
+        padding: 10px;
         border: 1px solid #ddd;
-        padding: 12px;
-        text-align: center;
-    }
-
-    table.report th {
-        background-color: #f2f2f2;
+        text-align: left;
         font-weight: bold;
     }
 
-    table.report tr:nth-child(even) {
+    /* 
+    table tbody tr:nth-child(even) {
         background-color: #f9f9f9;
     }
 
-    table.report tr:hover {
-        background-color: #f1f1f1;
-    }
+    table tbody tr:nth-child(odd) {
+        background-color: #fff;
+    } */
 
-    input[type="checkbox"] {
-        margin-right: 10px;
-    }
-
-    input[type="button"] {
-        /* padding: 8px 16px; */
-        margin-right: 10px;
-        background: rgb(165, 224, 144);
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .pagination {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-    }
-
-    .pagination div {
-        margin: 0 5px;
-        padding: 8px 12px;
-        background-color: #a2f796#a2f796#a2f796;
-        color: black;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-
-    .pagination div:hover {
-        background-color: #a2f796;
-    }
-
-    .search-bar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-
-    .color {
-        width: 150px;
-        font-size: 16px;
-        color: white;
-        padding: 10px 20px;
-        margin: auto;
-    }
-
-
-
-    /* --------------------------------------------------------------------- */
-    #MainPage {
-        /* border: 1px solid red; */
-        width: 100%;
-        /* height: 500px; */
-        text-align: center;
-    }
-
-    #MainPage div {
-        /* border: 1px solid red; */
-        display: inline-block;
-    }
-
-    #MainPage #MainPage_cal {
-        width: 300px;
-        height: 300px;
-    }
-
-    #MainPage #MainPage_notice {
-        width: 500px;
-        height: 300px;
-    }
-
-    #MainPage #MainPage_stock {
-        display: block;
-        width: 800px;
-        height: 300px;
-        margin: auto;
-    }
-
-
-    .report table,
-    .report th,
-    .report td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 8px;
-    }
-
-    .report .retitle {
+    table tbody td {
+        padding: 10px;
+        border: 1px solid #ddd;
         text-align: left;
     }
 
-    .report {
-        font-size: 15px;
-
+    input[type="checkbox"] {
+        cursor: pointer;
     }
 
- 
-    .name {
-        font-size: 30px;
+    .click {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
     }
 
-    .main_page {
-        /* border: 1px solid red; */
-        display: inline-block;
-        height: auto;
-        width: 100%;
-
-        /* position: relative;
-        top: -200px; */
+    .click button {
+        padding: 10px 20px;
+        font-size: 14px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        background-color: #f0f0f0;
+        margin-right: 10px;
     }
 
-    section h3{
-    border: 1px solid #ccc;
-    width: 100%;
-    text-align: center;
-    font-size: 22px;
-    padding: 17px;
-    box-sizing: border-box;
+    .click button:hover {
+        background-color: #e0e0e0;
     }
 
+    .click .left-buttons {
+        display: flex;
+        justify-content: flex-start;
+    }
 
-
+    .click .right-buttons {
+        display: flex;
+        justify-content: flex-end;
+    }
 </style>
 
 <body>
@@ -267,28 +129,21 @@
 
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
-    <!-- <div id="left_menu">
-        <div class="l_menu" id="l_menu_1">정보광장관리</div>
-        <div class="l_menu" id="l_menu_2"><a id="page_1">공지사항</a></div>
-        <div class="l_menu" id="l_menu_2"><a id="page_1">시설물 민원처리</a></div>
-        <div class="l_menu" id="l_menu_2"><a id="page_1">불량도서신고처리</a></div>
-
-    </div> -->
     <div id="wrap">
         <aside class="clearfix" id="side">
             <div id="sideleft">
-                <h2 id="title">정보 광장 관리</h2>
+                <h2 id="title">회원 관리</h2>
                 <div id="items">
                     <div class="item" id="i1">
-                        <span><a href="도서관 관리자 공지사항css.js.html">공지사항 관리</a></span>
+                        <span><a href="회원관리.html">도서 회원 관리</a></span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
                     <div class="item" id="i2">
-                        <span><a href="도서신청관리자.css.js.html">도서 신청 목록</a></span>
+                        <span><a href="장기연체자css,js.html">장기연체자 관리</a></span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
                     <div class="item" id="i3">
-                        <span><a href="시설물관리자css,js.html">시설물 요청 관리</a></span>
+                        <span><span><a href="구독이용관리자.html">북플릭스 회원 관리</a></span></span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
                 </div>
@@ -296,71 +151,92 @@
         </aside>
         <section>
             <div class="main_page" id="main_page_1">
+                <h3>도서 회원 관리</h3>
+                <div>
+                    <!-- 언제부터 대출가능 한지 넣기  -->
 
-                <h3>공지사항 관리</h3>
-
-                <div id="admin_controls">
-
-                    <div>
-                        <table class="report" id="reportTable">
+                    <table>
+                        <thead>
                             <tr>
-
-                                <th>분류</th>
-                                <th>제목</th>
-                                <th>등록일</th>
-                                <th><input type="checkbox"></th>
+                                <th><input type="checkbox" id="selectAllCheckbox" onclick="toggleSelectAll(this)"></th>
+                                <th>이름</th>
+                                <th>생년월일</th>
+                                <th>아이디</th>
+                                <th>전화번호</th>
+                                <th>대여수</th>
+                                <th>대여일</th>
+                                <th>반납일</th>
+                                <th>연체정보</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="rowCheckbox"></td>
+                                <td>조*정</td>
+                                <td>2004-01-01</td>
+                                <td>Joe123</td>
+                                <td>010-1234-5678</td>
+                                <td>3</td>
+                                <td>2024-07-01</td>
+                                <td>2024-07-15</td>
+                                <td>없음</td>
+                                <td>정상</td>
                             </tr>
                             <tr>
-
-                                <td>공지</td>
-                                <td class="retitle">중앙도서관 재개관 안내</td>
+                                <td><input type="checkbox" class="rowCheckbox"></td>
+                                <td>박*태</td>
+                                <td>1995-05-15</td>
+                                <td>Park456</td>
+                                <td>010-9876-5432</td>
+                                <td>1</td>
+                                <td>2024-07-10</td>
                                 <td>2024-07-24</td>
-                                <td><input type="checkbox"></td>
+                                <td>없음</td>
+                                <td>정상</td>
                             </tr>
                             <tr>
-
-                                <td>안내</td>
-                                <td class="retitle">중앙도서관 열람실 공사 안내(07/23~08/03)</td>
-                                <td>2024-07-23</td>
-                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox" class="rowCheckbox"></td>
+                                <td>이*섭</td>
+                                <td>1995-12-30</td>
+                                <td>Lee789</td>
+                                <td>010-5555-6666</td>
+                                <td>2</td>
+                                <td>2024-06-25</td>
+                                <td>2024-07-09</td>
+                                <td>2일 연체</td>
+                                <td>7/12이후 대출가능</td>
                             </tr>
                             <tr>
-
-                                <td>안내</td>
-                                <td class="retitle">2024 전국 청소년 영어 스피치 콘테스트 안내
-                                </td>
-                                <td>2024-07-22</td>
-                                <td><input type="checkbox"></td>
+                                <td><input type="checkbox" class="rowCheckbox"></td>
+                                <td>김*영</td>
+                                <td>1997-12-30</td>
+                                <td>Kim459</td>
+                                <td>010-5555-6666</td>
+                                <td>2</td>
+                                <td>2024-06-25</td>
+                                <td>2024-07-09</td>
+                                <td>4일 연체</td>
+                                <td>7/15이후 대출가능</td>
                             </tr>
-                            <tr>
+                        </tbody>
 
-                                <td>폐관</td>
-                                <td class="retitle">문성종작은도서관 폐관 공고</td>
-                                <td>2024-07-21</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-                            <tr>
-
-                                <td>공지</td>
-                                <td class="retitle">천안시 도서관 누리집(홈페이지) 서비스 중단 안내</td>
-                                <td>2024-07-20</td>
-                                <td><input type="checkbox"></td>
-                            </tr>
-
-                        </table>
-                        <div class="color"><input type="button" value="선택삭제"></div>
-                    </div>
-                    <div>
-                        <h3>공지사항 추가</h3>
-                        <input type="text" id="new_notice_title" placeholder="공지사항 제목">
-                        <input type="date" id="new_notice_date">
-                        <textarea id="new_notice_content" rows="5" placeholder="공지사항 내용"></textarea>
-                        <button onclick="addNotice()">공지사항 추가</button>
+                    </table>
+                    <div class="click">
+                        <div class="left-buttons">
+                            <button onclick="selectAll()">전체선택</button>
+                        </div>
+                        <div class="right-buttons">
+                            <button onclick="deselectAll()">전체삭제</button>
+                            <button onclick="deselectAll()">선택삭제</button>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </section>
     </div>
+
 
 
     <!-- 가장 아래 고정 -->
@@ -376,49 +252,50 @@
                 Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
                 청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
             </div>
-
         </div>
-
+        </div>
     </footer>
 
     <script>
-        function addNotice() {
-            const title = document.getElementById('new_notice_title').value;
-            const date = document.getElementById('new_notice_date').value;
-            const content = document.getElementById('new_notice_content').value;
-            if (title && date && content) {
-
-                const noticeSection = document.createElement('section');
-                noticeSection.classList.add('notice');
-
-                const noticeTitle = document.createElement('div');
-                noticeTitle.classList.add('notice-title');
-                noticeTitle.textContent = title;
-
-
-                const noticeDate = document.createElement('div');
-                noticeDate.classList.add('notice-date');
-                noticeDate.textContent = date;
-
-                const noticeContent = document.createElement('div');
-                noticeContent.classList.add('notice-content');
-                noticeContent.textContent = content;
-
-                noticeSection.appendChild(noticeTitle);
-                noticeSection.appendChild(noticeDate);
-                noticeSection.appendChild(noticeContent);
-
-                document.getElementById('note').appendChild(noticeSection);
-
-
-                document.getElementById('new_notice_title').value = '';
-                document.getElementById('new_notice_date').value = '';
-                document.getElementById('new_notice_content').value = '';
-            } else {
-                alert('내용을 입력해주세요');
-            }
+        // 전체 선택/해제 토글 함수
+        function toggleSelectAll(selectAllCheckbox) {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
+        }
+    
+        // 전체 선택 함수
+        function selectAll() {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = true;
+            });
+            document.getElementById('selectAllCheckbox').checked = true;
+        }
+    
+        // 전체 해제 함수
+        function deselectAll() {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            document.getElementById('selectAllCheckbox').checked = false;
+        }
+    
+        // 선택된 항목 삭제 함수
+        function deleteSelected() {
+            const checkboxes = document.querySelectorAll('.rowCheckbox');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    checkbox.closest('tr').remove(); // 선택된 체크박스가 속한 행을 삭제
+                }
+            });
+            // 전체 선택 체크박스를 해제
+            document.getElementById('selectAllCheckbox').checked = false;
         }
     </script>
+    
 
 
 
