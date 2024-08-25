@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>사용자 메인페이지</title>
 <link href="../assets/css/main/main_user.css" rel="stylesheet">
 </head>
 <body>
