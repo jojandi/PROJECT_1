@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>재고 관리</title>
     <link href="admin_table.css" rel="stylesheet">
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
@@ -12,7 +12,6 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="click.css" rel="stylesheet">
-    <link href="modal.css" rel="stylesheet">
     <style>
         .page {
             /* border: 1px solid red; */
@@ -126,19 +125,18 @@
     <header id="top" class="clearfix">
 
         <div id="logoall">
-            <div id="logo" class="left"><a href="admin_main.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
+            <div id="logo" class="left"><a href="mes_mainPage.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
         <div id="menu">
             <div id="items" class="left">
-                <div class="item" id="i1"><a href="mes_stock_1.html">작업 수행</a></div>
+                <div class="item" id="i1"><a href="mes_pfwork.html">작업 수행</a></div>
                 <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
-                <div class="item" id="i3"><a href="mes_stock_1.html">재고 관리</a></div>
-                <div class="item" id="i4"><a href="Best_mng_1.html">직원 관리</a></div>
-                <div class="item" id="i5"><a href="admin_page.html">통계 및 분석</a></div>
-                <div class="item" id="i6"><a href="회원관리.html">품질 관리</a></div>
-                <div class="item" id="i7"><a href="도서관 관리자 공지사항css.js.html">게시판</a></div>
+                <div class="item" id="i3"><a href="mes_stock.html">재고 관리</a></div>
+                <div class="item" id="i4"><a href="mes_human.html">직원 관리</a></div>
+                <div class="item" id="i5"><a href="mes_statistics_1.html">통계 및 분석</a></div>
+                <div class="item" id="i6"><a href="mes_notice_1.html">게시판</a></div>
             </div>
             <div class="right" id="userall">
                 <div>OOO관리자</div>
@@ -332,7 +330,7 @@
                                 <td><input id="order_quantity" type="text"></td>
                             </tr>
                         </table>
-                        <input id="workFormBtn" type="button" value="완료">
+                        <input id="workFormBtn" type="submit" value="완료">
                     </form>
                 </div>
             </div>
