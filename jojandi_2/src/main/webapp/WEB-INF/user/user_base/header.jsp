@@ -14,16 +14,16 @@
         <div id="logoall">
             <div id="logo" class="left"></div>
             <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
-            <a href="01.main_user.html" id="name" class="left">행복만땅 <br>도서관</a>
+            <a href="main" id="name" class="left">행복만땅 <br>도서관</a>
         </div>
 
         <div id="menu">
             <div id="items" class="left">
-                <a href="bookflix" class="item" id="i0">북플릭스</a>
+                <a href="bookflix_use" class="item" id="i0">북플릭스</a>
                 <a href="library" class="item" id="i1">도서관</a>
                 <a href="best" class="item" id="i2">베스트</a>
                 <a href="notic" class="item" id="i3">정보광장</a>
-                <a href="mypage/use" class="item" id="i4">마이페이지</a>
+                <a href="mypage_use" class="item" id="i4">마이페이지</a>
             </div>
 
             <div class="right" id="userall">
