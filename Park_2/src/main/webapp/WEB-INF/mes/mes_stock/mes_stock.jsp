@@ -1,10 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>재고 관리</title>
     <link href="admin_table.css" rel="stylesheet">
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
