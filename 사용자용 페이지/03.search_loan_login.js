@@ -1,44 +1,46 @@
 
-let invenBnt = document.querySelectorAll(".invenBnt");
-let ci = document.querySelectorAll(".ci");
-let cr = document.querySelectorAll(".cr");
-let reserBnt = document.querySelectorAll(".reserBnt");
-let cartBnt = document.querySelectorAll(".cartBnt");
+let invenBnt = document.querySelectorAll(".invenBnt"); // 재고현황 버튼
+let ci = document.querySelectorAll(".ci"); // 재고현황 닫기
+let cr = document.querySelectorAll(".cr"); // 예약하기 닫기
+let reserBnt = document.querySelectorAll(".reserBnt"); // 예약하기 버튼
+let cartBnt = document.querySelectorAll(".cartBnt"); // 장바구니 버튼
 
-let inven = document.querySelectorAll(".inven");
-let reser = document.querySelectorAll(".reser");
+let inven = document.querySelectorAll(".inven"); // 재고현황 블럭
+let reser = document.querySelectorAll(".reser"); // 예약 블럭
 
-let joong = document.querySelectorAll(".btnbox .joong");
-let sin = document.querySelectorAll(".btnbox .sin");
-let du = document.querySelectorAll(".btnbox .du");
-let cheong = document.querySelectorAll(".btnbox .cheong");
-let ssang = document.querySelectorAll(".btnbox .ssang");
+let joong = document.querySelectorAll(".btnbox .joong"); // 중앙도서관
+let sin = document.querySelectorAll(".btnbox .sin"); // 신방도서관
+let du = document.querySelectorAll(".btnbox .du"); // 두정도서관
+let cheong = document.querySelectorAll(".btnbox .cheong"); // 청수도서관
+let ssang = document.querySelectorAll(".btnbox .ssang"); // 쌍용도서관
 
+// 재고현황 클릭 이벤트
 function invenOn(){
     for(let i = 0 ; i < invenBnt.length; i++){
         invenBnt[i].addEventListener('click', function(){
             console.log('재고현황 클릭!!!');
-            inven[i].style.display = "block";
+            inven[i].style.display = "block"; // 재고현황 block
         })
     }
 }
+
+// 닫기 클릭 이벤트
 function closer(){
     for(let i = 0 ; i < ci.length; i++){
         ci[i].addEventListener('click', function(){
             console.log('재고현황 닫기!!!');
-            inven[i].style.display = "none";
-            console.log('예약하기 닫기!!!');
-            reser[i].style.display = "none";
+            inven[i].style.display = "none"; // 재고현황 none
         })
     }
     for(let i = 0 ; i < cr.length; i++){
         cr[i].addEventListener('click', function(){
             console.log('예약하기 닫기!!!');
-            reser[i].style.display = "none";
+            reser[i].style.display = "none"; // 예약현황 none
         })
     }
 }
 
+// 예약하기 클릭 이벤트
 function reserOn(){
     for(let i = 0 ; i < reserBnt.length; i++){
         reserBnt[i].addEventListener('click', function(){
@@ -50,6 +52,7 @@ function reserOn(){
     for(let i = 0 ; i < joong.length; i++){
         joong[i].addEventListener('click', function(){
             console.log("중앙");
+            // 버튼의 value가 예약이라면 대출가능, 예약불가라면 예약 불가능
             if(joong[i].value == "예약"){
                 alert("해당 책 대출이 예약되었습니다. (중앙도서관)");
             } else{
@@ -92,6 +95,20 @@ function reserOn(){
     }
 
 }
+
+
+
+// 장바구니 클릭 이벤트
+function cartOn(){
+    for(let i = 0 ; i < ci.length; i++){
+        cartBnt[i].addEventListener('click', function(){
+            console.log("장바구니 클릭!!!");
+            alert("해당 도서가 장바구니에 담겼습니다. ")
+        })
+    }
+}
+
+
 
 invenOn();
 closer();
