@@ -1,14 +1,16 @@
+// chart.js
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('productionChart').getContext('2d');
 
+    // Example data: hourly production for each line (24 hours)
     const dataByHour = {
-        '1번 라인': [120, 130, 125, 140, 150, 160, 155, 145, 140, 135, 150, 160],
-        '2번 라인': [110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165],
-        '3번 라인': [100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155]
+        '1번 라인': [120, 130, 125, 140, 150, 160, 155, 145, 140, 135, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280],
+        '2번 라인': [110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225],
+        '3번 라인': [100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215]
     };
 
-    const hours = Array.from({ length: 12 }, (_, i) => `${i}:00`);
-
+    // Generate hourly labels from 00:00 to 23:00
+    const hours = Array.from({ length: 24 }, (_, i) => `${i}:00`);
 
     new Chart(ctx, {
         type: 'line',
@@ -18,19 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 label: lineName,
                 data: dataByHour[lineName],
                 borderColor: `hsl(${index * 120}, 70%, 50%)`, // Different color for each line
-                backgroundColor: `hsla(${index * 120}, 70%, 50%, 0.2)`,
+                backgroundColor: `hsla(${index * 120}, 70%, 50%, 0.2)`, // Semi-transparent background for better visibility
                 borderWidth: 2,
-                fill: false
+                fill: false // No fill under the line
             }))
         },
         options: {
             responsive: true,
             scales: {
                 x: {
-                    type: 'category',
                     title: {
                         display: true,
-                        text: '시간별'
+                        text: '시간'
+                    },
+                    ticks: {
+                        autoSkip: false, // Show all tick labels
+                        maxRotation: 90 // Rotate labels to fit
                     }
                 },
                 y: {
@@ -43,11 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             plugins: {
                 legend: {
-                    position: 'top',
+                    position: 'top'
                 },
                 tooltip: {
                     mode: 'index',
-                    intersect: false,
+                    intersect: false
                 }
             }
         }
