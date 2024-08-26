@@ -81,7 +81,7 @@
         }  
         
     </style>
-    <script src="./admin_stock.js"></script>
+    
 </head>
 
 <body>
@@ -96,12 +96,12 @@
 
         <div id="menu">
             <div id="items" class="left">
-                <div class="item" id="i1"><a href="mes_stock_1.html">실시간 재고</a></div>
-                <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
-                <div class="item" id="i3"><a href="Best_mng_1.html">직원 관리</a></div>
-                <div class="item" id="i4"><a href="admin_page.html">통계 및 분석</a></div>
-                <div class="item" id="i5"><a href="회원관리.html">품질 관리</a></div>
-                <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">게시판</a></div>
+                <div class="item" id="i1"><a href="admin_stock.html">실시간 재고</a></div>
+                <div class="item" id="i2"><a href="admin_library.html">도서관 관리</a></div>
+                <div class="item" id="i3"><a href="Best_mng_1.html">인기 도서 관리</a></div>
+                <div class="item" id="i4"><a href="admin_page.html">불량 도서 관리</a></div>
+                <div class="item" id="i5"><a href="회원관리.html">회원 관리</a></div>
+                <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">정보 광장 관리</a></div>
             </div>
             <div class="right" id="userall">
                 <div>OOO관리자</div>
@@ -119,18 +119,14 @@
     <div id="wrap">
         <aside class="clearfix" id="side">
             <div id="sideleft">
-                <h2 id="title">재고 관리</h2>
+                <h2 id="title">작업 수행</h2>
                 <div id="items">
                     <div class="item" id="i1">
-                        <span>재고 현황</span>
+                        <span>주문현황</span>
                         <span class="material-symbols-outlined active">arrow_forward_ios</span>
                     </div>
                     <div class="item" id="i2">
-                        <span>보유 도서 목록</span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </div>
-                    <div class="item" id="i3">
-                        <span>도서 발주</span>
+                        <span>출고현황</span>
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div>
                 </div>
@@ -138,38 +134,69 @@
         </aside>
         <section>
             <div class="main_page" id="main_page_1">
-                <h3>재고 현황</h3>
+                <h3>주문 현황</h3>
                 <div>
                     <div class="page_2">
                         <table id="main_library">
                             <colgroup>
                                 <col width="5%">
+                                <col width="20%">
                                 <col width="10%">
-                                <col width="17%">
                                 <col width="8%">
-                                <col width="5%">
-                                <col width="8%">
+                                <col width="10%">
+                                <col width="10%">
                                 <col width="5%">
                                 <col width="7%">
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">세트 코드</th>
-                                    <th>세트명</th>
-                                    <th>구성 도서 수</th>
-                                    <th>재고 수량</th>
-                                    <th>출고 예정 수량</th>
-                                    <th>보관 위치</th>
+                                    <th class="sortable">주문번호</th>
+                                    <th>제품명</th>
+                                    <th>주문업체</th>
+                                    <th>주문날짜</th>
+                                    <th>수량</th>
+                                    <th>담당자</th>
                                     <th>비고</th>
                                 </tr>
                             </thead>
-                            <!-- 여기 데이터 채우세요 -->
+                            <tbody>
+                                <tr>
+                                    <th><input type="checkbox" class="p1_main_chack"></th>
+                                    <td class="sortable">A24082511</td>
+                                    <td>20대필독목록, 30대필독목록,<br> ...</td>
+                                    <td>쌍용도서관</td>
+                                    <td>24.08.25</td>
+                                    <td>10EA</td>
+                                    <td>박규태</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="p1_main_chack"></td>
+                                    <td class="sortable">A24082621</td>
+                                    <td>30대필독목록, 아동필독서, <br> ...</td>
+                                    <td>중앙도서관</td>
+                                    <td>24.08.26</td>
+                                    <td>25EA</td>
+                                    <td>조민정</td>
+                                    <td>-</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" class="p1_main_chack"></td>
+                                    <td class="sortable">A24082611</td>
+                                    <td>청소년필독서, 50대추천도서, <br> ...</td>
+                                    <td>두정도서관</td>
+                                    <td>24.08.26</td>
+                                    <td>15EA</td>
+                                    <td>이제섭</td>
+                                    <td>-</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="bot_btn">
                         <div class="search-container">
-                            <input type="text" id="searchInput" placeholder="도서명 검색...">
+                            <input type="text" id="searchInput" placeholder="주문번호 검색">
                         </div>
                         <input type="button" value="Excel 파일화">
                     </div>
@@ -177,23 +204,54 @@
             </div>
 
             <div class="main_page" id="main_page_2">
-                <h3>보유 도서 목록</h3>
+                <h3>출고 내역</h3>
                 <div>
                     <div class="page_2">
                         <table id="main_library">
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">도서명</th>
-                                    <th>도서 코드</th>
-                                    <th>예약자</th>
-                                    <th>예약자 Id</th>
-                                    <th>예약도서관</th>
-                                    <th>예약일</th>
-                                    <th>반납예정일</th>
+                                    <th class="sortable">주문번호</th>
+                                    <th>출고일자</th>
+                                    <th>거래처명</th>
+                                    <th>품목</th>
+                                    <th>제품코드</th>
+                                    <th>수량</th>
+                                    <th>단가</th>
                                 </tr>
                             </thead>
-                            <!-- 여기에 데이터 -->
+                            <tbody>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>A24082511</td>
+                                    <td>2024.08.28</td>
+                                    <td>쌍용도서관</td>
+                                    <td>20대필독목록, <br> 30대필독목록, <br> ...</td>
+                                    <td>book-20, <br> book-30 <br> ...</td>
+                                    <td>10EA</td>
+                                    <td>400,000</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>A24082621</td>
+                                    <td>2024.09.10</td>
+                                    <td>중앙도서관</td>
+                                    <td>30대필독목록, <br> 아동필독서, <br> ...</td>
+                                    <td>book-30, <br> book-kid <br> ...</td>
+                                    <td>25EA</td>
+                                    <td>600,000</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox"></td>
+                                    <td>A24082611</td>
+                                    <td>2024.09.11</td>
+                                    <td>두정도서관</td>
+                                    <td>청소년필독서, <br> 50대추천도서, <br> ...</td>
+                                    <td>book-yth, <br> book-50 <br> ...</td>
+                                    <td>15EA</td>
+                                    <td>500,000</td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="bot_btn">
@@ -202,62 +260,9 @@
                 </div>
             </div>
 
-            <div class="main_page" id="main_page_3">
-                <h3>도서 발주</h3>
-                <div>
-                    <div class="table_wrap">
-                        <div class="page_1">
-                            <table id="main_library_1">
-                                <thead>
-                                    <tr>
-                                        <th><input type="checkbox" id="p1_checkAll"></th>
-                                        <th class="sortable">도서명</th>
-                                        <th>저자명</th>
-                                        <th>출판사</th>
-                                        <th>요청 도서관</th>
-                                        <th>출판연도</th>
-                                        <th>도서코드</th>
-                                        <th>발주 권수</th>
-                                    </tr>
-                                </thead>
-                                <!-- 여기에 데이터 -->
-                            </table>
-
-                        </div>
-                        <div class="bot_btn">
-                            <input id="page3_btn_1" type="button" value="발주">
-                        </div>
-
-                        <div class="page_1">
-                            <h3>도서 구매 내역</h3>
-                            <table id="main_library_2">
-                                <thead>
-                                    <tr>
-                                        <th><input type="checkbox" id="p2_checkAll"></th>
-                                        <th class="sortable">도서명</th>
-                                        <th>저자명</th>
-                                        <th>출판사</th>
-                                        <th>출판연도</th>
-                                        <th>도서코드</th>
-                                        <th>발주 권수</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-
-                                </tbody>
-                            </table>
-
-                        </div>
-                        <div class="bot_btn">
-                            <input type="button" value="Excel 파일화">
-                            <input id="comp_btn" type="button" value="완료">
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </section>
     </div>
+    <script src="./admin_stock.js"></script>
     <!-- 가장 아래 고정 -->
     <footer>
         <div id="bottom" class="clearfix">
