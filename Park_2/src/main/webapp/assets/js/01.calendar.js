@@ -18,7 +18,7 @@ function renderCalendar() {
   let daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate(); // 해당 월이 몇 일까지 있는지 알 수 있음
   let startDayOfWeek = firstDayOfMonth.getDay(); // 해당 월의 첫번째 날짜가 무슨 요일인지
 
-  currentMonthElement.textContent = `${currentMonth + 1}월 휴관일 안내`;
+  currentMonthElement.textContent = `${currentMonth + 1}월 일정 안내`;
   // 월과 일을 텍스트로 바꿔 넣어줌
 
   calendarDates.innerHTML = ""; // 일을 표시하는 부분을 지워줌
@@ -67,68 +67,11 @@ function renderCalendar() {
         dateElement.classList.add("hu_3");
       }
     }
+    hu1();
+    hu3();
 
-    joong.addEventListener('click', function(){
-      console.log("joong")
-      joong.classList.add("back")
-
-      ssang.classList.remove("back")
-      du.classList.remove("back")
-      sin.classList.remove("back")
-      cheong.classList.remove("back")
-      hu1();
-      hu3()
-    })
-
-    ssang.addEventListener('click', function(){
-      console.log("ssang")
-      ssang.classList.add("back")
-
-      joong.classList.remove("back")
-      du.classList.remove("back")
-      sin.classList.remove("back")
-      cheong.classList.remove("back")
-      hu2();
-      hu3()
-    })
-
-    du.addEventListener('click', function(){
-      console.log("du")
-      du.classList.add("back")
-
-      joong.classList.remove("back")
-      ssang.classList.remove("back")
-      sin.classList.remove("back")
-      cheong.classList.remove("back")
-      hu2();
-      hu3()
-    })
-
-    sin.addEventListener('click', function(){
-      console.log("sin")
-      sin.classList.add("back")
-
-      joong.classList.remove("back")
-      du.classList.remove("back")
-      ssang.classList.remove("back")
-      cheong.classList.remove("back")
-      hu1();
-      hu3()
-    })
-
-    cheong.addEventListener('click', function(){
-      console.log("cheong")
-      cheong.classList.add("back")
-
-      joong.classList.remove("back")
-      du.classList.remove("back")
-      ssang.classList.remove("back")
-      sin.classList.remove("back")
-      hu2();
-      hu3()
-    })
 }
-/* 
+/*
 1. for 문을 이용하여 현재 월의 총 일 수만큼 반복하여 월의 날짜를 순서대로 표시한다.
   2. const dateElement = document.createElement("div");를 통해 날짜를 나타내는 div 요소를 생성한다.
   3. dateElement.classList.add("date");를 통해 생성한 div 요소에 "date" 클래스를 추가한다.

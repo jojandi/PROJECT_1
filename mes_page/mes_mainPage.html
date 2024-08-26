@@ -14,6 +14,24 @@
     <script src="modal.js"></script>
     <script src="click.js"></script>
     <link href="click.css" rel="stylesheet">
+<style>
+       #section1{
+            width: 90vw;
+            height: 50vh;
+            text-align: center;
+            margin:auto;
+        
+       }
+       
+       #productionChart {
+            width: 90vw;
+            height: 80vh;
+            text-align: center;
+            margin: auto;
+        }
+
+       
+</style>
 </head>
 <body>
 
@@ -57,16 +75,13 @@
 
             <div id="hukwan">
             
-                <div id="librarys">
-                    
+                <!-- <div id="librarys">   
                     <div class="library" id="joong">중앙</div>
                     <div class="library" id="ssang">쌍용</div>
                     <div class="library" id="du">두정</div>
                     <div class="library" id="sin">신방</div>
                     <div class="library" id="cheong">청수</div>
-                    
-                </div>
-                
+                </div> -->
                 <div id="calendar">
                     <div class="calHeader">
                         <h2 id="YearMonth">
@@ -91,63 +106,30 @@
                 <script src="./01.calendar.js"></script>
 
             </div>
-            <div id="hukwan_bot"><div class="circle_1"></div>휴관일 <div class="circle_2"></div><small>도서입고일</small></div>
+            <div id="hukwan_bot"><div class="circle_1"></div>출고일 <div class="circle_2"></div><small>도서입고일</small></div>
         </section>
 
         <section class="section1">
             <h1>작업 진행률</h1>
-            <canvas id="loanRateChart"></canvas>
+    <canvas id="progressChart"></canvas>
+    
+    
         </section>
-
 
         <section class="section2">
             <h1>라인별 시간당 생산량</h1>
-            <table id="main_library">
-                <thead>
-                    <tr>
-                        <th>작업내용</th>
-                        <th>작업자</th>
-                        <th>진행상황</th>
-                        <th>발생 일자</th>
-                        <th>위치</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="task-row">
-                        <td>도서 검수</td>
-                        <td>박규태</td>
-                        <td>진행중</td>
-                        <td>2024.01.15</td>
-                        <td>두정도서관</td>
-                    </tr>
-                    <tr class="task-row">
-                        <td>도서 복원</td>
-                        <td>조민정</td>
-                        <td>진행중</td>
-                        <td>2024.01.15</td>
-                        <td>중앙도서관</td>
-                    </tr>
-                    <tr class="task-row">
-                        <td>열람실 보수</td>
-                        <td>이제섭</td>
-                        <td>진행중</td>
-                        <td>2024.01.15</td>
-                        <td>청수도서관</td>
-                    </tr>
-                    <tr class="task-row">
-                        <td>도서 검수</td>
-                        <td>김아영</td>
-                        <td>진행중</td>
-                        <td>2024.01.15</td>
-                        <td>신방도서관</td>
-                    </tr>
-                </tbody>
-            </table>
+    
+            <canvas id="productionChart"></canvas>
+
+        
         </section>
 
 
     <!-- wrap -->
     </div> 
+
+    <script src="./mes_mainPage.js"></script>
+    <script src="chart.js"></script>
 
 
 <!-- 가장 아래 고정 -->
