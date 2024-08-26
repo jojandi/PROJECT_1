@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정보광장_공지사항</title>
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="00.user_side_base.css" rel="stylesheet">
+    <link href="공지사항_사용자_상세.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+                
+        <div id="logoall">
+            <div id="logo" class="left"></div>
+            <!-- <a href="01.main_user_login.html" id="name" class="left">행복만땅 <br>도서관</a> -->
+            <a href="01.main_user.html" id="name" class="left">행복만땅 <br>도서관</a>
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <a href="./bookflix_no.html" class="item" id="i0">북플릭스</a>
+                <a href="./도서관 정보(중앙).html" class="item" id="i1">도서관</a>
+                <a href="./best_we_all.html" class="item" id="i2">베스트</a>
+                <a href="./공지사항_사용자.html" class="item" id="i3">정보광장</a>
+                <a href="./로그인css.html" class="item" id="i4">마이페이지</a>
+            </div>
+
+            <div class="right" id="userall">
+                <a href="./로그인css.html" class="inb" id="login">로그인</a>
+                <div class="inb">|</div>
+                <a href="./회원가입.html" class="inb" id="userin">회원가입</a>
+            </div>
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+            <!-- <div class="right" id="userall">
+                <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
+                <span class="material-symbols-outlined">person</span>
+            </div> -->
+        </div>
+        <script src="./00.user_base.js"></script>
+        <script src="./01.isLogin.js"></script>
+    </header>
+
+    <div id="wrap">
+
+        <!-- 사이드 -->
+        <aside class="clearfix" id="side">
+
+            <div id="sideleft">
+                <h2 id="title">정보광장</h2>
+
+                <div id="items">
+
+                    <div class="item" id="i1">
+                        <span>공지사항</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i2">
+                        <span>도서신청</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i3">
+                        <span>시설물 요청</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                    <div class="item" id="i4">
+                        <span>불량 도서 신고</span>
+                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                    </div>
+                </div>
+            </div>
+            <script src="./정보광장.js"></script>
+
+        </aside>
+
+        <div id="section">
+            <div id="content_all">
+                <div class="name">
+                    <div class="mini_name">중앙 / 공지 > </div>
+                    <strong>중앙도서관 재개관 안내</strong>
+                    <div id="mini">
+                        <span class="mini_date">등록일 | 2024-07-24</span>
+                        <span>조회 | 234</span>
+                    </div>
+                </div>
+    
+                <div id="content">
+                    <div id="file">
+                        <div>
+                            <span>첨부파일 </span>
+                            <span class="material-symbols-outlined">folder</span>
+                        </div>
+                    </div>
+                    <img src="https://www.cheonan.go.kr/crosseditor/binary/images/001062/20240613100113543_G7CSX518.png">
+                </div>
+    
+                <div id="back">
+                        <input type="button" value="목록">
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+    <!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left"></div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 아우내도서관 : 041-521-3723 신방도서관 : 041-521-3724
+                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733 성거도서관 : 041-521-3734 도솔도서관 : 041-521-3735
+            </div>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        
+        // 검색어 입력하면 나오게 만듦
+        function filterTable() {
+            const input = document.getElementById('searchInput');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('reportTable');
+            const tr = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < tr.length; i++) {
+                const tdArray = tr[i].getElementsByTagName('td');
+                let match = false;
+                for (let j = 0; j < tdArray.length; j++) {
+                    if (tdArray[j]) {
+                        if (tdArray[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = match ? '' : 'none';
+            }
+        }
+    </script>
+
+</body>
+
+</html>

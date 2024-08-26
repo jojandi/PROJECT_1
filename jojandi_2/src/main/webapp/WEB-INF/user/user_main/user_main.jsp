@@ -82,21 +82,21 @@
                     <div>
                         <div class="page" id="p2">
                             <span class="material-symbols-outlined">kid_star</span>
-                            <a href="./best_we_all.html"></a>
+                            <a href="best"></a>
                         </div>
                         <div class="pname">베스트도서</div>
                     </div>
                     <div>
                         <div class="page" id="p3">
                             <span class="material-symbols-outlined">sync_saved_locally</span>
-                            <a href="./bookflix_no.html"></a>
+                            <a href="bookflix"></a>
                         </div>
                         <div class="pname">북플릭스</div>
                     </div>
                     <div>
                         <div class="page" id="p4">
                             <span class="material-symbols-outlined">assignment_add</span>
-                            <a href="./로그인css.html"></a>
+                            <a href="request"></a>
                         </div>
                         <div class="pname">도서 신청</div>
                     </div>
@@ -108,37 +108,35 @@
                     <div>
                         <div class="page" id="p5">
                             <span class="material-symbols-outlined">shopping_cart</span>
-                            <a href="./로그인css.html"></a>
+                            <a href="mypage_cart"></a>
                         </div>
                         <div class="pname">장바구니</div>
                     </div>
                     <div>
                         <div class="page" id="p6">
                             <span class="material-symbols-outlined">person_edit</span>
-                            <a href="./로그인css.html"></a>
+                            <a href="mypage_use"></a>
                         </div>
                         <div class="pname">내 이용정보</div>
                     </div>
                     <div>
                         <div class="page" id="p7">
-                            <span class="material-symbols-outlined">sd_card_alert</span>
-                            <a href="./로그인css.html"></a>
+                            <span class="material-symbols-outlined">full_coverage</span>
+                            <a href="notice"></a>
                         </div>
-                        <div class="pname">불량도서 신고</div>
+                        <div class="pname">정보광장</div>
                     </div>
                     <div>
                         <div class="page" id="p8">
-                            <span class="material-symbols-outlined">full_coverage</span>
-                            <a href="./공지사항_사용자.html"></a>
+                            <span class="material-symbols-outlined">lightbulb</span>
+                            <a href="notice"></a>
                         </div>
-                        <div class="pname">정보광장</div>
+                        <div class="pname">이용안내</div>
                     </div>
                     
                 </div>
 
                 <script src="../assets/js/main/box.js"></script>
-                <script src="./01.search.js"></script>
-                <script src="./01.isLogin.js"></script>
             </div>
         </section>
 
@@ -148,7 +146,7 @@
             <div id="noticewrap">          
                 <div id="noticetitle">
                     <sapn>공지사항</sapn>
-                    <a href="./공지사항_사용자.html">
+                    <a href="/notice">
                         <span class="material-symbols-outlined">add</span>
                     </a>
                 </div>
@@ -159,7 +157,7 @@
                         <li class="notice" id="n1">
                             <div class="nbox joong">중앙</div>
                             <div class="noticeTD">
-                                <div class="title">중앙도서관 재개관 안내</div>
+                                <a class="title">중앙도서관 재개관 안내</a>
                                 <div class="update">2024-07-24</div>
                             </div>
                         </li>
@@ -167,7 +165,7 @@
                         <li class="notice" id="n2">
                             <div class="nbox joong">중앙</div>
                             <div class="noticeTD">
-                                <div class="title">중앙도서관 열람실 공사 안내 ( 07/23 ~ 08/03 )</div>
+                                <a class="title">중앙도서관 열람실 공사 안내 ( 07/23 ~ 08/03 )</a>
                                 <div class="update">2024-06-23</div>
                             </div>
                         </li>
@@ -175,7 +173,7 @@
                         <li class="notice" id="n3">
                             <div class="nbox all">공통</div>
                             <div class="noticeTD">
-                                <div class="title">2024 전국 청소년 영어 스피치 콘테스트 안내</div>
+                                <a class="title">2024 전국 청소년 영어 스피치 콘테스트 안내</a>
                                 <div class="update">2024-06-22</div>
                             </div>
                         </li>
@@ -196,7 +194,7 @@
                 <div id="booksubInfo">
                     매달 2권씩 당신의 취향에 맞는 책을 <br>추천해드립니다.
                 </div>
-                <a href="./bookflix_no.html">
+                <a href="bookflix">
                     <input type="button" id="booksubBnt" value="더 알아보기">
                 </a>
             </div>
