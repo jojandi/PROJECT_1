@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자용 메인페이지</title>
+    <link href="00.user_base_login.css" rel="stylesheet">
+    <link href="mes_mainPage.css" rel="stylesheet">
+    <link href="admin.css" rel="stylesheet">
+    <link href="admin_table.css" rel="stylesheet">
+    <link href="modal.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin_main_Chart.js"></script>
+    <script src="modal.js"></script>
+    <script src="click.js"></script>
+    <link href="click.css" rel="stylesheet">
+<style>
+       #section1{
+            width: 90vw;
+            height: 50vh;
+            text-align: center;
+            margin:auto;
+        
+       }
+       
+       #productionChart {
+            width: 90vw;
+            height: 80vh;
+            text-align: center;
+            margin: auto;
+        }
+
+       
+</style>
+</head>
+<body>
+
+<!-- 가장 위 고정 -->
+    <header id="top" class="clearfix">
+        
+        <div id="logoall">
+            <div id="logo" class="left"><a href="mes_mainPage.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
+            <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
+        </div>
+
+        <div id="menu">
+            <div id="items" class="left">
+                <div class="item" id="i1"><a href="mes_pfwork.html">작업 수행</a></div>
+                <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
+                <div class="item" id="i3"><a href="mes_stock.html">재고 관리</a></div>
+                <div class="item" id="i4"><a href="mes_human.html">직원 관리</a></div>
+                <div class="item" id="i5"><a href="mes_statistics_1.html">통계 및 분석</a></div>
+                <div class="item" id="i6"><a href="mes_notice_1.html">게시판</a></div>
+            </div>
+            <div class="right" id="userall">
+                <div id="adminname">OOO관리자</div>
+                <a href="../사용자용 페이지/01.main_user.html">로그아웃</a>
+                <!-- <div class="inb" id="login">로그인</div>
+                <div class="inb">|</div>
+                <div class="inb" id="userin">회원가입</div>
+                <div class="inb" id="menus"></div> -->
+            </div>
+        </div>
+        <script src="./00.user_base.js"></script>
+    </header>
+
+<!-- 메인페이지 -->
+
+    <!-- google fonts 가져오기 -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <div id="wrap">
+
+        <section class="section1">
+
+            <div id="hukwan">
+            
+                <div id="librarys">
+                    
+                    <div class="library" id="joong">중앙</div>
+                    <div class="library" id="ssang">쌍용</div>
+                    <div class="library" id="du">두정</div>
+                    <div class="library" id="sin">신방</div>
+                    <div class="library" id="cheong">청수</div>
+                    
+                </div>
+                
+                <div id="calendar">
+                    <div class="calHeader">
+                        <h2 id="YearMonth">
+                            <!-- YYYY년 M월 -->
+                        </h2>
+                    </div>
+
+                    <div id="days">
+                        <div>일</div>
+                        <div>월</div>
+                        <div>화</div>
+                        <div>수</div>
+                        <div>목</div>
+                        <div>금</div>
+                        <div>토</div>
+                    </div>
+
+                    <div id="dates">
+                        <!-- 날짜들 들어오는 곳 -->
+                    </div>
+                </div>
+                <script src="./01.calendar.js"></script>
+
+            </div>
+            <div id="hukwan_bot"><div class="circle_1"></div>휴관일 <div class="circle_2"></div><small>도서입고일</small></div>
+        </section>
+
+        <section class="section1">
+            <h1>작업 진행률</h1>
+    
+    <canvas id="progressChart"></canvas>
+    
+    
+        </section>
+
+        <section class="section2">
+            <h1>라인별 시간당 생산량</h1>
+    
+            <canvas id="productionChart"></canvas>
+
+        
+        </section>
+
+
+    <!-- wrap -->
+    </div> 
+
+    <script src="./mes_mainPage.js"></script>
+    <script src="chart.js"></script>
+
+
+<!-- 가장 아래 고정 -->
+    <footer>
+        <div id="bottom" class="clearfix">
+
+            <div id="logoall">
+                <div id="logo" class="left"></div>
+                <div id="name" class="left">행복만땅 <br>도서관</div>
+            </div>
+
+            <div id="footerinfo">
+                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724 청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
+            </div>
+
+        </div>
+    </footer>
+    <!-- 모달 -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>작업지시서</h2>
+            <div class="modal-body">
+                <p><strong>작업명:</strong> <span id="taskName"></span></p>
+                <p><strong>작업자:</strong> <span id="taskAssignee"></span></p>
+                <p><strong>진행상황:</strong> <span id="taskStatus"></span></p>
+                <p><strong>발생 일자:</strong> <span id="taskDate"></span></p>
+                <p><strong>위치:</strong> <span id="taskLocation"></span></p>
+                <p><strong>작업 세부사항:</strong></p>
+                <textarea id="taskDetails" rows="4" cols="50" readonly></textarea>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 window.onload = function () {
     const searchInput = document.getElementById('searchInput');
     const table = document.querySelector('#main_page_1 #main_library tbody');
-    const rows = table.querySelectorAll('tr');
+    // const rows = table.querySelectorAll('tr');
 
     // 검색 기능
     searchInput.addEventListener('input', function () {
