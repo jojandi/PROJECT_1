@@ -10,29 +10,22 @@
     <link href="00.user_base_login.css" rel="stylesheet">
     <link href="00.user_side_base.css" rel="stylesheet">
     <link href="admin.css" rel="stylesheet">
+    <link href="mes_statistics.css" rel="stylesheet">
+    
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
 
 
         /* -------------------------------관리자 도서관 정보------------------------------ */
-        canvas {
-            width: 80vw;
-            height: 60vh;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
+        #i_1{
+        background-color: rgb(165, 224, 144);
 
+        }   
+        #menu #items #i5{
+            font-weight: 900;
+            text-decoration: underline;
+        } 
         /* ------------------------------------------------------------------ */
         
     </style>
@@ -56,7 +49,7 @@
                 <div class="item" id="i1"><a href="mes_stock_1.html">작업 수행</a></div>
                 <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
                 <div class="item" id="i3"><a href="mes_stock_1.html">재고 관리</a></div>
-                <div class="item" id="i4"><a href="Best_mng_1.html">직원 관리</a></div>
+                <div class="item" id="i4"><a href="mes_human.html">직원 관리</a></div>
                 <div class="item" id="i5"><a href="mes_statistics_1.html">통계 및 분석</a></div>
                 <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">게시판</a></div>
             </div>
@@ -89,17 +82,17 @@
                 <div id="items">
                     <div class="item" id="i1">
                         <span><a href="mes_statistics_1.html">수요통계 및 예측</a></span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                        <span class="material-symbols-outlined" id="i_1">arrow_forward_ios</span>
                     </div>
                     <div class="item" id="i2">
                         <span><a href="mes_statistics_2.html">출고 통계</a></span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
+                        <span class="material-symbols-outlined" id="i_2">arrow_forward_ios</span>
                     </div>
                 </div>
             </div>
         </aside>
         <section>
-            <h1>월별 수요통계</h1>
+            <h3>월별 수요통계</h3>
     
             <label for="monthSelect">월 선택</label>
             <select id="monthSelect">
@@ -129,7 +122,7 @@
                 <tbody>
                 </tbody>
             </table>
-            <h1>수요 예측</h1>
+            <h3>수요 통계</h3>
             <table>
                 <tr>
                     <th>연령별 필독도서</th>
@@ -169,6 +162,7 @@
     </div>
     <!--자바 스크립트 영역-->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./click.js"></script>
     <script>
 
         let pi1 = document.querySelector("#sideleft #i1");
