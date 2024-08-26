@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <title>사용자 마이페이지</title>
 <link href="../assets/css/my/user_mypage_use.css" rel="stylesheet">
+<style>
+    section #smenu #loan{ font-weight: 900; text-decoration: underline; }
+    section #t2{ display: none; }
+</style>
 </head>
 <body>
 
@@ -17,36 +21,7 @@
     
     <div id="wrap">
         <!-- 사이드 -->
-        <aside class="clearfix" id="side">
-            
-            <div id="sideleft">
-                <h2 id="title">마이페이지</h2>
-                
-                <div id="items">
-                    
-                    <div class="item" id="i1">
-                    	<a href="use">
-                        <span>이용내역</span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    	</a>
-                    </div>
-                    <div class="item" id="i2">
-                        <span>장바구니</span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </div>
-                    <div class="item" id="i3">
-                        <span>나의 민원 내역</span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </div>
-                    <div class="item" id="i4">
-                        <span>내 정보</span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </aside>
+        <%@ include file="/WEB-INF/user/user_my/user_mypage_side.jsp" %>
 
         <section id="use">
 
@@ -134,8 +109,8 @@
                 <span class="material-symbols-outlined">chevron_right</span>
             </div>
         </section>
-        <script src="./02.mypage.js"></script>
-        <script src="./02.mypage_use.js"></script>
+
+        <script src="../assets/js/my/mypage_use.js"></script>
     <!-- wrap -->
     </div>
     

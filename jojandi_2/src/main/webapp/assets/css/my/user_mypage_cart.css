@@ -1,10 +1,10 @@
 
-aside #items #i1 {
+aside #items #i2 {
    font-weight: 900;
    text-decoration: underline;
 }
 
-aside #items #i1 .material-symbols-outlined{
+aside #items #i2 .material-symbols-outlined{
     background: rgb(165, 224, 144);
 }
 
@@ -26,6 +26,7 @@ header #menu #items #i5{
     /* border: 1px solid red; */
     padding: 30px 150px;
 }
+
 
 #wrap section {
     width: 80%;
@@ -60,11 +61,19 @@ section #smenu .text{
 }
 
 /* 테이블 */
+section #table_btn{
+    /* border: 1px solid red; */
+    padding: 10px 30px 50px 30px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 500px;
+}
+
 section .table{
     /* border: 1px solid red; */
-    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
     width: 100%;
-    height: 550px;
+    /* height: 550px; */
 }
 
 section table{
@@ -86,62 +95,67 @@ section table thead td{
     box-sizing: border-box;
 }
 
-section table thead #bnameall{
-    width: 35%;
-}
-
-section table thead #overdueall,
-section table thead #day{
-    width: 10%;
-}
-
-section table thead .day1{
-    width: 13%;
-}
-
-section table tbody td:not(.ing){
+section table tbody td:not(.bookTitle){
     border-bottom: 1px solid #ccc;
-    padding: 15px 0;
-    height: 18px;
+    height: 40px;
     box-sizing: border-box;
-
+    padding: 5px;
     text-overflow: ellipsis; /* 말줄임표(...) 적용 */
     overflow: hidden; /* 넘어가는 부분 안 보이게 */
     white-space: nowrap; /* 줄바꿈 X */
 }
 
-section table tbody .ing{
-    border-bottom: 1px solid #ccc;
-}
-
-section table tbody .bname{
-    padding-left: 10px !important;
-}
-
-section table tbody td:not(.bname){
+section table tbody td:not(.book){
     text-align: center;
 }
 
-/* 페이지 이동 */
-section #movepage{
-    /* border: 1px solid red; */
-    margin: 30px 0;
-    text-align: center;
-}
-
-section #movepage span{
-    vertical-align: top;
-    color: #666666;
-    /* border: 1px solid red; */
-}
-
-section #movepage .chap{
-    display: inline-block;
+section table tbody .bookTitle{
+    padding-left: 10px;
     font-size: 16px;
-    width: 20px;
-    color: #1b1b1b;
+    font-weight: 900;
+    padding-bottom: 5px;
 }
 
-section #movepage .material-symbols-outlined{
-    font-size: 21px;
+section table tbody .bookTitle div{
+    font-size: 14px;
+    font-weight: 500;
+    padding-left: 15px;
+}
+
+section table tbody .wirter{
+    vertical-align: top;
+    padding-left: 15px;
+    padding-top: 5px;
+    font-size: 14px;
+}
+
+section table tbody .bookCover img{
+    width: 60px;
+}
+
+section #bntall{
+    /* border: 1px solid red; */
+    text-align: right;
+    margin-top: 40px;
+    margin-right: 10px;
+}
+
+section #bntall .bnt{
+    font-size: 14px;
+    width: 150px;
+    padding: 8px;
+}
+
+section #bntall #reserchk{
+    background: white;
+    border: 1px solid rgb(106, 170, 82);
+    border-radius: 5%;
+    margin-bottom: 5px;
+}
+
+section #bntall #reserall,
+section #bntall #delall{
+    border-radius: 5%;
+    background: rgb(165, 224, 144);
+    border: 1px solid rgb(106, 170, 82);
 }

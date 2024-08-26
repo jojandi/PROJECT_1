@@ -1,10 +1,10 @@
+@charset "UTF-8";
 
-aside #items #i1 {
+aside #items #i3 {
    font-weight: 900;
    text-decoration: underline;
 }
-
-aside #items #i1 .material-symbols-outlined{
+aside #items #i3 .material-symbols-outlined{
     background: rgb(165, 224, 144);
 }
 
@@ -59,6 +59,11 @@ section #smenu .text{
     margin-right: 7px;
 }
 
+section #smenu #loan{
+    font-weight: 900;
+    text-decoration: underline;
+}
+
 /* 테이블 */
 section .table{
     /* border: 1px solid red; */
@@ -87,19 +92,10 @@ section table thead td{
 }
 
 section table thead #bnameall{
-    width: 35%;
+    width: 40%;
 }
 
-section table thead #overdueall,
-section table thead #day{
-    width: 10%;
-}
-
-section table thead .day1{
-    width: 13%;
-}
-
-section table tbody td:not(.ing){
+section table tbody td{
     border-bottom: 1px solid #ccc;
     padding: 15px 0;
     height: 18px;
@@ -110,17 +106,20 @@ section table tbody td:not(.ing){
     white-space: nowrap; /* 줄바꿈 X */
 }
 
-section table tbody .ing{
-    border-bottom: 1px solid #ccc;
+section table tbody td:not(.bname){
+    text-align: center;
 }
 
 section table tbody .bname{
     padding-left: 10px !important;
 }
 
-section table tbody td:not(.bname){
-    text-align: center;
+section table tbody .minbnt{
+    border: 1px solid black;
+    padding: 5px;
 }
+
+
 
 /* 페이지 이동 */
 section #movepage{
