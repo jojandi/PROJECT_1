@@ -1,19 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>사용자용 메인페이지</title>
-    <link href="00.user_base_login.css" rel="stylesheet">
-    <link href="mes_mainPage.css" rel="stylesheet">
-    <link href="admin.css" rel="stylesheet">
-    <link href="admin_table.css" rel="stylesheet">
-    <link href="modal.css" rel="stylesheet">
+    <link href="./assets/css/00.user_base_login.css" rel="stylesheet">
+    <link href="./assets/css/mes_mainPage.css" rel="stylesheet">
+    <link href="./assets/css/admin.css" rel="stylesheet">
+    <link href="./assets/css/admin_table.css" rel="stylesheet">
+    <link href="./assets/css/modal.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="admin_main_Chart.js"></script>
-    <script src="modal.js"></script>
-    <script src="click.js"></script>
-    <link href="click.css" rel="stylesheet">
+    <script src="./assets/js/modal.js"></script>
+    <script src="./assets/js/click.js"></script>
+    <link href="./assets/css/click.css" rel="stylesheet">
 <style>
        #section1{
             width: 90vw;
@@ -61,7 +63,7 @@
                 <div class="inb" id="menus"></div> -->
             </div>
         </div>
-        <script src="./00.user_base.js"></script>
+        <script src="./assets/js/00.user_base.js"></script>
     </header>
 
 <!-- 메인페이지 -->
@@ -103,7 +105,7 @@
                         <!-- 날짜들 들어오는 곳 -->
                     </div>
                 </div>
-                <script src="./01.calendar.js"></script>
+                <script src="./assets/js/01.calendar.js"></script>
 
             </div>
             <div id="hukwan_bot"><div class="circle_1"></div>출고일 <div class="circle_2"></div><small>도서입고일</small></div>
@@ -128,8 +130,8 @@
     <!-- wrap -->
     </div> 
 
-    <script src="./mes_mainPage.js"></script>
-    <script src="chart.js"></script>
+    <script src="./assets/js/mes_mainPage.js"></script>
+    <script src="./assets/js/chart.js"></script>
 
 
 <!-- 가장 아래 고정 -->

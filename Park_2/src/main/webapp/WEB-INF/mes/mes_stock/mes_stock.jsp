@@ -6,13 +6,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>재고 관리</title>
-    <link href="admin_table.css" rel="stylesheet">
-    <link href="00.user_base_login.css" rel="stylesheet">
-    <link href="00.user_side_base.css" rel="stylesheet">
-    <link href="admin.css" rel="stylesheet">
+    <link href="./assets/css/admin_table.css" rel="stylesheet">
+    <link href="./assets/css/00.user_base_login.css" rel="stylesheet">
+    <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
+    <link href="./assets/css/admin.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link href="click.css" rel="stylesheet">
+    <link href="./assets/css/click.css" rel="stylesheet">
     <style>
         .page {
             /* border: 1px solid red; */
@@ -117,7 +117,7 @@
         }
         
     </style>
-    <script src="./admin_stock.js"></script>
+    <script src="./assets/js/admin_stock.js"></script>
 </head>
 
 <body>
@@ -134,10 +134,10 @@
             <div id="items" class="left">
                 <div class="item" id="i1"><a href="mes_pfwork.html">작업 수행</a></div>
                 <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
-                <div class="item" id="i3"><a href="mes_stock.html">재고 관리</a></div>
-                <div class="item" id="i4"><a href="Best_mng_1.html">직원 관리</a></div>
+                <div class="item" id="i3"><a href="/Park_2/stock">재고 관리</a></div>
+                <div class="item" id="i4"><a href="mes_human.html">직원 관리</a></div>
                 <div class="item" id="i5"><a href="mes_statistics_1.html">통계 및 분석</a></div>
-                <div class="item" id="i6"><a href="mes_notice_1.html">게시판</a></div>
+                <div class="item" id="i6"><a href="/Park_2/notice">게시판</a></div>
             </div>
             <div class="right" id="userall">
                 <div>OOO관리자</div>
@@ -356,5 +356,5 @@
         </div>
     </footer>
 </body>
-<script src="mes_stock.js"></script>
+<script src="./assets/js/mes_stock.js"></script>
 </html>
