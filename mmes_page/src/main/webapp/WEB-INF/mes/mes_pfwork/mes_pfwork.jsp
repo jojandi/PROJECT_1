@@ -14,75 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <script src="./assets/js/click.js"></script>
     <link href="./assets/css/click.css" rel="stylesheet">
-    <style>
-        .page {
-            /* border: 1px solid red; */
-            width: 100%;
-            height: 100%;
-            margin: auto;
-            margin-top: 10px;
-            overflow: scroll;
-        }
-        .page_1 {
-            /* border: 1px solid red; */
-            width: 100%;
-            height: 250px;
-            margin: auto;
-            margin-top: 10px;
-            overflow: scroll;
-        }
-        .page_2 {
-            /* border: 1px solid red; */
-            width: 100%;
-            height: 500px;
-            overflow: scroll; height: 500px;
-            margin: auto;
-            margin-top: 10px;
-        }
-
-        .table_wrap {
-            /* border: 1px solid red; */
-            /* width: 80%; */
-            height: 100%;
-            /* overflow: scroll; */
-        }
-
-        .bot_btn {
-            text-align: right;
-            margin-right: 10px;
-        }
-
-        #main_library {
-            margin-bottom: 10px;
-        }
-
-        th.sortable {
-            cursor: pointer;
-        }
-
-        th.sorted-asc::after {
-            content: " ▲";
-        }
-
-        th.sorted-desc::after {
-            content: " ▼";
-        }
-
-        .main_page {
-            width: 100%;
-        }
-        .input_style {
-            width: 30px;
-            text-align: center;
-        }
-
-        #menu #items #i1{
-            font-weight: 900;
-            text-decoration: underline;
-        }  
-        
-    </style>
-    
+    <link href="./assets/css/mes_pfwork.css" rel="stylesheet">
 </head>
 
 <body>

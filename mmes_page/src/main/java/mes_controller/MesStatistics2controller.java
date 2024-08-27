@@ -7,14 +7,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/statistics1")
+@WebServlet("/statistics2")
 public class MesStatistics2controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet 실행");
 		
-		request.getRequestDispatcher("WEB-INF/mes/mes_statistics/mes_statistics1.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/mes/mes_statistics/mes_statistics2.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

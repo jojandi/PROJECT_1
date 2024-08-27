@@ -7,17 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/statistics1")
-public class MesStatistics1controller extends HttpServlet {
+@WebServlet("/notice2")
+public class MesNotice2Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doGet 실행");
+		System.out.println("/notice doget실행");
 		
-		request.getRequestDispatcher("WEB-INF/mes/mes_statistics/mes_statistics1.jsp").forward(request, response);
+		
+		request.getRequestDispatcher("/WEB-INF/mes/mes_notice/mes_notice_2.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		
 	}
 
 }

@@ -19,69 +19,8 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="./assets/css/click.css" rel="stylesheet">
-    <style>
-        
-
-        
-        #pagination button {
-            margin: 0 4px;
-            padding: 8px 16px;
-        }
-
-        /* #pagination {
-            text-align: center;
-        } */
-
-        .write {
-            text-align: right;
-            margin-top: 35px;
-        }
-
-        .btnnn {
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-        }
-        .delete-btn {
-            background-color: #d9534f;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-        .delete-btn:hover {
-            background-color: #c9302c;
-        }
-        section h3{
-            border: 1px solid #ccc;
-            width: 100%;
-            text-align: center;
-            font-size: 22px;
-            padding: 17px;
-            box-sizing: border-box;
-        }
-        .notince {
-            width: 100%;
-            height: 80%;
-            display: inline-block;
-        }
-        .t1 {
-            width: 100%;
-            height: 78%;
-        }
-        .t1 div {
-            height: 515px;
-        }
-        #menu #items #i6{
-            font-weight: 900;
-            text-decoration: underline;
-        } 
-    </style>
+    <link href="./assets/css/mes_notice.css" rel="stylesheet">
+  
 </head>
 
 <body>
@@ -122,7 +61,7 @@
                         <button class="sb" name="검색" value="검색">검색</button>
                     </div>
                     <div class="write">
-                        <a href="mes_notice_2.html">
+                        <a href="notice2">
                             <input type="button" class="btnnn" value="글쓰기">
                         </a>
                     </div>

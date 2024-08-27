@@ -6,9 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../assets/css/my/user_mypage_side.css" rel="stylesheet">
-<style>
-     #menu #items #i4{ font-weight: 900; text-decoration: underline; }  
-</style>
+
 </head>
 <body>
 	<!-- 사이드 -->
