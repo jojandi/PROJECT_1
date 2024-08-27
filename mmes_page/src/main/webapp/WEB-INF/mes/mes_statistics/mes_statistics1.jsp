@@ -84,22 +84,8 @@
 -->
 
     <div id="wrap">
-        <!-- 사이드 -->
-        <aside class="clearfix" id="side">
-            <div id="sideleft">
-                <h2 id="title">통계 및 분석</h2>
-                <div id="items">
-                    <div class="item" id="i1">
-                        <a href="statistics1"><span>수요 통계 및 예측</span>
-                        <span class="material-symbols-outlined" id="i_1">arrow_forward_ios</span></a>
-                    </div>
-                    <div class="item" id="i2">
-                        <a href="statistics2"><span>출고 통계</span>
-                        <span class="material-symbols-outlined" id="i_2">arrow_forward_ios</span></a>
-                    </div>
-                </div>
-            </div>
-        </aside>
+       <%@ include file="/WEB-INF/mes/mes_statistics/mes_statistics1_side.jsp" %>
+       
         <section>
             <h3>수요 통계 및 예측</h3>
             <div class="all">
