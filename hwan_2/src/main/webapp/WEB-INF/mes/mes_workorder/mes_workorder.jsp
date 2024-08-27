@@ -6,10 +6,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>생산관리</title>
     <link href="./assets/css/admin_table.css" rel="stylesheet">
-    <link href="./assets/css/00.user_base_login.css" rel="stylesheet">
-    <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
     <link href="./assets/css/admin.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -195,33 +193,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- 가장 위 고정 -->
-    <header id="top" class="clearfix">
-
-        <div id="logoall">
-            <div id="logo" class="left"><a href="admin_main.html"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
-            <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
-        </div>
-
-        <div id="menu">
-            <div id="items" class="left">
-                <div class="item" id="i1"><a href="mes_pfwork.html">작업 수행</a></div>
-                <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
-                <div class="item" id="i3"><a href="mes_stock_1.html">재고 관리</a></div>
-                <div class="item" id="i4"><a href="Best_mng_1.html">직원 관리</a></div>
-                <div class="item" id="i5"><a href="admin_page.html">통계 및 분석</a></div>
-                <div class="item" id="i6"><a href="도서관 관리자 공지사항css.js.html">게시판</a></div>
-            </div>
-            <div class="right" id="userall">
-                <div>OOO관리자</div>
-                <div><a href="../사용자용 페이지/01.main_user.html">로그아웃</a></div>
-                <!-- <div class="inb" id="login">로그인</div>
-                <div class="inb">|</div>
-                <div class="inb" id="userin">회원가입</div>
-                <div class="inb" id="menus"></div> -->
-            </div>
-        </div>
-    </header>
-
+    
+    <!-- 헤더  -->
+		<%@ include file="/WEB-INF/mes/mes_base/header.jsp" %>
+	<!-- 헤더  -->
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
     <div id="wrap">
@@ -328,8 +303,8 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">품번</th>
-                                    <th>품명</th>
+                                    <th class="sortable">제품코드</th>
+                                    <th>제품명</th>
                                     <th>수량</th>
                                     <th>판매단가</th>
                                     <th>생산예정수량</th>
@@ -471,16 +446,16 @@
                     <table>
                         <tr class="modal-div_4">
                             <th>
-                                <span class="modal-item">상위품번</span> 
+                                <span class="modal-item">상위제품코드</span> 
                             </th>
                             <th>
-                                <span>상위품명</span>
+                                <span>상위제품명</span>
                             </th>
                             <th>
-                                <span>품번</span>
+                                <span>제품코드</span>
                             </th>
                             <th>
-                                <span>품명</span>
+                                <span>제품명</span>
                             </th>
                             <th>
                                 <span>수량</span>
@@ -593,23 +568,6 @@
     <!-- //////////////////////////// 2번째 모달 ////////////////////////////////////// -->
     <script src="./assets/js/admin_workorder.js"></script>
 
-    <!-- 가장 아래 고정 -->
-     
-    <footer>
-        <div id="bottom" class="clearfix">
-
-            <div id="logoall">
-                <div id="logo" class="left"></div>
-                <div id="name" class="left">행복만땅 <br>도서관</div>
-            </div>
-
-            <div id="footerinfo">
-                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
-                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
-            </div>
-
-        </div>
-    </footer>
     
 </body>
 
