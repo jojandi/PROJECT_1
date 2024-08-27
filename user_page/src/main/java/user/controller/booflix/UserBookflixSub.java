@@ -7,20 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user/bookflix")
-public class UserBookflix extends HttpServlet {
+@WebServlet("/user/sub")
+public class UserBookflixSub extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("사용자용 북플릭스 설명 doGet 실행!");
-		request.setCharacterEncoding("utf-8");
-	    response.setContentType("text/html; charset=utf-8;");
 		
-		request.getRequestDispatcher("/WEB-INF/user/bookflix/user_bookflix.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("사용자용 북플릭스 구독 doPost 실행!");
+		request.setCharacterEncoding("utf-8");
+	    response.setContentType("text/html; charset=utf-8;");
+	   
+	    response.sendRedirect(request.getContextPath() + "/user/bookflix_use");
 	}
 
 }

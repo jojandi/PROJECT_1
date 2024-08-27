@@ -24,29 +24,6 @@ function iconon(){
     }
 }
 
-function loanOn(){
-    loan.addEventListener('click', function(){
-        console.log('도서신청내역 클릭!!!');
-        loan.style.fontWeight = "900";
-        loan.style.textDecoration = "underline";
-        overdue.style.fontWeight = "500";
-        overdue.style.textDecoration = "none";
-        t1.style.display = "block";
-        t2.style.display = "none";
-    })
-}
-function overdueOn(){
-    overdue.addEventListener('click', function(){
-        console.log('민원처리현황 클릭!!!');
-        overdue.style.fontWeight = "900";
-        overdue.style.textDecoration = "underline";
-        loan.style.fontWeight = "500";
-        loan.style.textDecoration = "none";
-        t1.style.display = "none";
-        t2.style.display = "block";
-    })
-}
-
 
 function bntColor(){
     ing = $(".parent").find(".ing");
@@ -84,7 +61,5 @@ function del(){
 }
 
 iconon();
-loanOn();
-overdueOn();
 bntColor();
 del();

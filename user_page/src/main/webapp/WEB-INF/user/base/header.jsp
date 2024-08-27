@@ -19,7 +19,7 @@
 
         <div id="menu">
             <div id="items" class="left">
-                <a href="bookflix" class="item" id="i0">북플릭스</a>
+                <a href="bookflix_use" class="item" id="i0">북플릭스</a>
                 <a href="libraryja" class="item" id="i1">도서관</a>
                 <a href="best" class="item" id="i2">베스트</a>
                 <a href="notice" class="item" id="i3">정보광장</a>
