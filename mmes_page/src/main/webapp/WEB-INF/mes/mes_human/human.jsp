@@ -55,18 +55,8 @@
 
     <div id="wrap">
         <!-- 사이드 -->
-        <aside class="clearfix" id="side">
-            <div id="sideleft">
-                <h2 id="title">직원관리</h2>
-                <div id="items">
-                    <div class="item" id="i1">
-                        <span><a href="mes_human.html">직원관리</a></span>
-                        <span class="material-symbols-outlined" id="i_1">arrow_forward_ios</span>
-                    </div>
-                   
-                </div>
-            </div>
-        </aside>
+        <%@ include file="/WEB-INF/mes/mes_human/human_side.jsp" %>
+        
         <section>
             
             <div class="button-container" style="margin-top: 30px;">

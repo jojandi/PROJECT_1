@@ -94,17 +94,8 @@
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
     <div id="wrap">
-        <aside class="clearfix" id="side">
-            <div id="sideleft">
-                <h2 id="title">게시판</h2>
-                <div id="items">
-                    <div class="item" id="i1">
-                        <span>게시판</span>
-                        <span class="material-symbols-outlined active">arrow_forward_ios</span>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        <!-- 사이드 -->
+        <%@ include file="/WEB-INF/mes/mes_notice/mes_notice_side.jsp" %>
         <section>
             <div class="main_page">
                 <h3>게시판</h3>
