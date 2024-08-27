@@ -1,18 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="admin_table.css" rel="stylesheet">
-    <link href="00.user_base_login.css" rel="stylesheet">
-    <link href="00.user_side_base.css" rel="stylesheet">
-    <link href="admin.css" rel="stylesheet">
+    <title>작업수행</title>
+    <link href="./assets/css/admin_table.css" rel="stylesheet">
+    <link href="./assets/css/00.user_base_login.css" rel="stylesheet">
+    <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
+    <link href="./assets/css/admin.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <script src="click.js"></script>
-    <link href="click.css" rel="stylesheet">
+    <script src="./assets/js/click.js"></script>
+    <link href="./assets/css/click.css" rel="stylesheet">
     <style>
         .page {
             /* border: 1px solid red; */
@@ -136,6 +138,11 @@
         <section>
             <div class="main_page" id="main_page_1">
                 <h3>주문 현황</h3>
+                <div class="bot_btn">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="주문번호 검색">
+                        </div>
+                    </div>
                 <div>
                     <div class="page_2">
                         <table id="main_library">
@@ -158,7 +165,7 @@
                                     <th>주문날짜</th>
                                     <th>수량</th>
                                     <th>담당자</th>
-                                    <th>비고</th>
+                                    <th>주문금액</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -170,7 +177,7 @@
                                     <td>24.08.25</td>
                                     <td>10EA</td>
                                     <td>박규태</td>
-                                    <td>-</td>
+                                    <td>400,000</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" class="p1_main_chack"></td>
@@ -180,7 +187,7 @@
                                     <td>24.08.26</td>
                                     <td>25EA</td>
                                     <td>조민정</td>
-                                    <td>-</td>
+                                    <td>600,000</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" class="p1_main_chack"></td>
@@ -190,16 +197,10 @@
                                     <td>24.08.26</td>
                                     <td>15EA</td>
                                     <td>이제섭</td>
-                                    <td>-</td>
+                                    <td>500,000</td>
                                 </tr>
                             </tbody>
                         </table>
-                    </div>
-                    <div class="bot_btn">
-                        <div class="search-container">
-                            <input type="text" id="searchInput" placeholder="주문번호 검색">
-                        </div>
-                        <input type="button" value="Excel 파일화">
                     </div>
                 </div>
             </div>
@@ -214,11 +215,11 @@
                                     <th><input type="checkbox" id="p1_checkAll"></th>
                                     <th class="sortable">주문번호</th>
                                     <th>출고일자</th>
-                                    <th>거래처명</th>
-                                    <th>품목</th>
+                                    <th>주문업체</th>
+                                    <th>제품명</th>
                                     <th>제품코드</th>
                                     <th>수량</th>
-                                    <th>단가</th>
+                                    <th>주문금액</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -255,15 +256,12 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="bot_btn">
-                        <input type="button" value="Excel 파일화">
-                    </div>
                 </div>
             </div>
 
         </section>
     </div>
-    <script src="./admin_stock.js"></script>
+    <script src="./assets/js/admin_stock.js"></script>
     <!-- 가장 아래 고정 -->
     <footer>
         <div id="bottom" class="clearfix">
