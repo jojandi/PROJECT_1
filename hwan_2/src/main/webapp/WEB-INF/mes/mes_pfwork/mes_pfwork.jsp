@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>작업수행</title>
     <link href="./assets/css/admin_table.css" rel="stylesheet">
     <link href="./assets/css/00.user_base_login.css" rel="stylesheet">
     <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
@@ -165,7 +165,7 @@
                                     <th>주문날짜</th>
                                     <th>수량</th>
                                     <th>담당자</th>
-                                    <th>비고</th>
+                                    <th>주문금액</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -177,7 +177,7 @@
                                     <td>24.08.25</td>
                                     <td>10EA</td>
                                     <td>박규태</td>
-                                    <td>-</td>
+                                    <td>400,000</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" class="p1_main_chack"></td>
@@ -187,7 +187,7 @@
                                     <td>24.08.26</td>
                                     <td>25EA</td>
                                     <td>조민정</td>
-                                    <td>-</td>
+                                    <td>600,000</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" class="p1_main_chack"></td>
@@ -197,7 +197,7 @@
                                     <td>24.08.26</td>
                                     <td>15EA</td>
                                     <td>이제섭</td>
-                                    <td>-</td>
+                                    <td>500,000</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -215,11 +215,11 @@
                                     <th><input type="checkbox" id="p1_checkAll"></th>
                                     <th class="sortable">주문번호</th>
                                     <th>출고일자</th>
-                                    <th>거래처명</th>
-                                    <th>품목</th>
+                                    <th>주문업체</th>
+                                    <th>제품명</th>
                                     <th>제품코드</th>
                                     <th>수량</th>
-                                    <th>단가</th>
+                                    <th>주문금액</th>
                                 </tr>
                             </thead>
                             <tbody>
