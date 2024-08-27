@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class MesNoticeController
- */
 @WebServlet("/notice")
 public class MesNoticeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,7 +15,7 @@ public class MesNoticeController extends HttpServlet {
 		System.out.println("/notice doget실행");
 		
 		
-		request.getRequestDispatcher("/WEB-INF/mes/mes_notice/mes_notice.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/mes/mes_notice/mes_notice_1.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
