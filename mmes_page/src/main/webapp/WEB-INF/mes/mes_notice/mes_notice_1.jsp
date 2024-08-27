@@ -14,7 +14,6 @@
     <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="./assets/css/admin_table.css" rel="stylesheet">
-    <link href="./assets/css/00.user_base_login.css" rel="stylesheet">
     <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
     <link href="./assets/css/admin.css" rel="stylesheet">
     <link rel="stylesheet"
@@ -88,34 +87,9 @@
 <body>
 
     <!-- 가장 위 고정 -->
-    <header id="top" class="clearfix">
-
-        <div id="logoall">
-            <div id="logo" class="left"><a href="mes_mainPage.html"><img class="logo_img"
-                        src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a>
-            </div>
-            <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
-        </div>
-
-        <div id="menu">
-            <div id="items" class="left">
-                <div class="item" id="i1"><a href="mes_pfwork.html">작업 수행</a></div>
-                <div class="item" id="i2"><a href="admin_library.html">생산 관리</a></div>
-                <div class="item" id="i3"><a href="/Park_2/stock">재고 관리</a></div>
-                <div class="item" id="i4"><a href="mes_human.html">직원 관리</a></div>
-                <div class="item" id="i5"><a href="mes_statistics_1.html">통계 및 분석</a></div>
-                <div class="item" id="i6"><a href="/Park_2/notice">게시판</a></div>
-            </div>
-            <div class="right" id="userall">
-                <div>OOO관리자</div>
-                <div><a href="../사용자용 페이지/01.main_user.html">로그아웃</a></div>
-                <!-- <div class="inb" id="login">로그인</div>
-                <div class="inb">|</div>
-                <div class="inb" id="userin">회원가입</div>
-                <div class="inb" id="menus"></div> -->
-            </div>
-        </div>
-    </header>
+    <!-- 헤더  -->
+		<%@ include file="/WEB-INF/mes/mes_base/header.jsp" %>
+	<!-- 헤더  -->
 
 
     <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
@@ -168,21 +142,7 @@
 
 
     <!-- 가장 아래 고정 -->
-    <footer>
-        <div id="bottom" class="clearfix">
 
-            <div id="logoall">
-                <div id="logo" class="left"></div>
-                <div id="name" class="left">행복만땅 <br>도서관</div>
-            </div>
-
-            <div id="footerinfo">
-                Tel : 중앙도서관 : 041-521-3721 신방도서관 : 041-521-3724
-                청수도서관 : 041-521-3725 쌍용도서관 : 041-521-3731 두정도서관 : 041-521-3733
-            </div>
-
-        </div>
-    </footer>
     <script>
         $(document).ready(function () {
             $('.cate ul').hide(); // 버튼 누르기 전에 ul 리스트들 숨기기
