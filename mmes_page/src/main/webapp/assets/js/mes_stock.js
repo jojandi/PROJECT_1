@@ -28,12 +28,12 @@ window.onload = function () {
         console.log('서밋');
     
         const bookTitle = document.getElementById('book_title').value;
-        const authorName = document.getElementById('author_name').value;
+        const isbn = document.getElementById('isbn').value;
         const publisher = document.getElementById('publisher').value;
-        const requestingLibrary = document.getElementById('requesting_library').value;
-        const publicationYear = document.getElementById('publication_year').value;
-        const bookCode = document.getElementById('book_code').value;
-        const orderQuantity = document.getElementById('order_quantity').value;
+        const author = document.getElementById('author').value;
+        const quantity = document.getElementById('quantity').value;
+        const order_Date = document.getElementById('order_Date').value;
+       
     
         const tableBody = document.querySelector('.main_tbody');
         const newRow = tableBody.insertRow();
@@ -45,16 +45,14 @@ window.onload = function () {
         const cell5 = newRow.insertCell(4);
         const cell6 = newRow.insertCell(5);
         const cell7 = newRow.insertCell(6);
-        const cell8 = newRow.insertCell(7);
         
         cell1.innerHTML = '<input type="checkbox" class="p2_main_check">';
         cell2.textContent = bookTitle;
-        cell3.textContent = authorName;
-        cell4.textContent = publisher;
-        cell5.textContent = requestingLibrary;
-        cell6.textContent = publicationYear;
-        cell7.textContent = bookCode;
-        cell8.textContent = orderQuantity;
+        cell3.textContent = isbn;
+        cell4.textContent = author;
+        cell5.textContent = publisher;
+        cell6.textContent = quantity;
+        cell7.textContent = order_Date;
     
         modal.style.display = 'none';
         form.reset();
