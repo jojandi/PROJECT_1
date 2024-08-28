@@ -20,7 +20,7 @@ public class UserMyPageUse extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("사용자용 마이페이지 doPost 실행!!!!");
 	}
 
 }

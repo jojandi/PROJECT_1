@@ -63,7 +63,9 @@
                     </div>
                     <div id=input_res>
                         <div id="input_top">
-                            <input type="button" value="장바구니 담기" id="input_1" class="cartBnt">
+                        	<form method="post" action="cart">
+	                            <input type="button" value="장바구니 담기" id="input_1" class="cartBnt">
+                        	</form>
                         </div>
                         <div id="input_bottom">
                             <input type="button" value="대출 예약하기" id="input_2" class="reserBnt">
@@ -91,7 +93,9 @@
 	                        </div>
 	
 	                        <div class="btnbox">
-	                            <input type="button" class="realReserBnt joong" value="예약">
+	                        	<form method="post" action="res">
+	                            	<input type="button" class="realReserBnt joong" value="예약">
+	                            </form>
 	                        </div>
 	                    </div>
 	

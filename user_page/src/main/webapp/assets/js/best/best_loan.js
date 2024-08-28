@@ -80,7 +80,7 @@ function reserOn(){
 
 // 장바구니 클릭 이벤트
 function cartOn(){
-    for(let i = 0 ; i < ci.length; i++){
+    for(let i = 0 ; i < cartBnt.length; i++){
         cartBnt[i].addEventListener('click', function(){
             console.log("장바구니 클릭!!!");
             alert("해당 도서가 장바구니에 담겼습니다. ")
@@ -91,3 +91,4 @@ function cartOn(){
 
 closer();
 reserOn();
+cartOn();

@@ -63,7 +63,9 @@
                             <td>24.07.19</td>
                             <td>진행 중</td>
                             <td>
-                                <input type="button" class="minbnt ing" id="b3" value="신청취하">
+                            	<form method="post" action="bookadd_del">
+	                                <input type="submit" class="minbnt ing" id="b3" value="신청취하">
+                            	</form>
                             </td>
                         </tr>
                     </tbody>

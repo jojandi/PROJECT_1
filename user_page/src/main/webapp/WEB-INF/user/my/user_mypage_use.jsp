@@ -7,8 +7,8 @@
 <title>사용자 마이페이지</title>
 <link href="../assets/css/my/user_mypage_use.css" rel="stylesheet">
 <style>
-    section #smenu #loan{ font-weight: 900; text-decoration: underline; }
-    section #t2{ display: none; }
+    section #smenu #res{ font-weight: 900; text-decoration: underline; }
+    
 </style>
 </head>
 <body>
@@ -30,6 +30,8 @@
             </div>
             
             <div id="smenu"> 
+                <span class="text on" id="res">예약내역</span>
+                <span class="text" id="line">|</span>
                 <span class="text on" id="loan">대출내역</span>
                 <span class="text" id="line">|</span>
                 <span class="text on" id="overdue">연체내역</span>
@@ -39,7 +41,7 @@
                 <table>
                     <thead> 
                         <tr>
-                            <td id="bnameall">도서명</td>
+                            <td class="bnameall">도서명</td>
                             <td>도서관</td>
                             <td>대출일자</td>
                             <td>대출현황</td>
@@ -77,11 +79,12 @@
                 </table>
             </div>
 
+            <!-- ---------------------------------------------------------------------- -->
             <div id="t2" class="table">
                 <table>
                     <thead> 
                         <tr>
-                            <td id="bnameall">도서명</td>
+                            <td class="bnameall">도서명</td>
                             <td >도서관</td>
                             <td class="day1">대출일자</td>
                             <td class="day1">반납일자</td>
@@ -98,6 +101,40 @@
                             <td class="ing">24.06.27</td>
                             <td>3일</td>
                             <td>24.06.29</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- ---------------------------------------------------------------------- -->
+            <div id="t3" class="table">
+                <table>
+                    <thead> 
+                        <tr>
+                            <td class="bnameall">도서명</td>
+                            <td >도서관</td>
+                            <td class="day1">예약일자</td>
+                            <td class="day1">픽업일자</td>
+                            <td>예약번호</td>
+                            <td>현황</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td class="bname">봄은 또 오고</td>
+                            <td>중앙도서관</td>
+                            <td>24.06.10</td>
+                            <td>24.06.12</td>
+                            <td>12345678</td>
+                            <td>픽업완료</td>
+                        </tr>
+                        <tr>
+                            <td class="bname">죽여 마땅한 사람들</td>
+                            <td>중앙도서관</td>
+                            <td>24.06.14</td>
+                            <td>-</td>
+                            <td>56565656</td>
+                            <td>대기중</td>
                         </tr>
                     </tbody>
                 </table>

@@ -1,32 +1,6 @@
-
-let del = document.querySelectorAll(".del");
-let cart = document.querySelectorAll(".cart");
-
-let delall = document.querySelector("#delall");
-
 let chk = document.querySelectorAll(".chk");
 let chkall = document.querySelector("#chkall")
 
-function delOn(){
-    for(let i = 0; i < del.length; i++){
-        del[i].addEventListener('click', function(){
-            console.log("삭제!");
-
-            cart[i].innerHTML="";           
-            cart[i+1].innerHTML="";           
-        })
-    }
-}
-
-function delallOn(){
-    delall.addEventListener('click', function(){
-        for(let i = 0; i < cart.length; i++){
-            console.log("전체 삭제!");
-
-            cart[i].innerHTML="";
-        }
-    })
-}
 
 function chkallOn(){
     
@@ -69,7 +43,6 @@ function chkallOn(){
     
 }
 
-delOn();
-delallOn();
+
 chkallOn();
 

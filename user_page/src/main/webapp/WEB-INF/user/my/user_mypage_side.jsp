@@ -27,7 +27,7 @@
                     </div>
                     <div class="item" id="i2">
                     	<a href="mypage_cart">
-    	                    <span>장바구니</span>
+    	                    <span>찜 목록</span>
 	                        <span class="material-symbols-outlined">arrow_forward_ios</span>
                     	</a>
                     </div>
