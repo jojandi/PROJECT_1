@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../assets/css/base/user_base.css" rel="stylesheet">
+
 </head>
 <body>
 	<!-- 가장 위 고정 -->
@@ -19,11 +20,11 @@
 
         <div id="menu">
             <div id="items" class="left">
-                <a href="bookflix_use" class="item" id="i0">북플릭스</a>
-                <a href="libraryja" class="item" id="i1">도서관</a>
-                <a href="best" class="item" id="i2">베스트</a>
-                <a href="notice" class="item" id="i3">정보광장</a>
-                <a href="mypage_use" class="item" id="i4">마이페이지</a>
+                <a href="bookflix_use" class="item" id="i0">실시간재고</a>
+                <a href="libraryja" class="item" id="i1">회원관리</a>
+                <a href="best" class="item" id="i2">정보광장관리</a>
+               <!--  <a href="notice" class="item" id="i3">정보광장</a> -->
+               <!-- <a href="mypage_use" class="item" id="i4">마이페이지</a> -->
             </div>
 
             <div class="right" id="userall">
@@ -38,7 +39,6 @@
                 <span class="material-symbols-outlined">person</span>
             </div> -->
         </div>
-        <script src="./00.user_base.js"></script>
         
     </header>
 </body>
