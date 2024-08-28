@@ -22,7 +22,7 @@ public class UserRequest extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 		
-		request.getRequestDispatcher("/WEB-INF/user/user_info/userrequest.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/user/info/userrequest.jsp").forward(request, response);
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

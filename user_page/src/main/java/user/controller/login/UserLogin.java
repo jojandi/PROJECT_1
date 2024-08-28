@@ -17,7 +17,7 @@ public class UserLogin extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 		
-		request.getRequestDispatcher("/WEB-INF/user/user_login/userlogin.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/user/login/userlogin.jsp").forward(request, response);
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

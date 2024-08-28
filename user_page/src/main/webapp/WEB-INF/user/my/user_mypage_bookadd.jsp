@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>사용자 마이페이지</title>
 <link href="../assets/css/my/user_mypage_bookadd.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
 
@@ -42,7 +43,9 @@
                             <td>24.07.01</td>
                             <td>구비완료</td>
                             <td>
-                                <input type="button" class="minbnt end" id="b1" value="신청취하">
+                            	<form method="post" action="del">
+	                                <input type="submit" class="minbnt end" id="b1" value="신청취하">
+                            	</form>
                             </td>
                         </tr>
                         <tr class="parent">

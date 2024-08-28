@@ -62,12 +62,15 @@
                 </div> -->
 
                 <div id="top_box">
-                    <input type="button" value="구독 서비스 신청하기" class="fixed-button">
+	                <form method="post" action="sub">
+	                    <input type="submit" value="구독 서비스 신청하기" id="fixed-button">
+	                </form>
                 </div>
                 
             </div>
         <!-- wrap -->
         <script src="../assets/js/bookflix/slider.js"></script>
+        <script src="../assets/js/bookflix/bookflix_use.js"></script>
     </div>
     
 	<!-- footer -->

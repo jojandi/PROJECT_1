@@ -82,18 +82,15 @@
                     </div>
 
                     <div id="info2">
+                    <form method="post" action="update">
                         <table>
                             <tr>
                                 <td class="center">이름</td>
-                                <td>조민정</td>
-                            </tr>
-                            <tr>
-                                <td class="center">닉네임</td>
                                 <td>
                                     <span id="in1">
                                         조잔디
                                     </span>
-                                    <input type="text" id=nick placeholder="변경할 닉네임을 입력하세요.">
+                                    <input type="text" id=nick name="name" value="조잔디">
                                     <input type="button" class="right" id="nickBtn" value="변경">
                                 </td>
                             </tr>
@@ -107,7 +104,7 @@
                                 <td class="center">비밀번호</td>
                                 <td id="pwedit">
                                     <span id="in2">
-                                        <input type="text" id="pweditIn" placeholder="변경할 비밀번호를 입력하세요.">
+                                        <input type="password" id="pweditIn" value="1234">
                                     </span>
                                     <input type="button" class="right" id="pweditBtn" value="변경">
                                 </td>
@@ -116,11 +113,15 @@
                                 <td class="center">전화번호</td>
                                 <td>
                                     <span id="in3">010-0000-0000</span>
-                                    <input type="text" id=number placeholder="변경할 전화번호를 입력하세요.">
+                                    <input type="text" id=number value="010-0000-0000">
                                     <input type="button" class="right" id="numBnt" value="변경">
                                 </td>
                             </tr>
                         </table>
+                        <div id=update>
+	                        <input type="submit" value="변경하기">
+                        </div>
+                    </form>
 
                         <div id="realout">회원탈퇴</div>
 
