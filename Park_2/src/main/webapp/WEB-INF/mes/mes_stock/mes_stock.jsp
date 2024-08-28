@@ -250,12 +250,12 @@
                                     <tr>
                                         <th><input type="checkbox" id="p1_checkAll"></th>
                                         <th class="sortable">도서명</th>
-                                        <th>저자명</th>
-                                        <th>출판사</th>
-                                        <th>요청 도서관</th>
-                                        <th>출판연도</th>
-                                        <th>도서코드</th>
-                                        <th>발주 권수</th>
+                                        <th>도서 코드</th>
+                                    	<th>도서명</th>
+                                    	<th>저자</th>
+                                    	<th>출판사</th>
+                                    	<th>수량</th>
+                                    	<th>발주일</th>
                                     </tr>
                                 </thead>
                                 <tbody class="main_tbody">

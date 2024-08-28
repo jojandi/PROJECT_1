@@ -1,31 +1,9 @@
-function openPopup(id) {
-            const popup = document.getElementById('popup' + id);
-            if (popup) {
-                popup.style.display = 'block';
-            }
-        }
+let bnt = document.querySelector("#fixed-button");
 
-        function closePopup(id) {
-            const popup = document.getElementById('popup' + id);
-            if (popup) {
-                popup.style.display = 'none';
-            }
-        } 
+function subOn(){
+	bnt.addEventListener('click', function(){
+    	alert('구독되었습니다!');
+	})
+}
 
-        function reviewOn(){
-            let review = document.querySelectorAll(".review");
-            let reviewBnt = document.querySelectorAll(".reviewBnt");
-            let end = document.querySelectorAll(".end");
-
-            for(let i = 0; i < review.length; i++){
-                reviewBnt[i].addEventListener('click', function(){
-                    review[i].style.display='block';
-                })
-                end[i].addEventListener('click', function(){
-                    alert("리뷰 작성이 완료되었습니다. ");
-                    review[i].style.display='none';
-                })
-            }
-        }
-
-        reviewOn();
+subOn();

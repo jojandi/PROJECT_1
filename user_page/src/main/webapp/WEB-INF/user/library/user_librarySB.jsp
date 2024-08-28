@@ -14,7 +14,7 @@
 </head>
 <body>
 	<!-- header -->
-	<%@ include file="/WEB-INF/user/user_base/header.jsp"%>
+	<%@ include file="/WEB-INF/user/base/header.jsp"%>
 <div id="wrap">
 	<!-- aside -->
 	<%@ include file="/WEB-INF/user/library/user_librarcs_side.jsp"%>
@@ -141,6 +141,6 @@
 	</div>
 
 	<!-- footer -->
-	<%@ include file="/WEB-INF/user/user_base/footer.jsp"%>
+	<%@ include file="/WEB-INF/user/base/footer.jsp"%>
 </body>
 </html>
