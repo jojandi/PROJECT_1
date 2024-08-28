@@ -63,115 +63,18 @@
                     </div>
                     <div id=input_res>
                         <div id="input_top">
-                            <input type="button" value="장바구니 담기" id="input_1" class="cartBnt">
+                        	<form method="post" action="cart">
+                        		<input type="hidden" name="book_seq" value="1">
+	                            <input type="submit" value="장바구니 담기" id="input_1" class="cartBnt">
+                        	</form>
                         </div>
                         <div id="input_bottom">
-                            <input type="button" value="대출 예약하기" id="input_2" class="reserBnt">
+                        	<form method="post" action="res">
+                        		<input type="hidden" name="book_seq" value="1">
+	                            <input type="submit" value="대출 예약하기" id="input_2" class="reserBnt">
+                        	</form>
                         </div>
                     </div>
-                    
-	                    <div class="new reser">
-	
-	                    <div class="close cr">
-	                        <span class="material-symbols-outlined">close</span>
-	                    </div>
-	
-	                    <div class="invenLibrary">
-	                        <div class="library_">
-	                            <div class="library">중앙도서관</div>
-	                            <div class="addr">
-	                                <span class="material-symbols-outlined">home</span>
-	                                천안시 동남구 중앙로 118
-	                            </div>
-	                            <div class="call">
-	                                <span class="material-symbols-outlined">call</span>
-	                                    041-521-3721
-	                            </div>
-	                            <div class="realInven">재고 <span>5</span> 권</div>
-	                        </div>
-	
-	                        <div class="btnbox">
-	                            <input type="button" class="realReserBnt joong" value="예약">
-	                        </div>
-	                    </div>
-	
-	                    <div class="invenLibrary">
-	                        <div class="library_">
-	                            <div class="library">쌍용도서관</div>
-	                            <div class="addr">
-	                                <span class="material-symbols-outlined">home</span>
-	                                천안시 서북구 월봉4로 153
-	                            </div>
-	                            <div class="call">
-	                                <span class="material-symbols-outlined">call</span>
-	                                041-521-3731
-	                            </div>
-	                            <div class="realInven">재고 <span>0</span> 권</div>
-	                        </div>
-	                        
-	                        <div class="btnbox">
-	                            <input type="button" class="realReserBnt ssang" value="예약불가">
-	                        </div>
-	                    </div>
-	
-	                    <div class="invenLibrary">
-	                        <div class="library_">
-	                            <div class="library">두정도서관</div>
-	                            <div class="addr">
-	                                <span class="material-symbols-outlined">home</span>
-	                                천안시 서북구 부성3길 9
-	                            </div>
-	                            <div class="call">
-	                                <span class="material-symbols-outlined">call</span>
-	                                041-521-3733
-	                            </div>
-	                            <div class="realInven">해당 도서 운영 안 함</div>
-	                        </div>
-	
-	                        <div class="btnbox">
-	                            <input type="button" class="realReserBnt du" value="예약불가">
-	                        </div>
-	                    </div>
-	
-	                    <div class="invenLibrary">
-	                        <div class="library_">
-	                            <div class="library">신방도서관</div>
-	                            <div class="addr">
-	                                <span class="material-symbols-outlined">home</span>
-	                                천안시 동남구 통정4로 7
-	                            </div>
-	                            <div class="call">
-	                                <span class="material-symbols-outlined">call</span>
-	                                041-521-3724
-	                            </div>
-	                            <div class="realInven">재고 <span>3</span> 권</div>
-	                        </div>
-	
-	                        <div class="btnbox">
-	                            <input type="button" class="realReserBnt sin" value="예약">
-	                        </div>
-	                    </div>
-	
-	                    <div class="invenLibrary">
-	                        <div class="library_">
-	                            <div class="library">청수도서관</div>
-	                            <div class="addr">
-	                                <span class="material-symbols-outlined">home</span>
-	                                천안시 동남구 청수16로 5-10
-	                            </div>
-	                            <div class="call">
-	                                <span class="material-symbols-outlined">call</span>
-	                                041-521-3725
-	                            </div>
-	                            <div class="realInven">재고 <span>2</span> 권</div>
-	                        </div>
-	
-	                        <div class="btnbox">
-	                            <input type="button" class="realReserBnt cheong" value="예약">
-	                        </div>
-	                    </div>
-	                    
-	                </div>
                 </div>
                 <div id="best">
                     <div id=img_box>

@@ -21,8 +21,16 @@ public class UserLogin extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("사용자용 로그인 dopost 실행!");
+		
+		request.setCharacterEncoding("utf-8");
+	    response.setContentType("text/html; charset=utf-8;");
+		String id= request.getParameter("id");
+		String pw= request.getParameter("pw");
+		
+		System.out.println("id : " + id);
+		System.out.println("pw : " + pw);
+		
 	}
 
 }

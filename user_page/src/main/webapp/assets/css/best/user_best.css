@@ -106,7 +106,7 @@ section #show_box_ h1{
     color: white;
 }
 
-.best_infor .material-symbols-outlined {
+/* .best_infor .material-symbols-outlined {
     display: flex;
     justify-content: space-between;
     width: 80%;
@@ -114,7 +114,7 @@ section #show_box_ h1{
     padding: 10px;
     border-radius: 5px;
 
-}
+} */
 
 .best_infor .material-symbols-outlined.active {
     color: rgb(165, 224, 144);

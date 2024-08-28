@@ -39,7 +39,7 @@
                     </div>
                 <div>
                     <div class="page_2">
-                        <table id="main_library">
+                        <table id="main_library1">
                             <colgroup>
                                 <col width="5%">
                                 <col width="20%">
@@ -55,7 +55,7 @@
                                     <th><input type="checkbox" id="p1_checkAll"></th>
                                     <th class="sortable">주문번호</th>
                                     <th>제품명</th>
-                                    <th>주문업체</th>
+                                    <th>거래처명</th>
                                     <th>주문날짜</th>
                                     <th>수량</th>
                                     <th>담당자</th>
@@ -96,6 +96,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <br>
+                    <div id="pfworkpush">
+                    	<input type="button" id="addpf" value="주문추가">
+                    </div>
                 </div>
             </div>
 
@@ -110,10 +114,10 @@
                                     <th class="sortable">주문번호</th>
                                     <th>출고일자</th>
                                     <th>거래처명</th>
-                                    <th>품목</th>
                                     <th>제품코드</th>
                                     <th>수량</th>
-                                    <th>단가</th>
+                                    <th>판매단가</th>
+                                    <th>상태</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -122,30 +126,30 @@
                                     <td>A24082511</td>
                                     <td>2024.08.28</td>
                                     <td>쌍용도서관</td>
-                                    <td>20대필독목록, <br> 30대필독목록, <br> ...</td>
                                     <td>book-20, <br> book-30 <br> ...</td>
                                     <td>10EA</td>
                                     <td>400,000</td>
+                                    <td>완료</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>A24082621</td>
                                     <td>2024.09.10</td>
                                     <td>중앙도서관</td>
-                                    <td>30대필독목록, <br> 아동필독서, <br> ...</td>
                                     <td>book-30, <br> book-kid <br> ...</td>
                                     <td>25EA</td>
                                     <td>600,000</td>
+                                    <td>진행중</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox"></td>
                                     <td>A24082611</td>
                                     <td>2024.09.11</td>
                                     <td>두정도서관</td>
-                                    <td>청소년필독서, <br> 50대추천도서, <br> ...</td>
                                     <td>book-yth, <br> book-50 <br> ...</td>
                                     <td>15EA</td>
                                     <td>500,000</td>
+                                    <td>진행중</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -155,7 +159,174 @@
 
         </section>
     </div>
-    <script src="./assets/js/admin_stock.js"></script>
+    
+    <!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
+    <div id="modal_2" class="modal_2">
+        <div class="close_2">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </div>
+        <div class="modal-content_2">
+            <div id="daylist_2"></div>
+            <div id="modal-content-divs_2">
+                <h2>&lt;주문추가&gt;</h2>
+                <div class="modal-div_">
+                    <span class="red">*</span> 필수
+                </div>
+	            <div id="table">
+                	<form>
+	                    <table>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">주문번호</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="os_id">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">제품명</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="os_name">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">회원ID</span> 
+	                            </td>
+	                            <td>
+									<input type="text" name="user_id">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">주문날짜</span> 
+	                            </td>
+	                            <td>
+									<input type="date" name="os_date">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">수량</span> 
+	                            </td>
+	                            <td>
+									<input type="text" name="os_count">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">담당자</td> 
+	                            <td>
+	                                <select name="emp_id">
+										<option value="Eid1">조민정</option>
+										<option value="Eid2">박규태</option>
+										<option value="Eid3">이제섭</option>
+										<option value="Eid4">김아영</option>
+										<option value="Eid5">김승환</option>
+									</select>
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">비고</td> 
+	                            <td>
+	                                <input type="text" name="os_m" value="-">
+	                            </td>
+	                        </tr>
+	                    </table>
+                    </form>
+                </div>
+                <div class="modal-div_3" style="text-align: right;">
+                    <input class="inpa" type="submit" value="생성"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
+    
+    <!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
+    <div id="modal_4" class="modal_4">
+        <div class="close_4">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </div>
+        <div class="modal-content_4">
+            <div id="daylist_4"></div>
+            <div id="modal-content-divs_4">
+                <h2>&lt;상세내역&gt;</h2>
+                <div class="modal-div_">
+                </div>
+                <div id="table">
+                    <table>
+                        <tr class="modal-div_4">
+                            <td>
+                                <span class="modal-item">주문번호</span> 
+                            </td>
+                            <td>
+                                <span>A24082511</span>
+                            </td>
+                        </tr>
+                        <tr class="modal-div_4">
+                            <td>
+                                <span class="modal-item">출고일자</span> 
+                            </td>
+                            <td>
+                                <span>2024.08.28</span>
+                            </td>
+                        </tr>
+                        <tr class="modal-div_4">
+                            <td>
+                                <span class="modal-item">거래처명</span> 
+                            </td>
+                            <td>
+                                <span>쌍용도서관</span>
+                            </td>
+                        </tr>
+                        <tr class="modal-div_4">
+                            <td class="modal-item">제품코드</td>
+                            <td>
+                                <span>
+                                	book-20<br>
+                                	book-30<br>
+                                	book-yth
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="modal-div_4">
+                            <td class="modal-item">수량</td>
+                            <td>
+                            	<span>10EA</span>
+                            </td>
+                        </tr>
+                        <tr class="modal-div_4">
+                            <td class="modal-item">판매단가</td> 
+                            <td>
+                                <span>400,000</span>
+                            </td>
+                        </tr>
+                        <tr class="modal-div_4">
+                            <td class="modal-item">상태</td> 
+                            <td>
+                                <span>완료</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
+    
+    
+    <script src="./assets/js/mes_pfwork.js"></script>
     <!-- 가장 아래 고정 -->
     
 </body>

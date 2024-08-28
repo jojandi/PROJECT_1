@@ -21,7 +21,10 @@ public class UserJoin extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		System.out.println("사용자용 회원가입 doPost 실행!");
+		
+		request.setCharacterEncoding("utf-8");
+	    response.setContentType("text/html; charset=utf-8;");
 	}
 
 }

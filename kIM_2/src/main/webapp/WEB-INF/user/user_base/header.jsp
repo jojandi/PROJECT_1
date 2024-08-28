@@ -25,7 +25,7 @@
                 <a href="notic" class="item" id="i3">정보광장</a>
                 <a href="mypage/use" class="item" id="i4">마이페이지</a>
             </div>
-
+`
             <div class="right" id="userall">
                 <a href="./로그인css.html" class="inb" id="login">로그인</a>
                 <div class="inb">|</div>

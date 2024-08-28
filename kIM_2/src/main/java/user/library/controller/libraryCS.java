@@ -17,6 +17,7 @@ public class libraryCS extends HttpServlet {
 		System.out.println("도서관 청수 doGet 실행!");
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
+	    	
 		
 		request.getRequestDispatcher("/WEB-INF/user/library/user_libraryCS.jsp").forward(request, response);
 		
