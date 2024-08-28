@@ -30,11 +30,15 @@
     <div id="wrap">
         <%@ include file="/WEB-INF/mes/mes_workorder/workorder_side.jsp" %>
         <section>
+        <!-- ---------------------- 작업지시서 페이지 ---------------------------- -->
             <div class="main_page" id="main_page_1">
                 <h3>작업지시서</h3>
                 <div>
                     <div class="page_2">
-                        <table id="main_library">
+                    	<div class="search-container">
+                            <input type="text" id="searchInput" placeholder="지시번호 검색">
+                        </div>
+                        <table id="main_library1">
                             <colgroup>
                                 <col width="5%">
                                 <col width="15%">
@@ -98,14 +102,12 @@
                     </div>
                     
                     <div class="bot_btn">
-                        <div class="search-container">
-                            <input type="text" id="searchInput" placeholder="지시번호 검색">
-                        </div>
                         <input type="button" id="addbtn" value="작업지시서 생성">
                     </div>
                 </div>
             </div>
 
+	<!-- -------------------------------- BOM페이지 ------------------------------- -->
             <div class="main_page" id="main_page_2">
                 <h3>BOM</h3>
                 <div>
@@ -117,9 +119,9 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">품번</th>
-                                    <th>품명</th>
-                                    <th>수량</th>
+                                    <th class="sortable">제품코드</th>
+                                    <th>제품명</th>
+                                    <th>소요량</th>
                                     <th>판매단가</th>
                                     <th>생산예정수량</th>
                                     <th>가용재고</th>
@@ -131,7 +133,7 @@
                                     <td><input type="checkbox"></td>
                                     <td>book-20</td>
                                     <td>20대필독서</td>
-                                    <td>20EA</td>
+                                    <td>4</td>
                                     <td>87,000</td>
                                     <td>20</td>
                                     <td>15</td>
@@ -141,7 +143,7 @@
                                     <td><input type="checkbox"></td>
                                     <td>book-30</td>
                                     <td>30대필독서</td>
-                                    <td>10EA</td>
+                                    <td>5</td>
                                     <td>92,000</td>
                                     <td>10</td>
                                     <td>5</td>
@@ -151,7 +153,7 @@
                                     <td><input type="checkbox"></td>
                                     <td>book-yth</td>
                                     <td>청소년추천서</td>
-                                    <td>20EA</td>
+                                    <td>4</td>
                                     <td>67,000</td>
                                     <td>10</td>
                                     <td>10</td>
@@ -159,6 +161,9 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                    <div class="bot_btn">
+                        <input type="button" id="addbom" value="BOM 등록">
                     </div>
                 </div>
             </div>
@@ -180,64 +185,69 @@
                 <div class="modal-div_">
                     <span class="red">*</span> 필수
                 </div>
-                <div id="table">
-                    <table>
-                        <tr class="modal-div_2">
-                            <td>
-                                <span class="red">*</span>
-                                <span class="modal-item">지시번호</span> 
-                            </td>
-                            <td>
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr class="modal-div_2">
-                            <td>
-                                <span class="red">*</span>
-                                <span class="modal-item">제품코드</span> 
-                            </td>
-                            <td>
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr class="modal-div_2">
-                            <td>
-                                <span class="red">*</span>
-                                <span class="modal-item">제품명</span> 
-                            </td>
-                            <td>
-                                <input type="text" name="">
-                            </td>
-                        </tr>
-                        <tr class="modal-div_2">
-                            <td class="modal-item">예정시작 날짜 </td>
-                            <td>
-                                <input type="date"> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="modal-item">예정종료 날짜</td>
-                            <td>
-                                <input type="date"> 
-                            </td>
-                        </tr>
-                        <tr class="modal-div_2">
-                            <td class="modal-item">상태</td> 
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                        <tr class="modal-div_2">
-                            <td class="modal-item">수량</td> 
-                            <td>
-                                <input type="text">
-                            </td>
-                        </tr>
-                    </table>
+	            <div id="table">
+                	<form>
+	                    <table>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">지시번호</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="order_id">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">제품코드</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="bom_code">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">공정</span> 
+	                            </td>
+	                            <td>
+	                                <select name="order_process">
+										<option value="pro1">A공정</option>
+										<option value="pro2">B공정</option>
+										<option value="pro3">C공정</option>
+									</select>
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">예정시작 날짜 </td>
+	                            <td>
+	                                <input type="date" name="order_Sdate"> 
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td class="modal-item">예정종료 날짜</td>
+	                            <td>
+	                                <input type="date" name="order_Edate"> 
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">수량</td> 
+	                            <td>
+	                                <input type="text" name="order_count">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">상태</td> 
+	                            <td>
+	                                <input type="text" name="order_status">
+	                            </td>
+	                        </tr>
+	                    </table>
+                    </form>
                 </div>
                 <div class="modal-div_3" style="text-align: right;">
-                    <input class="inpa" type="button" value="생성"> <input class="inpa" type="button"
-                        value="취소">
+                    <input class="inpa" type="submit" value="생성"> 
                 </div>
             </div>
         </div>
@@ -255,6 +265,7 @@
             <div id="daylist_4"></div>
             <div id="modal-content-divs_4">
                 <div class="modal-div_">
+                	<h2 id="bom_head">20대필독서</h2>
                 </div>
                 <div id="table">
                     <table>
@@ -379,8 +390,86 @@
             </div>
         </div>
     </div>
-    <!-- //////////////////////////// 2번째 모달 ////////////////////////////////////// -->
-    <script src="./assets/js/admin_workorder.js"></script>
+    <!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
+    
+    <!-- //////////////////////////// 세번째 모달 ////////////////////////////////////// -->
+    <div id="modal_6" class="modal_6">
+        <div class="close_6">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </div>
+        <div class="modal-content_6">
+            <div id="daylist_6"></div>
+            <div id="modal-content-divs_6">
+                <h2>&lt;BOM 등록&gt;</h2>
+                <div class="modal-div_">
+                </div>
+	            <div id="table">
+                	<form>
+	                    <table>
+	                        <tr class="modal-div_6">
+	                            <td>
+	                                <span class="modal-item">제품코드</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="bom_code">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_6">
+	                            <td>
+	                                <span class="modal-item">제품명</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="bom_name">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_6">
+	                            <td>
+	                                <span class="modal-item">소요량</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="bom_count">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_6">
+	                            <td>
+	                                <span class="modal-item">판매단가</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="bom_price">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_6">
+	                            <td class="modal-item">생산예정수량</td> 
+	                            <td>
+	                                <input type="text" name="bom_Dcount">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_6">
+	                            <td class="modal-item">가용재고</td> 
+	                            <td>
+	                                <input type="text" name="bom_Ainven" value="-">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_6">
+	                            <td class="modal-item">적정재고</td> 
+	                            <td>
+	                                <input type="text" name="bom_Apinven" value="-">
+	                            </td>
+	                        </tr>
+	                    </table>
+                    </form>
+                </div>
+                <div class="modal-div_7" style="text-align: right;">
+                    <input class="inpa" type="submit" value="생성"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //////////////////////////// 세번째 모달 ////////////////////////////////////// -->
+    
+    <script src="./assets/js/mes_workorder.js"></script>
 
     <!-- 가장 아래 고정 -->
      
