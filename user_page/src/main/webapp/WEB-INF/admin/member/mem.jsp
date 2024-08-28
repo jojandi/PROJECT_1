@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../assets/css/info/user_request.css" rel="stylesheet">
 </head>
 <body>
 <div id="wrap">
