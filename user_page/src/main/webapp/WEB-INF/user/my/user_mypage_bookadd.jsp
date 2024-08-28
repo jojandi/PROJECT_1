@@ -28,45 +28,26 @@
                     <thead> 
                         <tr>
                             <td id="bnameall">도서명</td>
-                            <td>신청 도서관</td>
                             <td>신청일</td>
                             <td>신청현황</td>
-                            <td>
-                            </td>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr class="parent">
                             <td class="bname">마녀와의 7일</td>
-                            <td>두정도서관</td>
                             <td>24.07.01</td>
                             <td>구비완료</td>
-                            <td>
-                            	<form method="post" action="del">
-	                                <input type="submit" class="minbnt end" id="b1" value="신청취하">
-                            	</form>
-                            </td>
                         </tr>
                         <tr class="parent">
                             <td class="bname">파도의 아이들</td>
-                            <td>청수도서관</td>
                             <td>24.07.15</td>
                             <td>신청완료</td>
-                            <td>
-                                <input type="button" class="minbnt end" id="b2" value="신청취하">
-                            </td>
                         </tr>
                         <tr class="parent">
                             <td class="bname">사랑받는 이기주의자</td>
-                            <td>중앙도서관</td>
                             <td>24.07.19</td>
                             <td>진행 중</td>
-                            <td>
-                            	<form method="post" action="bookadd_del">
-	                                <input type="submit" class="minbnt ing" id="b3" value="신청취하">
-                            	</form>
-                            </td>
                         </tr>
                     </tbody>
                 </table>
