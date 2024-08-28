@@ -96,24 +96,6 @@ window.onload = function () {
         }
     }
     
-    // 작업지시서 생성 버튼 누를 시 모달6 화면 추가 스크립트
-    let addbom = document.getElementById('addbom');
-    let span2 = document.getElementsByClassName('close_6')[0];
-    let modal6 = document.getElementById('modal_6');
-
-    addbom.onclick = function () {
-        modal6.style.display = 'block';
-    }
-
-    span2.onclick = function () {
-        modal6.style.display = 'none';
-    }
-
-    window.onclick = function (event) {
-        if (event.target === modal6) {
-            modal6.style.display = 'none';
-        }
-    }
 }
 
     // BOM 행 더블클릭시 모달 화면 추가 스크립트

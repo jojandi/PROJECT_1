@@ -97,3 +97,49 @@
             'GRAD' 0,
             'opsz' 24
         }
+        
+        #pfworkpush {
+        	text-align: right;
+        }
+        
+        #modal_2 {
+        	display: none;
+            position: absolute; 
+            top: 70px; 
+            left: 350px; 
+            background: white;
+            width: 50%;
+            border: 2px solid #ccc;
+            padding: 40px;
+            box-sizing: border-box;
+        } 
+
+        #daylist_2 {
+            text-align: center; 
+            margin-bottom: 5px;
+        }
+        
+        .modal-content_2{
+            text-align: center;
+        }
+
+        .modal-div_{
+            text-align: right;
+            padding-right: 35px;
+        }
+        
+        .close_2 {
+            text-align: right;
+        }
+
+        .close_2 .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+        
+        .red{
+            color: red;
+        }

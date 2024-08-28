@@ -96,6 +96,10 @@
                             </tbody>
                         </table>
                     </div>
+                    <br>
+                    <div id="pfworkpush">
+                    	<input type="button" id="addpf" value="주문추가">
+                    </div>
                 </div>
             </div>
 
@@ -157,6 +161,97 @@
     </div>
     
     <!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
+    <div id="modal_2" class="modal_2">
+        <div class="close_2">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </div>
+        <div class="modal-content_2">
+            <div id="daylist_2"></div>
+            <div id="modal-content-divs_2">
+                <h2>&lt;주문추가&gt;</h2>
+                <div class="modal-div_">
+                    <span class="red">*</span> 필수
+                </div>
+	            <div id="table">
+                	<form>
+	                    <table>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">주문번호</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="os_id">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">제품명</span> 
+	                            </td>
+	                            <td>
+	                                <input type="text" name="os_name">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">회원ID</span> 
+	                            </td>
+	                            <td>
+									<input type="text" name="user_id">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">주문날짜</span> 
+	                            </td>
+	                            <td>
+									<input type="date" name="os_date">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td>
+	                                <span class="red">*</span>
+	                                <span class="modal-item">수량</span> 
+	                            </td>
+	                            <td>
+									<input type="text" name="os_count">
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">담당자</td> 
+	                            <td>
+	                                <select name="emp_id">
+										<option value="Eid1">조민정</option>
+										<option value="Eid2">박규태</option>
+										<option value="Eid3">이제섭</option>
+										<option value="Eid4">김아영</option>
+										<option value="Eid5">김승환</option>
+									</select>
+	                            </td>
+	                        </tr>
+	                        <tr class="modal-div_2">
+	                            <td class="modal-item">비고</td> 
+	                            <td>
+	                                <input type="text" name="os_m" value="-">
+	                            </td>
+	                        </tr>
+	                    </table>
+                    </form>
+                </div>
+                <div class="modal-div_3" style="text-align: right;">
+                    <input class="inpa" type="submit" value="생성"> 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
+    
+    <!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
     <div id="modal_4" class="modal_4">
         <div class="close_4">
             <span class="material-symbols-outlined">
@@ -228,7 +323,7 @@
             </div>
         </div>
     </div>
-    <!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
+    <!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
     
     
     <script src="./assets/js/mes_pfwork.js"></script>
