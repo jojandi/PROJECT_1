@@ -75,17 +75,18 @@
 				<span class="material-symbols-outlined">chevron_left</span> <span
 					class="chap">1</span> <span class="material-symbols-outlined">chevron_right</span>
 			</div>
-	
+			<form id ="serch" method="get" action="comment">
+
 			<div id="search">
 				<select name="">
 					<option value="전체기간">전체기간</option>
 				</select> <select name="">
 					<option value="게시물+댓글">게시물 + 댓글</option>
-				</select> <input type="search" id="searchInput" placeholder="검색어를 입력해주세요">
+				</select> <input type="search" id="searchInput" name="keyword" placeholder="검색어를 입력해주세요">
 				<input type="button" value="검색" class="search"
 					onclick="filterTable()">
 			</div>
-	
+		</form>
 	
 		</div>
 
