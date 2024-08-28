@@ -1,21 +1,7 @@
 window.onload = function () {
     const searchInput = document.getElementById('searchInput');
     const table = document.querySelector('#main_page_1 #main_library tbody');
-    const rows = table.querySelectorAll('tr');
 
-    // 검색 기능
-    searchInput.addEventListener('input', function () {
-        const query = searchInput.value.toLowerCase();
-
-        rows.forEach(row => {
-            const bookTitle = row.querySelector('td').textContent.toLowerCase();
-            if (bookTitle.includes(query)) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    });
 
     
     // 전체선택
@@ -91,7 +77,7 @@ window.onload = function () {
     }
 
 
-    // 작업지시서 생성 버튼 누를 시 모달 화면 추가 스크립트
+    // 작업지시서 생성 버튼 누를 시 모달2 화면 추가 스크립트
     let addbtn = document.getElementById('addbtn');
     let span = document.getElementsByClassName('close_2')[0];
     let modal2 = document.getElementById('modal_2');
@@ -107,6 +93,25 @@ window.onload = function () {
     window.onclick = function (event) {
         if (event.target === modal2) {
             modal2.style.display = 'none';
+        }
+    }
+    
+    // 작업지시서 생성 버튼 누를 시 모달6 화면 추가 스크립트
+    let addbom = document.getElementById('addbom');
+    let span2 = document.getElementsByClassName('close_6')[0];
+    let modal6 = document.getElementById('modal_6');
+
+    addbom.onclick = function () {
+        modal6.style.display = 'block';
+    }
+
+    span2.onclick = function () {
+        modal6.style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+        if (event.target === modal6) {
+            modal6.style.display = 'none';
         }
     }
 }
