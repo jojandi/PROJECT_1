@@ -11,6 +11,7 @@
 <link href="../assets/css/inven/inven.css" rel="stylesheet">
 <style>
 	aside #items #i1 .material-symbols-outlined{ background: rgb(165, 224, 144); }
+	.popup{ display: block; }
 </style>
 </head>
 <body>
@@ -47,8 +48,8 @@
                             <tbody>
                             	<c:forEach var="list" items="${list}">
 	                                <tr>
-	                                    <td><input type="checkbox" class="p1_main_chack"></td>
-	                                    <td class="bname2">
+	                                    <th><input type="checkbox" class="p1_main_chack"></th>
+	                                    <td class="bname">
 	                                    	<a href="inventory_?isbn=${list.book_ISBN}">${list.book_name}</a>
 	                                    </td>
 	                                    <td>${list.book_author}</td>
@@ -61,7 +62,7 @@
                         </table>
                     </div>
                     <div class="bot_btn">
-	                    <form>
+                        <form method="get" action="inventory">
 	                        <div class="search-container">
 	                            <input type="text" id="searchInput" name="text" placeholder="도서명">
 		                        <input type="submit" value="검색">
