@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="java.util.*"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="try2.dto.Try2DTO" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +34,8 @@
         background-color: rgb(165, 224, 144);
 
         }   
+       	table {
+       	font-size: 18px;}
        
         /* ------------------------------------------------------------------ */
         
@@ -66,17 +73,19 @@
                     <div class="page_2">
                         <table id="main_library">
                             <colgroup>
-                                <col width="11%">
-                                <col width="10%">
-                                <col width="15%">
-                                <col width="20%">
-                                <col width="15%">
-                                <col width="25%">
+                                <col width="7%">
+                                <col width="7%">
+                     			<col width="10%">
+						        <col width="10%">
+						        <col width="17%">
+						        <col width="21%">
+						        <col width="20%">
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">이름</th>
+                                    <th class="sortable">사원번호</th>
+                                   	<th>이름</th>
                                     <th>직급</th>
                                     <th>부서</th>
                                     <th>전화번호</th>
@@ -86,6 +95,21 @@
                             </thead>
                             <tbody>
                             <!-- 여기 데이터 채우세요 -->
+                             <tbody>
+           
+				            <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type = "checkbox"></td>				                    
+				                    <td>${dto.emp_id}</td>
+				                    <td>${dto.emp_name}</td>
+				                    <td>${dto.po_name}</td>
+				                    <td>${dto.dept_name}</td>
+				                    <td>${dto.emp_hp}</td>
+				                    <td>${dto.emp_address}</td>
+				                    <td>${dto.emp_hiredate}</td>
+				                </tr>
+				            </c:forEach>
+        </tbody>
                             </tbody>
                         </table>
                     </div>
@@ -101,40 +125,44 @@
                 </div>
             </div>
              
-<div id="formModal" class="modal">
+	<div id="formModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <form id="workForm">
+                    <form id="workForm" method="post" action="try">
                         <table>
                             <tr>
                                 <th colspan="2">사원 추가</th>
                             </tr>
                             <tr>
+                                <td>사원번호</td>
+                                <td><input  type= "text" name="emp_id"></td>
+                            </tr>
+                            <tr>
                                 <td>이름</td>
-                                <td><input id="emp_name" type="text"></td>
+                                <td><input type="text" name="emp_name"></td>
                             </tr>
                             <tr>
                                 <td>직급</td>
-                                <td><input id="po_name" type="text"></td>
+                                <td><input type="text" name="po_name"></td>
                             </tr>
                             <tr>
                                 <td>부서</td>
-                                <td><input id="dept_name" type="text"></td>
+                                <td><input type="text"  name="dept_name"></td>
                             </tr>
                             <tr>
                                 <td>전화번호</td>
-                                <td><input id="emp_hp" type="text"></td>
+                                <td><input type="text"  name="emp_hp"></td>
                             </tr>
                             <tr>
                                 <td>주소</td>
-                                <td><input id="emp_adress" type="text"></td>
+                                <td><input type="text" name="emp_address"></td>
                             </tr>
                             <tr>
                                 <td>입사일</td>
-                                <td><input id="emp_hiredate" type="text"></td>
+                                <td><input name="emp_hiredate" type="date"></td>
                             </tr>
                         </table>
-                        <input id="workFormBtn" type="submit" value="완료">
+                        <input id="workFormBtn" type="submit" value="등록하기">
                     </form>
                 </div>
             </div>
