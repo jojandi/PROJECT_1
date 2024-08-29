@@ -42,7 +42,6 @@
                     <thead> 
                         <tr>
                             <td class="bnameall">도서명</td>
-                            <td>도서관</td>
                             <td>대출일자</td>
                             <td>대출현황</td>
                             <td>반납예정일</td>
@@ -53,7 +52,6 @@
                     <tbody>
                         <tr>
                             <td class="bname">죽여 마땅한 사람들</td>
-                            <td>두정도서관</td>
                             <td>24.07.19</td>
                             <td class="ing">대출중</td>
                             <td>24.08.02</td>
@@ -61,7 +59,6 @@
                         </tr>
                         <tr>
                             <td class="bname">잠과 시</td>
-                            <td>두정도서관</td>
                             <td>24.07.10</td>
                             <td class="ing">반납완료(24.07.19)</td>
                             <td>24.07.24</td>
@@ -69,7 +66,6 @@
                         </tr>
                         <tr>
                             <td class="bname">봄은 또 오고</td>
-                            <td>중앙도서관</td>
                             <td>24.06.10</td>
                             <td class="ing">반납완료(24.06.27)</td>
                             <td>24.06.24</td>
@@ -85,7 +81,6 @@
                     <thead> 
                         <tr>
                             <td class="bnameall">도서명</td>
-                            <td >도서관</td>
                             <td class="day1">대출일자</td>
                             <td class="day1">반납일자</td>
                             <td id="day">연체일</td>
@@ -96,7 +91,6 @@
                     <tbody>
                         <tr>
                             <td class="bname">봄은 또 오고</td>
-                            <td>중앙도서관</td>
                             <td>24.06.10</td>
                             <td class="ing">24.06.27</td>
                             <td>3일</td>
@@ -111,7 +105,6 @@
                     <thead> 
                         <tr>
                             <td class="bnameall">도서명</td>
-                            <td >도서관</td>
                             <td class="day1">예약일자</td>
                             <td class="day1">픽업일자</td>
                             <td>예약번호</td>
@@ -122,7 +115,6 @@
                     <tbody>
                         <tr>
                             <td class="bname">봄은 또 오고</td>
-                            <td>중앙도서관</td>
                             <td>24.06.10</td>
                             <td>24.06.12</td>
                             <td>12345678</td>
@@ -130,7 +122,6 @@
                         </tr>
                         <tr>
                             <td class="bname">죽여 마땅한 사람들</td>
-                            <td>중앙도서관</td>
                             <td>24.06.14</td>
                             <td>-</td>
                             <td>56565656</td>

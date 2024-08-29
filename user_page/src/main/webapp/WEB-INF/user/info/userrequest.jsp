@@ -37,7 +37,7 @@
 					</div>
 		
 					<!-- 추가로 수정한거 -->
-					<div>
+					<!-- <div>
 						<select name="lib_id" class="library-select">
 							<option value="">도서관을 선택해주세요</option>
 							<option value="central">중앙도서관</option>
@@ -46,7 +46,7 @@
 							<option value="ssangyong">쌍용도서관</option>
 							<option value="dujeong">두정도서관</option>
 						</select>
-					</div>
+					</div> -->
 		
 					<div>
 						<input type="submit" value="도서신청하기">

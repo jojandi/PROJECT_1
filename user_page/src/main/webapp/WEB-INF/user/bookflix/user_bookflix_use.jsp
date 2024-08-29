@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="../assets/css/bookflix/bookflix_use.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -30,7 +31,7 @@
             </div>
 
             <div class="top_for_you">
-                조잔디님만을 위한 취향저격 이달의 구독 도서
+                조잔디님만을 위한 취향저격 이달의 추천 도서
                 <div id="top_in_for_you">
                     조잔디님을 위한 책을 소개시켜드릴게요!<br>
                     인공지능 데이터를 토대로 추천 해드립니다.
@@ -108,18 +109,25 @@
             		BOOKFLIX에 대한 평가를 남겨주세요!
             	</div>
 	            <button type="button" id="reviewBnt">리뷰쓰기</button>
-	            <div id="reviewPopup">
-	            	<div class="star-rating">
-					   <input type="checkbox" class="star" value="1">
-					   <input type="checkbox" class="star" value="2">
-					   <input type="checkbox" class="star" value="3">
-					   <input type="checkbox" class="star" value="4">
-					   <input type="checkbox" class="star" value="5">
-					 </div>
-	                <textarea placeholder=" 리뷰를 입력해주세요. "></textarea>
-	                <br>
-	                <button type="button" id="end">작성완료</button>
-	            </div>
+	            
+	            <form method="post" action="bookflixk_review" id="form">
+		            <div id="reviewPopup">
+		            	<div class="close">
+			            	<span class="popup-close">&times;</span>
+		            	</div>
+		            	<div class="star-rating">
+		            		<span>별점 : </span>
+						   	<input type="checkbox" name="star" class="star" value="1">
+						   	<input type="checkbox" name="star" class="star" value="2">
+						   	<input type="checkbox" name="star" class="star" value="3">
+						   	<input type="checkbox" name="star" class="star" value="4">
+						   	<input type="checkbox" name="star" class="star" value="5">
+						 </div>
+		                <textarea name="review_text" id="review_text" placeholder=" 리뷰를 입력해주세요. "></textarea>
+		                <br>
+		                <button type="submit" id="end">작성완료</button>
+		            </div>
+	            </form>
             </div>
 
     <!-- wrap -->
