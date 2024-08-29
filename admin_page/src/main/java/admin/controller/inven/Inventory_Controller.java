@@ -13,31 +13,28 @@ import admin.DTO.inven.InvenDTO;
 import admin.service.inven.InvenService;
 
 
-@WebServlet("/admin/inventory")
-public class InventoryController extends HttpServlet {
+@WebServlet("/admin/inventory_")
+public class Inventory_Controller extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("실시간 재고 doGet 실행!");
-		request.setCharacterEncoding("utf-8");
-	    response.setContentType("text/html; charset=utf-8;");
+		System.out.println("실시간 재고 상세 doGet 실행!");
+		InvenService service = new InvenService();
 	    
-	    String text = request.getParameter("text");
-	    System.out.println("search : " + text);
+	    List bookList = service.bookList();
 	    
-	    InvenService service = new InvenService();
+		long isbn = Long.parseLong(request.getParameter("isbn"));
+		System.out.println("isbn : " + isbn);
+		InvenDTO dtoList = service.bookCount(isbn);
 	    
-	    List bookList = service.bookList(text);
-	    
-	    System.out.println(bookList);
-	    
+	    request.setAttribute("dto", dtoList); 
 	    request.setAttribute("list", bookList); 
-		
-		request.getRequestDispatcher("/WEB-INF/admin/inven/inventory.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/admin/inven/inventory_.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("실시간 재고 doPost 실행!");
+		System.out.println("실시간 재고 doPost 실행!");	
 	}
+
 }
