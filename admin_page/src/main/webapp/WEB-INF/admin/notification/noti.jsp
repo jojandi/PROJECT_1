@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
+</head> 
 <body>
 	<%@ include file="/WEB-INF/admin/base/a.header.jsp"%>
 
@@ -18,7 +18,7 @@
 		<div class="main_page" id="main_page_1">
 			<div id="admin_controls">
 				<h2>공지사항 추가</h2>
-				<!-- Form 시작 -->
+				
 				<form action="/processNotice" method="post">
 					<div id="con">
 						<select id="notice_category" name="notice_category">
