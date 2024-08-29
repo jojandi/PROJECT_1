@@ -5,25 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link href="../assets/css/inven/admin_inven.css" rel="stylesheet">
+<link href="../assets/css/inven/inven.css" rel="stylesheet">
 </head>
 <body>
+<%@ include file="/WEB-INF/admin/base/a.header.jsp" %>
+
     <div id="wrap">
-        <aside class="clearfix" id="side">
-            <div id="sideleft">
-                <h2 id="title">재고 현황</h2>
-                <div id="items">
-                    <div class="item" id="i1">
-                        <span>실시간 재고 현황</span>
-                        <span class="material-symbols-outlined active">arrow_forward_ios</span>
-                    </div>
-                    <div class="item" id="i2">
-                        <span>도서 예약 현황</span>
-                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-                    </div>
-                </div>
-            </div>
-        </aside>
+        
+	<%@ include file="/WEB-INF/admin/inven/inventory_side.jsp" %>
+
         <section>
             <div class="main_page" id="main_page_1">
                 <h3>실시간 재고 현황</h3>
@@ -50,7 +40,6 @@
                                     <th>도서코드</th>
                                     <th>ISBN</th>
                                     <th>권 수</th>
-                                    <th>도서관</th>
                                     <th>입고일</th>
                                 </tr>
                             </thead>
@@ -64,7 +53,6 @@
                                     <td>code001</td>
                                     <td>101</td>
                                     <td>15</td>
-                                    <td>두정도서관</td>
                                     <td>2024.01.15</td>
                                 </tr>
                                 <tr>
@@ -76,7 +64,6 @@
                                     <td>code002</td>
                                     <td>102</td>
                                     <td>12</td>
-                                    <td>청수도서관</td>
                                     <td>2023.05.20</td>
                                 </tr>
                                 <tr>
@@ -88,7 +75,6 @@
                                     <td>code003</td>
                                     <td>103</td>
                                     <td>25</td>
-                                    <td>쌍용도서관</td>
                                     <td>2023.07.30</td>
                                 </tr>
                                 <tr>
@@ -100,7 +86,6 @@
                                     <td>code004</td>
                                     <td>104</td>
                                     <td>20</td>
-                                    <td>중앙도서관</td>
                                     <td>2023.04.10</td>
                                 </tr>
                                 <tr>
@@ -112,7 +97,6 @@
                                     <td>code005</td>
                                     <td>105</td>
                                     <td>18</td>
-                                    <td>두정도서관</td>
                                     <td>2023.09.15</td>
                                 </tr>
                                 <tr>
@@ -124,7 +108,6 @@
                                     <td>code006</td>
                                     <td>106</td>
                                     <td>22</td>
-                                    <td>두정도서관</td>
                                     <td>2023.03.05</td>
                                 </tr>
                                 <tr>
@@ -136,7 +119,6 @@
                                     <td>code007</td>
                                     <td>107</td>
                                     <td>30</td>
-                                    <td>쌍용도서관</td>
                                     <td>2023.06.25</td>
                                 </tr>
                                 <tr>
@@ -148,7 +130,6 @@
                                     <td>code008</td>
                                     <td>108</td>
                                     <td>16</td>
-                                    <td>신방도서관</td>
                                     <td>2023.08.10</td>
                                 </tr>
                                 <tr>
@@ -160,7 +141,6 @@
                                     <td>code009</td>
                                     <td>109</td>
                                     <td>28</td>
-                                    <td>쌍용도서관</td>
                                     <td>2023.02.01</td>
                                 </tr>
                                 <tr>
@@ -172,7 +152,6 @@
                                     <td>code010</td>
                                     <td>110</td>
                                     <td>35</td>
-                                    <td>쌍용도서관</td>
                                     <td>2023.11.01</td>
                                 </tr>
                                 <tr>
@@ -184,7 +163,6 @@
                                     <td>code011</td>
                                     <td>111</td>
                                     <td>10</td>
-                                    <td>신방도서관</td>
                                     <td>2023.12.15</td>
                                 </tr>
                                 <tr>
@@ -196,7 +174,6 @@
                                     <td>code011</td>
                                     <td>112</td>
                                     <td>13</td>
-                                    <td>두정도서관</td>
                                     <td>2024.07.15</td>
                                 </tr>
                             </tbody>
@@ -425,5 +402,7 @@
             </div>
         </section>
     </div>
+    
+    <%@ include file="/WEB-INF/admin/base/a.footer.jsp" %>
 </body>
 </html>
