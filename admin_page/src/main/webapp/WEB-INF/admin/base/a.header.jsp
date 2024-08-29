@@ -21,8 +21,8 @@
         <div id="menu">
             <div id="items" class="left">
                 <a href="inventory" class="item" id="i0">재고 현황</a>
-                <a href="libraryja" class="item" id="i1">회원관리</a>
-                <a href="best" class="item" id="i2">정보광장관리</a>
+                <a href="member" class="item" id="i1">회원관리</a>
+                <a href="noti" class="item" id="i2">정보광장관리</a>
                <!--  <a href="notice" class="item" id="i3">정보광장</a> -->
                <!-- <a href="mypage_use" class="item" id="i4">마이페이지</a> -->
             </div>

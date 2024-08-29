@@ -39,6 +39,8 @@
 			</div>
 		</section>
 	</div>
+	<script src="../assets/js/app/app_admin.js"></script>
+	
 	<%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>
 </body>
 </html>

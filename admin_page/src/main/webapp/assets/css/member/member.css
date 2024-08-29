@@ -20,6 +20,11 @@
     padding: 17px;
     box-sizing: border-box;
 }
+
+header #menu #items #i1 {
+    font-weight: 900;
+    text-decoration: underline;
+}
     /* ------------------------ */
 
     table {
@@ -79,3 +84,4 @@
     .click button:hover {
         background-color: #e0e0e0;
     }
+    

@@ -19,12 +19,12 @@
 						class="material-symbols-outlined">arrow_forward_ios</span>
 					</a>
 				</div>
-					<div class="item" id="i2">
+<!-- 					<div class="item" id="i2">
 						<a href="overdue"> 
 							<span>장기 연체자 관리</span> <span
 							class="material-symbols-outlined">arrow_forward_ios</span>
 						</a>
-					</div>
+					</div> -->
 
 				</div>
 			</div>
