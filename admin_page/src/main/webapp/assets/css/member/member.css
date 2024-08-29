@@ -12,12 +12,19 @@
         height: 600px;
     }
 
+	section h3{
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 17px;
+    box-sizing: border-box;
+}
     /* ------------------------ */
 
     table {
         width: 100%;
         border-collapse: collapse;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         background-color: #fff;
         margin-bottom: 20px;
         font-size: 13px;

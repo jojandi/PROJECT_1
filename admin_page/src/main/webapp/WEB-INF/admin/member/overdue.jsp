@@ -5,8 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="../assets/css/overdue/overdue.css" rel="stylesheet">
 </head>
 <body>
+<%@ include file="/WEB-INF/admin/base/a.header.jsp" %>
+<div id="wrap">
+
+<%@ include file="/WEB-INF/admin/member/member_side.jsp" %>
  <section>
  <div class="main_page" id="main_page_1">
      <h3>장기연체자</h3>
@@ -58,6 +63,9 @@
              <button onclick="deselectAll()">전체삭제</button>
             </div>
         </div>
+    </div>
 </section>
+</div>
+<%@ include file="/WEB-INF/admin/base/a.footer.jsp" %>
 </body>
 </html>
