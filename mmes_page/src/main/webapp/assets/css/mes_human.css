@@ -1,184 +1,100 @@
 
-/* -------------------------------------------------------------- */
-.xxx {
-    position: absolute;
-    right: 180px;
-    top: -11px;
-}
+@charset "UTF-8";
+.page {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 100%;
+            margin: auto;
+            margin-top: 10px;
+            overflow: scroll;
+        }
+        .page_1 {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 250px;
+            margin: auto;
+            margin-top: 10px;
+            overflow: scroll;
+        }
+        .page_2 {
+            /* border: 1px solid red; */
+            width: 100%;
+            height: 500px;
+            overflow: scroll; height: 500px;
+            margin: auto;
+            margin-top: 10px;
+        }
 
-.yyy {
-    position: relative;
-    left: 500px;
-}
+        .table_wrap {
+            /* border: 1px solid red; */
+            /* width: 80%; */
+            height: 100%;
+            /* overflow: scroll; */
+        }
 
-.mainmain {
-    width: 100%;
-    height: 100%;
-}
+        .bot_btn {
+            text-align: right;
+            margin-right: 10px;
+        }
 
-body,
-html {
-    width: 100%;
-    height: 100%;
-}
+        #main_library {
+            margin-bottom: 10px;
+        }
+       
 
-/* 기본 스타일 */
-.cate .menu {
-    background-color: #ffffff;
-    /* 기본 배경색 */
-    /* padding: 10px; */
-    border: 1px solid #ccc;
-}
+        th.sortable {
+            cursor: pointer;
+        }
 
-/* 아코디언 항목이 활성화 되었을 때의 스타일 */
-.cate .menu.active {
-    background-color: rgb(218, 231, 255);
-    /* 클릭된 항목의 배경색 */
-}
+        th.sorted-asc::after {
+            content: " ▲";
+        }
 
-.asdasd {
-    /* text-align: center; */
+        th.sorted-desc::after {
+            content: " ▼";
+        }
 
-    /* background-color: #6CA0DC; */
-    /* background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%); */
+        .main_page {
+            width: 100%;
+        }
+        .input_style {
+            width: 30px;
+            text-align: center;
+        }
 
-    height: 80px;
-    color: black;
-    font-size: 24px;
-    border-bottom: 1px solid lightgray;
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 500px;
+            top: 100px;
+            width: 400px;
+            height: 80%;
+            overflow: auto;
+        }
 
-}
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
 
-.button-container {
-    text-align: right;
-    /* margin-bottom: 20px; */
-    margin: 20px;
-}
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
 
-/* 버튼 스타일 */
-.button-container button {
-    margin: 0 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: rgb(165, 224, 144);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-}
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
-.button-container button:hover {
-    background-color: rgb(165, 224, 144);
-}
-
-/* 전체 테이블 스타일 */
-.employee-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-    display: inline-table;
-}
-
-.row {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-}
-
-.cell {
-    flex: 1;
-    text-align: center;
-    padding: 10px;
-    border-left: 1px solid #ddd;
-}
-
-
-/* 첫 번째 행(테이블 헤더) 스타일 */
-.header {
-    font-weight: bold;
-    background-color: #f2f2f2;
-}
-
-.rightBtn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    text-align: right;
-}
-
-.rightBtn button {
-    font-size: 18px;
-    padding: 10 20px;
-}
-
-.new-employee {
-    background-color: #f9f9f9;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-/* -------------------------------------------- 더블 클릭 했을 시 css ------------------------------------------- */
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 4px;
-    text-align: left;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-}
-
-.modal-header {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-}
-
-.modal-header h2 {
-    margin: 0;
-}
-
-.modal-body {
-    padding-bottom: 20px;
-}
-
-.modal-body .row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-}
-
-.modal-body .row .label {
-    font-weight: bold;
-    width: 120px;
-}
+        #workForm {
+            text-align: center;
+        }}
