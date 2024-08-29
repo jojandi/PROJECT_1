@@ -18,11 +18,20 @@ function reviewOn(){
     let reviewBnt = document.querySelector("#reviewBnt");
     let end = document.querySelector("#end");
 	let review_text = document.querySelector("#reviewPopup");
+	let close = document.querySelectorAll(".popup-close");
 
     reviewBnt.addEventListener('click', function(){
         review.style.display='block';
     })
-    end.addEventListener('click', function(){
+    for(let i = 0; i < close.length; i++){
+	    close[i].addEventListener('click', function(){
+	        review.style.display='none';
+	    })
+    }
+    end.addEventListener('click', function(e){
+    	
+    	e.preventDefault()
+    
     	//jQuery로 for문 돌면서 check 된값 배열에 담는다
 	    var lists = [];
 	    $("input[name='star']:checked").each(function(i){   
@@ -33,8 +42,9 @@ function reviewOn(){
 	    	alert("모든 필드를 입력해주세요. ");
 	    	return;
 	    } else{
+		    let form = document.querySelector("#form");
 	        alert("리뷰 작성이 완료되었습니다. ");
-	        review.style.display='none';
+	        form.submit();
 	    }
 	})
     

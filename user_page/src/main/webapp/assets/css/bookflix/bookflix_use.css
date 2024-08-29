@@ -113,7 +113,7 @@ button {
 }
 
 #reviewPopup{
-  display: none;
+  /* display: none; */
   position: fixed;
   top: 40%;
   left: 50%;
@@ -121,7 +121,11 @@ button {
   border: 1px solid black;
   width: 300px;
   background-color: white;
-  padding: 15px;
+  padding: 0 15px 15px 15px;
+}
+
+#reviewPopup .close{
+	text-align: right;
 }
 
 #review textarea{
@@ -146,6 +150,7 @@ button {
 /* 별점 */
 .star-rating {
   	display: flex;
+  	align-items: baseline;
 }
 
 .star {
@@ -162,5 +167,10 @@ button {
 .star:checked::after,
 .star:has(~ .star:checked)::after {
   	content: '★';
+}
+
+.star-rating span{
+	font-size: 15px;
+	
 }
 
