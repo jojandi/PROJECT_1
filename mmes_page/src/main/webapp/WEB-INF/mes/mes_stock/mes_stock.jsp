@@ -60,7 +60,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<!-- 여기 데이터 채우세요 -->
+								<c:forEach var="mesbook" items="${mesBook}">
+									<tr>
+<!-- 										<td><input type="checkbox" id="p1_checkAll"></th> -->
+<%-- 										<td class="sortable">${mesbook.book_name }</th> --%>
+<%-- 										<td>${mesbook.book_isbn }</th> --%>
+<%-- 										<td>${mesbook.book_author }</th> --%>
+<%-- 										<td>${mesbook.book_pub }</th> --%>
+<%-- 										<td>${mesbook.book_count }</th> --%>
+<%-- 										<td>${mesbook.wh_code }</th> --%>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -188,16 +198,12 @@
 								<td><input id="author" type="text" name="author"></td>
 							</tr>
 							<tr>
-								<td>출판사</td>
+								<td>발주처id</td>
 								<td><input id="publisher" type="text" name="publisher"></td>
 							</tr>
 							<tr>
 								<td>수량</td>
 								<td><input id="quantity" type="text" name="quantity"></td>
-							</tr>
-							<tr>
-								<td>발주일</td>
-								<td><input id="order_Date" type="text" name="order_Date"></td>
 							</tr>
 						</table>
 						<input id="workFormBtn" type="submit" value="완료">
