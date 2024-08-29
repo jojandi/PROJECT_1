@@ -343,3 +343,7 @@ input[type="button"]:hover {
 #con{
 	 text-align: right;
 }
+header #menu #items #i2 {
+    font-weight: 900;
+    text-decoration: underline;
+}
