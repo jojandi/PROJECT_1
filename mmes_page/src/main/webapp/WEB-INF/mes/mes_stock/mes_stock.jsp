@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,7 +83,6 @@
 									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">도서명</th>
 									<th>도서 코드</th>
-									<th>도서명</th>
 									<th>저자</th>
 									<th>출판사</th>
 									<th>수량</th>
@@ -89,9 +91,15 @@
 							</thead>
 							<!-- 여기에 데이터 -->
 							<tbody>
-								<c:forEach var="" items="">
+								<c:forEach var="mesbook" items="${mesBook}">
 									<tr>
-										<td></td>
+										<td><input type="checkbox" id="p1_checkAll"></th>
+										<td class="sortable">${mesbook.book_name }</th>
+										<td>${mesbook.book_isbn }</th>
+										<td>${mesbook.book_author }</th>
+										<td>${mesbook.book_pub }</th>
+										<td>${mesbook.book_count }</th>
+										<td>${mesbook.wh_code }</th>
 									</tr>
 								</c:forEach>
 							</tbody>
