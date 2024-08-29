@@ -33,3 +33,22 @@
                 alert('선택된 항목이 삭제되었습니다.');
             }
         }
+        
+    // 모달 관련 스크립트
+    var modal = document.getElementById("bookPurchaseModal");
+    var btn = document.getElementById("bookPurchaseBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
