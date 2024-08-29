@@ -41,21 +41,21 @@
                     <div class="page_2">
                         <table id="main_library1">
                             <colgroup>
-                                <col width="5%">
-                                <col width="20%">
-                                <col width="10%">
-                                <col width="8%">
-                                <col width="10%">
-                                <col width="10%">
-                                <col width="5%">
-                                <col width="7%">
+<!--                                 <col width="5%"> -->
+<!--                                 <col width="20%"> -->
+<!--                                 <col width="10%"> -->
+<!--                                 <col width="8%"> -->
+<!--                                 <col width="10%"> -->
+<!--                                 <col width="10%"> -->
+<!--                                 <col width="5%"> -->
+<!--                                 <col width="7%"> -->
                             </colgroup>
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
                                     <th class="sortable">주문번호</th>
                                     <th>제품명</th>
-                                    <th>거래처명</th>
+                                    <th>회원ID</th>
                                     <th>주문날짜</th>
                                     <th>수량</th>
                                     <th>담당자</th>
@@ -66,30 +66,30 @@
                                 <tr>
                                     <th><input type="checkbox" class="p1_main_chack"></th>
                                     <td class="sortable">A24082511</td>
-                                    <td>20대필독목록, 30대필독목록,<br> ...</td>
-                                    <td>쌍용도서관</td>
+                                    <td>액션추천서</td>
+                                    <td>ksh6287</td>
                                     <td>24.08.25</td>
-                                    <td>10EA</td>
+                                    <td>1</td>
                                     <td>박규태</td>
                                     <td>-</td>
                                 </tr>
                                 <tr>
-                                    <td><input type="checkbox" class="p1_main_chack"></td>
+                                    <td><input type="checkbox" class="p1_main_chack"></tdetaild>
                                     <td class="sortable">A24082621</td>
-                                    <td>30대필독목록, 아동필독서, <br> ...</td>
-                                    <td>중앙도서관</td>
+                                    <td>로맨스추천서</td>
+                                    <td>tae880</td>
                                     <td>24.08.26</td>
-                                    <td>25EA</td>
+                                    <td>1</td>
                                     <td>조민정</td>
                                     <td>-</td>
                                 </tr>
                                 <tr>
                                     <td><input type="checkbox" class="p1_main_chack"></td>
                                     <td class="sortable">A24082611</td>
-                                    <td>청소년필독서, 50대추천도서, <br> ...</td>
-                                    <td>두정도서관</td>
+                                    <td>에세이추천서</td>
+                                    <td>seob283</td>
                                     <td>24.08.26</td>
-                                    <td>15EA</td>
+                                    <td>1</td>
                                     <td>이제섭</td>
                                     <td>-</td>
                                 </tr>
