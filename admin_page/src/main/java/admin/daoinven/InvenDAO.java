@@ -1,4 +1,4 @@
-package admin.DAO.inven;
+package admin.daoinven;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import admin.DTO.inven.InvenDTO;
+import admin.dto.inven.InvenDTO;
 
 public class InvenDAO {
 	

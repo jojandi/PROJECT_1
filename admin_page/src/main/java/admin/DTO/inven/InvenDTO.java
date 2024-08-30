@@ -1,4 +1,4 @@
-package admin.DTO.inven;
+package admin.dto.inven;
 
 public class InvenDTO {
 	private int book_code;
