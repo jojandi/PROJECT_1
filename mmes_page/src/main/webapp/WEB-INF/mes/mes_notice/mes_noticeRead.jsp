@@ -51,6 +51,8 @@
 						<div style="border: 1px solid lightgray; whidth: 300px; height: 150px;">
 							<span>댓글창</span>
 						</div>
+						<a href="/mmes_page/notice_update?notice_id=${ read.notice_id }"><input type=button value="수정"></a>
+						<a href="/mmes_page/notice_delete?notice_id=${ read.notice_id }"><input type="button" value="삭제"></a>
                     </div>
                     <div id="pagination"></div>
                     <br>

@@ -33,6 +33,8 @@
 									<option value="년도">년도</option>
 									<option value="1995">1995</option>
 									<option value="1997">1997</option>
+									<option value="1997">1998</option>
+									<option value="1997">1999</option>
 									<option value="2004">2004</option>
 								</select>
 							<!-- 반복문으로 만들기 -->	
@@ -142,12 +144,12 @@
 							<input type="radio" id="hre3" name="like" value="3">역사
 							<input type="radio" id="hre4" name="like" value="4">인문학
 							<input type="radio" id="hre5" name="like" value="5">자기계발
-							<br>
 							<input type="radio" id="hre6" name="like" value="6">무협
+							<br>
 							<input type="radio" id="hre7" name="like" value="7">만화
 							<input type="radio" id="hre8" name="like" value="8">판타지
 							<input type="radio" id="hre9" name="like" value="9">로맨스
-							<input type="radio" id="hre10" name="like" value="10">일반
+							<input type="radio" id="hre10" name="like" value="10">추리
 							<input type="radio" id="hre11" name="like" value="11">스릴러
 						</td>
 					</tr>

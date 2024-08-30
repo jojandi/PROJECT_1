@@ -149,15 +149,9 @@ public class MesNoticeDAO {
 			// 원래 실행되는 걸 LoggableStatement가 가로채서
 			PreparedStatement ps = new LoggableStatement(con, query);
 
-//			ps.setInt(1, NoticeDTO.getNotice_id());
-
 			ps.setString(1, NoticeDTO.getNotice_name());
 
 			ps.setString(2, NoticeDTO.getNotice_contents());
-
-//			ps.setInt(3, NoticeDTO.getNotice_id());
-			
-//			ps.setDate(4, NoticeDTO.getNotice_date());
 
 			// 실제 실행되는 sql을 출력해볼 수 있다
 			System.out.println(((LoggableStatement) ps).getQueryString());
@@ -172,6 +166,67 @@ public class MesNoticeDAO {
 			e.printStackTrace();
 		}
 
+		return result;
+	}
+	
+	public int update (MesNoticeDTO NoticeDTO) {
+		
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+			
+			String query = " update notice";
+					query += " set notice_name = ?, notice_contents = ?";
+					query += " where notice_id = ?";
+					
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setString( 1, NoticeDTO.getNotice_name() );
+			ps.setString( 2, NoticeDTO.getNotice_contents() );
+			ps.setInt( 3, NoticeDTO.getNotice_id() );
+			
+			result = ps.executeUpdate();
+			
+			ps.close();
+			con.close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
+	
+	public int delete(MesNoticeDTO NoticeDTO) {
+		int result = -1;
+		
+		try {
+			
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+			
+			// SQL 준비
+			String query = " delete notice where notice_id = ?";
+			
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setInt( 1, NoticeDTO.getNotice_id() );
+			
+			// SQL 실행
+			result = ps.executeUpdate();
+			
+			ps.close();
+			con.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return result;
 	}
 

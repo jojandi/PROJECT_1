@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mes_DAO.MesStockDAO;
+import mes_DTO.MesNoticeDTO;
 import mes_DTO.MesStockDTO;
 
 public class MesStockService {
@@ -21,7 +22,11 @@ public class MesStockService {
 		
 		return list;
 	}
-	
+public int order (MesStockDTO MesStockDTO) {
+		
+		return dao.order(MesStockDTO);
+		
+	}
 		
 }
 
