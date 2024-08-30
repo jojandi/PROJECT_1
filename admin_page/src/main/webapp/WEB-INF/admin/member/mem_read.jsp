@@ -5,7 +5,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
-<link href="../assets/css/member/member.css" rel="stylesheet">
+<link href="../assets/css/member/member_read.css" rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 <title>도서 회원 관리</title>
@@ -53,7 +53,7 @@
 										<tr>
 											<td><input type="checkbox" class="rowCheckbox"
 												name="selectedMembers" value="Joe123"></td>
-											<td><a href="member_?seq=${list.user_seq}">${list.user_name}</a></td>
+											<td>${list.user_name}</td>
 											<td>${list.user_birth}</td>
 											<td>${list.user_id}</td>
 											<td>${list.user_tel}</td>

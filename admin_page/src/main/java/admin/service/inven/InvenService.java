@@ -2,7 +2,7 @@ package admin.service.inven;
 
 import java.util.List;
 
-import admin.daoinven.InvenDAO;
+import admin.dao.inven.InvenDAO;
 import admin.dto.inven.InvenDTO;
 
 public class InvenService {
