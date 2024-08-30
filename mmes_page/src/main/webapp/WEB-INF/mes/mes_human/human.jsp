@@ -35,7 +35,13 @@
 
         }   
        	table {
-       	font-size: 18px;}
+       	font-size: 18px;
+       	}
+       	 .clickable {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
        
         /* ------------------------------------------------------------------ */
         
@@ -100,8 +106,8 @@
 				            <c:forEach var="dto" items="${list}">
 				                <tr>
 				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
-				                    <td>${dto.emp_id}</td>
-				                    <td>${dto.emp_name}</td>
+									<td><a href = "http://localhost:8080/mmes_page/read?emp_id=${dto.emp_id}">${dto.emp_id}</a></td> 
+									<td>${dto.emp_name}</td>
 				                    <td>${dto.po_name}</td>
 				                    <td>${dto.dept_name}</td>
 				                    <td>${dto.emp_hp}</td>
@@ -109,7 +115,7 @@
 				                    <td>${dto.emp_hiredate}</td>
 				                </tr>
 				            </c:forEach>
-        </tbody>
+        					</tbody>
                             </tbody>
                         </table>
                     </div>

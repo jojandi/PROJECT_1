@@ -21,12 +21,18 @@ public class MesStockController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("/stock doget실행");
-
+		// 재고 확인 -----------------------------------------------
 		MesStockService stockservice = new MesStockService();
 		List<MesStockDTO> stockList = stockservice.getMesBook();
 
-//
 		request.setAttribute("mesBook", stockList);
+		// 재고 확인 -----------------------------------------------
+		// 발주 ----------------------------------------------------
+		
+		List<MesStockDTO> orderlist = stockservice.getorderlist();
+		request.setAttribute("tbl_order", orderlist);
+		System.out.println(orderlist);
+		// ---------------------------------------------------------
 
 		request.getRequestDispatcher("/WEB-INF/mes/mes_stock/mes_stock.jsp").forward(request, response);
 	}

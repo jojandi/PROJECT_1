@@ -48,7 +48,7 @@
                             <tbody>
                             	<c:forEach var="list" items="${list}">
 	                                <tr>
-	                                    <th><input type="checkbox" class="p1_main_chack"></th>
+	                                    <td><input type="checkbox" class="p1_main_chack"></td>
 	                                    <td class="bname">
 	                                    	<a href="inventory_?isbn=${list.book_ISBN}">${list.book_name}</a>
 	                                    </td>

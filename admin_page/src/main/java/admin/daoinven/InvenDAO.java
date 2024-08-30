@@ -1,4 +1,4 @@
-package admin.DAO.inven;
+package admin.daoinven;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,7 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import admin.DTO.inven.InvenDTO;
+import admin.dto.inven.InvenDTO;
 
 public class InvenDAO {
 	
@@ -48,6 +48,21 @@ public class InvenDAO {
 				dto.setBook_author(rs.getString("book_author"));
 				dto.setBook_name(rs.getString("book_name"));
 				dto.setBook_pub(rs.getString("book_pub"));
+				
+				String book_loan = rs.getString("book_loan");
+				String book_res = rs.getString("book_res");
+				
+				if("y".equals(book_loan)) {
+					dto.setBook_loan(true);
+				} else {
+					dto.setBook_loan(false);
+				}
+				if("y".equals(book_res)) {
+					dto.setBook_res(true);
+				} else {
+					dto.setBook_res(false);
+				}
+				
 				
 				list.add(dto);
 			}
@@ -92,6 +107,20 @@ public class InvenDAO {
 				dto.setBook_author(rs.getString("book_author"));
 				dto.setBook_name(rs.getString("book_name"));
 				dto.setBook_pub(rs.getString("book_pub"));
+				
+				String book_loan = rs.getString("book_loan");
+				String book_res = rs.getString("book_res");
+				
+				if("y".equals(book_loan)) {
+					dto.setBook_loan(true);
+				} else {
+					dto.setBook_loan(false);
+				}
+				if("y".equals(book_res)) {
+					dto.setBook_res(true);
+				} else {
+					dto.setBook_res(false);
+				}
 				
 				list.add(dto);
 			}
