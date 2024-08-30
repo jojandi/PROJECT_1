@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,13 +62,13 @@
 							<tbody>
 								<c:forEach var="mesbook" items="${mesBook}">
 									<tr>
-<!-- 										<td><input type="checkbox" id="p1_checkAll"></th> -->
-<%-- 										<td class="sortable">${mesbook.book_name }</th> --%>
-<%-- 										<td>${mesbook.book_isbn }</th> --%>
-<%-- 										<td>${mesbook.book_author }</th> --%>
-<%-- 										<td>${mesbook.book_pub }</th> --%>
-<%-- 										<td>${mesbook.book_count }</th> --%>
-<%-- 										<td>${mesbook.wh_code }</th> --%>
+										<!-- 										<td><input type="checkbox" id="p1_checkAll"></th> -->
+										<%-- 										<td class="sortable">${mesbook.book_name }</th> --%>
+										<%-- 										<td>${mesbook.book_isbn }</th> --%>
+										<%-- 										<td>${mesbook.book_author }</th> --%>
+										<%-- 										<td>${mesbook.book_pub }</th> --%>
+										<%-- 										<td>${mesbook.book_count }</th> --%>
+										<%-- 										<td>${mesbook.wh_code }</th> --%>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -103,13 +103,20 @@
 							<tbody>
 								<c:forEach var="mesbook" items="${mesBook}">
 									<tr>
-										<td><input type="checkbox" id="p1_checkAll"></th>
-										<td class="sortable">${mesbook.book_name }</th>
-										<td>${mesbook.book_isbn }</th>
-										<td>${mesbook.book_author }</th>
-										<td>${mesbook.book_pub }</th>
-										<td>${mesbook.book_count }</th>
-										<td>${mesbook.wh_code }</th>
+										<td><input type="checkbox" id="p1_checkAll">
+										</th>
+										<td class="sortable">${mesbook.book_name }
+										</th>
+										<td>${mesbook.book_isbn }
+										</th>
+										<td>${mesbook.book_author }
+										</th>
+										<td>${mesbook.book_pub }
+										</th>
+										<td>${mesbook.book_count }
+										</th>
+										<td>${mesbook.wh_code }
+										</th>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -143,16 +150,23 @@
 								</thead>
 								<tbody class="main_tbody">
 									<c:forEach var="tbl_order" items="${tbl_order}">
-									<tr>
-										<td><input type="checkbox" id="p1_checkAll"></th>
-										<td class="sortable">${tbl_order.mes_book_code }</th>
-										<td>${tbl_order.order_id }</th>
-										<td>${tbl_order.pub_name }</th>
-										<td>${tbl_order.order_st }</th>
-										<td>${tbl_order.emp_name }</th>
-										<td>${tbl_order.order_date }</th>
-									</tr>
-								</c:forEach>
+										<tr>
+											<td><input type="checkbox" id="p1_checkAll">
+											</th>
+											<td class="sortable">${tbl_order.mes_book_code }
+											</th>
+											<td>${tbl_order.order_id }
+											</th>
+											<td>${tbl_order.pub_name }
+											</th>
+											<td>${tbl_order.order_st }
+											</th>
+											<td>${tbl_order.emp_name }
+											</th>
+											<td>${tbl_order.order_date }
+											</th>
+										</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 
@@ -190,33 +204,29 @@
 			<div id="formModal" class="modal">
 				<div class="modal-content">
 					<span class="close">&times;</span>
-					<form id="workForm">
+					<form id="workForm" method="post" action="stock">
 						<table>
 							<tr>
 								<th colspan="2">도서 발주</th>
 							</tr>
 							<tr>
-								<td>도서명</td>
-								<td><input id="book_title" type="text" name="book_title"></td>
+								<td>부품코드</td>
+								<td><select name="mes_book_code">
+										<c:forEach var="code" items="${mes_book_code}">
+											<option value="${code}">${code}</option>
+										</c:forEach>
+								</select></td>
 							</tr>
 							<tr>
-								<td>도서 코드</td>
-								<td><input id="isbn" type="text" name="isbn"></td>
-							</tr>
-							<tr>
-								<td>저자</td>
-								<td><input id="author" type="text" name="author"></td>
+								<td>주문개수</td>
+								<td><input id="order_count" type="text" name="order_count"></td>
 							</tr>
 							<tr>
 								<td>발주처id</td>
-								<td><input id="publisher" type="text" name="publisher"></td>
-							</tr>
-							<tr>
-								<td>수량</td>
-								<td><input id="quantity" type="text" name="quantity"></td>
+								<td><input id="pub_id" type="text" name="pub_id"></td>
 							</tr>
 						</table>
-						<input id="workFormBtn" type="submit" value="완료">
+						<input id="workFormBtn" type="submit" value="발주">
 					</form>
 				</div>
 			</div>

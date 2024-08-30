@@ -11,6 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import mes_DTO.MesNoticeDTO;
 import mes_DTO.MesStockDTO;
 
 
@@ -129,5 +130,74 @@ public class MesStockDAO {
 	     
 	     return list;
 	}
-	
+	// 부품 코드를 리스트로 반환하는 메서드
+    public List<String> getMesBookCodes() {
+        List<String> mesBookCodes = new ArrayList<>();
+        
+        try {
+        	Context ctx = new InitialContext();
+			DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataSource.getConnection();
+			
+			String query = "SELECT mes_book_code FROM mes_book";
+			
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			
+            while (rs.next()) {
+                mesBookCodes.add(rs.getString("mes_book_code"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return mesBookCodes;
+    }
+    public int order(MesStockDTO MesStockDTO) {
+
+		int result = -1;
+
+		try {
+
+			// Servers 폴더의 context.xml에서
+			// name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// DB접속 : 커넥션풀을 사용해서
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = "INSERT INTO tbl_order (order_id, order_date, order_count, order_st, emp_ID, pub_id, mes_book_code)";
+				   query += " VALUES (tbl_order_seq.NEXTVAL, sysdate, ?, '진행중', 1, ?, ?)";
+			
+			
+
+			// PreparedStatement ps = con.prepareStatement(query);
+			// 원래 실행되는 걸 LoggableStatement가 가로채서
+			PreparedStatement ps = new LoggableStatement(con, query);
+			
+			ps.setLong(1, MesStockDTO.getOrder_count());
+			
+			ps.setString(2, MesStockDTO.getPub_id());
+			System.out.println(MesStockDTO.getPub_id());
+			
+			ps.setLong(3, MesStockDTO.getMes_book_code());
+
+
+			// 실제 실행되는 sql을 출력해볼 수 있다
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			// SQL 실행
+			result = ps.executeUpdate();
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
 }
