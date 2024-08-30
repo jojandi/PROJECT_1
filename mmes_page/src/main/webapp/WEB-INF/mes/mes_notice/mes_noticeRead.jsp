@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="layout.css" type="text/css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="./assets/css/admin_table.css" rel="stylesheet">
+    <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
+    <link href="./assets/css/admin.css" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="./assets/css/click.css" rel="stylesheet">
+    <link href="./assets/css/mes_notice.css" rel="stylesheet">
+  
+</head>
+
+<body>
+
+    <!-- 가장 위 고정 -->
+    <!-- 헤더  -->
+		<%@ include file="/WEB-INF/mes/mes_base/header.jsp" %>
+	<!-- 헤더  -->
+
+    <!-- 여기 사이에 이것 저것 코딩하세용 >< -->
+    <div id="wrap">
+        <!-- 사이드 -->
+        <%@ include file="/WEB-INF/mes/mes_notice/mes_notice_side.jsp" %>
+        <section>
+            <div class="main_page">
+                <h3>게시판</h3>
+                <div class="notince" >
+                    <div class="t1" style="border: 1px solid lightgray; whidth: 300px; height: 550px; text-align: left;">
+						<h1>${ read.notice_name }</h1>
+						<h2>${ read.emp_name }</h2>
+						<span>${ read.notice_date }</span>
+						<div style="border: 1px solid lightgray; whidth: 300px; height: 300px;">
+							<span>${ read.notice_contents }</span>
+						</div>
+						<div style="border: 1px solid lightgray; whidth: 300px; height: 150px;">
+							<span>댓글창</span>
+						</div>
+                    </div>
+                    <div id="pagination"></div>
+                    <br>
+                    <br>
+                    <div class="write" style="text-align:right;">
+                        <a href="notice">
+                            <input type="button" class="btnnn" value="목록으로">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+
+</html>

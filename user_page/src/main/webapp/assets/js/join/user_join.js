@@ -8,7 +8,9 @@ document.getElementById("check-username").addEventListener("click", function() {
     }
 });
 
-document.getElementById("gaip_1").addEventListener("click", function() {
+document.getElementById("gaip_1").addEventListener("click", function(e) {
+    e.preventDefault();
+    
     const name = document.getElementById("name_").value;
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
@@ -44,7 +46,7 @@ document.getElementById("gaip_1").addEventListener("click", function() {
     }
 
     alert("회원가입이 완료되었습니다.");
-    window.location.href="01.main_user_login.html";
+    form.submit();
 });
 
 function msg(){

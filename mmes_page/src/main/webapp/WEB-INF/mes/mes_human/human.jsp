@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="java.util.*"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ page import="mes_DTO.MesHumanDTO" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,6 +17,7 @@
     <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
     <link href="./assets/css/admin.css" rel="stylesheet">
     <link href="./assets/css/mes_human.css" rel="stylesheet">
+
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
@@ -28,6 +34,14 @@
         background-color: rgb(165, 224, 144);
 
         }   
+       	table {
+       	font-size: 18px;
+       	}
+       	 .clickable {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
        
         /* ------------------------------------------------------------------ */
         
@@ -59,132 +73,114 @@
         
         <section>
             
-            <div class="button-container" style="margin-top: 30px;">
-                <button id="addEmployeeBtn">직원 추가</button>
-                <button id="deleteEmployeeBtn">직원 삭제</button>
-                <button id="saveBtn">저장</button>
+           <div class="main_page" id="main_page_1">
+                <h3>직원관리</h3>
+                <div>
+                    <div class="page_2">
+                        <table id="main_library">
+                            <colgroup>
+                                <col width="7%">
+                                <col width="8%">
+                     			<col width="11%">
+						        <col width="8%">
+						        <col width="16%">
+						        <col width="21%">
+						        <col width="20%">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="p1_checkAll"></th>
+                                    <th class="sortable">사원번호</th>
+                                   	<th>이름</th>
+                                    <th>직급</th>
+                                    <th>부서</th>
+                                    <th>전화번호</th>
+                                    <th>주소</th>
+                                    <th>입사일</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <!-- 여기 데이터 채우세요 -->
+                             <tbody>
+           
+				            <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
+									<td><a href = "http://localhost:8080/mmes_page/read?emp_id=${dto.emp_id}">${dto.emp_id}</a></td> 
+									<td>${dto.emp_name}</td>
+				                    <td>${dto.po_name}</td>
+				                    <td>${dto.dept_name}</td>
+				                    <td>${dto.emp_hp}</td>
+				                    <td>${dto.emp_add}</td>
+				                    <td>${dto.emp_hiredate}</td>
+				                </tr>
+				            </c:forEach>
+        					</tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="text_right">
+                  		<input id="openForm" type="button" value="직원추가">
+             		</div>
+                    <div class="bot_btn">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="사원 검색...">
+                        </div>
+                        <input type="button" value="Excel 파일화">
+                    </div>
+                </div>
             </div>
-
-            <div class="employee-table">
-                <div class="row header">
-                    <input id="selectAllCheckbox" class="check-cell" type="checkbox">
-                    <!--  헤더쪽에 있는 체크박스를 누르면 전체 취소 및 전체 체크를 하기 위한 id를 따로 줌 -->
-                    <div class="cell">이름</div>
-                    <div class="cell">직급</div>
-                    <div class="cell">부서</div>
-                    <div class="cell">전화번호</div>
-                    <div class="cell">주소</div>
-                    <div class="cell">입사일</div>
-                </div>
-                <div class="row">
-                    <input class="check-cell" type="checkbox">
-                    <div class="cell">이제섭</div>
-                    <div class="cell">대리</div>
-                    <div class="cell">포장팀</div>
-                    <div class="cell">010-1234-5678</div>
-                    <div class="cell">서울특별시 송파구</div>
-                    <div class="cell">2020-01-15</div>
-                </div>
-                <div class="row">
-                    <input class="check-cell" type="checkbox">
-                    <div class="cell">박규태</div>
-                    <div class="cell">대리</div>
-                    <div class="cell">도서관리팀</div>
-                    <div class="cell">010-9876-5432</div>
-                    <div class="cell">경기도 분당구</div>
-                    <div class="cell">2019-05-20</div>
-                </div>
-                <div class="row">
-                    <input class="check-cell" type="checkbox">
-                    <div class="cell">김승환</div>
-                    <div class="cell">부장</div>
-                    <div class="cell">영업팀</div>
-                    <div class="cell">010-1111-2222</div>
-                    <div class="cell">천안시 동남구</div>
-                    <div class="cell">2021-03-10</div>
-                </div>
-                <div class="row">
-                    <input class="check-cell" type="checkbox">
-                    <div class="cell">김아영</div>
-                    <div class="cell">부장</div>
-                    <div class="cell">도서관리팀</div>
-                    <div class="cell">010-5143-5125</div>
-                    <div class="cell">세종시 전의</div>
-                    <div class="cell">2022-07-01</div>
-                </div>
-                <div class="row">
-                    <input class="check-cell" type="checkbox">
-                    <div class="cell">조민정</div>
-                    <div class="cell">사장</div>
-                    <div class="cell"></div>
-                    <div class="cell">010-5143-5125</div>
-                    <div class="cell">세종시 전의</div>
-                    <div class="cell">2022-07-01</div>
-                </div>
-
-            </div>
-
-            <div id="employeeModal" class="modal">
+             
+	<div id="formModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <div class="modal-header">
-                        <h2>직원 정보 수정</h2>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <span class="label">이름:</span>
-                            <input type="text" id="modalNameInput">
-                        </div>
-                        <div class="row">
-                            <span class="label">직급:</span>
-                            <select id="modalPositionInput">
-                                <option value="" selected disabled hidden>선택해주세요</option>
-                                <option value="매니저">매니저</option>
-                                <option value="개발자">개발자</option>
-                                <option value="영업담당자">영업담당자</option>
-                                <option value="디자이너">디자이너</option>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <span class="label">부서:</span>
-                            <select id="modalDepartmentInput">
-                                <option value="" selected disabled hidden>선택해주세요</option>
-                                <option value="기획팀">기획팀</option>
-                                <option value="엔지니어링팀">엔지니어링팀</option>
-                                <option value="영업팀">영업팀</option>
-                                <option value="디자인팀">디자인팀</option>
-                            </select>
-                        </div>
-                        <div class="row">
-                            <span class="label">전화번호:</span>
-                            <input type="text" id="modalPhoneNumberInput">
-                        </div>
-                        <div class="row">
-                            <span class="label">주소:</span>
-                            <input type="text" id="modalAddressInput">
-                        </div>
-                        <div class="row">
-                            <span class="label">입사일:</span>
-                            <input type="date" id="modalStartDateInput">
-                        </div>
-                    </div>
-                    <button id="updateEmployeeBtn">저장</button>
+                    <form id="workForm" method="post" action="human">
+                        <table>
+                            <tr>
+                                <th colspan="2">사원 추가</th>
+                            </tr>
+                            <tr>
+                                <td>사원번호</td>
+                                <td><input  type= "text" name="emp_id"></td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td><input type="text" name="emp_name"></td>
+                            </tr>
+                            <tr>
+                                <td>직급</td>
+                                <td><input type="text" name="po_name"></td>
+                            </tr>
+                            <tr>
+                                <td>부서</td>
+                                <td><input type="text"  name="dept_name"></td>
+                            </tr>
+                            <tr>
+                                <td>전화번호</td>
+                                <td><input type="text"  name="emp_hp"></td>
+                            </tr>
+                            <tr>
+                                <td>주소</td>
+                                <td><input type="text" name="emp_add"></td>
+                            </tr>
+                            <tr>
+                                <td>입사일</td>
+                                <td><input name="emp_hiredate" type="date"></td>
+                            </tr>
+                        </table>
+                        <input id="workFormBtn" type="submit" value="등록하기">
+                    </form>
                 </div>
-            </div>
-
-            <div class="button-container">
-                <input type="text" id="searchInput" placeholder="직원 검색">
-                <button id="searchEmployeeBtn">검색</button>
             </div>
         </section>
     </div>
     <!--자바 스크립트 영역-->
-    <script src="./assets/js/mes_human.js"></script>
+    
 
 
 
     <!-- 가장 아래 고정 -->
-   
+   <script src="./assets/js/mes_human.js"></script>
 </body>
 
 </html>

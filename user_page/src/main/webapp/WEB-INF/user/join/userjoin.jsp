@@ -18,14 +18,15 @@
 		</div>
 
 		<div>
-			<form method="post" action="register">
+			<form method="post" action="join_insert" id="form">
+				<div id="ess"><span>*</span> 는 필수입니다. </div>
 				<table border="1">
 					<tr>
-						<td class="label">이름</td>
+						<td class="label"><span>*</span> 이름</td>
 						<td><input type="text" id="name_" name="user_name" placeholder="이름을 입력하세요."></td>
 					</tr>
 					<tr>
-						<td class="label">생년월일</td>
+						<td class="label"><span>*</span> 생년월일</td>
 						<td>
 							<div class="container">
 								<select name="yyyy">
@@ -88,7 +89,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="label">아이디</td>
+						<td class="label"><span>*</span> 아이디</td>
 						<td>
 							<div id="seob">
 								<input type="text" id="username" name="username" placeholder="아이디">
@@ -100,7 +101,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="label">비밀번호</td>
+						<td class="label"><span>*</span> 비밀번호</td>
 						<td><input type="password" id="password" name="user_pw" placeholder="비밀번호">
 							<div class="red" id="password-message">비밀번호를 적어주세요</div></td>
 					</tr>
@@ -110,11 +111,11 @@
 							<div class="red" id="confirm-password-message">비밀번호가 일치하지 않습니다</div></td>
 					</tr>
 					<tr>
-						<td class="label">전화번호</td>
-						<td><input type="text" id="phone" name="user_tel" placeholder="휴대폰 번호 입력"></td>
+						<td class="label"><span>*</span> 전화번호</td>
+						<td><input type="text" id="phone" name="user_tel" placeholder="숫자만 입력해주세요."></td>
 					</tr>
 					<tr>
-						<td class="label">주소</td>
+						<td class="label"><span>*</span> 주소</td>
 						<td>
 							<input type="text" id="addressnum" name="addressnum" placeholder="우편번호">
 							<div class="gaip">
@@ -126,7 +127,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="label">e_mail</td>
+						<td class="label"><span>*</span> e_mail</td>
 						<td>
 							<input class="email-input" type="text" id="email-user" name="user_email" placeholder="이메일주소">
 							<div class="email-domain">@</div>
@@ -134,21 +135,20 @@
 						</td>
 					</tr>
 					<tr>
-						<td class="label">선호도 조사</td>
+						<td class="label"><span>*</span> 선호도 조사</td>
 						<td>
-							<input type="checkbox" id="hre1" name="preference" value="언론">언론
-							<input type="checkbox" id="hre2" name="preference" value="소설">소설
-							<input type="checkbox" id="hre3" name="preference" value="역사">역사
-							<input type="checkbox" id="hre4" name="preference" value="과학">과학
-							<input type="checkbox" id="hre5" name="preference" value="인문학">인문학
-							<input type="checkbox" id="hre6" name="preference" value="자기계발">자기계발
+							<input type="radio" id="hre1" name="like" value="1">언론
+							<input type="radio" id="hre2" name="like" value="2">소설
+							<input type="radio" id="hre3" name="like" value="3">역사
+							<input type="radio" id="hre4" name="like" value="4">인문학
+							<input type="radio" id="hre5" name="like" value="5">자기계발
 							<br>
-							<input type="checkbox" id="hre7" name="preference" value="무협">무협
-							<input type="checkbox" id="hre8" name="preference" value="만화">만화
-							<input type="checkbox" id="hre9" name="preference" value="판타지">판타지
-							<input type="checkbox" id="hre10" name="preference" value="오디오">오디오
-							<input type="checkbox" id="hre11" name="preference" value="로맨스">로맨스
-							<input type="checkbox" id="hre12" name="preference" value="일반">일반
+							<input type="radio" id="hre6" name="like" value="6">무협
+							<input type="radio" id="hre7" name="like" value="7">만화
+							<input type="radio" id="hre8" name="like" value="8">판타지
+							<input type="radio" id="hre9" name="like" value="9">로맨스
+							<input type="radio" id="hre10" name="like" value="10">일반
+							<input type="radio" id="hre11" name="like" value="11">스릴러
 						</td>
 					</tr>
 				</table>
