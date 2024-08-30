@@ -18,7 +18,7 @@
 		</div>
 
 		<div>
-			<form method="post" action="register">
+			<form method="post" action="register" id="form">
 				<table border="1">
 					<tr>
 						<td class="label">이름</td>
