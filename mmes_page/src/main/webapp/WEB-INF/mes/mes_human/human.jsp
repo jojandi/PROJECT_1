@@ -4,7 +4,7 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ page import="try2.dto.Try2DTO" %> 
+<%@ page import="mes_DTO.MesHumanDTO" %> 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,10 +74,10 @@
                         <table id="main_library">
                             <colgroup>
                                 <col width="7%">
-                                <col width="7%">
-                     			<col width="10%">
-						        <col width="10%">
-						        <col width="17%">
+                                <col width="8%">
+                     			<col width="11%">
+						        <col width="8%">
+						        <col width="16%">
 						        <col width="21%">
 						        <col width="20%">
                             </colgroup>
@@ -99,13 +99,13 @@
            
 				            <c:forEach var="dto" items="${list}">
 				                <tr>
-				                    <td><input type = "checkbox"></td>				                    
+				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
 				                    <td>${dto.emp_id}</td>
 				                    <td>${dto.emp_name}</td>
 				                    <td>${dto.po_name}</td>
 				                    <td>${dto.dept_name}</td>
 				                    <td>${dto.emp_hp}</td>
-				                    <td>${dto.emp_address}</td>
+				                    <td>${dto.emp_add}</td>
 				                    <td>${dto.emp_hiredate}</td>
 				                </tr>
 				            </c:forEach>
@@ -128,7 +128,7 @@
 	<div id="formModal" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <form id="workForm" method="post" action="try">
+                    <form id="workForm" method="post" action="human">
                         <table>
                             <tr>
                                 <th colspan="2">사원 추가</th>
@@ -155,7 +155,7 @@
                             </tr>
                             <tr>
                                 <td>주소</td>
-                                <td><input type="text" name="emp_address"></td>
+                                <td><input type="text" name="emp_add"></td>
                             </tr>
                             <tr>
                                 <td>입사일</td>

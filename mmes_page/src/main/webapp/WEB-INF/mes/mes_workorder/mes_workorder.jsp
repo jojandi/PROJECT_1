@@ -119,8 +119,8 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">제품코드</th>
-                                    <th>제품명</th>
+                                    <th class="sortable">부품코드</th>
+                                    <th>부품명</th>
                                     <th>소요량</th>
                                     <th>가용재고</th>
                                     <th>적정재고</th>
@@ -263,16 +263,16 @@
                     <table>
                         <tr class="modal-div_4">
                             <th>
-                                <span class="modal-item">상위품번</span> 
+                                <span class="modal-item">상위부품코드</span> 
                             </th>
                             <th>
-                                <span>상위품명</span>
+                                <span>상위부품명</span>
                             </th>
                             <th>
-                                <span>품번</span>
+                                <span>부품코드</span>
                             </th>
                             <th>
-                                <span>품명</span>
+                                <span>부품명</span>
                             </th>
                             <th>
                                 <span>수량</span>

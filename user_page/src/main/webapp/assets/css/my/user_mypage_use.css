@@ -67,7 +67,7 @@ section .table{
 }
 
 section table{
-    table-layout:fixed;
+   	table-layout:fixed;
     border-collapse: collapse;
     width: 100%;
 }

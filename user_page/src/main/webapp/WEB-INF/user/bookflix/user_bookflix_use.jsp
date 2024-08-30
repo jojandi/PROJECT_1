@@ -110,14 +110,18 @@
             	</div>
 	            <button type="button" id="reviewBnt">리뷰쓰기</button>
 	            
-	            <form method="post" action="bookflixk_review">
+	            <form method="post" action="bookflixk_review" id="form">
 		            <div id="reviewPopup">
+		            	<div class="close">
+			            	<span class="popup-close">&times;</span>
+		            	</div>
 		            	<div class="star-rating">
-						   <input type="checkbox" name="star" class="star" value="1">
-						   <input type="checkbox" name="star" class="star" value="2">
-						   <input type="checkbox" name="star" class="star" value="3">
-						   <input type="checkbox" name="star" class="star" value="4">
-						   <input type="checkbox" name="star" class="star" value="5">
+		            		<span>별점 : </span>
+						   	<input type="checkbox" name="star" class="star" value="1">
+						   	<input type="checkbox" name="star" class="star" value="2">
+						   	<input type="checkbox" name="star" class="star" value="3">
+						   	<input type="checkbox" name="star" class="star" value="4">
+						   	<input type="checkbox" name="star" class="star" value="5">
 						 </div>
 		                <textarea name="review_text" id="review_text" placeholder=" 리뷰를 입력해주세요. "></textarea>
 		                <br>
