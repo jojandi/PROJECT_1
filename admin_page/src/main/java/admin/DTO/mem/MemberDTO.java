@@ -1,4 +1,4 @@
-package admin.dto.mem;
+package admin.DTO.mem;
 
 public class MemberDTO {
 	private int like_id;

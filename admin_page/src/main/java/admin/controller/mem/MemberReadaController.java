@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.dto.mem.MemberDTO;
+import admin.DTO.mem.MemberDTO;
 import admin.service.mem.MemberService;
 
 @WebServlet("/admin/member_")
@@ -26,6 +26,7 @@ public class MemberReadaController extends HttpServlet {
 	    MemberService service = new MemberService();
 	    
 	    MemberDTO dto = service.user(seq);
+	    System.out.println(dto);
 		
 	    request.setAttribute("dto", dto);
 		request.getRequestDispatcher("/WEB-INF/admin/member/mem_read.jsp").forward(request, response);

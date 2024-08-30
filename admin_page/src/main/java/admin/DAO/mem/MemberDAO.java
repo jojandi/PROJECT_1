@@ -1,4 +1,4 @@
-package admin.dao.mem;
+package admin.DAO.mem;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import admin.dao.inven.LoggableStatement;
-import admin.dto.mem.MemberDTO;
+import admin.DTO.mem.MemberDTO;
 
 public class MemberDAO {
 	
@@ -56,10 +55,11 @@ public class MemberDAO {
 				String user_admin = rs.getString("user_admin");
 				
 				String user_tel = rs.getString("user_tel");
+				System.out.println(user_tel);
 				
-				String tel1 = user_tel.substring(0, 3);
-				String tel2 = user_tel.substring(3, 7);
-				String tel3 = user_tel.substring(7, 11);
+				String tel1 = user_tel.substring(0, 2);
+				String tel2 = user_tel.substring(2, 6);
+				String tel3 = user_tel.substring(6, 10);
 				
 				String tel = "0" + tel1 + "-" + tel2 + "-" + tel3;
 				
@@ -94,6 +94,7 @@ public class MemberDAO {
 		return list;
 	}
 	
+	// 사용자 상세목록
 	public MemberDTO user(int user_seq) {
 		MemberDTO dto = null;
 		

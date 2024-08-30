@@ -10,7 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import admin.dto.inven.InvenDTO;
+import admin.DTO.inven.InvenDTO;
 
 public class InvenDAO {
 	
