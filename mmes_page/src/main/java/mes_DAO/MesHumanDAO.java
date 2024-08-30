@@ -10,7 +10,6 @@ import java.util.List;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
-
 import mes_DTO.MesHumanDTO;
 
 
@@ -121,6 +120,70 @@ public class MesHumanDAO {
 		
 		return result;
 	}
-	
+	public MesHumanDTO selectOne(int emp_id) {
+		MesHumanDTO empDTO = null;
+		try {
+			// DB 접속
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+			
+			// SQL 준비
+			
+			String query = " SELECT e.emp_id, e.emp_name, p.po_name, d.dept_name, e.emp_hp, e.emp_add, e.emp_hiredate";
+			   query +=" FROM employee e";
+			   query +=" JOIN department d ON e.dept_id = d.dept_id";
+			   query +=" JOIN tbl_position p ON e.po_id = p.po_id";
+			   query +=" WHERE emp_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			
+		
+			ps.setInt(1, emp_id);
+			System.out.println(emp_id);
+			// SQL 실행
+			ResultSet rs = ps.executeQuery();
+			
+			if( rs.next() ) {
+				empDTO = new MesHumanDTO();
+				empDTO.setEmp_id(rs.getInt("emp_id") );
+				empDTO.setEmp_name(rs.getString("emp_name") );
+				empDTO.setEmp_hp(rs.getString("emp_hp") );
+				empDTO.setEmp_add(rs.getString("emp_add") );
+				empDTO.setEmp_hiredate(rs.getDate("emp_hiredate") );
+				empDTO.setDept_name(rs.getString("dept_name") );
+				empDTO.setPo_name(rs.getString("po_name") );
+			
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return empDTO;
+	}
+	public int deleteOne(int emp_id) {
+		int result = -1;
+		
+		try {
+			// DB 접속
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+			
+			// SQL 준비
+			String query = "delete from employee where emp_id = ?";
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, emp_id);
+			System.out.println(emp_id);
+			// SQL 실행
+			result = ps.executeUpdate();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 }
 
