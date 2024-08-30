@@ -29,9 +29,7 @@ public class MesNoticeService {
 	
 	public int insert (MesNoticeDTO NoticeDTO) {
 		
-		MesNoticeDAO NoticeDAO = new MesNoticeDAO();
-		
-		return NoticeDAO.insert(NoticeDTO);
+		return this.NoticeDAO.insert(NoticeDTO);
 		
 	}
 

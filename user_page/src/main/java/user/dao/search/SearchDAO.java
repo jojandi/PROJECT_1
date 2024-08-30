@@ -15,7 +15,7 @@ import user.dto.search.SearchDTO;
 public class SearchDAO {
 	
 	// 도서검색
-	public List bookList(String book_name) {
+	public List bookSearch(String book_name) {
 		List list = new ArrayList();
 		
 		try {
@@ -25,9 +25,10 @@ public class SearchDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select * from book join li_book using (book_isbn) ";
-			query += " where lower(book_name) like lower('%'||?||'%')";
-			query += " order by to_number(book_code) ";
+			String query =  " select book_name, book_pub, book_img, li_book_info, book_author, book_isbn, min(book_code) as book_code, count(*) as count ";
+			query += " from book join li_book using (book_isbn) ";
+			query += " group by book_name, book_pub, book_img, li_book_info, book_author, book_isbn ";
+			query += " having lower(book_name) like lower('%'||?||'%') ";
 			
 
             PreparedStatement ps = new LoggableStatement(con, query);
@@ -41,13 +42,14 @@ public class SearchDAO {
 			while (rs.next()){
 				SearchDTO dto = new SearchDTO();
 								
-				dto.setBook_code(rs.getInt("book_code"));
-				dto.setLi_book_info(rs.getString("li_book_info"));
-				dto.setBook_ISBN(rs.getLong("book_isbn"));
-				dto.setBook_img(rs.getString("book_img"));
-				dto.setBook_author(rs.getString("book_author"));
 				dto.setBook_name(rs.getString("book_name"));
 				dto.setBook_pub(rs.getString("book_pub"));
+				dto.setBook_img(rs.getString("book_img"));
+				dto.setLi_book_info(rs.getString("li_book_info"));
+				dto.setBook_author(rs.getString("book_author"));
+				dto.setBook_ISBN(rs.getLong("book_isbn"));
+				dto.setBook_code(rs.getInt("book_code"));
+				dto.setCount(rs.getInt("count"));
 				
 				list.add(dto);
 			}
