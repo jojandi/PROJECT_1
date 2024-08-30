@@ -117,18 +117,18 @@ input[type="checkbox"] {
 	margin-right: 10px;
 }
 
-input[type="button"] {
+/* input[type="button"] {
 	padding: 8px 16px;
 	background-color: #a2f796;
 	color: rgb(19, 2, 2);
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-}
+} */
 
-input[type="button"]:hover {
+/* input[type="button"]:hover {
 	background-color: #9ae880;
-}
+} */
 
 .pagination {
 	display: flex;
@@ -145,9 +145,9 @@ input[type="button"]:hover {
 	cursor: pointer;
 }
 
-.pagination div:hover {
+/* .pagination div:hover {
 	background-color: #9ae880;
-}
+} */
 
 .search-bar {
 	display: flex;
@@ -171,10 +171,10 @@ input[type="button"]:hover {
 	cursor: pointer;
 }
 
-.search-bar input[type="button"].search:hover {
+/* .search-bar input[type="button"].search:hover {
 	background-color: #9ae880;
 }
-
+ */
 .click {
 	display: flex;
 	justify-content: flex-end;

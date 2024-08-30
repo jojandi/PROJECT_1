@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.DTO.inven.InvenDTO;
+import admin.dto.inven.InvenDTO;
 import admin.service.inven.InvenService;
 
 

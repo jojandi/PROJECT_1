@@ -28,4 +28,18 @@ public class MesHumanService {
 		return insertCount;
 		
 	}
+	public MesHumanDTO get(int emp_id) {
+		
+		MesHumanDAO dao = new MesHumanDAO();
+		
+		MesHumanDTO dto1 = new MesHumanDTO();
+		dto1 = dao.selectOne(emp_id);
+
+		return dto1;
+	}
+	
+	public int remove(int emp_id) {
+		MesHumanDAO dao = new MesHumanDAO();
+		return dao.deleteOne(emp_id);
+	}
 }
