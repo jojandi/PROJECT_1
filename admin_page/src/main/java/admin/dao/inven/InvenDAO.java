@@ -1,4 +1,4 @@
-package admin.daoinven;
+package admin.dao.inven;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

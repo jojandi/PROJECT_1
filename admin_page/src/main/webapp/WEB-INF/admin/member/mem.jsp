@@ -53,7 +53,7 @@
 										<tr>
 											<td><input type="checkbox" class="rowCheckbox"
 												name="selectedMembers" value="Joe123"></td>
-											<td>${list.user_name}</td>
+											<td><a href="member_?seq=${list.user_seq}">${list.user_name}</a></td>
 											<td>${list.user_birth}</td>
 											<td>${list.user_id}</td>
 											<td>${list.user_tel}</td>

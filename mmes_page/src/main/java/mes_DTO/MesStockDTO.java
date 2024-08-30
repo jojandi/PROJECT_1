@@ -14,7 +14,23 @@ public class MesStockDTO {
 	private String wh_add;
 	private Date order_date;
 	private String order_id;
-	private long order_price;
+	private long order_price; // 총 금액
+	private long order_count;	// 총 주문 개수
+	private String pub_id;
+	
+	
+	public String getPub_id() {
+		return pub_id;
+	}
+	public void setPub_id(String pub_id) {
+		this.pub_id = pub_id;
+	}
+	public long getOrder_count() {
+		return order_count;
+	}
+	public void setOrder_count(long order_count) {
+		this.order_count = order_count;
+	}
 	@Override
 	public String toString() {
 		return "MesStockDTO [book_isbn=" + book_isbn + ", book_name=" + book_name + ", book_author=" + book_author
