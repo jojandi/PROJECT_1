@@ -1,5 +1,7 @@
 package mes_DTO;
 
+import java.util.Date;
+
 public class MesStockDTO {
 	private long book_isbn;
 	private String book_name;
@@ -10,6 +12,63 @@ public class MesStockDTO {
 	private String wh_code;
 	private String wh_name;
 	private String wh_add;
+	private Date order_date;
+	private String order_id;
+	private long order_price;
+	@Override
+	public String toString() {
+		return "MesStockDTO [book_isbn=" + book_isbn + ", book_name=" + book_name + ", book_author=" + book_author
+				+ ", book_pub=" + book_pub + ", book_img=" + book_img + ", book_count=" + book_count + ", wh_code="
+				+ wh_code + ", wh_name=" + wh_name + ", wh_add=" + wh_add + ", order_date=" + order_date + ", order_id="
+				+ order_id + ", order_price=" + order_price + ", order_st=" + order_st + ", mes_book_code="
+				+ mes_book_code + ", emp_name=" + emp_name + ", pub_name=" + pub_name + "]";
+	}
+	private String order_st;
+	private long mes_book_code;
+	public Date getOrder_date() {
+		return order_date;
+	}
+	public void setOrder_date(Date order_date) {
+		this.order_date = order_date;
+	}
+	public String getOrder_id() {
+		return order_id;
+	}
+	public void setOrder_id(String order_id) {
+		this.order_id = order_id;
+	}
+	public long getOrder_price() {
+		return order_price;
+	}
+	public void setOrder_price(long order_price) {
+		this.order_price = order_price;
+	}
+	public String getOrder_st() {
+		return order_st;
+	}
+	public void setOrder_st(String order_st) {
+		this.order_st = order_st;
+	}
+	public long getMes_book_code() {
+		return mes_book_code;
+	}
+	public void setMes_book_code(long mes_book_code) {
+		this.mes_book_code = mes_book_code;
+	}
+	public String getEmp_name() {
+		return emp_name;
+	}
+	public void setEmp_name(String emp_name) {
+		this.emp_name = emp_name;
+	}
+	public String getPub_name() {
+		return pub_name;
+	}
+	public void setPub_name(String pub_name) {
+		this.pub_name = pub_name;
+	}
+	private String emp_name;
+	private String pub_name;
 	
 	
 	public long getBook_isbn() {

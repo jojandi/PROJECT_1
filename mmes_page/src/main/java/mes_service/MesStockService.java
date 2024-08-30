@@ -15,6 +15,12 @@ public class MesStockService {
 		
 		return list;
 	}
+	public List<MesStockDTO> getorderlist() {
+		
+		List<MesStockDTO> list = dao.selectOrder();
+		
+		return list;
+	}
 	
 		
 }

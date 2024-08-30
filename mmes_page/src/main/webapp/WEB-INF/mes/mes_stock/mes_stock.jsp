@@ -133,16 +133,26 @@
 								<thead>
 									<tr>
 										<th><input type="checkbox" id="p1_checkAll"></th>
-										<th class="sortable">도서명</th>
-										<th>도서 코드</th>
-										<th>저자</th>
-										<th>출판사</th>
-										<th>수량</th>
+										<th class="sortable">부품코드</th>
+										<th>발주ID</th>
+										<th>구매처</th>
+										<th>발주상태</th>
+										<th>담당자</th>
 										<th>발주일</th>
 									</tr>
 								</thead>
 								<tbody class="main_tbody">
-
+									<c:forEach var="tbl_order" items="${tbl_order}">
+									<tr>
+										<td><input type="checkbox" id="p1_checkAll"></th>
+										<td class="sortable">${tbl_order.mes_book_code }</th>
+										<td>${tbl_order.order_id }</th>
+										<td>${tbl_order.pub_name }</th>
+										<td>${tbl_order.order_st }</th>
+										<td>${tbl_order.emp_name }</th>
+										<td>${tbl_order.order_date }</th>
+									</tr>
+								</c:forEach>
 								</tbody>
 							</table>
 
