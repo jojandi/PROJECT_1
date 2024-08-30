@@ -105,10 +105,19 @@ section #information #miniInfo #num{
     margin-bottom: 10px;
 }
 
-section #information #miniInfo #out{
+section #information #miniInfo #logout{
     font-size: 13px;
     text-decoration: underline;
     cursor: pointer;
+    margin-right: 10px;
+}
+
+section #information #miniInfo #realout{
+    font-size: 13px;
+    text-decoration: underline;
+    cursor: pointer;
+    border: none;
+    background: white;
 }
 
 section #information #infoedit{
@@ -191,12 +200,7 @@ section #information #infoedit #info2 table input[type=text]{
     height: 18px;
 }
 
-section #information #infoedit #info2 #realout{
-    margin-top: 20px;
-    font-size: 13px;
-    text-decoration: underline;
-    cursor: pointer;
-}
+
 
 
 section #information #booksub{

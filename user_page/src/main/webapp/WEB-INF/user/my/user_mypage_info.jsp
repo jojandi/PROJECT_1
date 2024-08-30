@@ -28,7 +28,13 @@
                     <div id="nickname">조잔디</div>
                     <div id="email">cutecat@naver.com</div>
                     <div id="num">회원번호 : 202121313</div>
-                    <div id="out">로그아웃</div>
+                    <div id="out">
+                    	<form method="post" action="user_del">
+		                    <span id="logout">로그아웃</span>
+		                    <input type="heddin" name="code" value="${dto.user_seq}">
+                    		<input type="submit" value="회원탈퇴" id="realout">
+                    	</form>
+                    </div>
                 </div>
 
                 <div id="booksub">
@@ -122,8 +128,6 @@
 	                        <input type="submit" value="변경하기">
                         </div>
                     </form>
-
-                        <div id="realout">회원탈퇴</div>
 
                     </div>
 

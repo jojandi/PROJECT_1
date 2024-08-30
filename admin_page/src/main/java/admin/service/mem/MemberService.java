@@ -2,8 +2,8 @@ package admin.service.mem;
 
 import java.util.List;
 
-import admin.dao.mem.MemberDAO;
-import admin.dto.mem.MemberDTO;
+import admin.DAO.mem.MemberDAO;
+import admin.DTO.mem.MemberDTO;
 
 public class MemberService {
 	
