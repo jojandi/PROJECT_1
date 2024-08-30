@@ -29,14 +29,14 @@
     display: inline-block;
     vertical-align: bottom;
     box-sizing: border-box;
-    height: 55px;
-    width: 55px;
-    border: 1px solid 106, 170, 82;
-    line-height: 40px;
+    height: 56px;
+    width: 56px;
+    border: none;
     font-size: 40px;
     text-align: center;
     color: rgba(255, 255, 255, 0.867);
     background-color: rgb(106, 170, 82);
+    cursor: pointer;
 }
 
 .searchEnd{
@@ -44,26 +44,36 @@
     margin-top: 30px;
 }
 
+.searchEnd .books{
+	padding: 0 50px;
+}
+
 .searchEnd .books table{
     margin: 0 auto;
     border-collapse: collapse;
-    width: 90%;
+    width: 100%;
     border-bottom: 2px solid #ccc;
+    padding: 0 15px;
 }
 
 .searchEnd .books table td{
+	padding: 5px 12px;
     text-align: left;
-    padding-left: 20px;
 }
 
 
 .searchEnd .books table .bookBnt{
     text-align: center;
+    width: 130px;
+    padding-top: 130px;
+}
+
+.searchEnd .books table .imge{
     width: 150px;
 }
 
 .searchEnd .books table img{
-    width: 180px;
+    width: 100%;
 }
 
 .searchEnd .books table .bookBnt [type=button]{
@@ -73,9 +83,10 @@
     border-radius: 5%;
     background: rgb(165, 224, 144);
     border: 1px solid rgb(106, 170, 82);
+    cursor: pointer;
 }
 
-.searchEnd .books table .bookBnt .invenBnt{
+.searchEnd .books table .bookBnt .reserBnt{
     background: white;
     border: 1px solid rgb(106, 170, 82);
 }
@@ -94,9 +105,10 @@
 }
 
 .searchEnd .books table .bookTitle{
+	padding-top: 25px;
     font-size: 20px;
     font-weight: 900;
-    height: 50px;
+    line-height: 20px;
 }
 
 .searchEnd .books table .information{
@@ -111,7 +123,8 @@
 }
 
 .searchEnd .books table .information .review{
-    margin-top: 20px;
+	color: rgb(65, 65, 65);
+    margin-top: 10px;
 }
 
 .searchEnd .books table .bookInfo{
@@ -127,88 +140,17 @@
     'opsz' 24
 }
 
-.searchEnd .books .new{
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid rgb(51, 51, 51);
-    width: 500px;
-    text-align: left;
-    position: absolute;
-    bottom: 200px;
-    left: 400px;
-    z-index: 100;
-    display: none;
+
+.searchEnd .books .realInven{
+   font-size: 15px;
 }
 
-.searchEnd .books .new .invenLibrary{
-    padding: 15px;
-    border-bottom: 1px solid #ccc;
-}
-
-.searchEnd .books .new .invenLibrary .library{
-    font-size: 18px;
-    font-weight: 900;
-}
-
-.searchEnd .books .new .invenLibrary .addr,
-.searchEnd .books .new .invenLibrary .call{
-    font-size: 13px;
-    color: gray;
-    display: inline-block;
-    margin-right: 7px;
-}
-
-.searchEnd .books .new .invenLibrary .material-symbols-outlined{
-    vertical-align: bottom;
-    font-size: 13px;
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-}
-
-.searchEnd .books .new .invenLibrary .realInven{
-   margin-top: 5px; 
-   margin-left: 15px;
-   font-size: 17px;
-}
-
-.searchEnd .books .new .invenLibrary .realInven span{
+.searchEnd .books .realInven span{
     font-size: 21px;
     margin-left: 3px;
-    color: red;
+    color: rgb(106, 170, 82);
     font-weight: 900;
 }
 
-.searchEnd .books .new .close{
-    text-align: right;
-    margin-top: 15px;
-    margin-right: 15px;
-}
 
-.searchEnd .books .new .close .material-symbols-outlined{
-    font-size: 26px;
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-}
 
-.searchEnd .books .new .library_{
-    display: inline-block;
-    width: 80%;
-    /* border: 1px solid red; */
-}
-
-.searchEnd .books .new .btnbox{
-    display: inline-block;
-    width: 15%;
-    text-align: center;
-}
-
-.searchEnd .books .new .btnbox .realReserBnt{
-    padding: 5px;
-    width: 80px;
-}

@@ -40,50 +40,6 @@ public class MesNoticeDAO {
 		return con;
 	}
 
-	public int insert(MesNoticeDTO NoticeDTO) {
-
-		int result = -1;
-
-		try {
-
-			// Servers 폴더의 context.xml에서
-			// name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
-			Context ctx = new InitialContext();
-			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
-			// DB접속 : 커넥션풀을 사용해서
-			Connection con = dataFactory.getConnection();
-
-			// SQL 준비
-			String query = " INSERT INTO NOTICE (notice_id, notice_name, notice_date, notice_contents)";
-			query += " VALUES (notice_seq.NEXTVAL, ?, ?, ?)";
-
-			// PreparedStatement ps = con.prepareStatement(query);
-			// 원래 실행되는 걸 LoggableStatement가 가로채서
-			PreparedStatement ps = new LoggableStatement(con, query);
-
-			ps.setInt(1, NoticeDTO.getNotice_id());
-
-			ps.setString(2, NoticeDTO.getNotice_name());
-
-			ps.setDate(3, NoticeDTO.getNotice_date());
-
-			ps.setString(4, NoticeDTO.getNotice_contents());
-
-			// 실제 실행되는 sql을 출력해볼 수 있다
-			System.out.println(((LoggableStatement) ps).getQueryString());
-
-			// SQL 실행
-			result = ps.executeUpdate();
-
-			ps.close();
-			con.close();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
-		return result;
-	}
 
 	public List selectNotice() {
 		List list = new ArrayList();
@@ -145,7 +101,8 @@ public class MesNoticeDAO {
 		try {
 
 			// sql 준비
-			String query = " select * from notice where notice_id = ?";
+			String query = " select * from notice join employee using(emp_id)";
+			query += "where notice_id = ?";
 			PreparedStatement ps = con.prepareStatement(query);
 
 			ps.setInt(1, Notice_id);
@@ -158,7 +115,7 @@ public class MesNoticeDAO {
 				
 				NoticeDTO.setNotice_id( rs.getInt("notice_id") );
 				NoticeDTO.setNotice_name( rs.getString("notice_name") );
-//				NoticeDTO.setEmp_name( rs.getString("emp_name") );
+				NoticeDTO.setEmp_name( rs.getString("emp_name") );
 				NoticeDTO.setNotice_date( rs.getDate("notice_date") );
 				NoticeDTO.setNotice_contents( rs.getString("notice_contents") );
 				
@@ -169,6 +126,53 @@ public class MesNoticeDAO {
 		}
 		return NoticeDTO;
 
+	}
+	
+	public int insert(MesNoticeDTO NoticeDTO) {
+
+		int result = -1;
+
+		try {
+
+			// Servers 폴더의 context.xml에서
+			// name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// DB접속 : 커넥션풀을 사용해서
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = " INSERT INTO NOTICE (notice_id, notice_name, notice_contents, notice_date, emp_id)";
+			query += " VALUES (notice_seq.NEXTVAL, ?, ?, sysdate, 6)";
+
+			// PreparedStatement ps = con.prepareStatement(query);
+			// 원래 실행되는 걸 LoggableStatement가 가로채서
+			PreparedStatement ps = new LoggableStatement(con, query);
+
+//			ps.setInt(1, NoticeDTO.getNotice_id());
+
+			ps.setString(1, NoticeDTO.getNotice_name());
+
+			ps.setString(2, NoticeDTO.getNotice_contents());
+
+//			ps.setInt(3, NoticeDTO.getNotice_id());
+			
+//			ps.setDate(4, NoticeDTO.getNotice_date());
+
+			// 실제 실행되는 sql을 출력해볼 수 있다
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			// SQL 실행
+			result = ps.executeUpdate();
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 
 }

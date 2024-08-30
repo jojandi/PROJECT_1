@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import mes_DTO.MesNoticeDTO;
 import mes_service.MesNoticeService;
 
-@WebServlet("/notice/read")
+@WebServlet("/notice_read")
 public class MesNoticeReadController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -24,9 +24,11 @@ public class MesNoticeReadController extends HttpServlet {
 		MesNoticeService NoticeService = new MesNoticeService();
 		MesNoticeDTO NoticeDTO = NoticeService.One(notice_id);
 		
+		System.out.println("asdf : " + NoticeDTO);
+		
 		request.setAttribute("read", NoticeDTO);
 		
-		request.getRequestDispatcher("WEB-INF/mes/mes_notice/mes_noticeRead").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/mes/mes_notice/mes_noticeRead.jsp").forward(request, response);
 		
 	}
 
