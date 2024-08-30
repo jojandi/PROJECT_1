@@ -9,7 +9,22 @@ public class SearchDTO {
 	private String book_img;
 	private String book_pub;
 	private int count;
+	private boolean book_loan;
+	private boolean book_res;
 	
+	
+	public boolean isBook_loan() {
+		return book_loan;
+	}
+	public void setBook_loan(boolean book_loan) {
+		this.book_loan = book_loan;
+	}
+	public boolean isBook_res() {
+		return book_res;
+	}
+	public void setBook_res(boolean book_res) {
+		this.book_res = book_res;
+	}
 	public int getCount() {
 		return count;
 	}
@@ -63,6 +78,7 @@ public class SearchDTO {
 	public String toString() {
 		return "InvenDTO [book_code=" + book_code + ", li_book_info=" + li_book_info + ", book_ISBN=" + book_ISBN
 				+ ", book_name=" + book_name + ", book_author=" + book_author + ", book_img=" + book_img + ", book_pub="
-				+ book_pub + "]";
+				+ book_pub + ", count=" + count + ", book_loan=" + book_loan + ", book_res=" + book_res + "]";
 	}
+	
 }

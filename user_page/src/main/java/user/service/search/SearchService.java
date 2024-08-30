@@ -7,7 +7,7 @@ import user.dao.search.SearchDAO;
 
 public class SearchService {
 	
-	public List bookList(String book_name) {
-		return new SearchDAO().bookList(book_name);
+	public List search(String book_name) {
+		return new SearchDAO().bookSearch(book_name);
 	}
 }
