@@ -20,6 +20,7 @@ public class NotiController extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=utf-8;");
 
+<<<<<<< HEAD
         request.getRequestDispatcher("/WEB-INF/admin/notification/noti.jsp").forward(request, response);
 
 
@@ -35,3 +36,14 @@ public class NotiController extends HttpServlet {
 
 
     }
+=======
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	
+	}
+		
+		
+	}
+
+
+>>>>>>> 2fe1928b10e5913ad762d0e68d5c99fbf2130c87
