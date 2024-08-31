@@ -29,33 +29,11 @@ public class NotiController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		  String category = request.getParameter("notice_category");
-	        String title = request.getParameter("new_notice_title");
-	        String date = request.getParameter("new_notice_date");
-	        String content = request.getParameter("new_notice_content");
 
-	        // Create DTO
-	        NotificationDTO notification = new NotificationDTO();
-	        notification.setCategory(category);
-	        notification.setTitle(title);
-	        notification.setDate(date);
-	        notification.setContent(content);
-
-	        try {
-	            // Call service to add notification
-	            notificationService.addNotification(notification);
-	            // Redirect or forward to a success page
-	            response.sendRedirect("success.jsp");
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	            // Handle exception, e.g., redirect to an error page
-	            response.sendRedirect("error.jsp");
-	        }
-	    }
+	
 	}
 		
 		
 	}
 
-}
+
