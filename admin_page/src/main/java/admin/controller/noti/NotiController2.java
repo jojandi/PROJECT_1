@@ -9,23 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import admin.DAO.noti.NoticeDAO;
 
-@WebServlet("/admin/noti")
-public class NotiController extends HttpServlet {
+
+@WebServlet("/admin/noti2")
+public class NotiController2 extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    
-    
 
+    private NoticeDAO noticeDAO = new NoticeDAO();
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항 doGet 실행!");
+        System.out.println("공지사항 목록 doGet 실행!");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=utf-8;");
 
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti.jsp").forward(request, response);
-
-
-
-
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
+        
+        String action = request.getParameter("action");
 
 
     }
