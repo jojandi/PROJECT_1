@@ -10,7 +10,11 @@ public class NoticeDTO {
     private String ann_attach;
 	
     
-    public int getAnn_seq() {
+    public NoticeDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public int getAnn_seq() {
 		return ann_seq;
 	}
 	public void setAnn_seq(int ann_seq) {
@@ -53,7 +57,6 @@ public class NoticeDTO {
 		this.ann_attach = ann_attach;
 	}   //첨부파일
 	
-	@Override
 	public String toString() {
 		return "noticeDTO [ann_seq=" + ann_seq + ", class_id=" + class_id + ", ann_title=" + ann_title + ", ann_regi="
 				+ ann_regi + ", ann_check=" + ann_check + ", ann_detail=" + ann_detail + ", ann_attach=" + ann_attach

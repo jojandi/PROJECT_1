@@ -29,4 +29,9 @@ public class NoticeService {
     public void addNotice(NoticeDTO noticeDTO) {
         noticeDAO.insertNotice(noticeDTO);
     }
+
+	public static List<NoticeDTO> getEmp() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

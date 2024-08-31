@@ -1,122 +1,102 @@
 package admin.controller.noti;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import admin.DAO.noti.NoticeDAO;
+import admin.DTO.notice.NoticeDTO;
+import admin.service.notice.NoticeService;
 
-
-@WebServlet("/admin/noti2")
+@WebServlet("/admin/noti")
 public class NotiController2 extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    private NoticeDAO noticeDAO = new NoticeDAO();
-    
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항 목록 doGet 실행!");
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html; charset=utf-8;");
 
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
-        
-//        String action = request.getParameter("action");
-//        
-//        PrintWriter out = response.getWriter();
-//        
-//        out.println("<!DOCTYPE html>");
-//        out.println("<html>");
-//        out.println("<head>");
-//        out.println("<meta charset=\"UTF-8\">");
-//        out.println("<title>Insert title here</title>");
-//        out.println("<link href=\"../assets/css/noti/noti.css\" rel=\"stylesheet\">");
-//        out.println("</head>");
-//        out.println("<body>");
-//        
-//        // Include header
-//        request.getRequestDispatcher("/WEB-INF/admin/base/a.header.jsp").include(request, response);
-//        
-//        out.println("<div id=\"wrap\">");
-//        
-//        // Include side menu
-//        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_side.jsp").include(request, response);
-//        
-//        out.println("<section class=\"notice\">");
-//        out.println("<div class=\"page-title\">");
-//        out.println("<div class=\"container\">");
-//        out.println("<h3>공지사항</h3>");
-//        out.println("</div>");
-//        out.println("</div>");
-//        
-//        out.println("<div id=\"board-search\">");
-//        out.println("<div class=\"container\">");
-//        out.println("<div class=\"search-window\">");
-//        out.println("<form action=\"\">");
-//        out.println("<div class=\"search-wrap\">");
-//        out.println("<label for=\"search\" class=\"blind\">공지사항목록</label>");
-//        out.println("<input id=\"search\" type=\"search\" name=\"\" placeholder=\"검색어를 입력해주세요.\" value=\"\">");
-//        out.println("<button type=\"submit\" class=\"btn btn-dark\">글쓰기</button>");
-//        out.println("</div>");
-//        out.println("</form>");
-//        out.println("</div>");
-//        out.println("</div>");
-//        out.println("</div>");
-//        
-//        out.println("<div id=\"board-list\">");
-//        out.println("<div class=\"container\">");
-//        out.println("<table class=\"board-table\">");
-//        out.println("<thead>");
-//        out.println("<tr>");
-//        out.println("<th scope=\"col\" class=\"th-num\">번호</th>");
-//        out.println("<th scope=\"col\" class=\"th-title\">제목</th>");
-//        out.println("<th scope=\"col\" class=\"th-date\">등록일</th>");
-//        out.println("</tr>");
-//        out.println("</thead>");
-//        out.println("<tbody>");
-//        
-//        out.println("<tr>");
-//        out.println("<td>3</td>");
-//        out.println("<th>[공지사항] 개인정보 처리방침 변경안내처리방침<p>테스트</p></th>");
-//        out.println("<td>2017.07.13</td>");
-//        out.println("</tr>");
-//        
-//        out.println("<tr>");
-//        out.println("<td>2</td>");
-//        out.println("<th>공지사항 안내입니다. 이용해주셔서 감사합니다</th>");
-//        out.println("<td>2017.06.15</td>");
-//        out.println("</tr>");
-//        
-//        out.println("<tr>");
-//        out.println("<td>1</td>");
-//        out.println("<th>공지사항 안내입니다. 이용해주셔서 감사합니다</th>");
-//        out.println("<td>2017.06.15</td>");
-//        out.println("</tr>");
-//        
-//        out.println("</tbody>");
-//        out.println("</table>");
-//        out.println("</div>");
-//        out.println("</div>");
-//        
-//        out.println("</section>");
-//        out.println("</div>");
-//        
-//        // Include footer
-//        request.getRequestDispatcher("/WEB-INF/admin/base/a.footer.jsp").include(request, response);
-//        
-//        out.println("</body>");
-//        out.println("</html>");
-//        
-//        out.close();
+
+    // 공지사항 목록 조회 시 사용하는 리스트
+    private List<NoticeDTO> noticeList;
+
+//    public void init() throws ServletException {
+//        super.init();
+//        // 초기화 블록에서 데이터 불러오기
+//        noticeList = NoticeService.getEmp();  // EmpService에서 공지사항 리스트를 가져옴
 //    }
-//        
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "list";
+        }
 
+        switch (action) {
+            case "list":
+                listNotices(request, response);
+                break;
+            case "detail":
+                detailNotice(request, response);
+                break;
+            case "createForm":
+                showCreateForm(request, response);
+                break;
+            default:
+                listNotices(request, response);
+                break;
+        }
     }
 
+    // 공지사항 목록 조회
+    private void listNotices(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setAttribute("notices", noticeList);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti.jsp").forward(request, response);
+    }
 
+    // 공지사항 상세 조회
+    private void detailNotice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int annSeq = Integer.parseInt(request.getParameter("ann_seq"));
+        NoticeDTO notice = noticeList.stream()
+                                     .filter(n -> n.getAnn_seq() == annSeq)
+                                     .findFirst()
+                                     .orElse(null);
+
+        if (notice == null) {
+            response.sendRedirect("noti?action=list");
+            return;
+        }
+
+        request.setAttribute("notice", notice);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_detail.jsp").forward(request, response);
+    }
+
+    // 공지사항 작성 폼 보여주기
+    private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_create.jsp").forward(request, response);
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if ("create".equals(action)) {
+            createNotice(request, response);
+        } else {
+            doGet(request, response);
+        }
+    }
+
+    // 공지사항 작성 처리
+    private void createNotice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
+
+        String classId = request.getParameter("class_id");
+        String title = request.getParameter("ann_title");
+        String regiDate = request.getParameter("ann_regi");
+        String detail = request.getParameter("ann_detail");
+        String attach = request.getParameter("ann_attach");
+
+
+        response.sendRedirect("noti?action=list");
+    }
 }

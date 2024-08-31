@@ -50,7 +50,6 @@ public class NoticeDTO2 {
 	public void setWriter(String writer) {
 		this.writer = writer;
 	}
-	@Override
 	public String toString() {
 		return "NoticeDTO2 [writeNum=" + writeNum + ", title=" + title
 				+ ", content=" + content + ", regDate=" + regDate + ", hitNum="

@@ -29,7 +29,10 @@
 					<input type="text" id="new_notice_title" name="new_notice_title" placeholder="공지사항 제목">
 					<input type="date" id="new_notice_date" name="new_notice_date">
 					<textarea id="new_notice_content" name="new_notice_content" rows="5" placeholder="공지사항 내용"></textarea>
-					<button type="submit">공지 사항 추가</button>
+					 <input type='file' id='boardfile'>
+					<a href="noti2" style="text-decoration: none;">
+    				<button type="button">공지 사항 추가</button></a>
+
 				</form>
 			</div>
 		</div>

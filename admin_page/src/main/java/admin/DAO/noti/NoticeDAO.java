@@ -17,6 +17,7 @@ import admin.DTO.notice.NoticeDTO;
 public class NoticeDAO {
 
 	private static final Statement DBConnection = null;
+	
 	// db 공지사항에서 공지사항 내역을 가져와서 돌려준다
 	public List selectAnnounce() {
 		List list = new ArrayList();
