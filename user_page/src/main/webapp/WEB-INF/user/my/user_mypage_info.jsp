@@ -30,8 +30,8 @@
                     <div id="num">회원번호 : 202121313</div>
                     <div id="out">
                     	<form method="post" action="user_del">
-		                    <span id="logout">로그아웃</span>
-		                    <input type="heddin" name="code" value="${dto.user_seq}">
+		                    <a href="logout" id="logout">로그아웃</a>
+		                    <input type="hidden" name="code" value="${dto.user_seq}">
                     		<input type="submit" value="회원탈퇴" id="realout">
                     	</form>
                     </div>

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +11,8 @@
 <link href="../assets/css/base/user_base.css" rel="stylesheet">
 </head>
 <body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 	<!-- 가장 위 고정 -->
     <header id="top" class="clearfix">
                 
@@ -24,20 +29,22 @@
                 <a href="notice" class="item" id="i3">정보광장</a>
                 <a href="mypage_use" class="item" id="i4">마이페이지</a>
             </div>
-
-            <div class="right" id="userall">
-                <a href="login" class="inb" id="login">로그인</a>
-                <div class="inb">|</div>
-                <a href="join" class="inb" id="userin">회원가입</a>
-            </div>
-
-            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-            <!-- <div class="right" id="userall">
-                <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
-                <span class="material-symbols-outlined">person</span>
-            </div> -->
+            
+			<c:if test="${ not empty login }">
+				<div class="right" id="userall"y>
+					<span class="inb" id="user">${ login.user_name }님</span>
+	                <span class="material-symbols-outlined">person</span>
+				</div>
+			</c:if>
+			<c:if test="${ empty login }">
+				<div class="right" id="userall">
+	                <a href="login" class="inb" id="login">로그인</a>
+	                <div class="inb">|</div>
+	                <a href="join" class="inb" id="userin">회원가입</a>
+            	</div>
+			</c:if>
+			
         </div>
-        <script src="./00.user_base.js"></script>
         
     </header>
 </body>
