@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 import admin.DTO.notice.NoticeDTO;
 
-public class NoticeDAO {
+public class NoticeDAO2 {
 
     // DB 연결을 위한 메서드
     private Connection getConnection() throws Exception {
@@ -32,7 +32,6 @@ public class NoticeDAO {
 
             while (rs.next()) {
                 NoticeDTO noticeDTO = new NoticeDTO();
-
                 noticeDTO.setAnn_seq(rs.getInt("ann_seq"));
                 noticeDTO.setClass_id(rs.getString("class_id"));
                 noticeDTO.setAnn_title(rs.getString("ann_title"));
@@ -40,7 +39,6 @@ public class NoticeDAO {
                 noticeDTO.setAnn_check(rs.getInt("ann_check"));
                 noticeDTO.setAnn_detail(rs.getString("ann_detail"));
                 noticeDTO.setAnn_attach(rs.getString("ann_attach"));
-
                 list.add(noticeDTO);
             }
 
@@ -61,7 +59,6 @@ public class NoticeDAO {
             try (ResultSet rs = pstmt.executeQuery()) {
                 if (rs.next()) {
                     noticeDTO = new NoticeDTO();
-
                     noticeDTO.setAnn_seq(rs.getInt("ann_seq"));
                     noticeDTO.setClass_id(rs.getString("class_id"));
                     noticeDTO.setAnn_title(rs.getString("ann_title"));
@@ -80,18 +77,18 @@ public class NoticeDAO {
 
     // 공지사항 추가 메서드
     public void insertNotice(NoticeDTO noticeDTO) {
-        String sql = "INSERT INTO announcement (ann_seq, class_id, ann_title, ann_regi, ann_check, ann_detail, ann_attach) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO announcement (ann_seq, class_id, ann_title, ann_regi, ann_check, ann_detail, ann_attach) "
+                   + "VALUES (announcement_seq.NEXTVAL, ?, ?, ?, ?, ?, ?)"; // SEQUENCE 사용
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, noticeDTO.getAnn_seq());
-            pstmt.setString(2, noticeDTO.getClass_id());
-            pstmt.setString(3, noticeDTO.getAnn_title());
-            pstmt.setString(4, noticeDTO.getAnn_regi());
-            pstmt.setInt(5, noticeDTO.getAnn_check());
-            pstmt.setString(6, noticeDTO.getAnn_detail());
-            pstmt.setString(7, noticeDTO.getAnn_attach());
+            pstmt.setString(1, noticeDTO.getClass_id());
+            pstmt.setString(2, noticeDTO.getAnn_title());
+            pstmt.setString(3, noticeDTO.getAnn_regi());
+            pstmt.setInt(4, noticeDTO.getAnn_check());
+            pstmt.setString(5, noticeDTO.getAnn_detail());
+            pstmt.setString(6, noticeDTO.getAnn_attach());
 
             pstmt.executeUpdate();
 
