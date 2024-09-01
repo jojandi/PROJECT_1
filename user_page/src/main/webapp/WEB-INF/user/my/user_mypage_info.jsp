@@ -21,7 +21,7 @@
         <section id="info">
 
             <div id="stitle">
-                <h3>조잔디님의 정보</h3>
+                <h3>${ login.user_name }님의 정보</h3>
             </div>
             
             <!-- 기본정보 -->
@@ -125,37 +125,77 @@
                             <tr>
                                 <td class="center">이름</td>
                                 <td>
-                                    <span id="in1">
-                                        ${ login.user_name }
-                                    </span>
                                     <input type="text" id=nick name="name" value="${ login.user_name }">
-                                    <input type="button" class="right" id="nickBtn" value="변경">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">아이디</td>
                                 <td>
-                                    ${ login.user_id }
+                                    <input type="text" id=number name="id" value="${ login.user_id }">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">비밀번호</td>
                                 <td id="pwedit">
                                     <span id="in2">
-                                        <input type="password" id="pweditIn" value="${ login.user_pw }">
+                                        <input type="password" name="pw" id="pweditIn" value="${ login.user_pw }">
                                     </span>
-                                    <input type="button" class="right" id="pweditBtn" value="변경">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">전화번호</td>
                                 <td>
-                                    <span id="in3">${ login.user_tel }</span>
-                                    <!-- <input type="text" id=number>
-                                    <input type="button" class="right" id="numBnt" value="변경"> -->
+                                    <input type="text" id=tel name="tel" value="${ login.user_tel }">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">이메일</td>
+                                <td>
+                                	<% 
+                                		String email = "mg220518@gmail.com";
+                                		String[] emailArr = email.split("@");
+                                		
+                                		System.out.println("이메일 : " + emailArr[0]);
+                                		System.out.println("이메일 : " + emailArr[1]);
+                                		
+                                		String mail = emailArr[0];
+                                		String domain = emailArr[1];
+                                	%>
+                                    <input class="email-input" type="text" value=<%=mail%> id="email-user" name="user_email">
+									<span class="email-domain">@</span>
+									<input class="email-input" type="text" value=<%=domain%> id="email-domain" name="domain">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">주소</td>
+                                <td>
+									<div class="gaip">
+                                    <input type="text" id="addressnum" name="addressnum" placeholder="우편번호">
+										<input type="button" value="검색" onclick="execDaumPostcode()">
+									</div>
+									<input type="text" id="address" name="address" value="${ login.user_addr1 }">
+									<input type="text" id="addressinfo" name="addressinfo" value="${ login.user_addr2 }">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="center">선호도</td>
+                                <td>
+                                    <input type="radio" id="hre1" name="like" value="1">언론
+									<input type="radio" id="hre2" name="like" value="2">소설
+									<input type="radio" id="hre3" name="like" value="3">역사
+									<input type="radio" id="hre4" name="like" value="4">인문학
+									<input type="radio" id="hre5" name="like" value="5">자기계발
+									<input type="radio" id="hre6" name="like" value="6">무협
+									<br>
+									<input type="radio" id="hre7" name="like" value="7">만화
+									<input type="radio" id="hre8" name="like" value="8">판타지
+									<input type="radio" id="hre9" name="like" value="9">로맨스
+									<input type="radio" id="hre10" name="like" value="10">추리
+									<input type="radio" id="hre11" name="like" value="11">스릴러
                                 </td>
                             </tr>
                         </table>
+                        <input type="hidden" name="seq" value="${ login.user_seq }">
                         <div id=update>
 	                        <input type="submit" value="변경하기">
                         </div>
@@ -169,6 +209,19 @@
 
         </section>
 
+		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+		<script>
+		    function execDaumPostcode() {
+		        new daum.Postcode({
+		            oncomplete: function(data) {
+		                // 선택한 주소 정보를 입력한 필드에 넣기
+		                document.getElementById('addressnum').value = data.zonecode; // 우편번호
+		                document.getElementById('address').value = data.address; // 기본주소
+		                document.getElementById('addressinfo').focus();
+		            }
+		        }).open();
+		    }
+		</script>
         <script src="../assets/js/my/mypage_info.js"></script>
     <!-- wrap -->
     </div>
