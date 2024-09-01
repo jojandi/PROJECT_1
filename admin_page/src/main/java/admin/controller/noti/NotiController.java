@@ -2,35 +2,38 @@ package admin.controller.noti;
 
 import java.io.IOException;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.tomcat.util.descriptor.web.ContextService;
-
 import admin.DTO.notice.NoticeDTO;
+import admin.service.EmpService;  // EmpService를 import해야 합니다
 
 @WebServlet("/admin/noti")
 public class NotiController extends HttpServlet {
     private static final long serialVersionUID = 1L;
+ 
 
     // EmpService 인스턴스 생성
-    private ContextService empService = new ContextService();
+    private EmpService empService = new EmpService();
 
     // 공지사항 목록 조회 시 사용하는 리스트
     private List<NoticeDTO> noticeList;
 
-//    public void init() throws ServletException {
-//        super.init();
-//        // 초기화 블록에서 데이터 불러오기
-//        noticeList = ((Object) empService).();  // EmpService에서 공지사항 리스트를 가져옴
-//    }
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        // 초기화 블록에서 데이터 불러오기
+        noticeList = empService.getNoticeList();  // EmpService에서 공지사항 리스트를 가져옴
+    }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
+        System.out.println("공지사항 살행");
+    	
+    	String action = request.getParameter("action");
         if (action == null) {
             action = "list";
         }
@@ -79,6 +82,7 @@ public class NotiController extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/admin/notification/noti_create.jsp").forward(request, response);
     }
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if ("create".equals(action)) {
@@ -98,6 +102,8 @@ public class NotiController extends HttpServlet {
         String detail = request.getParameter("ann_detail");
         String attach = request.getParameter("ann_attach");
 
+        // 여기에 공지사항 생성을 처리하는 로직을 추가해야 합니다.
+        // 예를 들어, NoticeDTO 객체를 만들고 empService의 메서드를 호출하여 공지사항을 저장할 수 있습니다.
 
         response.sendRedirect("noti?action=list");
     }
