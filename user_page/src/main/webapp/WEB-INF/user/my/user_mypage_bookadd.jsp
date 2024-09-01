@@ -20,7 +20,7 @@
         <section id="min">
 
             <div id="stitle">
-                <h3>조잔디님의 도서 신청 내역</h3>
+                <h3>${ login.user_name }님의 도서 신청 내역</h3>
             </div>
 
             <div id="t1" class="table">
