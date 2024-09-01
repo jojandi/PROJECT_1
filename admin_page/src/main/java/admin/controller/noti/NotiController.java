@@ -60,8 +60,9 @@ public class NotiController extends HttpServlet {
         newNotice.setAnn_regi(java.time.LocalDate.now().toString());
         newNotice.setAnn_check(0);
 
-        noticeService.addNotice(newNotice);
-
         response.sendRedirect(request.getContextPath() + "/admin/noti2");
+    }
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     }
 }
