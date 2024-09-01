@@ -2,13 +2,16 @@ package admin.controller.noti;
 
 import java.io.IOException;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
+
 
 @WebServlet("/admin/noti2")
 public class NotiController2 extends HttpServlet {
@@ -16,6 +19,7 @@ public class NotiController2 extends HttpServlet {
 
     private NoticeService noticeService = new NoticeService();
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("공지사항2 doGet 실행!");
         request.setCharacterEncoding("utf-8");
@@ -58,7 +62,8 @@ public class NotiController2 extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/admin/notification/noti_detail.jsp").forward(request, response);
     }
     
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // 필요에 따라 추가적인 처리
+        // POST 요청 처리 로직을 추가할 수 있습니다. 필요에 따라 구현합니다.
     }
 }
