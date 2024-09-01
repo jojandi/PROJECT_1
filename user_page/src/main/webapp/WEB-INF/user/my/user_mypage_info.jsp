@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,13 +28,13 @@
             <div id="information">  
                 <div id="miniInfo"> 
                     <div id="profile"></div>
-                    <div id="nickname">조잔디</div>
-                    <div id="email">cutecat@naver.com</div>
-                    <div id="num">회원번호 : 202121313</div>
+                    <div id="nickname">${ login.user_name }</div>
+                    <div id="email">${ login.user_email }</div>
+                    <div id="num">회원번호 : ${ login.user_seq }</div>
                     <div id="out">
                     	<form method="post" action="user_del">
 		                    <a href="logout" id="logout">로그아웃</a>
-		                    <input type="hidden" name="code" value="${dto.user_seq}">
+		                    <input type="hidden" name="code" value="${login.user_seq}">
                     		<input type="submit" value="회원탈퇴" id="realout">
                     	</form>
                     </div>
@@ -44,7 +47,7 @@
 
                     <div id="bookuser">
                         <div id="bookall">
-                            <span>조잔디님의 이달의 추천 책</span>
+                            <span>${ login.user_name }님의 이달의 추천 책</span>
     
                             <div id="books">
                                 <table>
@@ -86,6 +89,35 @@
                         <input type="submit" id="pwBnt" value="확인">
                         <div id="pwerror">비밀번호를 확인해주세요</div>
                     </div>
+                    
+                    <script>
+	                    function info1On(){
+	
+	                        pwIn.addEventListener('keyup', function(event){
+	                            if(event.keyCode == 13){
+	                                pwBnt.click();
+	                            }
+	                        })
+	
+	                        pwBnt.addEventListener('click', function(){
+	
+	                            let pwIn = document.querySelector("#pwIn").value;
+	                            let pw = '${ login.user_pw }';
+	                            
+	                            console.log(pw)
+	                            console.log('비밀번호 확인 클릭!!!');
+	                            console.log(pwIn);
+	                            if(pwIn == pw){
+	                                info2.style.display = "block";
+	                                info1.style.display = "none";
+	                            } else{
+	                                pwerror.style.display = "block";
+	                            }
+	                        })
+	                    }
+	                    
+	                    info1On();
+                    </script>
 
                     <div id="info2">
                     <form method="post" action="update">
@@ -94,23 +126,23 @@
                                 <td class="center">이름</td>
                                 <td>
                                     <span id="in1">
-                                        조잔디
+                                        ${ login.user_name }
                                     </span>
-                                    <input type="text" id=nick name="name" value="조잔디">
+                                    <input type="text" id=nick name="name" value="${ login.user_name }">
                                     <input type="button" class="right" id="nickBtn" value="변경">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">아이디</td>
                                 <td>
-                                    user
+                                    ${ login.user_id }
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">비밀번호</td>
                                 <td id="pwedit">
                                     <span id="in2">
-                                        <input type="password" id="pweditIn" value="1234">
+                                        <input type="password" id="pweditIn" value="${ login.user_pw }">
                                     </span>
                                     <input type="button" class="right" id="pweditBtn" value="변경">
                                 </td>
@@ -118,9 +150,9 @@
                             <tr>
                                 <td class="center">전화번호</td>
                                 <td>
-                                    <span id="in3">010-0000-0000</span>
-                                    <input type="text" id=number value="010-0000-0000">
-                                    <input type="button" class="right" id="numBnt" value="변경">
+                                    <span id="in3">${ login.user_tel }</span>
+                                    <!-- <input type="text" id=number>
+                                    <input type="button" class="right" id="numBnt" value="변경"> -->
                                 </td>
                             </tr>
                         </table>

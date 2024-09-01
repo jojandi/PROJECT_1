@@ -21,30 +21,6 @@ let out = document.querySelector("#out")
 let realout = document.querySelector("#realout")
 let bookout = document.querySelector("#bookout")
 
-
-function info1On(){
-
-    pwIn.addEventListener('keyup', function(event){
-        if(event.keyCode == 13){
-            pwBnt.click();
-        }
-    })
-
-    pwBnt.addEventListener('click', function(){
-
-        let pwIn = document.querySelector("#pwIn").value;
-        
-        console.log('비밀번호 확인 클릭!!!');
-        console.log(pwIn);
-        if(pwIn == "1234"){
-            info2.style.display = "block";
-            info1.style.display = "none";
-        } else{
-            pwerror.style.display = "block";
-        }
-    })
-}
-
 function logout(){
     out.addEventListener('click', function(){
         let c = confirm("로그아웃 하시겠습니까?");
@@ -161,38 +137,8 @@ function edit(){
         }
     })
 
-
-    number.addEventListener('keyup', function(event){
-        if(event.keyCode == 13){
-            numBnt.click();
-        }
-    })
-
-    numBnt.addEventListener('click', function(){
-        in3.innerHTML="";
-        let click = in3.classList.contains("click");
-        if(click){
-            in3.innerHTML = number.value;
-
-            in3.classList.remove("click");
-            in3.style.display="inline-block";
-            number.style.display="none";
-            
-            console.log(number.value);
-            in3.innerHTML=number.value;
-        } else{
-            number.value="";
-
-            in3.style.display="none";
-            number.style.display="inline-block";
-            in3.classList.add("click");
-            console.log(number.value);
-        }
-    })
-
 }
 
 
-info1On();
 edit();
 logout()
