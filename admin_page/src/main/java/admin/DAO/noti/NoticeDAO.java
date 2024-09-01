@@ -71,6 +71,8 @@ public class NoticeDAO {
                     noticeDTO.setAnn_attach(rs.getString("ann_attach"));
                 }
             }
+            
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -99,4 +101,9 @@ public class NoticeDAO {
             e.printStackTrace();
         }
     }
+
+	public int insertNotice(NoticeDAO noticeDAO) {
+		return 0;
+	}
 }
+

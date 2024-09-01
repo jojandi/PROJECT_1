@@ -2,10 +2,10 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link href="../assets/css/noti/noti.css" rel="stylesheet">
 <head>
 <meta charset="UTF-8">
 <title>공지사항 추가</title>
+<link href="../assets/css/noti/noti.css" rel="stylesheet">
 </head>
 <body>
 	<%@ include file="/WEB-INF/admin/base/a.header.jsp"%>
@@ -19,7 +19,7 @@
 					<div id="admin_controls">
 						<h2>공지사항 추가</h2>
 
-						<form action="noti2" method="post">
+						<form action="noti2" method="post" enctype="multipart/form-data">
 							<input type="hidden" name="action" value="create">
 							<div id="con">
 								<select id="notice_category" name="class_id">
@@ -28,10 +28,10 @@
 								</select>
 							</div>
 							<input type="text" id="new_notice_title" name="ann_title"
-								placeholder="공지사항 제목"> <input type="date"
-								id="new_notice_date" name="ann_regi">
+								placeholder="공지사항 제목" required>
+							<input type="date" id="new_notice_date" name="ann_regi">
 							<textarea id="new_notice_content" name="ann_detail" rows="5"
-								placeholder="공지사항 내용"></textarea>
+								placeholder="공지사항 내용" required></textarea>
 							<input type='file' id='ann_attach' name='ann_attach'>
 							<button type="submit">공지사항 추가</button>
 						</form>

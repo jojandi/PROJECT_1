@@ -13,15 +13,15 @@ import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
 
-@WebServlet("/admin/noti2")
-public class NotiController2 extends HttpServlet {
+@WebServlet("/admin/noti3")
+public class NotiController3 extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private NoticeService noticeService = new NoticeService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항2 doGet 실행!");
+        System.out.println("공지사항3 doGet 실행!");
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=utf-8;");
 
@@ -46,7 +46,7 @@ public class NotiController2 extends HttpServlet {
     private void listNotices(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<NoticeDTO> noticeList = noticeService.getAllNotices();
         request.setAttribute("notices", noticeList);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti3.jsp").forward(request, response);
     }
 
     private void detailNotice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

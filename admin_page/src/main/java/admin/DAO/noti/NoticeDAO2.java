@@ -78,7 +78,7 @@ public class NoticeDAO2 {
     // 공지사항 추가 메서드
     public void insertNotice(NoticeDTO noticeDTO) {
         String sql = "INSERT INTO announcement (ann_seq, class_id, ann_title, ann_regi, ann_check, ann_detail, ann_attach) "
-                   + "VALUES (announcement_seq.NEXTVAL, ?, ?, ?, ?, ?, ?)"; // SEQUENCE 사용
+                   + "VALUES (announcement_seq.NEXTVAL, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
