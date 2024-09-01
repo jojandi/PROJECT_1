@@ -1,8 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
+
 
 #wrap {
     display: flex;
@@ -25,13 +21,13 @@ section h1 {
     padding-bottom: 10px;
 }
 
-/* 테이블 스타일 */
+
 table {
-    width: calc(100% - 80px); /* 테이블 폭을 100%에서 80px 줄여서 설정 */
+    width: calc(100% - 80px); 
     border-collapse: collapse;
     margin-bottom: 20px;
-    margin-left: 40px;  /* 왼쪽에서 더 많이 떨어지게 배치 */
-    margin-right: 40px; /* 오른쪽에서 더 많이 떨어지게 배치 */
+    margin-left: 40px;  
+    margin-right: 40px; 
 }
 
 th, td {
@@ -63,7 +59,7 @@ td a:hover {
     text-decoration: underline;
 }
 
-/* 반응형 디자인 */
+
 @media (max-width: 768px) {
     #wrap {
         flex-direction: column;
@@ -77,7 +73,7 @@ td a:hover {
 
     table {
         font-size: 14px;
-        width: calc(100% - 40px); /* 반응형에서 테이블 좌우 여백 조정 */
+        width: calc(100% - 40px); 
         margin-left: 20px;  
         margin-right: 20px;
     }
@@ -85,4 +81,67 @@ td a:hover {
     th, td {
         padding: 10px;
     }
+}
+
+/* aside CSS */
+aside #items .item .material-symbols-outlined{
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 5px;
+    float: right;
+
+   
+}
+aside #items #i3 .material-symbols-outlined{
+background-color: rgb(165, 224, 144);
+	
+}
+
+
+#side{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 20%;
+    /* border: 1px solid red; */
+}
+
+aside #sideleft{
+    float: left;
+    padding: 10px;
+}
+
+aside #title{
+    font-size: 22px;
+    margin: 0;
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: 1px solid #666666;
+}
+
+aside #items .item{
+    font-size: 16px;
+    padding: 10px 0;
+    width: 170px;
+    border-bottom: 1px solid #ccc;
+}
+
+aside #items .item a:link{
+    color: inherit;
+    text-decoration: none;
+}
+
+aside #items .item a:visited{
+    color: inherit;
+    text-decoration: none;
+}
+
+#wrap section {
+    width: 80%;
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-left: 30px;
+    /* border: 1px solid red; */
 }

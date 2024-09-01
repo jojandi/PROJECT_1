@@ -5,33 +5,26 @@ import java.util.List;
 import admin.DAO.noti.NoticeDAO;
 import admin.DTO.notice.NoticeDTO;
 
-public class NoticeService {
+public class NoticeService<TodoDTO> {
 
-    private NoticeDAO noticeDAO;
+    private NoticeDAO noticeDAO = new NoticeDAO();
 
-    public NoticeService() {
-        this.noticeDAO = new NoticeDAO();
-    }
-
-    // 공지사항 목록 조회 서비스
     public List<NoticeDTO> getAllNotices() {
-        List<NoticeDTO> notices = noticeDAO.selectAnnounce();
-        return notices;
+        return noticeDAO.selectAnnounce();
     }
 
-    // 공지사항 세부 조회 서비스
     public NoticeDTO getNoticeById(int ann_seq) {
-        NoticeDTO notice = noticeDAO.getNoticeById(ann_seq);
-        return notice;
+        return noticeDAO.getNoticeById(ann_seq);
     }
 
-    // 공지사항 추가 서비스
-    public void addNotice(NoticeDTO noticeDTO) {
-        noticeDAO.insertNotice(noticeDTO);
+        
+     // DAO에서 DB로 접속, insert 해줌
+        int register(TodoDTO todoDTO) {
+    		// DB에 insert
+    		NoticeDAO dao = new NoticeDAO();
+    		return dao.insertNotice(noticeDAO);
+    	}
+        
+        
     }
 
-	public static List<NoticeDTO> getEmp() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-}
