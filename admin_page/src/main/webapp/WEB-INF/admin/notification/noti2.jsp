@@ -35,7 +35,7 @@
 						<tr>
 							<td>${notice.ann_seq}</td>
 							<td>${notice.class_id}</td>
-							<td>${notice.ann_title}</td>
+							<td><a href="/admin_page/admin/noti?annSeq=${notice.ann_seq}">${notice.ann_title}</a></td>
 							<td>${notice.ann_regi}</td>
 							<td>${notice.ann_check}</td>
 							<td>${notice.ann_detail}</td>
