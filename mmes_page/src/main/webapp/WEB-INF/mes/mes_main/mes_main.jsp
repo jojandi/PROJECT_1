@@ -52,13 +52,7 @@
 
             <div id="hukwan">
             
-                <!-- <div id="librarys">   
-                    <div class="library" id="joong">중앙</div>
-                    <div class="library" id="ssang">쌍용</div>
-                    <div class="library" id="du">두정</div>
-                    <div class="library" id="sin">신방</div>
-                    <div class="library" id="cheong">청수</div>
-                </div> -->
+
                 <div id="calendar">
                     <div class="calHeader">
                         <h2 id="YearMonth">

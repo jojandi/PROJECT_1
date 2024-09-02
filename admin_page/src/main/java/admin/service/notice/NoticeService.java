@@ -19,12 +19,9 @@ public class NoticeService<TodoDTO> {
 
 
 	// 공지사항 삭제 메서드
-	public boolean deleteNoticeById(int annSeq) {
-		// 데이터베이스에서 공지사항을 ID로 삭제하는 로직을 여기에 구현
-		// 예시:
-		// boolean isDeleted = database.deleteNoticeById(annSeq);
-		// return isDeleted;
-		return true; // 임시로 삭제 성공 반환
+	public int delete (NoticeDTO NoticeDTO) {
+		
+		return this.noticeDAO.delete(NoticeDTO);
 
 	}
 

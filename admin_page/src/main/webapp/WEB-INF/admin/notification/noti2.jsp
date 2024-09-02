@@ -16,41 +16,42 @@
         <section>
             <h1>공지사항 게시판</h1>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>번호</th>
-                        <th>분류 ID</th>
-                        <th>제목</th>
-                        <th>등록일</th>
-                        <th>조회수</th>
-                        <th>내용</th>
-                        <th>첨부파일</th>
-                        <th>삭제</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- 공지사항 목록을 동적으로 표시 -->
-                    <c:forEach var="notice" items="${notices}">
-                        <tr>
-                            <td>${notice.ann_seq}</td>
-                            <td>${notice.class_id}</td>
-                            <td><a href="/admin_page/admin/noti?ann_seq=${notice.ann_seq}">${notice.ann_title}</a></td>
-                            <td>${notice.ann_regi}</td>
-                            <td>${notice.ann_check}</td>
-                            <td>${notice.ann_detail}</td>
-                            <td>${notice.ann_attach}</td>
-                            <td>
-                                <form action="${pageContext.request.contextPath}/notice/delete" method="post" onsubmit="return confirm('정말로 삭제하시겠습니까?');">
-                                    <input type="hidden" name="ann_seq" value="${notice.ann_seq}" />
-                                    <button type="submit">삭제</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </c:forEach>
-                </tbody>
-            </table>
-                
+    <table>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>분류 ID</th>
+                <th>제목</th>
+                <th>등록일</th>
+                <th>조회수</th>
+                <th>내용</th>
+                <th>첨부파일</th>
+                <th>삭제</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 공지사항 목록을 동적으로 표시 -->
+            <c:forEach var="notice" items="${notices}">
+                <tr>
+                    <td>${notice.ann_seq}</td>
+                    <td>${notice.class_id}</td>
+                    <td><a href="/admin_page/admin/notice3?ann_seq=${notice.ann_seq}">${notice.ann_title}</a></td>
+                    <td>${notice.ann_regi}</td>
+                    <td>${notice.ann_check}</td>
+                    <td>${notice.ann_detail}</td>
+                    <td>${notice.ann_attach}</td>
+                    <td>
+                        <form action="${pageContext.request.contextPath}/notice/delete" method="post" onsubmit="return confirm('정말로 삭제하시겠습니까?');">
+                          	
+                            <input type="hidden" name="ann_seq" value="${notice.ann_seq}" />                           
+                            <button type="submit">삭제</button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+        
         </section>
     </div>
     <%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>

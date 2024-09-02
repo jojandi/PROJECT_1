@@ -25,7 +25,7 @@ public class NotiUpdateController extends HttpServlet {
     	// 수정할 공지사항을 가져와서 JSP 페이지로 전달
         String annSeq = request.getParameter("ann_seq");
   
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_update.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,33 +43,6 @@ public class NotiUpdateController extends HttpServlet {
         // 파일 처리
         Part filePart = request.getPart("ann_attach");
         String fileName = filePart.getSubmittedFileName();
-
-        // 파일 저장 경로 설정
-        String uploadDirPath = getServletContext().getRealPath("") + File.separator + "uploads";
-        File uploadDir = new File(uploadDirPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdirs();
-        }
-
-        // 파일 저장 및 중복 파일명 처리
-        String uniqueFileName = null;
-        if (fileName != null && !fileName.isEmpty()) {
-            uniqueFileName = UUID.randomUUID().toString() + "_" + fileName;
-            File file = new File(uploadDirPath + File.separator + uniqueFileName);
-            filePart.write(file.getAbsolutePath());
-        }
-
-//         
-//         NoticeDTO updatedNotice = new NoticeDTO();
-//         updatedNotice.setAnn_check(Integer.parseInt(id));
-//         updatedNotice.setClass_id(classId);
-//         updatedNotice.setAnn_title(title);
-//         updatedNotice.setAnn_regi(registrationDate);
-//         updatedNotice.setAnn_detail(detail);
-//         if (uniqueFileName != null) {
-//             updatedNotice.setAnn_attach(uniqueFileName);
-//         }
-//         NoticeService.updateNotice(updatedNotice);
 
         // 사용자에게 결과 출력
         try (PrintWriter out = response.getWriter()) {
