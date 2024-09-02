@@ -34,6 +34,8 @@
                                 <col width="8%">
                                 <col width="10%">
                                 <col width="8%">
+                                <col width="8%">
+                                <col width="8%">
                             </colgroup>
                             <thead>
                                 <tr>
@@ -43,6 +45,8 @@
                                     <th>출판사</th>
                                     <th>ISBN</th>
                                     <th>도서코드</th>
+                                    <th>대출</th>
+                                    <th>예약</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -56,6 +60,23 @@
 	                                    <td>${list.book_pub}</td>
 	                                    <td>${list.book_ISBN}</td>
 	                                    <td>${list.book_code}</td>
+	                                    <td>
+	                                    	<c:if test="${list.book_loan == false}">
+	                                    		-
+	                                    	</c:if>
+	                                    	<c:if test="${list.book_loan == true}">
+	                                    		<a href="loan_read">대출중</a>>
+	                                    	</c:if>
+	                                    </td>
+	                                    <td>
+	                                    	<c:if test="${list.book_res == false}">
+	                                    		-
+	                                    	</c:if>
+	                                    	<c:if test="${list.book_res == true}">
+	                                    		<a href="reservation_read">예약중</a>>
+	                                    	</c:if>
+	                                    	
+	                                    </td>
 	                                </tr>
                                 </c:forEach>
                             </tbody>

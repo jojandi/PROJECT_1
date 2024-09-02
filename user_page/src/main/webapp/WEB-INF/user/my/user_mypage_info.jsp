@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="user.dto.join.JoinDTO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -129,30 +131,50 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="center">아이디</td>
+                                <td class="center" id="id">아이디</td>
                                 <td>
-                                    <input type="text" id=number name="id" value="${ login.user_id }">
+                                    <input type="text" id="username" name="id" value="${ login.user_id }">
+                                    <span>
+										<input type="button" value="아이디 중복확인" id="check-username">
+										<span id="LO01">
+											사용가능한 아이디입니다. 
+										</span>
+										<span id="LO02">
+											이미 존재하는 아이디입니다. 
+										</span>
+									</span>
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">비밀번호</td>
                                 <td id="pwedit">
-                                    <span id="in2">
-                                        <input type="password" name="pw" id="pweditIn" value="${ login.user_pw }">
-                                    </span>
+                                    <input type="password" name="pw" id="pweditIn" value="${ login.user_pw }">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">전화번호</td>
                                 <td>
-                                    <input type="text" id=tel name="tel" value="${ login.user_tel }">
+                                	<% 
+                                		JoinDTO dto = (JoinDTO)session.getAttribute("login");
+                                		String tel = dto.getUser_tel();
+                                		System.out.println("전화번호 : " + tel);
+                                		String[] telArr = tel.split("-");
+                                		
+                                		System.out.println("전화번호 : " + telArr[0]);
+                                		System.out.println("전화번호 : " + telArr[1]);
+                                		System.out.println("전화번호 : " + telArr[2]);
+                                		
+                                		String num = telArr[0] + telArr[1] + telArr[2];
+                                	%>
+                                    <input type="text" id=tel name="tel" placeholder="숫자만 입력해주세요. " value="<%=num%>">
                                 </td>
                             </tr>
                             <tr>
                                 <td class="center">이메일</td>
                                 <td>
                                 	<% 
-                                		String email = "mg220518@gmail.com";
+	                            		String email = dto.getUser_email();
+                                		System.out.println("이메일 : " + email);
                                 		String[] emailArr = email.split("@");
                                 		
                                 		System.out.println("이메일 : " + emailArr[0]);
@@ -168,9 +190,9 @@
                             </tr>
                             <tr>
                                 <td class="center">주소</td>
-                                <td>
+                                <td id="addr">
 									<div class="gaip">
-                                    <input type="text" id="addressnum" name="addressnum" placeholder="우편번호">
+                                    	<input type="text" id="addressnum" name="addressnum" placeholder="우편번호">
 										<input type="button" value="검색" onclick="execDaumPostcode()">
 									</div>
 									<input type="text" id="address" name="address" value="${ login.user_addr1 }">
@@ -208,6 +230,25 @@
             </div>
 
         </section>
+        
+        <script>
+	        function likeSet(){
+	            let ri = [];
+	            ri = document.getElementsByName("like");
+	            let like = '${ login.like_id }';
+	            console.log("like" + like);
+	
+	            for(let i = 1; i < ri.length; i++){
+	                if(like == (i)){
+	                    console.log(ri[i-1]);
+	                    ri[i-1].setAttribute("checked","checked");
+	                }
+	            }
+	
+	        }
+	        
+	        likeSet();
+        </script>
 
 		<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 		<script>
@@ -223,6 +264,7 @@
 		    }
 		</script>
         <script src="../assets/js/my/mypage_info.js"></script>
+        <script src="../assets/js/join/user_join_post.js"></script>
     <!-- wrap -->
     </div>
     

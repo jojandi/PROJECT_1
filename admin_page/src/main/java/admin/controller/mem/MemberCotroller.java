@@ -1,7 +1,9 @@
 package admin.controller.mem;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -24,8 +26,14 @@ public class MemberCotroller extends HttpServlet {
 	    MemberService service = new MemberService();
 	    
 	    List userList = service.userList();
+	    List userLoan = service.userLoan();
 		
-	    request.setAttribute("list", userList);
+	    Map map = new HashMap();
+	    
+	    map.put("userList", userList);
+	    map.put("userLoan", userLoan);
+	    
+	    request.setAttribute("map", map);
 		request.getRequestDispatcher("/WEB-INF/admin/member/mem.jsp").forward(request, response);
 	}
 
