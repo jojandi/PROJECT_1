@@ -1,4 +1,4 @@
-package user.dao.loan;
+package user.dao.my.loan;
 
 import java.sql.*;
 import java.io.InputStream;
