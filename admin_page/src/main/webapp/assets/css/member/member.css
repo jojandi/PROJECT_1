@@ -1,24 +1,24 @@
 @charset "UTF-8";
  #i1 .material-symbols-outlined {
-            background-color: rgb(165, 224, 144);
-    }
+    background-color: rgb(165, 224, 144);
+}
 
-    #menu #items #i5{
-        font-weight: 900;
-        text-decoration: underline;
-    }  
+#menu #items #i5{
+    font-weight: 900;
+    text-decoration: underline;
+}  
 
-    #wrap{
-        height: 600px;
-    }
+#wrap{
+    height: 600px;
+}
 
-	section h3{
-    border: 1px solid #ccc;
-    width: 100%;
-    text-align: center;
-    font-size: 22px;
-    padding: 17px;
-    box-sizing: border-box;
+section h3{
+   border: 1px solid #ccc;
+   width: 100%;
+   text-align: center;
+   font-size: 22px;
+   padding: 17px;
+   box-sizing: border-box;
 }
 
 header #menu #items #i1 {

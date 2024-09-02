@@ -1,4 +1,4 @@
-package admin.dao.mem;
+package admin.DAO.mem;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,8 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import admin.dao.inven.LoggableStatement;
-import admin.dto.mem.MemberDTO;
+import admin.DTO.mem.MemberDTO;
 
 public class MemberDAO {
 	
@@ -56,10 +55,11 @@ public class MemberDAO {
 				String user_admin = rs.getString("user_admin");
 				
 				String user_tel = rs.getString("user_tel");
+				System.out.println(user_tel);
 				
-				String tel1 = user_tel.substring(0, 3);
-				String tel2 = user_tel.substring(3, 7);
-				String tel3 = user_tel.substring(7, 11);
+				String tel1 = user_tel.substring(0, 2);
+				String tel2 = user_tel.substring(2, 6);
+				String tel3 = user_tel.substring(6, 10);
 				
 				String tel = "0" + tel1 + "-" + tel2 + "-" + tel3;
 				
@@ -94,6 +94,46 @@ public class MemberDAO {
 		return list;
 	}
 	
+	// 사용자 대출 내역
+	public List userLoan() {
+		List list = new ArrayList();
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+		  
+			// # SQL 준비
+			String query =  " select user_seq, max(loan_seq) as isover from tbl_user join user_loan using(user_seq) ";
+			query += " group by user_seq ";
+
+            PreparedStatement ps = new LoggableStatement(con, query);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()){
+				MemberDTO dto = new MemberDTO();
+				
+				dto.setUser_seq(rs.getInt("user_seq"));
+				dto.setUser_loan(rs.getInt("isover"));
+
+				list.add(dto);
+			}
+			System.out.println(list);
+			ps.close();
+			con.close();
+			rs.close();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
+	// 사용자 상세목록
 	public MemberDTO user(int user_seq) {
 		MemberDTO dto = null;
 		

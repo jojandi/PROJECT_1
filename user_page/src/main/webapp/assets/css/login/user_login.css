@@ -64,3 +64,13 @@
 .idpw input[type="button"]:hover {
     background-color: #ececec;
 }
+
+#password{
+	margin: 0;
+}
+
+#error{
+	color: red;
+	margin-bottom: 10px;
+	font-size: 15px;
+}

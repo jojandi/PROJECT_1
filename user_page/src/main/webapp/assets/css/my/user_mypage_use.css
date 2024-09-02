@@ -72,10 +72,7 @@ section table{
     width: 100%;
 }
 
-section #t1,
-section #t2{ 
-	display: none; 
-}
+
 
 section table thead{
     text-align: center;

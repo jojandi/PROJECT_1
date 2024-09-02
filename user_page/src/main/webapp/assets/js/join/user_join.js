@@ -3,10 +3,21 @@ document.getElementById("check-username").addEventListener("click", function() {
     if (username === "") {
         alert("아이디를 입력하세요.");
         document.getElementById("username").focus();
-    } else {
-        alert(`아이디 ${username}은(는) 사용 가능합니다.`);
+    } else {    
+    	idChk();
     }
 });
+
+function idChk(){
+	let id_impass = '{$param.code}'
+	let id = document.getElementById("username").value;
+	console.log("id : " + id);
+	console.log("id 중복 코드 : " + id_impass);
+	if(id_impass == "LO02"){
+		id = "";
+	}
+}
+
 
 document.getElementById("gaip_1").addEventListener("click", function(e) {
     e.preventDefault();
@@ -75,6 +86,7 @@ function msg(){
         }
     })
 }
+
 msg();
 
 
