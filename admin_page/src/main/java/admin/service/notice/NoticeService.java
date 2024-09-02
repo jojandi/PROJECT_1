@@ -7,13 +7,11 @@ import admin.DTO.notice.NoticeDTO;
 
 public class NoticeService<TodoDTO> {
 
-    private NoticeDAO noticeDAO = new NoticeDAO();
+    private static NoticeDAO noticeDAO = new NoticeDAO();
 
-    public List<NoticeDTO> getAllNotices() {
-        return noticeDAO.selectAnnounce();
-    }
 
-    public NoticeDTO getNoticeById(int ann_seq) {
+
+    public static NoticeDTO getNoticeById(int ann_seq) {
         return noticeDAO.getNoticeById(ann_seq);
     }
 
@@ -24,6 +22,17 @@ public class NoticeService<TodoDTO> {
     		NoticeDAO dao = new NoticeDAO();
     		return dao.insertNotice(noticeDAO);
     	}
+
+		public static void updateNotice(NoticeDTO updatedNotice) {
+			// TODO Auto-generated method stub
+			
+		}
+
+
+		public static List<NoticeDTO> getAllNotices() {
+			// TODO Auto-generated method stub
+			return null;
+		}
         
         
     }

@@ -12,13 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-@WebServlet("/notice/update")
-public class NotiUpdateController extends HttpServlet {
+import admin.DTO.notice.NoticeDTO;
+import admin.service.notice.NoticeService;
+
+@WebServlet("/notice/update2")
+public class NotiUpdate2Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("insert doGet 실행");
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
+        // 수정할 공지사항을 가져와서 JSP 페이지로 전달
+        String annSeq = request.getParameter("ann_seq");
+        // 데이터베이스에서 annSeq에 해당하는 공지사항을 조회
+        // 예시: NoticeDTO notice = noticeService.getNoticeById(annSeq);
+        // request.setAttribute("notice", notice);
+        
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_update.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -45,11 +53,24 @@ public class NotiUpdateController extends HttpServlet {
         }
 
         // 파일 저장 및 중복 파일명 처리
+        String uniqueFileName = null;
         if (fileName != null && !fileName.isEmpty()) {
-            String uniqueFileName = UUID.randomUUID().toString() + "_" + fileName;
+            uniqueFileName = UUID.randomUUID().toString() + "_" + fileName;
             File file = new File(uploadDirPath + File.separator + uniqueFileName);
             filePart.write(file.getAbsolutePath());
         }
+
+//         
+//         NoticeDTO updatedNotice = new NoticeDTO();
+//         updatedNotice.setAnn_check(Integer.parseInt(id));
+//         updatedNotice.setClass_id(classId);
+//         updatedNotice.setAnn_title(title);
+//         updatedNotice.setAnn_regi(registrationDate);
+//         updatedNotice.setAnn_detail(detail);
+//         if (uniqueFileName != null) {
+//             updatedNotice.setAnn_attach(uniqueFileName);
+//         }
+//         NoticeService.updateNotice(updatedNotice);
 
         // 사용자에게 결과 출력
         try (PrintWriter out = response.getWriter()) {
