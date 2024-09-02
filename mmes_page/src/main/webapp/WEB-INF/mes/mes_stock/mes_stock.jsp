@@ -39,36 +39,36 @@
 						<table id="main_library">
 							<colgroup>
 								<col width="3%">
-								<col width="10%">
+								<col width="7%">
 								<col width="20%">
 								<col width="8%">
 								<col width="7%">
-								<col width="10%">
-								<col width="7%">
-								<col width="7%">
+								<col width="20%">
 							</colgroup>
 							<thead>
 								<tr>
 									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">제품 코드</th>
 									<th>제품명</th>
-									<th>구성 도서 수</th>
 									<th>재고 수량</th>
-									<th>출고 예정 수량</th>
 									<th>보관 위치</th>
 									<th>비고</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="mesbook" items="${mesBook}">
+								<c:forEach var="productList" items="${productList}">
 									<tr>
-										<!-- 										<td><input type="checkbox" id="p1_checkAll"></th> -->
-										<%-- 										<td class="sortable">${mesbook.book_name }</th> --%>
-										<%-- 										<td>${mesbook.book_isbn }</th> --%>
-										<%-- 										<td>${mesbook.book_author }</th> --%>
-										<%-- 										<td>${mesbook.book_pub }</th> --%>
-										<%-- 										<td>${mesbook.book_count }</th> --%>
-										<%-- 										<td>${mesbook.wh_code }</th> --%>
+										<td><input type="checkbox" id="p1_checkAll">
+										</th>
+										<td class="sortable">${productList.bom_code }
+										</th>
+										<td>${productList.bom_name }
+										</th>
+										<td>${productList.pd_count }
+										</th>
+										<td>${productList.wh_name }
+										</th>
+										<td>${productList.pd_note }
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -223,7 +223,11 @@
 							</tr>
 							<tr>
 								<td>발주처id</td>
-								<td><input id="pub_id" type="text" name="pub_id"></td>
+								<td><select name="pub_id">
+										<c:forEach var="code" items="${pub_id}">
+											<option value="${code}">${code}</option>
+										</c:forEach>
+								</select></td>
 							</tr>
 						</table>
 						<input id="workFormBtn" type="submit" value="발주">

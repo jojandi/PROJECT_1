@@ -154,6 +154,30 @@ public class MesStockDAO {
 
         return mesBookCodes;
     }
+ // 발주처를 리스트로 반환하는 메서드
+    public List<String> getMesPubId() {
+        List<String> mesPubId = new ArrayList<>();
+        
+        try {
+        	Context ctx = new InitialContext();
+			DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataSource.getConnection();
+			
+			String query = "SELECT pub_id FROM publisher";
+			
+			PreparedStatement ps = con.prepareStatement(query);
+			ResultSet rs = ps.executeQuery();
+			
+            while (rs.next()) {
+            	mesPubId.add(rs.getString("pub_id"));
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return mesPubId;
+    }
     public int order(MesStockDTO MesStockDTO) {
 
 		int result = -1;
@@ -199,5 +223,61 @@ public class MesStockDAO {
 		}
 
 		return result;
+	}
+    
+    public List<MesStockDTO> selectProduct(){
+		List<MesStockDTO> list = new ArrayList<MesStockDTO>();
+		
+	     
+	    try {
+	    	 
+	    	 // DB 접속
+	    	 Context ctx = new InitialContext();
+			 DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			 Connection con = dataSource.getConnection();
+	    	 
+	    	 // SQL 준비
+			 String query = "select b.bom_code,b.bom_name, p.pd_count, w.wh_name, p.pd_note";
+					query += " from warehouse w, product p , bom b";
+					query += " where w.wh_code = p.wh_code";
+					query += " and p.bom_code = b.bom_code";
+
+
+	    	 PreparedStatement ps = con.prepareStatement(query);
+	    	 
+	    	 // SQL 실행 및 결과 확보
+	    	 ResultSet rs = ps.executeQuery();
+	    	 
+	    	 System.out.println("쿼리 실행 중...");
+	    	 // 결과 활용
+	    	 // re.next() 다음줄이 있는가?
+	    	 while(rs.next()) {
+	    		 // 전달인자로 컬럼명을 적고 그 내용을 형변환 해서 가지고 온다
+	    		 long bom_code = rs.getLong("bom_code");
+	    		 String bom_name = rs.getString("bom_name");
+	    		 long pd_count = rs.getLong("pd_count");
+	    		 String wh_name = rs.getString("wh_name");
+	    		 String pd_note = rs.getString("pd_note");
+	    		 
+	    		 MesStockDTO dto = new MesStockDTO();
+		    	 dto.setBom_code(bom_code);
+		    	 dto.setBom_name(bom_name);
+		    	 dto.setPd_count(pd_count);
+		    	 dto.setWh_name(wh_name);
+		    	 dto.setPd_note(pd_note);
+	    		 
+	    		 
+	    		 list.add(dto);
+	    		 System.out.println("productList"+dto);
+	    	 }
+	    	 System.out.println("쿼리 실행 완료");
+	    	 rs.close();
+	    	 ps.close();
+	    	 con.close();
+	     } catch(Exception e) {
+	    	 e.printStackTrace();
+	     }
+	     
+	     return list;
 	}
 }
