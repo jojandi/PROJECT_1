@@ -56,6 +56,7 @@ public class MyDAO {
 		return result;
 	}
 
+	// 회원 탈퇴
 	public int delete(JoinDTO dto) {
 		int result = -1;
 		

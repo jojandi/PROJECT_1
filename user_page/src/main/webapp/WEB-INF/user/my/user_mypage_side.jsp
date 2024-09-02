@@ -20,13 +20,13 @@
                 <div id="items">
                     
                     <div class="item" id="i1">
-                    	<a href="mypage_use">
+                    	<a href="res?seq=${login.user_seq}">
     	                    <span>이용내역</span>
 	                        <span class="material-symbols-outlined">arrow_forward_ios</span>
                     	</a>
                     </div>
                     <div class="item" id="i2">
-                    	<a href="mypage_cart">
+                    	<a href="mypage_cart?seq=${login.user_seq}">
     	                    <span>찜 목록</span>
 	                        <span class="material-symbols-outlined">arrow_forward_ios</span>
                     	</a>

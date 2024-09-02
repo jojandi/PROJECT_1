@@ -42,6 +42,13 @@
 
             <div class="table">
                 <table>
+                	<colgroup>
+					    <col width="30%"/>
+					    <col width="15%"/>
+					    <col width="15%"/>
+					    <col width="10%"/>
+					    <col width="15%"/>
+					  </colgroup>
                     <thead> 
                         <tr>
                             <td class="bnameall">도서명</td>
@@ -54,11 +61,13 @@
 
                     <tbody>
                         <tr>
-                            <td class="bname">봄은 또 오고</td>
-                            <td>24.06.10</td>
-                            <td class="ing">24.06.27</td>
-                            <td>3일</td>
-                            <td>24.06.29</td>
+                        	<c:forEach var="list" items="${list}">
+	                            <td class="bname">${list.book_name}</td>
+	                            <td>${list.loan_date}</td>
+	                            <td class="ing">${list.loan_return}</td>
+	                            <td>${list.over}일</td>
+	                            <td>${list.user_pass}</td>
+                        	</c:forEach>
                         </tr>
                     </tbody>
                 </table>

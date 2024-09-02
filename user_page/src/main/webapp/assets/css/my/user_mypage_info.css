@@ -157,7 +157,7 @@ section #information #infoedit #pwerror{
 
 section #information #infoedit #info2{
     font-size: 16px;
-    /* display: none; */
+    display: none;
 }
 
 section #information #infoedit #info2 table{

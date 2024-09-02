@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import user.service.loan.LoanService;
+import user.service.my.loan.LoanService;
 
 
 @WebServlet("/user/loan")

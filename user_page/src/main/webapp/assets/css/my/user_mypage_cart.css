@@ -89,16 +89,22 @@ section table thead td{
     font-weight: 900;
     padding: 15px 0;
     box-sizing: border-box;
+    text-overflow: ellipsis; /* 말줄임표(...) 적용 */
+    overflow: hidden; /* 넘어가는 부분 안 보이게 */
+    white-space: nowrap; /* 줄바꿈 X */
 }
 
-section table tbody td:not(.bookTitle){
-    border-bottom: 1px solid #ccc;
+section table tbody td{
     height: 40px;
     box-sizing: border-box;
     padding: 5px;
     text-overflow: ellipsis; /* 말줄임표(...) 적용 */
     overflow: hidden; /* 넘어가는 부분 안 보이게 */
     white-space: nowrap; /* 줄바꿈 X */
+}
+
+section table tbody .border{
+	border-bottom: 1px solid #ccc;
 }
 
 section table tbody td:not(.book){
@@ -112,17 +118,24 @@ section table tbody .bookTitle{
     padding-bottom: 5px;
 }
 
-section table tbody .bookTitle div{
-    font-size: 14px;
+section table tbody .bookTitle #info{
+	font-size: 14px;
     font-weight: 500;
     padding-left: 15px;
+	margin-top: 5px;
+	color: gray;
+	border: none;
 }
 
 section table tbody .wirter{
     vertical-align: top;
-    padding-left: 15px;
+    -left: 15px;
     padding-top: 5px;
     font-size: 14px;
+}
+
+section table tbody .wirter span{
+	margin-right: 8px;
 }
 
 section table tbody .bookCover img{

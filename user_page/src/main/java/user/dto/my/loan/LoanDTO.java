@@ -1,4 +1,4 @@
-package user.dto.loan;
+package user.dto.my.loan;
 
 public class LoanDTO {
 	private int loan_seq;
@@ -10,13 +10,45 @@ public class LoanDTO {
 	private java.sql.Date loan_ex;
 	private boolean loan_over;
 	private java.sql.Date user_pass;
-	private boolean user_over;
-	private int user_loan;
 	private String book_name;
-	private boolean book_loan;
 	private int isOver;
+	private int over;
+	private int res_id;
+	private java.sql.Date res_day;
+	private java.sql.Date res_pick;
+	private int res_ing;
 	
 	
+	public int getRes_id() {
+		return res_id;
+	}
+	public void setRes_id(int res_id) {
+		this.res_id = res_id;
+	}
+	public java.sql.Date getRes_day() {
+		return res_day;
+	}
+	public void setRes_day(java.sql.Date res_day) {
+		this.res_day = res_day;
+	}
+	public java.sql.Date getRes_pick() {
+		return res_pick;
+	}
+	public void setRes_pick(java.sql.Date res_pick) {
+		this.res_pick = res_pick;
+	}
+	public int getRes_ing() {
+		return res_ing;
+	}
+	public void setRes_ing(int res_ing) {
+		this.res_ing = res_ing;
+	}
+	public int getOver() {
+		return over;
+	}
+	public void setOver(int over) {
+		this.over = over;
+	}
 	public int getIsOver() {
 		return isOver;
 	}
@@ -29,29 +61,11 @@ public class LoanDTO {
 	public void setBook_name(String book_name) {
 		this.book_name = book_name;
 	}
-	public boolean isBook_loan() {
-		return book_loan;
-	}
-	public void setBook_loan(boolean book_loan) {
-		this.book_loan = book_loan;
-	}
 	public java.sql.Date getUser_pass() {
 		return user_pass;
 	}
 	public void setUser_pass(java.sql.Date user_pass) {
 		this.user_pass = user_pass;
-	}
-	public boolean isUser_over() {
-		return user_over;
-	}
-	public void setUser_over(boolean user_over) {
-		this.user_over = user_over;
-	}
-	public int getUser_loan() {
-		return user_loan;
-	}
-	public void setUser_loan(int user_loan) {
-		this.user_loan = user_loan;
 	}
 	public int getLoan_seq() {
 		return loan_seq;
@@ -105,9 +119,9 @@ public class LoanDTO {
 	public String toString() {
 		return "LoanDTO [loan_seq=" + loan_seq + ", book_code=" + book_code + ", user_seq=" + user_seq + ", loan_date="
 				+ loan_date + ", loan_ing=" + loan_ing + ", loan_return=" + loan_return + ", loan_ex=" + loan_ex
-				+ ", loan_over=" + loan_over + ", user_pass=" + user_pass + ", user_over=" + user_over + ", user_loan="
-				+ user_loan + ", book_name=" + book_name + ", book_loan=" + book_loan + ", isOver=" + isOver + "]";
+				+ ", loan_over=" + loan_over + ", user_pass=" + user_pass + ", book_name=" + book_name + ", isOver="
+				+ isOver + ", over=" + over + ", res_id=" + res_id + ", res_day=" + res_day + ", res_pick=" + res_pick
+				+ ", res_ing=" + res_ing + "]";
 	}
-	
 	
 }
