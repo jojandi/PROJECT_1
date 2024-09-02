@@ -3,8 +3,9 @@ document.getElementById("check-username").addEventListener("click", function() {
     if (username === "") {
         alert("아이디를 입력하세요.");
         document.getElementById("username").focus();
-    } 
-    idChk();
+    } else {    
+    	idChk();
+    }
 });
 
 function idChk(){

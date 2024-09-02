@@ -29,7 +29,12 @@ public class MesStockController extends HttpServlet {
 		List<MesStockDTO> stockList = stockservice.getMesBook();
 
 		request.setAttribute("mesBook", stockList);
-		// 재고 확인 -----------------------------------------------
+		// 세트재고 확인 -----------------------------------------------
+
+		List<MesStockDTO> productList = stockservice.getPruduct();
+		request.setAttribute("productList", productList);
+		System.out.println("productList 실행"+productList);
+		//----------------------------------------------------------
 		
 		// 발주 ----------------------------------------------------
 		
@@ -42,8 +47,12 @@ public class MesStockController extends HttpServlet {
 		MesStockDAO dao = new MesStockDAO();
 		List<String> mesBookCodes = dao.getMesBookCodes();
 		request.setAttribute("mes_book_code", mesBookCodes);
+		// ---------------------------------------------------------
+		// 발주처id를 셀렉트 옵션을 jsp로 전달해주는놈~
 
-		
+		List<String> mesPubId = dao.getMesPubId();
+		request.setAttribute("pub_id", mesPubId);
+
 		// ---------------------------------------------------------
 		request.getRequestDispatcher("/WEB-INF/mes/mes_stock/mes_stock.jsp").forward(request, response);
 	}

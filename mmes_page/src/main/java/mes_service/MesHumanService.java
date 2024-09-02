@@ -42,4 +42,10 @@ public class MesHumanService {
 		MesHumanDAO dao = new MesHumanDAO();
 		return dao.deleteOne(emp_id);
 	}
+	public int modify(MesHumanDTO mesHumanDTO) {
+		// DB에 insert
+		
+		MesHumanDAO meshumanDAO = new MesHumanDAO();
+		return meshumanDAO.updateOne(mesHumanDTO);
+	}
 }

@@ -25,8 +25,8 @@ public class JoinDAO {
 			  
 				// # SQL 준비
 				String query =  " insert into tbl_user ";
-				query += " (user_seq, user_name, user_birth, user_id, user_pw, user_tel, user_addr, user_addr_info, user_email, like_id) ";
-				query += " values (user_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+				query += " (user_seq, user_name, user_birth, user_id, user_pw, user_tel, user_addr, user_addr_info, user_email, like_id, user_sub) ";
+				query += " values (user_seq.nextval, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
 
 	            PreparedStatement ps = new LoggableStatement(con, query);
 	            
@@ -39,6 +39,14 @@ public class JoinDAO {
 	            ps.setString(7, dto.getUser_addr2());
 	            ps.setString(8, dto.getUser_email());
 	            ps.setInt(9, dto.getLike_id());
+	            
+	            String sub = null;
+	            if(dto.isUser_sub()) {
+	            	sub = "Y";
+	            } else {
+	            	sub="N";
+	            }
+	            ps.setString(9, sub);
 				
 				System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 				

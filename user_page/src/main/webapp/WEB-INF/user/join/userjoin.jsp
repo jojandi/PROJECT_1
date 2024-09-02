@@ -170,17 +170,12 @@
 							</div>
 							<div class="gaip">
 								<input type="button" value="아이디 중복확인" id="check-username">
-								${param.code}
-								<c:if test='${param.code == "LO01" }'>
-									<span id="error">
+									<span id="LO01">
 										사용가능한 아이디입니다. 
 									</span>
-								</c:if>
-								<c:if test='${param.code == "LO02" }'>
-									<span id="error">
+									<span id="LO02">
 										이미 존재하는 아이디입니다. 
 									</span>
-								</c:if>
 							</div>
 						</td>
 					</tr>

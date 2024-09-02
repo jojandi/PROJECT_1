@@ -19,11 +19,7 @@ public class UserJoinController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 		
-	    String code = request.getParameter("code");
-	    
-	    System.out.println("code : " + code);
-	    
-		request.getRequestDispatcher("/WEB-INF/user/join/userjoin.jsp?code=" + code).forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/user/join/userjoin.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,6 +28,8 @@ public class UserJoinController extends HttpServlet {
 	    response.setContentType("text/html; charset=utf-8;");
 	    
 	    String id = request.getParameter("username");
+	    
+	    
 		
 		JoinDTO dto = new JoinDTO();
 		
@@ -40,12 +38,13 @@ public class UserJoinController extends HttpServlet {
 		JoinService service = new JoinService();
 		JoinDTO result = service.idChk(dto);
 		
+		// ajxa로 보낼 것
 		if(result == null) {
 			System.out.println("사용 가능");
-			response.sendRedirect(request.getContextPath() +"/user/join?code=LO01");
+			response.getWriter().println("code=LO01");
 		} else {
 			System.out.println("사용 불가능");
-			response.sendRedirect(request.getContextPath() +"/user/join?code=LO02");
+			response.getWriter().println("code=LO02");
 		}
 	}
 

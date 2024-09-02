@@ -190,14 +190,26 @@ section #information #infoedit #info2 table .right{
     text-align: right;
 }
 
-section #information #infoedit #info2 table input[type=text]{
-    width: 60%;
+section #information #infoedit #info2 table input[type=text],
+section #information #infoedit #info2 table input[type=password]{
     height: 18px;
 }
 
+section #information #infoedit #info2 .gaip{
+	font-size: 0;
+}
 
+section #information #infoedit #info2 #addr input{
+	margin-bottom: 5px;
+}
 
+section #information #infoedit #info2 #LO01,
+section #information #infoedit #info2 #LO02{
+	color : red;
+	display: none;
+}
 
+/* 북플릭스 */
 section #information #booksub{
     /* border: 1px solid red; */
     width: 100%;

@@ -7,6 +7,7 @@ import admin.DTO.notice.NoticeDTO;
 
 public class NoticeService<TodoDTO> {
 
+<<<<<<< HEAD
     private static NoticeDAO noticeDAO = new NoticeDAO();
 
 
@@ -36,4 +37,24 @@ public class NoticeService<TodoDTO> {
         
         
     }
+=======
+	private NoticeDAO noticeDAO = new NoticeDAO();
 
+	public List<NoticeDTO> getAllNotices() {
+		return noticeDAO.selectAnnounce();
+	}
+
+	public NoticeDTO getNoticeById(int ann_seq) {
+		return noticeDAO.getNoticeById(ann_seq);
+	}
+
+>>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303
+
+	// 공지사항 삭제 메서드
+	public int delete (NoticeDTO NoticeDTO) {
+		
+		return this.noticeDAO.delete(NoticeDTO);
+
+	}
+
+}

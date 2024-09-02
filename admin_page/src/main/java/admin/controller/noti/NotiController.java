@@ -1,44 +1,47 @@
 package admin.controller.noti;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 
 import admin.DTO.notice.NoticeDTO;
-import admin.service.EmpService;
+=======
+>>>>>>> 488d8c0b42ae2c042f5308d784ff94e4e1e3dd36
 import admin.service.notice.NoticeService;
 
 @WebServlet("/admin/noti")
-public class NotiController extends HttpServlet {
+	public class NotiController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
-    private EmpService empService = new EmpService(); // EmpService 인스턴스 생성
+<<<<<<< HEAD
     private NoticeService noticeService = new NoticeService(); // NoticeService 인스턴스 생성
     private List<NoticeDTO> noticeList; // 공지사항 목록 조회 시 사용하는 리스트
 
-    @Override
-    public void init() throws ServletException {
-        super.init();
-        noticeList = empService.getNoticeList(); // EmpService에서 공지사항 리스트를 가져옴
-    }
-
-    @Override
+=======
+    private NoticeService noticeService = new NoticeService();
+    
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항 실행");
+        System.out.println("공지사항 doget 실행");
+        request.setCharacterEncoding("utf-8");
+        response.setContentType("text/html; charset=utf-8;");
+    	
+    	
+    	
+    	
+    	request.getRequestDispatcher("/WEB-INF/admin/notification/noti.jsp").forward(request, response);
+    }
+>>>>>>> 488d8c0b42ae2c042f5308d784ff94e4e1e3dd36
 
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=utf-8;");
 
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "createForm";
-        }
 
+<<<<<<< HEAD
         switch (action) {
             case "createForm":
                 showCreateForm(request, response);
@@ -103,5 +106,7 @@ public class NotiController extends HttpServlet {
         // 예를 들어, noticeService의 메서드를 호출하여 공지사항을 저장할 수 있습니다.
 
         response.sendRedirect(request.getContextPath() + "/admin/noti2");
+=======
+>>>>>>> 488d8c0b42ae2c042f5308d784ff94e4e1e3dd36
     }
 }
