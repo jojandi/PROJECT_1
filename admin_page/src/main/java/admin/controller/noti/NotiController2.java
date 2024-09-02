@@ -59,7 +59,7 @@ public class NotiController2 extends HttpServlet {
         }
 
         request.setAttribute("notice", notice);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
     }
     
     @Override
