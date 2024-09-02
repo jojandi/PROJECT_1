@@ -61,7 +61,7 @@
               </tr>
           </table>
           <p>
-              <a href="notice_list">목록으로 돌아가기</a>
+              <a href="notice_list">목록</a>
           </p>
       </section>
   </div>
