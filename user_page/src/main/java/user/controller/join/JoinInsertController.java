@@ -65,6 +65,7 @@ public class JoinInsertController extends HttpServlet {
 		dto.setUser_name(name);
 		dto.setUser_pw(pw);
 		dto.setUser_tel(tel);
+		dto.setUser_sub(false);
 		
 		JoinService service = new JoinService();
 		int resutl = service.join(dto);
