@@ -12,27 +12,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-<<<<<<< HEAD
-@WebServlet("/notice/update")
-=======
 import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
-@WebServlet("/notice/update2")
->>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303
+@WebServlet("/notice/update")
 public class NotiUpdateController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
-        System.out.println("insert doGet 실행");
-=======
     	System.out.println("update doget 실행");
     	
     	// 수정할 공지사항을 가져와서 JSP 페이지로 전달
         String annSeq = request.getParameter("ann_seq");
   
->>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303
         request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
     }
 
@@ -51,7 +43,6 @@ public class NotiUpdateController extends HttpServlet {
         // 파일 처리
         Part filePart = request.getPart("ann_attach");
         String fileName = filePart.getSubmittedFileName();
-<<<<<<< HEAD
 
         // 파일 저장 경로 설정
         String uploadDirPath = getServletContext().getRealPath("") + File.separator + "uploads";
@@ -76,15 +67,5 @@ public class NotiUpdateController extends HttpServlet {
         }
     }
 }
-=======
 
-        // 사용자에게 결과 출력
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<html><body>");
-            out.println("<h2>공지사항이 성공적으로 업데이트되었습니다.</h2>");
-            out.println("<a href='notice_list'>공지사항 목록으로 돌아가기</a>");
-            out.println("</body></html>");
-        }
-    }
-}
->>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303
+        
