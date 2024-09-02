@@ -11,6 +11,10 @@ public class MemberService {
 		return new MemberDAO().userList();
 	}
 	
+	public List userLoan() {
+		return new MemberDAO().userLoan();
+	}
+	
 	public MemberDTO user(int user_seq) {
 		return new MemberDAO().user(user_seq);
 	}

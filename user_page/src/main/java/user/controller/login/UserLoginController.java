@@ -49,10 +49,10 @@ public class UserLoginController extends HttpServlet {
 		
 		if(result != null) {
 			HttpSession session = request.getSession();
-			session.setAttribute("login", result);
-			
 			// 세션 타임 제한, 초단위
-			session.setMaxInactiveInterval(86400);
+			session.setMaxInactiveInterval(60 * 60 * 60);
+
+			session.setAttribute("login", result);
 			
 			// list 페이지로 sendRedirect
 			response.sendRedirect(request.getContextPath() +"/user/main");

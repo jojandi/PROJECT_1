@@ -7,12 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import user.dto.join.JoinDTO;
 import user.service.my.MyService;
 
 @WebServlet("/user/user_del")
-public class UserMyDeleteController extends HttpServlet {
+public class MyDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -36,8 +37,13 @@ public class UserMyDeleteController extends HttpServlet {
  		int result = service.delete(dto);
  		System.out.println("삭제 개수 : " + result);
  		
+ 		HttpSession session = request.getSession(); 
+	    
+	    // 세션을 만료 시킴 -> JSESSIONID를 새로 생성
+	    session.invalidate();
+ 		
  		// 실행 후 list.jsp로 이동
- 		response.sendRedirect("main");
+	    request.getRequestDispatcher("/WEB-INF/user/main/user_main.jsp").forward(request, response);
 	    
 	}
 

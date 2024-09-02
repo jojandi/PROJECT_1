@@ -15,7 +15,7 @@ import user.service.my.MyService;
  * Servlet implementation class MyInfoUpdateController
  */
 @WebServlet("/user/update")
-public class MyInfoUpdateController extends HttpServlet {
+public class MyUpdateController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class MyInfoUpdateController extends HttpServlet {
 	    String addressinfo = request.getParameter("addressinfo");
 	    System.out.println("addressinfo : " + addressinfo);
 	    
-	    String user_email = request.getParameter("email");
+	    String user_email = request.getParameter("user_email");
 	    String domain = request.getParameter("domain");
 	    String email = user_email + "@" + domain;
 	    System.out.println("email : " + email);

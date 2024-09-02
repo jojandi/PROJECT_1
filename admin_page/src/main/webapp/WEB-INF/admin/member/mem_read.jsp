@@ -23,55 +23,66 @@
 
 					<form action="member" method="get">
 						<div class="page">
+						
 							<table>
-								<colgroup>
-	                                <col width="5%">
-	                                <col width="10%">
-	                                <col width="10%">
-	                                <col width="10%">
-	                                <col width="12%">
-	                                <col width="10%">
-	                                <col width="15%">
-	                                <col width="7%">
-	                                <col width="7%">
-	                                <col width="7%">
-	                            </colgroup>
-								<thead>
-									<tr>
-										<th>회원번호</th>
-										<th>이름</th>
-										<th>생년월일</th>
-										<th>아이디</th>
-										<th>전화번호</th>
-										<th>이메일</th>
-										<th>주소</th>
-										<th>대여수</th>
-										<th>연체정보</th>
-										<th>비고</th>
-									</tr>
-								</thead>
-								<tbody>
-										<tr>
-											<td>${dto.user_seq}</td>
-											<td>${dto.user_name}</td>
-											<td>${dto.user_birth}</td>
-											<td>${dto.user_id}</td>
-											<td>${dto.user_tel}</td>
-											<td>${dto.user_email}</td>
-											<td>${dto.user_addr1} ${dto.user_addr2}</td>
-											<td>${dto.user_loan}</td>
-											<td><c:if test="${dto.user_over == true}">
+								<tr>
+									<th>회원번호</th>
+									<td>${dto.user_seq}</td>
+								</tr>
+								<tr>
+									<th>이름</th>
+									<td>${dto.user_name}</td>
+								</tr>
+								<tr>
+									<th>생년월일</th>
+									<td>${dto.user_birth}</td>
+								</tr>
+								<tr>
+									<th>아이디</th>
+									<td>${dto.user_id}</td>
+								</tr>
+								<tr>
+									<th>전화번호</th>
+									<td>${dto.user_tel}</td>
+								</tr>
+								<tr>
+									<th>이메일</th>
+									<td>${dto.user_email}</td>
+								</tr>
+								<tr>
+									<th>주소</th>
+									<td>${dto.user_addr1} ${dto.user_addr2}</td>
+								</tr>
+								<tr>
+									<th>선호도</th>
+									<td>${dto.like}</td>
+								</tr>
+								<tr>
+									<th>대여수</th>
+									<td>${dto.user_loan}</td>
+								</tr>
+								<tr>
+									<th>연체정보</th>
+									<td>
+										<c:if test="${dto.user_over == true}">
 												연체
-											</c:if> <c:if test="${dto.user_over == false}">
-												-
-											</c:if></td>
-											<td><c:if test="${dto.user_over == true}">
+										</c:if> 
+										<c:if test="${dto.user_over == false}">
+											-
+										</c:if>
+									</td>
+								</tr>
+								<tr>
+									<th>비고</th>
+									<td>
+										<c:if test="${dto.user_over == true}">
 												${dto.user_pass}부터 대여 가능
-											</c:if> <c:if test="${dto.user_over == false}">
-												-
-											</c:if></td>
-										</tr>
-								</tbody>
+										</c:if> 
+										<c:if test="${dto.user_over == false}">
+											-
+										</c:if>
+									</td>
+								</tr>
 							</table>
 						</div>
 						<div id="submit">
