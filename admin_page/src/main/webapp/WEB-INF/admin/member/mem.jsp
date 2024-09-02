@@ -25,7 +25,6 @@
 						<div class="page">
 							<table>
 								<colgroup>
-	                                <col width="5%">
 	                                <col width="17%">
 	                                <col width="10%">
 	                                <col width="10%">
@@ -36,9 +35,6 @@
 	                            </colgroup>
 								<thead>
 									<tr>
-										<th><input type="checkbox" id="selectAllCheckbox"
-											onclick="toggleSelectAll(this)"></th>
-
 										<th>이름</th>
 										<th>생년월일</th>
 										<th>아이디</th>
@@ -51,9 +47,7 @@
 								<tbody>
 									<c:forEach var="list" items="${list}">
 										<tr>
-											<td><input type="checkbox" class="rowCheckbox"
-												name="selectedMembers" value="Joe123"></td>
-											<td>${list.user_name}</td>
+											<td><a href="member_?seq=${list.user_seq}">${list.user_name}</a></td>
 											<td>${list.user_birth}</td>
 											<td>${list.user_id}</td>
 											<td>${list.user_tel}</td>

@@ -1,4 +1,4 @@
-package admin.daoinven;
+package admin.DAO.mem;
 
 import java.sql.*;
 import java.io.InputStream;

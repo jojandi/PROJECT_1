@@ -101,21 +101,42 @@ tbody tr:last-child {
     text-align: right; /* 오른쪽 정렬 */
 }
 
-.btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+.modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 500px;
+            top: 100px;
+            width: 400px;
+            height: 80%;
+            overflow: auto;
+        }
 
-.btn:hover {
-    background-color: #666A73;
-}
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        #workForm {
+            text-align: center;
+        }}
 </style>
 
 </head>
@@ -160,12 +181,56 @@ tbody tr:last-child {
 		</tbody>
 	</table>
 	<div class="button-container">
-		<button class="btn" id="editBtn">수정</button>
+		 <div class="text_right">
+         <input id="openForm2" type="button" value="수정하기">
+         </div>
 		<form method="post" action="remove">
 		<input type="hidden" name="emp_id" value="${dto.emp_id }">
 		<input type="submit" value="삭제">
 		</form>
-		<button class="btn" id="listBtn">목록으로 가기</button>
+		<button class="btn" id="listBtn"><a href="http://localhost:8080/mmes_page/human">목록으로 가기</a></button>
 	</div>
+	<div id="formModal2" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <form id="workForm2" method="post" action="human">
+                        <table>
+                            <tr>
+                                <th colspan="2">사원 수정</th>
+                            </tr>
+                            <tr>
+                                <td>사원번호</td>
+                                <td><input  type= "text" name="emp_id"></td>
+                            </tr>
+                            <tr>
+                                <td>이름</td>
+                                <td><input type="text" name="emp_name"></td>
+                            </tr>
+                            <tr>
+                                <td>직급</td>
+                                <td><input type="text" name="po_name"></td>
+                            </tr>
+                            <tr>
+                                <td>부서</td>
+                                <td><input type="text"  name="dept_name"></td>
+                            </tr>
+                            <tr>
+                                <td>전화번호</td>
+                                <td><input type="text"  name="emp_hp"></td>
+                            </tr>
+                            <tr>
+                                <td>주소</td>
+                                <td><input type="text" name="emp_add"></td>
+                            </tr>
+                            <tr>
+                                <td>입사일</td>
+                                <td><input name="emp_hiredate" type="date"></td>
+                            </tr>
+                        </table>
+                        <input id="workFormBtn" type="submit" value="수정하기">
+                    </form>
+                </div>
+            </div>
+          <script src="./assets/js/mes_human_2.js"></script>
 </body>
 </html>

@@ -26,7 +26,7 @@
         <section id="use">
 
             <div id="stitle">
-                <h3>조잔디님의 이용내역</h3>
+                <h3>${ login.user_name }님의 이용내역</h3>
             </div>
             
             <div id="smenu"> 

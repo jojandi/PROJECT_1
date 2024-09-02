@@ -37,6 +37,7 @@
 						<td class="retitle">중앙도서관 재개관 안내</td>
 						<td>2024-07-24</td>
 						<td>123</td>
+						
 					</tr>
 					<tr>
 						<td>중앙</td>
