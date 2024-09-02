@@ -193,14 +193,14 @@ tbody tr:last-child {
 	<div id="formModal2" class="modal">
                 <div class="modal-content">
                     <span class="close">&times;</span>
-                    <form id="workForm2" method="post" action="human">
+                    <form id="workForm2" method="post" action="modify">
                         <table>
                             <tr>
                                 <th colspan="2">사원 수정</th>
                             </tr>
                             <tr>
                                 <td>사원번호</td>
-                                <td><input  type= "text" name="emp_id"></td>
+                     			<td>${dto.emp_id}
                             </tr>
                             <tr>
                                 <td>이름</td>
@@ -227,7 +227,8 @@ tbody tr:last-child {
                                 <td><input name="emp_hiredate" type="date"></td>
                             </tr>
                         </table>
-                        <input id="workFormBtn" type="submit" value="수정하기">
+                        <input type="hidden" name="emp_id" value="${dto.emp_id }">
+						<input type="submit" value="수정">
                     </form>
                 </div>
             </div>
