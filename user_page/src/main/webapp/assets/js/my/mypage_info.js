@@ -11,11 +11,16 @@ let pweditBtn = document.querySelector("#pweditBtn");
 let numBnt = document.querySelector("#numBnt");
 let in1 = document.querySelector("#in1");
 let pweditIn = document.querySelector("#pweditIn");
+let telBny = document.querySelector("#telBnt");
 let in2 = document.querySelector("#in2");
 let in3 = document.querySelector("#in3");
+let in4 = document.querySelector("#in4");
+
 
 let nick = document.querySelector("#nick");
 let nickname = document.querySelector("#nickname")
+let number = document.querySelector("#number")
+let tel = document.querySelector("#tel")
 
 let out = document.querySelector("#out")
 let realout = document.querySelector("#realout")
@@ -134,6 +139,62 @@ function edit(){
             alert(pw + "로 비밀번호를 변경하시겠습니까?");
     
             in2.innerHTML="비밀번호가 변경되었습니다. ";
+        }
+    })
+    
+    number.addEventListener('keyup', function(event){
+        if(event.keyCode == 13){
+            numBnt.click();
+        }
+    })
+
+    numBnt.addEventListener('click', function(){
+        in3.innerHTML="";
+        let click = in3.classList.contains("click");
+        if(click){
+            in3.innerHTML = number.value;
+
+            in3.classList.remove("click");
+            in3.style.display="inline-block";
+            number.style.display="none";
+            
+            console.log(number.value);
+            in3.innerHTML=number.value;
+        } else{
+            number.value="";
+
+            in3.style.display="none";
+            number.style.display="inline-block";
+            in3.classList.add("click");
+            console.log(number.value);
+        }
+    })
+    
+    tel.addEventListener('keyup', function(event){
+        if(event.keyCode == 13){
+            telBnt.click();
+        }
+    })
+
+    telBnt.addEventListener('click', function(){
+        in4.innerHTML="";
+        let click = in4.classList.contains("click");
+        if(click){
+            in4.innerHTML = tel.value;
+
+            in4.classList.remove("click");
+            in4.style.display="inline-block";
+            number.style.display="none";
+            
+            console.log(tel.value);
+            in4.innerHTML=tel.value;
+        } else{
+            number.value="";
+
+            in4.style.display="none";
+            tel.style.display="inline-block";
+            in4.classList.add("click");
+            console.log(tel.value);
         }
     })
 

@@ -59,11 +59,10 @@ public class NotiController2 extends HttpServlet {
         }
 
         request.setAttribute("notice", notice);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_detail.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // POST 요청 처리 로직을 추가할 수 있습니다. 필요에 따라 구현합니다.
     }
 }
