@@ -3,6 +3,7 @@ package mes_service;
 import java.util.List;
 
 import mes_DAO.MesPfworkDAO;
+import mes_DTO.MesNoticeDTO;
 import mes_DTO.MesPfworkDTO;
 
 public class MesPfworkService {
@@ -17,6 +18,25 @@ public class MesPfworkService {
 		
 	}
 	
+	public MesPfworkDTO get (int os_id) {
+		
+		MesPfworkDTO PfworkDTO = new MesPfworkDTO();
+		
+		PfworkDTO = PfworkDAO.selectOne(os_id);
+		
+		return PfworkDTO;
+		
+	}
+	
+	public MesPfworkDTO One(int os_id) {
+		
+		MesPfworkDTO PfworkDTO = new MesPfworkDTO();
+		
+		PfworkDTO = this.PfworkDAO.selectOne(os_id);
+		
+		return PfworkDTO;
+	}
+	
 	public List getPfworkds() {
 		
 		List result = this.PfworkDAO.selectpfworkds();
@@ -29,6 +49,18 @@ public class MesPfworkService {
 				
 		return this.PfworkDAO.insert(PfworkDTO);
 				
+	}
+	
+	public int update (MesPfworkDTO PfworkDTO) {
+		
+		return this.PfworkDAO.update(PfworkDTO);
+		
+	}
+	
+	public int delete (MesPfworkDTO PfworkDTO) {
+		
+		return this.PfworkDAO.delete(PfworkDTO);
+		
 	}
 
 }

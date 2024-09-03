@@ -1,29 +1,33 @@
 window.onload = function () {
 
-    const modal = document.getElementById('formModal');
-    const openFormButton = document.getElementById('openForm');
-    const closeButton = document.querySelector('.close');
+    const modal1 = document.getElementById('formModal1');
+    const modal2 = document.getElementById('formModal2');
+    const openFormButton1 = document.getElementById('openForm1');
+    const openFormButton2 = document.querySelectorAll('#main_page_3 tbody tr');
+    const closeButton1 = document.querySelector('.close1');
+    const closeButton2 = document.querySelector('.close2');
     const form = document.getElementById('workForm');
-
+	// 모달1---------------------------------------------------
+	
     // 버튼 클릭 시 모달 열기
-    openFormButton.addEventListener('click', function () {
-        modal.style.display = 'block';
+    openFormButton1.addEventListener('click', function () {
+        modal1.style.display = 'block';
         console.log("클릭");
     });
 
     // 모달 닫기
-    closeButton.addEventListener('click', function () {
-        modal.style.display = 'none';
+    closeButton1.addEventListener('click', function () {
+        modal1.style.display = 'none';
     });
 
     // 창 외부 클릭 시 모달 닫기
     window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            modal.style.display = 'none';
+        if (event.target === modal1) {
+            modal1.style.display = 'none';
         }
     });
-
-    
+	//---------------------------------------------------------
+   
 
 
     // 페이지 이동

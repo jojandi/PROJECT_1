@@ -19,6 +19,17 @@ public class MesStockDTO {
 	private String pub_id;
 	private long bom_code;
 	private String bom_name;
+	private long emp_id;
+	private String order_st;
+	private long mes_book_code;
+	
+	
+	public long getEmp_id() {
+		return emp_id;
+	}
+	public void setEmp_id(long emp_id) {
+		this.emp_id = emp_id;
+	}
 	public long getBom_code() {
 		return bom_code;
 	}
@@ -68,8 +79,7 @@ public class MesStockDTO {
 				+ pd_note + ", order_st=" + order_st + ", mes_book_code=" + mes_book_code + ", emp_name=" + emp_name
 				+ ", pub_name=" + pub_name + "]";
 	}
-	private String order_st;
-	private long mes_book_code;
+
 	public Date getOrder_date() {
 		return order_date;
 	}

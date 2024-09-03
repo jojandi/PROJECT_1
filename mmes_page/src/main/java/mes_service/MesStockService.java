@@ -28,9 +28,24 @@ public class MesStockService {
 		
 		return list;
 	}
-public int order (MesStockDTO MesStockDTO) {
+	public int order (MesStockDTO MesStockDTO) {
 		
 		return dao.order(MesStockDTO);
+		
+	}
+	public int deleteOrder (MesStockDTO MesStockDTO) {
+		
+		return dao.deleteOrder(MesStockDTO);
+		
+	}
+	public int updateMesBook (MesStockDTO MesStockDTO) {
+		
+		return dao.updateMesBook(MesStockDTO);
+		
+	}
+	public MesStockDTO getStockOrder (int order_id) {
+		
+		return dao.getStockOrder(order_id);
 		
 	}
 		
