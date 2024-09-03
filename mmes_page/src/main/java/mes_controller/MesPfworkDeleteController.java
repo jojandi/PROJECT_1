@@ -1,7 +1,6 @@
 package mes_controller;
 
 import java.io.IOException;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,28 +8,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mes_service.MesWorkOrderWoService;
+import mes_DTO.MesPfworkDTO;
+import mes_service.MesPfworkService;
 
-@WebServlet("/workorder")
-public class mesWorkOrderController extends HttpServlet {
+@WebServlet("/pfwork_delete")
+public class MesPfworkDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		System.out.println("workorder doGet 실행");
+		System.out.println("pfwork_delete doGet 실행");
 		
-		MesWorkOrderWoService WoService = new MesWorkOrderWoService();
+		int os_id = Integer.parseInt(request.getParameter("os_id"));
 		
-		List list = WoService.getWorkwo();
+		MesPfworkDTO PfworkDTO = new MesPfworkDTO();
+		PfworkDTO.setOs_id(os_id);
 		
-		request.setAttribute("list", list);
+		MesPfworkService PfworkService = new MesPfworkService();
+		int result = PfworkService.delete(PfworkDTO);
+		System.out.println("result : " + result);
 		
-		System.out.println(list);
-		
-		request.getRequestDispatcher("/WEB-INF/mes/mes_workorder/mes_workorder.jsp").forward(request, response);
+		response.sendRedirect("/mmes_page/pfwork");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	}
 
 }
