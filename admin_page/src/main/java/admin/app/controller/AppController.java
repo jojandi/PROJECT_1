@@ -1,6 +1,7 @@
 package admin.app.controller;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class AppController extends HttpServlet {
 		String appBook = request.getParameter("app_book");
 		String appName = request.getParameter("app_name");
 		String appPub = request.getParameter("app_pub");
-//		int appDate = Integer.parseInt(request.getParameter("app_date"));
+		String appDate = request.getParameter("app_date");
 		String userSeq = request.getParameter("user_seq");
 		String purchased = request.getParameter("purchased");
 		String app_status = request.getParameter("app_status");
@@ -57,7 +58,7 @@ public class AppController extends HttpServlet {
 		appDTO.setApp_book(appBook);
 		appDTO.setApp_name(appName);
 		appDTO.setApp_pub(appPub);
-//		appDTO.setApp_date(appDate);
+//		appDTO.setApp_date(app_date);
 		appDTO.setUser_seq(userSeq);
 		appDTO.setPurchased(purchased);
 		appDTO.setApp_status(app_status);

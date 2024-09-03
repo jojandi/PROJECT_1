@@ -71,7 +71,7 @@ public class AppDAO {
             ps.setString(2, dto.getApp_book());
             ps.setString(3, dto.getApp_name());
             ps.setString(4, dto.getApp_pub());
-            ps.setDate(5, dto.getApp_date());
+//            ps.setNString(5, dto.getApp_date());
             ps.setString(6, dto.getUser_seq());
             ps.setString(7, dto.getPurchased());
             ps.setString(8, dto.getApp_status());
