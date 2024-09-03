@@ -87,11 +87,11 @@
                 </table>
             </div>
 
-            <div id="movepage">
+            <!-- <div id="movepage">
                 <span class="material-symbols-outlined">chevron_left</span>
                 <span class="chap">1</span>
                 <span class="material-symbols-outlined">chevron_right</span>
-            </div>
+            </div> -->
         </section>
 
     <!-- wrap -->

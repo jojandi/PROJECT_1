@@ -49,6 +49,8 @@ function ajax_del(method) {
 
     console.log(seqs);
     
+    console.log("code=" + seqs + "&user=" + user )
+    
     if(seqs.length > 0){
 	    let url = 'mypage_use';
 	    
@@ -79,14 +81,16 @@ function ajax_resall(method) {
 
     let seqs = [];
 
-    $("input[name='cart_seq']").each(function(i){   
+    $("input[name='cart_chk']").each(function(i){   
         seqs.push($(this).val());
     });
 
     console.log(seqs);
     
+    console.log("code=" + seqs + "&user=" + user )
+    
     if(seqs.length > 0){
-	    let url = 'mypage_use';
+	    let url = 'resAll';
 	    
 	    // ajax
 	    let xhr = new XMLHttpRequest();
@@ -98,7 +102,7 @@ function ajax_resall(method) {
 	    } else{
 	        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 	    
-	        xhr.send( "cart_seq=" + seqs );
+	        xhr.send( "cart_seq=" + seqs + "&user=" + user);
 	        
 	    }
 	
