@@ -23,7 +23,7 @@ public class NoticeDAO {
 
     // 공지사항 목록 조회 메서드
     public List<NoticeDTO> selectAnnounce() {
-        List<NoticeDTO> list = new ArrayList<>();
+        List list = new ArrayList();
         String query = "SELECT * FROM announcement";
 
         try (Connection con = getConnection();
