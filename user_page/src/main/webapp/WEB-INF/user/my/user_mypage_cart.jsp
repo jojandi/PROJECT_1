@@ -48,32 +48,41 @@
                     </thead>
 
                     <tbody>
-                        <tr class="cart">
-                            <td rowspan="2">
-                                <input type="checkbox" name="cart_chk" value="1" class="chk"> 
-                            </td>
-                            <td rowspan="2" class="bookCover">
-                                <img src="https://image.aladin.co.kr/product/33845/80/covermini/k132930705_1.jpg">
-                            </td>
-                            <td class="bookTitle book">
-                                사랑받는 이기주의자
-                                <div> - 나를 지키며 사랑받는 관계의 기술</div>
-                            </td>
-                            <td rowspan="2">
-                            	<form method="post" action="res">
-                            		<input type="hidden" name="li_book_code" value="1">
-	                                <input type="submit" class="reser" value="예약"><br>
-                            	</form>
-                            	<form method="post" action="cart_del">
-                            		<input type="hidden" name="cart_seq" value="1">
-	                                <input type="submit" class="del" value="삭제">
-                            	</form>
-                            </td>
-                        </tr>
-                        <tr class="cart">
-                            <td class="wirter book">박코 (지은이)</td>
-                        </tr>
-
+                    	<c:forEach var="list" items="${list}">
+	                        <tr class="cart">
+	                            <td rowspan="3" class="border">
+	                                <input type="checkbox" name="cart_chk" value="1" class="chk"> 
+	                            </td>
+	                            <td rowspan="3" class="bookCover border" alt="${list.book_name}의 책표지">
+	                                <img src="${list.book_img}">
+	                            </td>
+	                            <td class="bookTitle book">
+	                                ${list.book_name}
+	                            </td>
+	                            <td class="border" rowspan="3">
+	                            	<form method="post" action="res">
+	                            		<input type="hidden" name="li_book_code" value="1">
+		                                <input type="submit" class="reser" value="예약"><br>
+	                            	</form>
+	                            	<form method="post" action="cart_del">
+	                            		<input type="hidden" name="cart_seq" value="1">
+		                                <input type="submit" class="del" value="삭제">
+	                            	</form>
+	                            </td>
+	                        </tr>
+	                       	<tr>
+	                            <td id="info" class="book">
+	                                 - ${list.li_book_info}
+	                            </td>
+	                        </tr>
+	                        <tr class="cart">
+	                            <td class="wirter book border">
+	                            	<span>${list.book_author}(지은이)</span>
+	                            	<span> | </span>
+	                            	<span>${list.book_pub}(주)</span>
+	                            </td>
+	                        </tr>
+	                    </c:forEach>
                     </tbody>
                 </table>
             </div>

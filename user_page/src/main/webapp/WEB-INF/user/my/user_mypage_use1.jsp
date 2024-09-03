@@ -42,6 +42,13 @@
 
             <div class="table">
                 <table>
+                	<colgroup>
+					    <col width="30%"/>
+					    <col width="15%"/>
+					    <col width="15%"/>
+					    <col width="10%"/>
+					    <col width="15%"/>
+					  </colgroup>
                     <thead> 
                         <tr>
                             <td class="bnameall">도서명</td>
@@ -54,18 +61,20 @@
 
                     <tbody>
                         <tr>
-                            <td class="bname">봄은 또 오고</td>
-                            <td>24.06.10</td>
-                            <td>24.06.12</td>
-                            <td>12345678</td>
-                            <td>픽업완료</td>
-                        </tr>
-                        <tr>
-                            <td class="bname">죽여 마땅한 사람들</td>
-                            <td>24.06.14</td>
-                            <td>-</td>
-                            <td>56565656</td>
-                            <td>대기중</td>
+                        	<c:forEach var="list" items="${list}">
+	                            <td class="bname">${list.book_name}</td>
+	                            <td>${list.res_day}</td>
+	                            <td>${list.res_pick}</td>
+	                            <td>${list.res_id}</td>
+	                            <td>
+									<c:if test="${list.res_ing >= 0}">
+										픽업 완료
+									</c:if>
+									<c:if test="${list.res_ing < 0}">
+										대기중
+									</c:if>
+								</td>
+                            </c:forEach>
                         </tr>
                     </tbody>
                 </table>

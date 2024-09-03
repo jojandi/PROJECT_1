@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import user.service.loan.LoanService;
+import user.service.my.loan.LoanService;
 
 
 @WebServlet("/user/over")
@@ -25,7 +25,7 @@ public class MyOverController extends HttpServlet {
 	    int seq = Integer.parseInt(request.getParameter("seq"));
 	    
 	    LoanService service = new LoanService();
-	    List list = service.myLoan(seq);
+	    List list = service.myOver(seq);
 	    
 	    request.setAttribute("list", list);
 	    

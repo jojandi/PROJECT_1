@@ -2,7 +2,7 @@ package admin.DTO.app;
 
 public class AppDTO {
 
-	private int ann_seq; // 도서신청 번호
+	private int app_seq; // 도서신청 번호
 	private String app_book; // 도서명
 	private String app_name; // 저자
 	private String app_pub; //출판사
@@ -10,11 +10,11 @@ public class AppDTO {
 	private String user_seq; // 회원번호
 
 	public int getAnn_seq() {
-		return ann_seq;
+		return app_seq;
 	}
 
 	public void setAnn_seq(int ann_seq) {
-		this.ann_seq = ann_seq;
+		this.app_seq = ann_seq;
 	}
 
 	public String getApp_book() {
@@ -59,7 +59,7 @@ public class AppDTO {
 
 	@Override
 	public String toString() {
-		return "AppDTO [ann_seq=" + ann_seq + ", app_book=" + app_book
+		return "AppDTO [ann_seq=" + app_seq + ", app_book=" + app_book
 				+ ", app_name=" + app_name + ", app_pub=" + app_pub
 				+ ", app_date=" + app_date + ", user_seq=" + user_seq
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
