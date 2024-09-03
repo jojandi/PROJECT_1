@@ -87,13 +87,11 @@ public class AppDAO {
             ps.setLong(5, dto.getApp_date());
             ps.setString(6, dto.getUser_seq());
 
-            // 실제 실행되는 SQL 출력
             System.out.println(((LoggableStatement) ps).getQueryString());
 
             // SQL 실행
             result = ps.executeUpdate();
 
-            // 자원 해제
             ps.close();
             con.close();
 
