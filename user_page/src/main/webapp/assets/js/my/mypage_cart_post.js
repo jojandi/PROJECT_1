@@ -1,6 +1,6 @@
 
 document.querySelector("#reserchk").addEventListener('click', function(){
-    ajax_reschk('post');
+    ajax_reschk();
 })
 document.querySelector("#delall").addEventListener('click', function(){
     ajax_del('post');
@@ -10,8 +10,7 @@ document.querySelector("#reserall").addEventListener('click', function(){
 })
 
 
-
-function ajax_reschk(method) {
+function ajax_reschk() {
 
     //jQuery로 for문 돌면서 check 된값 배열에 담는다
     var lists = [];
@@ -20,29 +19,21 @@ function ajax_reschk(method) {
     });
 
     console.log(lists);
+    console.log("code=" + lists + "&user=" + user )
+    
     
     if(lists.length > 0){
-        let url = 'mypage_use';
+        let url = 'reschk';
         
         // ajax
         let xhr = new XMLHttpRequest();
         
-        xhr.open(method, url);
+        xhr.open('post', url);
         
-        if(method == 'get'){			
-            xhr.send();
-        } else{
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
-        
-            xhr.send( "checkbox=" + lists );
-            
-        }
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
     
+        xhr.send( "code=" + lists + "&user=" + user);
     
-        xhr.onload = function(){
-            // responseText : 서버에서 응답받은 데이터를 문자열로 반환
-            console.log(xhr.responseText);
-        }
     } else{
         alert("도서를 선택해주세요. ")
     }
