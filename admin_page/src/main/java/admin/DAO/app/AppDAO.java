@@ -10,14 +10,13 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 import admin.DTO.app.AppDTO;
 
-
 public class AppDAO {
 
     // 도서 신청 목록을 가져오는 메서드
-    public List userList() {
-        List<Object> list = new ArrayList<>();
+    public List<AppDTO> getAllBookRequests() {
+        List<AppDTO> list = new ArrayList<>();
 
-        String query = "SELECT * FROM application";  
+        String query = "SELECT * FROM application";
 
         try {
             // 데이터베이스 연결
@@ -35,8 +34,10 @@ public class AppDAO {
                 appDTO.setApp_book(rs.getString("app_book"));
                 appDTO.setApp_name(rs.getString("app_name"));
                 appDTO.setApp_pub(rs.getString("app_pub"));
-                appDTO.setApp_date(rs.getInt("app_date"));
+                appDTO.setApp_date(rs.getDate("app_date"));
                 appDTO.setUser_seq(rs.getString("user_seq"));
+                appDTO.setPurchased(rs.getString("purchased"));
+                appDTO.setApp_status(rs.getString("app_status"));
 
                 list.add(appDTO);
             }
@@ -53,11 +54,11 @@ public class AppDAO {
     }
 
     // 도서 신청 정보를 삽입하는 메서드
-    public static int insertApp(AppDTO dto) {
+    public  int insertApp(AppDTO dto) {
         int result = -1;  // 기본 결과값 설정
 
-        String query = "INSERT INTO app_table (app_seq, app_book, app_name, app_pub, app_date, user_seq) " +
-                       "VALUES (?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO app_table (app_seq, app_book, app_name, app_pub, app_date, user_seq, purchased,app_status) " +
+                       "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             // 데이터베이스 연결
@@ -70,19 +71,14 @@ public class AppDAO {
             ps.setString(2, dto.getApp_book());
             ps.setString(3, dto.getApp_name());
             ps.setString(4, dto.getApp_pub());
-            ps.setInt(5, dto.getApp_date());
+            ps.setDate(5, dto.getApp_date());
             ps.setString(6, dto.getUser_seq());
+            ps.setString(7, dto.getPurchased());
+            ps.setString(8, dto.getApp_status());
+            
 
-<<<<<<< HEAD
-            System.out.println(((LoggableStatement) ps).getQueryString());
-
-            // SQL 실행
-            result = ps.executeUpdate();
-
-=======
             result = ps.executeUpdate();  
           
->>>>>>> 6e7ed592006c2331d9483d56706df8d036e16705
             ps.close();
             con.close();
 
@@ -93,7 +89,4 @@ public class AppDAO {
         return result;  
     }
 
-	public List selectApp() {
-		return null;
-	}
 }

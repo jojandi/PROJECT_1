@@ -49,22 +49,28 @@
 
                     <tbody>
                     	<c:forEach var="list" items="${list}">
+                    	<input type="hidden" name="user" class="code" value="${login.user_seq}">
+            			<input type="hidden" name="code" class="user" value="${list.book_code}">
 	                        <tr class="cart">
 	                            <td rowspan="3" class="border">
-	                                <input type="checkbox" name="cart_chk" value="1" class="chk"> 
+	                                <input type="checkbox" name="cart_chk" value="${list.book_code}" class="chk"> 
 	                            </td>
-	                            <td rowspan="3" class="bookCover border" alt="${list.book_name}의 책표지">
-	                                <img src="${list.book_img}">
+	                            <td rowspan="3" class="bookCover border">
+	                                <img src="${list.book_img}"  alt="${list.book_name}의 책표지">
 	                            </td>
 	                            <td class="bookTitle book">
 	                                ${list.book_name}
 	                            </td>
 	                            <td class="border" rowspan="3">
-	                            	<form method="post" action="res">
-	                            		<input type="hidden" name="li_book_code" value="1">
+	                            	<form method="post" action="cart_res">
+	                            		<input type="hidden" name="seq" value="${list.user_seq}">
+	                            		<input type="hidden" name="code" value="${list.book_code}">
+	                            		<input type="hidden" name="cart" value="${list.cart_seq}">
 		                                <input type="submit" class="reser" value="예약"><br>
 	                            	</form>
 	                            	<form method="post" action="cart_del">
+	                            		<input type="hidden" name="seq" value="${list.user_seq}">
+	                            		<input type="hidden" name="cart" value="${list.cart_seq}">
 	                            		<input type="hidden" name="cart_seq" value="1">
 		                                <input type="submit" class="del" value="삭제">
 	                            	</form>
@@ -95,7 +101,9 @@
         
         </div>
         </section>
-
+		<script>
+			let user = '${login.user_seq}';
+		</script>
         <script src="../assets/js/my/mypage_cart.js"></script>
         <script src="../assets/js/my/mypage_cart_post.js"></script>
     <!-- wrap -->

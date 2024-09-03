@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html>
 <link href="../assets/css/member/member.css" rel="stylesheet">
+<style>
+	 #i1 .material-symbols-outlined { background-color: rgb(165, 224, 144); }
+</style>
 <head>
 <meta charset="UTF-8">
 <title>도서 회원 관리</title>
@@ -30,8 +33,6 @@
 	                                <col width="10%">
 	                                <col width="12%">
 	                                <col width="7%">
-	                                <col width="7%">
-	                                <col width="7%">
 	                            </colgroup>
 								<thead>
 									<tr>
@@ -39,29 +40,25 @@
 										<th>생년월일</th>
 										<th>아이디</th>
 										<th>전화번호</th>
-										<th>대여수</th>
-										<th>연체정보</th>
 										<th>비고</th>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="list" items="${map}">
+									<c:forEach var="list" items="${list}">
 										<tr>
-											<td><a href="member_?seq=${map.user_seq}">${map.user_name}</a></td>
-											<td>${map.user_birth}</td>
-											<td>${map.user_id}</td>
-											<td>${map.user_tel}</td>
-											<td>${map.user_loan}</td>
-											<td><c:if test="${map.user_over == true}">
-								연체
-							</c:if> <c:if test="${map.user_over == false}">
-								-
-							</c:if></td>
-									<td><c:if test="${map.user_over == true}">
-								${map.user_pass}부터 대여 가능
-							</c:if> <c:if test="${map.user_over == false}">
-								-
-							</c:if></td>
+											<td><a href="member_?seq=${list.user_seq}">${list.user_name}</a></td>
+											<td>${list.user_birth}</td>
+											<td>${list.user_id}</td>
+											<td>${list.user_tel}</td>
+											
+											<td>
+												<c:if test="${list.user_over == true}">
+												${list.user_pass}부터 대여 가능
+												</c:if> 
+												<c:if test="${list.user_over == false}">
+													-
+												</c:if>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>

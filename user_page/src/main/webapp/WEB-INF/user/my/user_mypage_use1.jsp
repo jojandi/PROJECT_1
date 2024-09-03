@@ -60,31 +60,38 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                        	<c:forEach var="list" items="${list}">
+                       	<c:forEach var="list" items="${list}">
+	                       <tr>
 	                            <td class="bname">${list.book_name}</td>
 	                            <td>${list.res_day}</td>
-	                            <td>${list.res_pick}</td>
+	                            <td>
+	                            	<c:if test="${list.res_pick != null}">
+	                            		${list.res_pick}
+	                            	</c:if>
+	                            	<c:if test="${list.res_pick == null}">
+	                            		-
+	                            	</c:if>
+	                            </td>
 	                            <td>${list.res_id}</td>
 	                            <td>
-									<c:if test="${list.res_ing >= 0}">
+									<c:if test="${list.res_pick != null}">
 										픽업 완료
 									</c:if>
-									<c:if test="${list.res_ing < 0}">
+									<c:if test="${list.res_pick == null}">
 										대기중
 									</c:if>
 								</td>
-                            </c:forEach>
-                        </tr>
+	                       </tr>
+                           </c:forEach>
                     </tbody>
                 </table>
             </div>
 
-            <div id="movepage">
+            <!-- <div id="movepage">
                 <span class="material-symbols-outlined">chevron_left</span>
                 <span class="chap">1</span>
                 <span class="material-symbols-outlined">chevron_right</span>
-            </div>
+            </div> -->
         </section>
 
     <!-- wrap -->

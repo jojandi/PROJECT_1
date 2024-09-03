@@ -42,7 +42,7 @@
 				</div>
 				<div>
 					<div class="page_2">
-						<table id="main_library1">
+						<table id="main_library">
 							<colgroup>
 								<!--                                 <col width="5%"> -->
 								<!--                                 <col width="20%"> -->
@@ -55,7 +55,6 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">주문번호</th>
 									<th>제품명</th>
 									<th>회원ID</th>
@@ -66,12 +65,12 @@
 							<tbody>
 								<c:forEach var="work" items="${ list }">
 									<tr>
-										<th><input type="checkbox" class="p1_main_chack"></th>
 										<td class="sortable">${ work.os_id }</td>
 										<td>${ work.bom_name }</td>
 										<td>${ work.user_id }</td>
 										<td>${ work.os_date }</td>
 										<td>${ work.emp_name }</td>
+										<td><a href="pfwork_read?os_id=${ work.os_id }"><input type="button" value="수정"></a></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -88,7 +87,7 @@
 				<h3>출고 현황</h3>
 				<div>
 					<div class="page_2">
-						<table id="main_library">
+						<table id="main_librar2">
 							<thead>
 								<tr>
 									<th><input type="checkbox" id="p1_checkAll"></th>
@@ -100,16 +99,16 @@
 								</tr>
 							</thead>
 							<tbody>
-							<c:forEach var="ds" items="${ ds }">
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>${ ds.os_id }</td>
-									<td>${ ds.ds_date }</td>
-									<td>${ ds.user_id }</td>
-									<td>${ ds.bom_name }</td>
-									<td>${ ds.ds_con }</td>
-								</tr>
-							</c:forEach>
+								<c:forEach var="ds" items="${ ds }">
+									<tr>
+										<td><input type="checkbox"></td>
+										<td>${ ds.os_id }</td>
+										<td>${ ds.ds_date }</td>
+										<td>${ ds.user_id }</td>
+										<td>${ ds.bom_name }</td>
+										<td>${ ds.ds_con }</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -191,33 +190,20 @@
 					<table>
 						<tr class="modal-div_4">
 							<td><span class="modal-item">주문번호</span></td>
-							<td><span>A24082511</span></td>
+							<td><span class="modal-item">제품명</span></td>
+							<td><span class="modal-item">회원</span></td>
+							<td><span class="modal-item">주문날짜</span></td>
+							<td><span class="modal-item">담당자</span></td>
 						</tr>
-						<tr class="modal-div_4">
-							<td><span class="modal-item">출고일자</span></td>
-							<td><span>2024.08.28</span></td>
-						</tr>
-						<tr class="modal-div_4">
-							<td><span class="modal-item">거래처명</span></td>
-							<td><span>쌍용도서관</span></td>
-						</tr>
-						<tr class="modal-div_4">
-							<td class="modal-item">제품코드</td>
-							<td><span> book-20<br> book-30<br> book-yth
-							</span></td>
-						</tr>
-						<tr class="modal-div_4">
-							<td class="modal-item">수량</td>
-							<td><span>10EA</span></td>
-						</tr>
-						<tr class="modal-div_4">
-							<td class="modal-item">판매단가</td>
-							<td><span>400,000</span></td>
-						</tr>
-						<tr class="modal-div_4">
-							<td class="modal-item">상태</td>
-							<td><span>완료</span></td>
-						</tr>
+						<c:forEach var="modal" items="${ update }">
+							<tr class="modal-div_4">
+								<td><span>${ modal.os_id }</span></td>
+								<td><span>${ modal.bom_name }</span></td>
+								<td><span>${ modal.user_id }</span></td>
+								<td><span>${ modal.os_date }</span></td>
+								<td><span>${ modal.emp_name }</span></td>
+							</tr>
+						</c:forEach>
 					</table>
 				</div>
 			</div>

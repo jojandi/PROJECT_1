@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import user.dto.my.loan.LoanDTO;
 import user.dto.search.SearchDTO;
 
 public class SearchDAO {
@@ -62,5 +63,65 @@ public class SearchDAO {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	// 도서 예약
+	public int resBook(LoanDTO dto) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = " insert into user_res(res_id, book_code, user_seq, res_day) ";
+			query += " values (user_res_seq.nextval, ?, ?, sysdate) ";
+
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, dto.getBook_code());
+			ps.setInt(2, dto.getUser_seq());
+
+			// SQL 실행
+			result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	// 도서 장바구니
+	public int cartBook(LoanDTO dto) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = " insert into user_cart(cart_seq, book_code, user_seq) ";
+			query += " values (user_cart_seq.nextval, ?, ?) ";
+
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, dto.getBook_code());
+			ps.setInt(2, dto.getUser_seq());
+
+			// SQL 실행
+			result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 }

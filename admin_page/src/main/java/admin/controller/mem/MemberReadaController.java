@@ -26,9 +26,10 @@ public class MemberReadaController extends HttpServlet {
 	    MemberService service = new MemberService();
 	    
 	    MemberDTO dto = service.user(seq);
-	    System.out.println(dto);
+	    MemberDTO dto2 = service.userLoan(seq);
 		
 	    request.setAttribute("dto", dto);
+	    request.setAttribute("dto2", dto2);
 		request.getRequestDispatcher("/WEB-INF/admin/member/mem_read.jsp").forward(request, response);
 	}
 
