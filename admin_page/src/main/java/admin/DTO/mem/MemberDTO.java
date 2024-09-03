@@ -15,7 +15,7 @@ public class MemberDTO {
 	private boolean user_sub;
 	private java.sql.Date user_pass;
 	private boolean user_over;
-	private int user_loan;
+	private int loan_seq;
 	private boolean user_admin;
 	
 	
@@ -25,11 +25,12 @@ public class MemberDTO {
 	public void setUser_over(boolean user_over) {
 		this.user_over = user_over;
 	}
-	public int getUser_loan() {
-		return user_loan;
+	
+	public int getLoan_seq() {
+		return loan_seq;
 	}
-	public void setUser_loan(int user_loan) {
-		this.user_loan = user_loan;
+	public void setLoan_seq(int loan_seq) {
+		this.loan_seq = loan_seq;
 	}
 	public boolean isUser_admin() {
 		return user_admin;
@@ -122,8 +123,8 @@ public class MemberDTO {
 		return "MemberDTO [like_id=" + like_id + ", like=" + like + ", user_seq=" + user_seq + ", user_id=" + user_id
 				+ ", user_pw=" + user_pw + ", user_name=" + user_name + ", user_birth=" + user_birth + ", user_tel="
 				+ user_tel + ", user_addr1=" + user_addr1 + ", user_addr2=" + user_addr2 + ", user_email=" + user_email
-				+ ", user_sub=" + user_sub + ", user_pass=" + user_pass + ", user_over=" + user_over + ", user_loan="
-				+ user_loan + ", user_admin=" + user_admin + "]";
+				+ ", user_sub=" + user_sub + ", user_pass=" + user_pass + ", user_over=" + user_over + ", loan_seq="
+				+ loan_seq + ", user_admin=" + user_admin + "]";
 	}
 	
 }

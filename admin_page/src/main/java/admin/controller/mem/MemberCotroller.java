@@ -26,14 +26,9 @@ public class MemberCotroller extends HttpServlet {
 	    MemberService service = new MemberService();
 	    
 	    List userList = service.userList();
-	    List userLoan = service.userLoan();
 		
-	    Map map = new HashMap();
 	    
-	    map.put("userList", userList);
-	    map.put("userLoan", userLoan);
-	    
-	    request.setAttribute("map", map);
+	    request.setAttribute("list", userList);
 		request.getRequestDispatcher("/WEB-INF/admin/member/mem.jsp").forward(request, response);
 	}
 
