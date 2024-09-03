@@ -49,7 +49,6 @@ public class LoginDAO {
 				result.setUser_pass(rs.getDate("user_pass"));
 				result.setUser_pw(rs.getString("user_pw"));
 				result.setUser_seq(rs.getInt("user_seq"));
-				result.setUser_loan(rs.getInt("user_loan"));
 				
 				String user_sub = rs.getString("user_sub");
 				String user_over = rs.getString("user_over");

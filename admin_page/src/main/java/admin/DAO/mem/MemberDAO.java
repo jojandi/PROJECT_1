@@ -48,14 +48,12 @@ public class MemberDAO {
 				dto.setUser_pass(rs.getDate("user_pass"));
 				dto.setUser_pw(rs.getString("user_pw"));
 				dto.setUser_seq(rs.getInt("user_seq"));
-				dto.setUser_loan(rs.getInt("user_loan"));
 				
 				String user_sub = rs.getString("user_sub");
 				String user_over = rs.getString("user_over");
 				String user_admin = rs.getString("user_admin");
 				
 				String user_tel = rs.getString("user_tel");
-				System.out.println(user_tel);
 				
 				String tel1 = user_tel.substring(0, 2);
 				String tel2 = user_tel.substring(2, 6);
@@ -95,8 +93,8 @@ public class MemberDAO {
 	}
 	
 	// 사용자 대출 내역
-	public List userLoan() {
-		List list = new ArrayList();
+	public MemberDTO userLoan(int user_seq) {
+		MemberDTO dto = null;
 		
 		try {
 			Context ctx = new InitialContext();
@@ -105,24 +103,21 @@ public class MemberDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select user_seq, max(loan_seq) as isover from tbl_user join user_loan using(user_seq) ";
-			query += " group by user_seq ";
+			String query =  " select count(*) as loan_seq from user_loan where user_seq = ? ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, user_seq);
 			
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()){
-				MemberDTO dto = new MemberDTO();
+				dto = new MemberDTO();
 				
-				dto.setUser_seq(rs.getInt("user_seq"));
-				dto.setUser_loan(rs.getInt("isover"));
+				dto.setLoan_seq(rs.getInt("loan_seq"));
 
-				list.add(dto);
 			}
-			System.out.println(list);
 			ps.close();
 			con.close();
 			rs.close();
@@ -130,7 +125,7 @@ public class MemberDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return list;
+		return dto;
 	}
 	
 	// 사용자 상세목록
@@ -168,7 +163,6 @@ public class MemberDAO {
 				dto.setUser_pass(rs.getDate("user_pass"));
 				dto.setUser_pw(rs.getString("user_pw"));
 				dto.setUser_seq(rs.getInt("user_seq"));
-				dto.setUser_loan(rs.getInt("user_loan"));
 				
 				String user_sub = rs.getString("user_sub");
 				String user_over = rs.getString("user_over");

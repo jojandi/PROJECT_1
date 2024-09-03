@@ -1,16 +1,28 @@
 
 
-#wrap {
-    display: flex;
-    padding: 20px;
+#wrap{
+    font-size: 0;
+    /* border: 1px solid red; */
+    padding: 30px 150px;
 }
 
-section {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    margin-left: 20px;
-    border-radius: 8px;
+#wrap section {
+    width: 80%;
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-left: 30px;
+    /* border: 1px solid red; */
+}
+
+section h3{
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 17px;
+    box-sizing: border-box;
 }
 
 section h1 {

@@ -133,6 +133,7 @@ public class LoanDAO {
 			// # SQL 준비
 			String query =  " select book_code, res_id, res_day, res_pick, user_seq, book_name, (res_pick - res_day) as res_ing  ";
 			query += " from user_res join li_book using(book_code) join book using(book_isbn) where user_seq = ? ";
+			query += " order by res_id ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
             ps.setInt(1, seq);

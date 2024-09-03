@@ -38,6 +38,8 @@
 	                        </td>
 	                        <td class="bookTitle">${list.book_name}</td>
 	                        <td rowspan="3" class="bookBnt">
+	                        	<input type="hidden" name="code" value="${list.book_code}" class="code">
+	                        	<input type="hidden" name="user" value="${login.user_seq}" class="user">
 	                            <input type="button" class="reserBnt" value="예약하기"><br>
 	                            <input type="button" class="cartBnt" value="장바구니">
 	                        </td>
@@ -64,7 +66,7 @@
             </div>
 
         </div>
-
+	<script src="../assets/js/search/search_post.js"></script>
     </div>
     
     <!-- footer -->
