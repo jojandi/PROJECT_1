@@ -6,6 +6,9 @@
 <!DOCTYPE html>
 <html>
 <link href="../assets/css/member/member_read.css" rel="stylesheet">
+<style>
+	 #i1 .material-symbols-outlined { background-color: rgb(165, 224, 144); }
+</style>
 <head>
 <meta charset="UTF-8">
 <title>도서 회원 관리</title>
@@ -59,10 +62,10 @@
 								</tr>
 								<tr>
 									<th>대여수</th>
-									<td>${dto.user_loan}</td>
+									<td>${dto2.loan_seq}</td>
 								</tr>
 								<tr>
-									<th>연체정보</th>
+									<th>연체횟수</th>
 									<td>
 										<c:if test="${dto.user_over == true}">
 												연체

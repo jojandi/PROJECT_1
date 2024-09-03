@@ -60,8 +60,10 @@
 	                                ${list.book_name}
 	                            </td>
 	                            <td class="border" rowspan="3">
-	                            	<form method="post" action="res">
-	                            		<input type="hidden" name="li_book_code" value="1">
+	                            	<form method="post" action="cart_res">
+	                            		<input type="hidden" name="seq" value="${list.user_seq}">
+	                            		<input type="hidden" name="code" value="${list.book_code}">
+	                            		<input type="hidden" name="cart" value="${list.cart_seq}">
 		                                <input type="submit" class="reser" value="예약"><br>
 	                            	</form>
 	                            	<form method="post" action="cart_del">

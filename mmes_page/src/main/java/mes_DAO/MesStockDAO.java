@@ -280,4 +280,133 @@ public class MesStockDAO {
 	     
 	     return list;
 	}
+    
+    public MesStockDTO getStockOrder(int order_id) {
+    	MesStockDTO dto = null;
+
+		try {
+
+			// DB 접속
+	    	 Context ctx = new InitialContext();
+			 DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			 Connection con = dataSource.getConnection();
+	    	 
+	    	 // SQL 준비
+			 String query = "select * from tbl_order";
+			 		query += " where order_id=?";
+
+
+	 		 PreparedStatement ps = con.prepareStatement(query);
+			 // ?를 값으로 채워줌
+			 // 첫번째 전달인자는 ?의 순서
+			 // 만약에 글씨라면 setString, 알아서 '로 감싸준다
+			 ps.setInt(1, order_id);
+			 		
+	    	 
+	    	 // SQL 실행 및 결과 확보
+	    	 ResultSet rs = ps.executeQuery();
+
+			// 결과 활용
+			if (rs.next()) {
+				dto = new MesStockDTO();
+				dto.setOrder_id(rs.getString("order_id"));
+				dto.setOrder_date(rs.getDate("order_date"));
+				dto.setOrder_price(rs.getLong("order_price"));
+				dto.setOrder_count(rs.getLong("order_count"));
+				dto.setOrder_st(rs.getString("order_st"));
+				dto.setEmp_id(rs.getLong("emp_id"));
+				dto.setPub_id(rs.getString("pub_id"));
+				dto.setMes_book_code(rs.getLong("mes_book_code"));
+			}
+			System.out.println("getStockOrder dto:"+dto);
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return dto;
+	}
+    public int deleteOrder(MesStockDTO MesStockDTO) {
+
+		int result = -1;
+
+		try {
+
+			// Servers 폴더의 context.xml에서
+			// name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// DB접속 : 커넥션풀을 사용해서
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = "delete from tbl_order where order_id = ?";
+					
+			
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			
+			ps.setString(1, MesStockDTO.getOrder_id());
+			
+
+
+			// 실제 실행되는 sql을 출력해볼 수 있다
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			// SQL 실행
+			result = ps.executeUpdate();
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+    public int updateMesBook(MesStockDTO MesStockDTO) {
+
+		int result = -1;
+
+		try {
+
+			// Servers 폴더의 context.xml에서
+			// name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// DB접속 : 커넥션풀을 사용해서
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = "UPDATE mes_book";
+				   query += " SET book_count = book_count + ?";
+				   query += " WHERE mes_book_code = ?";
+					
+			
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			
+			ps.setLong(1, MesStockDTO.getOrder_count());
+			ps.setLong(2, MesStockDTO.getMes_book_code());
+			
+
+
+			// 실제 실행되는 sql을 출력해볼 수 있다
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			// SQL 실행
+			result = ps.executeUpdate();
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
 }

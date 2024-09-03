@@ -64,7 +64,7 @@
 					</table>
 				</div>
 				<div class="click">
-					<input type="button" value="도서구매" class="search" id="bookPurchaseBtn"> 
+					<!--<input type="button" value="도서구매" class="search" id="bookPurchaseBtn">-->
 					<input type="submit" value="선택삭제" class="search">
 				</div>
 			</form>
