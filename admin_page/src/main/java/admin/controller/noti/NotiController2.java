@@ -12,57 +12,64 @@ import javax.servlet.http.HttpServletResponse;
 import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
-
 @WebServlet("/admin/noti2")
 public class NotiController2 extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    private NoticeService noticeService = new NoticeService();
+	private NoticeService noticeService = new NoticeService();
 
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항2 doGet 실행!");
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html; charset=utf-8;");
+	@Override
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("공지사항2 doGet 실행!");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8;");
 
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "list";
-        }
+		String action = request.getParameter("action");
+		if (action == null) {
+			action = "list";
+		}
 
-        switch (action) {
-            case "list":
-                listNotices(request, response);
-                break;
-            case "detail":
-                detailNotice(request, response);
-                break;
-            default:
-                listNotices(request, response);
-                break;
-        }
-    }
+		switch (action) {
+			case "list" :
+				listNotices(request, response);
+				break;
+			case "detail" :
+				detailNotice(request, response);
+				break;
+			default :
+				listNotices(request, response);
+				break;
+		}
+	}
 
-    private void listNotices(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<NoticeDTO> noticeList = noticeService.getAllNotices();
-        request.setAttribute("notices", noticeList);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
-    }
+	
+	  private void listNotices(HttpServletRequest request, HttpServletResponse
+	  response) throws ServletException, IOException { List<NoticeDTO>
+	  noticeList = noticeService.getAllNotices();
+	  request.setAttribute("notices", noticeList);
+	  request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").
+	  forward(request, response); }
+	
 
-    private void detailNotice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int annSeq = Integer.parseInt(request.getParameter("ann_seq"));
-        NoticeDTO notice = noticeService.getNoticeById(annSeq);
+	private void detailNotice(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		int annSeq = Integer.parseInt(request.getParameter("ann_seq"));
+		NoticeDTO notice = noticeService.getNoticeById(annSeq);
 
-        if (notice == null) {
-            response.sendRedirect(request.getContextPath() + "/admin/noti2?action=list");
-            return;
-        }
+		if (notice == null) {
+			response.sendRedirect(
+					request.getContextPath() + "/admin/noti2?action=list");
+			return;
+		}
 
-        request.setAttribute("notice", notice);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
-    }
-    
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    }
+		request.setAttribute("notice", notice);
+		request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp")
+				.forward(request, response);
+	}
+
+	@Override
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+	}
 }
