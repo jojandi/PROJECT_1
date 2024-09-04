@@ -17,7 +17,7 @@
     <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
     <link href="./assets/css/admin.css" rel="stylesheet">
     <link href="./assets/css/mes_human.css" rel="stylesheet">
-
+	<link href="./assets/css/admin_table.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     
@@ -34,9 +34,9 @@
         background-color: rgb(165, 224, 144);
 
         }   
-       	table {
-       	font-size: 18px;
-       	}
+/*        	table { */
+/*        	font-size: 18px; */
+/*        	} */
        	 .clickable {
             cursor: pointer;
             color: blue;
@@ -138,10 +138,6 @@
                         <table>
                             <tr>
                                 <th colspan="2">사원 추가</th>
-                            </tr>
-                            <tr>
-                                <td>사원번호</td>
-                                <td><input  type= "text" name="emp_id"></td>
                             </tr>
                             <tr>
                                 <td>이름</td>

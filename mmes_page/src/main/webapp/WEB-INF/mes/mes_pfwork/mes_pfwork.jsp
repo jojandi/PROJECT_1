@@ -43,16 +43,6 @@
 				<div>
 					<div class="page_2">
 						<table id="main_library">
-							<colgroup>
-								<!--                                 <col width="5%"> -->
-								<!--                                 <col width="20%"> -->
-								<!--                                 <col width="10%"> -->
-								<!--                                 <col width="8%"> -->
-								<!--                                 <col width="10%"> -->
-								<!--                                 <col width="10%"> -->
-								<!--                                 <col width="5%"> -->
-								<!--                                 <col width="7%"> -->
-							</colgroup>
 							<thead>
 								<tr>
 									<th class="sortable">주문번호</th>
@@ -81,6 +71,7 @@
 						<input type="button" id="addpf" value="주문추가">
 					</div>
 				</div>
+				
 			</div>
 
 			<div class="main_page" id="main_page_2">
@@ -133,7 +124,6 @@
 				<form method="post" action="pfwork_insert">
 					<div id="table">
 						<table>
-
 							<tr class="modal-div_2">
 								<td><span class="red">*</span> <span class="modal-item">제품명</span>
 								</td>

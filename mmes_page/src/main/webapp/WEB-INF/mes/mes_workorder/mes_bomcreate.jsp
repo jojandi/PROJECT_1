@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="java.util.*"%>
+       <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +33,7 @@
                         <span class="material-symbols-outlined">arrow_forward_ios</span>
                     </div></a>
                     <a href="bom"><div class="item" id="i2">
-                        <span>bom</span>
+                        <span>BOM</span>
                         <span class="material-symbols-outlined active">arrow_forward_ios</span>
                     </div></a>
                 </div>
@@ -45,9 +49,9 @@
 							<thead>
 								<tr>
 									<th><input type="checkbox" id="p1_checkAll"></th>
-									<th class="sortable">도서명</th>
-									<th>도서 코드</th>
+									<th class="sortable">제품코드</th>
 									<th>도서명</th>
+									<th>ISBN 코드</th>
 									<th>저자</th>
 									<th>출판사</th>
 									<th>수량</th>
@@ -56,9 +60,18 @@
 							</thead>
 							<!-- 여기에 데이터 -->
 							<tbody>
-								<c:forEach var="" items="">
-									
-								</c:forEach>
+								 <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type="checkbox" class="bom_checkbox"></td>				                     
+									<td>${dto.mes_book_code}</td>
+									<td>${dto.book_name}</td>
+				                    <td>${dto.book_isbn}</td>
+				                    <td>${dto.book_author}</td>
+				                    <td>${dto.book_pub}</td>
+				                    <td>${dto.book_count}</td>
+				                    <td>${dto.wh_code}</td>
+				                </tr>
+				            </c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -106,14 +119,7 @@
 	                                <input type="text" name="bom_name">
 	                            </td>
 	                        </tr>
-	                        <tr class="modal-div_6">
-	                            <td>
-	                                <span class="modal-item">판매단가</span> 
-	                            </td>
-	                            <td>
-	                                <input type="text" name="bom_price">
-	                            </td>
-	                        </tr>
+	                       
 	                    </table>
                     </form>
                 </div>
