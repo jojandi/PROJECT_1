@@ -41,7 +41,7 @@
         </aside>
 		<section>
 			<div class="main_page" id="main_page_1">
-				<h3>BOM 생성</h3>
+				<h3>BOM 상세정보</h3>
 				<div>
 					<form>
 					<div class="page_2">
@@ -60,7 +60,7 @@
 							</thead>
 							<!-- 여기에 데이터 -->
 							<tbody>
-								 <c:forEach var="dto" items="${list}">
+								<c:forEach var="dto" items="${bookList}">
 				                <tr>
 				                    <td><input type="checkbox" class="bom_checkbox"></td>				                     
 									<td>${dto.mes_book_code}</td>

@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -119,38 +122,24 @@
                             <thead>
                                 <tr>
                                     <th><input type="checkbox" id="p1_checkAll"></th>
-                                    <th class="sortable">부품코드</th>
-                                    <th>부품명</th>
-                                    <th>소요량</th>
-                                    <th>가용재고</th>
-                                    <th>적정재고</th>
+                                    <th class="sortable">제품코드</th>
+                                    <th>제품명</th>
+                                    <th>부품코드</th>
+                                    <th>부품코드</th>
+                                    <th>부품코드</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>book-20</td>
-                                    <td>20대필독서</td>
-                                    <td>4</td>
-                                    <td>15</td>
-                                    <td>30</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>book-30</td>
-                                    <td>30대필독서</td>
-                                    <td>5</td>
-                                    <td>5</td>
-                                    <td>20</td>
-                                </tr>
-                                <tr>
-                                    <td><input type="checkbox"></td>
-                                    <td>book-yth</td>
-                                    <td>청소년추천서</td>
-                                    <td>4</td>
-                                    <td>10</td>
-                                    <td>20</td>
-                                </tr>
+                               <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type="checkbox" class="bom_checkbox"></td>				                     
+									<td><a href = "http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
+				                    <td>${dto.bom_name}</td>
+				                    <td>${dto.mes_book_code1}</td>
+				                    <td>${dto.mes_book_code2}</td>
+				                    <td>${dto.mes_book_code3}</td>
+				                </tr>
+				            </c:forEach>
                             </tbody>
                         </table>
                     </div>

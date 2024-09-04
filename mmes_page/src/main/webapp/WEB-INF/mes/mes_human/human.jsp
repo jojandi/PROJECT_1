@@ -140,10 +140,6 @@
                                 <th colspan="2">사원 추가</th>
                             </tr>
                             <tr>
-                                <td>사원번호</td>
-                                <td><input  type= "text" name="emp_id"></td>
-                            </tr>
-                            <tr>
                                 <td>이름</td>
                                 <td><input type="text" name="emp_name"></td>
                             </tr>
