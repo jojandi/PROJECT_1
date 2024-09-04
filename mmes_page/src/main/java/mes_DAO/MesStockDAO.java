@@ -409,4 +409,110 @@ public class MesStockDAO {
 
 		return result;
 	}
+    
+    //페이징----------------------------------------------------------------------------------------------
+    public List<MesStockDTO> selectStockPage2(int start, int end) {
+        List<MesStockDTO> list = new ArrayList<>();
+        
+        try {
+            // DB 접속
+            Context ctx = new InitialContext();
+            DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+            Connection con = dataSource.getConnection();
+
+            // SQL 준비
+            String query =  "SELECT *";
+            	   query += " FROM (";
+            	   query += " SELECT rownum rnum,";
+            	   query += " mes_book.book_isbn,";
+            	   query += " book.book_name,";
+            	   query += " book.book_author,";
+            	   query += " book.book_pub,";
+            	   query += " mes_book.book_count,";
+            	   query += " mes_book.wh_code";
+            	   query += " FROM mes_book";
+            	   query += " LEFT JOIN book ON mes_book.book_isbn = book.book_isbn";
+            	   query += " ORDER BY mes_book.book_isbn";
+            	   query += ")";
+            	   query += " WHERE rnum >= ? AND rnum <= ?";
+           
+            
+            PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, start);
+            ps.setInt(2, end);
+            
+            System.out.println(((LoggableStatement)ps).getQueryString());
+            
+            // SQL 실행 및 결과 확보
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                MesStockDTO dto = new MesStockDTO();
+                
+                // 각 컬럼의 값을 DTO에 설정
+                dto.setBook_isbn(rs.getLong("book_isbn"));
+                dto.setBook_name(rs.getString("book_name"));
+                dto.setBook_author(rs.getString("book_author"));
+                dto.setBook_pub(rs.getString("book_pub"));
+                dto.setBook_count(rs.getLong("book_count"));
+                dto.setWh_code(rs.getString("wh_code"));  // 정확한 wh_code 사용
+                dto.setRnum(rs.getInt("rnum"));
+                
+                list.add(dto);
+            }
+            
+            rs.close();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return list;
+    }
+
+
+
+
+
+	
+    public int totalStockPage2() {
+        int result = -1;
+        
+        try {
+            // DB 접속
+            Context ctx = new InitialContext();
+            DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+            Connection con = dataSource.getConnection();
+
+            // SQL 준비
+            String query = " SELECT COUNT(*) AS cnt ";
+            query += " FROM mes_book mb ";
+            query += " LEFT JOIN book b ON mb.book_isbn = b.book_isbn ";  // book 테이블과 조인하여 book_name, book_author, book_pub 참조
+
+            PreparedStatement ps = new LoggableStatement(con, query);
+            
+            System.out.println(((LoggableStatement)ps).getQueryString());
+            
+            // SQL 실행 및 결과 확보
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()) {
+                result = rs.getInt("cnt");  // 총 레코드 수 계산
+            }
+            
+            rs.close();
+            ps.close();
+            con.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return result;
+    }
+
+
+
+    
+    
+    
+    
 }
