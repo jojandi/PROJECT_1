@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD
+
 import mes_DAO.MesWorkorderWoDAO;
-=======
+
 
 import mes_DTO.MesWorkorderDTO;
 import mes_service.MesWorkorderService;
 
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
+
 import mes_service.MesWorkOrderWoService;
 
 
@@ -34,7 +34,7 @@ public class mesWorkOrderController extends HttpServlet {
 		
 		MesWorkOrderWoService WoService = new MesWorkOrderWoService();
 		
-<<<<<<< HEAD
+
 		List list2 = WoService.getWorkwo();
 		
 		request.setAttribute("list", list2);
@@ -44,7 +44,7 @@ public class mesWorkOrderController extends HttpServlet {
 		// bom 셀렉트 jsp로 전달해주는 놈 ~
 		List mesbom_code = woDAO.getMesbom_code();
 		request.setAttribute("bom_code", mesbom_code);
-=======
+
 		List list1 = WoService.getWorkwo();
 		
 		request.setAttribute("list1", list1);
@@ -68,20 +68,20 @@ public class mesWorkOrderController extends HttpServlet {
 		
 		
 
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
+
 		
 		request.getRequestDispatcher("/WEB-INF/mes/mes_workorder/mes_workorder.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-<<<<<<< HEAD
+
 		System.out.println("workorder doPost 실행");
 		
 	
-=======
+
 		
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
+
 	}
 
 }
