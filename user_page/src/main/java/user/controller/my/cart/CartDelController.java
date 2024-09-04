@@ -28,9 +28,6 @@ public class CartDelController extends HttpServlet {
 	    int cart = Integer.parseInt(request.getParameter("cart"));
 	    
 	    CartService service = new CartService();
-
-	    LoanDTO dto = new LoanDTO();
-	    dto.setUser_seq(seq);
 	    
 	    CartDTO cdto = new CartDTO();
 	    cdto.setCart_seq(cart);

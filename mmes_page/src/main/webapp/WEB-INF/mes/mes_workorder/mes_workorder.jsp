@@ -1,8 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -43,41 +48,29 @@
 							<input type="text" id="searchInput" placeholder="지시번호 검색">
 						</div>
 						<table id="main_library1">
-							<colgroup>
-								<col width="5%">
-								<col width="15%">
-								<col width="10%">
-								<!-- <col width="8%"> -->
-								<!-- <col width="10%">
-                                <col width="10%"> -->
-								<!-- <col width="5%"> -->
-								<!-- <col width="7%"> -->
-							</colgroup>
 							<thead>
 								<tr>
-									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">지시번호</th>
 									<th>제품코드</th>
 									<th>제품명</th>
 									<th>공정</th>
-									<th>시작일</th>
-									<th>종료일</th>
 									<th>수량</th>
 									<th>상태</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="list" items="${ list }">
+								<c:forEach var="list" items="${list1 }">
 									<tr>
-										<th><input type="checkbox" class="p1_main_chack"></th>
 										<td class="sortable">${ list.wo_id }</td>
 										<td>${ list.bom_code }</td>
 										<td>${ list.bom_name }</td>
 										<td>${ list.wo_process }</td>
-										<td>${ list.wo_sdate }</td>
-										<td>${ list.wo_edate }</td>
 										<td>${ list.wo_count }</td>
 										<td>${ list.wo_status }</td>
+										<td><form method="get" action="wo_update">
+												<input type="hidden" name="wo_id" value="${ list.wo_id }">
+												<input type="submit" value="수정">
+											</form></td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -86,10 +79,14 @@
 					</div>
 
 					<div class="bot_btn">
-						<input type="button" id="addbtn" value="작업지시서 생성">
+						<a href="wo_insert"><input type="button" id="addbtn"
+							value="작업지시서 생성"></a>
+
 					</div>
+
 				</div>
 			</div>
+
 
 			<!-- -------------------------------- BOM페이지 ------------------------------- -->
 			<div class="main_page" id="main_page_2">
@@ -111,30 +108,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>book-20</td>
-									<td>20대필독서</td>
-									<td>4</td>
-									<td>15</td>
-									<td>30</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>book-30</td>
-									<td>30대필독서</td>
-									<td>5</td>
-									<td>5</td>
-									<td>20</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>book-yth</td>
-									<td>청소년추천서</td>
-									<td>4</td>
-									<td>10</td>
-									<td>20</td>
-								</tr>
+								<c:forEach var="dto" items="${list}">
+									<tr>
+										<td><input type="checkbox" class="bom_checkbox"></td>
+										<td><a
+											href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
+										<td>${dto.bom_name}</td>
+										<td>${dto.mes_book_code1}</td>
+										<td>${dto.mes_book_code2}</td>
+										<td>${dto.mes_book_code3}</td>
+									</tr>
+								</c:forEach>
 							</tbody>
 						</table>
 					</div>
@@ -144,69 +128,11 @@
 				</div>
 			</div>
 
+
+
 		</section>
 	</div>
 
-	<!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
-	<div id="modal_2" class="modal_2">
-		<div class="close_2">
-			<span class="material-symbols-outlined"> close </span>
-		</div>
-		<div class="modal-content_2">
-			<div id="daylist_2"></div>
-			<div id="modal-content-divs_2">
-				<h2>&lt;작업 지시서 생성&gt;</h2>
-				<div class="modal-div_">
-					<span class="red">*</span> 필수
-				</div>
-				<div id="table">
-					<form>
-						<table>
-							<tr class="modal-div_2">
-								<td><span class="red">*</span> <span class="modal-item">지시번호</span>
-								</td>
-								<td><input type="text" name="order_id"></td>
-							</tr>
-							<tr class="modal-div_2">
-								<td><span class="red">*</span> <span class="modal-item">제품코드</span>
-								</td>
-								<td><input type="text" name="bom_code"></td>
-							</tr>
-							<tr class="modal-div_2">
-								<td><span class="red">*</span> <span class="modal-item">공정</span>
-								</td>
-								<td><select name="order_process">
-										<option value="pro1">A공정</option>
-										<option value="pro2">B공정</option>
-										<option value="pro3">C공정</option>
-								</select></td>
-							</tr>
-							<tr class="modal-div_2">
-								<td class="modal-item">예정시작 날짜</td>
-								<td><input type="date" name="order_Sdate"></td>
-							</tr>
-							<tr>
-								<td class="modal-item">예정종료 날짜</td>
-								<td><input type="date" name="order_Edate"></td>
-							</tr>
-							<tr class="modal-div_2">
-								<td class="modal-item">수량</td>
-								<td><input type="text" name="order_count"></td>
-							</tr>
-							<tr class="modal-div_2">
-								<td class="modal-item">상태</td>
-								<td><input type="text" name="order_status"></td>
-							</tr>
-						</table>
-					</form>
-				</div>
-				<div class="modal-div_3" style="text-align: right;">
-					<input class="inpa" type="submit" value="생성">
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
 
 	<!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
 	<div id="modal_4" class="modal_4">
