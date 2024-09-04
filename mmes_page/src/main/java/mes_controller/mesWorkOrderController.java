@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mes_DAO.MesWorkorderWoDAO;
 import mes_service.MesWorkOrderWoService;
 
 @WebServlet("/workorder")
@@ -19,18 +20,28 @@ public class mesWorkOrderController extends HttpServlet {
 	
 		System.out.println("workorder doGet 실행");
 		
+		MesWorkorderWoDAO woDAO = new MesWorkorderWoDAO();
+		
 		MesWorkOrderWoService WoService = new MesWorkOrderWoService();
 		
-		List list = WoService.getWorkwo();
+		List list2 = WoService.getWorkwo();
 		
-		request.setAttribute("list", list);
+		request.setAttribute("list", list2);
 		
-		System.out.println(list);
+		System.out.println(list2);
+		
+		// bom 셀렉트 jsp로 전달해주는 놈 ~
+		List mesbom_code = woDAO.getMesbom_code();
+		request.setAttribute("bom_code", mesbom_code);
 		
 		request.getRequestDispatcher("/WEB-INF/mes/mes_workorder/mes_workorder.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+		System.out.println("workorder doPost 실행");
+		
+	
 	}
 
 }
