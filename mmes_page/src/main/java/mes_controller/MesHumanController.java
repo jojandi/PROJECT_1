@@ -38,7 +38,6 @@ public class MesHumanController extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=utf-8;");
         
-        String emp_id = request.getParameter("emp_id");
         String emp_name = request.getParameter("emp_name");
         String po_name = request.getParameter("po_name");
         String dept_name = request.getParameter("dept_name");
@@ -47,14 +46,7 @@ public class MesHumanController extends HttpServlet {
         String emp_hiredate = request.getParameter("emp_hiredate");
 
         MesHumanDTO dto = new MesHumanDTO();
-        try {
-            dto.setEmp_id(Integer.parseInt(emp_id));
-        } catch (NumberFormatException e) {
-            // emp_id가 올바르지 않은 경우 처리
-            e.printStackTrace();
-            response.sendRedirect(request.getContextPath() + "/errorPage.jsp"); // 예: 오류 페이지로 리다이렉트
-            return;
-        }
+       
 
         dto.setEmp_name(emp_name);
         dto.setPo_name(po_name);

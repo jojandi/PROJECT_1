@@ -1,7 +1,9 @@
 package admin.controller.mem;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,6 +27,7 @@ public class MemberCotroller extends HttpServlet {
 	    
 	    List userList = service.userList();
 		
+	    
 	    request.setAttribute("list", userList);
 		request.getRequestDispatcher("/WEB-INF/admin/member/mem.jsp").forward(request, response);
 	}

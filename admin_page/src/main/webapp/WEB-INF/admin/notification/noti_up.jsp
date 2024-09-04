@@ -5,12 +5,23 @@
 <html>
 <head>
 <meta charset="EUC-KR">
+<<<<<<< HEAD
+<title>Insert title here</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../assets/css/noti/noti2.css" rel="stylesheet">
+<meta charset="UTF-8">
+=======
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 <!--<link href="../assets/css/noti/noti2.css" rel="stylesheet"> -->
 
+>>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303
 <title>공지사항 수정</title>
 </head>
 <body>
@@ -55,3 +66,8 @@
     <%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>
 </body>
 </html>
+<<<<<<< HEAD
+</body>
+</html>
+=======
+>>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303

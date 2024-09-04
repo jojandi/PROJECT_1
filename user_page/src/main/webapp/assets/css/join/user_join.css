@@ -27,7 +27,7 @@ select {
     box-sizing: border-box;
 }
 
-.red {
+.red, #LO01, #LO02 {
     color: red;
     font-size: 0.9em;
     display: none;

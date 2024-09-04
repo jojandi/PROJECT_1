@@ -61,10 +61,18 @@
               </tr>
           </table>
           <p>
+<<<<<<< HEAD
               <a href="notice_list">목록으로 돌아가기</a>
+=======
+              <a href="notice_list">목록</a>
+>>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303
           </p>
       </section>
   </div>
   <%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>
 </body>
 </html>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 452ea8c769d96c5395bede0953f63ec096bcf303

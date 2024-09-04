@@ -19,15 +19,21 @@
 						class="material-symbols-outlined">arrow_forward_ios</span>
 					</a>
 				</div>
-<!-- 					<div class="item" id="i2">
-						<a href="overdue"> 
-							<span>장기 연체자 관리</span> <span
-							class="material-symbols-outlined">arrow_forward_ios</span>
-						</a>
-					</div> -->
-
+				<!-- <div class="item" id="i2">
+					<a href="member_loan"> 
+						<span>도서 대출 관리</span> <span
+						class="material-symbols-outlined">arrow_forward_ios</span>
+					</a>
 				</div>
+				<div class="item" id="i3">
+					<a href="member_res"> 
+						<span>도서 예약 관리</span> <span
+						class="material-symbols-outlined">arrow_forward_ios</span>
+					</a>
+				</div> -->
+
 			</div>
+		</div>
 	</aside>
 </body>
 </html>

@@ -23,7 +23,7 @@ public class NoticeDAO {
 
     // 공지사항 목록 조회 메서드
     public List<NoticeDTO> selectAnnounce() {
-        List<NoticeDTO> list = new ArrayList<>();
+        List list = new ArrayList();
         String query = "SELECT * FROM announcement";
 
         try (Connection con = getConnection();
@@ -105,5 +105,37 @@ public class NoticeDAO {
 	public int insertNotice(NoticeDAO noticeDAO) {
 		return 0;
 	}
+
+	public int delete(NoticeDTO noticeDTO) {
+		int result = -1;
+		
+		try {
+			
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+			
+			// SQL 준비
+			String query = " delete from announcement where ann_seq = ?";
+			
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setInt(1, noticeDTO.getAnn_seq());
+			
+			// SQL 실행
+			result = ps.executeUpdate();
+			
+			ps.close();
+			con.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	
+	}
+	
+	
 }
 

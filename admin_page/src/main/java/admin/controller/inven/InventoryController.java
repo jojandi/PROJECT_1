@@ -1,7 +1,7 @@
 package admin.controller.inven;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,16 +22,25 @@ public class InventoryController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 	    
+	    String countPerPage = request.getParameter("countPerPage"); // 한 페이지 당 몇 개
+		String page = request.getParameter("page"); // 현재 페이지
+		
+		// 기본값 설정
+		if(countPerPage == null) countPerPage = "7";
+		if(page == null) page = "1";
+	    
 	    String text = request.getParameter("text");
 	    System.out.println("search : " + text);
 	    
 	    InvenService service = new InvenService();
 	    
-	    List bookList = service.bookList(text);
+	    Map bookList = service.bookList(text, countPerPage, page);
 	    
 	    System.out.println(bookList);
 	    
-	    request.setAttribute("list", bookList); 
+	    request.setAttribute("map", bookList); 
+	    request.setAttribute("countPerPage", countPerPage);
+		request.setAttribute("page", page);
 		
 		request.getRequestDispatcher("/WEB-INF/admin/inven/inventory.jsp").forward(request, response);
 	}

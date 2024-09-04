@@ -18,23 +18,23 @@ window.onload = function () {
 
     
     // 전체선택
-    document.querySelector('#main_page_1 #p1_checkAll').addEventListener('click', function () {
-        const isChecked = document.querySelector('#main_page_1 #p1_checkAll').checked;
-        if (isChecked) {
-            const checkboxes = document.querySelectorAll('#main_page_1 .p1_main_chack');
+    //document.querySelector('#main_page_1 #p1_checkAll').addEventListener('click', function () {
+       // const isChecked = document.querySelector('#main_page_1 #p1_checkAll').checked;
+        //if (isChecked) {
+         //   const checkboxes = document.querySelectorAll('#main_page_1 .p1_main_chack');
 
-            for (const checkbox of checkboxes) {
-                checkbox.checked = true;
-            }
-        }
+         //   for (const checkbox of checkboxes) {
+         //       checkbox.checked = true;
+        //    }
+       // }
 
-        else {
-            const checkboxes = document.querySelectorAll('.p1_main_chack');
-            for (const checkbox of checkboxes) {
-                checkbox.checked = false;
-            }
-        }
-    })
+        //else {
+       //     const checkboxes = document.querySelectorAll('.p1_main_chack');
+        //    for (const checkbox of checkboxes) {
+         //       checkbox.checked = false;
+         //   }
+        //}
+   // })
     // page2
     
     // 전체선택

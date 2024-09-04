@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.Map" %>
+<%@ page import="mes_DTO.MesStockDTO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -39,36 +43,31 @@
 						<table id="main_library">
 							<colgroup>
 								<col width="3%">
-								<col width="10%">
+								<col width="7%">
 								<col width="20%">
 								<col width="8%">
 								<col width="7%">
-								<col width="10%">
-								<col width="7%">
-								<col width="7%">
+								<col width="20%">
 							</colgroup>
 							<thead>
 								<tr>
 									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">제품 코드</th>
 									<th>제품명</th>
-									<th>구성 도서 수</th>
 									<th>재고 수량</th>
-									<th>출고 예정 수량</th>
 									<th>보관 위치</th>
 									<th>비고</th>
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="mesbook" items="${mesBook}">
+								<c:forEach var="productList" items="${productList}">
 									<tr>
-										<!-- 										<td><input type="checkbox" id="p1_checkAll"></th> -->
-										<%-- 										<td class="sortable">${mesbook.book_name }</th> --%>
-										<%-- 										<td>${mesbook.book_isbn }</th> --%>
-										<%-- 										<td>${mesbook.book_author }</th> --%>
-										<%-- 										<td>${mesbook.book_pub }</th> --%>
-										<%-- 										<td>${mesbook.book_count }</th> --%>
-										<%-- 										<td>${mesbook.wh_code }</th> --%>
+										<td><input type="checkbox" id="p1_checkAll"></td>
+										<td class="sortable">${productList.bom_code }</td>
+										<td>${productList.bom_name }</td>
+										<td>${productList.pd_count }</td>
+										<td>${productList.wh_name }</td>
+										<td>${productList.pd_note }
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -78,7 +77,6 @@
 						<div class="search-container">
 							<input type="text" id="searchInput" placeholder="도서명 검색...">
 						</div>
-						<input type="button" value="Excel 파일화">
 					</div>
 				</div>
 			</div>
@@ -103,28 +101,71 @@
 							<tbody>
 								<c:forEach var="mesbook" items="${mesBook}">
 									<tr>
-										<td><input type="checkbox" id="p1_checkAll">
-										</th>
-										<td class="sortable">${mesbook.book_name }
-										</th>
-										<td>${mesbook.book_isbn }
-										</th>
-										<td>${mesbook.book_author }
-										</th>
-										<td>${mesbook.book_pub }
-										</th>
-										<td>${mesbook.book_count }
-										</th>
-										<td>${mesbook.wh_code }
-										</th>
+										<td><input type="checkbox" id="p1_checkAll"></td>
+										<td class="sortable">${mesbook.book_name }</td>
+										<td>${mesbook.book_isbn }</td>
+										<td>${mesbook.book_author }</td>
+										<td>${mesbook.book_pub }</td>
+										<td>${mesbook.book_count }</td>
+										<td>${mesbook.wh_code }</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-					</div>
-					<div class="bot_btn">
+						<!-- 보유도서 페이징 -->
+<%-- 						<% 
+// 						Map map = (Map) request.getAttribute("map");
+// 						int totalCount = (int) map.get("totalCount");
+
+// 						String str_countPerPage = (String) request.getAttribute("countPerPage");
+// 						int countPerPage = Integer.parseInt(str_countPerPage);
+
+// 						String str_pageNo = (String) request.getAttribute("page");
+// 						int pageNo = Integer.parseInt(str_pageNo);
+
+// 						int lastPage = (int) Math.ceil((double) totalCount / countPerPage);
+
+// 						// 한번에 보여줄 페이지의 개수
+// 						int countPerSection = 3;
+// 						// 페이지 섹션 위치
+// 						int position = (int) Math.ceil((double) pageNo / countPerSection);
+// 						int sec_first = ((position - 1) * countPerSection) + 1;
+// 						int sec_last = position * countPerSection;
+// 						if (sec_last > lastPage) {
+// 							sec_last = lastPage;
+// 						}
+<%-- 						%> --%>
+<%-- 						<c:set var="lastPage2" value="<%=lastPage%>" scope="page" /> --%>
+<%-- 						<c:if test="<%=sec_first == 1%>"> --%>
+<!-- 							[이전] -->
+<%-- 						</c:if> --%>
+<%-- 						<c:if test="<%=sec_first != 1%>"> --%>
+<%-- 						[<a href="stock?=<%=sec_first - 1%>">이전</a>] --%>
+<%-- 						</c:if> --%>
+
+<%-- 						<c:forEach var="i" begin="1" end="${lastPage2 }"> --%>
+<%-- 						<c:forEach var="i" begin="<%=sec_first%>" end="<%=sec_last%>"> --%>
+<%-- 						<c:choose> --%>
+<%-- 						<c:when test="${page != i }"> --%>
+<%-- 							[<a href="stock?=${i }">${i }</a>] --%>
+<%-- 						</c:when> --%>
+<%-- 						<c:otherwise> --%>
+<%-- 						[<a href="stock?=${i }"><strong>${i }</strong></a>] --%>
+<%-- 						</c:otherwise> --%>
+<%-- 						</c:choose> --%>
+<%-- 						</c:forEach> --%>
+
+<%-- 						<c:if test="<%=sec_last == lastPage%>"> --%>
+<!-- 						[다음] -->
+<%-- 						</c:if> --%>
+<%-- 											<c:if test="<%=sec_last != lastPage%>"> --%>
+<%-- 						[<a href="stock?=<%=sec_last + 1%>">다음</a>] --%>
+<%-- 						</c:if> --%>
+											<!-- 여기까지 페이징 -->
+						</div>
+						<div class="bot_btn">
 						<div class="search-container">
-							<input type="text" id="searchInput" placeholder="도서명 검색...">
+						<input type="text" id="searchInput" placeholder="도서명 검색...">
 						</div>
 						<input type="button" value="Excel 파일화">
 					</div>
@@ -151,20 +192,20 @@
 								<tbody class="main_tbody">
 									<c:forEach var="tbl_order" items="${tbl_order}">
 										<tr>
-											<td><input type="checkbox" id="p1_checkAll">
-											</th>
-											<td class="sortable">${tbl_order.mes_book_code }
-											</th>
-											<td>${tbl_order.order_id }
-											</th>
-											<td>${tbl_order.pub_name }
-											</th>
-											<td>${tbl_order.order_st }
-											</th>
-											<td>${tbl_order.emp_name }
-											</th>
-											<td>${tbl_order.order_date }
-											</th>
+											<td><input type="checkbox" id="p1_checkAll"></td>
+											<td class="sortable">${tbl_order.mes_book_code }</td>
+											<td>${tbl_order.order_id }</td>
+											<td>${tbl_order.pub_name }</td>
+											<td>${tbl_order.order_st }</td>
+											<td>${tbl_order.emp_name }</td>
+											<td>${tbl_order.order_date }</td>
+											<td>
+												<form method="get" action="stockUpdate">
+													<input type="hidden" name="order_id"
+														value="${tbl_order.order_id }"> <input
+														type="submit" value="수정">
+												</form>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -172,7 +213,7 @@
 
 						</div>
 						<div class="text_right">
-							<input id="openForm" type="button" value="발주">
+							<input id="openForm1" type="button" value="발주">
 						</div>
 						<!-- <div class="page_1">
                             <h3>도서 구매 내역</h3>
@@ -201,10 +242,12 @@
 
 				</div>
 			</div>
-			<div id="formModal" class="modal">
+			<div id="formModal1" class="modal">
+				<!-- 도서 발주 모달 -->
 				<div class="modal-content">
-					<span class="close">&times;</span>
+					<span class="close1">&times;</span>
 					<form id="workForm" method="post" action="stock">
+						<input type="hidden" name="action" value="insert_order">
 						<table>
 							<tr>
 								<th colspan="2">도서 발주</th>
@@ -223,13 +266,47 @@
 							</tr>
 							<tr>
 								<td>발주처id</td>
-								<td><input id="pub_id" type="text" name="pub_id"></td>
+								<td><select name="pub_id">
+										<c:forEach var="code" items="${pub_id}">
+											<option value="${code}">${code}</option>
+										</c:forEach>
+								</select></td>
 							</tr>
 						</table>
 						<input id="workFormBtn" type="submit" value="발주">
 					</form>
 				</div>
 			</div>
+			<!-- 			<div id="formModal2" class="modal"> 도서 발주 업데이트 모달 -->
+			<!-- 				<div class="modal-content"> -->
+			<!-- 					<span class="close2">&times;</span> -->
+			<!-- 					<form id="workForm" method="post" action="stockUp"> -->
+			<!-- 					<input type="hidden" name="action" value="update_order"> -->
+			<!-- 						<table> -->
+			<!-- 							<tr> -->
+			<!-- 								<th colspan="2">도서 발주</th> -->
+			<!-- 							</tr> -->
+			<!-- 							<tr> -->
+			<!-- 								<td>부품코드</td> -->
+			<!-- 								<td></td> -->
+			<!-- 							</tr> -->
+			<!-- 							<tr> -->
+			<!-- 								<td>주문개수</td> -->
+			<!-- 								<td></td> -->
+			<!-- 							</tr> -->
+			<!-- 							<tr> -->
+			<!-- 								<td>발주상태</td> -->
+			<!-- 								<td></td> -->
+			<!-- 							</tr> -->
+			<!-- 							<tr> -->
+			<!-- 								<td>발주처id</td> -->
+			<!-- 								<td></td> -->
+			<!-- 							</tr> -->
+			<!-- 						</table> -->
+			<!-- 						<input id="workFormBtn" type="submit" value="발주"> -->
+			<!-- 					</form> -->
+			<!-- 				</div> -->
+			<!-- 			</div> -->
 		</section>
 	</div>
 

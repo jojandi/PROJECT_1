@@ -9,7 +9,7 @@ public class MesNoticeService {
 	
 	MesNoticeDAO NoticeDAO = new MesNoticeDAO();
 	
-	public List getNotice() {
+		public List getNotice() {
 		
 		
 		List result = this.NoticeDAO.selectNotice();

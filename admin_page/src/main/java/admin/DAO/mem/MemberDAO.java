@@ -48,14 +48,12 @@ public class MemberDAO {
 				dto.setUser_pass(rs.getDate("user_pass"));
 				dto.setUser_pw(rs.getString("user_pw"));
 				dto.setUser_seq(rs.getInt("user_seq"));
-				dto.setUser_loan(rs.getInt("user_loan"));
 				
 				String user_sub = rs.getString("user_sub");
 				String user_over = rs.getString("user_over");
 				String user_admin = rs.getString("user_admin");
 				
 				String user_tel = rs.getString("user_tel");
-				System.out.println(user_tel);
 				
 				String tel1 = user_tel.substring(0, 2);
 				String tel2 = user_tel.substring(2, 6);
@@ -94,6 +92,42 @@ public class MemberDAO {
 		return list;
 	}
 	
+	// 사용자 대출 내역
+	public MemberDTO userLoan(int user_seq) {
+		MemberDTO dto = null;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+		  
+			// # SQL 준비
+			String query =  " select count(*) as loan_seq from user_loan where user_seq = ? ";
+
+            PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, user_seq);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()){
+				dto = new MemberDTO();
+				
+				dto.setLoan_seq(rs.getInt("loan_seq"));
+
+			}
+			ps.close();
+			con.close();
+			rs.close();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
+	}
+	
 	// 사용자 상세목록
 	public MemberDTO user(int user_seq) {
 		MemberDTO dto = null;
@@ -129,7 +163,6 @@ public class MemberDAO {
 				dto.setUser_pass(rs.getDate("user_pass"));
 				dto.setUser_pw(rs.getString("user_pw"));
 				dto.setUser_seq(rs.getInt("user_seq"));
-				dto.setUser_loan(rs.getInt("user_loan"));
 				
 				String user_sub = rs.getString("user_sub");
 				String user_over = rs.getString("user_over");

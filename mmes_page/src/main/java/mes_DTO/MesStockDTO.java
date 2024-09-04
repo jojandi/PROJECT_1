@@ -17,7 +17,60 @@ public class MesStockDTO {
 	private long order_price; // 총 금액
 	private long order_count;	// 총 주문 개수
 	private String pub_id;
+	private long bom_code;
+	private String bom_name;
+	private long emp_id;
+	private String order_st;
+	private long mes_book_code;
 	
+	
+	private int rnum;
+	private int lv;
+	
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
+	public int getLv() {
+		return lv;
+	}
+	public void setLv(int lv) {
+		this.lv = lv;
+	}
+	public long getEmp_id() {
+		return emp_id;
+	}
+	public void setEmp_id(long emp_id) {
+		this.emp_id = emp_id;
+	}
+	public long getBom_code() {
+		return bom_code;
+	}
+	public void setBom_code(long bom_code) {
+		this.bom_code = bom_code;
+	}
+	public String getBom_name() {
+		return bom_name;
+	}
+	public void setBom_name(String bom_name) {
+		this.bom_name = bom_name;
+	}
+	public long getPd_count() {
+		return pd_count;
+	}
+	public void setPd_count(long pd_count) {
+		this.pd_count = pd_count;
+	}
+	public String getPd_note() {
+		return pd_note;
+	}
+	public void setPd_note(String pd_note) {
+		this.pd_note = pd_note;
+	}
+	private	 long pd_count;
+	private String pd_note;
 	
 	public String getPub_id() {
 		return pub_id;
@@ -36,11 +89,12 @@ public class MesStockDTO {
 		return "MesStockDTO [book_isbn=" + book_isbn + ", book_name=" + book_name + ", book_author=" + book_author
 				+ ", book_pub=" + book_pub + ", book_img=" + book_img + ", book_count=" + book_count + ", wh_code="
 				+ wh_code + ", wh_name=" + wh_name + ", wh_add=" + wh_add + ", order_date=" + order_date + ", order_id="
-				+ order_id + ", order_price=" + order_price + ", order_st=" + order_st + ", mes_book_code="
-				+ mes_book_code + ", emp_name=" + emp_name + ", pub_name=" + pub_name + "]";
+				+ order_id + ", order_price=" + order_price + ", order_count=" + order_count + ", pub_id=" + pub_id
+				+ ", bom_code=" + bom_code + ", bom_name=" + bom_name + ", pd_count=" + pd_count + ", pd_note="
+				+ pd_note + ", order_st=" + order_st + ", mes_book_code=" + mes_book_code + ", emp_name=" + emp_name
+				+ ", pub_name=" + pub_name + "]";
 	}
-	private String order_st;
-	private long mes_book_code;
+
 	public Date getOrder_date() {
 		return order_date;
 	}
