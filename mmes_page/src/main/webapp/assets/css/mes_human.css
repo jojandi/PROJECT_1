@@ -61,7 +61,7 @@
             width: 30px;
             text-align: center;
         }
-
+	
         .modal {
             display: none;
             position: fixed;
@@ -97,4 +97,24 @@
 
         #workForm {
             text-align: center;
-        }}
+        }
+           table{
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+        
+        table input{
+            width: 90%;
+        }
+        
+        table td{
+            border: 1px solid #ccc;
+        }
+        
+        #table{
+            margin-bottom: 20px;
+            margin: 0 auto;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            width: 90%;
+        }

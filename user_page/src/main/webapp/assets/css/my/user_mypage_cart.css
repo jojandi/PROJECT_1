@@ -98,9 +98,7 @@ section table tbody td{
     height: 40px;
     box-sizing: border-box;
     padding: 5px;
-    text-overflow: ellipsis; /* 말줄임표(...) 적용 */
-    overflow: hidden; /* 넘어가는 부분 안 보이게 */
-    white-space: nowrap; /* 줄바꿈 X */
+    
 }
 
 section table tbody .border{
@@ -118,13 +116,19 @@ section table tbody .bookTitle{
     padding-bottom: 5px;
 }
 
-section table tbody .bookTitle #info{
+section table tbody .book{
+	padding-left: 10px;
+}
+
+section table tbody #info{
 	font-size: 14px;
     font-weight: 500;
     padding-left: 15px;
-	margin-top: 5px;
-	color: gray;
+    padding-top: 0;
 	border: none;
+	text-overflow: ellipsis; /* 말줄임표(...) 적용 */
+    overflow: hidden; /* 넘어가는 부분 안 보이게 */
+    white-space: nowrap; /* 줄바꿈 X */
 }
 
 section table tbody .wirter{

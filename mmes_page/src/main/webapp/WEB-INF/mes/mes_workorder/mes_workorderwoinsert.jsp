@@ -1,14 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"
-    import="java.util.*"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,90 +65,139 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="list1" items="${ list1 }">
+								<c:forEach var="list" items="${ list }">
 									<tr>
 										<th><input type="checkbox" class="p1_main_chack"></th>
-<<<<<<< HEAD
 										<td class="sortable">${ list.wo_id }</td>
 										<td>${ list.bom_code }</td>
 										<td>${ list.bom_name }</td>
 										<td>${ list.wo_process }</td>
 										<td>${ list.wo_count }</td>
-										<td><select name="wo_status">
-												<option value="준비중">준비중</option>
-												<option value="진행중">진행중</option>
-												<option value="완료">완료</option>
-										</select></td>
-=======
-										<td class="sortable">${ list1.wo_id }</td>
-										<td>${ list1.bom_code }</td>
-										<td>${ list1.bom_name }</td>
-										<td>${ list1.wo_process }</td>
-										<td>${ list1.wo_count }</td>
-										<td>${ list1.wo_status }</td>
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
+										<td>${ list.wo_status }</td>
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-<<<<<<< HEAD
 
 					</div>
 
 					<div class="bot_btn">
-						<a href="wo_insert"><input type="button" id="addbtn"
-							value="작업지시서 생성"></a>
-=======
-						</div>
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
+						<input type="button" id="addbtn" value="작업지시서 생성">
 					</div>
 				</div>
+			</div>
 
-						
-						<!-- -------------------------------- BOM페이지 ------------------------------- -->
-				<div class="main_page" id="main_page_2">
-                  <h3>BOM</h3>
-                     <div>
-                        <div id="bomsh">
-                            <input type="text" placeholder="통합검색">
-                        </div>
-                        <div class="page_2">
-                           <table id="main_library">
-                              <thead>
-                                <tr>
-                                  <th><input type="checkbox" id="p1_checkAll"></th>
-                                  <th class="sortable">부품코드</th>
-                                  <th>부품명</th>
-                                  <th>소요량</th>
-                                  <th>가용재고</th>
-                                  <th>적정재고</th>
-                                </tr>
-                             </thead>
-                             <tbody>
-                               <c:forEach var="dto" items="${list}">
-                                   <tr>
-                                       <td><input type="checkbox" class="bom_checkbox"></td>
-                                       <td><a href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
-                                       <td>${dto.bom_name}</td>
-                                       <td>${dto.mes_book_code1}</td>
-                                       <td>${dto.mes_book_code2}</td>
-                                       <td>${dto.mes_book_code3}</td>
-                                   </tr>
-                               </c:forEach>
-                              </tbody>
-                           </table>
-                         </div>
-                         <div class="bot_btn">
-                               <a href="bom"><input type="button" id="addbom" value="BOM 생성"></a>
-                           </div>
-                        </div>
-                       </div>
-                     
+			<!-- -------------------------------- BOM페이지 ------------------------------- -->
+			<div class="main_page" id="main_page_2">
+				<h3>BOM</h3>
+				<div>
+					<div id="bomsh">
+						<input type="text" placeholder="통합검색">
+					</div>
+					<div class="page_2">
+						<table id="main_library">
+							<thead>
+								<tr>
+									<th><input type="checkbox" id="p1_checkAll"></th>
+									<th class="sortable">부품코드</th>
+									<th>부품명</th>
+									<th>소요량</th>
+									<th>가용재고</th>
+									<th>적정재고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>book-20</td>
+									<td>20대필독서</td>
+									<td>4</td>
+									<td>15</td>
+									<td>30</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>book-30</td>
+									<td>30대필독서</td>
+									<td>5</td>
+									<td>5</td>
+									<td>20</td>
+								</tr>
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>book-yth</td>
+									<td>청소년추천서</td>
+									<td>4</td>
+									<td>10</td>
+									<td>20</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="bot_btn">
+						<a href="bom"><input type="button" id="addbom" value="BOM 생성"></a>
+					</div>
+				</div>
+			</div>
 
-			
 		</section>
 	</div>
 
+	<!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
+	<div id="modal_2" class="modal_2" style="display: block;">
+		<div class="close_2">
+			<span class="material-symbols-outlined"> close </span>
+		</div>
+		<div class="modal-content_2">
+			<div id="daylist_2"></div>
+			<div id="modal-content-divs_2">
+				<h2>&lt;작업 지시서 생성&gt;</h2>
+				<div class="modal-div_">
+					<span class="red">*</span> 필수
+				</div>
+					<form method="post" action="wo_insert">
+				<div id="table">
+						<table>
+							<tr class="modal-div_2">
+								<td><span class="red">*</span> <span class="modal-item">제품코드</span>
+								</td>
+								<td><select name="bom_code">
+										<c:forEach var="code" items="${bom_code}">
+											<option value="${code}">${code}</option>
+										</c:forEach>
+								</select></td>
+							</tr>
+							<tr class="modal-div_2">
+								<td><span class="red">*</span> <span class="modal-item">공정</span>
+								</td>
+								<td><select name="wo_process">
+										<option value="A공정">A공정</option>
+										<option value="B공정">B공정</option>
+										<option value="C공정">C공정</option>
+								</select></td>
+							</tr>
+							<tr class="modal-div_2">
+								<td class="modal-item">수량</td>
+								<td><input type="text" name="wo_count"></td>
+							</tr>
+							<tr class="modal-div_2">
+								<td class="modal-item">상태</td>
+								<td><select name="wo_status">
+										<option value="준비중">준비중</option>
+										<option value="진행중">진행중</option>
+										<option value="완료">완료</option>
+								</select></td>
+							</tr>
+						</table>
+				</div>
+				<div class="modal-div_3" style="text-align: right;">
+					<input class="inpa" type="submit" value="생성">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<!-- //////////////////////////// 첫번째 모달 ////////////////////////////////////// -->
 
 	<!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
 	<div id="modal_4" class="modal_4">
@@ -223,7 +266,7 @@
 	<!-- //////////////////////////// 두번째 모달 ////////////////////////////////////// -->
 
 
-	<script src="./assets/js/mes_workorder.js"></script>
+	<script src="./assets/js/mes_workorderWo.js"></script>
 
 	<!-- 가장 아래 고정 -->
 

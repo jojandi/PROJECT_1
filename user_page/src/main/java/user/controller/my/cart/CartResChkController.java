@@ -23,16 +23,22 @@ public class CartResChkController extends HttpServlet {
 	    response.setContentType("text/html; charset=utf-8;");
 	    
 	    String code = request.getParameter("code");
-	    String[] codes = code.split(",");
-	    
+	    System.out.println("책코드 : " + code);
+	    String cart = request.getParameter("cart");
+	    System.out.println("장바구니 번호 : " + cart);
 	    int user = Integer.parseInt(request.getParameter("user"));
 	    
-	    System.out.println("bookcode : " + code + ", user_seq : " + user);
-	    
 	    CartService service = new CartService();
-	    int result = service.cartResChk(codes, user);
+
+    	String[] codes = code.split(","); // 만약 책이 하나면 한 개짜리 배열을 돌려줌
+    	String[] carts = cart.split(","); // 만약 책이 하나면 한 개짜리 배열을 돌려줌
+    
+    	int result = service.cartResChk(codes, user);
+    	int delete = service.cartDelChk(carts);
+	
 	    
-	    System.out.println("result : 검색 -> 예약" + result);
+	    System.out.println("예약 : " + result);
+	    System.out.println("삭제 : " + delete);
 	    
 	    response.sendRedirect(request.getContextPath() + "/user/res?seq=" + user);
 	}
