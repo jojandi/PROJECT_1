@@ -27,149 +27,120 @@ section #show_box_ h1{
     margin-bottom: 20px;
 }
 
-#table{
-    margin-top: 30px;
-}
-
-#best_img {
-    width: 100%;
-    display: inline-block;
-    /* vertical-align: bottom; */
-}
-
-#img_box {
-    display: inline-block;
-    width: 20%;
-}
-
-#best {
-    width: 100%;
-    margin-top: 10px;
-    text-align: left;
-    padding: 10px;
-    display: inline-block;
-    vertical-align: top;
-    border-bottom: solid 1px green;
-    box-sizing: border-box;
-}
-
-#best_infor {
-    /* border: 1px solid red; */
-    width: 60%;
-    display: inline-block;
-    vertical-align: top;
-    margin-left: 10px;
-}
-
-#input_1,
-#input_2 {
-    font-size: 16px;
-    padding: 8px;
-    color: black;
-    border-radius: 4px;
-    margin-left: 5px;
-    background: rgb(165, 224, 144);
-    border: 1px solid rgb(106, 170, 82);
-}
-
-#input_1{
-    background: white;
-    border: 1px solid rgb(106, 170, 82);
-}
-
-#input_bottom {
-    margin-top: 10px;
-}
-
-#left_menu {
-    display: inline-block;
-}
-
-.best_infor {
-    display: inline-block;
-    vertical-align: top;
-    width: 50%;
-    margin: 0 auto;
-}
-
-.age-range-bar button {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 8px 15px;
-    cursor: pointer;
-    outline: none;
-}
-
-.age-range-bar button.active {
-    background-color: rgb(165, 224, 144);
-    color: white;
-}
-
-/* .best_infor .material-symbols-outlined {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    margin: 10px auto;
-    padding: 10px;
-    border-radius: 5px;
-
-} */
-
-.best_infor .material-symbols-outlined.active {
-    color: rgb(165, 224, 144);
-}
-
 #in_top {
-    width: 112px;
-    color: white;
-    background-color: #489158;
-    padding: 1px 5px;
-    border-radius: 4px;
-    font-size: 12px;
+    background-color: rgb(165, 224, 144);
+    border: 1px solid rgb(106, 170, 82);
+    padding: 3px 20px;
+    border-radius: 5px;
+    font-size: 14px;
     text-align: center;
     margin-bottom: 5px;
 }
 
-#best_box {
-    color: #156a27;
-    background: #fff;
-}
 
-#box_1 {
-    border: 1px solid #489158;
-    min-height: 22px;
-    padding: 1px 5px;
-    border-radius: 4px;
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: -0.01em;
-}
-
-#input_res {
-    display: inline-block;
-    /* border: 1px solid red; */
-    vertical-align: bottom;
-    margin-bottom: 10px;
-}
-
-#show_box_ h1{
-    margin-top: 40px;
-}
-
-h1{
-    margin: 0;
-}
-
-#table_mf{
-    margin-top: 22px;
+table{
+    margin: 0 auto;
+    margin-bottom: 15px;
     border-collapse: collapse;
-    text-align: center;
+    width: 95%;
+    border-bottom: 2px solid #ccc;
+    padding: 0 15px;
 }
 
-#table_mf #imoge_1,
-#table_mf #imoge_2{
-    font-size: 40px;
+table td{
+	padding: 5px 12px;
+    text-align: left;
+}
+
+
+table .bookBnt{
+    text-align: center;
+    width: 130px;
+    padding-top: 130px;
+}
+
+table .imge{
+    width: 170px;
+}
+
+table img{
+    width: 100%;
+}
+
+table .bookBnt [type=button]{
+    font-size: 18px;
+    padding: 7px 15px;
+    margin: 5px 0;
+    border-radius: 5%;
+    background: rgb(165, 224, 144);
+    border: 1px solid rgb(106, 170, 82);
+    cursor: pointer;
+}
+
+table .bookBnt .reserBnt{
+    background: white;
+    border: 1px solid rgb(106, 170, 82);
+}
+
+table .best{
+    vertical-align: bottom;
+    width: 580px;
+}
+
+table .best span{
+    border: 2px solid rgb(106, 170, 82);
+    color: rgb(99, 109, 95);
+    border-radius: 10%;
+    padding: 3px 6px;
+    font-size: 14px;
+}
+
+table .bookTitle{
+	padding-top: 15px;
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 20px;
+}
+
+table .information{
+    height: 100px;
+    vertical-align: top;
+}
+
+table .information .wirter{
+    color: gray;
+    font-size: 15px;
+    line-height: 25px;
+}
+
+table .information .review{
+	color: rgb(65, 65, 65);
+    margin-top: 10px;
+}
+
+table .bookInfo{
+    padding: 0 10px 10px 0;
+}
+
+table .material-symbols-outlined {
+    vertical-align: top;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+.realInven{
+   font-size: 15px;
+}
+
+.realInven span{
+    font-size: 21px;
+    margin-left: 3px;
+    color: rgb(106, 170, 82);
+    font-weight: 900;
 }
 
 #menu #items #i2{

@@ -16,7 +16,7 @@ import user.dto.my.loan.LoanDTO;
 public class LoanDAO {
 
 	// 대출내역
-	public List myLoan(int seq) {
+	public List myLoan(int seq, int start, int end) {
 		List list = new ArrayList();
 		
 		try {
@@ -26,13 +26,18 @@ public class LoanDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select loan_seq, book_code, user_seq, book_name, loan_date, loan_ing, loan_return, loan_ex, (loan_ex - loan_return) as isOver ";
-			query += " from user_loan join li_book using(book_code)  ";
-			query += " join book using(book_isbn) where user_seq = ? ";
-			query += " order by loan_date desc";
+			String query =  " select * from( ";
+			query += " select rownum as rnum, loan_seq, book_code, user_seq, book_name, loan_date, loan_ing, loan_return, loan_ex, isOver  ";
+			query += " from (  ";
+			query += " select loan_seq, book_code, user_seq, book_name, loan_date, loan_ing, loan_return, loan_ex, (loan_ex - loan_return) as isOver ";
+			query += " from user_loan join li_book using(book_code) join book using(book_isbn) where user_seq = ? ";
+			query += " order by loan_date desc ) ";
+			query += " ) where rnum >=? and rnum <= ? ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
             ps.setInt(1, seq);
+            ps.setInt(2, start);
+            ps.setInt(3, end);
 			
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
@@ -73,7 +78,7 @@ public class LoanDAO {
 	}
 	
 	// 연체 내역
-	public List myOver(int seq) {
+	public List myOver(int seq, int start, int end) {
 		List list = new ArrayList();
 		
 		try {
@@ -83,13 +88,18 @@ public class LoanDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select loan_seq, book_code, user_seq, book_name, loan_date, loan_return, (loan_return - loan_ex) as over_date, loan_return + (loan_return - loan_ex) as user_pass";
+			String query =  " select * from( ";
+			query += " select rownum as rnum, loan_seq, book_code, user_seq, book_name, loan_date, loan_return, over_date, user_pass ";
+			query += " from ( select loan_seq, book_code, user_seq, book_name, loan_date, loan_return, (loan_return - loan_ex) as over_date, loan_return + (loan_return - loan_ex) as user_pass ";
 			query += " from user_loan join li_book using(book_code) ";
 			query += " join book using(book_isbn) where loan_return - loan_ex > 0 and user_seq = ? ";
 			query += " order by loan_date desc";
+			query += " )) where rnum >=? and rnum <= ? ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
             ps.setInt(1, seq);
+            ps.setInt(2, start);
+            ps.setInt(3, end);
 			
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
@@ -121,7 +131,7 @@ public class LoanDAO {
 	}
 	
 	// 예약내역
-	public List myRes(int seq) {
+	public List myRes(int seq, int start, int end) {
 		List list = new ArrayList();
 		
 		try {
@@ -131,12 +141,16 @@ public class LoanDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select book_code, res_id, res_day, res_pick, user_seq, book_name, (res_pick - res_day) as res_ing  ";
+			String query =  " select * from (select rownum as rnum, book_code, res_id, res_day, res_pick, user_seq, book_name, res_ing  ";
+			query +=  " from ( select book_code, res_id, res_day, res_pick, user_seq, book_name, (res_pick - res_day) as res_ing  ";
 			query += " from user_res join li_book using(book_code) join book using(book_isbn) where user_seq = ? ";
 			query += " order by res_id ";
+			query += " )) where rnum >=? and rnum <= ? ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
             ps.setInt(1, seq);
+            ps.setInt(2, start);
+            ps.setInt(3, end);
 			
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
@@ -164,6 +178,111 @@ public class LoanDAO {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	// 전체 목록 개수 -> 대출
+	public int totalLoan(int seq) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+		  
+			// # SQL 준비
+			String query =  " select count(*) cnt from user_loan where user_seq = ?";
+
+            PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, seq);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()) {				
+				result = rs.getInt("cnt");
+			}
+			
+			ps.close();
+			con.close();
+			rs.close();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	// 전체 목록 개수 -> 연체
+	public int totalOver(int seq) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+		  
+			// # SQL 준비
+			String query =  " select count(*) as cnt from user_loan join li_book using(book_code)  ";
+			query += "join book using(book_isbn) where loan_return - loan_ex > 0 and user_seq = ? ";
+
+            PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, seq);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()) {				
+				result = rs.getInt("cnt");
+			}
+			
+			ps.close();
+			con.close();
+			rs.close();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	// 전체 목록 개수 -> 예약
+	public int totalRes(int seq) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+		  
+			// # SQL 준비
+			String query =  " select count(*) cnt from user_res where user_seq = ?";
+
+            PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, seq);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()) {				
+				result = rs.getInt("cnt");
+			}
+			
+			ps.close();
+			con.close();
+			rs.close();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 
 }
