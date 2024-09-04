@@ -6,11 +6,13 @@ for(let i = 0; i<submit.length; i++){
     })
 }
 
+let code = document.querySelectorAll(".code");
 let select = document.querySelectorAll(".select");
 let seq = document.querySelectorAll(".seq");
 
 function ajax(i) {
 
+	console.log("code : " + code[i].value);
     console.log("select : " + select[i].value);
     console.log("seq : " + seq[i].value);
 
@@ -23,7 +25,9 @@ function ajax(i) {
 
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 
-    xhr.send( "ing=" + select[i].value + "&seq=" + seq[i].value);
+    xhr.send( "ing=" + select[i].value + "&seq=" + seq[i].value + "&code=" + code[i].value);
     
-    
+    xhr.onload = function(){
+		alert("수정되었습니다. ")
+    }
 }

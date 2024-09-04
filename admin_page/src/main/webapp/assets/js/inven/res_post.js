@@ -27,5 +27,8 @@ function ajax(i) {
 
     xhr.send( "code=" + code[i].value + "&seq=" + seq[i].value + "&user=" + user[i].value);
     
+    xhr.onload = function(){
+		alert("수정되었습니다. ")
+    }
     
 }

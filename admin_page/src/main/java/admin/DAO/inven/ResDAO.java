@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import admin.DTO.inven.InvenDTO;
 import admin.DTO.inven.LoanResDTO;
 
 
@@ -28,7 +29,7 @@ public class ResDAO {
 			// # SQL 준비
 			String query =  " select book_code, res_id, res_day, res_pick, user_seq, book_name, (res_pick - res_day) as res_ing  ";
 			query += " from user_res join li_book using(book_code) join book using(book_isbn) ";
-			query += " order by res_id ";
+			query += " order by res_id desc ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
 			
@@ -117,6 +118,72 @@ public class ResDAO {
 			e.printStackTrace();
 		}
 
+		return result;
+	}
+	
+	// 대출 시 재고에 대출중 표시
+	public int invenUpdate(InvenDTO dto) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+		    
+			String query = " update li_book ";
+			query += " set book_loan = ";
+			query += " case when  ";
+			query += " (select loan_ing from li_book join user_loan using(book_code) ";
+			query += " where loan_ing='Y' and book_code=?) = 'Y'  then 'Y' else 'N' end  ";
+			query += "  where book_code=? ";
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, dto.getBook_code());
+			ps.setInt(2, dto.getBook_code());
+	      
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+	      	result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+	      
+	      	ps.close();
+	      	con.close();
+            
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	// 픽업 시 재고에 - 표시
+	public int invenUpdate2(InvenDTO dto) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+		    
+			String query = " update li_book ";
+			query += " set book_res = ";
+			query += " case when  ";
+			query += " (select res_pick from li_book join user_res using(book_code) ";
+			query += " where res_pick is null and book_code=?) = 'null'  then 'N' else 'Y' end  ";
+			query += "  where book_code=? ";
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, dto.getBook_code());
+			ps.setInt(2, dto.getBook_code());
+	      
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+	      	result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+	      
+	      	ps.close();
+	      	con.close();
+            
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		return result;
 	}
 }

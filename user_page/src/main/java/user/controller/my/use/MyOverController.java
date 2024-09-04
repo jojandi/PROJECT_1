@@ -1,7 +1,7 @@
 package user.controller.my.use;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,12 +22,21 @@ public class MyOverController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 	    
+	    String countPerPage = request.getParameter("countPerPage"); // 한 페이지 당 몇 개
+		String page = request.getParameter("page"); // 현재 페이지
+		
+		// 기본값 설정
+		if(countPerPage == null) countPerPage = "7";
+		if(page == null) page = "1";
+	    
 	    int seq = Integer.parseInt(request.getParameter("seq"));
 	    
 	    LoanService service = new LoanService();
-	    List list = service.myOver(seq);
+	    Map map = service.myOver(seq, countPerPage, page);
 	    
-	    request.setAttribute("list", list);
+	    request.setAttribute("map", map);
+	    request.setAttribute("countPerPage", countPerPage);
+	    request.setAttribute("page", page);
 	    
 		request.getRequestDispatcher("/WEB-INF/user/my/user_mypage_use3.jsp").forward(request, response);
 	}
