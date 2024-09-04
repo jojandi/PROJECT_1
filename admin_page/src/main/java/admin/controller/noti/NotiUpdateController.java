@@ -15,7 +15,7 @@ import javax.servlet.http.Part;
 import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
-@WebServlet("/notice/update2")
+@WebServlet("/notice/update")
 public class NotiUpdateController extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
@@ -44,6 +44,20 @@ public class NotiUpdateController extends HttpServlet {
         Part filePart = request.getPart("ann_attach");
         String fileName = filePart.getSubmittedFileName();
 
+        // 파일 저장 경로 설정
+        String uploadDirPath = getServletContext().getRealPath("") + File.separator + "uploads";
+        File uploadDir = new File(uploadDirPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs();
+        }
+
+        // 파일 저장 및 중복 파일명 처리
+        if (fileName != null && !fileName.isEmpty()) {
+            String uniqueFileName = UUID.randomUUID().toString() + "_" + fileName;
+            File file = new File(uploadDirPath + File.separator + uniqueFileName);
+            filePart.write(file.getAbsolutePath());
+        }
+
         // 사용자에게 결과 출력
         try (PrintWriter out = response.getWriter()) {
             out.println("<html><body>");
@@ -53,3 +67,5 @@ public class NotiUpdateController extends HttpServlet {
         }
     }
 }
+
+        

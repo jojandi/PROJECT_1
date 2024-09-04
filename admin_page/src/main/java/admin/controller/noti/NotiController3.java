@@ -20,17 +20,14 @@ public class NotiController3 extends HttpServlet {
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항3 doGet 실행!");
-        response.setContentType("text/html; charset=utf-8;");
-
+    	System.out.println("공지사항3 doGet 실행!");
+		request.setCharacterEncoding("utf-8");
+	    response.setContentType("text/html; charset=utf-8;");
 		
-		
-
-	
-		request.getRequestDispatcher("/WEB-INF/admin/notification/notice3.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/admin/notification/noti3.jsp").forward(request, response);
     }
-    
-    
+
+		
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");

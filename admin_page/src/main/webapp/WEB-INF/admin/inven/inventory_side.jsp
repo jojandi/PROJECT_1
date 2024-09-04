@@ -20,7 +20,7 @@
                     	</a>
                     </div>
                     <div class="item" id="i2">
-	                    <a href="reservation">
+	                    <a href="res">
 	                        <span>도서 예약 현황</span>
 	                        <span class="material-symbols-outlined">arrow_forward_ios</span>
 	                    </a>

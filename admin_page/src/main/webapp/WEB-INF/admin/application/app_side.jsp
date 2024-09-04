@@ -21,6 +21,11 @@
 						class="material-symbols-outlined">arrow_forward_ios</span>
 					</a>
 				</div>
+				<div class="item" id="i3">
+					<a href="noti2"> <span>공지 사항 목록</span> <span
+						class="material-symbols-outlined">arrow_forward_ios</span>
+					</a>
+				</div>
 			</div>
 		</div>
 	</aside>

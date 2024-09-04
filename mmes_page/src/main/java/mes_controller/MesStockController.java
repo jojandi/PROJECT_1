@@ -63,6 +63,10 @@ public class MesStockController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 		// --------------------------------------------------------
+	    
+	    String action = request.getParameter("action");
+	    
+	    if ("insert_order".equals(action)) {
 		// 발주 insert---------------------------------------------
 	    String mes_book_code = request.getParameter("mes_book_code");
 	    String order_count = request.getParameter("order_count");
@@ -78,8 +82,12 @@ public class MesStockController extends HttpServlet {
 	    MesStockService stockservice = new MesStockService();
 	    int result = stockservice.order(dto);
 	    System.out.println("insert : " + result);
+	    // --------------------------------------------------------
+	    } else if ("update_order".equals(action)) {
+	    	
+	    }
+		
 	    
-		// --------------------------------------------------------
 	    
 	    response.sendRedirect("/mmes_page/stock");
 

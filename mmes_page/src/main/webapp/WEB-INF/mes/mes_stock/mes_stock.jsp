@@ -59,15 +59,15 @@
 								<c:forEach var="productList" items="${productList}">
 									<tr>
 										<td><input type="checkbox" id="p1_checkAll">
-										</th>
+										</td>
 										<td class="sortable">${productList.bom_code }
-										</th>
+										</td>
 										<td>${productList.bom_name }
-										</th>
+										</td>
 										<td>${productList.pd_count }
-										</th>
+										</td>
 										<td>${productList.wh_name }
-										</th>
+										</td>
 										<td>${productList.pd_note }
 									</tr>
 								</c:forEach>
@@ -104,19 +104,19 @@
 								<c:forEach var="mesbook" items="${mesBook}">
 									<tr>
 										<td><input type="checkbox" id="p1_checkAll">
-										</th>
+										</td>
 										<td class="sortable">${mesbook.book_name }
-										</th>
+										</td>
 										<td>${mesbook.book_isbn }
-										</th>
+										</td>
 										<td>${mesbook.book_author }
-										</th>
+										</td>
 										<td>${mesbook.book_pub }
-										</th>
+										</td>
 										<td>${mesbook.book_count }
-										</th>
+										</td>
 										<td>${mesbook.wh_code }
-										</th>
+										</td>
 									</tr>
 								</c:forEach>
 							</tbody>
@@ -152,19 +152,25 @@
 									<c:forEach var="tbl_order" items="${tbl_order}">
 										<tr>
 											<td><input type="checkbox" id="p1_checkAll">
-											</th>
+											</td>
 											<td class="sortable">${tbl_order.mes_book_code }
-											</th>
+											</td>
 											<td>${tbl_order.order_id }
-											</th>
+											</td>
 											<td>${tbl_order.pub_name }
-											</th>
+											</td>
 											<td>${tbl_order.order_st }
-											</th>
+											</td>
 											<td>${tbl_order.emp_name }
-											</th>
+											</td>
 											<td>${tbl_order.order_date }
-											</th>
+											</td>
+											<td>
+											<form method="get" action="stockUpdate">
+												<input type="hidden" name="order_id" value="${tbl_order.order_id }">
+												<input type="submit" value="수정">
+											</form>
+											</td>
 										</tr>
 									</c:forEach>
 								</tbody>
@@ -172,7 +178,7 @@
 
 						</div>
 						<div class="text_right">
-							<input id="openForm" type="button" value="발주">
+							<input id="openForm1" type="button" value="발주">
 						</div>
 						<!-- <div class="page_1">
                             <h3>도서 구매 내역</h3>
@@ -201,10 +207,11 @@
 
 				</div>
 			</div>
-			<div id="formModal" class="modal">
+			<div id="formModal1" class="modal"> <!-- 도서 발주 모달 -->
 				<div class="modal-content">
-					<span class="close">&times;</span>
+					<span class="close1">&times;</span>
 					<form id="workForm" method="post" action="stock">
+					<input type="hidden" name="action" value="insert_order">
 						<table>
 							<tr>
 								<th colspan="2">도서 발주</th>
@@ -234,6 +241,36 @@
 					</form>
 				</div>
 			</div>
+<!-- 			<div id="formModal2" class="modal"> 도서 발주 업데이트 모달 -->
+<!-- 				<div class="modal-content"> -->
+<!-- 					<span class="close2">&times;</span> -->
+<!-- 					<form id="workForm" method="post" action="stockUp"> -->
+<!-- 					<input type="hidden" name="action" value="update_order"> -->
+<!-- 						<table> -->
+<!-- 							<tr> -->
+<!-- 								<th colspan="2">도서 발주</th> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>부품코드</td> -->
+<!-- 								<td></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>주문개수</td> -->
+<!-- 								<td></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>발주상태</td> -->
+<!-- 								<td></td> -->
+<!-- 							</tr> -->
+<!-- 							<tr> -->
+<!-- 								<td>발주처id</td> -->
+<!-- 								<td></td> -->
+<!-- 							</tr> -->
+<!-- 						</table> -->
+<!-- 						<input id="workFormBtn" type="submit" value="발주"> -->
+<!-- 					</form> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
 		</section>
 	</div>
 
