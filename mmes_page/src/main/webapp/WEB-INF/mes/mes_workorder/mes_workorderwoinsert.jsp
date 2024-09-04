@@ -180,14 +180,6 @@
 								<td class="modal-item">수량</td>
 								<td><input type="text" name="wo_count"></td>
 							</tr>
-							<tr class="modal-div_2">
-								<td class="modal-item">상태</td>
-								<td><select name="wo_status">
-										<option value="준비중">준비중</option>
-										<option value="진행중">진행중</option>
-										<option value="완료">완료</option>
-								</select></td>
-							</tr>
 						</table>
 				</div>
 				<div class="modal-div_3" style="text-align: right;">

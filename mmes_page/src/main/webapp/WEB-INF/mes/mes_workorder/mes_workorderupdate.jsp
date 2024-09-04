@@ -60,18 +60,21 @@
 							</thead>
 							<tbody>
 								<c:forEach var="list" items="${list1 }">
+								<form method="post" action="wo_update">
 									<tr>
-										<td class="sortable">${ list.wo_id }</td>
-										<td>${ list.bom_code }</td>
-										<td>${ list.bom_name }</td>
-										<td>${ list.wo_process }</td>
-										<td>${ list.wo_count }</td>
-										<td>${ list.wo_status }</td>
-										<td><form method="get" action="wo_update">
-												<input type="hidden" name="wo_id" value="${ list.wo_id }">
-												<input type="submit" value="수정">
-											</form></td>
+										<td class="sortable"><input type="hidden" name="wo_id" value="${ list.wo_id }">${ list.wo_id }</td>
+										<td><input type="hidden" name="bom_code" value="${ list.bom_code }">${ list.bom_code }</td>
+										<td><input type="hidden" name="bom_name" value="${ list.bom_name }">${ list.bom_name }</td>
+										<td><input type="hidden" name="wo_process" value="${ list.wo_process }">${ list.wo_process }</td>
+										<td><input type="hidden" name="wo_count" value="${ list.wo_count }">${ list.wo_count }</td>
+										<td><select name="wo_status">
+												<option value="진행중"
+													${list.wo_status == '진행중' ? 'selected' : ''}>진행중</option>
+												<option value="완료" ${list.wo_status == '완료' ? 'selected' : ''}>완료</option>
+										</select></td>
+										<td><input type="submit" value="완료"></td>
 									</tr>
+								</form>
 								</c:forEach>
 							</tbody>
 						</table>
@@ -108,17 +111,17 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="dto" items="${list}">
-									<tr>
-										<td><input type="checkbox" class="bom_checkbox"></td>
-										<td><a
-											href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
-										<td>${dto.bom_name}</td>
-										<td>${dto.mes_book_code1}</td>
-										<td>${dto.mes_book_code2}</td>
-										<td>${dto.mes_book_code3}</td>
-									</tr>
-								</c:forEach>
+								<%-- 								<c:forEach var="dto" items="${list}"> --%>
+								<!-- 									<tr> -->
+								<!-- 										<td><input type="checkbox" class="bom_checkbox"></td> -->
+								<!-- 										<td><a -->
+								<%-- 											href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td> --%>
+								<%-- 										<td>${dto.bom_name}</td> --%>
+								<%-- 										<td>${dto.mes_book_code1}</td> --%>
+								<%-- 										<td>${dto.mes_book_code2}</td> --%>
+								<%-- 										<td>${dto.mes_book_code3}</td> --%>
+								<!-- 									</tr> -->
+								<%-- 								</c:forEach> --%>
 							</tbody>
 						</table>
 					</div>

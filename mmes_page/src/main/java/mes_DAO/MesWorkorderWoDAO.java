@@ -110,7 +110,7 @@ public class MesWorkorderWoDAO {
 
 			// SQL 준비
 			String query = " INSERT INTO workorder (wo_id, bom_code, wo_process, wo_count, wo_status)";
-			query += " VALUES (wo_seq.NEXTVAL, ?, ?, ?, ?)";
+			query += " VALUES (wo_seq.NEXTVAL, ?, ?, ?, '진행중')";
 
 			// PreparedStatement ps = con.prepareStatement(query);
 			// 원래 실행되는 걸 LoggableStatement가 가로채서
@@ -122,8 +122,6 @@ public class MesWorkorderWoDAO {
 			
 			ps.setInt(3, WoDTO.getWo_count());
 			
-			ps.setString(4, WoDTO.getWo_status());
-
 			// 실제 실행되는 sql을 출력해볼 수 있다
 			System.out.println(((LoggableStatement) ps).getQueryString());
 
@@ -164,5 +162,88 @@ public class MesWorkorderWoDAO {
 
 			return mesbom_code;
 		}
+		
+		public int delete(MesWorkorderWoDTO WoDTO) {
+
+		      int result = -1;
+
+		      try {
+
+		         // Servers 폴더의 context.xml에서
+		         // name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
+		         Context ctx = new InitialContext();
+		         DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+		         // DB접속 : 커넥션풀을 사용해서
+		         Connection con = dataFactory.getConnection();
+
+		         // SQL 준비
+		         String query = "delete from workorder where wo_id = ?";
+		               
+		         
+
+		         PreparedStatement ps = new LoggableStatement(con, query);
+		         
+		         ps.setInt(1, WoDTO.getWo_id());
+		         
+
+
+		         // 실제 실행되는 sql을 출력해볼 수 있다
+		         System.out.println(((LoggableStatement) ps).getQueryString());
+
+		         // SQL 실행
+		         result = ps.executeUpdate();
+
+		         ps.close();
+		         con.close();
+
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+
+		      return result;
+		   }
+		
+		    public int update(MesWorkorderWoDTO WoDTO) {
+
+		      int result = -1;
+
+		      try {
+
+		         // Servers 폴더의 context.xml에서
+		         // name이 jdbc/oracle인 resource를 가져와서 dataSource로 저장하기
+		         Context ctx = new InitialContext();
+		         DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+		         // DB접속 : 커넥션풀을 사용해서
+		         Connection con = dataFactory.getConnection();
+
+		         // SQL 준비
+		         String query = "UPDATE product";
+		               query += " SET pd_count = pd_count + ?";
+		               query += " WHERE bom_code = ?";
+		               
+		         
+
+		         PreparedStatement ps = new LoggableStatement(con, query);
+		         
+		         ps.setLong(1, WoDTO.getWo_count());
+		         ps.setLong(2, WoDTO.getBom_code());
+		         
+
+
+		         // 실제 실행되는 sql을 출력해볼 수 있다
+		         System.out.println(((LoggableStatement) ps).getQueryString());
+
+		         // SQL 실행
+		         result = ps.executeUpdate();
+
+		         ps.close();
+		         con.close();
+
+		      } catch (Exception e) {
+		         e.printStackTrace();
+		      }
+
+		      return result;
+		   }
 
 }
