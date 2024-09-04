@@ -1,4 +1,4 @@
-package user.dao.noti;
+package user.dao.request;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +12,7 @@ import javax.sql.DataSource;
 
 import user.dto.noti.NotiDTO;
 
-public class NotiDAO {
+public class RequestDAO {
 
     public List<NotiDTO> getAllNotiRequests() {
         List<NotiDTO> list = new ArrayList<>();
