@@ -92,20 +92,19 @@ public class MesHumanDAO {
 			Connection con = dataFactory.getConnection();
 			
 			// SQL 준비
-			String query =" INSERT INTO employee (emp_id, emp_name, dept_id, po_id, emp_hp, emp_add, emp_hiredate)";
-			   query +=" SELECT ?, ?, d.dept_id, p.po_id, ?, ?, ? ";
-			   query +=" FROM department d, tbl_position p";
-			   query +=" WHERE d.dept_name = ? AND p.po_name = ?";
+			String query = "INSERT INTO employee (emp_id, emp_name, dept_id, po_id, emp_hp, emp_add, emp_hiredate) ";
+			query += "SELECT emp_seq.nextval, ?, d.dept_id, p.po_id, ?, ?, ? ";
+			query += "FROM department d, tbl_position p ";
+			query += "WHERE d.dept_name = ? AND p.po_name = ?";
 		
 			   
 			PreparedStatement ps = con.prepareStatement(query);
-			ps.setInt(1, dto.getEmp_id());
-			ps.setString(2, dto.getEmp_name());
-			ps.setString(3, dto.getEmp_hp());
-			ps.setString(4, dto.getEmp_add());
-			ps.setDate(5, dto.getEmp_hiredate());
-			ps.setString(6, dto.getDept_name());
-			ps.setString(7, dto.getPo_name());
+			ps.setString(1, dto.getEmp_name());
+			ps.setString(2, dto.getEmp_hp());
+			ps.setString(3, dto.getEmp_add());
+			ps.setDate(4, dto.getEmp_hiredate());
+			ps.setString(5, dto.getDept_name());
+			ps.setString(6, dto.getPo_name());
 			
 			
 			
