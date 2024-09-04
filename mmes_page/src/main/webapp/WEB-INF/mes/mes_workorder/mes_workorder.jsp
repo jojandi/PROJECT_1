@@ -1,8 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+    import="java.util.*"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,9 +71,10 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="list" items="${ list }">
+								<c:forEach var="list1" items="${ list1 }">
 									<tr>
 										<th><input type="checkbox" class="p1_main_chack"></th>
+<<<<<<< HEAD
 										<td class="sortable">${ list.wo_id }</td>
 										<td>${ list.bom_code }</td>
 										<td>${ list.bom_name }</td>
@@ -78,73 +85,73 @@
 												<option value="진행중">진행중</option>
 												<option value="완료">완료</option>
 										</select></td>
+=======
+										<td class="sortable">${ list1.wo_id }</td>
+										<td>${ list1.bom_code }</td>
+										<td>${ list1.bom_name }</td>
+										<td>${ list1.wo_process }</td>
+										<td>${ list1.wo_count }</td>
+										<td>${ list1.wo_status }</td>
+>>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
+<<<<<<< HEAD
 
 					</div>
 
 					<div class="bot_btn">
 						<a href="wo_insert"><input type="button" id="addbtn"
 							value="작업지시서 생성"></a>
+=======
+						</div>
+>>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
 					</div>
 				</div>
-			</div>
 
-			<!-- -------------------------------- BOM페이지 ------------------------------- -->
-			<div class="main_page" id="main_page_2">
-				<h3>BOM</h3>
-				<div>
-					<div id="bomsh">
-						<input type="text" placeholder="통합검색">
-					</div>
-					<div class="page_2">
-						<table id="main_library">
-							<thead>
-								<tr>
-									<th><input type="checkbox" id="p1_checkAll"></th>
-									<th class="sortable">부품코드</th>
-									<th>부품명</th>
-									<th>소요량</th>
-									<th>가용재고</th>
-									<th>적정재고</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>book-20</td>
-									<td>20대필독서</td>
-									<td>4</td>
-									<td>15</td>
-									<td>30</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>book-30</td>
-									<td>30대필독서</td>
-									<td>5</td>
-									<td>5</td>
-									<td>20</td>
-								</tr>
-								<tr>
-									<td><input type="checkbox"></td>
-									<td>book-yth</td>
-									<td>청소년추천서</td>
-									<td>4</td>
-									<td>10</td>
-									<td>20</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<div class="bot_btn">
-						<a href="bom"><input type="button" id="addbom" value="BOM 생성"></a>
-					</div>
-				</div>
-			</div>
+						
+						<!-- -------------------------------- BOM페이지 ------------------------------- -->
+				<div class="main_page" id="main_page_2">
+                  <h3>BOM</h3>
+                     <div>
+                        <div id="bomsh">
+                            <input type="text" placeholder="통합검색">
+                        </div>
+                        <div class="page_2">
+                           <table id="main_library">
+                              <thead>
+                                <tr>
+                                  <th><input type="checkbox" id="p1_checkAll"></th>
+                                  <th class="sortable">부품코드</th>
+                                  <th>부품명</th>
+                                  <th>소요량</th>
+                                  <th>가용재고</th>
+                                  <th>적정재고</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                               <c:forEach var="dto" items="${list}">
+                                   <tr>
+                                       <td><input type="checkbox" class="bom_checkbox"></td>
+                                       <td><a href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
+                                       <td>${dto.bom_name}</td>
+                                       <td>${dto.mes_book_code1}</td>
+                                       <td>${dto.mes_book_code2}</td>
+                                       <td>${dto.mes_book_code3}</td>
+                                   </tr>
+                               </c:forEach>
+                              </tbody>
+                           </table>
+                         </div>
+                         <div class="bot_btn">
+                               <a href="bom"><input type="button" id="addbom" value="BOM 생성"></a>
+                           </div>
+                        </div>
+                       </div>
+                     
 
+			
 		</section>
 	</div>
 

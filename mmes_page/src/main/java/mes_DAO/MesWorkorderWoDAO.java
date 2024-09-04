@@ -76,7 +76,11 @@ public class MesWorkorderWoDAO {
 
 				String wo_process = rs.getString("wo_process");
 				WoDTO.setWo_process(wo_process);
+<<<<<<< HEAD
 
+=======
+				
+>>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
 				int wo_count = rs.getInt("wo_count");
 				WoDTO.setWo_count(wo_count);
 

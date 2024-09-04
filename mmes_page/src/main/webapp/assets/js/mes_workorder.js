@@ -51,7 +51,7 @@ window.onload = function () {
         const index = Array.from(header.parentNode.children).indexOf(header);
 
         // 각 페이지의 테이블을 정렬합니다
-        ['main_page_1', 'main_page_2', 'main_page_3'].forEach(pageId => {
+        ['main_page_1', 'main_page_2'].forEach(pageId => {
             // 현재 페이지의 테이블 가져오기
             const table = document.querySelector(`#${pageId} #main_library`);
             if (table) {
@@ -78,6 +78,7 @@ window.onload = function () {
 
 
     // 작업지시서 생성 버튼 누를 시 모달2 화면 추가 스크립트
+<<<<<<< HEAD
     //let addbtn = document.getElementById('addbtn');
     //let span = document.getElementsByClassName('close_2')[0];
     //let modal2 = document.getElementById('modal_2');
@@ -95,34 +96,26 @@ window.onload = function () {
             //modal2.style.display = 'none';
         //}
     //}
+=======
+  //  let addbtn = document.getElementById('addbtn');
+  //  let span = document.getElementsByClassName('close_2')[0];
+  //  let modal2 = document.getElementById('modal_2');
+
+  //  addbtn.onclick = function () {
+  //      modal2.style.display = 'block';
+  //  }
+
+  //  span.onclick = function () {
+  //      modal2.style.display = 'none';
+  //  }
+
+  //  window.onclick = function (event) {
+   //     if (event.target === modal2) {
+   //         modal2.style.display = 'none';
+  //      }
+  //  }
+>>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
     
 }
 
-    // BOM 행 더블클릭시 모달 화면 추가 스크립트
-    function showModal() {
-        document.getElementById('modal_4').style.display = 'block';
-    }
-    
-    function hideModal() {
-        document.getElementById('modal_4').style.display = 'none';
-    }
-    
-    // 더블클릭시 모달창 
-    document.addEventListener('DOMContentLoaded', () => {
-        const rows = document.querySelectorAll('#main_library tbody tr');
-        rows.forEach(row => {
-            row.addEventListener('dblclick', showModal);
-        });
-    
-        // 클로즈버튼 이벤트
-        const closeButton = document.querySelector('#modal_4 .close_4');
-        closeButton.addEventListener('click', hideModal);
-    
-        // 모달창 외부 클릭시 닫히는 이벤트
-        window.addEventListener('click', (event) => {
-            if (event.target === document.getElementById('modal_4')) {
-                hideModal();
-            }
-        });
-    });
-
+ 
