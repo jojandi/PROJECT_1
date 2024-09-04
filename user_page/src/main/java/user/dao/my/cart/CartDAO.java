@@ -106,9 +106,39 @@ public class CartDAO {
             String query = "delete user_cart ";
 			query += "where cart_seq = ?";
 			
-            PreparedStatement ps = con.prepareStatement(query);
+			PreparedStatement ps = new LoggableStatement(con, query);
             ps.setInt(1, dto.getCart_seq());
+
+			System.out.println(((LoggableStatement) ps).getQueryString()); // 실행문 출력
+            // SQL 실행
+            result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
             
+            ps.close();
+            con.close();
+            
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	// 장바구니 -> 예약 -> 장바구니 체크된 것만 삭제
+	public int cartDelChk(CartDTO dto) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+            DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+            Connection con = dataFactory.getConnection();
+            
+            String query = "delete user_cart ";
+			query += "where book_code = ?";
+			
+			PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, dto.getBook_code());
+
+			System.out.println(((LoggableStatement) ps).getQueryString()); // 실행문 출력
             // SQL 실행
             result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
             
