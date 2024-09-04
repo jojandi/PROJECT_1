@@ -18,6 +18,7 @@ public class MesWorkorderDTO {
 	
 	
 	
+	
 	public String getBom_name() {
 		return bom_name;
 	}
@@ -109,6 +110,7 @@ public class MesWorkorderDTO {
 	public void setMes_book_code3(Integer mes_book_code3) {
 		this.mes_book_code3 = mes_book_code3;
 	}
+	
 	
 	@Override
 	public String toString() {

@@ -24,6 +24,21 @@ public class MesStockDTO {
 	private long mes_book_code;
 	
 	
+	private int rnum;
+	private int lv;
+	
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
+	public int getLv() {
+		return lv;
+	}
+	public void setLv(int lv) {
+		this.lv = lv;
+	}
 	public long getEmp_id() {
 		return emp_id;
 	}

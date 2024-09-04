@@ -346,33 +346,33 @@ public class MesPfworkDAO {
 		return PfworkDTO;
 
 	}
-	
+
 	public int delete(MesPfworkDTO PfworkDTO) {
 		int result = -1;
-		
+
 		try {
-			
+
 			Context ctx = new InitialContext();
 			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
 			Connection con = dataFactory.getConnection();
-			
+
 			// SQL 준비
 			String query = " delete orderstatus where os_id = ?";
-			
+
 			PreparedStatement ps = con.prepareStatement(query);
-			
-			ps.setInt( 1, PfworkDTO.getOs_id() );
-			
+
+			ps.setInt(1, PfworkDTO.getOs_id());
+
 			// SQL 실행
 			result = ps.executeUpdate();
-			
+
 			ps.close();
 			con.close();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return result;
 	}
 

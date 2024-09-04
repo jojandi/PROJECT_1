@@ -25,14 +25,12 @@
 			<div id="table">
 				<table class="report" id="reportTable">
 					<tr>
-						<th></th>
 						<th>분류</th>
 						<th>제목</th>
 						<th>등록일</th>
 						<th>조회</th>
 					</tr>
 					<tr>
-						<td>중앙</td>
 						<td>공지</td>
 						<td class="retitle">중앙도서관 재개관 안내</td>
 						<td>2024-07-24</td>
@@ -40,28 +38,24 @@
 						
 					</tr>
 					<tr>
-						<td>중앙</td>
 						<td>안내</td>
 						<td class="retitle">중앙도서관 열람실 공사 안내(07/23~08/03)</td>
 						<td>2024-07-23</td>
 						<td>456</td>
 					</tr>
 					<tr>
-						<td>공통</td>
 						<td>안내</td>
 						<td class="retitle">2024 전국 청소년 영어 스피치 콘테스트 안내</td>
 						<td>2024-07-22</td>
 						<td>789</td>
 					</tr>
 					<tr>
-						<td>중앙</td>
-						<td>폐관</td>
+						<td>공지</td>
 						<td class="retitle">문성종작은도서관 폐관 공고</td>
 						<td>2024-07-21</td>
 						<td>321</td>
 					</tr>
 					<tr>
-						<td>공통</td>
 						<td>공지</td>
 						<td class="retitle">천안시 도서관 누리집(홈페이지) 서비스 중단 안내</td>
 						<td>2024-07-20</td>

@@ -15,8 +15,11 @@ public class UserNoticeController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("공지사항 사용자용 doGet 실행!");
-		request.setCharacterEncoding("utf-8");
-	    response.setContentType("text/html; charset=utf-8;");
+		response.setContentType("text/html;charset=utf-8;");
+		
+		
+		
+		
 		
 		request.getRequestDispatcher("/WEB-INF/user/info/usernotice.jsp").forward(request, response);
 	}
