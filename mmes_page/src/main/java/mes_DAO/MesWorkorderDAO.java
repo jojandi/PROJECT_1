@@ -11,8 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import mes_DTO.MesHumanDTO;
-import mes_DTO.MesStockDTO;
+
 import mes_DTO.MesWorkorderDTO;
 
 
@@ -27,7 +26,7 @@ public class MesWorkorderDAO {
 			
 			Connection con = dataSource.getConnection();
 		
-			String query = " SELECT *From bom";
+			String query = " SELECT * From bom";
 		
 			PreparedStatement ps = con.prepareStatement(query);
 			

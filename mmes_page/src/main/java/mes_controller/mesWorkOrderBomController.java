@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mes_DTO.MesHumanDTO;
+
 import mes_DTO.MesWorkorderDTO;
-import mes_service.MesHumanService;
+
 import mes_service.MesWorkorderService;
 
 @WebServlet("/bom")
-public class mesWorkOrderBomController extends HttpServlet {
+public class MesWorkOrderBomController extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

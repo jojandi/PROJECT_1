@@ -52,7 +52,7 @@ public class MesWorkorderWoDAO {
 			String query = null;
 			PreparedStatement ps = null;
 
-			query = " select w.wo_id, b.bom_code, b.bom_name, w.wo_process, wo_sdate, wo_edate, wo_count, wo_status";
+			query = " select w.wo_id, b.bom_code, b.bom_name, w.wo_process, wo_count, wo_status";
 			query += " from workorder w, bom b";
 			query += " where w.bom_code = b.bom_code";
 			
@@ -74,12 +74,6 @@ public class MesWorkorderWoDAO {
 				
 				String wo_process = rs.getString("wo_process");
 				WoDTO.setWo_process(wo_process);
-
-				Date wo_sdate = rs.getDate("wo_sdate");
-				WoDTO.setWo_sdate(wo_sdate);
-				
-				Date wo_edate = rs.getDate("wo_edate");
-				WoDTO.setWo_edate(wo_edate);
 				
 				int wo_count = rs.getInt("wo_count");
 				WoDTO.setWo_count(wo_count);
