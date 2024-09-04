@@ -78,7 +78,10 @@ window.onload = function () {
 
 
     // 작업지시서 생성 버튼 누를 시 모달2 화면 추가 스크립트
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9f58e7ad14472c2b41e7cde1e6c03cd451836c5a
     //let addbtn = document.getElementById('addbtn');
     //let span = document.getElementsByClassName('close_2')[0];
     //let modal2 = document.getElementById('modal_2');
@@ -96,7 +99,10 @@ window.onload = function () {
             //modal2.style.display = 'none';
         //}
     //}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9f58e7ad14472c2b41e7cde1e6c03cd451836c5a
   //  let addbtn = document.getElementById('addbtn');
   //  let span = document.getElementsByClassName('close_2')[0];
   //  let modal2 = document.getElementById('modal_2');
@@ -114,7 +120,10 @@ window.onload = function () {
    //         modal2.style.display = 'none';
   //      }
   //  }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9f58e7ad14472c2b41e7cde1e6c03cd451836c5a
     
 }
 
