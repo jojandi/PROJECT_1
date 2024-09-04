@@ -11,15 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 import user.dto.my.loan.LoanDTO;
 import user.service.search.SearchService;
 
-@WebServlet("/user/cart_user")
-public class SearchCartController extends HttpServlet {
+@WebServlet("/user/res_user")
+public class SearchResChkController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("사용자용 검색 장바구니 doPost 실행!");
+		System.out.println("사용자용 검색 예약 doPost 실행!");
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 	    
@@ -33,11 +33,11 @@ public class SearchCartController extends HttpServlet {
 	    dto.setUser_seq(Integer.parseInt(user));
 	    
 	    SearchService service = new SearchService();
-	    int result = service.cartBook(dto);
+	    int result = service.resBook(dto);
 	    
-	    System.out.println("result : 검색 -> 장바구니 " + result);
+	    System.out.println("result : 검색 -> 예약" + result);
 	    
-	    response.sendRedirect(request.getContextPath() + "/user/cart?seq=" + user);
+	    response.sendRedirect(request.getContextPath() + "/user/res?seq=" + user);
 	}
 
 }

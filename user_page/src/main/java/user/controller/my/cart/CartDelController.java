@@ -1,4 +1,4 @@
-package user.controller.search;
+package user.controller.my.cart;
 
 import java.io.IOException;
 
@@ -8,36 +8,38 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import user.dto.my.cart.CartDTO;
 import user.dto.my.loan.LoanDTO;
-import user.service.search.SearchService;
+import user.service.my.cart.CartService;
 
-@WebServlet("/user/res_user")
-public class SearchResController extends HttpServlet {
+@WebServlet("/user/cart_del")
+public class CartDelController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("사용자용 검색 예약 doPost 실행!");
+		System.out.println("사용자용 마이페이지 장바구니 삭제 doPost 실행!");
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 	    
-	    String code = request.getParameter("code");
-	    String user = request.getParameter("user");
+	    int seq = Integer.parseInt(request.getParameter("seq"));
+	    int cart = Integer.parseInt(request.getParameter("cart"));
 	    
-	    System.out.println("bookcode : " + code + ", user_seq : " + user);
-	    
+	    CartService service = new CartService();
+
 	    LoanDTO dto = new LoanDTO();
-	    dto.setBook_code(Integer.parseInt(code));
-	    dto.setUser_seq(Integer.parseInt(user));
+	    dto.setUser_seq(seq);
 	    
-	    SearchService service = new SearchService();
-	    int result = service.resBook(dto);
+	    CartDTO cdto = new CartDTO();
+	    cdto.setCart_seq(cart);
 	    
-	    System.out.println("result : 검색 -> 예약" + result);
-	    
-	    response.sendRedirect(request.getContextPath() + "/user/res?seq=" + user);
+	    int delete = service.cartDel(cdto);
+	    System.out.println("삭제 : " + delete);
+		
+	    response.sendRedirect("mypage_cart?seq="+seq);
+	
 	}
 
 }

@@ -63,7 +63,7 @@ public class CartDAO {
 		return list;
 	}
 
-	// 장바구니 -> 예약내역
+	// 장바구니 -> 예약내역, 서비스에서 for문으로 insert 여러번 가능하게 하기
 	public int cartRes(LoanDTO dto) {
 		int result = -1;
 
@@ -76,10 +76,11 @@ public class CartDAO {
 			String query = " insert into user_res(res_id, book_code, user_seq, res_day, res_pick) ";
 			query += " values (user_res_seq.nextval, ?, ?, to_date(sysdate,'YYY-MM-DD'), null) ";
 
-			PreparedStatement ps = con.prepareStatement(query);
+			PreparedStatement ps = new LoggableStatement(con, query);
 			ps.setInt(1, dto.getBook_code());
 			ps.setInt(2, dto.getUser_seq());
-
+			
+			System.out.println(((LoggableStatement) ps).getQueryString()); // 실행문 출력
 			// SQL 실행
 			result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
 
