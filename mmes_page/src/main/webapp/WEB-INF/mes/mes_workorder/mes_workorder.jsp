@@ -74,7 +74,6 @@
 								<c:forEach var="list1" items="${ list1 }">
 									<tr>
 										<th><input type="checkbox" class="p1_main_chack"></th>
-<<<<<<< HEAD
 										<td class="sortable">${ list.wo_id }</td>
 										<td>${ list.bom_code }</td>
 										<td>${ list.bom_name }</td>
@@ -85,28 +84,25 @@
 												<option value="진행중">진행중</option>
 												<option value="완료">완료</option>
 										</select></td>
-=======
 										<td class="sortable">${ list1.wo_id }</td>
 										<td>${ list1.bom_code }</td>
 										<td>${ list1.bom_name }</td>
 										<td>${ list1.wo_process }</td>
 										<td>${ list1.wo_count }</td>
 										<td>${ list1.wo_status }</td>
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
 									</tr>
 								</c:forEach>
 							</tbody>
 						</table>
-<<<<<<< HEAD
 
 					</div>
 
 					<div class="bot_btn">
 						<a href="wo_insert"><input type="button" id="addbtn"
 							value="작업지시서 생성"></a>
-=======
+
 						</div>
->>>>>>> 09f2042b9ba7be2cd1fee08c34a2dba00d6c45df
+
 					</div>
 				</div>
 
