@@ -71,7 +71,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="list1" items="${ list1 }">
+								<c:forEach var="list" items="${list1 }">
 									<tr>
 										<th><input type="checkbox" class="p1_main_chack"></th>
 										<td class="sortable">${ list.wo_id }</td>
@@ -83,13 +83,9 @@
 												<option value="준비중">준비중</option>
 												<option value="진행중">진행중</option>
 												<option value="완료">완료</option>
-										</select></td>
-										<td class="sortable">${ list1.wo_id }</td>
-										<td>${ list1.bom_code }</td>
-										<td>${ list1.bom_name }</td>
-										<td>${ list1.wo_process }</td>
-										<td>${ list1.wo_count }</td>
-										<td>${ list1.wo_status }</td>
+												</select>
+												</td>
+										
 									</tr>
 								</c:forEach>
 							</tbody>
