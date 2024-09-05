@@ -58,7 +58,7 @@ public class AppController extends HttpServlet {
 		appDTO.setApp_book(appBook);
 		appDTO.setApp_name(appName);
 		appDTO.setApp_pub(appPub);
-//		appDTO.setApp_date(app_date);
+//		appDTO.setApp_date(appDate);
 		appDTO.setUser_seq(userSeq);
 		appDTO.setPurchased(purchased);
 		appDTO.setApp_status(app_status);

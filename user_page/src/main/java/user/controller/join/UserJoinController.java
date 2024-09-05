@@ -29,8 +29,6 @@ public class UserJoinController extends HttpServlet {
 	    
 	    String id = request.getParameter("username");
 	    
-	    
-		
 		JoinDTO dto = new JoinDTO();
 		
 		dto.setUser_id(id);

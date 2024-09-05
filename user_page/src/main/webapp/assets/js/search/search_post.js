@@ -26,6 +26,10 @@ function resajax(i) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 
     xhr.send( "code=" + code[i].value + "&user=" + user[i].value);
+
+    xhr.onload = function(){
+		alert("해당도서가 예약되었습니다. ")
+    }
 }
 
 
@@ -58,4 +62,8 @@ function cartajax(i) {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 
     xhr.send( "code=" + code[i].value + "&seq=" + "&user=" + user[i].value);
+
+    xhr.onload = function(){
+		alert("해당도서가 장바구니에 담겼습니다. ")
+    }
 }

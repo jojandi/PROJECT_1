@@ -26,18 +26,20 @@
 						<div class="page">
 							<table>
 								<colgroup>
-	                                <col width="8%">
-	                                <col width="8%">
+	                                <col width="6%">
+	                                <col width="6%">
+	                                <col width="6%">
 	                                <col width="30%">
 	                                <col width="10%">
 	                                <col width="10%">
 	                                <col width="10%">
-	                                <col width="10%">
+	                                <col width="8%">
 	                            </colgroup>
 								<thead>
 									<tr>
 										<th>회원번호</th>
 										<th>예약번호</th>
+										<th>도서코드</th>
 										<th>도서명</th>
 										<th>예약일자</th>
 										<th>픽업일자</th>
@@ -50,6 +52,7 @@
 										<tr>
 											<td>${list.user_seq}</td>
 											<td>${list.res_id}</td>
+											<td>${list.book_code}</td>
 											<td>${list.book_name}</td>
 											<td>${list.res_day}</td>
 											<td>
@@ -92,7 +95,7 @@
 			</div>
 		</section>
 	</div>
-	<script src="../assets/js/mem/member_res_post.js"></script>
+	<script src="../assets/js/inven/res_post.js"></script>
 	<%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>
 </body>
 </html>
