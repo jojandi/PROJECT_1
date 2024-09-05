@@ -1,11 +1,16 @@
 package user.controller.notice;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import user.dao.request.RequestDAO;
+import user.dto.app.AppDTO;
+
 
 
 @WebServlet("/user/request")
@@ -32,6 +37,15 @@ public class UserRequestController extends HttpServlet {
         String author = request.getParameter("app_name");  //저자 
         String publisher = request.getParameter("app_pub"); // 출판사
         
+        AppDTO dto = new AppDTO();
+        dto.setApp_book(bookName);
+        dto.setApp_name(author);
+        dto.setApp_pub(publisher);
+        
+        RequestDAO dao = new RequestDAO();
+        
+        int result = dao.insertApp(dto);
+        System.out.println("insert : " + result);
         
         request.getRequestDispatcher("/WEB-INF/user/info/userrequest.jsp").forward(request, response);
         

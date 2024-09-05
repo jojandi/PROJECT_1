@@ -14,7 +14,6 @@ aside #items #i1 .material-symbols-outlined{
 
 #section #table{
     text-align: center;
-    height: 270px;
     font-size: 17px;
 }
 
@@ -76,7 +75,7 @@ table.report {
 table.report th,
 table.report td {
     border: 1px solid #ddd;
-    padding: 12px;
+    padding: 10px;
     text-align: center;
 }
 

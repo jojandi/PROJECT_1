@@ -24,7 +24,7 @@ public class NotiDAO {
             Connection con = dataSource.getConnection();
 
             // SQL 쿼리 작성 
-            String query = " SELECT ann_seq, class, ann_title, ann_regi, ann_check, ann_detail "
+            String query = " SELECT ann_seq, class, ann_title, ann_regi, ann_detail, ann_check  "
                          + " FROM announcement join ann_class using(class_id) "; 
             
 //            String query = "SELECT c.class, a.ann_title, a.ann_regi, a.ann_check " +

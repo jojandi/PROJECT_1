@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import admin.DAO.noti.NoticeDAO;
 import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
@@ -41,6 +42,7 @@ public class NotiController2 extends HttpServlet {
 				listNotices(request, response);
 				break;
 		}
+		
 	}
 
 	
@@ -68,8 +70,35 @@ public class NotiController2 extends HttpServlet {
 				.forward(request, response);
 	}
 
-	@Override
 	protected void doPost(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
+			HttpServletResponse response) throws ServletException, IOException {request.setCharacterEncoding("UTF-8");
+			System.out.println("공지사항 dopost 실행");
+			System.out.println("ann_title "+ request.getParameter("ann_title"));
+			System.out.println("ann_detail "+ request.getParameter("ann_detail"));
+			
+//			int annSeq = Integer.parseInt(request.getParameter("ann_seq")); //공지사항 번호
+	        String classId = request.getParameter("class_id"); 			
+	        String annTitle = request.getParameter("ann_title");		
+	        String annRegi = request.getParameter("ann_regi");		
+	        String annCheck = request.getParameter("ann_check");		
+	        String annDetail = request.getParameter("ann_detail");		
+	        String annAttach = request.getParameter("ann_attach");		
+
+	        // DTO 객체에 데이터 설정
+	        NoticeDTO noticeDTO = new NoticeDTO();
+//	        noticeDTO.setAnn_seq(annSeq);
+	        noticeDTO.setClass_id(classId);
+	        noticeDTO.setAnn_title(annTitle);
+	        noticeDTO.setAnn_detail(annDetail);
+	        noticeDTO.setAnn_attach(annAttach);
+
+	        // DAO를 사용하여 데이터베이스에 삽입
+	        NoticeDAO noticeDAO = new NoticeDAO();
+	        noticeDAO.insertNotice(noticeDTO);
+
+	        // 공지사항 목록 페이지로 리다이렉트
+	        response.sendRedirect(request.getContextPath() + "/admin/noti2");
+
 	}
+
 }

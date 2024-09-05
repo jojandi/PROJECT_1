@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>사용자 도서신청</title>
-<link href="../assets/css/info/user_request.css" rel="stylesheet">
+<link href="<%=request.getContextPath()%>/assets/css/info/user_request.css" rel="stylesheet">
 </head>
 <body>
     <!-- header -->
@@ -16,10 +16,9 @@
         <%@ include file="/WEB-INF/user/info/user_info_side.jsp"%>
     
         <div id="section">
-            <!-- 수정해야할 곳 꼭 섹션 안에서!!! -->
             <h3>도서신청</h3>
     
-            <form method="post" action="request">
+            <form method="post" action="<%=request.getContextPath()%>/user/request">
                 <div class="app">
                     <div>
                         <input type="text" name="app_book" placeholder="책이름을 입력해주세요"> 
