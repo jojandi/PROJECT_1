@@ -44,9 +44,9 @@ aside #items .item a:visited {
 	color: inherit;
 	text-decoration: none;
 }
-/* #i2 .material-symbols-outlined { */
-/* 	background-color: rgb(165, 224, 144); */
-/* } */
-aside #items #i2 .material-symbols-outlined {
-    background-color: rgb(165, 224, 144);
+#i2 .material-symbols-outlined {
+	background-color: rgb(165, 224, 144);
 }
+/* aside #items #i2 .material-symbols-outlined { */
+/*     background-color: rgb(165, 224, 144); */
+/* } */

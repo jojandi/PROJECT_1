@@ -63,7 +63,7 @@
 								 <c:forEach var="dto" items="${list}">
 				                <tr>
 				                    <td><input type="checkbox" class="bom_checkbox"></td>				                     
-									<td>${dto.mes_book_code}</td>
+									<td id = "book_code">${dto.mes_book_code}</td>
 									<td>${dto.book_name}</td>
 				                    <td>${dto.book_isbn}</td>
 				                    <td>${dto.book_author}</td>
@@ -101,27 +101,20 @@
                 <div class="modal-div_">
                 </div>
 	            <div id="table">
-                	<form>
-	                    <table>
-	                        <tr class="modal-div_6">
-	                            <td>
-	                                <span class="modal-item">제품코드</span> 
-	                            </td>
-	                            <td>
-	                                <input type="text" name="bom_code">
-	                            </td>
-	                        </tr>
-	                        <tr class="modal-div_6">
-	                            <td>
-	                                <span class="modal-item">제품명</span> 
-	                            </td>
-	                            <td>
-	                                <input type="text" name="bom_name">
-	                            </td>
-	                        </tr>
-	                       
-	                    </table>
-                    </form>
+                	 <form id="bomForm" action="register" method="post">
+		                <input type="hidden" name="mes_book_code1" id="mes_book_code1">
+		                <input type="hidden" name="mes_book_code2" id="mes_book_code2">
+		                <input type="hidden" name="mes_book_code3" id="mes_book_code3">
+		                <p>
+		                    <label for="bom_code">BOM 코드:</label>
+		                    <input type="text" id="bomCode" name="bom_code" required>
+		                </p>
+		                <p>
+		                    <label for="bom_name">BOM 이름:</label>
+		                    <input type="text" id="bomName" name="bom_name" required>
+		                </p>
+		                <button type="submit">등록</button>
+            		</form>
                 </div>
                 <div class="modal-div_7" style="text-align: right;">
                     <input class="inpa" type="submit" value="생성"> 

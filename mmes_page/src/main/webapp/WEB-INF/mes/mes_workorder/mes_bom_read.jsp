@@ -75,13 +75,14 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="bot_btn">
-						<div class="search-container">
-							<input type="text" id="searchInput" placeholder="도서명 검색...">
-						</div>
-						<input type="button" id="addbom" value="bom생성">
-					</div>
+					
+					
 					</form>
+					 <form method="post" action="delete">
+					 	
+						   <input type="hidden" name="bom_code" value="${param.bom_code }">
+						      <input type="submit" id="deleteButton" value="BOM 삭제">
+						   </form>
 				</div>
 			</div>
 		</section>
@@ -122,6 +123,7 @@
 	                       
 	                    </table>
                     </form>
+                   
                 </div>
                 <div class="modal-div_7" style="text-align: right;">
                     <input class="inpa" type="submit" value="생성"> 

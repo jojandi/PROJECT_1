@@ -9,62 +9,68 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import admin.DAO.noti.NoticeDAO;
 import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
 @WebServlet("/admin/noti")
-	public class NotiController extends HttpServlet {
-    private static final long serialVersionUID = 1L;
+public class NotiController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
 
-    private NoticeService noticeService = new NoticeService(); // NoticeService 인스턴스 생성
-    private List<NoticeDTO> noticeList; // 공지사항 목록 조회 시 사용하는 리스트
+	private NoticeService noticeService = new NoticeService(); 
+	private List<NoticeDTO> noticeList; // 공지사항 목록 조회 시 사용하는 리스트
 
-    
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("공지사항 doget 실행");
-        request.setCharacterEncoding("utf-8");
-        response.setContentType("text/html; charset=utf-8;");
-    	
-    	
-    	
-    	
-    	request.getRequestDispatcher("/WEB-INF/admin/notification/noti.jsp").forward(request, response);
-    }
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("공지사항 doget 실행");
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8;");
 
+		request.getRequestDispatcher("/WEB-INF/admin/notification/noti.jsp")
+				.forward(request, response);
+	}
 
+	protected void doPost(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {request.setCharacterEncoding("UTF-8");
+			System.out.println("공지사항 dopost 실행");
+			
+			int annSeq = Integer.parseInt(request.getParameter("ann_seq")); //공지사항 번호
+	        String classId = request.getParameter("class_id"); 			//분류
+	        String annTitle = request.getParameter("ann_title");		//공지사항 제목
+	        String annDetail = request.getParameter("ann_detail");		//공지사항 내용
+	        String annAttach = request.getParameter("ann_attach");		//첨부파일
 
-    // 공지사항 상세 조회
-    private void detailNotice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int annSeq = Integer.parseInt(request.getParameter("ann_seq"));
-        NoticeDTO notice = noticeList.stream()
-                                     .filter(n -> n.getAnn_seq() == annSeq)
-                                     .findFirst()
-                                     .orElse(null);
+	        // DTO 객체에 데이터 설정
+	        NoticeDTO noticeDTO = new NoticeDTO();
+	        noticeDTO.setAnn_seq(annSeq);
+	        noticeDTO.setClass_id(classId);
+	        noticeDTO.setAnn_title(annTitle);
+	        noticeDTO.setAnn_detail(annDetail);
+	        noticeDTO.setAnn_attach(annAttach);
 
-        if (notice == null) {
-            response.sendRedirect("noti?action=list");
-            return;
-        }
+	        // DAO를 사용하여 데이터베이스에 삽입
+	        NoticeDAO noticeDAO = new NoticeDAO();
+	        noticeDAO.insertNotice(noticeDTO);
 
-        request.setAttribute("notice", notice);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti_detail.jsp").forward(request, response);
-    }
+	        // 공지사항 목록 페이지로 리다이렉트
+	        response.sendRedirect(request.getContextPath() + "/admin_page/admin/noti2");
 
-
-
-    // 공지사항 작성 처리
-    private void createNotice(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("utf-8");
-
-        NoticeDTO newNotice = new NoticeDTO();
-        newNotice.setAnn_title(request.getParameter("ann_title"));
-        newNotice.setAnn_detail(request.getParameter("ann_detail"));
-        newNotice.setClass_id(request.getParameter("class_id"));
-        newNotice.setAnn_attach(request.getParameter("ann_attach"));
-        newNotice.setAnn_regi(java.time.LocalDate.now().toString());
-        newNotice.setAnn_check(0);
+	}
 
 
-        response.sendRedirect(request.getContextPath() + "/admin/noti2");
-    }
+//	// 공지사항 작성 처리
+//	private void createNotice(HttpServletRequest request,
+//			HttpServletResponse response) throws ServletException, IOException {request.setCharacterEncoding("utf-8");
+//		
+//
+//		NoticeDTO newNotice = new NoticeDTO();
+//		newNotice.setAnn_title(request.getParameter("ann_title"));
+//		newNotice.setAnn_detail(request.getParameter("ann_detail"));
+//		newNotice.setClass_id(request.getParameter("class_id"));
+//		newNotice.setAnn_attach(request.getParameter("ann_attach"));
+//		newNotice.setAnn_regi(java.time.LocalDate.now().toString());
+//		newNotice.setAnn_check(0);
+//
+//		response.sendRedirect(request.getContextPath() + "/admin/noti2");
+//	}
 }

@@ -129,6 +129,50 @@
 			</div>
 
 
+<<<<<<< HEAD
+						
+						<!-- -------------------------------- BOM페이지 ------------------------------- -->
+				<div class="main_page" id="main_page_2">
+                  <h3>BOM</h3>
+                     <div>
+                        <div id="bomsh">
+                            <input type="text" placeholder="통합검색">
+                        </div>
+                        <div class="page_2">
+                           <table id="main_library">
+                              <thead>
+                                <tr>
+                                 
+                                  <th class="sortable">상품코드</th>
+                                  <th>상품명</th>
+                                  <th>부품코드 1</th>
+                                  <th>부품코드 2</th>
+                                  <th>부품코드 3</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                               <c:forEach var="dto" items="${list}">
+                                   <tr>
+                                      
+                                       <td><a href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
+                                       <td>${dto.bom_name}</td>
+                                       <td>${dto.mes_book_code1}</td>
+                                       <td>${dto.mes_book_code2}</td>
+                                       <td>${dto.mes_book_code3}</td>
+                                   </tr>
+                               </c:forEach>
+                              </tbody>
+                           </table>
+                         </div>
+                         <div class="bot_btn">
+                               <a href="bom"><input type="button" value="BOM 생성"></a>
+                           </div>
+                           
+                        </div>
+                       </div>
+                     
+=======
+>>>>>>> 82086de537ff85c134537c00be325ed10923012d
 
 		</section>
 	</div>

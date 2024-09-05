@@ -14,7 +14,7 @@ public class MesStatistics1controller extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("doGet 실행");
 		
-		request.getRequestDispatcher("WEB-INF/mes/mes_statistics/mes_statistics1.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/mes/mes_bookflix/mes_statistics1.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

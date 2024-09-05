@@ -32,8 +32,8 @@ public class NotiDeleteController extends HttpServlet {
 		NoticeService noticeService = new NoticeService();
 		int result = noticeService.delete(noticeDTO);
 		System.out.println("result : " + result);
-		request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
-//		response.sendRedirect("/admin_page/noti2");
+//		request.getRequestDispatcher("/WEB-INF/admin/notification/noti2.jsp").forward(request, response);
+		response.sendRedirect("/admin_page/admin/noti2");
 	}
 
 }
