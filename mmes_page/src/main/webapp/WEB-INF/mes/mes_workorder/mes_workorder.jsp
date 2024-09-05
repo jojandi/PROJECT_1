@@ -114,18 +114,18 @@
                            <table id="main_library">
                               <thead>
                                 <tr>
-                                  <th><input type="checkbox" id="p1_checkAll"></th>
-                                  <th class="sortable">부품코드</th>
-                                  <th>부품명</th>
-                                  <th>소요량</th>
-                                  <th>가용재고</th>
-                                  <th>적정재고</th>
+                                 
+                                  <th class="sortable">상품코드</th>
+                                  <th>상품명</th>
+                                  <th>부품코드 1</th>
+                                  <th>부품코드 2</th>
+                                  <th>부품코드 3</th>
                                 </tr>
                              </thead>
                              <tbody>
                                <c:forEach var="dto" items="${list}">
                                    <tr>
-                                       <td><input type="checkbox" class="bom_checkbox"></td>
+                                      
                                        <td><a href="http://localhost:8080/mmes_page/bom_read?bom_code=${dto.bom_code}">${dto.bom_code}</a></td>
                                        <td>${dto.bom_name}</td>
                                        <td>${dto.mes_book_code1}</td>
@@ -137,8 +137,9 @@
                            </table>
                          </div>
                          <div class="bot_btn">
-                               <a href="bom"><input type="button" id="addbom" value="BOM 생성"></a>
+                               <a href="bom"><input type="button" value="BOM 생성"></a>
                            </div>
+                           
                         </div>
                        </div>
                      
