@@ -32,9 +32,9 @@ aside #items #i1 .material-symbols-outlined {
 							<colgroup>
 								<col width="5%">
 								<col width="25%">
-								<col width="10%">
+								<col width="12%">
 								<col width="8%">
-								<col width="10%">
+								<col width="12%">
 								<col width="8%">
 								<col width="8%">
 								<col width="8%">
@@ -82,8 +82,8 @@ aside #items #i1 .material-symbols-outlined {
 					<div class="bot_btn">
 						<form>
 							<div class="search-container">
-								<input type="text" id="searchInput" name="text"
-									placeholder="도서명"> <input type="submit" value="검색">
+								<input type="text" id="searchInput" name="text" value="${param.text}" placeholder="도서명"> 
+									<input type="submit" value="검색">
 							</div>
 						</form>
 					</div>
@@ -125,7 +125,7 @@ aside #items #i1 .material-symbols-outlined {
 
 			</div>
 
-			<%-- <%
+			<%
 			Map map = (Map) request.getAttribute("map");
 			int totalCount = (int) map.get("totalCount");
 
@@ -184,7 +184,7 @@ aside #items #i1 .material-symbols-outlined {
 						href="inventory?page=<%=sec_last + 1%>">chevron_right</a>
 					</span>
 				</c:if>
-			</div> --%>
+			</div> 
 
 		</section>
 		<script src="../assets/js/inven/inven_popup.js"></script>

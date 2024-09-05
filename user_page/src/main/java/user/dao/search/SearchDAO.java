@@ -31,7 +31,7 @@ public class SearchDAO {
 			query += " ROW_NUMBER() OVER (PARTITION BY book_name ORDER BY DBMS_RANDOM.RANDOM) AS rn, "; 
 			query += " book_img, li_book_info, book_loan FROM book";
 			query += " JOIN li_book USING (book_isbn) ";
-			query += " WHERE lower(book_name) LIKE lower('%'||?||'%') AND book_loan = 'N') ";
+			query += " WHERE lower(book_name) LIKE lower('%'||?||'%') AND book_loan = 'N' and book_res = 'N') ";
 			query += " SELECT book_name, book_pub, book_author, book_isbn, ";
 			query += " (SELECT book_code FROM RandomBooks rb WHERE rb.book_name = b.book_name AND rn = 1) AS book_code, ";
 			query += " COUNT(*) AS count, book_img, li_book_info ";
@@ -84,12 +84,40 @@ public class SearchDAO {
 			Connection con = dataFactory.getConnection();
 
 			// SQL 준비
-			String query = " insert into user_res(res_id, book_code, user_seq, res_day) ";
-			query += " values (user_res_seq.nextval, ?, ?, sysdate) ";
+			String query = " insert into user_res(res_id, book_code, user_seq, res_day, res_ing) ";
+			query += " values (user_res_seq.nextval, ?, ?, sysdate, 'Y') ";
 
 			PreparedStatement ps = con.prepareStatement(query);
 			ps.setInt(1, dto.getBook_code());
 			ps.setInt(2, dto.getUser_seq());
+
+			// SQL 실행
+			result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+
+			ps.close();
+			con.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	public int resBook_li(LoanDTO dto) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+
+			// SQL 준비
+			String query = " update li_book set book_res = 'Y' ";
+			query += " where book_code = ? ";
+
+			PreparedStatement ps = con.prepareStatement(query);
+			ps.setInt(1, dto.getBook_code());
 
 			// SQL 실행
 			result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음

@@ -66,22 +66,15 @@
 								</tr>
 								<tr>
 									<th>연체횟수</th>
-									<td>
-										<c:if test="${dto.user_over == true}">
-												연체
-										</c:if> 
-										<c:if test="${dto.user_over == false}">
-											-
-										</c:if>
-									</td>
+									<td>${dto.over_count}</td>
 								</tr>
 								<tr>
 									<th>비고</th>
 									<td>
-										<c:if test="${dto.user_over == true}">
-												${dto.user_pass}부터 대여 가능
+										<c:if test="${dto.user_pass != null}">
+												${dto.user_pass} 부터 대여 가능
 										</c:if> 
-										<c:if test="${dto.user_over == false}">
+										<c:if test="${dto.user_pass == null}">
 											-
 										</c:if>
 									</td>

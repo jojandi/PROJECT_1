@@ -19,7 +19,7 @@ public class SearchResController extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("사용자용 검색 장바구니 doPost 실행!");
+		System.out.println("사용자용 검색 예약 doPost 실행!");
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 	    

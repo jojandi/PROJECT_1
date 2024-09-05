@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import user.service.best.BestService;
 
 @WebServlet("/user/best")
-public class UserBestPageController extends HttpServlet {
+public class BestPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

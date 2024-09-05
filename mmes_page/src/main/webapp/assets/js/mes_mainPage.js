@@ -1,121 +1,82 @@
-// chart.js
-document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('productionChart').getContext('2d');
 
-    // Example data: hourly production for each line (24 hours)
-    const dataByHour = {
-        '1번 라인': [120, 130, 125, 140, 150, 160, 155, 145, 140, 135, 150, 160, 170, 180, 190, 200, 210, 220, 230, 240, 250, 260, 270, 280],
-        '2번 라인': [110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225],
-        '3번 라인': [100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215]
-    };
+        let pi1 = document.querySelector("#sideleft #i1");
+        let pi2 = document.querySelector("#sideleft #i2");
+        let pi3 = document.querySelector("#sideleft #i3");
+        let pi4 = document.querySelector("#sideleft #i4");
 
-    // Generate hourly labels from 00:00 to 23:00
-    const hours = Array.from({ length: 24 }, (_, i) => `${i}:00`);
+        // chart.js
+        document.addEventListener('DOMContentLoaded', function () {
+            const ctx = document.getElementById('ageGroupChart').getContext('2d');
+            const monthSelect = document.getElementById('monthSelect');
+            const bookTableBody = document.querySelector('#bookTable tbody');
 
-    new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: hours,
-            datasets: Object.keys(dataByHour).map((lineName, index) => ({
-                label: lineName,
-                data: dataByHour[lineName],
-                borderColor: `hsl(${index * 120}, 70%, 50%)`, // Different color for each line
-                backgroundColor: `hsla(${index * 120}, 70%, 50%, 0.2)`, // Semi-transparent background for better visibility
-                borderWidth: 2,
-                fill: false // No fill under the line
-            }))
-        },
-        options: {
-            responsive: true,
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: '시간'
-                    },
-                    ticks: {
-                        autoSkip: false, // Show all tick labels
-                        maxRotation: 90 // Rotate labels to fit
+            const dataByMonth = {
+                1: [5, 10, 15, 20, 25, 30],
+                2: [4, 11, 14, 21, 24, 28],
+                3: [6, 12, 16, 22, 26, 32],
+                4: [7, 13, 17, 23, 27, 33],
+                5: [8, 14, 18, 24, 28, 34],
+                6: [9, 15, 19, 25, 29, 35],
+                7: [10, 16, 20, 26, 30, 36],
+                8: [11, 17, 21, 27, 31, 37],
+                9: [12, 18, 22, 28, 32, 38],
+                10: [13, 19, 23, 29, 33, 39],
+                11: [14, 20, 24, 30, 34, 40],
+                12: [15, 21, 25, 31, 35, 41]
+            };
+
+            const labels = ['10대 필독도서', '20대 필독도서', '30대 필독도서', '40대 필독도서', '50대 필독도서', '60대 이상 필독도서'];
+
+            let chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '필독 도서 수요량',
+                        data: dataByMonth[1],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
                     }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: '생산량'
-                    },
-                    beginAtZero: true
                 }
-            },
-            plugins: {
-                legend: {
-                    position: 'top'
-                },
-                tooltip: {
-                    mode: 'index',
-                    intersect: false
-                }
+            });
+
+            function updateChart(month) {
+                chart.data.datasets[0].data = dataByMonth[month];
+                chart.update();
             }
-        }
-    });
-});
 
-// chart.js
-document.addEventListener('DOMContentLoaded', function () {
-    const ctx = document.getElementById('progressChart').getContext('2d');
-
-    // Example data: work progress for each age group
-    const dataByAgeGroup = {
-        '10대 필독도서': 75,
-        '20대 필독도서': 85,
-        '30대 필독도서': 65,
-        '40대 필독도서': 70,
-        '50대 필독도서': 60,
-        '60대 이상 필독도서': 50
-    };
-
-    const ageGroups = Object.keys(dataByAgeGroup);
-    const progressData = Object.values(dataByAgeGroup);
-
-    // Create the chart
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ageGroups,
-            datasets: [{
-                label: 'Work Progress (%)',
-                data: progressData,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)', // Light green background
-                borderColor: 'rgba(75, 192, 192, 1)', // Dark green border
-                borderWidth: 1
-            }]
-        },
-        options: {
-            responsive: true,
-            scales: {
-                x: {
-                    title: {
-                        display: true,
-                        text: '연령대별 필독도서'
-                    }
-                },
-                y: {
-                    title: {
-                        display: true,
-                        text: '작엽진행률 (%)'
-                    },
-                    beginAtZero: true,
-                    max: 100
-                }
-            },
-            plugins: {
-                legend: {
-                    display: false
-                },
-                tooltip: {
-                    mode: 'index',
-                    intersect: false
-                }
+            function updateTable(month) {
+                bookTableBody.innerHTML = '';
+                dataByMonth[month].forEach((books, index) => {
+                    const row = document.createElement('tr');
+                    const ageCell = document.createElement('td');
+                    ageCell.textContent = labels[index];
+                    const booksCell = document.createElement('td');
+                    booksCell.textContent = books;
+                    row.appendChild(ageCell);
+                    row.appendChild(booksCell);
+                    bookTableBody.appendChild(row);
+                });
             }
-        }
-    });
-});
+
+            monthSelect.addEventListener('change', function () {
+                const month = monthSelect.value;
+                updateChart(month);
+                updateTable(month);
+            });
+
+            updateTable(1);
+        });
+
+
+
+
+     

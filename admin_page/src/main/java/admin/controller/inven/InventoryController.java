@@ -24,6 +24,8 @@ public class InventoryController extends HttpServlet {
 	    
 	    String countPerPage = request.getParameter("countPerPage"); // 한 페이지 당 몇 개
 		String page = request.getParameter("page"); // 현재 페이지
+//		System.out.println("현재 페이지 : " + page);
+//		System.out.println("페이지 당 개수 : " + countPerPage);
 		
 		// 기본값 설정
 		if(countPerPage == null) countPerPage = "7";

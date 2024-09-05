@@ -31,5 +31,18 @@ public class MesWorkorderService {
         List<MesWorkorderDTO> bookList = dao.selectOne(bom_code);
         return bookList;
     }
+    public int register(MesWorkorderDTO workDTO) {
+		// DB에 insert
+			
+		int insertCount = this.workorderDAO.insert(workDTO);
+		return insertCount;
+		
+	}
+    
+    
+    public int remove(int bom_code) {
+		MesWorkorderDAO dao = new MesWorkorderDAO();
+		return dao.deleteOne(bom_code);
+	}
 	
 }	

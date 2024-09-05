@@ -74,6 +74,31 @@ window.onload = function () {
             modal6.style.display = 'none';
         }
     }
+      let bom_table= document.querySelector('#main_library') 
+      
+      let checkbox = bom_table.querySelectorAll('td input[type="checkbox"]')
+      
+      let btn = document.querySelector('#addbom')
+      
+     btn.addEventListener('click', function() {
+    let book_code = [];
+    for (let i = 0; i < checkbox.length; i++) {
+        if (checkbox[i].checked) {
+            let bom = checkbox[i].closest('tr');
+            let bom_td = bom.querySelectorAll('#book_code'); // ID 대신 클래스 사용
+            
+            // 각 td 요소의 텍스트를 가져와 배열에 추가
+            bom_td.forEach(td => book_code.push(td.textContent.trim()));
+        }
+    }
+    
+    document.querySelector('#mes_book_code1').value = book_code[0] || '';
+    document.querySelector('#mes_book_code2').value = book_code[1] || '';
+    document.querySelector('#mes_book_code3').value = book_code[2] || '';
+});
+
+      
+      
 }
 
  

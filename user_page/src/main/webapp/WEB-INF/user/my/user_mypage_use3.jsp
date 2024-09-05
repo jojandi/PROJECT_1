@@ -61,15 +61,15 @@
                     </thead>
 
                     <tbody>
-                        <tr>
-                        	<c:forEach var="list" items="${map.list}">
+                       	<c:forEach var="list" items="${map.list}">
+    	                    <tr>
 	                            <td class="bname">${list.book_name}</td>
 	                            <td>${list.loan_date}</td>
 	                            <td class="ing">${list.loan_return}</td>
 	                            <td>${list.over}일</td>
 	                            <td>${list.user_pass}</td>
-                        	</c:forEach>
-                        </tr>
+	                        </tr>
+                       	</c:forEach>
                     </tbody>
                 </table>
             </div>

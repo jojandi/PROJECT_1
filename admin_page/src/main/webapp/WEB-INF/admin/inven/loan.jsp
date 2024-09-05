@@ -5,13 +5,13 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
-<link href="../assets/css/member/member.css" rel="stylesheet">
+<link href="../assets/css/inven/inven.css" rel="stylesheet">
 <style>
 	 #i3 .material-symbols-outlined { background-color: rgb(165, 224, 144); }
 </style>
 <head>
 <meta charset="UTF-8">
-<title>도서 회원 관리</title>
+<title>도서 재고 관리</title>
 </head>
 <body>
 	<%@ include file="/WEB-INF/admin/base/a.header.jsp"%>
@@ -25,12 +25,12 @@
 						<div class="page">
 							<table>
 								<colgroup>
-	                                <col width="6%">
-	                                <col width="6%">
-	                                <col width="30%">
+	                                <col width="5%">
+	                                <col width="5%">
+	                                <col width="28%">
 	                                <col width="10%">
 	                                <col width="7%">
-	                                <col width="10%">
+	                                <col width="12%">
 	                                <col width="10%">
 	                                <col width="8%">
 	                            </colgroup>
