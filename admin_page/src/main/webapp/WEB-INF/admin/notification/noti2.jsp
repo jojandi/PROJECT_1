@@ -8,6 +8,12 @@
 <link href="../assets/css/noti/noti2.css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>공지사항 게시판</title>
+<style>
+    aside #items #i3 .material-symbols-outlined{
+background-color: rgb(165, 224, 144);
+	
+}
+    </style>
 </head>
 <body>
     <%@ include file="/WEB-INF/admin/base/a.header.jsp"%>

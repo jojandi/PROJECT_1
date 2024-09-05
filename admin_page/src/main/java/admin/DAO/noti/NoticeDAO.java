@@ -14,128 +14,128 @@ import admin.DTO.notice.NoticeDTO;
 
 public class NoticeDAO {
 
-    // DB 연결을 위한 메서드
-    private Connection getConnection() throws Exception {
-        Context ctx = new InitialContext();
-        DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
-        return dataSource.getConnection();
-    }
+	// DB 연결을 위한 메서드
+	private Connection getConnection() throws Exception {
+		Context ctx = new InitialContext();
+		DataSource dataSource = (DataSource) ctx
+				.lookup("java:/comp/env/jdbc/oracle");
+		return dataSource.getConnection();
+	}
 
-    // 공지사항 목록 조회 메서드
-    public List<NoticeDTO> selectAnnounce() {
-        List list = new ArrayList();
-        String query = "SELECT * FROM announcement";
+	// 공지사항 목록 조회 메서드
+	public List<NoticeDTO> selectAnnounce() {
+		List list = new ArrayList();
+		String query = "SELECT * FROM announcement";
 
-        try (Connection con = getConnection();
-             PreparedStatement ps = con.prepareStatement(query);
-             ResultSet rs = ps.executeQuery()) {
+		try (Connection con = getConnection();
+				PreparedStatement ps = con.prepareStatement(query);
+				ResultSet rs = ps.executeQuery()) {
 
-            while (rs.next()) {
-                NoticeDTO noticeDTO = new NoticeDTO();
+			while (rs.next()) {
+				NoticeDTO noticeDTO = new NoticeDTO();
 
-                noticeDTO.setAnn_seq(rs.getInt("ann_seq"));
-                noticeDTO.setClass_id(rs.getString("class_id"));
-                noticeDTO.setAnn_title(rs.getString("ann_title"));
-                noticeDTO.setAnn_regi(rs.getString("ann_regi"));
-                noticeDTO.setAnn_check(rs.getInt("ann_check"));
-                noticeDTO.setAnn_detail(rs.getString("ann_detail"));
-                noticeDTO.setAnn_attach(rs.getString("ann_attach"));
+				noticeDTO.setAnn_seq(rs.getInt("ann_seq"));
+				noticeDTO.setClass_id(rs.getString("class_id"));
+				noticeDTO.setAnn_title(rs.getString("ann_title"));
+				noticeDTO.setAnn_regi(rs.getString("ann_regi"));
+				noticeDTO.setAnn_check(rs.getInt("ann_check"));
+				noticeDTO.setAnn_detail(rs.getString("ann_detail"));
+				noticeDTO.setAnn_attach(rs.getString("ann_attach"));
 
-                list.add(noticeDTO);
-            }
+				list.add(noticeDTO);
+			}
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 
-    // 공지사항 세부 조회 메서드
-    public NoticeDTO getNoticeById(int ann_seq) {
-        NoticeDTO noticeDTO = null;
-        String sql = "SELECT * FROM announcement WHERE ann_seq = ?";
+	// 공지사항 세부 조회 메서드
+	public NoticeDTO getNoticeById(int ann_seq) {
+		NoticeDTO noticeDTO = null;
+		String sql = "SELECT * FROM announcement WHERE ann_seq = ?";
 
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, ann_seq);
-            try (ResultSet rs = pstmt.executeQuery()) {
-                if (rs.next()) {
-                    noticeDTO = new NoticeDTO();
+		try (Connection conn = getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, ann_seq);
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs.next()) {
+					noticeDTO = new NoticeDTO();
 
-                    noticeDTO.setAnn_seq(rs.getInt("ann_seq"));
-                    noticeDTO.setClass_id(rs.getString("class_id"));
-                    noticeDTO.setAnn_title(rs.getString("ann_title"));
-                    noticeDTO.setAnn_regi(rs.getString("ann_regi"));
-                    noticeDTO.setAnn_check(rs.getInt("ann_check"));
-                    noticeDTO.setAnn_detail(rs.getString("ann_detail"));
-                    noticeDTO.setAnn_attach(rs.getString("ann_attach"));
-                }
-            }
-            
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+					noticeDTO.setAnn_seq(rs.getInt("ann_seq"));
+					noticeDTO.setClass_id(rs.getString("class_id"));
+					noticeDTO.setAnn_title(rs.getString("ann_title"));
+					noticeDTO.setAnn_regi(rs.getString("ann_regi"));
+					noticeDTO.setAnn_check(rs.getInt("ann_check"));
+					noticeDTO.setAnn_detail(rs.getString("ann_detail"));
+					noticeDTO.setAnn_attach(rs.getString("ann_attach"));
+				}
+			}
 
-        return noticeDTO;
-    }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-    // 공지사항 추가 메서드
-    public void insertNotice(NoticeDTO noticeDTO) {
-        String sql = "INSERT INTO announcement (ann_seq, class_id, ann_title, ann_regi, ann_check, ann_detail, ann_attach) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		return noticeDTO;
+	}
 
-        try (Connection conn = getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	// 공지사항 추가 메서드
+	public void insertNotice(NoticeDTO noticeDTO) {
+		System.out.println(noticeDTO.getClass_id());
+	    String sql = "INSERT INTO announcement (ann_seq,class_id, ann_title, ann_regi, ann_check, ann_detail, ann_attach) "
+	               + "VALUES (ann_seq.nextval,?, ?, sysdate, ?, ?, ?)";
 
-            pstmt.setInt(1, noticeDTO.getAnn_seq());
-            pstmt.setString(2, noticeDTO.getClass_id());
-            pstmt.setString(3, noticeDTO.getAnn_title());
-            pstmt.setString(4, noticeDTO.getAnn_regi());
-            pstmt.setInt(5, noticeDTO.getAnn_check());
-            pstmt.setString(6, noticeDTO.getAnn_detail());
-            pstmt.setString(7, noticeDTO.getAnn_attach());
+	    try (Connection conn = getConnection();
+//	    		PreparedStatement pstmt = conn.prepareStatement(sql)) {
+	    		PreparedStatement pstmt = new LoggableStatement(conn, sql)) {
 
-            pstmt.executeUpdate();
+//	        pstmt.setInt(1, noticeDTO.getAnn_seq());             
+//	        pstmt.setString(1, noticeDTO.getClass_id());        
+	        pstmt.setInt(1, 0);        
+	        pstmt.setString(2, noticeDTO.getAnn_title());      
+//	        pstmt.setString(3, noticeDTO.getAnn_regi());      
+	        pstmt.setInt(3, noticeDTO.getAnn_check());           
+	        pstmt.setString(4, noticeDTO.getAnn_detail());       
+	        pstmt.setString(5, noticeDTO.getAnn_attach());       
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
+	        System.out.println( ( (LoggableStatement)pstmt ).getQueryString() );
+	        pstmt.executeUpdate();
 
-	public int insertNotice(NoticeDAO noticeDAO) {
-		return 0;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
 	}
 
 	public int delete(NoticeDTO noticeDTO) {
 		int result = -1;
-		
+
 		try {
-			
+
 			Context ctx = new InitialContext();
-			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			DataSource dataFactory = (DataSource) ctx
+					.lookup("java:/comp/env/jdbc/oracle");
 			Connection con = dataFactory.getConnection();
-			
+
 			// SQL 준비
 			String query = " delete from announcement where ann_seq = ?";
-			
+
 			PreparedStatement ps = con.prepareStatement(query);
-			
+
 			ps.setInt(1, noticeDTO.getAnn_seq());
-			
+
 			// SQL 실행
 			result = ps.executeUpdate();
-			
+
 			ps.close();
 			con.close();
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		return result;
-	
-	}
-	
-	
-}
 
+		return result;
+
+	}
+
+}

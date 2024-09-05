@@ -1,10 +1,8 @@
-package admin.DTO.app;
+package user.dto.app;
 
 import java.sql.Date;
-import java.time.LocalDate;
 
 public class AppDTO {
-
 	private int app_seq; // 도서신청 번호
 	private String app_book; // 도서명
 	private String app_name; // 저자
@@ -95,7 +93,5 @@ public class AppDTO {
 				+ ", purchased=" + purchased + ", app_status=" + app_status
 				+ "]";
 	}
-
-	
 
 }
