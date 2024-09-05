@@ -20,7 +20,8 @@
 		<div id="admin_controls">
 			<h2>공지사항 추가</h2>
 
-			<form action="noti2" method="post" enctype="multipart/form-data">
+<!-- 			<form action="noti2" method="post" enctype="multipart/form-data"> -->
+			<form action="noti2" method="post">
 				<input type="hidden" name="action" value="create">
 				<div id="con">
 					<select id="notice_category" name="class_id">
@@ -30,16 +31,11 @@
 				</div>
 				<input type="text" id="new_notice_title" name="ann_title"
 					placeholder="공지사항 제목" required>
-				<form>
 						<input type='date' id='currentDate'/>
-				</form>						
 				<textarea id="new_notice_content" name="ann_detail" rows="5"
 					placeholder="공지사항 내용" required></textarea>
 				<input type='file' id='ann_attach' name='ann_attach'>
-				<!--<button type="submit">공지사항 추가</button>  -->
-				<a href="/admin_page/admin/noti2">
-    			<input type="button" value="공지사항 추가">
-				</a>
+				<button type="submit">공지사항 추가</button> 
 			</form>
 		</div>
 	</div>

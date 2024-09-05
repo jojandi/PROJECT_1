@@ -77,7 +77,6 @@
 						<div class="search-container">
 							<input type="text" id="searchInput" placeholder="도서명 검색...">
 						</div>
-						<input type="button" value="Excel 파일화">
 					</div>
 				</div>
 			</div>

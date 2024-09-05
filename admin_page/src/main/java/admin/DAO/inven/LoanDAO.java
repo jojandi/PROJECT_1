@@ -10,6 +10,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
+import admin.DTO.inven.InvenDTO;
 import admin.DTO.inven.LoanResDTO;
 
 public class LoanDAO {
@@ -115,6 +116,38 @@ public class LoanDAO {
 		return result;
 	}
 	
+	// 반납 시 재고에 - 표시
+	public int invenUpdate(InvenDTO dto) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+		    
+			String query = " update li_book ";
+			query += " set book_loan = ";
+			query += " case when  ";
+			query += " (select loan_ing from li_book join user_loan using(book_code) ";
+			query += " where loan_ing='Y' and book_code=?) = 'Y'  then 'Y' else 'N' end  ";
+			query += "  where book_code=? ";
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, dto.getBook_code());
+			ps.setInt(2, dto.getBook_code());
+	      
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+	      	result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+	      
+	      	ps.close();
+	      	con.close();
+            
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 	
 	
 }

@@ -151,6 +151,39 @@ public class CartDAO {
 		
 		return result;
 	}
+	
+	// 예약 시 재고에 예약중 표시
+	public int invenUpdate(CartDTO dto) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+		    
+			String query = " update li_book ";
+			query += " set book_res = ";
+			query += " case when  ";
+			query += " (select res_pick from li_book join user_res using(book_code) ";
+			query += " where res_pick is null and book_code=?) = 'null'  then 'N' else 'Y' end  ";
+			query += "  where book_code=? ";
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, dto.getBook_code());
+			ps.setInt(2, dto.getBook_code());
+	      
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+	      	result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+	      
+	      	ps.close();
+	      	con.close();
+            
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
 
 
 }

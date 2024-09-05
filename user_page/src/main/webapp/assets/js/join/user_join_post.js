@@ -18,10 +18,16 @@ function ajax() {
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"); 
 
     xhr.send( "username=" + id.value );
+
+    xhr.onload = funtion(){
+    	if(xhr.status===200){    //status = response 상태 코드 반환 : 200 정상응답
+        console.log(xhr.responseText);
+    	}
+    }
     
     xhr.onload = function(){
     	if(xhr.status===200){    //status = response 상태 코드 반환 : 200 정상응답
-        	console.log(xhr.responseText); // controller에서 보내준 거 받기
+        	console.log("controller" + xhr.responseText); // controller에서 보내준 거 받기
         	
         	let LO01 = document.querySelector("#LO01");
         	let LO02 = document.querySelector("#LO02");

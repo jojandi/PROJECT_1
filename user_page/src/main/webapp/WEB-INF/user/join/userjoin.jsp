@@ -110,7 +110,6 @@
 									<option value="2024">2024</option>
 
 								</select>
-							<!-- 반복문으로 만들기 -->	
 								<select name="mm">
 									<option value="1" selected>1월</option>
 									<option value="2">2월</option>
@@ -251,7 +250,6 @@
 	        }).open();
 	    }
 	</script>
-	
 	<script src="../assets/js/join/user_join.js"></script>
 	<script src="../assets/js/join/user_join_post.js"></script>
 	

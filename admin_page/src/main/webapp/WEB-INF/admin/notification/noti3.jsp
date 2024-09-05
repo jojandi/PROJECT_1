@@ -7,6 +7,13 @@
 <link href="../assets/css/noti/noti3.css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+    aside #items #i3 .material-symbols-outlined{
+background-color: rgb(165, 224, 144);
+	
+}
+    </style>
 </head>
 <body>
 	<%@ include file="/WEB-INF/admin/base/a.header.jsp"%>

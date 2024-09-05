@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import admin.DTO.inven.InvenDTO;
 import admin.DTO.inven.LoanResDTO;
 import admin.service.inven.LoanService;
 
@@ -39,10 +40,13 @@ public class LoanController extends HttpServlet {
 	    
 	    String ing = request.getParameter("ing");
 	    String seq = request.getParameter("seq");
+	    String code = request.getParameter("code");
 	    
 	    LoanResDTO dto = new LoanResDTO();
+	    InvenDTO idto = new InvenDTO();
 	    
 	    dto.setLoan_seq(Integer.parseInt(seq));
+	    idto.setBook_code(Integer.parseInt(code));
 	    
 	    if("Y".equals(ing)) {	    	
 	    	dto.setLoan_ing(true);
@@ -52,7 +56,10 @@ public class LoanController extends HttpServlet {
 	    
 	    LoanService service = new LoanService();
 	    int result = service.memLoanUpdate(dto);
-	    System.out.println("result : " + result);
+	    System.out.println("반납 : " + result);
+	    
+	    int update = service.invenUpdate(idto);
+	    System.out.println("- : " + update);
 		
 	    response.sendRedirect( request.getContextPath() + "/admin/loan");
 	}

@@ -12,10 +12,9 @@
                 <h2 id="title">직원관리</h2>
                 <div id="items">
                     <div class="item" id="i1">
-                        <span><a href="mes_human.html">직원관리</a></span>
+                        <span><a href="human">직원관리</a></span>
                         <span class="material-symbols-outlined" id="i_1">arrow_forward_ios</span>
                     </div>
-                   
                 </div>
             </div>
         </aside>

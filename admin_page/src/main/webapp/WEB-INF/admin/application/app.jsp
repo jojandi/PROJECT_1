@@ -4,9 +4,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <link href="../assets/css/noti/noti2.css" rel="stylesheet">
     <meta charset="UTF-8">
     <title>도서 신청관리</title>
+    <style>
+    aside #items #i2 .material-symbols-outlined{
+background-color: rgb(165, 224, 144);
+	
+}
+    </style>
 </head>
 <body>
     <%@ include file="/WEB-INF/admin/base/a.header.jsp"%>
@@ -32,7 +39,7 @@
               <!-- 도서 신청 목록을 동적으로 표시 -->
               <c:forEach var="appls" items="${appl}">
                   <tr>
-                      <td>${appls.ann_seq}</td>
+                      <td>${appls.app_seq}</td>
                       <td>${appls.app_book}</td>
                       <td>${appls.app_name}</td>
                       <td>${appls.app_pub}</td>
@@ -50,9 +57,9 @@
            </td>
            <td>
                <form action="${pageContext.request.contextPath}/admin/app" method="post" onsubmit="return confirm('정말로 이 도서를 구매하시겠습니까?');">
-                   <input type="hidden" name="ann_seq" value="${appls.ann_seq}" />
-                   <input type="hidden" name="action" value="purchase" />
-                   <c:if test="${!appls.purchased}">
+                   <input type="hidden" name="app_seq" value="${appls.app_seq}" />
+<%--                    <input type="hidden" name="purchase" value="${appls.purchased}" /> --%>
+                   <c:if test="${appls.purchased == null}">
                        <button type="submit">구매 요청</button>
                    </c:if>
                </form>
