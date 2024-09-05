@@ -29,6 +29,7 @@ public class AppDAO {
 
             // 결과를 리스트에 저장
             while (rs.next()) {
+
                 AppDTO appDTO = new AppDTO();
                 appDTO.setAnn_seq(rs.getInt("app_seq"));
                 appDTO.setApp_book(rs.getString("app_book"));
@@ -71,7 +72,7 @@ public class AppDAO {
             ps.setString(2, dto.getApp_book());
             ps.setString(3, dto.getApp_name());
             ps.setString(4, dto.getApp_pub());
-//            ps.setNString(5, dto.getApp_date());
+            ps.setDate(5, dto.getApp_date());
             ps.setString(6, dto.getUser_seq());
             ps.setString(7, dto.getPurchased());
             ps.setString(8, dto.getApp_status());

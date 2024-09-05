@@ -25,5 +25,17 @@ public class MesWorkOrderWoService {
 		return this.WoDAO.insert(woDTO);
 		
 	}
+	
+	public int delete (MesWorkorderWoDTO WoDTO) {
+		
+		return this.WoDAO.delete(WoDTO);
+		
+	}
+	
+	public int update (MesWorkorderWoDTO WoDTO) {
+		
+		return this.WoDAO.update(WoDTO);
+		
+	}
 
 }

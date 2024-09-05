@@ -1,7 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
+<<<<<<< HEAD
     pageEncoding="UTF-8"
     import="java.util.*"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+=======
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+>>>>>>> 96827b0ef89511291e105b5ca5ade098c9e4f900
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page import="mes_DTO.MesHumanDTO" %> 
@@ -168,6 +173,7 @@
                     </form>
                 </div>
             </div>
+<<<<<<< HEAD
         </section>
     </div>
     <!--자바 스크립트 영역-->
@@ -177,6 +183,39 @@
 
     <!-- 가장 아래 고정 -->
    <script src="./assets/js/mes_human.js"></script>
+=======
+            
+            <table id="main_library">
+                            <colgroup>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox" id="p1_checkAll"></th>
+                                    <th class="sortable">회원번호</th>
+                                   	<th>회원ID</th>
+                                    <th>회원 주소</th>
+                                    <th>회원 이메일</th>
+                                    <th>가입일</th>
+                                    <th>만료일</th>
+                                </tr>
+                            </thead>
+				            <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
+									<td>${dto.buser_seq}</td> 
+									<td>${dto.user_id}</td>
+				                    <td>${dto.user_addr}</td>
+				                    <td>${dto.user_email}</td>
+				                    <td>${dto.buser_date}</td>
+				                    <td>${dto.buser_end}</td>
+				                </tr>
+				            </c:forEach>
+        					</tbody>
+                            </tbody>
+                        </table>
+        </div>
+    </header>
+>>>>>>> 96827b0ef89511291e105b5ca5ade098c9e4f900
 </body>
 
 </html>

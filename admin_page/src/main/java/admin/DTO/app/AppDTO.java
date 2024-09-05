@@ -9,7 +9,7 @@ public class AppDTO {
 	private String app_book; // 도서명
 	private String app_name; // 저자
 	private String app_pub; //출판사
-	private LocalDate app_date; //신청일
+	private Date app_date; //신청일
 	private String user_seq; // 회원번호
 	private String purchased;
 	private String app_status;
@@ -70,8 +70,13 @@ public class AppDTO {
         this.app_pub = app_pub;
     }
 
-	public LocalDate getApp_date() {
+
+	public Date getApp_date() {
 		return app_date;
+	}
+
+	public void setApp_date(Date app_date) {
+		this.app_date = app_date;
 	}
 
 	public String getUser_seq() {
@@ -91,7 +96,4 @@ public class AppDTO {
 				+ ", toString()=" + super.toString() + "]";
 	}
 
-	public void setApp_date(Date date) {
-		
-	}
 }

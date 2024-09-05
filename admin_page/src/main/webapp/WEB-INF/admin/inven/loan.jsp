@@ -25,10 +25,11 @@
 						<div class="page">
 							<table>
 								<colgroup>
-	                                <col width="8%">
+	                                <col width="6%">
+	                                <col width="6%">
 	                                <col width="30%">
 	                                <col width="10%">
-	                                <col width="8%">
+	                                <col width="7%">
 	                                <col width="10%">
 	                                <col width="10%">
 	                                <col width="8%">
@@ -36,6 +37,7 @@
 								<thead>
 									<tr>
 										<th>회원번호</th>
+										<th>도서코드</th>
 										<th>도서명</th>
 										<th>대출일자</th>
 										<th>대출현황</th>
@@ -48,6 +50,7 @@
 									<c:forEach var="list" items="${list}">
 										<tr>
 											<td>${list.user_seq}</td>
+											<td>${list.book_code}</td>
 											<td>${list.book_name}</td>
 											<td>${list.loan_date}</td>
 											<td>
@@ -72,6 +75,7 @@
 											</td>
 											<td>
 												<c:if test="${list.loan_ing == true}">
+													<input type="hidden" value=${list.book_code} class="code">
 													<input type="hidden" value=${list.loan_seq} class="seq">
 													<input type="submit" value="수정" class="submit">
 												</c:if>
@@ -89,7 +93,7 @@
 			</div>
 		</section>
 	</div>
-	<script src="../assets/js/mem/member_loan_post.js"></script>
+	<script src="../assets/js/inven/loan_post.js"></script>
 	<%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>
 </body>
 </html>

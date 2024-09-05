@@ -86,49 +86,7 @@ public class JoinDAO {
 				while (rs.next()){
 					result = new JoinDTO();
 									
-					result.setLike(rs.getString("like_like"));
-					result.setLike_id(rs.getInt("like_id"));
-					result.setUser_addr1(rs.getString("user_addr"));
-					result.setUser_addr2(rs.getString("user_addr_info"));
-					result.setUser_birth(rs.getDate("user_birth"));
-					result.setUser_email(rs.getString("user_email"));
 					result.setUser_id(rs.getString("user_id"));
-					result.setUser_name(rs.getString("user_name"));
-					result.setUser_pass(rs.getDate("user_pass"));
-					result.setUser_pw(rs.getString("user_pw"));
-					result.setUser_seq(rs.getInt("user_seq"));
-					result.setUser_loan(rs.getInt("user_loan"));
-					
-					String user_sub = rs.getString("user_sub");
-					String user_over = rs.getString("user_over");
-					String user_admin = rs.getString("user_admin");
-					
-					String user_tel = rs.getString("user_tel");
-					System.out.println(user_tel);
-					
-					String tel1 = user_tel.substring(0, 2);
-					String tel2 = user_tel.substring(2, 6);
-					String tel3 = user_tel.substring(6, 10);
-					
-					String tel = "0" + tel1 + "-" + tel2 + "-" + tel3;
-					
-					result.setUser_tel(tel);
-					
-					if("Y".equals(user_sub)) {
-						result.setUser_sub(true);
-					} else {
-						result.setUser_sub(false);
-					}
-					if("Y".equals(user_over)) {
-						result.setUser_over(true);
-					} else {
-						result.setUser_over(false);
-					}
-					if("Y".equals(user_admin)) {
-						result.setUser_admin(true);
-					} else {
-						result.setUser_admin(false);
-					}
 					
 					System.out.println("result : " + result);
 					

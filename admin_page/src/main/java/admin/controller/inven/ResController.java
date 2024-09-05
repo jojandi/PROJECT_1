@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import admin.DTO.inven.InvenDTO;
 import admin.DTO.inven.LoanResDTO;
 import admin.service.inven.ResService;
 
@@ -43,10 +44,13 @@ public class ResController extends HttpServlet {
 	    System.out.println(user);
 	    
 	    LoanResDTO dto = new LoanResDTO();
+	    InvenDTO idto = new InvenDTO();
 	    
 	    dto.setRes_id(Integer.parseInt(seq));
 	    dto.setBook_code(Integer.parseInt(code));
 	    dto.setUser_seq(Integer.parseInt(user));
+	    
+	    idto.setBook_code(Integer.parseInt(code));
 	    
 	    ResService service = new ResService();
 	    int result = service.memResUpdate(dto);
@@ -54,6 +58,12 @@ public class ResController extends HttpServlet {
 	    
 	    result = service.resLoan(dto);
 	    System.out.println("대출 : " + result);
+	    
+	    int update = service.invenUpdate(idto);
+	    System.out.println("대출중 : " + update);
+	    
+	    int update2 = service.invenUpdate2(idto);
+	    System.out.println("예약X : " + update2);
 	    
 		
 	    response.sendRedirect( request.getContextPath() + "/admin/res");

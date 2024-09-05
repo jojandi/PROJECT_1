@@ -9,10 +9,16 @@ public class InvenDTO {
 	private String book_img;
 	private String book_pub;
 	private int count;
+	private int book_loan_seq;
 	private boolean book_loan;
 	private boolean book_res;
-	
-	
+
+	public int getBook_loan_seq() {
+		return book_loan_seq;
+	}
+	public void setBook_loan_seq(int book_loan_seq) {
+		this.book_loan_seq = book_loan_seq;
+	}
 	public boolean isBook_loan() {
 		return book_loan;
 	}
@@ -78,7 +84,8 @@ public class InvenDTO {
 	public String toString() {
 		return "InvenDTO [book_code=" + book_code + ", li_book_info=" + li_book_info + ", book_ISBN=" + book_ISBN
 				+ ", book_name=" + book_name + ", book_author=" + book_author + ", book_img=" + book_img + ", book_pub="
-				+ book_pub + ", count=" + count + ", book_loan=" + book_loan + ", book_res=" + book_res + "]";
+				+ book_pub + ", count=" + count + ", book_loan_seq=" + book_loan_seq + ", book_loan=" + book_loan
+				+ ", book_res=" + book_res + "]";
 	}
 	
 }
