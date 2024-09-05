@@ -37,7 +37,7 @@ public class SearchCartController extends HttpServlet {
 	    
 	    System.out.println("result : 검색 -> 장바구니 " + result);
 	    
-	    response.sendRedirect(request.getContextPath() + "/user/cart?seq=" + user);
+	    response.sendRedirect(request.getContextPath() + "/user/mypage_cart?seq=" + user);
 	}
 
 }

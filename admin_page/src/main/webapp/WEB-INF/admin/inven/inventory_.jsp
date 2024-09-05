@@ -36,9 +36,9 @@ aside #items #i1 .material-symbols-outlined {
 							<colgroup>
 								<col width="5%">
 								<col width="25%">
-								<col width="10%">
+								<col width="12%">
 								<col width="8%">
-								<col width="10%">
+								<col width="12%">
 								<col width="8%">
 								<col width="8%">
 								<col width="8%">
@@ -188,7 +188,7 @@ aside #items #i1 .material-symbols-outlined {
 				</c:if>
 				<c:if test="<%=sec_last != lastPage%>">
 					<span class="material-symbols-outlined"> <a
-						href="inventory?page=<%=sec_last + 1%>">chevron_right</a>chevron_right
+						href="inventory?page=<%=sec_last + 1%>">chevron_right</a>
 					</span>
 				</c:if>
 			</div>

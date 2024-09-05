@@ -19,6 +19,9 @@ public class InvenService {
 		// 마지막 번호
 		int end = start + count - 1;
 		
+//		System.out.println("시작번호 : " + start);
+//		System.out.println("마지막번호 : " + end);
+		
 		InvenDAO dao = new InvenDAO();
 		List list = dao.bookList(start, end);
 		
@@ -42,9 +45,9 @@ public class InvenService {
 		int end = start + count - 1;
 		
 		InvenDAO dao = new InvenDAO();
-		List list = dao.bookList(start, end);
+		List list = dao.bookList(start, end, book_name);
 		
-		int totalCount = dao.totalPage();
+		int totalCount = dao.totalPage(book_name);
 		
 		Map map = new HashMap();
 		map.put("list", list);

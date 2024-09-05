@@ -56,7 +56,8 @@ table tbody tr:nth-child(odd) {
 table tbody td {
     padding: 10px;
     border: 1px solid #ddd;
-        text-align: center;
+    text-align: center;
+    height: 30px;
 }
 
 input[type="checkbox"] {

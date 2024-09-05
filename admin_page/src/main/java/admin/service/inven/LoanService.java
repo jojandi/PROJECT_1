@@ -19,4 +19,7 @@ public class LoanService {
 	public int invenUpdate(InvenDTO dto) {
 		return new LoanDAO().invenUpdate(dto);
 	}
+	public int memberUpdate(LoanResDTO dto) {
+		return new LoanDAO().memberUpdate(dto);
+	}
 }

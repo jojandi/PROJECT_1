@@ -60,6 +60,9 @@ public class LoanController extends HttpServlet {
 	    
 	    int update = service.invenUpdate(idto);
 	    System.out.println("- : " + update);
+	    
+	    int mem = service.memberUpdate(dto);
+	    System.out.println("회원 연체 : " + mem);
 		
 	    response.sendRedirect( request.getContextPath() + "/admin/loan");
 	}

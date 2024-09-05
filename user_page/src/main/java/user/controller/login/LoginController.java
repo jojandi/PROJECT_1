@@ -14,7 +14,7 @@ import user.service.login.LoginService;
 
 
 @WebServlet("/user/login")
-public class UserLoginController extends HttpServlet {
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -43,19 +43,27 @@ public class UserLoginController extends HttpServlet {
 		
 		LoginService service = new LoginService();
 		
-		JoinDTO result = service.login(dto);
+		JoinDTO user = service.login(dto);
+		JoinDTO admin = service.loginAdmin(dto);
 		
-		System.out.println("result : " + result);
-		
-		if(result != null) {
+		if(user != null) {
 			HttpSession session = request.getSession();
 			// 세션 타임 제한, 초단위
 			session.setMaxInactiveInterval(60 * 60 * 60);
 
-			session.setAttribute("login", result);
+			session.setAttribute("login", user);
 			
-			// list 페이지로 sendRedirect
+			// 사용자 main 페이지로 sendRedirect
 			response.sendRedirect(request.getContextPath() +"/user/main");
+		} else if(admin != null) {
+			HttpSession session = request.getSession();
+			// 세션 타임 제한, 초단위
+			session.setMaxInactiveInterval(60 * 60 * 60);
+
+			session.setAttribute("login", admin);
+			
+			// 관리자 main 페이지로 sendRedirect
+			response.sendRedirect("http://localhost:8080/admin_page/admin/main");
 		} else {
 			// login 페이지로 sendRedirect
 			response.sendRedirect(request.getContextPath() +"/user/login?code=LO01");

@@ -28,14 +28,16 @@
 						<div class="page">
 							<table>
 								<colgroup>
+	                                <col width="7%">
 	                                <col width="17%">
 	                                <col width="10%">
 	                                <col width="10%">
 	                                <col width="12%">
-	                                <col width="7%">
+	                                <col width="10%">
 	                            </colgroup>
 								<thead>
 									<tr>
+										<th>회원번호</th>
 										<th>이름</th>
 										<th>생년월일</th>
 										<th>아이디</th>
@@ -46,16 +48,17 @@
 								<tbody>
 									<c:forEach var="list" items="${list}">
 										<tr>
+											<td>${list.user_seq}</td>
 											<td><a href="member_?seq=${list.user_seq}">${list.user_name}</a></td>
 											<td>${list.user_birth}</td>
 											<td>${list.user_id}</td>
 											<td>${list.user_tel}</td>
 											
 											<td>
-												<c:if test="${list.user_over == true}">
-												${list.user_pass}부터 대여 가능
+												<c:if test="${list.user_pass != null }">
+												${list.user_pass} 부터 대여 가능
 												</c:if> 
-												<c:if test="${list.user_over == false}">
+												<c:if test="${list.user_pass == null}">
 													-
 												</c:if>
 											</td>
