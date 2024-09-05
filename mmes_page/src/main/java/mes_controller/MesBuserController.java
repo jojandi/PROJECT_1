@@ -31,7 +31,7 @@ public class MesBuserController extends HttpServlet {
         
         request.setAttribute("list2", tryList);
 		
-		request.getRequestDispatcher("/WEB-INF/mes/mes_human/human_buser.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/mes/mes_bookflix/human_buser.jsp").forward(request, response);
 		
 	}
 

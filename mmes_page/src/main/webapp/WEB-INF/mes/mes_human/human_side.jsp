@@ -15,11 +15,6 @@
                         <span><a href="human">직원관리</a></span>
                         <span class="material-symbols-outlined" id="i_1">arrow_forward_ios</span>
                     </div>
-                    <div class="item" id="i2">
-                        <span><a href="buser">회원관리</a></span>
-                        <span class="material-symbols-outlined" id="i_2">arrow_forward_ios</span>
-                    </div>
-                   
                 </div>
             </div>
         </aside>
