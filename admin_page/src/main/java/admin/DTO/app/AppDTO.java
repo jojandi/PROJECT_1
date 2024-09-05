@@ -89,11 +89,13 @@ public class AppDTO {
 
 	@Override
 	public String toString() {
-		return "AppDTO [ann_seq=" + app_seq + ", app_book=" + app_book
+		return "AppDTO [app_seq=" + app_seq + ", app_book=" + app_book
 				+ ", app_name=" + app_name + ", app_pub=" + app_pub
 				+ ", app_date=" + app_date + ", user_seq=" + user_seq
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+				+ ", purchased=" + purchased + ", app_status=" + app_status
+				+ "]";
 	}
+
+	
 
 }

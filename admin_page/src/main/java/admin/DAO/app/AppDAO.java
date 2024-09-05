@@ -38,7 +38,6 @@ public class AppDAO {
                 appDTO.setApp_date(rs.getDate("app_date"));
                 appDTO.setUser_seq(rs.getString("user_seq"));
                 appDTO.setPurchased(rs.getString("purchased"));
-                appDTO.setApp_status(rs.getString("app_status"));
 
                 list.add(appDTO);
             }
@@ -58,8 +57,8 @@ public class AppDAO {
     public  int insertApp(AppDTO dto) {
         int result = -1;  // 기본 결과값 설정
 
-        String query = "INSERT INTO app_table (app_seq, app_book, app_name, app_pub, app_date, user_seq, purchased,app_status) " +
-                       "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String query = " INSERT INTO app_table (app_seq, app_book, app_name, app_pub, app_date, user_seq, purchased,app_status) " +
+                       " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try {
             // 데이터베이스 연결
@@ -72,10 +71,9 @@ public class AppDAO {
             ps.setString(2, dto.getApp_book());
             ps.setString(3, dto.getApp_name());
             ps.setString(4, dto.getApp_pub());
-            ps.setDate(5, dto.getApp_date());
+//            ps.setDate(5, dto.getApp_date());
             ps.setString(6, dto.getUser_seq());
             ps.setString(7, dto.getPurchased());
-            ps.setString(8, dto.getApp_status());
             
 
             result = ps.executeUpdate();  
@@ -89,5 +87,36 @@ public class AppDAO {
 
         return result;  
     }
+    
+public int update (AppDTO apdto) {
+		
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+			
+			String query = " update application";
+					query += " set Purchased = ?";
+					query += " where app_seq = ?";
+					
+			PreparedStatement ps = con.prepareStatement(query);
+			
+			ps.setString( 1, apdto.getPurchased() );
+			ps.setInt( 2, apdto.getApp_seq() );
+			
+			result = ps.executeUpdate();
+			
+			ps.close();
+			con.close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+		
+	}
 
 }
