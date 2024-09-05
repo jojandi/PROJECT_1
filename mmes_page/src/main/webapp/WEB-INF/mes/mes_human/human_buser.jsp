@@ -1,17 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-<<<<<<< HEAD
     pageEncoding="UTF-8"
     import="java.util.*"%>
-=======
-<<<<<<< HEAD
-    pageEncoding="UTF-8"
-    import="java.util.*"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-=======
-    pageEncoding="UTF-8"%>
->>>>>>> 02d44dde726cb13da35544e6ccc157b05a28cc52
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
->>>>>>> 96827b0ef89511291e105b5ca5ade098c9e4f900
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page import="mes_DTO.MesHumanDTO" %> 
@@ -79,16 +69,11 @@
 
     <div id="wrap">
         <!-- 사이드 -->
-<<<<<<< HEAD
         <%@ include file="/WEB-INF/mes/mes_human/buser_side.jsp" %>
         
         <section>
-=======
-        <%@ include file="/WEB-INF/mes/mes_human/human_side.jsp" %>
-        
-        <section>
             
-           <div class="main_page" id="main_page_1">
+           <div class="main_page" id="main_page_2">
                 <h3>직원관리</h3>
                 <div>
                     <div class="page_2">
@@ -118,7 +103,7 @@
                             <!-- 여기 데이터 채우세요 -->
                              <tbody>
            
-				            <c:forEach var="dto" items="${list}">
+				            <c:forEach var="dto" items="${list2}">
 				                <tr>
 				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
 									<td><a href = "http://localhost:8080/mmes_page/read?emp_id=${dto.emp_id}">${dto.emp_id}</a></td> 
@@ -183,20 +168,8 @@
                     </form>
                 </div>
             </div>
-<<<<<<< HEAD
-        </section>
-    </div>
-    <!--자바 스크립트 영역-->
-    
-
-
-
-    <!-- 가장 아래 고정 -->
-   <script src="./assets/js/mes_human.js"></script>
-=======
->>>>>>> 02d44dde726cb13da35544e6ccc157b05a28cc52
             
-           <div class="main_page" id="main_page_1">
+            <div class="main_page" id="main_page_1">
                 <h3>회원관리</h3>
                 <div>
                     <div class="page_2">
@@ -217,20 +190,19 @@
                             <!-- 여기 데이터 채우세요 -->
                              <tbody>
            
-				            <c:forEach var="dto" items="${list}">
+				            <c:forEach var="list" items="${list}">
 				                <tr>
-									<td>${dto.buser_seq}</td> 
-									<td>${dto.user_id}</td>
-				                    <td>${dto.user_addr}</td>
-				                    <td>${dto.user_email}</td>
-				                    <td>${dto.buser_date}</td>
-				                    <td>${dto.buser_end}</td>
+									<td>${list.buser_seq}</td> 
+									<td>${list.user_id}</td>
+				                    <td>${list.user_addr}</td>
+				                    <td>${list.user_email}</td>
+				                    <td>${list.buser_date}</td>
+				                    <td>${list.buser_end}</td>
 				                </tr>
 				            </c:forEach>
         					</tbody>
                             </tbody>
                         </table>
-<<<<<<< HEAD
                     </div>
                     <div class="bot_btn">
                         <div class="search-container">
@@ -246,13 +218,16 @@
 
 
 
+   <script src="./assets/js/mes_human.js"></script>
+            
+           
+    <!--자바 스크립트 영역-->
+    
+
+
+
     <!-- 가장 아래 고정 -->
    <script src="./assets/js/mes_human.js"></script>
-=======
-        </div>
-    </header>
->>>>>>> 96827b0ef89511291e105b5ca5ade098c9e4f900
->>>>>>> 02d44dde726cb13da35544e6ccc157b05a28cc52
 </body>
 
 </html>

@@ -9,7 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mes_DTO.MesHumanDTO;
 import mes_service.MesBuserService;
+import mes_service.MesHumanService;
 
 @WebServlet("/buser")
 public class MesBuserController extends HttpServlet {
@@ -23,6 +25,11 @@ public class MesBuserController extends HttpServlet {
 		List list = BuserService.getBuser();
 		
 		request.setAttribute("list", list);
+		
+		MesHumanService meshumanService = new MesHumanService ();
+        List<MesHumanDTO> tryList = meshumanService.getList();
+        
+        request.setAttribute("list2", tryList);
 		
 		request.getRequestDispatcher("/WEB-INF/mes/mes_human/human_buser.jsp").forward(request, response);
 		
