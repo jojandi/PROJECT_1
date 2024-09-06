@@ -7,11 +7,6 @@ let currentMonth = today.getMonth(); // 월 (0~11월)
 let currentYear = today.getFullYear(); // 년
 let date = today.getDate(); // 일
 
-let joong = document.querySelector("#joong");
-let ssang = document.querySelector("#ssang");
-let du = document.querySelector("#du");
-let sin = document.querySelector("#sin");
-let cheong = document.querySelector("#cheong");
 
 function renderCalendar() {
   let firstDayOfMonth = new Date(currentYear, currentMonth, 1); // 해당 년월의 1일에 대한 정보를 가져옴
@@ -61,61 +56,6 @@ function renderCalendar() {
         dateElement.classList.remove("hu_2");
       }
     }
-
-    joong.addEventListener('click', function(){
-      console.log("joong")
-      joong.classList.add("back")
-
-      ssang.classList.remove("back")
-      du.classList.remove("back")
-      sin.classList.remove("back")
-      cheong.classList.remove("back")
-      hu1();
-    })
-
-    ssang.addEventListener('click', function(){
-      console.log("ssang")
-      ssang.classList.add("back")
-
-      joong.classList.remove("back")
-      du.classList.remove("back")
-      sin.classList.remove("back")
-      cheong.classList.remove("back")
-      hu2();
-    })
-
-    du.addEventListener('click', function(){
-      console.log("du")
-      du.classList.add("back")
-
-      joong.classList.remove("back")
-      ssang.classList.remove("back")
-      sin.classList.remove("back")
-      cheong.classList.remove("back")
-      hu2();
-    })
-
-    sin.addEventListener('click', function(){
-      console.log("sin")
-      sin.classList.add("back")
-
-      joong.classList.remove("back")
-      du.classList.remove("back")
-      ssang.classList.remove("back")
-      cheong.classList.remove("back")
-      hu1();
-    })
-
-    cheong.addEventListener('click', function(){
-      console.log("cheong")
-      cheong.classList.add("back")
-
-      joong.classList.remove("back")
-      du.classList.remove("back")
-      ssang.classList.remove("back")
-      sin.classList.remove("back")
-      hu2();
-    })
 }
 /* 
 1. for 문을 이용하여 현재 월의 총 일 수만큼 반복하여 월의 날짜를 순서대로 표시한다.

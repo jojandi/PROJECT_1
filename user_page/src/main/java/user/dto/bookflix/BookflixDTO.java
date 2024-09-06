@@ -9,15 +9,35 @@ public class BookflixDTO {
 	private String book_pub;
 	private String book_img;
 	private String li_book_info;
-	private String pub_id; // 구매처
 	private long bom_code;
 	private String bom_name;
 	private long mes_book_code;
 	private int like_id;
 	private int user_seq;
+	private int buser_seq;
 	private String user_name;
 	private boolean user_sub;
+	private java.util.Date buser_date;
+	private java.util.Date buser_end;
 	
+	public int getBuser_seq() {
+		return buser_seq;
+	}
+	public void setBuser_seq(int buser_seq) {
+		this.buser_seq = buser_seq;
+	}
+	public java.util.Date getBuser_date() {
+		return buser_date;
+	}
+	public void setBuser_date(java.util.Date buser_date) {
+		this.buser_date = buser_date;
+	}
+	public java.util.Date getBuser_end() {
+		return buser_end;
+	}
+	public void setBuser_end(java.util.Date buser_end) {
+		this.buser_end = buser_end;
+	}
 	public String getLi_book_info() {
 		return li_book_info;
 	}
@@ -78,12 +98,6 @@ public class BookflixDTO {
 	public void setBook_img(String book_img) {
 		this.book_img = book_img;
 	}
-	public String getPub_id() {
-		return pub_id;
-	}
-	public void setPub_id(String pub_id) {
-		this.pub_id = pub_id;
-	}
 	public long getBom_code() {
 		return bom_code;
 	}
@@ -105,10 +119,10 @@ public class BookflixDTO {
 	@Override
 	public String toString() {
 		return "BookflixDTO [book_isbn=" + book_isbn + ", book_name=" + book_name + ", book_author=" + book_author
-				+ ", book_pub=" + book_pub + ", book_img=" + book_img + ", li_book_info=" + li_book_info + ", pub_id="
-				+ pub_id + ", bom_code=" + bom_code + ", bom_name=" + bom_name + ", mes_book_code=" + mes_book_code
-				+ ", like_id=" + like_id + ", user_seq=" + user_seq + ", user_name=" + user_name + ", user_sub="
-				+ user_sub + "]";
+				+ ", book_pub=" + book_pub + ", book_img=" + book_img + ", li_book_info=" + li_book_info + ", bom_code="
+				+ bom_code + ", bom_name=" + bom_name + ", mes_book_code=" + mes_book_code + ", like_id=" + like_id
+				+ ", user_seq=" + user_seq + ", buser_seq=" + buser_seq + ", user_name=" + user_name + ", user_sub="
+				+ user_sub + ", buser_date=" + buser_date + ", buser_end=" + buser_end + "]";
 	}
 	
 }

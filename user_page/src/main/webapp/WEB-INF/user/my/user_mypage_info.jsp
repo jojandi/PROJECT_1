@@ -49,29 +49,21 @@
 
                     <div id="bookuser">
                         <div id="bookall">
-                            <span>${ login.user_name }님의 이달의 추천 책</span>
+                            <span>이달의 ${list[0].bom_name} 도서</span>
     
                             <div id="books">
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <img src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9791156756552.jpg">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="booktitle">죽여 마땅한 사람들</td>
-                                    </tr>
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td>
-                                            <img src="https://contents.kyobobook.co.kr/sih/fit-in/200x0/pdt/9788950995454.jpg">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="booktitle">곰탕 1:미래에서 온 살인자</td>
-                                    </tr>
-                                </table>
+                            	<c:forEach var="list" items="${list}">
+	                                <table>
+	                                    <tr>
+	                                        <td>
+	                                            <img src="${list.book_img}">
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td class="booktitle">&lt; ${list.book_name} &gt;</td>
+	                                    </tr>
+	                                </table>
+                            	</c:forEach>
                             </div>
                         </div>
     

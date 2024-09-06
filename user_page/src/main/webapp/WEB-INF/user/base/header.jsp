@@ -32,7 +32,12 @@
                 </c:if>
                 <a href="best" class="item" id="i2">베스트</a>
                 <a href="notice" class="item" id="i3">정보광장</a>
-                <a href="res?seq=${ login.user_seq }" class="item" id="i4">마이페이지</a>
+                <c:if test="${login.user_seq == null}">
+                	<a href="res" class="item" id="i4">마이페이지</a>
+                </c:if>
+                <c:if test="${login.user_seq != null}">
+                	<a href="res?seq=${ login.user_seq }" class="item" id="i4">마이페이지</a>
+                </c:if>
             </div>
             
 			<c:if test="${ not empty login }">
