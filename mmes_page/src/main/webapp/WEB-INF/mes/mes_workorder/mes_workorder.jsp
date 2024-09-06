@@ -167,10 +167,7 @@
                            
                         </div>
                        </div>
-<<<<<<< HEAD
-=======
 
->>>>>>> 87a4d7505b35e4cb93acefb2d4fc17da82bc9c6a
 		</section>
 	</div>
 
