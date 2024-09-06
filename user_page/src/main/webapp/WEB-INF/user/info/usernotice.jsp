@@ -41,7 +41,7 @@
 								<tr>
 									<td>${noti.class_name}</td>
 									<td class="retitle"><a
-										href="http://localhost:8080/admin_page/admin/notice3?ann_seq=${noti.ann_Seq}">
+										href="http://localhost:8080/user_page/user/notice3?ann_seq=${noti.ann_Seq}">
 											${noti.ann_Title} </a></td>
 									<td>${noti.ann_Regi}</td>
 				<%-- <td>${noti.ann_Detail}</td> --%>

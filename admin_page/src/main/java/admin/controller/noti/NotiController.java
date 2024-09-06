@@ -57,23 +57,9 @@ public class NotiController extends HttpServlet {
 
 	        // 공지사항 목록 페이지로 리다이렉트
 	        response.sendRedirect(request.getContextPath() + "/admin_page/admin/noti2");
+	        response.sendRedirect(request.getContextPath() + "/user_page//user/notice");
 
 	}
 
 
-//	// 공지사항 작성 처리
-//	private void createNotice(HttpServletRequest request,
-//			HttpServletResponse response) throws ServletException, IOException {request.setCharacterEncoding("utf-8");
-//		
-//
-//		NoticeDTO newNotice = new NoticeDTO();
-//		newNotice.setAnn_title(request.getParameter("ann_title"));
-//		newNotice.setAnn_detail(request.getParameter("ann_detail"));
-//		newNotice.setClass_id(request.getParameter("class_id"));
-//		newNotice.setAnn_attach(request.getParameter("ann_attach"));
-//		newNotice.setAnn_regi(java.time.LocalDate.now().toString());
-//		newNotice.setAnn_check(0);
-//
-//		response.sendRedirect(request.getContextPath() + "/admin/noti2");
-//	}
 }

@@ -4,15 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="../assets/css/noti/noti3.css" rel="stylesheet">
+<link href="../assets/css/info/user_notice3.css" rel="stylesheet">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 
 </head>
 <body>
-	<%@ include file="/WEB-INF/admin/base/a.header.jsp"%>
+	<jsp:include page="/WEB-INF/user/base/header.jsp" />
 	<div id="wrap">
-		<%@ include file="/WEB-INF/admin/notification/noti_side.jsp"%>
+		<jsp:include page="/WEB-INF/user/info/user_info_side.jsp" />
 
 		<div id="section">
 			<div id="content_all">
@@ -147,16 +147,6 @@
 								</tr>
 							</tbody>
 						</table>
-
-
-
-
-
-
-
-
-
-
 						<div id="back">
 							<a href="/user_page/user/notice"><input type="button"
 								value="목록"></a>
@@ -167,6 +157,6 @@
 		</div>
 	</div>
 
-	<%@ include file="/WEB-INF/admin/base/a.footer.jsp"%>
+	 <jsp:include page="/WEB-INF/user/base/footer.jsp" />
 </body>
 </html>

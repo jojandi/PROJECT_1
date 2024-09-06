@@ -78,6 +78,5 @@ public class UserNoticeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		// POST 메서드는 현재 구현되지 않음
 	}
 }
