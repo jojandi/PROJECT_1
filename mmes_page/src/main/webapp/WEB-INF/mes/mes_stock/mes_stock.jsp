@@ -22,6 +22,7 @@
 <link href="./assets/css/mes_stock.css" rel="stylesheet">
 
 <script src="./assets/js/admin_stock.js"></script>
+<script src="./assets/js/mes_stock_search.js"></script>
 </head>
 
 <body>
@@ -43,15 +44,13 @@
 						<table id="main_library">
 							<colgroup>
 								<col width="3%">
-								<col width="7%">
 								<col width="20%">
+								<col width="7%">
 								<col width="8%">
-								<col width="7%">
-								<col width="20%">
+								<col width="8%">
 							</colgroup>
 							<thead>
 								<tr>
-									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">제품 코드</th>
 									<th>제품명</th>
 									<th>재고 수량</th>
@@ -62,7 +61,6 @@
 							<tbody>
 								<c:forEach var="productList" items="${productList}">
 									<tr>
-										<td><input type="checkbox" id="p1_checkAll"></td>
 										<td class="sortable">${productList.bom_code }</td>
 										<td>${productList.bom_name }</td>
 										<td>${productList.pd_count }</td>
@@ -85,10 +83,10 @@
 				<h3>보유 도서 목록</h3>
 				<div>
 					<div class="page_2">
-						<table id="main_library">
+						<table id="main_library2">
 							<thead>
 								<tr>
-									<th><input type="checkbox" id="p1_checkAll"></th>
+									<th>부품번호</th>
 									<th class="sortable">도서명</th>
 									<th>도서 코드</th>
 									<th>저자</th>
@@ -101,7 +99,7 @@
 							<tbody>
 								<c:forEach var="mesbook" items="${mesBook}">
 									<tr>
-										<td><input type="checkbox" id="p1_checkAll"></td>
+										<td>${mesbook.mes_book_code }</td>
 										<td class="sortable">${mesbook.book_name }</td>
 										<td>${mesbook.book_isbn }</td>
 										<td>${mesbook.book_author }</td>
@@ -180,7 +178,6 @@
 							<table id="main_library_1">
 								<thead>
 									<tr>
-										<th><input type="checkbox" id="p1_checkAll"></th>
 										<th class="sortable">부품코드</th>
 										<th>발주ID</th>
 										<th>구매처</th>
@@ -192,7 +189,6 @@
 								<tbody class="main_tbody">
 									<c:forEach var="tbl_order" items="${tbl_order}">
 										<tr>
-											<td><input type="checkbox" id="p1_checkAll"></td>
 											<td class="sortable">${tbl_order.mes_book_code }</td>
 											<td>${tbl_order.order_id }</td>
 											<td>${tbl_order.pub_name }</td>
