@@ -246,10 +246,15 @@ section #information #booksub #bookall > span{
     border-bottom: 1px solid #ccc;
 }
 
+section #information #booksub #bookall table{
+    width: 170px;
+}
+
 section #information #booksub #books{
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
+    align-items: baseline;
 }
 
 section #information #booksub #books .book{

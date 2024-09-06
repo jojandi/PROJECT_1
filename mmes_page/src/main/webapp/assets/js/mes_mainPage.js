@@ -4,79 +4,70 @@
         let pi3 = document.querySelector("#sideleft #i3");
         let pi4 = document.querySelector("#sideleft #i4");
 
-        // chart.js
-        document.addEventListener('DOMContentLoaded', function () {
-            const ctx = document.getElementById('ageGroupChart').getContext('2d');
-            const monthSelect = document.getElementById('monthSelect');
-            const bookTableBody = document.querySelector('#bookTable tbody');
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('yearSelect').addEventListener('change', loadBookStatistics);
+    document.getElementById('monthSelect').addEventListener('change', loadBookStatistics);
+});
 
-            const dataByMonth = {
-                1: [5, 10, 15, 20, 25, 30],
-                2: [4, 11, 14, 21, 24, 28],
-                3: [6, 12, 16, 22, 26, 32],
-                4: [7, 13, 17, 23, 27, 33],
-                5: [8, 14, 18, 24, 28, 34],
-                6: [9, 15, 19, 25, 29, 35],
-                7: [10, 16, 20, 26, 30, 36],
-                8: [11, 17, 21, 27, 31, 37],
-                9: [12, 18, 22, 28, 32, 38],
-                10: [13, 19, 23, 29, 33, 39],
-                11: [14, 20, 24, 30, 34, 40],
-                12: [15, 21, 25, 31, 35, 41]
-            };
+// Chart 객체를 전역 변수로 선언
+let chart;
 
-            const labels = ['10대 필독도서', '20대 필독도서', '30대 필독도서', '40대 필독도서', '50대 필독도서', '60대 이상 필독도서'];
+function loadBookStatistics() {
+    // 선택된 연도와 월을 가져옴
+    const selectedYear = document.getElementById('yearSelect').value;
+    const selectedMonth = document.getElementById('monthSelect').value;
 
-            let chart = new Chart(ctx, {
-                type: 'bar',
+    // 서버에서 연도와 월에 맞는 데이터를 가져옴
+   fetch(`/mmes_page/getBookStatistics?year=${selectedYear}&month=${selectedMonth}`)
+
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Received data:', data);
+
+            if (data.length === 0) {
+                console.warn('No data available for the selected year and month.');
+                return;
+            }
+
+            // 장르별 데이터 추출
+            const labels = data.map(item => item.genre);
+            const totals = data.map(item => item.total);
+
+            // Chart.js로 그래프 그리기
+            const ctx = document.getElementById('bookStatisticsChart').getContext('2d');
+
+            // 이전에 그려진 차트가 있으면 삭제하고 새로 그리기
+            if (chart) {
+                chart.destroy();
+            }
+
+            chart = new Chart(ctx, {
+                type: 'bar',  // 막대 그래프
                 data: {
-                    labels: labels,
+                    labels: labels,  // x축: 장르명
                     datasets: [{
-                        label: '필독 도서 수요량',
-                        data: dataByMonth[1],
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        label: '장르별 도서 출고 수량',
+                        data: totals,  // y축: 총 출고 수량
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',  // 막대 색상
+                        borderColor: 'rgba(75, 192, 192, 1)',  // 막대 테두리 색상
                         borderWidth: 1
                     }]
                 },
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true  // y축 0부터 시작
                         }
                     }
                 }
             });
-
-            function updateChart(month) {
-                chart.data.datasets[0].data = dataByMonth[month];
-                chart.update();
-            }
-
-            function updateTable(month) {
-                bookTableBody.innerHTML = '';
-                dataByMonth[month].forEach((books, index) => {
-                    const row = document.createElement('tr');
-                    const ageCell = document.createElement('td');
-                    ageCell.textContent = labels[index];
-                    const booksCell = document.createElement('td');
-                    booksCell.textContent = books;
-                    row.appendChild(ageCell);
-                    row.appendChild(booksCell);
-                    bookTableBody.appendChild(row);
-                });
-            }
-
-            monthSelect.addEventListener('change', function () {
-                const month = monthSelect.value;
-                updateChart(month);
-                updateTable(month);
-            });
-
-            updateTable(1);
+        })
+        .catch(error => {
+            console.error('Error fetching the statistics:', error);
         });
-
-
-
-
-     
+}

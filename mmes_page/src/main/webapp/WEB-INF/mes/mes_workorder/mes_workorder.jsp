@@ -100,11 +100,11 @@
 							<thead>
 								<tr>
 									<th><input type="checkbox" id="p1_checkAll"></th>
-									<th class="sortable">부품코드</th>
+									<th class="sortable">제품코드</th>
 									<th>부품명</th>
-									<th>소요량</th>
-									<th>가용재고</th>
-									<th>적정재고</th>
+									<th>부품코드1</th>
+									<th>부품코드2</th>
+									<th>부품코드3</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -128,9 +128,6 @@
 				</div>
 			</div>
 
-
-<<<<<<< HEAD
-						
 						<!-- -------------------------------- BOM페이지 ------------------------------- -->
 				<div class="main_page" id="main_page_2">
                   <h3>BOM</h3>
@@ -170,9 +167,6 @@
                            
                         </div>
                        </div>
-                     
-=======
->>>>>>> 82086de537ff85c134537c00be325ed10923012d
 
 		</section>
 	</div>
@@ -236,7 +230,6 @@
 							<td><span>Y</span></td>
 							<td><span>-</span></td>
 						</tr>
-
 					</table>
 				</div>
 			</div>

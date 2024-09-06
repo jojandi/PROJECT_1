@@ -31,7 +31,7 @@ public class MesStockDAO {
 			 Connection con = dataSource.getConnection();
 	    	 
 	    	 // SQL 준비
-			 String query = "select b.book_name, b.book_isbn, b.book_author, b.book_pub, m.book_count, m.wh_code " +
+			 String query = "select m.mes_book_code,b.book_name, b.book_isbn, b.book_author, b.book_pub, m.book_count, m.wh_code " +
 		               "from book b, mes_book m " +
 		               "WHERE b.book_isbn = m.book_isbn";
 	    	 PreparedStatement ps = con.prepareStatement(query);
@@ -45,6 +45,7 @@ public class MesStockDAO {
 	    	 while(rs.next()) {
 	    		 // 전달인자로 컬럼명을 적고 그 내용을 형변환 해서 가지고 온다
 	    		 
+	    		 long mes_book_code = rs.getLong("mes_book_code");
 	    		 String book_name = rs.getString("book_name");
 	    		 long book_isbn = rs.getLong("book_isbn");
 	    		 String book_author =rs.getString("book_author");
@@ -53,6 +54,7 @@ public class MesStockDAO {
 	    		 String wh_code = rs.getString("wh_code");
 	    		 
 	    		 MesStockDTO dto = new MesStockDTO();
+	    		 dto.setMes_book_code(mes_book_code);
 	    		 dto.setBook_name(book_name);
 	    		 dto.setBook_isbn(book_isbn);
 	    		 dto.setBook_author(book_author);

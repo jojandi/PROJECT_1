@@ -89,7 +89,6 @@
                             </colgroup>
                             <thead>
                                 <tr>
-                                    <th><input type="checkbox" id="p1_checkAll"></th>
                                     <th class="sortable">사원번호</th>
                                    	<th>이름</th>
                                     <th>직급</th>
@@ -105,7 +104,6 @@
            
 				            <c:forEach var="dto" items="${list}">
 				                <tr>
-				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
 									<td><a href = "http://localhost:8080/mmes_page/read?emp_id=${dto.emp_id}">${dto.emp_id}</a></td> 
 									<td>${dto.emp_name}</td>
 				                    <td>${dto.po_name}</td>

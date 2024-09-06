@@ -25,7 +25,7 @@
 
 
         /* -------------------------------관리자 직원관리------------------------------ */
-        #menu #items #i4{
+        #menu #items #i5{
             font-weight: 901;
             text-decoration: underline;
         }
@@ -57,15 +57,6 @@
     <!-- 헤더  -->
 		<%@ include file="/WEB-INF/mes/mes_base/header.jsp" %>
 	<!-- 헤더  -->
-
-    <!-- 여기 사이에 이것 저것 코딩하세용 >< 
-    <div id="left_menu">
-        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><h2>베스트 도서</h2></div>
-        <div class="l_menu" id="l_menu_1" style="font-size: 20px;"><strong>남/녀별 베스트도서</strong></div>
-    <div class="l_menu" id="l_menu_1" style="font-size: 20px;">연령별 베스트도서</div>
-    </div> 인기도서 관리창 코딩시작 >< 
-    
--->
 
     <div id="wrap">
         <!-- 사이드 -->
@@ -110,7 +101,10 @@
                     </div>
                     <div class="bot_btn">
                         <div class="search-container">
-                            <input type="text" id="searchInput" placeholder="회원 검색...">
+                        	<form>
+                            	<input type="text" id="searchInput" name="user_id2" placeholder="회원 검색...">
+                            	<input type="submit" value="검색">
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -118,20 +112,9 @@
         </section>
     </div>
     <!--자바 스크립트 영역-->
+   <script src="./assets/js/mes_human.js"></script>
     
 
-
-
-   <script src="./assets/js/mes_human.js"></script>
-            
-           
-    <!--자바 스크립트 영역-->
-    
-
-
-
-    <!-- 가장 아래 고정 -->
-   <script src="./assets/js/mes_human.js"></script>
 </body>
 
 </html>

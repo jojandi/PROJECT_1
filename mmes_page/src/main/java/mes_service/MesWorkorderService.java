@@ -5,6 +5,7 @@ import java.util.List;
 import mes_DAO.MesHumanDAO;
 import mes_DAO.MesWorkorderDAO;
 import mes_DTO.MesHumanDTO;
+import mes_DTO.MesStockDTO;
 import mes_DTO.MesWorkorderDTO;
 
 public class MesWorkorderService {
@@ -44,5 +45,17 @@ public class MesWorkorderService {
 		MesWorkorderDAO dao = new MesWorkorderDAO();
 		return dao.deleteOne(bom_code);
 	}
-	
+    
+
+    public int update(MesWorkorderDTO workDTO) {
+    	MesWorkorderDAO dao = new MesWorkorderDAO();
+        return workorderDAO.updateBook(workDTO);
+    }
+    
+public MesWorkorderDTO getBomSelectOne (int bom_code) {
+	MesWorkorderDAO dao = new MesWorkorderDAO();
+		return dao.getBomSelectOne(bom_code);
+		
+	}
+
 }	

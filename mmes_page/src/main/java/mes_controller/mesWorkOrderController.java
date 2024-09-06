@@ -33,7 +33,6 @@ public class mesWorkOrderController extends HttpServlet {
 		MesWorkorderWoDAO woDAO = new MesWorkorderWoDAO();
 		
 		MesWorkOrderWoService WoService = new MesWorkOrderWoService();
-		
 
 		List list2 = WoService.getWorkwo();
 		

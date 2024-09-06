@@ -29,14 +29,18 @@ public class BookflixDAO {
 
 			String query = null;
 
-			query = " select b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info ";
-			query += " , bk.book_pub, bk.book_author from bom b  ";
-			query += " join tbl_user u on (b.bom_code = (u.like_id+1000)) ";
-			query += " join mes_book m on (m.mes_book_code = b.mes_book_code1 or m.mes_book_code = b.mes_book_code2 or m.mes_book_code = b.mes_book_code3) ";
-			query += " join book bk on (m.book_isbn = bk.book_isbn) ";
-			query += " join li_book li on (bk.book_isbn = li.book_isbn) ";
+			query = " select b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, ";
+			query += " u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info, bu.buser_seq, ";
+			query += " bu.buser_date, bu.buser_end, bk.book_pub, bk.book_author from bom b  ";
+			query += " left join tbl_user u on (b.bom_code = (u.like_id+1000)) ";
+			query += " left join mes_book m on (m.mes_book_code = b.mes_book_code1 or m.mes_book_code = b.mes_book_code2 or m.mes_book_code = b.mes_book_code3) ";
+			query += " left join book bk on (m.book_isbn = bk.book_isbn) ";
+			query += " left join li_book li on (bk.book_isbn = li.book_isbn) ";
+			query += " left join bookflix_user bu on (u.user_seq = bu.user_seq) ";
 			query += " where u.user_seq=?";
-			query += " group by b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info, bk.book_pub, bk.book_author ";
+			query += " group by b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, ";
+			query += " u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info, bk.book_pub, ";
+			query += " bk.book_author, bu.buser_date, bu.buser_end, bu.buser_seq ";
 
 			PreparedStatement ps = new LoggableStatement(con, query);
 			ps.setInt(1, seq);
@@ -56,6 +60,10 @@ public class BookflixDAO {
 				dto.setBook_pub(rs.getString("book_pub"));
 				dto.setBook_author(("book_author"));
 				dto.setLi_book_info(rs.getString("li_book_info"));
+				dto.setBuser_date(rs.getDate("buser_date"));
+				dto.setBuser_end(rs.getDate("buser_end"));
+				dto.setBuser_seq(rs.getInt("buser_seq"));
+				dto.setUser_seq(rs.getInt("user_seq"));
 				
 				list.add(dto);
 
@@ -66,5 +74,44 @@ public class BookflixDAO {
 		}
 
 		return list;
+	}
+	
+	// 리뷰 인서트
+	public int bookflixReview(int user, int buser, int star, String text) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dateSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+
+			Connection con = dateSource.getConnection();
+
+			String query = null;
+
+			query = " insert into bf_review (review_seq, buser_seq, review_name, review_contents, review_date, review_score) ";
+			query += " values ";
+			query += " (review_seq.nextval, ?, ";
+			query += " (select bom_name from bom b ";
+			query += " left join tbl_user u on (b.bom_code = (u.like_id+1000)) ";
+			query += " where u.user_seq=?)||' 후기', ";
+			query += " ?, sysdate, ?) ";
+
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, buser);
+			ps.setInt(2, user);
+			ps.setString(3, text);
+			ps.setInt(4, star);
+
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			result = ps.executeUpdate(); 
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
 	}
 }

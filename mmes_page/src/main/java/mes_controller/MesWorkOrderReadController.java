@@ -9,9 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mes_DAO.MesStockDAO;
 import mes_DTO.MesHumanDTO;
+import mes_DTO.MesStockDTO;
 import mes_DTO.MesWorkorderDTO;
 import mes_service.MesHumanService;
+import mes_service.MesStockService;
 import mes_service.MesWorkorderService;
 
 /**
@@ -20,30 +23,31 @@ import mes_service.MesWorkorderService;
 @WebServlet("/bom_read")
 public class MesWorkOrderReadController extends HttpServlet {
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        System.out.println("/mes/bom/read 실행");
-        
-        // BOM 코드 파라미터를 가져옵니다.
-        String str_bom_code = request.getParameter("bom_code");
-        System.out.println("str_bom_code : " + str_bom_code);
-        
-        int bom_code = Integer.parseInt(str_bom_code);
-        
-        // 서비스 객체를 생성하고 데이터 가져오기
-        MesWorkorderService workorderService = new MesWorkorderService();
-        List<MesWorkorderDTO> bookList = workorderService.get(bom_code);
-        
-        // 결과를 로그로 출력
-        System.out.println("책 정보 리스트: " + bookList);
-        
-        // JSP 페이지에 데이터 전달
-        request.setAttribute("bookList", bookList);
-        request.getRequestDispatcher("/WEB-INF/mes/mes_workorder/mes_bom_read.jsp").forward(request, response);
-    }
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-    }
+		System.out.println("/bom_read 실행");
+
+		String bom_code = request.getParameter("bom_code");
+		System.out.println("bom_code : " + bom_code);
+
+		int bom_code2 = Integer.parseInt(bom_code);
+
+		MesWorkorderService bomservice = new MesWorkorderService();
+		MesWorkorderDTO dto = bomservice.getBomSelectOne(bom_code2);
+
+		request.setAttribute("dto", dto);
+		// 부품코드 셀렉트 옵션을 jsp로 전달해주는놈~
+		MesStockDAO dao = new MesStockDAO();
+		List<String> mesBookCodes = dao.getMesBookCodes();
+		request.setAttribute("mes_book_code", mesBookCodes);
+		// ---------------------------------------------------------
+
+		request.getRequestDispatcher("/WEB-INF/mes/mes_workorder/mes_bom_read.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+	}
 }
-
-
