@@ -240,7 +240,7 @@ public class MesWorkorderDAO {
 			
 			return result;
 		}
-<<<<<<< HEAD
+
 	 public int updateBook(MesWorkorderDTO workDTO) {
 			int result = -1;
 			
@@ -358,8 +358,5 @@ public class MesWorkorderDAO {
 
 			return dto;
 		}
-=======
-	
->>>>>>> 04aec39fe345544d12cb8597a8e0fb941075592c
 	
 }

@@ -46,7 +46,7 @@ public class MesWorkorderService {
 		return dao.deleteOne(bom_code);
 	}
     
-<<<<<<< HEAD
+
     public int update(MesWorkorderDTO workDTO) {
     	MesWorkorderDAO dao = new MesWorkorderDAO();
         return workorderDAO.updateBook(workDTO);
@@ -57,8 +57,5 @@ public MesWorkorderDTO getBomSelectOne (int bom_code) {
 		return dao.getBomSelectOne(bom_code);
 		
 	}
-	
-=======
-   
->>>>>>> 04aec39fe345544d12cb8597a8e0fb941075592c
+
 }	
