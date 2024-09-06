@@ -145,12 +145,4 @@ aside #items .item a:visited{
     text-decoration: none;
 }
 
-#wrap section {
-    width: 80%;
-    font-size: 14px;
-    display: inline-block;
-    box-sizing: border-box;
-    vertical-align: top;
-    padding-left: 30px;
-    /* border: 1px solid red; */
 }

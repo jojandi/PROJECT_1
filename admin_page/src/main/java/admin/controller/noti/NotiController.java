@@ -40,6 +40,9 @@ public class NotiController extends HttpServlet {
 	        String annDetail = request.getParameter("ann_detail");		//공지사항 내용
 	        String annAttach = request.getParameter("ann_attach");		//첨부파일
 
+	        System.out.println(classId);
+	        
+	        
 	        // DTO 객체에 데이터 설정
 	        NoticeDTO noticeDTO = new NoticeDTO();
 	        noticeDTO.setAnn_seq(annSeq);

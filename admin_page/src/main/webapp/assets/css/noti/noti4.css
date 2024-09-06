@@ -137,7 +137,7 @@ aside #items #i1 .material-symbols-outlined{
 }
 
 #section #content img{
-    width: 100%;
+    width: 92%;
 }
 
 /* 목록으로 이동 */
@@ -158,8 +158,8 @@ aside #items #i1 .material-symbols-outlined{
 /*책 출간*/
 /* 테이블 스타일 */
 table.report {
-    width: 97%;
-    /* border-collapse: collapse; */
+    width: 100%;
+    border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -181,12 +181,16 @@ table.report tr:nth-child(even) {
 }
 
 /* 이미지 스타일 */
-able.report img {
-    width: 30px;  
-    height: 30px;  
+#back img {
+    width: 200px;
+    height: auto;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     border: 1px solid #ddd;
-    padding: 5px;  
-    background-color: #fff;  
+    padding: 5px;
+    background-color: #fff;
 }
 
 /* 버튼 스타일 */
@@ -230,107 +234,3 @@ able.report img {
         width: 150px;
     }
 }
-
-/*  ---------------------------------- */
- table{
-    table-layout:fixed;
-    border-collapse: collapse;
-    width: 100%;
-    
-}
-
-table thead{
-    text-align: center;
-    border-bottom: 2px solid #ccc;
-}
-
- table thead td{
-    /* border: 1px solid red; */
-    font-size: 15px;
-    font-weight: 900;
-    padding: 15px 0;
-    box-sizing: border-box;
-    text-overflow: ellipsis; /* 말줄임표(...) 적용 */
-    overflow: hidden; /* 넘어가는 부분 안 보이게 */
-    white-space: nowrap; /* 줄바꿈 X */
-}
-
- table tbody td{
-    height: 40px;
-    box-sizing: border-box;
-    padding: 5px;
-    text-align: left;
-}
-
- table tbody .border{
-   border-bottom: 1px solid #ccc;
-}
-
- table tbody td:not(.book){
-    text-align: center;
-}
-
- table tbody .bookTitle{
-    padding-left: 10px;
-    font-size: 20px;
-    font-weight: 900;
-    padding-bottom: 5px;
-}
-
- table tbody .book{
-   padding-left: 10px;
-}
-
- table tbody #info{
-   font-size: 16px;
-    font-weight: 500;
-    padding-left: 15px;
-    padding-top: 0;
-   border: none;
-   text-overflow: ellipsis; /* 말줄임표(...) 적용 */
-    overflow: hidden; /* 넘어가는 부분 안 보이게 */
-    white-space: nowrap; /* 줄바꿈 X */
-}
-
- table tbody .wirter{
-    vertical-align: top;
-    padding-left: 15px;
-    padding-top: 5px;
-    font-size: 15px;
-}
-
- table tbody .wirter span{
-   margin-right: 8px;
-}
-
- table tbody .bookCover img{
-    width: 60px;
-}
-
- #bntall{
-    /* border: 1px solid red; */
-    text-align: right;
-    margin-top: 40px;
-    margin-right: 10px;
-}
-
- #bntall .bnt{
-    font-size: 14px;
-    width: 150px;
-    padding: 8px;
-}
-
- #bntall #reserchk{
-    background: white;
-    border: 1px solid rgb(106, 170, 82);
-    border-radius: 5%;
-    margin-bottom: 5px;
-}
-
- #bntall #reserall,
- #bntall #delall{
-    border-radius: 5%;
-    background: rgb(165, 224, 144);
-    border: 1px solid rgb(106, 170, 82);
-}
-

@@ -10,9 +10,9 @@
 <title>공지사항 게시판</title>
 <style>
     aside #items #i3 .material-symbols-outlined{
-background-color: rgb(165, 224, 144);
-	
+	background-color: rgb(165, 224, 144);	
 }
+
     </style>
 </head>
 <body>
