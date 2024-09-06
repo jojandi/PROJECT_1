@@ -11,13 +11,13 @@ public class NoticeService<TodoDTO> {
         return noticeDAO.getNoticeById(ann_seq);
     }
 
-        
-     // DAO에서 DB로 접속, insert 해줌
-        int register(TodoDTO todoDTO) {
-    		// DB에 insert
-    		NoticeDAO dao = new NoticeDAO();
-    		return dao.insertNotice(noticeDAO);
-    	}
+//        
+//     // DAO에서 DB로 접속, insert 해줌
+//        int register(TodoDTO todoDTO) {
+//    		// DB에 insert
+//    		NoticeDAO dao = new NoticeDAO();
+//    		return dao.insertNotice(noticeDAO);
+//    	}
 
 
 	private static NoticeDAO noticeDAO = new NoticeDAO();
