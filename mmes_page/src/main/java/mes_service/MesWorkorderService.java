@@ -44,5 +44,10 @@ public class MesWorkorderService {
 		MesWorkorderDAO dao = new MesWorkorderDAO();
 		return dao.deleteOne(bom_code);
 	}
+    
+    public int update(MesWorkorderDTO workDTO) {
+    	MesWorkorderDAO dao = new MesWorkorderDAO();
+        return workorderDAO.updateBook(workDTO);
+    }
 	
 }	

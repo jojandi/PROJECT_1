@@ -3,6 +3,8 @@
 <%@ page import="java.util.List"%>
 <%@ page import="user.dto.noti.NotiDTO"%>
 <%@ page import="user.dao.noti.NotiDAO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="java.util.Map"%> <!-- Map 임포트 추가 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -80,10 +82,10 @@
 
 			<!-- 페이지 이동 -->
 			<div id="movepage">
-				<span class="material-symbols-outlined">chevron_left</span> <span
-					class="chap">1</span> <span class="chap">2</span> <span
-					class="chap">3</span> <span class="chap">4</span> <span
-					class="material-symbols-outlined">chevron_right</span>
+				<span class="material-symbols-outlined">chevron_left</span> 
+					<span class="chap">1</span>
+
+					<span class="material-symbols-outlined">chevron_right</span>
 			</div>
 
 			<form id="search" method="get" action="comment">
@@ -96,7 +98,9 @@
 						placeholder="검색어를 입력해주세요"> <input type="button" value="검색"
 						class="search" onclick="filterTable()">
 				</div>
+				
 			</form>
+			
 
 		</div>
 

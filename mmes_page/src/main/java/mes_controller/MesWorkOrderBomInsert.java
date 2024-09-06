@@ -16,7 +16,7 @@ import mes_service.MesHumanService;
 import mes_service.MesWorkorderService;
 
 @WebServlet("/register")
-public class MesWorkOrderBonInsert extends HttpServlet {
+public class MesWorkOrderBomInsert extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

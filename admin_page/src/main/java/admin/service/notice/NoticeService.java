@@ -11,7 +11,11 @@ public class NoticeService<TodoDTO> {
         return noticeDAO.getNoticeById(ann_seq);
     }
 
+<<<<<<< HEAD
+//        
+=======
         
+>>>>>>> 3660c8e6667fee6e1f6166e3f9d6de74d778f037
 //     // DAO에서 DB로 접속, insert 해줌
 //        int register(TodoDTO todoDTO) {
 //    		// DB에 insert

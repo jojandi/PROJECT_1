@@ -16,6 +16,24 @@
     padding: 20px;
     vertical-align: top;
 }
+#wrap .section2{
+    /* border: 1px solid red; */
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 20px;
+    vertical-align: top;
+}
+#wrap .section3{
+    /* border: 1px solid red; */
+    font-size: 14px;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 20px;
+    vertical-align: top;
+}
 
 
 /* ------------------------------------------------------------------ */
@@ -231,86 +249,9 @@
 
 /* ------------------------------------------------------------------ */
 /* section2 */
-#wrap .section2{
-    /* border: 1px solid red; */
-    font-size: 14px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 100%;
-    height: 400px;
-    padding: 20px;
-    vertical-align: top;
-    text-align: center;
-    border-top: 1px solid #ccc;
-    margin: 50px;
-}
-#wrap .section3{
-    border: 1px solid red;
-    font-size: 14px;
-    display: inline-block;
-    box-sizing: border-box;
-    width: 30%;
-    padding: 20px;
-    vertical-align: top;
-}
 
-/* ------------------------------------------------------------------ */
-/* 공지사항 */
-.section2 #noticewrap{
-    padding: 30px;
-    border: 2px solid #ccc;
-    border-radius: 3%;
-}
 
-.section2 #noticewrap #noticetitle{
-    font-size: 20px;
-    font-weight: 700;
-}
 
-.section2 #noticewrap ul {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.section2 #noticewrap .notice{
-    margin-bottom: 15px;
-}
-
-.section2 #noticewrap .notice .nbox{
-    border: 2px solid rgb(106, 170, 82);
-    border-radius: 5px;
-    display: inline-block;
-    font-size: 17px;
-    line-height: 50px;
-    text-align: center;
-    width: 50px;
-    height: 50px;
-}
-
-.section2 #noticewrap .notice .all{
-    border: 2px solid rgb(106, 170, 82);
-}
-
-.section2 #noticewrap .notice .joong{
-    border: 2px solid rgb(82, 150, 170);
-}
-
-.section2 #noticewrap .notice .noticeTD{
-    vertical-align: top;
-    height: 50px;
-    margin-left: 5px;
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
-
-.section2 #noticewrap .notice .noticeTD .title{
-    font-size: 16px;
-}
-
-.section2 #noticewrap .notice .noticeTD .update{
-    font-size: 12px;
-}
 .main_page {
     width: 100%;
 }

@@ -74,6 +74,7 @@
 				            </c:forEach>
 							</tbody>
 						</table>
+						   <input type="submit" value="선택된 책 수정하기">
 					</div>
 					
 					

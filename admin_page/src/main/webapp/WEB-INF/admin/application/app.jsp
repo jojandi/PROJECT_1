@@ -10,7 +10,7 @@
     <title>도서 신청관리</title>
     <style>
     aside #items #i2 .material-symbols-outlined{
-background-color: rgb(165, 224, 144);
+	background-color: rgb(165, 224, 144);
 	
 }
     </style>
