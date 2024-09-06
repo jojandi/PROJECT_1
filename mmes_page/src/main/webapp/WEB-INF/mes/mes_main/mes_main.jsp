@@ -85,22 +85,22 @@
               <div class="all">
                 <div class="mini_title"><h3>도서 출고 통계</h3></div>
                 <div id="select">
-                    <select id="monthSelectShipment">
-                        <option value="1">1월</option>
-                        <option value="2">2월</option>
-                        <option value="3">3월</option>
-                        <option value="4">4월</option>
-                        <option value="5">5월</option>
-                        <option value="6">6월</option>
-                        <option value="7">7월</option>
-                        <option value="8">8월</option>
-                        <option value="9">9월</option>
-                        <option value="10">10월</option>
-                        <option value="11">11월</option>
-                        <option value="12">12월</option>
-                    </select>
+                   <h1>월별 매출 통계</h1>
+                   	<table>
+					  <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
+									<td><a href = "http://localhost:8080/mmes_page/read?emp_id=${dto.emp_id}">${dto.emp_id}</a></td> 
+									<td>${dto.emp_name}</td>
+				                    <td>${dto.po_name}</td>
+				                    <td>${dto.dept_name}</td>
+				                    <td>${dto.emp_hp}</td>
+				                    <td>${dto.emp_add}</td>
+				                    <td>${dto.emp_hiredate}</td>
+				                </tr>
+				      </table>
+				    </c:forEach>
                 </div>
-                <canvas id="shipmentChart"></canvas>
             </div>
         </section>
         

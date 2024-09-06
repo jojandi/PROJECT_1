@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="user.dto.bookflix.BookflixDTO" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
@@ -24,18 +26,39 @@
                 <img id="top_logo_img"
                     src="../assets/img/bookflix.png">
             </div>
+            
+            <%
+            	List list = (List)request.getAttribute("list");
+            	
+            	BookflixDTO dto = (BookflixDTO)list.get(0);
+            	String date = dto.getBuser_date().toString();
+            	String end = dto.getBuser_end().toString();
+            	System.out.println("date : " + date);
+            	System.out.println("end : " + end);
+            	
+            	String[] dates = date.split("-");
+            	String[] ends = end.split("-");
+            	for(int i =0; i < dates.length; i++){
+	            	System.out.println("dates : " + dates[i]);
+            	}
+            	for(int i =0; i < ends.length; i++){
+	            	System.out.println("ends : " + ends[i]);
+            	}
+            	String dateMMDD = dates[1] + "월 " + dates[2] + "일";
+            	String endMMDD = ends[1] + "월 " + ends[2] + "일";
+            %>
 
             <div id="top_box">
                 <div>
-                    조잔디님은 2024.7.30 부터 구독 하셨습니다. <br>
-                    도서 대여기간은 7월 30일부터 8월 30일 입니다.
+                    ${list[0].user_name}님은 ${list[0].buser_date} 부터 구독 하셨습니다. <br>
+                    구독 기간은 <%=dateMMDD %>부터 <%=endMMDD %> 입니다.
                 </div>
             </div>
 
             <div class="top_for_you">
-                조잔디님만을 위한 취향저격 이달의 추천 도서
+                ${list[0].user_name}님만을 위한 취향저격 이달의 ${list[0].bom_name} 도서
                 <div id="top_in_for_you">
-                    조잔디님을 위한 책을 소개시켜드릴게요!<br>
+                    ${list[0].user_name}님을 위한 책을 소개시켜드릴게요!<br>
                     인공지능 데이터를 토대로 추천 해드립니다.
                 </div>
             </div>
@@ -45,7 +68,7 @@
                 <c:forEach var="list" items="${list}">
                     <div class="book">
                         <img id="book_1_img" src="${list.book_img}">
-						<div class=book_name>${list.book_name}</div>
+						<div class=book_name>&lt; ${list.book_name} &gt;</div>
                         <div>
                             <div class="btn">
                                 <button class="popupBnt">책정보 보기</button>
@@ -56,8 +79,7 @@
                                     <h2>${list.book_name}</h2>
                                     <span class="popup-close">&times;</span>
                                 </div>
-                                <p>${list.book_author} (지은이)</p>
-                                <p>${list.book_pub} (주)</p>
+                                <p>${list.book_author} (지은이)  &nbsp;|&nbsp; ${list.book_pub} (주)</p>
                                 <p>${list.li_book_info}</p>
                             </div>
 
@@ -91,6 +113,8 @@
 						 </div>
 		                <textarea name="review_text" id="review_text" placeholder=" 리뷰를 입력해주세요. "></textarea>
 		                <br>
+		                <input type="hidden" name="buser" value="${list[0].buser_seq}">
+		                <input type="hidden" name="user" value="${list[0].user_seq}">
 		                <button type="submit" id="end">작성완료</button>
 		            </div>
 	            </form>

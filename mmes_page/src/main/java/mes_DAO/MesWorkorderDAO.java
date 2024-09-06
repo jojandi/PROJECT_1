@@ -1,7 +1,6 @@
 package mes_DAO;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -11,9 +10,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import mes_DTO.MesHumanDTO;
+import mes_DTO.MesStockDTO;
 import mes_DTO.MesWorkorderDTO;
-import mes_DTO.MesWorkorderWoDTO;
 
 
 public class MesWorkorderDAO {
@@ -242,6 +240,7 @@ public class MesWorkorderDAO {
 			
 			return result;
 		}
+<<<<<<< HEAD
 	 public int updateBook(MesWorkorderDTO workDTO) {
 			int result = -1;
 			
@@ -313,6 +312,54 @@ public class MesWorkorderDAO {
 		 
 		 return book;
 	 }
+	 public MesWorkorderDTO getBomSelectOne(int bom_code) {
+		 MesWorkorderDTO dto = null;
+
+			try {
+
+				// DB 접속
+		    	 Context ctx = new InitialContext();
+				 DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+				 Connection con = dataSource.getConnection();
+		    	 
+		    	 // SQL 준비
+				 String query = "select * from bom";
+				 		query += " where bom_code=?";
+
+
+		 		 PreparedStatement ps = con.prepareStatement(query);
+				 // ?를 값으로 채워줌
+				 // 첫번째 전달인자는 ?의 순서
+				 // 만약에 글씨라면 setString, 알아서 '로 감싸준다
+				 ps.setInt(1, bom_code);
+				 		
+		    	 
+		    	 // SQL 실행 및 결과 확보
+		    	 ResultSet rs = ps.executeQuery();
+
+				// 결과 활용
+				if (rs.next()) {
+					dto = new MesWorkorderDTO();
+					dto.setBom_code(bom_code);
+					dto.setBom_name(rs.getString("bom_name"));
+					dto.setMes_book_code1(rs.getInt("mes_book_code1"));
+					dto.setMes_book_code2(rs.getInt("mes_book_code2"));
+					dto.setMes_book_code3(rs.getInt("mes_book_code3"));
+
+
+				}
+				System.out.println("getBomSelectOne dto:"+dto);
+				ps.close();
+				con.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			return dto;
+		}
+=======
 	
+>>>>>>> 04aec39fe345544d12cb8597a8e0fb941075592c
 	
 }

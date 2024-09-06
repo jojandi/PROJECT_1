@@ -250,6 +250,7 @@ section #information #booksub #books{
     display: flex;
     justify-content: space-around;
     margin-top: 15px;
+    align-items: baseline;
 }
 
 section #information #booksub #books .book{

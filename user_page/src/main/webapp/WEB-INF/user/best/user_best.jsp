@@ -63,6 +63,9 @@
                 </c:forEach>
                 
             </div>    
+            <script>
+            	let login = '${login}';
+            </script>
             <script src="../assets/js/best/best_loan.js"></script>
         </section>
     </div>

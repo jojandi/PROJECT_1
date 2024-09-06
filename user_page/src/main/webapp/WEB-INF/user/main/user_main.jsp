@@ -21,17 +21,6 @@
         <section class="section1">
 
             <div id="hukwan">
-            
-                <div id="librarys">
-                    
-                    <div class="library" id="joong">중앙</div>
-                    <div class="library" id="ssang">쌍용</div>
-                    <div class="library" id="du">두정</div>
-                    <div class="library" id="sin">신방</div>
-                    <div class="library" id="cheong">청수</div>
-                    
-                </div>
-                
                 <div id="calendar">
                     <div class="calHeader">
                         <h2 id="YearMonth">
@@ -78,7 +67,7 @@
                     <div>
                         <div class="page" id="p1">
                             <span class="material-symbols-outlined">home</span>
-                            <a href="libraryja"></a>
+                            <a href="library"></a>
                         </div>
                         <div class="pname">도서관소개</div>
                     </div>
