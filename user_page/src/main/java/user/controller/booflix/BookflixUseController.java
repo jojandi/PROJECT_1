@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import user.service.bookflix.BookflixService;
 
 @WebServlet("/user/bookflix_use")
-public class UserBookflixUseController extends HttpServlet {
+public class BookflixUseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
