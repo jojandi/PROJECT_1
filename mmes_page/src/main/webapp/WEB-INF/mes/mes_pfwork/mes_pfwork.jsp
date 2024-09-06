@@ -71,9 +71,9 @@
 						<input type="button" id="addpf" value="주문추가">
 					</div>
 				</div>
-				
 			</div>
 
+			<!-- ///////////////////// 출고 현황 ///////////////////////////// -->
 			<div class="main_page" id="main_page_2">
 				<h3>출고 현황</h3>
 				<div>
@@ -81,7 +81,6 @@
 						<table id="main_librar2">
 							<thead>
 								<tr>
-									<th><input type="checkbox" id="p1_checkAll"></th>
 									<th class="sortable">주문번호</th>
 									<th>출고일자</th>
 									<th>회원ID</th>
@@ -92,7 +91,6 @@
 							<tbody>
 								<c:forEach var="ds" items="${ ds }">
 									<tr>
-										<td><input type="checkbox"></td>
 										<td>${ ds.os_id }</td>
 										<td>${ ds.ds_date }</td>
 										<td>${ ds.user_id }</td>
