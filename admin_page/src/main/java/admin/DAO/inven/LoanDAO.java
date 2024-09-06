@@ -29,7 +29,7 @@ public class LoanDAO {
 			String query =  " select loan_seq, book_code, user_seq, book_name, loan_date, loan_ing, loan_return, loan_ex, (loan_ex - loan_return) as isOver ";
 			query += " from user_loan join li_book using(book_code)  ";
 			query += " join book using(book_isbn) ";
-			query += " order by loan_date desc";
+			query += " order by book_loan desc, loan_date desc ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
 			
@@ -135,6 +135,41 @@ public class LoanDAO {
 			PreparedStatement ps = new LoggableStatement(con, query);
 			ps.setInt(1, dto.getBook_code());
 			ps.setInt(2, dto.getBook_code());
+	      
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+	      	result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음
+	      
+	      	ps.close();
+	      	con.close();
+            
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	// 반납 시 연체 여부 회원 없데이트
+	public int memberUpdate(LoanResDTO dto) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dataFactory.getConnection();
+		    
+			String query = " update tbl_user ";
+			query += " set user_pass = case when ";
+			query += " case when ";
+			query += " (select (loan_return - loan_ex) as over_date from user_loan where loan_seq = ?) > 0 then  ";
+			query += " (select loan_return + (loan_return - loan_ex) as user_pass from user_loan where loan_seq = ?) ";
+			query += " else null end  ";
+			query += " where user_seq= ? ";
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, dto.getUser_seq());
+			ps.setInt(2, dto.getBook_code());
+			ps.setInt(3, dto.getBook_code());
 	      
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 	      	result = ps.executeUpdate(); // 몇 줄이 업데이트 되었는지 int로 받음

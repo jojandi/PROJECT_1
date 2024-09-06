@@ -139,8 +139,14 @@ public class MemberDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select * from tbl_user join user_like using(like_id) ";
-			query += " where user_seq = ? ";
+			String query =  " SELECT u.user_seq, u.user_name, u.user_birth, u.user_id, u.user_tel, u.user_email, ";
+			query += " u.user_addr, u.user_addr_info, lk.like_like, u.user_pass, ";
+			query += " COUNT(CASE WHEN loan_return - loan_ex > 0 THEN user_pass END) AS count ";
+			query += " FROM tbl_user u left JOIN user_loan ul ON u.user_seq = ul.user_seq ";
+			query += " left JOIN user_like lk ON u.like_id = lk.like_id ";
+			query += " WHERE u.user_seq = ? ";
+			query += " GROUP BY u.user_seq, u.user_name, u.user_birth, u.user_id, u.user_tel, u.user_email,  ";
+			query += " u.user_addr, u.user_addr_info, lk.like_like, u.user_pass ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
             ps.setInt(1, user_seq);
@@ -153,20 +159,15 @@ public class MemberDAO {
 				dto = new MemberDTO();
 				
 				dto.setLike(rs.getString("like_like"));
-				dto.setLike_id(rs.getInt("like_id"));
 				dto.setUser_addr1(rs.getString("user_addr"));
 				dto.setUser_addr2(rs.getString("user_addr_info"));
 				dto.setUser_birth(rs.getDate("user_birth"));
 				dto.setUser_email(rs.getString("user_email"));
 				dto.setUser_id(rs.getString("user_id"));
 				dto.setUser_name(rs.getString("user_name"));
-				dto.setUser_pass(rs.getDate("user_pass"));
-				dto.setUser_pw(rs.getString("user_pw"));
 				dto.setUser_seq(rs.getInt("user_seq"));
-				
-				String user_sub = rs.getString("user_sub");
-				String user_over = rs.getString("user_over");
-				String user_admin = rs.getString("user_admin");
+				dto.setOver_count(rs.getInt("count"));
+				dto.setUser_pass(rs.getDate("user_pass"));
 				
 				String user_tel = "0";
 				user_tel += rs.getString("user_tel");
@@ -179,21 +180,6 @@ public class MemberDAO {
 				
 				dto.setUser_tel(tel);
 				
-				if("Y".equals(user_sub)) {
-					dto.setUser_sub(true);
-				} else {
-					dto.setUser_sub(false);
-				}
-				if("Y".equals(user_over)) {
-					dto.setUser_over(true);
-				} else {
-					dto.setUser_over(false);
-				}
-				if("Y".equals(user_admin)) {
-					dto.setUser_admin(true);
-				} else {
-					dto.setUser_admin(false);
-				}
 
 			}
 			System.out.println(dto);

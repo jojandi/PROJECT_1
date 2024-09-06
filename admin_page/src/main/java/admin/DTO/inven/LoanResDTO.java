@@ -16,9 +16,15 @@ public class LoanResDTO {
 	private int res_id;
 	private java.sql.Date res_day;
 	private java.sql.Date res_pick;
-	private int res_ing;
+	private boolean res_ing;
 	
 	
+	public boolean isRes_ing() {
+		return res_ing;
+	}
+	public void setRes_ing(boolean res_ing) {
+		this.res_ing = res_ing;
+	}
 	public int getRes_id() {
 		return res_id;
 	}
@@ -37,12 +43,7 @@ public class LoanResDTO {
 	public void setRes_pick(java.sql.Date res_pick) {
 		this.res_pick = res_pick;
 	}
-	public int getRes_ing() {
-		return res_ing;
-	}
-	public void setRes_ing(int res_ing) {
-		this.res_ing = res_ing;
-	}
+
 	public int getOver() {
 		return over;
 	}

@@ -24,14 +24,19 @@
 
         <div id="menu">
             <div id="items" class="left">
-                <a href="bookflix_use" class="item" id="i0">북플릭스</a>
+            	<c:if test="${login.user_seq == null}">
+                	<a href="bookflix_use" class="item" id="i0">북플릭스</a>
+                </c:if>
+            	<c:if test="${login.user_seq != null}">
+                	<a href="bookflix_use?seq=${login.user_seq}" class="item" id="i0">북플릭스</a>
+                </c:if>
                 <a href="best" class="item" id="i2">베스트</a>
                 <a href="notice" class="item" id="i3">정보광장</a>
                 <a href="res?seq=${ login.user_seq }" class="item" id="i4">마이페이지</a>
             </div>
             
 			<c:if test="${ not empty login }">
-				<div class="right" id="userall"y>
+				<div class="right" id="userall">
 					<span class="inb" id="user">${ login.user_name }님</span>
 	                <span class="material-symbols-outlined">person</span>
 				</div>

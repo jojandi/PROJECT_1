@@ -27,9 +27,9 @@ public class ResDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select book_code, res_id, res_day, res_pick, user_seq, book_name, (res_pick - res_day) as res_ing  ";
+			String query =  " select book_code, res_id, res_day, res_pick, user_seq, book_name, res_ing  ";
 			query += " from user_res join li_book using(book_code) join book using(book_isbn) ";
-			query += " order by res_id desc ";
+			query += " order by book_res desc, res_id desc ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
 			
@@ -46,7 +46,13 @@ public class ResDAO {
 				dto.setRes_day(rs.getDate("res_day"));
 				dto.setRes_pick(rs.getDate("res_pick"));
 				dto.setBook_name(rs.getString("book_name"));
-				dto.setRes_ing(rs.getInt("res_ing"));
+				String res_ing = rs.getString("res_ing");
+				
+				if("Y".equals(res_ing)) {
+					dto.setRes_ing(true);
+				} else {
+					dto.setRes_ing(false);
+				}
 				
 				list.add(dto);
 			}
@@ -71,7 +77,7 @@ public class ResDAO {
 			Connection con = dataFactory.getConnection();
       
 			String query = "update user_res ";
-			query += " set res_pick = to_date(sysdate, 'YYYY-MM-DD') ";
+			query += " set res_pick = sysdate, res_ing = 'N' ";
 			query += " where res_id = ? ";
 
 			PreparedStatement ps = new LoggableStatement(con, query);
@@ -134,7 +140,7 @@ public class ResDAO {
 			query += " set book_loan = ";
 			query += " case when  ";
 			query += " (select loan_ing from li_book join user_loan using(book_code) ";
-			query += " where loan_ing='Y' and book_code=?) = 'Y'  then 'Y' else 'N' end  ";
+			query += " where loan_ing = 'Y' and book_code=?) = 'Y'  then 'Y' else 'N' end   ";
 			query += "  where book_code=? ";
 
 			PreparedStatement ps = new LoggableStatement(con, query);
@@ -166,8 +172,8 @@ public class ResDAO {
 			String query = " update li_book ";
 			query += " set book_res = ";
 			query += " case when  ";
-			query += " (select res_pick from li_book join user_res using(book_code) ";
-			query += " where res_pick is null and book_code=?) = 'null'  then 'N' else 'Y' end  ";
+			query += " (select res_ing from li_book join user_res using(book_code)  ";
+			query += " where res_ing = 'Y' and book_code=?) = 'N'  then 'Y' else 'N' end   ";
 			query += "  where book_code=? ";
 
 			PreparedStatement ps = new LoggableStatement(con, query);

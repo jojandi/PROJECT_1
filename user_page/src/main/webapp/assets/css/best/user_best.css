@@ -67,7 +67,7 @@ table img{
     width: 100%;
 }
 
-table .bookBnt [type=button]{
+table .bookBnt [type=submit]{
     font-size: 18px;
     padding: 7px 15px;
     margin: 5px 0;

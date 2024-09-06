@@ -12,7 +12,7 @@
 			<h2 id="title">정보광장</h2>
 			<div id="items">
 				<div class="item" id="i1">
-					<a href="noti"> <span>공지사항관리</span> <span
+					<a href="noti"> <span>공지 사항 관리</span> <span
 						class="material-symbols-outlined">arrow_forward_ios</span>
 					</a>
 				</div>

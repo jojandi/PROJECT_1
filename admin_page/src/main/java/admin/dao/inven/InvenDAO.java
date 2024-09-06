@@ -15,7 +15,7 @@ import admin.DTO.inven.InvenDTO;
 public class InvenDAO {
 	
 	// 재고조회 검색
-	public List bookList(String book_name) {
+	public List bookList(int start, int end, String book_name) {
 		List list = new ArrayList();
 		
 		try {
@@ -25,14 +25,19 @@ public class InvenDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select * from book join li_book using (book_isbn) ";
-			query += " where lower(book_name) like lower('%'||?||'%')";
-			query += " order by to_number(book_code) ";
+			String query =  " select * from( ";
+			query +=  "  select rownum as rnum, book_code, li_book_info, book_isbn, book_img, book_author, book_name, book_pub, book_loan, book_res ";
+			query +=  " from ( select * from book join li_book using (book_isbn) ";
+			query +=  " where lower(book_name) like lower('%'||?||'%') ";
+			query += " order by to_number(book_code) ) ";
+			query += " ) where rnum >=? and rnum <= ? ";
 			
 
             PreparedStatement ps = new LoggableStatement(con, query);
             
             ps.setString(1, book_name);
+            ps.setInt(2, start);
+			ps.setInt(3, end);
 			
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
@@ -92,10 +97,13 @@ public class InvenDAO {
 			query +=  "  select rownum as rnum, book_code, li_book_info, book_isbn, book_img, book_author, book_name, book_pub, book_loan, book_res ";
 			query +=  " from ( select * from book join li_book using (book_isbn) ";
 			query += " order by to_number(book_code) ) ";
-			query += " ) where rnum >=1 and rnum <= 10 ";
+			query += " ) where rnum >=? and rnum <= ? ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
-			
+			ps.setInt(1, start);
+			ps.setInt(2, end);
+            
+            
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
 			ResultSet rs = ps.executeQuery();
@@ -138,7 +146,7 @@ public class InvenDAO {
 		return list;
 	}
 	
-	// 페이지
+	// 전체 페이지
 	public int totalPage() {
 		int result = -1;
 		
@@ -149,7 +157,7 @@ public class InvenDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select count(*) cnt from li_book";
+			String query =  " select count(*) cnt from li_book ";
 
 			PreparedStatement ps = new LoggableStatement(con, query);
 			
@@ -165,6 +173,42 @@ public class InvenDAO {
 			con.close();
 			rs.close();
 		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
+	}
+	
+	// 페이지 검색
+	public int totalPage(String book_name) {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+			
+			// # SQL 준비
+			String query =  " select count(*) cnt from li_book join book using(book_isbn) ";
+			query +=  " where lower(book_name) like lower('%'||?||'%') ";
+			
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setString(1, book_name);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {				
+				result = rs.getInt("cnt");
+			}
+			
+			ps.close();
+			con.close();
+			rs.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

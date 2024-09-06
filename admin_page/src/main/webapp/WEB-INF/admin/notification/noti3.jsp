@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 
 <style>
-    aside #items #i3 .material-symbols-outlined{
-background-color: rgb(165, 224, 144);
+/*     aside #items #i3 .material-symbols-outlined{ */
+/* background-color: rgb(165, 224, 144); */
 	
 }
     </style>

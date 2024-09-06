@@ -17,8 +17,14 @@ public class MemberDTO {
 	private boolean user_over;
 	private int loan_seq;
 	private boolean user_admin;
+	private int over_count;
 	
-	
+	public int getOver_count() {
+		return over_count;
+	}
+	public void setOver_count(int over_count) {
+		this.over_count = over_count;
+	}
 	public boolean isUser_over() {
 		return user_over;
 	}

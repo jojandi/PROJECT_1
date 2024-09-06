@@ -50,6 +50,11 @@ button {
     margin-top: 20px;
 }
 
+.book_name{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
 .top_for_you{
     margin-top: 20px;
     margin-bottom: 40px;
