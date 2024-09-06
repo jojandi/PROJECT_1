@@ -52,13 +52,15 @@ public class MesReviewDAO {
 			String query = null;
 			PreparedStatement ps = null;
 
-			query = " select f.review_seq, f.review_name, t.user_id, f.review_date";
+			query = " select f.review_seq, f.review_name, t.user_id, f.review_date, f.review_score, f.review_contents";
 			query += " from bf_review f";
 			query += " left outer join bookflix_user b";
 			query += " on f.buser_seq = b.buser_seq";
 			query += " left outer join tbl_user t";
 			query += " on b.user_seq = t.user_seq";
-
+			query += " order by review_seq desc";
+//			query += " where f.review_seq = ?";
+			
 			ps = con.prepareStatement(query);
 
 			ResultSet rs = ps.executeQuery(query);
@@ -74,6 +76,12 @@ public class MesReviewDAO {
 
 				String user_id = rs.getString("user_id");
 				rvdto.setUser_id(user_id);
+				
+				int review_score = rs.getInt("review_score");
+				rvdto.setReview_score(review_score);
+				
+				String review_contents = rs.getString("review_contents");
+				rvdto.setReview_contents(review_contents);
 
 				Date review_date = rs.getDate("review_date");
 				rvdto.setReview_date(review_date);

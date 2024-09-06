@@ -1,7 +1,6 @@
 package mes_DAO;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
@@ -11,9 +10,8 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-import mes_DTO.MesHumanDTO;
+import mes_DTO.MesStockDTO;
 import mes_DTO.MesWorkorderDTO;
-import mes_DTO.MesWorkorderWoDTO;
 
 
 public class MesWorkorderDAO {
@@ -242,6 +240,123 @@ public class MesWorkorderDAO {
 			
 			return result;
 		}
-	
+
+	 public int updateBook(MesWorkorderDTO workDTO) {
+			int result = -1;
+			
+			try {
+				
+				Context ctx = new InitialContext();
+				DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+				// DB 접속 : 커넥션풀을 사용해서 
+				Connection con = dataFactory.getConnection();
+				
+				// SQL 준비
+				String query = "UPDATE bom_table SET bom_name = ?, mes_book_code1 = ?, mes_book_code2 = ?, mes_book_code3 = ? WHERE mes_book_code = ?";
+				
+				PreparedStatement ps = con.prepareStatement(query);
+				
+				 ps.setString(1, workDTO.getBom_name());
+		         ps.setInt(2, workDTO.getMes_book_code1());
+		         ps.setInt(3, workDTO.getMes_book_code2());
+		         ps.setInt(4, workDTO.getMes_book_code3());
+		         ps.setInt(5, workDTO.getBom_code());
+		        
+				// SQL 실행
+				result = ps.executeUpdate();
+				
+				ps.close();
+				con.close();
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return result;
+		}
+	 
+	 public MesWorkorderDTO selectBookByCode(int bookCode)  {
+		 MesWorkorderDTO book = null;
+		 try {
+			 
+			 Context ctx = new InitialContext();
+			 DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			 // DB 접속 : 커넥션풀을 사용해서 
+			 Connection con = dataFactory.getConnection();
+			 
+			 // SQL 준비
+			 String query = "SELECT * FROM mes_workorder WHERE mes_book_code = ?";
+			 
+			 PreparedStatement ps = con.prepareStatement(query);
+			 ps.setInt(1, bookCode);
+			 try (ResultSet rs = ps.executeQuery()) {
+	                if (rs.next()) {
+	                    book = new MesWorkorderDTO();
+	                    book.setMes_book_code(rs.getInt("mes_book_code"));
+	                    book.setBook_name(rs.getString("book_name"));
+	                    book.setBook_isbn(rs.getLong("book_isbn"));
+	                    book.setBook_author(rs.getString("book_author"));
+	                    book.setBook_pub(rs.getString("book_pub"));
+	                    book.setBook_count(rs.getInt("book_count"));
+	                    book.setWh_code(rs.getString("wh_code"));
+	                }
+	            }
+			
+			 
+			 ps.close();
+			 con.close();
+			 
+		 }catch (Exception e) {
+			 e.printStackTrace();
+		 }
+		 
+		 return book;
+	 }
+	 public MesWorkorderDTO getBomSelectOne(int bom_code) {
+		 MesWorkorderDTO dto = null;
+
+			try {
+
+				// DB 접속
+		    	 Context ctx = new InitialContext();
+				 DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+				 Connection con = dataSource.getConnection();
+		    	 
+		    	 // SQL 준비
+				 String query = "select * from bom";
+				 		query += " where bom_code=?";
+
+
+		 		 PreparedStatement ps = con.prepareStatement(query);
+				 // ?를 값으로 채워줌
+				 // 첫번째 전달인자는 ?의 순서
+				 // 만약에 글씨라면 setString, 알아서 '로 감싸준다
+				 ps.setInt(1, bom_code);
+				 		
+		    	 
+		    	 // SQL 실행 및 결과 확보
+		    	 ResultSet rs = ps.executeQuery();
+
+				// 결과 활용
+				if (rs.next()) {
+					dto = new MesWorkorderDTO();
+					dto.setBom_code(bom_code);
+					dto.setBom_name(rs.getString("bom_name"));
+					dto.setMes_book_code1(rs.getInt("mes_book_code1"));
+					dto.setMes_book_code2(rs.getInt("mes_book_code2"));
+					dto.setMes_book_code3(rs.getInt("mes_book_code3"));
+
+
+				}
+				System.out.println("getBomSelectOne dto:"+dto);
+				ps.close();
+				con.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			return dto;
+		}
 	
 }

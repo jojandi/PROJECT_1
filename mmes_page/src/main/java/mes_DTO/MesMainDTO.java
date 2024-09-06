@@ -7,8 +7,45 @@ public class MesMainDTO {
 	private Integer bom_code;	
 	private Integer total_sales;	
 	private Integer date_id;
+	 private String genre;  // bom_name
+	  public String getGenre() {
+		return genre;
+	}
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+	public Integer getDate_id() {
+		return date_id;
+		
+	}
+	public void setDate_id(Integer date_id) {
+		this.date_id = date_id;
+	}
+
+	private int year;
+	    private int month;
+	    private int total;
+
 	
 	
+	public int getYear() {
+			return year;
+		}
+		public void setYear(int year) {
+			this.year = year;
+		}
+		public int getMonth() {
+			return month;
+		}
+		public void setMonth(int month) {
+			this.month = month;
+		}
+		public int getTotal() {
+			return total;
+		}
+		public void setTotal(int total) {
+			this.total = total;
+		}
 	public Integer getDs_id() {
 		return ds_id;
 	}
@@ -27,12 +64,7 @@ public class MesMainDTO {
 	public void setTotal_sales(Integer total_sales) {
 		this.total_sales = total_sales;
 	}
-	public Integer getDate_id() {
-		return date_id;
-	}
-	public void setDate_id(Integer date_id) {
-		this.date_id = date_id;
-	}	
+	
 	@Override
 	public String toString() {
 		return "MesMainDTO [ds_id=" + ds_id + ", bom_code=" + bom_code + ", total_sales=" + total_sales + ", date_id="
