@@ -1,45 +1,60 @@
 package mes_controller;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import mes_DAO.MesMainDAO;
 import mes_DTO.MesMainDTO;
-import mes_DTO.MesWorkorderDTO;
 import mes_service.MesMainService;
-import mes_service.MesWorkorderService;
 
-	@WebServlet("/status")
-	public class  MesMainstatusController extends HttpServlet {
+import java.io.IOException;
+import java.util.List;
 
-		protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-	        System.out.println("Bomcreate 실행!");
-	    	// 여기는 bomlist입니다--------------------------------------------------------
-	        request.setCharacterEncoding("utf-8");
-	        response.setContentType("text/html; charset=utf-8;");
-	        
-	        MesMainService mesmainService = new MesMainService ();
-	        List< MesMainDTO> List = mesmainService.getList();
-	        
-	        request.setAttribute("list", List);
-	        //-------------------------------------------------------------------------
-			
-			        
-	        
-	        
-	        
-	        
-	        request.getRequestDispatcher("/WEB-INF/mes/mes_workorder/mes_main.jsp").forward(request, response);
-	    
+@WebServlet("/getBookStatistics")
+public class MesMainStatusController extends HttpServlet {
+    
+    private MesMainService mesMainService;
 
-			}
-		
-	}
+    @Override
+    public void init() throws ServletException {
+        mesMainService = new MesMainService();  // 서비스 객체 생성
+    }
+    
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String selectedYear = request.getParameter("year");
+        String selectedMonth = request.getParameter("month");
+        Integer year = Integer.parseInt(selectedYear);
+        Integer month = Integer.parseInt(selectedMonth);
+
+        // 서비스에서 연도와 월에 맞는 데이터를 장르별로 가져옴
+       
+        List<MesMainDTO> statistics = mesMainService.getStatisticsByGenre(year, month);
+
+        // JSON 문자열 생성
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("[");  // JSON 배열 시작
+
+        for (int i = 0; i < statistics.size(); i++) {
+            MesMainDTO dto = statistics.get(i);
+            jsonBuilder.append("{");
+            jsonBuilder.append("\"genre\":").append("\"").append(dto.getGenre()).append("\",");
+            jsonBuilder.append("\"total\":").append(dto.getTotal());
+            jsonBuilder.append("}");
+            
+            // 마지막 요소가 아닌 경우 쉼표 추가
+            if (i < statistics.size() - 1) {
+                jsonBuilder.append(",");
+            }
+        }
+
+        jsonBuilder.append("]");  // JSON 배열 끝
+
+        
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        response.getWriter().write(jsonBuilder.toString());
+    }
+}

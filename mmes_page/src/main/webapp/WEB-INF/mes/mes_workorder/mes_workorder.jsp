@@ -128,7 +128,6 @@
 				</div>
 			</div>
 
-
 						<!-- -------------------------------- BOM페이지 ------------------------------- -->
 				<div class="main_page" id="main_page_2">
                   <h3>BOM</h3>
@@ -231,7 +230,6 @@
 							<td><span>Y</span></td>
 							<td><span>-</span></td>
 						</tr>
-
 					</table>
 				</div>
 			</div>

@@ -40,7 +40,7 @@ public class MesBuserDAO {
 		return con;
 	}
 	
-	public List selectBuser() {
+	public List selectBuser(String user_id2) {
 		List list = new ArrayList();
 
 		try {
@@ -51,13 +51,24 @@ public class MesBuserDAO {
 
 			String query = null;
 			PreparedStatement ps = null;
+			
+			if ( user_id2 != null ) {
+				query = " select b.buser_seq, u.user_id, u.user_addr, u.user_email, b.buser_date, b.buser_end";
+				query += " from bookflix_user b";
+				query += " left outer join tbl_user u";
+				query += " on b.user_seq = u.user_seq";
+				query += " where lower(user_id) like lower('%'||?||'%')";
+				ps = con.prepareStatement(query);
+				ps.setString(1, user_id2);
 
-			query = " select b.buser_seq, u.user_id, u.user_addr, u.user_email, b.buser_date, b.buser_end";
-			query += " from bookflix_user b, tbl_user u";
-			query += " where b.user_seq = u.user_seq";
-			ps = con.prepareStatement(query);
-
-			ResultSet rs = ps.executeQuery(query);
+			} else {
+				query = " select b.buser_seq, u.user_id, u.user_addr, u.user_email, b.buser_date, b.buser_end";
+				query += " from bookflix_user b, tbl_user u";
+				query += " where b.user_seq = u.user_seq";
+				ps = con.prepareStatement(query);
+			}
+         
+			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
 				MesBuserDTO BuserDTO = new MesBuserDTO();
