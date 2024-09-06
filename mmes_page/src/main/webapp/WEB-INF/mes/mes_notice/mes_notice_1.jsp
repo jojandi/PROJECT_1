@@ -23,6 +23,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="./assets/css/click.css" rel="stylesheet">
     <link href="./assets/css/mes_notice.css" rel="stylesheet">
+    
+    <style>
+    	#menu #items #i6{
+            font-weight: 901;
+            text-decoration: underline;
+        }
+    </style>
   
 </head>
 
