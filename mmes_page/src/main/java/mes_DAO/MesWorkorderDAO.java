@@ -11,7 +11,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-
+import mes_DTO.MesHumanDTO;
 import mes_DTO.MesWorkorderDTO;
 import mes_DTO.MesWorkorderWoDTO;
 
@@ -242,6 +242,77 @@ public class MesWorkorderDAO {
 			
 			return result;
 		}
-
+	 public int updateBook(MesWorkorderDTO workDTO) {
+			int result = -1;
+			
+			try {
+				
+				Context ctx = new InitialContext();
+				DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+				// DB 접속 : 커넥션풀을 사용해서 
+				Connection con = dataFactory.getConnection();
+				
+				// SQL 준비
+				String query = "UPDATE bom_table SET bom_name = ?, mes_book_code1 = ?, mes_book_code2 = ?, mes_book_code3 = ? WHERE mes_book_code = ?";
+				
+				PreparedStatement ps = con.prepareStatement(query);
+				
+				 ps.setString(1, workDTO.getBom_name());
+		         ps.setInt(2, workDTO.getMes_book_code1());
+		         ps.setInt(3, workDTO.getMes_book_code2());
+		         ps.setInt(4, workDTO.getMes_book_code3());
+		         ps.setInt(5, workDTO.getBom_code());
+		        
+				// SQL 실행
+				result = ps.executeUpdate();
+				
+				ps.close();
+				con.close();
+				
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return result;
+		}
+	 
+	 public MesWorkorderDTO selectBookByCode(int bookCode)  {
+		 MesWorkorderDTO book = null;
+		 try {
+			 
+			 Context ctx = new InitialContext();
+			 DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			 // DB 접속 : 커넥션풀을 사용해서 
+			 Connection con = dataFactory.getConnection();
+			 
+			 // SQL 준비
+			 String query = "SELECT * FROM mes_workorder WHERE mes_book_code = ?";
+			 
+			 PreparedStatement ps = con.prepareStatement(query);
+			 ps.setInt(1, bookCode);
+			 try (ResultSet rs = ps.executeQuery()) {
+	                if (rs.next()) {
+	                    book = new MesWorkorderDTO();
+	                    book.setMes_book_code(rs.getInt("mes_book_code"));
+	                    book.setBook_name(rs.getString("book_name"));
+	                    book.setBook_isbn(rs.getLong("book_isbn"));
+	                    book.setBook_author(rs.getString("book_author"));
+	                    book.setBook_pub(rs.getString("book_pub"));
+	                    book.setBook_count(rs.getInt("book_count"));
+	                    book.setWh_code(rs.getString("wh_code"));
+	                }
+	            }
+			
+			 
+			 ps.close();
+			 con.close();
+			 
+		 }catch (Exception e) {
+			 e.printStackTrace();
+		 }
+		 
+		 return book;
+	 }
+	
 	
 }
