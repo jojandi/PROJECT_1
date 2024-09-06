@@ -101,7 +101,10 @@
                     </div>
                     <div class="bot_btn">
                         <div class="search-container">
-                            <input type="text" id="searchInput" placeholder="회원 검색...">
+                        	<form>
+                            	<input type="text" id="searchInput" name="user_id2" placeholder="회원 검색...">
+                            	<input type="submit" value="검색">
+                            </form>
                         </div>
                     </div>
                 </div>
