@@ -49,7 +49,7 @@ public class LoginCheck implements Filter {
 	    } else {
 	    	// 세션을 점검
 	    	HttpSession session = req.getSession();
-			Boolean isLogon = (Boolean)session.getAttribute("login");
+			Boolean isLogon = (Boolean)session.getAttribute("isLogin");
 			
 			// 서블릿 실행 ( ex. doGet )
 //		  	chain.doFilter(request, response);

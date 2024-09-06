@@ -168,10 +168,10 @@ aside #items #i1 .material-symbols-outlined {
 
 					<!-- 페이지 이동, 현재 페이지는 strong 처리 -->
 					<c:if test="${i eq param.page}">
-						<a href="inventory?page=${i}" id="page" class="chap"><strong>${i}</strong></a>
+						<a href="inventory?page=${i}&text=${param.text}" id="page" class="chap"><strong>${i}</strong></a>
 					</c:if>
 					<c:if test="${i != param.page}">
-						<a href="inventory?page=${i}" id="page" class="chap">${i}</a>
+						<a href="inventory?page=${i}&text=${param.text}"" id="page" class="chap">${i}</a>
 					</c:if>
 
 				</c:forEach>

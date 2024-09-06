@@ -17,7 +17,7 @@ import admin.DTO.inven.LoanResDTO;
 public class ResDAO {
 	
 	// 회원 예약 내역
-	public List memResList() {
+	public List memResList(int start, int end) {
 		List list = new ArrayList();
 		
 		try {
@@ -27,11 +27,15 @@ public class ResDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select book_code, res_id, res_day, res_pick, user_seq, book_name, res_ing  ";
+			String query =  " select * from(  ";
+			query +=  " select rownum as rnum, book_code, res_id, res_day, res_pick, user_seq, book_name, res_ing  ";
 			query += " from user_res join li_book using(book_code) join book using(book_isbn) ";
 			query += " order by book_res desc, res_id desc ";
-
+			query += " ) where rnum >=? and rnum <= ? ";
+			
             PreparedStatement ps = new LoggableStatement(con, query);
+            ps.setInt(1, start);
+            ps.setInt(2, end);
 			
 			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
@@ -66,6 +70,40 @@ public class ResDAO {
 		}
 		return list;
 	}
+	
+	// 전체 페이지
+		public int totalPage() {
+			int result = -1;
+			
+			try {
+				Context ctx = new InitialContext();
+				DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+				// 커넥션 풀에서 접속 정보 가져오기
+				Connection con = dataFactory.getConnection();
+			  
+				// # SQL 준비
+				String query =  " select count(*) cnt from user_res ";
+
+				PreparedStatement ps = new LoggableStatement(con, query);
+				
+				System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+				
+				ResultSet rs = ps.executeQuery();
+
+				while(rs.next()) {				
+					result = rs.getInt("cnt");
+				}
+				
+				ps.close();
+				con.close();
+				rs.close();
+			
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			return result;
+		}
 	
 	// 회원 예약 내역 업데이트
 	public int memResUpdate(LoanResDTO dto) {

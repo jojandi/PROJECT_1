@@ -7,6 +7,11 @@ let currentMonth = today.getMonth(); // 월 (0~11월)
 let currentYear = today.getFullYear(); // 년
 let date = today.getDate(); // 일
 
+let joong = document.querySelector("#joong");
+let ssang = document.querySelector("#ssang");
+let du = document.querySelector("#du");
+let sin = document.querySelector("#sin");
+
 
 function renderCalendar() {
   let firstDayOfMonth = new Date(currentYear, currentMonth, 1); // 해당 년월의 1일에 대한 정보를 가져옴
@@ -25,7 +30,7 @@ function renderCalendar() {
     calendarDates.appendChild(emptyDate);
   }
 
-// 현재 달의 날짜
+  // 현재 달의 날짜
   for (let i = 1; i <= daysInMonth; i++) {
     let dateElement = document.createElement("div"); // 태그 추가
     dateElement.classList.add("date"); // 클래스 추가
@@ -37,25 +42,76 @@ function renderCalendar() {
       dateElement.classList.add("toDay");
     }
 
+    // 요일 계산
+    let dayOfWeek = new Date(currentYear, currentMonth, i).getDay(); 
+    // 0: 일요일, 1: 월요일, ..., 6: 토요일
+
+    if(dayOfWeek == 0){
+      dateElement.classList.add("red");
+    }
 
     // 휴관일 표시
     function hu1(){
-      if(i == 8 || i == 22){
-        dateElement.classList.add("hu_2");
-      }
-      if(i == 1 || i == 15){
+      
+      if (dayOfWeek == 1) { // 매주 월요일
+        dateElement.classList.add("hu_1");
+        dateElement.classList.remove("hu_2");
+      }if (dayOfWeek == 2) { 
+        dateElement.classList.remove("hu_2");
         dateElement.classList.remove("hu_1");
       }
     }
     
     function hu2(){
-      if(i == 1 || i == 15){
-        dateElement.classList.add("hu_1");
-      }
-      if(i == 8 || i == 22){
+      if (dayOfWeek == 2) { // 매주 화요일
+        dateElement.classList.add("hu_2");
+        dateElement.classList.remove("hu_1");
+      }if (dayOfWeek == 1) { 
         dateElement.classList.remove("hu_2");
+        dateElement.classList.remove("hu_1");
       }
     }
+
+    joong.addEventListener('click', function(){
+      console.log("joong")
+      joong.classList.add("back")
+
+      ssang.classList.remove("back")
+      du.classList.remove("back")
+      sin.classList.remove("back")
+      hu1();
+    })
+
+    ssang.addEventListener('click', function(){
+      console.log("ssang")
+      ssang.classList.add("back")
+
+      joong.classList.remove("back")
+      du.classList.remove("back")
+      sin.classList.remove("back")
+      hu1();
+    })
+
+    du.addEventListener('click', function(){
+      console.log("du")
+      du.classList.add("back")
+
+      joong.classList.remove("back")
+      ssang.classList.remove("back")
+      sin.classList.remove("back")
+      hu2();
+    })
+
+    sin.addEventListener('click', function(){
+      console.log("sin")
+      sin.classList.add("back")
+
+      joong.classList.remove("back")
+      du.classList.remove("back")
+      ssang.classList.remove("back")
+      hu2();
+    })
+
 }
 /* 
 1. for 문을 이용하여 현재 월의 총 일 수만큼 반복하여 월의 날짜를 순서대로 표시한다.

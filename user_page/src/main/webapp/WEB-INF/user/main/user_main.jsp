@@ -21,13 +21,23 @@
         <section class="section1">
 
             <div id="hukwan">
+            
+            	<div id="librarys">
+                    
+                    <div class="library" id="joong">일반<br>열람실</div>
+                    <div class="library" id="ssang">디자인<br>열람실</div>
+                    <div class="library" id="du">러닝<br>커먼스</div>
+                    <div class="library" id="sin">일반<br>자료실</div>
+                    
+                </div>
+                
                 <div id="calendar">
                     <div class="calHeader">
                         <h2 id="YearMonth">
                             <!-- YYYY년 M월 -->
                         </h2>
                     </div>
-
+					
                     <div id="days">
                         <div>일</div>
                         <div>월</div>
@@ -121,7 +131,7 @@
                     <div>
                         <div class="page" id="p8">
                             <span class="material-symbols-outlined">lightbulb</span>
-                            <a href="notice"></a>
+                            <a href="notice2"></a>
                         </div>
                         <div class="pname">이용안내</div>
                     </div>

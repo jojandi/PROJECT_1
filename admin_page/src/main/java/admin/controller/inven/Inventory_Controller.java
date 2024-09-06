@@ -23,6 +23,8 @@ public class Inventory_Controller extends HttpServlet {
 		
 		String countPerPage = request.getParameter("countPerPage"); // 한 페이지 당 몇 개
 		String page = request.getParameter("page"); // 현재 페이지
+	    String text = request.getParameter("text");
+	    System.out.println("search : " + text);
 		
 		// 기본값 설정
 		if(countPerPage == null) countPerPage = "7";
@@ -30,7 +32,7 @@ public class Inventory_Controller extends HttpServlet {
 		
 		InvenService service = new InvenService();
 	    
-	    Map bookList = service.bookList(countPerPage, page);
+	    Map bookList = service.bookList(text, countPerPage, page);
 	    
 		long isbn = Long.parseLong(request.getParameter("isbn"));
 		System.out.println("isbn : " + isbn);
