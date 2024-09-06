@@ -20,16 +20,13 @@ public class MesBuserController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("buser doGet 실행");
 		
-		MesBuserService BuserService = new MesBuserService();
+		String user_id2 =  request.getParameter("user_id2");
+		System.out.println("user_id2: " + user_id2);
 		
-		List list = BuserService.getBuser();
+		MesBuserService BuserService = new MesBuserService();
+		List list = BuserService.getBuser(user_id2);
 		
 		request.setAttribute("list", list);
-		
-		MesHumanService meshumanService = new MesHumanService ();
-        List<MesHumanDTO> tryList = meshumanService.getList();
-        
-        request.setAttribute("list2", tryList);
 		
 		request.getRequestDispatcher("/WEB-INF/mes/mes_bookflix/human_buser.jsp").forward(request, response);
 		

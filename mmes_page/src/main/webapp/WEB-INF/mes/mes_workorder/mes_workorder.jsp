@@ -128,10 +128,6 @@
 				</div>
 			</div>
 
-<<<<<<< HEAD
-=======
-						
->>>>>>> 63051e1e1f5b17acc85a0a38f1ad8e8dac209e05
 						<!-- -------------------------------- BOM페이지 ------------------------------- -->
 				<div class="main_page" id="main_page_2">
                   <h3>BOM</h3>
@@ -171,10 +167,6 @@
                            
                         </div>
                        </div>
-<<<<<<< HEAD
-=======
-                     
->>>>>>> 63051e1e1f5b17acc85a0a38f1ad8e8dac209e05
 		</section>
 	</div>
 
@@ -237,7 +229,6 @@
 							<td><span>Y</span></td>
 							<td><span>-</span></td>
 						</tr>
-
 					</table>
 				</div>
 			</div>

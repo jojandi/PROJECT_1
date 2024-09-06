@@ -112,7 +112,7 @@ window.onload = function () {
 
 // BOM 행 더블클릭시 모달 화면 추가 스크립트
     function showModal() {
-        document.getElementById('modal_4').style.display = 'block';
+        document.getElementById('modal_4').style.display = 'none';
     }
     
     function hideModal() {

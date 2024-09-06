@@ -54,8 +54,9 @@ public class MesNoticeDAO {
 			PreparedStatement ps = null;
 
 			query = " select n.notice_id, n.notice_name, e.emp_name, n.notice_date";
-			query += " from notice n, employee e";
-			query += " where e.emp_id = n.emp_id";
+			query += " from notice n";
+			query += " left outer join employee e";
+			query += " on (n.emp_id = e.emp_id)";
 			ps = con.prepareStatement(query);
 
 			ResultSet rs = ps.executeQuery(query);
