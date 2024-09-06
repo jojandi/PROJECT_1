@@ -17,12 +17,13 @@
     <link href="./assets/css/click.css" rel="stylesheet">
 <style>
        #section1{
-            width: 200px;
+            width: 90vw;
             height: 50vh;
             text-align: center;
             margin:auto;
         
        }
+     
        
        #productionChart {
             width: 90vw;
@@ -30,49 +31,7 @@
             text-align: center;
             margin: auto;
         }
-		 .section2{
-            width: 200px;
-       
-            text-align: center;
-            margin:auto;
-        
-       }
-       .all{
-        width: 200px;
-       }
-        #wrap {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .section1,
-    .section2 {
-        flex: 1;
-        margin: 10px;
-    }
-
-    .section1 {
-        width: 50%; /* 적절한 너비 설정 */
-        height: 40vh; /* 적절한 높이 설정 */
-    }
-
-    .section2 {
-        width: 30%; /* 적절한 너비 설정 */
-        height:40vh; /* 적절한 높이 설정 */
-        overflow: auto; /* 내용이 넘치면 스크롤 */
-    }
-
-    #productionChart {
-        width: 70vw;
-        height: 60vh;
-        text-align: center;
-        margin: auto;
-    }
-
-    .all {
-        width: 100%; /* section2 내에서 적절한 너비 설정 */
-    }
        
 </style>
 </head>
@@ -122,46 +81,76 @@
             <div id="hukwan_bot"><div class="circle_1"></div>출고일 <div class="circle_2"></div><small>도서입고일</small></div>
         </section>
 
-        <section class="section2">
-           
-            <h3>수요 통계 및 예측</h3>
-            <div class="all">
-	            <div class="mini_title">수요 통계</div>
-	    		<div id="select">
-		            <select id="monthSelect">
-		                <option value="1">1월</option>
-		                <option value="2">2월</option>
-		                <option value="3">3월</option>
-		                <option value="4">4월</option>
-		                <option value="5">5월</option>
-		                <option value="6">6월</option>
-		                <option value="7">7월</option>
-		                <option value="8">8월</option>
-		                <option value="9">9월</option>
-		                <option value="10">10월</option>
-		                <option value="11">11월</option>
-		                <option value="12">12월</option>
-		            </select>
-	    		</div>
-	            
-	            <canvas id="ageGroupChart"></canvas>
-	           
-	        </div>
+        <section class="section1">
+              <div class="all">
+                <div class="mini_title"><h3>도서 출고 통계</h3></div>
+                <div id="select">
+                   <h1>월별 매출 통계</h1>
+                   	<table>
+					  <c:forEach var="dto" items="${list}">
+				                <tr>
+				                    <td><input type="checkbox" class="emp_checkbox"></td>				                    
+									<td><a href = "http://localhost:8080/mmes_page/read?emp_id=${dto.emp_id}">${dto.emp_id}</a></td> 
+									<td>${dto.emp_name}</td>
+				                    <td>${dto.po_name}</td>
+				                    <td>${dto.dept_name}</td>
+				                    <td>${dto.emp_hp}</td>
+				                    <td>${dto.emp_add}</td>
+				                    <td>${dto.emp_hiredate}</td>
+				                </tr>
+				      </table>
+				    </c:forEach>
+                </div>
+            </div>
+        </section>
         
-            <script src="./assets/js/chart.js"></script>
-
-            
-    <canvas id="progressChart"></canvas>
-    
-    
+         <section class="section2">
+              <div class="all">
+                <div class="mini_title"><h3>도서 수요 통계</h3></div>
+                <div id="select">
+                    <select id="monthSelectDemand">
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4">4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                </div>
+                <canvas id="barChart"></canvas>
+            </div>
         </section>
 
         <section class="section3">
-            
-            <canvas id="productionChart"></canvas>
-
-        
+              <div class="all">
+                <div class="mini_title"><h3>도서 수요 예측 통계</h3></div>
+                <div id="select">
+                    <select id="monthSelectForecast">
+                        <option value="1">1월</option>
+                        <option value="2">2월</option>
+                        <option value="3">3월</option>
+                        <option value="4">4월</option>
+                        <option value="5">5월</option>
+                        <option value="6">6월</option>
+                        <option value="7">7월</option>
+                        <option value="8">8월</option>
+                        <option value="9">9월</option>
+                        <option value="10">10월</option>
+                        <option value="11">11월</option>
+                        <option value="12">12월</option>
+                    </select>
+                </div>
+                <canvas id="lineChart"></canvas>
+            </div>
         </section>
+        
+        
 
 
     <!-- wrap -->

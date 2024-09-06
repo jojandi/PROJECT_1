@@ -44,5 +44,6 @@ public class MesWorkorderService {
 		MesWorkorderDAO dao = new MesWorkorderDAO();
 		return dao.deleteOne(bom_code);
 	}
-	
+    
+   
 }	
