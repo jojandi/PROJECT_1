@@ -82,9 +82,9 @@
 			<form id="search" method="get" action="comment">
 				<div id="search">
 					<select name="period">
-						<option value="전체기간">전체기간</option>
+						<option value="분류">분류</option>
 					</select> <select name="type">
-						<option value="게시물+댓글">게시물 + 댓글</option>
+						<option value="제목">제목</option>
 					</select> <input type="search" id="searchInput" name="keyword"
 						placeholder="검색어를 입력해주세요"> <input type="button" value="검색"
 						class="search" onclick="filterTable()">

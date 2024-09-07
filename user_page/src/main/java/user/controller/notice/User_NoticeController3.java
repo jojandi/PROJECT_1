@@ -21,6 +21,7 @@ public class User_NoticeController3 extends HttpServlet {
 
 
 		// JSP로 포워딩
+		
 		request.getRequestDispatcher("/WEB-INF/user/info/user_notice3.jsp").forward(request, response);
 				
 	}
