@@ -166,7 +166,7 @@ section h3{
     height: 100%;
     margin: auto;
     margin-top: 10px;
-    overflow: scroll;
+    height: 560px;
 }
 .page_1 {
     /* border: 1px solid red; */
@@ -174,13 +174,6 @@ section h3{
     height: 250px;
     margin: auto;
     margin-top: 10px;
-    overflow: scroll;
-}
-.page_2 {
-    /* border: 1px solid red; */
-    width: 100%;
-   	/* overflow: scroll; */
-    margin: 20px auto;
 }
 
 .table_wrap {

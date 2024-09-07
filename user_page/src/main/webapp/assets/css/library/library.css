@@ -16,6 +16,11 @@
     /* border: 1px solid red; */
 }
 
+#libraryInfo{
+	width: 95%;
+	margin: 0 auto;
+}
+
 #info{
 	text-align: left;
 }
@@ -35,7 +40,7 @@
 
 #infor_img{
     margin-top: 20px;
-    width:100%;
+    width: 100%;
 }
 
 #infor_table{
@@ -52,6 +57,10 @@
     border: 1px solid #ccc;
     padding: 0 30px 10px 30px;
     border-radius: 10px;
+}
+
+#infor_map h3{
+	text-align: left;
 }
 
 #infor_adress {
@@ -87,3 +96,7 @@ section{
     font-weight: 900;
     text-decoration: underline;
 }  
+
+.root_daum_roughmap{
+	width: 100%;
+}

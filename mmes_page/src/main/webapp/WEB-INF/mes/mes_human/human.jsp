@@ -14,7 +14,6 @@
     <title>Document</title>
 
     <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
-    <link href="./assets/css/00.user_side_base.css" rel="stylesheet">
     <link href="./assets/css/admin.css" rel="stylesheet">
     <link href="./assets/css/mes_human.css" rel="stylesheet">
 	<link href="./assets/css/admin_table.css" rel="stylesheet">
@@ -76,6 +75,12 @@
            <div class="main_page" id="main_page_1">
                 <h3>직원관리</h3>
                 <div>
+                	<div class="bot_btn">
+                        <div class="search-container">
+                            <input type="text" id="searchInput" placeholder="사원 검색...">
+	                        <input type="button" value="Excel 파일화">
+                        </div>
+                    </div>
                     <div class="page_2">
                         <table id="main_library">
                             <colgroup>
@@ -120,12 +125,7 @@
                     <div class="text_right">
                   		<input id="openForm" type="button" value="직원추가">
              		</div>
-                    <div class="bot_btn">
-                        <div class="search-container">
-                            <input type="text" id="searchInput" placeholder="사원 검색...">
-                        </div>
-                        <input type="button" value="Excel 파일화">
-                    </div>
+                    
                 </div>
             </div>
              

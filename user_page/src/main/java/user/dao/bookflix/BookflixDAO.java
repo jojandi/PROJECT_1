@@ -91,7 +91,7 @@ public class BookflixDAO {
 			query = " insert into bf_review (review_seq, buser_seq, review_name, review_contents, review_date, review_score) ";
 			query += " values ";
 			query += " (review_seq.nextval, ?, ";
-			query += " (select substr(bom_name, 1, instr(bom_name, ' ', 1, 1)-1) as bom_name from bom b ";
+			query += " (select bom_name from bom b ";
 			query += " left join tbl_user u on (b.bom_code = (u.like_id+1000)) ";
 			query += " where u.user_seq=?)||' 후기', ";
 			query += " ?, sysdate, ?) ";

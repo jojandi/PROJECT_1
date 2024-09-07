@@ -14,8 +14,14 @@ import user.dto.noti.NotiDTO;
 
 public class NotiDAO {
 
-    public List<NotiDTO> getAllNotiRequests() {
+    // 페이지 크기
+    private static final int PAGE_SIZE = 10;
+
+    // 특정 페이지의 공지사항을 가져오는 메서드
+    public List<NotiDTO> getNotiByPage(int currentPage, int pageSize) {
         List<NotiDTO> list = new ArrayList<>();
+        int startRow = (currentPage - 1) * pageSize + 1;
+        int endRow = currentPage * pageSize;
 
         try {
             // DB 연결
@@ -24,14 +30,18 @@ public class NotiDAO {
             Connection con = dataSource.getConnection();
 
             // SQL 쿼리 작성 
-            String query = " SELECT ann_seq, class, ann_title, ann_regi, ann_detail, ann_check  "
-                         + " FROM announcement join ann_class using(class_id) "; 
+            String query = "SELECT * FROM ("
+                         + "    SELECT ROWNUM AS rnum, a.* FROM ("
+                         + "        SELECT ann_seq, class, ann_title, ann_regi, ann_detail, ann_check"
+                         + "        FROM announcement"
+                         + "        JOIN ann_class USING(class_id)"
+                         + "        ORDER BY ann_regi DESC"
+                         + "    ) a"
+                         + ") WHERE rnum BETWEEN ? AND ?";
             
-//            String query = "SELECT c.class, a.ann_title, a.ann_regi, a.ann_check " +
-//                    "FROM announcement a, ann_class c " +
-//                    "WHERE a.class_id = c.class_id";
-
             PreparedStatement ps = con.prepareStatement(query);
+            ps.setInt(1, startRow);
+            ps.setInt(2, endRow);
 
             // SQL 실행 및 결과 획득
             ResultSet rs = ps.executeQuery();
@@ -62,7 +72,35 @@ public class NotiDAO {
         return list;
     }
 
+    // 총 공지사항 수를 반환하는 메서드
+    public int getTotalNotiCount() {
+        int count = 0;
 
+        try {
+            // DB 연결
+            Context ctx = new InitialContext();
+            DataSource dataSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+            Connection con = dataSource.getConnection();
 
+            // SQL 쿼리 작성
+            String query = "SELECT COUNT(*) FROM announcement";
 
+            PreparedStatement ps = con.prepareStatement(query);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                count = rs.getInt(1);
+            }
+
+            // 리소스 정리
+            rs.close();
+            ps.close();
+            con.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return count;
+    }
 }

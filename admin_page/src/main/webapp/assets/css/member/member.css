@@ -33,31 +33,20 @@ table {
 
 }
 
-table thead {
-    background-color: #f0f0f0;
-}
-
 table thead th {
     padding: 10px;
-    border: 1px solid #ddd;
     text-align: center;
     font-weight: bold;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
 }
 
-/* 
-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-table tbody tr:nth-child(odd) {
-    background-color: #fff;
-} */
 
 table tbody td {
     padding: 10px;
-    border: 1px solid #ddd;
     text-align: center;
     height: 30px;
+    border-bottom: 1px solid #ccc;
 }
 
 input[type="checkbox"] {

@@ -81,8 +81,12 @@
     content:"TODAY";
     position: relative;
     top: 19px;
-    left: -23px;
+    left: -15px;
     color: black;
+}
+
+.section1 #calendar #dates .red{
+	color: red;
 }
 
 .section1 #calendar #dates .hu_1,
@@ -101,7 +105,7 @@
     background: rgba(172, 229, 151, 0.637);
     border-radius: 10px;
     height: 320px;
-    width: 70px;
+    width: 80px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -113,12 +117,12 @@
 .section1 #librarys .library{
     border-radius: 20%;
     padding: 10px;
-    font-size: 18px;
+    font-size: 16px;
 	cursor: pointer;
 }
 
 .section1 #librarys .back{
-    width: 40px;
+	width: 50px;
     margin: 0 auto;
     background: rgb(105, 170, 82);
     color: white;

@@ -24,32 +24,16 @@
                 <div id="items">
                     
                     <div class="item" id="i1">
-                    	<c:if test="${login.user_seq != null}">
 	                    	<a href="res?seq=${login.user_seq}">
 	    	                    <span>이용내역</span>
 		                        <span class="material-symbols-outlined">arrow_forward_ios</span>
 	                    	</a>
-                    	</c:if>
-                    	<c:if test="${login.user_seq == null}">
-	                    	<a href="res">
-	    	                    <span>이용내역</span>
-		                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-	                    	</a>
-                    	</c:if>
                     </div>
                     <div class="item" id="i2">
-                    	<c:if test="?seq=${login.user_seq != null}">
 	                    	<a href="mypage_cart?seq=${login.user_seq}">
 	    	                    <span>찜 목록</span>
 		                        <span class="material-symbols-outlined">arrow_forward_ios</span>
 	                    	</a>
-                    	</c:if>
-                    	<c:if test="?seq=${login.user_seq == null}">
-	                    	<a href="mypage_cart">
-	    	                    <span>찜 목록</span>
-		                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-	                    	</a>
-                    	</c:if>
                     </div>
                     <div class="item" id="i3">
 	                    <a href="mypage_bookadd">
@@ -58,18 +42,10 @@
 	                    </a>
                     </div>
                     <div class="item" id="i4">
-	                    <c:if test="?seq=${login.user_seq != null}">
 	                    	<a href="mypage_info?seq=${login.user_seq}">
 	    	                    <span>내 정보</span>
 		                        <span class="material-symbols-outlined">arrow_forward_ios</span>
 	                    	</a>
-	                    </c:if>
-	                    <c:if test="?seq=${login.user_seq == null}">
-	                    	<a href="mypage_info">
-	    	                    <span>내 정보</span>
-		                        <span class="material-symbols-outlined">arrow_forward_ios</span>
-	                    	</a>
-	                    </c:if>
                     </div>
                     
                 </div>
