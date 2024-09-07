@@ -22,7 +22,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link href="./assets/css/click.css" rel="stylesheet">
-    <link href="./assets/css/mes_notice.css" rel="stylesheet">
+    <link href="./assets/css/mes_notice_read.css" rel="stylesheet">
   
 </head>
 
@@ -38,32 +38,34 @@
         <!-- 사이드 -->
         <%@ include file="/WEB-INF/mes/mes_notice/mes_notice_side.jsp" %>
         <section>
-            <div class="main_page">
-                <h3>게시판</h3>
-                <div class="notince" >
-                    <div class="t1" style="border: 1px solid lightgray; whidth: 300px; height: 550px; text-align: left;">
-						<h1>${ read.notice_name }</h1>
-						<h2>${ read.emp_name }</h2>
-						<span>${ read.notice_date }</span>
-						<div style="border: 1px solid lightgray; whidth: 300px; height: 300px;">
-							<span>${ read.notice_contents }</span>
-						</div>
-						<div style="border: 1px solid lightgray; whidth: 300px; height: 150px;">
-							<span>댓글창</span>
-						</div>
-						<a href="/mmes_page/notice_update?notice_id=${ read.notice_id }"><input type=button value="수정"></a>
-						<a href="/mmes_page/notice_delete?notice_id=${ read.notice_id }"><input type="button" value="삭제"></a>
-                    </div>
-                    <div id="pagination"></div>
-                    <br>
-                    <br>
-                    <div class="write" style="text-align:right;">
-                        <a href="notice">
-                            <input type="button" class="btnnn" value="목록으로">
-                        </a>
-                    </div>
+        	<div id="content_all">
+				<div class="name">
+					<strong>${ read.notice_name } </strong>
+					<div id="mini">
+						<span class="mini_date">등록일 | ${ read.notice_date }</span> <span>작성자 | ${ read.emp_name }</span>
+					</div>
+				</div>
+
+				<div id="content">
+					${ read.notice_contents }
+				</div>
+				
+				<div style="border: 1px solid lightgray; whidth: 300px; height: 150px;">
+					<span>댓글창</span>
+				</div>
+				
+				<a href="/mmes_page/notice_update?notice_id=${ read.notice_id }"><input type=button value="수정"></a>
+				<a href="/mmes_page/notice_delete?notice_id=${ read.notice_id }"><input type="button" value="삭제"></a>
+				
+				<div id="pagination"></div>
+                <br>
+                <br>
+                <div class="write" style="text-align:right;">
+                    <a href="notice">
+                        <input type="button" class="btnnn" value="목록으로">
+                    </a>
                 </div>
-            </div>
+			</div>
         </section>
     </div>
 

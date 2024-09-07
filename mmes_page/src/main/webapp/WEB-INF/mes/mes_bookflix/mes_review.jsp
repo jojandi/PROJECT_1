@@ -31,9 +31,7 @@
 #i_1 {
 	background-color: rgb(165, 224, 144);
 }
-/*        	table { */
-/*        	font-size: 18px; */
-/*        	} */
+
 .clickable {
 	cursor: pointer;
 	color: blue;
@@ -68,6 +66,12 @@
 			<div class="main_page" id="main_page_1">
 				<h3>리뷰 관리</h3>
 				<div>
+					<div class="bot_btn">
+						<div class="search-container">
+							<input type="text" id="searchInput" placeholder="리뷰 검색...">
+							<input type="submit" value="검색">
+						</div>
+					</div>
 					<div class="page_2">
 						<table id="main_library">
 							<tr>
@@ -90,11 +94,7 @@
 							</c:forEach>
 						</table>
 					</div>
-					<div class="bot_btn">
-						<div class="search-container">
-							<input type="text" id="searchInput" placeholder="리뷰 검색...">
-						</div>
-					</div>
+					
 				</div>
 			</div>
 		</section>

@@ -31,38 +31,69 @@
 
 	<!-- 여기 사이에 이것 저것 코딩하세용 >< -->
 	<div id="wrap">
-		<aside class="clearfix" id="side">
-			<div id="sideleft">
-				<a href="stock"><h2 id="title">재고 관리 페이지로</h2></a>
-				<div id="items"></div>
-			</div>
-		</aside>
+		<%@ include file="/WEB-INF/mes/mes_stock/stock_side.jsp"%>
+		
 		<section>
 			<div class="main_page" id="main_page_1">
-				<div class="container">
-					<h1>발주 상세 및 수정</h1>
+				<div>
+					<h3>발주 상세 및 수정</h3>
 					<form id="postForm" method="post" action="stockUpdate">
-						<input type="hidden" name="order_id" value="${dto.order_id }">
-						<h1>주문번호 : ${dto.order_id }</h1>
-						<br> <input type="hidden" name="order_date"	value="${dto.order_date }">
-						<h2>발주일 : ${dto.order_date }</h2>
-						<input type="hidden" name="order_price"	value="${dto.order_price }">
-						<h2>총 금액 : ${dto.order_price }</h2>
-						<input type="hidden" name="order_count"	value="${dto.order_count }">
-						<h2>주문 개수 : ${dto.order_count }</h2>
-						<h2>
-							발주상태 : <select name="order_st">
-								<option value="진행중" ${dto.order_st == '진행중' ? 'selected' : ''}>진행중</option>
-								<option value="완료" ${dto.order_st == '완료' ? 'selected' : ''}>완료</option>
-							</select>
-						</h2>
-						<input type="hidden" name="emp_ID" value="${dto.emp_id }">
-						<h2>직원ID : ${dto.emp_id }</h2>
-						<input type="hidden" name="pub_id" value="${dto.pub_id }">
-						<h2>구매처ID : ${dto.pub_id }</h2>
-						<input type="hidden" name="mes_book_code" value="${dto.mes_book_code }">
-						<h2>부품코드 : ${dto.mes_book_code }</h2>
-						<br> <input type="submit" value="등록">
+						<div id="table">
+							<table>
+								<colgroup>
+									<col width="30%"/>
+					    			<col width="60%"/>
+								</colgroup>
+								<tr>
+									<td>주문번호</td>
+									<td>${dto.order_id }</td>
+								</tr>
+								<tr>
+									<td>발주일</td>
+									<td>${dto.order_date }</td>
+								</tr>
+								<tr>
+									<td>총금액</td>
+									<td>${dto.order_price }</td>
+								</tr>
+								<tr>
+									<td>주문개수</td>
+									<td>${dto.order_count }</td>
+								</tr>
+								<tr>
+									<td>발주상태</td>
+									<td>
+										<select name="order_st">
+											<option value="진행중" ${dto.order_st == '진행중' ? 'selected' : ''}>진행중</option>
+											<option value="완료" ${dto.order_st == '완료' ? 'selected' : ''}>완료</option>
+										</select>
+									</td>
+								</tr>
+								<tr>
+									<td>직원 ID</td>
+									<td>${dto.emp_id }</td>
+								</tr>
+								<tr>
+									<td>구매처 ID</td>
+									<td>${dto.pub_id }</td>
+								</tr>
+								<tr>
+									<td>부품코드</td>
+									<td>${dto.mes_book_code }</td>
+								</tr>
+							</table>
+							<input type="hidden" name="order_id" value="${dto.order_id }">
+							<input type="hidden" name="order_date"	value="${dto.order_date }">
+							<input type="hidden" name="order_price"	value="${dto.order_price }">
+							<input type="hidden" name="order_count"	value="${dto.order_count }">
+							<input type="hidden" name="emp_ID" value="${dto.emp_id }">
+							<input type="hidden" name="pub_id" value="${dto.pub_id }">
+							<input type="hidden" name="mes_book_code" value="${dto.mes_book_code }">
+							<div id="bnt">
+								<a href="stock"><input type="button" value="목록으로" id="back"></a><br>
+								<input type="submit" value="등록" id="submit">
+							</div>
+						</div>
 					</form>
 
 				</div>

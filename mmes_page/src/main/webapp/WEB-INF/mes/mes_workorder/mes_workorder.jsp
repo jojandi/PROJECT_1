@@ -43,11 +43,18 @@
 			<div class="main_page" id="main_page_1">
 				<h3>작업지시서</h3>
 				<div>
-					<div class="page_2">
 						<div class="search-container">
 							<input type="text" id="searchInput" placeholder="지시번호 검색">
 						</div>
+					<div class="page_2">
 						<table id="main_library1">
+							<col width="15%"/>
+						    <col width="20%"/>
+						    <col width="20%"/>
+						    <col width="10%"/>
+						    <col width="10%"/>
+						    <col width="10%"/>
+						    <col width="10%"/>
 							<thead>
 								<tr>
 									<th class="sortable">지시번호</th>
@@ -56,6 +63,7 @@
 									<th>공정</th>
 									<th>수량</th>
 									<th>상태</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
