@@ -143,11 +143,25 @@
                             </tr>
                             <tr>
                                 <td>직급</td>
-                                <td><input type="text" name="po_name"></td>
+                                <td><select name="po_name">
+                                <option value="전임">전임</option>
+								<option value="선임">선임</option>
+								<option value="책임">책임</option>
+								<option value="사장">사장</option>
+								</select>
+								</td>
+                            	
                             </tr>
                             <tr>
-                                <td>부서</td>
-                                <td><input type="text"  name="dept_name"></td>
+                                 <td>부서</td>
+                                <td><select name="dept_name">
+                                <option value="생산팀">생산팀</option>
+								<option value="영업팀">영업팀</option>
+								<option value="인사팀">인사팀</option>
+								<option value="재고관리팀">재고관리팀</option>
+								<option value="환경관리팀">환경관리팀</option>
+								</select>
+								</td>
                             </tr>
                             <tr>
                                 <td>전화번호</td>
