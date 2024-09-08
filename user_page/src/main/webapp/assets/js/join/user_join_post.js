@@ -19,7 +19,7 @@ function ajax() {
 
     xhr.send( "username=" + id.value );
 
-    xhr.onload = funtion(){
+    xhr.onload = function(){
     	if(xhr.status===200){    //status = response 상태 코드 반환 : 200 정상응답
         console.log(xhr.responseText);
     	}

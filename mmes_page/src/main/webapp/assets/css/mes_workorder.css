@@ -73,7 +73,7 @@
             background: white;
             width: 50%;
             border: 2px solid #ccc;
-            padding: 40px;
+            padding: 25px;
             box-sizing: border-box;
         } 
 
@@ -88,7 +88,7 @@
 
         .modal-div_{
             text-align: right;
-            padding-right: 35px;
+            padding-right: 20px;
         }
 
         .red{
@@ -102,9 +102,11 @@
         table{
             width: 100%;
             border: 1px solid #ccc;
+            margin: 0 auto;
         }
         
-        table input{
+        table input,
+        table select{
             width: 90%;
         }
         
@@ -116,8 +118,7 @@
             margin-bottom: 20px;
             margin: 0 auto;
             margin-top: 10px;
-            border: 1px solid #ccc;
-            width: 90%;
+            width: 95%;
         }
 
         .modal-div_3{
@@ -129,6 +130,7 @@
         }
 
         .close_2 .material-symbols-outlined {
+        	cursor: pointer;
             font-variation-settings:
             'FILL' 0,
             'wght' 400,
@@ -189,7 +191,7 @@
             background: white;
             width: 50%;
             border: 2px solid #ccc;
-            padding: 40px;
+            padding: 25px;
             box-sizing: border-box;
         } 
 

@@ -37,6 +37,8 @@ public class MesHumanDAO {
 				   query +=" FROM employee e";
 				   query +=" JOIN department d ON e.dept_id = d.dept_id";
 				   query +=" JOIN tbl_position p ON e.po_id = p.po_id";
+				   query +=" ORDER by emp_id ";
+				   
 		
 			PreparedStatement ps = con.prepareStatement(query);
 			

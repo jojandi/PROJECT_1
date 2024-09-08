@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="java.util.List"%>
+<%@ page import="user.dto.noti.NotiDTO"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,13 +24,23 @@
         <section class="section1">
 
             <div id="hukwan">
+            
+            	<div id="librarys">
+                    
+                    <div class="library" id="joong">일반<br>열람실</div>
+                    <div class="library" id="ssang">디자인<br>열람실</div>
+                    <div class="library" id="du">러닝<br>커먼스</div>
+                    <div class="library" id="sin">일반<br>자료실</div>
+                    
+                </div>
+                
                 <div id="calendar">
                     <div class="calHeader">
                         <h2 id="YearMonth">
                             <!-- YYYY년 M월 -->
                         </h2>
                     </div>
-
+					
                     <div id="days">
                         <div>일</div>
                         <div>월</div>
@@ -121,7 +134,7 @@
                     <div>
                         <div class="page" id="p8">
                             <span class="material-symbols-outlined">lightbulb</span>
-                            <a href="notice"></a>
+                            <a href="notice2"></a>
                         </div>
                         <div class="pname">이용안내</div>
                     </div>
@@ -146,30 +159,15 @@
                 <div id="notices">
 
                     <ul>
-                        <li class="notice" id="n1">
-                            <div class="nbox joong">중앙</div>
-                            <div class="noticeTD">
-                                <a class="title">중앙도서관 재개관 안내</a>
-                                <div class="update">2024-07-24</div>
-                            </div>
-                        </li>
-
-                        <li class="notice" id="n2">
-                            <div class="nbox joong">중앙</div>
-                            <div class="noticeTD">
-                                <a class="title">중앙도서관 열람실 공사 안내 ( 07/23 ~ 08/03 )</a>
-                                <div class="update">2024-06-23</div>
-                            </div>
-                        </li>
-
-                        <li class="notice" id="n3">
-                            <div class="nbox all">공통</div>
-                            <div class="noticeTD">
-                                <a class="title">2024 전국 청소년 영어 스피치 콘테스트 안내</a>
-                                <div class="update">2024-06-22</div>
-                            </div>
-                        </li>
-
+	                    <c:forEach var="noti" items="${noti}">
+	                        <li class="notice" id="n1">
+	                            <div class="nbox joong">${noti.class_name}</div>
+	                            <div class="noticeTD">
+	                                <a class="title">${noti.ann_Title}</a>
+	                                <div class="update">${noti.ann_Regi}</div>
+	                            </div>
+	                        </li>
+	                    </c:forEach>
                     </ul>
 
                 </div>

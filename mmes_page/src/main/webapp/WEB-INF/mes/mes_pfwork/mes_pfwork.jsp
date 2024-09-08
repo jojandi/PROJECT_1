@@ -50,6 +50,7 @@
 									<th>회원ID</th>
 									<th>주문날짜</th>
 									<th>담당자</th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>

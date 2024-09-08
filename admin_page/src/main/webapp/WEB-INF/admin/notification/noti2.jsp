@@ -10,9 +10,40 @@
 <title>공지사항 게시판</title>
 <style>
     aside #items #i3 .material-symbols-outlined{
-background-color: rgb(165, 224, 144);
+	background-color: rgb(165, 224, 144);	
 	
 }
+
+	h1 {
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 17px;
+    box-sizing: border-box;
+    
+}
+section h1 {
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center;
+    font-size: 22px;
+    padding: 17px;
+    box-sizing: border-box;
+}
+
+th, td {
+    padding: 12px;
+/*     text-align: left; */
+    border-bottom: 1px solid #ddd;
+}
+button {
+	width : 50px;
+}
+
+    
+    
+
     </style>
 </head>
 <body>

@@ -1,21 +1,23 @@
- function filterTable() {
-            const input = document.getElementById('searchInput');
-            const filter = input.value.toLowerCase();
-            const table = document.getElementById('reportTable');
-            const tr = table.getElementsByTagName('tr');
+function filterTable() {
+    // 검색어 입력 필드 가져오기
+    var input = document.getElementById("searchInput");
+    var filter = input.value.toLowerCase();
+    var table = document.getElementById("reportTable");
+    var tr = table.getElementsByTagName("tr");
 
-            for (let i = 1; i < tr.length; i++) {
-                const tdArray = tr[i].getElementsByTagName('td');
-                let match = false;
-                for (let j = 0; j < tdArray.length; j++) {
-                    if (tdArray[j]) {
-                        if (tdArray[j].innerHTML.toLowerCase().indexOf(filter) > -1) {
-                            match = true;
-                            break;
-                        }
-                    }
-                }
-                tr[i].style.display = match ? '' : 'none';
+    // 테이블의 각 행을 반복하여 검색어와 비교
+    for (var i = 1; i < tr.length; i++) {
+        var tdTitle = tr[i].getElementsByTagName("td")[1]; // 제목 열 (두 번째 열)
+        if (tdTitle) {
+            var textValue = tdTitle.textContent || tdTitle.innerText;
+            // 검색어가 제목에 포함되면 해당 행 표시, 아니면 숨김
+            if (textValue.toLowerCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
-   
+    }
+}
+
+

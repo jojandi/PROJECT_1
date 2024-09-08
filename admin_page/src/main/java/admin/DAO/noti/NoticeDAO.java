@@ -91,8 +91,7 @@ public class NoticeDAO {
 	    		PreparedStatement pstmt = new LoggableStatement(conn, sql)) {
 
 //	        pstmt.setInt(1, noticeDTO.getAnn_seq());             
-//	        pstmt.setString(1, noticeDTO.getClass_id());        
-	        pstmt.setInt(1, 0);        
+	        pstmt.setInt(1, Integer.parseInt(noticeDTO.getClass_id()));        
 	        pstmt.setString(2, noticeDTO.getAnn_title());      
 //	        pstmt.setString(3, noticeDTO.getAnn_regi());      
 	        pstmt.setInt(3, noticeDTO.getAnn_check());           

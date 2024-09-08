@@ -24,11 +24,10 @@
             
                 <div id="librarys">
                     
-                    <div class="library" id="joong">중앙</div>
-                    <div class="library" id="ssang">쌍용</div>
-                    <div class="library" id="du">두정</div>
-                    <div class="library" id="sin">신방</div>
-                    <div class="library" id="cheong">청수</div>
+                    <div class="library" id="joong">일반<br>열람실</div>
+                    <div class="library" id="ssang">디자인<br>열람실</div>
+                    <div class="library" id="du">러닝<br>커먼스</div>
+                    <div class="library" id="sin">일반<br>자료실</div>
                     
                 </div>
                 

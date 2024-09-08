@@ -16,7 +16,7 @@ import admin.DTO.inven.LoanResDTO;
 public class LoanDAO {
 	
 	// 회원 대출 내역
-	public List memLoanList() {
+	public List memLoanList(int start, int end) {
 		List list = new ArrayList();
 		
 		try {
@@ -26,14 +26,19 @@ public class LoanDAO {
 			Connection con = dataFactory.getConnection();
 		  
 			// # SQL 준비
-			String query =  " select loan_seq, book_code, user_seq, book_name, loan_date, loan_ing, loan_return, loan_ex, (loan_ex - loan_return) as isOver ";
+			String query =  " select * from( ";
+			query +=  " select rownum as rnum, loan_seq, book_code, user_seq, book_name, loan_date, loan_ing, loan_return, loan_ex, (loan_ex - loan_return) as isOver ";
 			query += " from user_loan join li_book using(book_code)  ";
 			query += " join book using(book_isbn) ";
 			query += " order by book_loan desc, loan_date desc ";
+			query += " ) where rnum >=? and rnum <= ?  ";
 
             PreparedStatement ps = new LoggableStatement(con, query);
 			
-			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+            ps.setInt(1, start);
+            ps.setInt(2, end);
+
+            System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 			
 			ResultSet rs = ps.executeQuery();
 
@@ -71,6 +76,40 @@ public class LoanDAO {
 			e.printStackTrace();
 		}
 		return list;
+	}
+	
+	// 전체 페이지
+	public int totalPage() {
+		int result = -1;
+		
+		try {
+			Context ctx = new InitialContext();
+			DataSource dataFactory = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			// 커넥션 풀에서 접속 정보 가져오기
+			Connection con = dataFactory.getConnection();
+		  
+			// # SQL 준비
+			String query =  " select count(*) cnt from user_loan ";
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			
+			System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
+			
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()) {				
+				result = rs.getInt("cnt");
+			}
+			
+			ps.close();
+			con.close();
+			rs.close();
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 
 	// 회원 대출 내역 업데이트

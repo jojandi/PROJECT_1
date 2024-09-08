@@ -25,8 +25,8 @@
 				<input type="hidden" name="action" value="create">
 				<div id="con">
 					<select id="notice_category" name="class_id">
-						<option value="general">공지</option>
-						<option value="event">안내</option>
+						<option value="5001">공지</option>
+						<option value="5002">안내</option>
 					</select>
 				</div>
 				<input type="text" id="new_notice_title" name="ann_title"

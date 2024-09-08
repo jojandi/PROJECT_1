@@ -40,6 +40,11 @@
 			<div class="main_page" id="main_page_1">
 				<h3>재고 현황</h3>
 				<div>
+					<div class="bot_btn">
+						<div class="search-container">
+							<input type="text" id="searchInput" placeholder="도서명 검색...">
+						</div>
+					</div>
 					<div class="page_2">
 						<table id="main_library">
 							<colgroup>
@@ -71,17 +76,19 @@
 							</tbody>
 						</table>
 					</div>
-					<div class="bot_btn">
-						<div class="search-container">
-							<input type="text" id="searchInput" placeholder="도서명 검색...">
-						</div>
-					</div>
+					
 				</div>
 			</div>
 
 			<div class="main_page" id="main_page_2">
 				<h3>보유 도서 목록</h3>
 				<div>
+					<div class="bot_btn">
+						<div class="search-container">
+							<input type="text" id="searchInput" placeholder="도서명 검색...">
+						</div>
+						<input type="button" value="Excel 파일화">
+					</div>
 					<div class="page_2">
 						<table id="main_library2">
 							<thead>
@@ -161,12 +168,7 @@
 <%-- 						</c:if> --%>
 											<!-- 여기까지 페이징 -->
 						</div>
-						<div class="bot_btn">
-						<div class="search-container">
-						<input type="text" id="searchInput" placeholder="도서명 검색...">
-						</div>
-						<input type="button" value="Excel 파일화">
-					</div>
+						
 				</div>
 			</div>
 
@@ -184,6 +186,7 @@
 										<th>발주상태</th>
 										<th>담당자</th>
 										<th>발주일</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody class="main_tbody">

@@ -52,6 +52,7 @@ public class LoginController extends HttpServlet {
 			session.setMaxInactiveInterval(60 * 60 * 60);
 
 			session.setAttribute("login", user);
+			session.setAttribute("isLogin", true);
 			
 			// 사용자 main 페이지로 sendRedirect
 			response.sendRedirect(request.getContextPath() +"/user/main");
@@ -61,6 +62,7 @@ public class LoginController extends HttpServlet {
 			session.setMaxInactiveInterval(60 * 60 * 60);
 
 			session.setAttribute("login", admin);
+			session.setAttribute("isLogin", true);
 			
 			// 관리자 main 페이지로 sendRedirect
 			response.sendRedirect("http://localhost:8080/admin_page/admin/main");

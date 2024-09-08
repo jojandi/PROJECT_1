@@ -1,7 +1,7 @@
 package admin.controller.inven;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -25,10 +25,21 @@ public class LoanController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 	    
-	    LoanService service = new LoanService();
-	    List list = service.memLoanList();
+	    String countPerPage = request.getParameter("countPerPage"); // 한 페이지 당 몇 개
+		String page = request.getParameter("page"); // 현재 페이지
+//		System.out.println("현재 페이지 : " + page);
+//		System.out.println("페이지 당 개수 : " + countPerPage);
+		
+		// 기본값 설정
+		if(countPerPage == null) countPerPage = "10";
+		if(page == null) page = "1";
 	    
-	    request.setAttribute("list", list);
+	    LoanService service = new LoanService();
+	    Map map = service.memLoanList(countPerPage, page);
+	    
+	    request.setAttribute("map", map); 
+	    request.setAttribute("countPerPage", countPerPage);
+		request.setAttribute("page", page);
 		
 		request.getRequestDispatcher("/WEB-INF/admin/inven/loan.jsp").forward(request, response);
 	}
