@@ -3,27 +3,6 @@ window.onload = function () {
     const table = document.querySelector('#main_page_1 #main_library tbody');
 
 
-    
-    // 전체선택
-    document.querySelector('#main_page_1 #p1_checkAll').addEventListener('click', function () {
-        const isChecked = document.querySelector('#main_page_1 #p1_checkAll').checked;
-        if (isChecked) {
-            const checkboxes = document.querySelectorAll('#main_page_1 .p1_main_chack');
-
-            for (const checkbox of checkboxes) {
-                checkbox.checked = true;
-            }
-        }
-
-        else {
-            const checkboxes = document.querySelectorAll('.p1_main_chack');
-            for (const checkbox of checkboxes) {
-                checkbox.checked = false;
-            }
-        }
-
-
-    })
 
     document.querySelector('.sortable').addEventListener('click', function () {
         // 클릭된 열의 인덱스 가져오기
