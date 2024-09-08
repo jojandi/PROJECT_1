@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.List;
 
 @WebServlet("/getBookStatistics")
-public class MesMainStatusController extends HttpServlet {
+public class MesMainStatus1Controller extends HttpServlet {
     
     private MesMainService mesMainService;
 
