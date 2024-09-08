@@ -207,9 +207,9 @@ function loadForecastStatistics() {
                         label: '예측 수요량',
                         data: expectedDemands,
                         backgroundColor: '#7C83FD',  // 파스텔 빨간색
-                        borderColor: 'rgba(0, 0, 255, 1)',  // 진한 파란색
+                        borderColor: '#7C83FD',  // 진한 파란색
                         pointBackgroundColor: 'rgba(255, 0, 0, 1)',  // 포인트 색상 (빨간색)
-                        pointBorderColor: 'rgba(0, 0, 255, 1)',  // 포인트 테두리 색상 (파란색)
+                        pointBorderColor: '#7C83FD',  // 포인트 테두리 색상 (파란색)
                         pointHoverBackgroundColor: 'rgba(0, 0, 255, 1)',  // 포인트 호버 색상 (파란색)
                         pointHoverBorderColor: 'rgba(255, 0, 0, 1)',  // 포인트 호버 테두리 색상 (빨간색)
                         borderWidth: 3,
