@@ -252,21 +252,23 @@ public class MesWorkorderDAO {
 				Connection con = dataFactory.getConnection();
 				
 				// SQL 준비
-				String query = "UPDATE bom_table SET bom_name = ?, mes_book_code1 = ?, mes_book_code2 = ?, mes_book_code3 = ? WHERE mes_book_code = ?";
+				String query = " UPDATE bom SET mes_book_code1 = ?, mes_book_code2 = ?, mes_book_code3 = ? WHERE bom_code = ?";
 				
 				PreparedStatement ps = con.prepareStatement(query);
 				
-				 ps.setString(1, workDTO.getBom_name());
-		         ps.setInt(2, workDTO.getMes_book_code1());
-		         ps.setInt(3, workDTO.getMes_book_code2());
-		         ps.setInt(4, workDTO.getMes_book_code3());
-		         ps.setInt(5, workDTO.getBom_code());
+				
+		         ps.setInt(1, workDTO.getMes_book_code1());
+		         ps.setInt(2, workDTO.getMes_book_code2());
+		         ps.setInt(3, workDTO.getMes_book_code3());
+		         ps.setInt(4, workDTO.getBom_code());
+		    
 		        
 				// SQL 실행
 				result = ps.executeUpdate();
 				
-				ps.close();
-				con.close();
+				 
+		    	 ps.close();
+		    	 con.close();
 				
 			}catch (Exception e) {
 				e.printStackTrace();

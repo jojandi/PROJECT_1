@@ -42,17 +42,18 @@
                     </div>
                 </div>
 
-                <div id="booksub">
-                    <div id="booklogo">
-                        <img src="../assets/img/bookflix.png">
-                    </div>
-
-                    <div id="bookuser">
-                        <div id="bookall">
-                            <span>이달의 ${list[0].bom_name} 도서</span>
-    
-                            <div id="books">
-                            	<c:forEach var="list" items="${list}">
+				<c:if test="${ login.user_sub == true }">
+	               <div id="booksub">
+	                   <div id="booklogo">
+	                       <img src="../assets/img/bookflix.png">
+	                   </div>
+	
+	                   <div id="bookuser">
+	                       <div id="bookall">
+	                           <span>이달의 ${list[0].bom_name} 도서</span>
+	   
+	                           <div id="books">
+	                           	<c:forEach var="list" items="${list}">
 	                                <table>
 	                                    <tr>
 	                                        <td>
@@ -63,16 +64,21 @@
 	                                        <td class="booktitle">&lt; ${list.book_name} &gt;</td>
 	                                    </tr>
 	                                </table>
-                            	</c:forEach>
-                            </div>
-                        </div>
-    
-                        <div id="bookout">
-                            탈퇴하기
-                        </div>
-                    </div>
-                   
-                </div>
+	                           	</c:forEach>
+	                           </div>
+	                       </div>
+	   
+	                       <div id="bookout">
+	                           <form method="post" action="bookflix_use">
+				                    <input type="hidden" name="user" value="${login.user_seq}">
+				                    <input type="hidden" name="bseq" value="${list[0].buser_seq}">
+		                    		<input type="submit" value="탈퇴하기" id="realout">
+		                    	</form>
+	                       </div>
+	                   </div>
+	                  
+	               </div>
+                </c:if>
 
                 <!-- 정보수정 -->
                 <div id="infoedit">

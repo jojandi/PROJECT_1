@@ -9,9 +9,9 @@
 </head>
 <body>
 	<!-- header -->
-	<%@ include file="/WEB-INF/user/base/header.jsp" %>
+<%@ include file="/WEB-INF/user/base/header.jsp" %>
 
-	<div id="wrap">
+	<div id="wrap"> 
             <div id="parent">
                 <div id="top_logo">
                     <img id="top_logo_img"
@@ -61,11 +61,21 @@
                     <img src = "https://as1.ftcdn.net/v2/jpg/04/99/71/28/1000_F_499712861_Uu1vTfZLoCPZ9ZHt8DCA6TVlNYH5LgRW.jpg">
                 </div> -->
 
-                <div id="top_box">
-	                <form method="post" action="sub">
-	                    <input type="submit" value="구독 서비스 신청하기" id="fixed-button">
-	                </form>
-                </div>
+				<c:if test="${login.user_seq != null}">
+	                <div id="top_box">
+		                <form method="post" action="sub">
+		                	<input type="hidden" name="seq" value="${login.user_seq}">
+		                    <input type="submit" value="구독 서비스 신청하기" id="fixed-button">
+		                </form>
+	                </div>
+                </c:if>
+				<c:if test="${login.user_seq == null}">
+	                <div id="top_box">
+		                <form method="get" action="login">
+		                    <input type="submit" value="구독 서비스 신청하기" id="fixed-button">
+		                </form>
+	                </div>
+                </c:if>
                 
             </div>
         <!-- wrap -->
@@ -75,6 +85,5 @@
     
 	<!-- footer -->
     <%@ include file="/WEB-INF/user/base/footer.jsp" %> 
-
 </body>
 </html>

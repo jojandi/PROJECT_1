@@ -103,13 +103,14 @@ public class MyDAO {
 			String query = null;
 
 			query = " select b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info ";
-			query += " , bk.book_pub, bk.book_author from bom b  ";
+			query += " , bk.book_pub, bk.book_author, bu.buser_seq from bom b  ";
 			query += " left join tbl_user u on (b.bom_code = (u.like_id+1000)) ";
 			query += " left join mes_book m on (m.mes_book_code = b.mes_book_code1 or m.mes_book_code = b.mes_book_code2 or m.mes_book_code = b.mes_book_code3) ";
 			query += " left join book bk on (m.book_isbn = bk.book_isbn) ";
 			query += " left join li_book li on (bk.book_isbn = li.book_isbn) ";
+			query += " left join bookflix_user bu on (u.user_seq = bu.user_seq) ";
 			query += " where u.user_seq=?";
-			query += " group by b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info, bk.book_pub, bk.book_author ";
+			query += " group by b.mes_book_code1, b.mes_book_code2, b.mes_book_code3, u.like_id, u.user_seq, u.user_name, b.bom_name, bk.book_name, bk.book_img, li.li_book_info, bk.book_pub, bk.book_author, bu.buser_seq ";
 
 			PreparedStatement ps = new LoggableStatement(con, query);
 			ps.setInt(1, seq);
@@ -126,6 +127,7 @@ public class MyDAO {
 				dto.setBom_name(rs.getString("bom_name"));
 				dto.setLike_id(rs.getInt("like_id"));
 				dto.setUser_name(rs.getString("user_name"));
+				dto.setBuser_seq(rs.getInt("buser_seq"));
 				dto.setBook_pub(rs.getString("book_pub"));
 				dto.setBook_author(("book_author"));
 				dto.setLi_book_info(rs.getString("li_book_info"));

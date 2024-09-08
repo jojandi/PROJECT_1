@@ -1,6 +1,9 @@
 package mes_controller;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -48,6 +51,36 @@ public class MesWorkOrderReadController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		 System.out.println("update doPost 실행");
+			request.setCharacterEncoding("utf-8");
+			response.setContentType("text/html; charset=utf-8;");
+			
+			String str_bom_code = request.getParameter("bom_code");
+			int bom_code3 = Integer.parseInt(str_bom_code);
+			
+			
+	        String bom_name = request.getParameter("bom_name");
+	        String mes_book_code1 = request.getParameter("mes_book_code1");
+	        String mes_book_code2 = request.getParameter("mes_book_code2");
+	        String mes_book_code3 = request.getParameter("mes_book_code3");
+	       
+			
+			MesWorkorderDTO orderDTO = new MesWorkorderDTO();
+			orderDTO.setBom_code(bom_code3);
+			orderDTO.setBom_name(bom_name);
+			orderDTO.setMes_book_code1(Integer.parseInt(mes_book_code1));
+			orderDTO.setMes_book_code2(Integer.parseInt(mes_book_code2));
+			orderDTO.setMes_book_code3(Integer.parseInt(mes_book_code3));
+			
+		        MesWorkorderService workorderService = new MesWorkorderService();
+		        int result = workorderService.update(orderDTO);
+		        System.out.println("update 결과 : " + result);
 
-	}
+		        response.sendRedirect("http://localhost:8080/mmes_page/workorder");
+		}
+
+
+
+	
 }

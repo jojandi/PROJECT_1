@@ -112,7 +112,7 @@ section #information #miniInfo #logout{
     margin-right: 10px;
 }
 
-section #information #miniInfo #realout{
+section #information #realout{
     font-size: 13px;
     text-decoration: underline;
     cursor: pointer;
@@ -234,7 +234,7 @@ section #information #booksub #booklogo > img{
 section #information #booksub #bookall{
     display: inline-block;
     /* border: 1px solid red; */
-    width: 70%;
+    width: 80%;
 }
 
 section #information #booksub #bookall > span{
@@ -244,10 +244,6 @@ section #information #booksub #bookall > span{
     width: 100%;
     padding: 10px 0;
     border-bottom: 1px solid #ccc;
-}
-
-section #information #booksub #bookall table{
-    width: 170px;
 }
 
 section #information #booksub #books{
