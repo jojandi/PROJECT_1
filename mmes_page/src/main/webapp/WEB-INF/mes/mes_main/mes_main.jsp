@@ -137,6 +137,7 @@
 				<div class="mini_title">
 					<h3>도서 수요 통계</h3>
 				</div>
+					<label for="yearSelectDemand">연도 선택: </label>
 					<select id="yearSelectDemand">
 						<option value="2023">2023년</option>
 						<option value="2022">2022년</option>
@@ -146,6 +147,7 @@
 						<option value="2018">2018년</option>
 						<!-- 다른 연도 선택 가능 -->
 					</select> 
+					<label for="monthSelectDemand">월 선택: </label>
 					<select id="monthSelectDemand">
 						<option value="1">1월</option>
 						<option value="2">2월</option>

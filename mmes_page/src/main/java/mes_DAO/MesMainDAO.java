@@ -81,7 +81,8 @@ public class MesMainDAO {
 	                    "FROM deliverystatus_total d " +
 	                    "JOIN bom b ON d.bom_code = b.bom_code " +
 	                    "WHERE TRUNC(d.date_id / 100) = ? AND MOD(d.date_id, 100) = ? " +
-	                    "GROUP BY d.bom_code, b.bom_name";
+	                    "GROUP BY d.bom_code, b.bom_name " +
+	                    "ORDER BY d.bom_code";  // bom_code를 기준으로 정렬
 	            // PreparedStatement 객체 생성
 	            PreparedStatement ps = con.prepareStatement(qq);
 
@@ -134,12 +135,13 @@ public class MesMainDAO {
 	            System.out.println("DAO - Year: " + hihi + ", Month: " + byebye);
 
 	            String query = "SELECT t.bom_code, b.bom_name, SUM(d.month_dm) AS demand " +
-	                       "FROM demand d " +
-	                       "JOIN deliverystatus_total t ON d.ds_id = t.ds_id " +
-	                       "JOIN bom b ON t.bom_code = b.bom_code " +
-	                       "WHERE FLOOR(t.date_id / 100) = ?  " +  // 연도 추출
-	                       "AND MOD(t.date_id, 100) = ? " +         // 월 추출
-	                       "GROUP BY t.bom_code, b.bom_name";
+	                    "FROM demand d " +
+	                    "JOIN deliverystatus_total t ON d.ds_id = t.ds_id " +
+	                    "JOIN bom b ON t.bom_code = b.bom_code " +
+	                    "WHERE FLOOR(t.date_id / 100) = ?  " +  // 연도 추출
+	                    "AND MOD(t.date_id, 100) = ? " +         // 월 추출
+	                    "GROUP BY t.bom_code, b.bom_name " +     // 공백 추가
+	                    "ORDER BY t.bom_code";   
 
 
 	            PreparedStatement ps = con.prepareStatement(query);
@@ -189,7 +191,7 @@ public class MesMainDAO {
 		                       "JOIN bom b ON dt.bom_code = b.bom_code " +
 		                       "WHERE FLOOR(df.forecast_date / 100) = ? AND MOD(df.forecast_date, 100) = ? " +
 		                       "GROUP BY b.bom_code, b.bom_name " +  // 장르별로 그룹화
-		                       "ORDER BY b.bom_name";
+		                       "ORDER BY b.bom_code";
 
 		        PreparedStatement ps = con.prepareStatement(query);
 		        ps.setInt(1, year);  // 연도

@@ -60,15 +60,33 @@ function loadBookStatistics() {
                         label: '장르별 도서 출고 수량',
                         data: totals,
                         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderColor: '#7C83FD',
                         borderWidth: 1
                     }]
                 },
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                font: {
+                                    family: 'Arial',  // 폰트 종류
+                                    weight: 'bold',  // 폰트 두께 (두껍게)
+                                    size: 14         // 글자 크기
+                                }
+                            }
+                        },
+                          x: {
+                            ticks: {
+                                font: {
+                                    family: 'Arial',  // 폰트 종류
+                                    weight: 'bold',  // 폰트 두께 (두껍게)
+                                    size: 12        // 글자 크기
+                                }
+                            }
                         }
+                    
+                    
                     }
                 }
             });
@@ -120,7 +138,23 @@ function loadDemandStatistics() {
                     scales: {
                         y: {
                             beginAtZero: true,
-                              max: 100
+                              max: 100,
+                              ticks: {
+                                font: {
+                                    family: 'Arial',  // 폰트 종류
+                                    weight: 'bold',  // 폰트 두께 (두껍게)
+                                    size: 14         // 글자 크기
+                                }
+                            }
+                         },
+                          x: {
+                            ticks: {
+                                font: {
+                                    family: 'Arial',  // 폰트 종류
+                                    weight: 'bold',  // 폰트 두께 (두껍게)
+                                    size: 12        // 글자 크기
+                                }
+                            }
                         }
                     }
                 }
@@ -140,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadForecastStatistics();
 });
 
-// 수요 예측 통계 그래프 그리기
 function loadForecastStatistics() {
     const selectedYear = document.getElementById('yearSelectForecast').value;
     const selectedMonth = document.getElementById('monthSelectForecast').value;
@@ -165,23 +198,50 @@ function loadForecastStatistics() {
                 forecastChart.destroy();
             }
 
-            // 새로운 수요 예측 차트 생성
+            // 새로운 수요 예측 차트 생성 (선 그래프)
             forecastChart = new Chart(ctx, {
-                type: 'bar',
+                type: 'line',  // 선 그래프 타입
                 data: {
                     labels: labels,  // 장르명
                     datasets: [{
                         label: '예측 수요량',
                         data: expectedDemands,
-                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 1
+                        backgroundColor: '#7C83FD',  // 파스텔 빨간색
+                        borderColor: 'rgba(0, 0, 255, 1)',  // 진한 파란색
+                        pointBackgroundColor: 'rgba(255, 0, 0, 1)',  // 포인트 색상 (빨간색)
+                        pointBorderColor: 'rgba(0, 0, 255, 1)',  // 포인트 테두리 색상 (파란색)
+                        pointHoverBackgroundColor: 'rgba(0, 0, 255, 1)',  // 포인트 호버 색상 (파란색)
+                        pointHoverBorderColor: 'rgba(255, 0, 0, 1)',  // 포인트 호버 테두리 색상 (빨간색)
+                        borderWidth: 3,
+                        fill: false  // 선 그래프의 하단 영역 채우기 옵션 (필요 시 true로 변경)
                     }]
                 },
                 options: {
                     scales: {
                         y: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            ticks: {
+                                font: {
+                                    family: 'Arial',  // 폰트 종류
+                                    weight: 'bold',  // 폰트 두께 (두껍게)
+                                    size: 14         // 글자 크기
+                                }
+                            }
+                            
+                         },
+                          x: {
+                            ticks: {
+                                font: {
+                                    family: 'Arial',  // 폰트 종류
+                                    weight: 'bold',  // 폰트 두께 (두껍게)
+                                    size: 12        // 글자 크기
+                                }
+                            }
+                        }
+                    },
+                    elements: {
+                        line: {
+                            tension: 0.4  // 선의 곡률 (0: 직선, 1: 곡선)
                         }
                     }
                 }
