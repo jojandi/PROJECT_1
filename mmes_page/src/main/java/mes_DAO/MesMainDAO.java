@@ -65,7 +65,7 @@ public class MesMainDAO {
 		return list;
 	}
 	// 출고 통계 (장르별 출고량)
-	 public List<MesMainDTO> getStatisticsByGenre(Integer year, Integer month) {
+	 public List<MesMainDTO> getStatisticsByGenre(int year, int month) {
 	        List<MesMainDTO> list = new ArrayList<>();
 
 	        try {
@@ -89,6 +89,9 @@ public class MesMainDAO {
 	            // 연도와 월을 SQL 쿼리에 바인딩
 	            ps.setInt(1, year);
 	            ps.setInt(2, month);
+	            System.out.println("제발: " + year + ", Month: " + month);
+
+	            
 
 	            // 쿼리 실행
 	            ResultSet rs = ps.executeQuery();

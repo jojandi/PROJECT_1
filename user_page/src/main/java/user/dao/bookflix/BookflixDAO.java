@@ -114,4 +114,126 @@ public class BookflixDAO {
 
 		return result;
 	}
+	
+	// 북플릭스 가입
+	public int bookflixSub(int user) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dateSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+
+			Connection con = dateSource.getConnection();
+
+			String query = null;
+
+			query = " update tbl_user set user_sub = 'Y' where user_seq=? ";
+
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, user);
+
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			result = ps.executeUpdate(); 
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+
+	// 북플릭스 유저 인서트
+	public int bookflixSubInsert(int user) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dateSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+
+			Connection con = dateSource.getConnection();
+
+			String query = null;
+
+			query = " insert into bookflix_user (buser_seq, user_seq, buser_date, buser_end) ";
+			query += " values (buser_seq.nextval, ?, sysdate, add_months(sysdate, +1)) ";
+
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, user);
+
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			result = ps.executeUpdate(); 
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	// 북플릭스 유저 탈퇴
+	public int bookflixDel(int buser) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dateSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+
+			Connection con = dateSource.getConnection();
+
+			String query = null;
+
+			query = " delete bookflix_user where buser_seq=? ";
+
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, buser);
+
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			result = ps.executeUpdate(); 
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
+	// 북플릭스 탈퇴
+	public int bookflixOut(int user) {
+		int result = -1;
+
+		try {
+			Context ctx = new InitialContext();
+			DataSource dateSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+
+			Connection con = dateSource.getConnection();
+
+			String query = null;
+
+			query = " update tbl_user set user_sub = 'N' where user_seq=? ";
+
+
+			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, user);
+
+			System.out.println(((LoggableStatement) ps).getQueryString());
+
+			result = ps.executeUpdate(); 
+
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return result;
+	}
+	
 }

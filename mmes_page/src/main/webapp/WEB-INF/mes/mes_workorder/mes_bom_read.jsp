@@ -37,47 +37,57 @@
 		</aside>
 		<section>
 			<div class="main_page" id="main_page_1">
-				<h3>BOM 상세정보</h3>
-				<div>
-						<div class="page_2">
-							<form id="postForm" method="post" action="bom_read">
-								<input type="hidden" name="bom_code" value="${dto.bom_code }">
-								<h1>제품코드 : ${dto.bom_code }</h1>
-								<br> <input type="hidden" name="bom_name"
-									value="${dto.bom_name }">
-								<h2>제품이름 : ${dto.bom_name }</h2>
-								
-								<span>부품코드1 : ${dto.mes_book_code1 }</span>
-								<select name="mes_book_code1">
-                              	<c:forEach var="code" items="${mes_book_code}">
-                                 <option value="${code }">${code }</option>
-                              	</c:forEach>
-                        		</select><br>	
-								<span>부품코드2 : ${dto.mes_book_code2 }</span>
-								<select name="mes_book_code2">
-                              	<c:forEach var="code" items="${mes_book_code}">
-                                 <option value="${code }">${code }</option>
-                              	</c:forEach>
-                        		</select><br>	
-								<span>부품코드3 : ${dto.mes_book_code3 }</span>
-								<select name="mes_book_code3">
-                              	<c:forEach var="code" items="${mes_book_code}">
-                                 <option value="${code }">${code }</option>
-                              	</c:forEach>
-                        		</select><br>	
-								<br> <input type="submit" value="등록">
-							
-							</form>
-						</div>
-					<form method="post" action="delete">
+				<h3>BOM 수정</h3>
 
-						<input type="hidden" name="bom_code" value="${param.bom_code }">
-						<input type="submit" id="deleteButton" value="BOM 삭제">
+				<div class="page_2">
+
+					<form id="postForm" method="post" action="bom_read">
+						<table id="main_library">
+							<thead>
+								<tr>
+									<th class="sortable">제품코드</th>
+									<th>부품명</th>
+									<th>부품코드1</th>
+									<th>부품코드2</th>
+									<th>부품코드3</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>${dto.bom_code }</td>
+									<td>${dto.bom_name }</td>
+									<td><select name="mes_book_code1">
+											<c:forEach var="code" items="${mes_book_code}">
+												<option value="${code }">${code }</option>
+											</c:forEach>
+									</select></td>
+									<td><select name="mes_book_code2">
+											<c:forEach var="code" items="${mes_book_code}">
+												<option value="${code }">${code }</option>
+											</c:forEach>
+									</select></td>
+									<td><select name="mes_book_code3">
+											<c:forEach var="code" items="${mes_book_code}">
+												<option value="${code }">${code }</option>
+											</c:forEach>
+									</select></td>
+
+
+								</tr>
+							</tbody>
+						</table>
+						<input type="submit" value="등록">
+
 					</form>
 				</div>
+				<form method="post" action="delete">
+
+					<input type="hidden" name="bom_code" value="${param.bom_code }">
+					<input type="submit" id="deleteButton" value="BOM 삭제">
+				</form>
 			</div>
 		</section>
-		
+
 	</div>
 
 

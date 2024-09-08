@@ -73,14 +73,11 @@ public class MesWorkOrderReadController extends HttpServlet {
 			orderDTO.setMes_book_code2(Integer.parseInt(mes_book_code2));
 			orderDTO.setMes_book_code3(Integer.parseInt(mes_book_code3));
 			
-			
-			 
-
 		        MesWorkorderService workorderService = new MesWorkorderService();
 		        int result = workorderService.update(orderDTO);
 		        System.out.println("update 결과 : " + result);
 
-		        response.sendRedirect(request.getContextPath() + "/workorder");
+		        response.sendRedirect("http://localhost:8080/mmes_page/workorder");
 		}
 
 

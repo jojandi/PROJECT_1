@@ -21,6 +21,7 @@ public class BookflixUseController extends HttpServlet {
 	    response.setContentType("text/html; charset=utf-8;");
 	    
 	    int seq = Integer.parseInt(request.getParameter("seq"));
+	    System.out.println("유저 seq : " + seq);
 	    
 	    BookflixService service = new BookflixService();
 	    List list = service.userBookflix(seq);
@@ -28,11 +29,26 @@ public class BookflixUseController extends HttpServlet {
 	    System.out.println(list);
 	    
 	    request.setAttribute("list", list);
-		request.getRequestDispatcher("/WEB-INF/user/bookflix/user_bookflix_use.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/user/bookflix/bookflix_use.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("사용자용 북플릭스 이용자 탈퇴 doGet 실행!");
+		request.setCharacterEncoding("utf-8");
+	    response.setContentType("text/html; charset=utf-8;");
+	    
+	    int seq = Integer.parseInt(request.getParameter("bseq"));
+	    int user = Integer.parseInt(request.getParameter("user"));
+	    System.out.println("북플릭스 유저 seq : " + seq);
+	    
+	    BookflixService service = new BookflixService();
+	    int result = service.bookflixDel(seq);
+	    int resultOut = service.out(user);
+	    
+	    System.out.println("북플릭스 탈퇴 : " + result);
+	    System.out.println("북플릭스 진짜 탈퇴 : " + resultOut);
+	    
+	    response.sendRedirect(request.getContextPath() + "/user/main");
 	}
 
 }

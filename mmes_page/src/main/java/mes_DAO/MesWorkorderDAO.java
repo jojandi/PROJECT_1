@@ -266,8 +266,9 @@ public class MesWorkorderDAO {
 				// SQL 실행
 				result = ps.executeUpdate();
 				
-				ps.close();
-				con.close();
+				 
+		    	 ps.close();
+		    	 con.close();
 				
 			}catch (Exception e) {
 				e.printStackTrace();
