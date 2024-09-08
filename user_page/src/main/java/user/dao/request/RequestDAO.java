@@ -69,7 +69,7 @@ public class RequestDAO {
 	        int result = -1;  // 기본 결과값 설정
 
 	        String query = " INSERT INTO application (app_seq, app_book, app_name, app_pub, app_date, user_seq, purchased) " +
-	                       " VALUES (app_seq.nextval, ?, ?, ?, sysdate, 40, null)";
+	                       " VALUES (app_seq.nextval, ?, ?, ?, sysdate, ?, null)";
 
 	        try {
 	            // 데이터베이스 연결
@@ -81,6 +81,7 @@ public class RequestDAO {
 	            ps.setString(1, dto.getApp_book());
 	            ps.setString(2, dto.getApp_name());
 	            ps.setString(3, dto.getApp_pub());
+	            ps.setInt(4, Integer.parseInt( dto.getUser_seq() ));
 //	            ps.setString(4, dto.getApp_pub());
 //	            ps.setDate(5, dto.getApp_date());
 //	            ps.setString(6, dto.getUser_seq());

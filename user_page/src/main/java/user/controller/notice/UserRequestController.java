@@ -36,11 +36,15 @@ public class UserRequestController extends HttpServlet {
         String bookName = request.getParameter("app_book"); //도서명
         String author = request.getParameter("app_name");  //저자 
         String publisher = request.getParameter("app_pub"); // 출판사
+        String user_seq = request.getParameter("user_seq"); // 출판사
+        
+        System.out.println(Integer.parseInt(user_seq));
         
         AppDTO dto = new AppDTO();
         dto.setApp_book(bookName);
         dto.setApp_name(author);
-        dto.setApp_pub(publisher);
+        dto.setApp_pub(publisher); 
+        dto.setUser_seq(user_seq); 
         
         RequestDAO dao = new RequestDAO();
         
