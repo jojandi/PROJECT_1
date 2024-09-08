@@ -93,7 +93,7 @@
 
 					<form id="postForm" method="post" action="bomupdate">
 						<input type="hidden" value="${mesBook.mes_book_code }"> <input
-							type="submit" " value="수정하기">
+							type="submit" value="수정하기">
 					</form>
 
 
