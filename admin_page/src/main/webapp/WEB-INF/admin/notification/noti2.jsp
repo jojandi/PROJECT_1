@@ -67,7 +67,7 @@ button {
                 <tr>
                     <td>${notice.ann_seq}</td>
                     <td>${notice.class_id}</td>
-                    <td><a href="http://localhost:8080/admin/notice3?ann_seq=${notice.ann_seq}">${notice.ann_title}</a></td>
+                    <td><a href="http://localhost:8080/admin_page/admin/notice3?ann_seq=${notice.ann_seq}">${notice.ann_title}</a></td>
                     <td>${notice.ann_regi}</td>
                     <td>${notice.ann_check}</td>
 <%--                     <td>${notice.ann_detail}</td> --%>

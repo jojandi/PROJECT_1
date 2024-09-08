@@ -36,7 +36,8 @@ public class NotiController3 extends HttpServlet {
 		System.out.println("asdf : " + dto);
 		
 		request.setAttribute("notice", dto);
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti3.jsp").forward(request, response);
+        
+		request.getRequestDispatcher("/WEB-INF/admin/notification/noti3.jsp").forward(request, response);
     }
 
 		
