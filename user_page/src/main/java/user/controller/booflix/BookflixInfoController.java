@@ -7,8 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/user/bookflix")
-public class BookflixController extends HttpServlet {
+@WebServlet("/user/bookflix_info")
+public class BookflixInfoController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,7 +16,7 @@ public class BookflixController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
 		
-		request.getRequestDispatcher("/WEB-INF/user/bookflix/user_bookflix.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/user/bookflix/bookflix_info.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -40,13 +40,7 @@ public class JoinDAO {
 	            ps.setString(8, dto.getUser_email());
 	            ps.setInt(9, dto.getLike_id());
 	            
-	            String sub = null;
-	            if(dto.isUser_sub()) {
-	            	sub = "Y";
-	            } else {
-	            	sub="N";
-	            }
-	            ps.setString(9, sub);
+
 				
 				System.out.println(((LoggableStatement)ps).getQueryString()); // 실행문 출력
 				
