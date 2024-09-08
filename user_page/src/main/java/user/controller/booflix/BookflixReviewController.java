@@ -41,7 +41,7 @@ public class BookflixReviewController extends HttpServlet {
 	    int result = service.review(user, buser, star, text);
 	    System.out.println("리뷰 작성 완료 : " + result);
 		
-		request.getRequestDispatcher("/WEB-INF/user/bookflix/user_bookflix.jsp").forward(request, response);
+	    response.sendRedirect(request.getContextPath() + "/user/bookflix_use?seq=" + user);
 	}
 
 }

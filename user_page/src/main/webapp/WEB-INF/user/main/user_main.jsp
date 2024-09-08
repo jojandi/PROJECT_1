@@ -93,8 +93,18 @@
                     </div>
                     <div>
                         <div class="page" id="p3">
-                            <span class="material-symbols-outlined">sync_saved_locally</span>
-                            <a href="bookflix"></a>
+							<c:if test="${ login.user_sub == true }">
+	                            <span class="material-symbols-outlined">sync_saved_locally</span>
+								<a href="bookflix_use?seq=${login.user_seq}"></a>
+							</c:if>
+							<c:if test="${ login.user_sub == false }">
+	                            <span class="material-symbols-outlined">sync_saved_locally</span>
+								<a href="bookflix_info"></a>
+							</c:if>
+							<c:if test="${ empty login }">
+	                            <span class="material-symbols-outlined">sync_saved_locally</span>
+                            	<a href="bookflix_info"></a>
+                            </c:if>
                         </div>
                         <div class="pname">북플릭스</div>
                     </div>
@@ -163,7 +173,7 @@
 	                        <li class="notice" id="n1">
 	                            <div class="nbox joong">${noti.class_name}</div>
 	                            <div class="noticeTD">
-	                                <a class="title">${noti.ann_Title}</a>
+	                                <a class="title" href="notice3?ann_seq=${noti.ann_Seq}">${noti.ann_Title}</a>
 	                                <div class="update">${noti.ann_Regi}</div>
 	                            </div>
 	                        </li>
@@ -184,7 +194,7 @@
                 <div id="booksubInfo">
                     매달 2권씩 당신의 취향에 맞는 책을 <br>추천해드립니다.
                 </div>
-                <a href="bookflix">
+                <a href="bookflix_info">
                     <input type="button" id="booksubBnt" value="더 알아보기">
                 </a>
             </div>
