@@ -20,7 +20,7 @@
 	
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <div id="wrap">
+    <div id="wrap"> 
         <div id="parent">
             <div id="top_logo">
                 <img id="top_logo_img"
@@ -126,7 +126,7 @@
     </div>
     
      <!-- footer -->
-    <%@ include file="/WEB-INF/user/base/footer.jsp" %>
+    <%@ include file="/WEB-INF/user/base/footer.jsp" %> 
 
 </body>
 </html>

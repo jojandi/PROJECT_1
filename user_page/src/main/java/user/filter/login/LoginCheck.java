@@ -74,13 +74,15 @@ public class LoginCheck implements Filter {
 		// 로그인 없어도 되는 페이지
 		if("/user/main".equals(servletPath) 
 			|| "/user/best".equals(servletPath) 
-			|| "/user/bookflix".equals(servletPath)
 			|| "/user/notice".equals(servletPath)
 			|| "/user/notice3".equals(servletPath)
 			|| "/user/login".equals(servletPath)
 			|| "/user/join".equals(servletPath)
 			|| "/user/search".equals(servletPath)
-			|| "/user/library".equals(servletPath)) {
+			|| "/user/library".equals(servletPath)
+			|| "/user/notice2".equals(servletPath)
+			|| "/user/bookflix_info".equals(servletPath)
+			|| "/user/join_insert".equals(servletPath)) {
 			return true;
 		} else { // 로그인 있어야하는 페이지
 			return false;

@@ -39,27 +39,36 @@
 			<div class="main_page" id="main_page_1">
 				<h3>BOM 상세정보</h3>
 				<div>
-					<form>
 						<div class="page_2">
-							<form id="postForm" method="post" action="stockUpdate">
-								<input type="hidden" name="order_id" value="${dto.bom_code }">
+							<form id="postForm" method="post" action="bom_read">
+								<input type="hidden" name="bom_code" value="${dto.bom_code }">
 								<h1>제품코드 : ${dto.bom_code }</h1>
-								<br> <input type="hidden" name="order_date"
+								<br> <input type="hidden" name="bom_name"
 									value="${dto.bom_name }">
 								<h2>제품이름 : ${dto.bom_name }</h2>
-								<input type="hidden" name="mes_book_code1"
-									value="${dto.mes_book_code1 }">
-								<h2>부품코드1 : ${dto.mes_book_code1 }</h2>
-								<input type="hidden" name="mes_book_code2"
-									value="${dto.mes_book_code2 }">
-								<h2>부품코드2 : ${dto.mes_book_code2 }</h2>
-								<input type="hidden" name="mes_book_code3"
-									value="${dto.mes_book_code3 }">
-								<h2>부품코드3 : ${dto.mes_book_code3 }</h2>
+								
+								<span>부품코드1 : ${dto.mes_book_code1 }</span>
+								<select name="mes_book_code1">
+                              	<c:forEach var="code" items="${mes_book_code}">
+                                 <option value="${code }">${code }</option>
+                              	</c:forEach>
+                        		</select><br>	
+								<span>부품코드2 : ${dto.mes_book_code2 }</span>
+								<select name="mes_book_code2">
+                              	<c:forEach var="code" items="${mes_book_code}">
+                                 <option value="${code }">${code }</option>
+                              	</c:forEach>
+                        		</select><br>	
+								<span>부품코드3 : ${dto.mes_book_code3 }</span>
+								<select name="mes_book_code3">
+                              	<c:forEach var="code" items="${mes_book_code}">
+                                 <option value="${code }">${code }</option>
+                              	</c:forEach>
+                        		</select><br>	
 								<br> <input type="submit" value="등록">
+							
 							</form>
 						</div>
-					</form>
 					<form method="post" action="delete">
 
 						<input type="hidden" name="bom_code" value="${param.bom_code }">
@@ -68,41 +77,9 @@
 				</div>
 			</div>
 		</section>
+		
 	</div>
 
-	<!-- //////////////////////////// 세번째 모달 ////////////////////////////////////// -->
-	<div id="modal_6" class="modal_6">
-		<div class="close_6">
-			<span class="material-symbols-outlined"> close </span>
-		</div>
-		<div class="modal-content_6">
-			<div id="daylist_6"></div>
-			<div id="modal-content-divs_6">
-				<h2>&lt;BOM 등록&gt;</h2>
-				<div class="modal-div_"></div>
-				<div id="table">
-					<form>
-						<table>
-							<tr class="modal-div_6">
-								<td><span class="modal-item">제품코드</span></td>
-								<td><input type="text" name="bom_code"></td>
-							</tr>
-							<tr class="modal-div_6">
-								<td><span class="modal-item">제품명</span></td>
-								<td><input type="text" name="bom_name"></td>
-							</tr>
-
-						</table>
-					</form>
-
-				</div>
-				<div class="modal-div_7" style="text-align: right;">
-					<input class="inpa" type="submit" value="생성">
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //////////////////////////// 세번째 모달 ////////////////////////////////////// -->
 
 
 

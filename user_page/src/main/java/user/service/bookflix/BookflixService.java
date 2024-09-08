@@ -13,4 +13,20 @@ public class BookflixService {
 	public int review (int user, int buser, int star, String text) {
 		return new BookflixDAO().bookflixReview(user, buser, star, text);
 	}
+	
+	public int sub(int user) {
+		return new BookflixDAO().bookflixSub(user);
+	}
+	
+	public int subInsert(int user) {
+		return new BookflixDAO().bookflixSubInsert(user);
+	}
+	
+	public int bookflixDel(int buser) {
+		return new BookflixDAO().bookflixDel(buser);
+	}
+	
+	public int out(int user) {
+		return new BookflixDAO().bookflixOut(user);
+	}
 }
