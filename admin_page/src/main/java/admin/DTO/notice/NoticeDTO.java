@@ -3,7 +3,16 @@ package admin.DTO.notice;
 public class NoticeDTO {
     private int ann_seq;      // 공지사항 번호
     private String class_id;  // 분류 ID
-    private String ann_title; // 제목
+    private String class_name;  // 분류 ID
+    public String getClass_name() {
+		return class_name;
+	}
+
+	public void setClass_name(String class_name) {
+		this.class_name = class_name;
+	}
+
+	private String ann_title; // 제목
     private String ann_regi;  // 등록일
     private int ann_check;    // 조회수
     private String ann_detail;// 내용

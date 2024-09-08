@@ -40,10 +40,6 @@ th, td {
 button {
 	width : 50px;
 }
-
-    
-    
-
     </style>
 </head>
 <body>
@@ -61,7 +57,6 @@ button {
                 <th>제목</th>
                 <th>등록일</th>
                 <th>조회수</th>
-                <th>내용</th>
                 <th>첨부파일</th>
                 <th>삭제</th>
             </tr>
@@ -72,10 +67,10 @@ button {
                 <tr>
                     <td>${notice.ann_seq}</td>
                     <td>${notice.class_id}</td>
-                    <td><a href="/admin_page/admin/notice3?ann_seq=${notice.ann_seq}">${notice.ann_title}</a></td>
+                    <td><a href="http://localhost:8080/admin/notice3?ann_seq=${notice.ann_seq}">${notice.ann_title}</a></td>
                     <td>${notice.ann_regi}</td>
                     <td>${notice.ann_check}</td>
-                    <td>${notice.ann_detail}</td>
+<%--                     <td>${notice.ann_detail}</td> --%>
                     <td>${notice.ann_attach}</td>
                     <td>
                         <form action="${pageContext.request.contextPath}/notice/delete" method="post" onsubmit="return confirm('정말로 삭제하시겠습니까?');">

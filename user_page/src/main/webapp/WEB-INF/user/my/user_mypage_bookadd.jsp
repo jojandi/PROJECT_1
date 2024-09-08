@@ -35,23 +35,19 @@
                             <td>신청현황</td>
                         </tr>
                     </thead>
-
                     <tbody>
+                    <c:forEach var="add" items="${add}">
                         <tr class="parent">
-                            <td class="bname">마녀와의 7일</td>
-                            <td>24.07.01</td>
-                            <td>구비완료</td>
+                            <td class="bname">${add.app_book }</td>
+                            <td>${add.app_date }</td>
+                            <c:if test="${ add.purchased eq null }">
+                          		<td>신청완료</td>
+                            </c:if>
+                            <c:if test="${ add.purchased != null }">
+                            	<td>${add.purchased }</td>
+                            </c:if>
                         </tr>
-                        <tr class="parent">
-                            <td class="bname">파도의 아이들</td>
-                            <td>24.07.15</td>
-                            <td>신청완료</td>
-                        </tr>
-                        <tr class="parent">
-                            <td class="bname">사랑받는 이기주의자</td>
-                            <td>24.07.19</td>
-                            <td>진행 중</td>
-                        </tr>
+                    </c:forEach>
                     </tbody>
                 </table>
             </div>

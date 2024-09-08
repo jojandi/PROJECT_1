@@ -19,5 +19,12 @@ public class LoginService {
 		System.out.println("joindto : " + joindto);
 		return new LoginDAO().loginAdmin(dto);
 	}
+	// mes 로그인
+	public JoinDTO loginMes(JoinDTO dto) {
+		LoginDAO dao = new LoginDAO();
+		JoinDTO joindto = dao.login(dto);
+		System.out.println("joindto : " + joindto);
+		return new LoginDAO().loginMes(dto);
+	}
 	
 }
