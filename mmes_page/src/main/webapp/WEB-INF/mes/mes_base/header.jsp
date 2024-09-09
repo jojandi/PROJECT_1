@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,14 +29,12 @@
                 <div class="item" id="i5"><a href="buser">북플릭스 관리</a></div>
                 <div class="item" id="i6"><a href="notice">게시판</a></div>
             </div>
-            <div class="right" id="userall">
-                <div>OOO관리자</div>
-                <div><a href="../사용자용 페이지/01.main_user.html">로그아웃</a></div>
-                <!-- <div class="inb" id="login">로그인</div>
-                <div class="inb">|</div>
-                <div class="inb" id="userin">회원가입</div>
-                <div class="inb" id="menus"></div> -->
-            </div>
+            <c:if test="${ not empty login }">
+				<div class="right" id="userall">
+					<span class="inb" id="user">${ login.user_name }님</span>
+	                <span class="material-symbols-outlined">person</span>
+				</div>
+			</c:if>
         </div>
     </header>
 </body>

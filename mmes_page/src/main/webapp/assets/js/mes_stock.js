@@ -1,22 +1,18 @@
 window.onload = function () {
 
+    // 모달1 관련 로직
     const modal1 = document.getElementById('formModal1');
-    const modal2 = document.getElementById('formModal2');
     const openFormButton1 = document.getElementById('openForm1');
-    const openFormButton2 = document.querySelectorAll('#main_page_3 tbody tr');
     const closeButton1 = document.querySelector('.close1');
-    const closeButton2 = document.querySelector('.close2');
-    const form = document.getElementById('workForm');
-	// 모달1---------------------------------------------------
-	
+
     // 버튼 클릭 시 모달 열기
-    openFormButton1.addEventListener('click', function () {
+    openFormButton1?.addEventListener('click', function () {
         modal1.style.display = 'block';
-        console.log("클릭");
+        console.log("모달1 열림");
     });
 
     // 모달 닫기
-    closeButton1.addEventListener('click', function () {
+    closeButton1?.addEventListener('click', function () {
         modal1.style.display = 'none';
     });
 
@@ -26,17 +22,13 @@ window.onload = function () {
             modal1.style.display = 'none';
         }
     });
-	//---------------------------------------------------------
-	
 
-
-    // 페이지 이동
+    // 페이지 이동 로직
     const items = document.querySelectorAll('.item');
     
     items.forEach(item => {
         item.addEventListener('click', function() {
-            console.log('클릭');
-            // 모든 항목의 색상 초기화
+            console.log('페이지 이동 클릭');
             items.forEach(i => {
                 const icon = i.querySelector('.material-symbols-outlined');
                 if (icon) {
@@ -44,38 +36,110 @@ window.onload = function () {
                 }
             });
 
-            // 클릭된 항목에 색상 적용
             const clickedIcon = this.querySelector('.material-symbols-outlined');
             if (clickedIcon) {
                 clickedIcon.classList.add('active');
             }
 
-            // 페이지 전환 로직 추가
             const itemId = this.id;
             if (itemId === 'i1') {
                 document.querySelector('#main_page_1').style.display = 'inline-block';
                 document.querySelector('#main_page_2').style.display = 'none';
                 document.querySelector('#main_page_3').style.display = 'none';
-                // document.querySelector('#main_page_4').style.display = 'none';
             } else if (itemId === 'i2') {
                 document.querySelector('#main_page_2').style.display = 'inline-block';
                 document.querySelector('#main_page_1').style.display = 'none';
                 document.querySelector('#main_page_3').style.display = 'none';
-                // document.querySelector('#main_page_4').style.display = 'none';
             } else if (itemId === 'i3') {
                 document.querySelector('#main_page_3').style.display = 'inline-block';
                 document.querySelector('#main_page_1').style.display = 'none';
                 document.querySelector('#main_page_2').style.display = 'none';
-                // document.querySelector('#main_page_4').style.display = 'none';
-            } 
-            // else if (itemId === 'i4'){
-            //     document.querySelector('#main_page_4').style.display = 'inline-block';
-            //     document.querySelector('#main_page_1').style.display = 'none';
-            //     document.querySelector('#main_page_2').style.display = 'none';
-            //     document.querySelector('#main_page_3').style.display = 'none';
-            // }
+            }
         });
     });
 
+    // 도서 정렬 로직
+    const bookTable = document.getElementById('main_library2');
+    if (bookTable) {
+        const bookHeaders = bookTable.getElementsByTagName('th');
+        const bookTbody = bookTable.getElementsByTagName('tbody')[0];
 
-}
+        // 도서명 헤더를 클릭했을 때 정렬
+        bookHeaders[1].addEventListener('click', function() {
+            let rows = Array.from(bookTbody.getElementsByTagName('tr'));
+            let ascending = this.getAttribute('data-asc') === 'true';
+
+            rows.sort(function(rowA, rowB) {
+                let cellA = rowA.getElementsByTagName('td')[1].innerText.toUpperCase();
+                let cellB = rowB.getElementsByTagName('td')[1].innerText.toUpperCase();
+
+                if (cellA < cellB) {
+                    return ascending ? -1 : 1;
+                }
+                if (cellA > cellB) {
+                    return ascending ? 1 : -1;
+                }
+                return 0;
+            });
+
+            rows.forEach(row => bookTbody.appendChild(row));
+            this.setAttribute('data-asc', !ascending);
+        });
+    }
+
+    // 세트도서 정렬 로직
+    const productTable = document.getElementById('main_library');
+    if (productTable) {
+        const productHeaders = productTable.getElementsByTagName('th');
+        const productTbody = productTable.getElementsByTagName('tbody')[0];
+
+        // 제품명 헤더를 클릭했을 때 정렬
+        productHeaders[1].addEventListener('click', function() {
+            let rows = Array.from(productTbody.getElementsByTagName('tr'));
+            let ascending = this.getAttribute('data-asc') === 'true';
+
+            rows.sort(function(rowA, rowB) {
+                let cellA = rowA.getElementsByTagName('td')[1].innerText.toUpperCase();
+                let cellB = rowB.getElementsByTagName('td')[1].innerText.toUpperCase();
+
+                if (cellA < cellB) {
+                    return ascending ? -1 : 1;
+                }
+                if (cellA > cellB) {
+                    return ascending ? 1 : -1;
+                }
+                return 0;
+            });
+
+            rows.forEach(row => productTbody.appendChild(row));
+            this.setAttribute('data-asc', !ascending);
+        });
+    }
+    const orderTable = document.getElementById('main_library_1');
+	if (orderTable) {
+	    const orderHeaders = orderTable.getElementsByTagName('th');
+	    const orderTbody = orderTable.getElementsByTagName('tbody')[0];
+	
+	    // 부품코드 헤더를 클릭했을 때 정렬
+	    orderHeaders[0].addEventListener('click', function() {
+	        let rows = Array.from(orderTbody.getElementsByTagName('tr'));
+	        let ascending = this.getAttribute('data-asc') === 'true';
+	
+	        rows.sort(function(rowA, rowB) {
+	            let cellA = rowA.getElementsByTagName('td')[0].innerText.toUpperCase();
+	            let cellB = rowB.getElementsByTagName('td')[0].innerText.toUpperCase();
+	
+	            if (cellA < cellB) {
+	                return ascending ? -1 : 1;
+	            }
+	            if (cellA > cellB) {
+	                return ascending ? 1 : -1;
+	            }
+	            return 0;
+	        });
+	
+	        rows.forEach(row => orderTbody.appendChild(row));
+	        this.setAttribute('data-asc', !ascending);
+	    });
+	}
+};
