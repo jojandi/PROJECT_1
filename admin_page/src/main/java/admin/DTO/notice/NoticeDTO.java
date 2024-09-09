@@ -10,9 +10,6 @@ public class NoticeDTO {
 	private String ann_detail;// 내용
 	private String ann_attach;// 첨부파일
 
-	public NoticeDTO() {
-	}
-
 	public int getAnn_seq() {
 		return ann_seq;
 	}

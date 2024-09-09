@@ -17,6 +17,7 @@
 	<div id="wrap">
 
         <div id="search">
+        	<div id="searchResult"><span>검색 결과</span></div>
            	<form action="search" method="get">
                 <input type="text" id="searchIn" name="book" value="${param.book}" placeholder=" 검색어를 입력해주세요. ">
                 <input type="submit" id="searchBnt" value="⌕">
