@@ -7,6 +7,22 @@
 <meta charset="UTF-8">
 <link href="../assets/css/info/user_notice3.css" rel="stylesheet">
 <title>Notice Page</title>
+
+<style>
+.bookTitle.book {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+  white-space: pre-wrap; /* 공백과 줄바꿈 유지 */
+}
+
+
+
+</style>
+</style>
 </head>
 <body>
 	<jsp:include page="/WEB-INF/user/base/header.jsp" />
