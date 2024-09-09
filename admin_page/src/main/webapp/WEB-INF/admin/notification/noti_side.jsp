@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+
+header #menu #items #i2 {
+    font-weight: 900;
+    text-decoration: underline;
+
+</style>
 </head>
 <body>
 	<aside class="clearfix" id="side">
