@@ -117,9 +117,7 @@
 		                <button type="submit">등록</button>
             		</form>
                 </div>
-                <div class="modal-div_7" style="text-align: right;">
-                    <input class="inpa" type="submit" value="생성"> 
-                </div>
+               
             </div>
         </div>
     </div>
