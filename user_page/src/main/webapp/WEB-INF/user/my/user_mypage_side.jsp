@@ -36,7 +36,7 @@
 	                    	</a>
                     </div>
                     <div class="item" id="i3">
-	                    <a href="mypage_bookadd">
+	                    <a href="bookadd?user_seq=${login.user_seq}">
 	                        <span>도서 신청 내역</span>
 	                        <span class="material-symbols-outlined">arrow_forward_ios</span>
 	                    </a>

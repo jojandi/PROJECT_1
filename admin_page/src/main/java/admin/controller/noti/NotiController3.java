@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import admin.DAO.noti.NoticeDAO3;
+import admin.DTO.notice.NoticeDTO;
 import admin.service.notice.NoticeService;
 
 
@@ -23,8 +25,19 @@ public class NotiController3 extends HttpServlet {
     	System.out.println("공지사항3 doGet 실행!");
 		request.setCharacterEncoding("utf-8");
 	    response.setContentType("text/html; charset=utf-8;");
+	    int ann_seq = Integer.parseInt( request.getParameter("ann_seq") );
+		System.out.println(ann_seq);
 		
-        request.getRequestDispatcher("/WEB-INF/admin/notification/noti3.jsp").forward(request, response);
+		NoticeDTO dto  = new NoticeDTO();
+		NoticeDAO3 dto3  = new NoticeDAO3();
+		
+		dto = dto3.getNotiByPage(ann_seq);
+		
+		System.out.println("asdf : " + dto);
+		
+		request.setAttribute("notice", dto);
+        
+		request.getRequestDispatcher("/WEB-INF/admin/notification/noti3.jsp").forward(request, response);
     }
 
 		

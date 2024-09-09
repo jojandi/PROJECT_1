@@ -20,6 +20,7 @@
     
             <form method="post" action="<%=request.getContextPath()%>/user/request">
                 <div class="app">
+                	<input type="hidden" name="user_seq" value="${login.user_seq }">
                     <div>
                         <input type="text" name="app_book" placeholder="책이름을 입력해주세요"> 
                         <input type="submit" value="책이름">
@@ -34,7 +35,6 @@
                         <input type="text" name="app_pub" placeholder="출판사를 입력해주세요"> 
                         <input type="submit" value="출판사"><br>
                     </div>
-
                     <div>
                         <input type="submit" value="도서신청하기">
                     </div>
