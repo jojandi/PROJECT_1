@@ -37,6 +37,9 @@
 	text-align: center;
 	margin: auto;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -126,6 +129,7 @@
 				</select>
 
 				<!-- 그래프를 표시할 캔버스 -->
+				 <button class="open-modal" data-modal="bookStatisticsModal">도서 출고 통계 테이블 보기</button>
 				<canvas id="bookStatisticsChart" width="400" height="200"></canvas>
 
 
@@ -163,7 +167,7 @@
 						<option value="12">12월</option>
 						<!-- 다른 월 선택 가능 -->
 					</select>
-
+					
 					<canvas id="demandStatisticsChart" width="400" height="200"></canvas>
 
 				
@@ -195,21 +199,23 @@
 		            <option value="11">11월</option>
 		            <option value="12">12월</option>
 		        </select>
-
+		
         <canvas id="forecastStatisticsChart" width="400" height="200"></canvas>
-			</div>
+         </div>
+       
+			
 		</section>
 
 		<!-- wrap -->
 	</div>
 
-	<script>
+	<!--<script>
 		// 페이지 로드 시 그래프 초기화
 		window.onload = function() {
 			console.log('Page loaded'); // 로드 확인
 			loadBookStatistics(); // 첫 번째 로드 시 기본 값을 로드
 		};
-	</script>
+	</script>-->
 
 
 
@@ -217,6 +223,7 @@
 	<!-- 가장 아래 고정 -->
 
 	<!-- 모달 -->
+	<!-- 
 	<div id="taskModal" class="modal">
 		<div class="modal-content">
 			<span class="close">&times;</span>
@@ -243,6 +250,63 @@
 				<textarea id="taskDetails" rows="4" cols="50" readonly></textarea>
 			</div>
 		</div>
-	</div>
+	</div> -->
+	<!-- 모달 창 -->
+	 <div id="bookStatisticsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>도서 출고 통계 테이블</h2>
+            <table id="bookStatisticsTable">
+                <thead>
+                    <tr>
+                        <th>장르</th>
+                        <th>출고량</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 데이터가 여기 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 수요 통계 모달 -->
+    <div id="demandStatisticsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>수요 통계 테이블</h2>
+            <table id="demandStatisticsTable">
+                <thead>
+                    <tr>
+                        <th>장르</th>
+                        <th>수요량</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 데이터가 여기 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 수요 예측 통계 모달 -->
+    <div id="forecastStatisticsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>수요 예측 통계 테이블</h2>
+            <table id="forecastStatisticsTable">
+                <thead>
+                    <tr>
+                        <th>장르</th>
+                        <th>예측 수요량</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 데이터가 여기 추가됩니다 -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 </body>
 </html>
