@@ -141,7 +141,7 @@
                   <h3>BOM</h3>
                      <div>
                         <div id="bomsh">
-                            <input type="text" placeholder="통합검색">
+                            <input type="text" id="searchAll" placeholder="통합검색">
                         </div>
                         <div class="page_2">
                            <table id="main_library">

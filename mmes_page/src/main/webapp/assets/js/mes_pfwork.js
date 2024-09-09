@@ -3,58 +3,28 @@ window.onload = function () {
     const table = document.querySelector('#main_page_1 #main_library tbody');
 
     // 검색 기능
-    searchInput.addEventListener('input', function () {
-        const query = searchInput.value.toLowerCase();
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+    let filter = this.value.toUpperCase();
+    let table = document.getElementById('main_library');
+    let tr = table.getElementsByTagName('tr');
 
-        rows.forEach(row => {
-            const bookTitle = row.querySelector('td').textContent.toLowerCase();
-            if (bookTitle.includes(query)) {
-                row.style.display = '';
+    for (let i = 1; i < tr.length; i++) { // 첫 번째 행(헤더)은 건너뜀
+        let td = tr[i].getElementsByTagName('td')[0]; // 첫 번째 열(주문번호)에서 검색
+        
+        if (td) {
+            let txtValue = td.textContent || td.innerText;
+            
+            // 검색어와 일치하면 해당 행을 표시, 그렇지 않으면 숨김
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
             } else {
-                row.style.display = 'none';
-            }
-        });
-    });
-
-    
-    // 전체선택
-    //document.querySelector('#main_page_1 #p1_checkAll').addEventListener('click', function () {
-       // const isChecked = document.querySelector('#main_page_1 #p1_checkAll').checked;
-        //if (isChecked) {
-         //   const checkboxes = document.querySelectorAll('#main_page_1 .p1_main_chack');
-
-         //   for (const checkbox of checkboxes) {
-         //       checkbox.checked = true;
-        //    }
-       // }
-
-        //else {
-       //     const checkboxes = document.querySelectorAll('.p1_main_chack');
-        //    for (const checkbox of checkboxes) {
-         //       checkbox.checked = false;
-         //   }
-        //}
-   // })
-    // page2
-    
-    // 전체선택
-    document.querySelector('#main_page_2 #p1_checkAll').addEventListener('click', function () {
-        const isChecked = document.querySelector('#main_page_2 #p1_checkAll').checked;
-        if (isChecked) {
-            const checkboxes = document.querySelectorAll('#main_page_2 .p1_main_chack');
-
-            for (const checkbox of checkboxes) {
-                checkbox.checked = true;
+                tr[i].style.display = "none";
             }
         }
+    }
+});
 
-        else {
-            const checkboxes = document.querySelectorAll('#main_page_2 .p1_main_chack');
-            for (const checkbox of checkboxes) {
-                checkbox.checked = false;
-            }
-        }
-    })
+    
     
     
     document.querySelector('.sortable').addEventListener('click', function () {
