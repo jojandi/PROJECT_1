@@ -84,7 +84,7 @@
         </section>
     </div>
 
-
+<script src="./assets/js/mes_notice.js"></script>
 </body>
 
 </html>

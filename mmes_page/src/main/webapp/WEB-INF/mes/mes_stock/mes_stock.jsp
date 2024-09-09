@@ -21,7 +21,7 @@
 <link href="./assets/css/click.css" rel="stylesheet">
 <link href="./assets/css/mes_stock.css" rel="stylesheet">
 
-<script src="./assets/js/admin_stock.js"></script>
+<!-- <script src="./assets/js/admin_stock.js"></script> -->
 <script src="./assets/js/mes_stock_search.js"></script>
 </head>
 
@@ -42,7 +42,7 @@
 				<div>
 					<div class="bot_btn">
 						<div class="search-container">
-							<input type="text" id="searchInput" placeholder="도서명 검색...">
+							<input type="text" id="searchBom" placeholder="제품명 검색...">
 						</div>
 					</div>
 					<div class="page_2">
@@ -56,8 +56,8 @@
 							</colgroup>
 							<thead>
 								<tr>
-									<th class="sortable">제품 코드</th>
-									<th>제품명</th>
+									<th>제품 코드</th>
+									<th class="sortable">제품명</th>
 									<th>재고 수량</th>
 									<th>보관 위치</th>
 									<th>비고</th>
@@ -66,8 +66,8 @@
 							<tbody>
 								<c:forEach var="productList" items="${productList}">
 									<tr>
-										<td class="sortable">${productList.bom_code }</td>
-										<td>${productList.bom_name }</td>
+										<td>${productList.bom_code }</td>
+										<td class="sortable">${productList.bom_name }</td>
 										<td>${productList.pd_count }</td>
 										<td>${productList.wh_name }</td>
 										<td>${productList.pd_note }
@@ -87,7 +87,6 @@
 						<div class="search-container">
 							<input type="text" id="searchInput" placeholder="도서명 검색...">
 						</div>
-						<input type="button" value="Excel 파일화">
 					</div>
 					<div class="page_2">
 						<table id="main_library2">
@@ -234,9 +233,6 @@
                             </table>
 
                         </div> -->
-						<div class="bot_btn">
-							<input type="button" value="Excel 파일화">
-						</div>
 					</div>
 
 				</div>
