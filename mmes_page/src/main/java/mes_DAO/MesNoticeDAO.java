@@ -121,6 +121,7 @@ public class MesNoticeDAO {
 				NoticeDTO.setNotice_contents( rs.getString("notice_contents") );
 				
 			}
+			System.out.println(NoticeDTO);
 
 		} catch (Exception e) {
 			e.printStackTrace();
