@@ -16,13 +16,13 @@
     <!-- google fonts 가져오기 -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-    <div id="wrap">
+     <div id="wrap">
 
         <section class="section1">
 
             <div id="hukwan">
             
-                <div id="librarys">
+            	<div id="librarys">
                     
                     <div class="library" id="joong">일반<br>열람실</div>
                     <div class="library" id="ssang">디자인<br>열람실</div>
@@ -37,7 +37,7 @@
                             <!-- YYYY년 M월 -->
                         </h2>
                     </div>
-
+					
                     <div id="days">
                         <div>일</div>
                         <div>월</div>
@@ -77,7 +77,7 @@
                     <div>
                         <div class="page" id="p1">
                             <span class="material-symbols-outlined">home</span>
-                            <a href="libraryja"></a>
+                            <a href="library"></a>
                         </div>
                         <div class="pname">도서관소개</div>
                     </div>
@@ -90,8 +90,18 @@
                     </div>
                     <div>
                         <div class="page" id="p3">
-                            <span class="material-symbols-outlined">sync_saved_locally</span>
-                            <a href="bookflix"></a>
+							<c:if test="${ login.user_sub == true }">
+	                            <span class="material-symbols-outlined">sync_saved_locally</span>
+								<a href="bookflix_use?seq=${login.user_seq}"></a>
+							</c:if>
+							<c:if test="${ login.user_sub == false }">
+	                            <span class="material-symbols-outlined">sync_saved_locally</span>
+								<a href="bookflix_info"></a>
+							</c:if>
+							<c:if test="${ empty login }">
+	                            <span class="material-symbols-outlined">sync_saved_locally</span>
+                            	<a href="bookflix_info"></a>
+                            </c:if>
                         </div>
                         <div class="pname">북플릭스</div>
                     </div>
@@ -131,7 +141,7 @@
                     <div>
                         <div class="page" id="p8">
                             <span class="material-symbols-outlined">lightbulb</span>
-                            <a href="notice"></a>
+                            <a href="notice2"></a>
                         </div>
                         <div class="pname">이용안내</div>
                     </div>
@@ -156,30 +166,15 @@
                 <div id="notices">
 
                     <ul>
-                        <li class="notice" id="n1">
-                            <div class="nbox joong">중앙</div>
-                            <div class="noticeTD">
-                                <a class="title">중앙도서관 재개관 안내</a>
-                                <div class="update">2024-07-24</div>
-                            </div>
-                        </li>
-
-                        <li class="notice" id="n2">
-                            <div class="nbox joong">중앙</div>
-                            <div class="noticeTD">
-                                <a class="title">중앙도서관 열람실 공사 안내 ( 07/23 ~ 08/03 )</a>
-                                <div class="update">2024-06-23</div>
-                            </div>
-                        </li>
-
-                        <li class="notice" id="n3">
-                            <div class="nbox all">공통</div>
-                            <div class="noticeTD">
-                                <a class="title">2024 전국 청소년 영어 스피치 콘테스트 안내</a>
-                                <div class="update">2024-06-22</div>
-                            </div>
-                        </li>
-
+	                    <c:forEach var="noti" items="${noti}">
+	                        <li class="notice" id="n1">
+	                            <div class="nbox joong">${noti.class_name}</div>
+	                            <div class="noticeTD">
+	                                <a class="title" href="notice3?ann_seq=${noti.ann_seq}">${noti.ann_title}</a>
+	                                <div class="update">${noti.ann_regi}</div>
+	                            </div>
+	                        </li>
+	                    </c:forEach>
                     </ul>
 
                 </div>
@@ -196,7 +191,7 @@
                 <div id="booksubInfo">
                     매달 2권씩 당신의 취향에 맞는 책을 <br>추천해드립니다.
                 </div>
-                <a href="bookflix">
+                <a href="bookflix_info">
                     <input type="button" id="booksubBnt" value="더 알아보기">
                 </a>
             </div>
