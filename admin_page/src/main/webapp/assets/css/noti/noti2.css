@@ -35,11 +35,10 @@ section h1 {
 
 
 table {
-    width: calc(100% - 80px); 
-    border-collapse: collapse;
+	border-collapse: collapse;
+	text-align: center;
+    margin : 0 auto;
     margin-bottom: 20px;
-    margin-left: 40px;  
-    margin-right: 40px; 
 }
 
 th, td {

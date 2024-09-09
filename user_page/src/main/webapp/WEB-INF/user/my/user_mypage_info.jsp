@@ -34,11 +34,7 @@
                     <div id="email">${ login.user_email }</div>
                     <div id="num">회원번호 : ${ login.user_seq }</div>
                     <div id="out">
-                    	<form method="post" action="user_del">
-		                    <a href="logout" id="logout">로그아웃</a>
-		                    <input type="hidden" name="code" value="${login.user_seq}">
-                    		<input type="submit" value="회원탈퇴" id="realout">
-                    	</form>
+		            <a href="logout" id="logout">로그아웃</a>
                     </div>
                 </div>
 
@@ -72,7 +68,7 @@
 	                           <form method="post" action="bookflix_use">
 				                    <input type="hidden" name="user" value="${login.user_seq}">
 				                    <input type="hidden" name="bseq" value="${list[0].buser_seq}">
-		                    		<input type="submit" value="탈퇴하기" id="realout">
+		                    		<input type="submit" value="구독 취소" id="realout">
 		                    	</form>
 	                       </div>
 	                   </div>
@@ -219,6 +215,10 @@
                         <div id=update>
 	                        <input type="submit" value="변경하기">
                         </div>
+                    </form>
+                    <form method="post" action="user_del">
+	                    <input type="hidden" name="code" value="${login.user_seq}">
+                   		<input type="submit" value="회원탈퇴" id="realout">
                     </form>
 
                     </div>
