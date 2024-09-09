@@ -74,6 +74,7 @@ public class LoginCheck implements Filter {
 		// 로그인 없어도 되는 페이지
 		if("/user/main".equals(servletPath) 
 			|| "/user/best".equals(servletPath) 
+			|| "/user/bookadd".equals(servletPath) 
 			|| "/user/notice".equals(servletPath)
 			|| "/user/notice3".equals(servletPath)
 			|| "/user/login".equals(servletPath)

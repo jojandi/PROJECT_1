@@ -69,9 +69,10 @@ section .table{
     /* border: 1px solid red; */
     box-sizing: border-box;
     width: 100%;
-    /* height: 550px; */
 }
 
+
+/* ------------------- 테이블 -------------------- */
 section table{
     table-layout:fixed;
     border-collapse: collapse;

@@ -31,27 +31,33 @@
             	List list = (List)request.getAttribute("list");
             	
             	BookflixDTO dto = (BookflixDTO)list.get(0);
-            	String date = dto.getBuser_date().toString();
+            	String start = dto.getBuser_date().toString();
             	String end = dto.getBuser_end().toString();
-            	System.out.println("date : " + date);
+            	String date = dto.getBuser_date().toString();
+            	System.out.println("start : " + start);
             	System.out.println("end : " + end);
             	
-            	String[] dates = date.split("-");
+            	String[] starts = start.split("-");
             	String[] ends = end.split("-");
-            	for(int i =0; i < dates.length; i++){
-	            	System.out.println("dates : " + dates[i]);
+            	String[] dates = date.split("-");
+            	for(int i =0; i < starts.length; i++){
+	            	System.out.println("start : " + starts[i]);
             	}
             	for(int i =0; i < ends.length; i++){
 	            	System.out.println("ends : " + ends[i]);
             	}
-            	String dateMMDD = dates[1] + "월 " + dates[2] + "일";
+            	for(int i =0; i < dates.length; i++){
+	            	System.out.println("dates : " + dates[i]);
+            	}
+            	String startMMDD = starts[1] + "월 " + starts[2] + "일";
             	String endMMDD = ends[1] + "월 " + ends[2] + "일";
+            	String dateMMDD = dates[0] + "년" + dates[1] + "월 " + dates[2] + "일";
             %>
 
             <div id="top_box">
                 <div>
-                    ${list[0].user_name}님은 ${list[0].buser_date} 부터 구독 하셨습니다. <br>
-                    구독 기간은 <%=dateMMDD %>부터 <%=endMMDD %> 입니다.
+                    ${list[0].user_name}님은 <%=dateMMDD %> 부터 구독 하셨습니다. <br>
+                    구독 기간은 <%=startMMDD %>부터 <%=endMMDD %> 입니다.
                 </div>
             </div>
 
