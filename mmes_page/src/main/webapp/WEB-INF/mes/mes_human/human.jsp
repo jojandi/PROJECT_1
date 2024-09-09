@@ -78,13 +78,12 @@
                 	<div class="bot_btn">
                         <div class="search-container">
                             <input type="text" id="searchInput" placeholder="사원 검색...">
-	                        <input type="button" value="Excel 파일화">
                         </div>
                     </div>
                     <div class="page_2">
                         <table id="main_library">
                             <colgroup>
-                                <col width="7%">
+                                <col width="8%">
                                 <col width="8%">
                      			<col width="11%">
 						        <col width="8%">

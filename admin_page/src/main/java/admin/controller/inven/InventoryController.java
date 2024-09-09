@@ -70,9 +70,9 @@ public class InventoryController extends HttpServlet {
 	    
 	    InvenService service = new InvenService();
 	    int book = service.insertBook(dto);
-	    int isbnAdd = service.insertisbn(dto);
+//	    int isbnAdd = service.insertisbn(dto);
 	    System.out.println("도서관 책 : " + book);
-	    System.out.println("책 : " + isbnAdd);
+//	    System.out.println("책 : " + isbnAdd);
 	    
 	    response.sendRedirect( request.getContextPath() + "/admin/inventory");
 	}
