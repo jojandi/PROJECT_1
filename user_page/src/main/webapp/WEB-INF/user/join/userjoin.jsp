@@ -166,6 +166,7 @@
 							<div id="seob">
 								<input type="text" id="username" name="username" placeholder="아이디">
 								<div class="red" id="username-message">아이디를 적어주세요</div>
+							<div>*아이디는 영문+숫자 포함 8자리이상 입력해주세요 </div>
 							</div>
 							<div class="gaip">
 								<input type="button" value="아이디 중복확인" id="check-username">
@@ -181,6 +182,7 @@
 					<tr>
 						<td class="label"><span>*</span> 비밀번호</td>
 						<td><input type="password" id="password" name="user_pw" placeholder="비밀번호">
+							<div> *비밀번호는 특수문자 포함 8~11자리까지 입력해주세요</div>
 							<div class="red" id="password-message">비밀번호를 적어주세요</div></td>
 					</tr>
 					<tr>

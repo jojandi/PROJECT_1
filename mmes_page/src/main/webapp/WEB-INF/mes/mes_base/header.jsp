@@ -16,7 +16,7 @@
     <header id="top" class="clearfix">
 
         <div id="logoall">
-            <div id="logo" class="left"><a href="main"><img class="logo_img" src="https://cdn.discordapp.com/attachments/1263360143756759099/1267275014273634415/KakaoTalk_20240729_090859720-removebg-preview_3.png?ex=66a83154&is=66a6dfd4&hm=4f6d706e06b34db529815a64763136b9f3f073d06fbc4513dd57c737077310f0&"></a></div>
+            <div id="logo" class="left"><a href="main"><img class="logo_img" src="./assets/img/mes_logo.png"></a></div>
             <!-- <div id="name" class="left">행복만땅 <br>도서관</div> -->
         </div>
 
@@ -29,12 +29,12 @@
                 <div class="item" id="i5"><a href="buser">북플릭스 관리</a></div>
                 <div class="item" id="i6"><a href="notice">게시판</a></div>
             </div>
-            <c:if test="${ not empty login }">
+<%--             <c:if test="${ not empty login }"> --%>
 				<div class="right" id="userall">
-					<span class="inb" id="user">${ login.user_name }님</span>
+					<span class="inb" id="user">김승환님</span>
 	                <span class="material-symbols-outlined">person</span>
 				</div>
-			</c:if>
+<%-- 			</c:if> --%>
         </div>
     </header>
 </body>
