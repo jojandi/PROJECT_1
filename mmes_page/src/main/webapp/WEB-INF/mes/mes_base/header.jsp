@@ -29,12 +29,12 @@
                 <div class="item" id="i5"><a href="buser">북플릭스 관리</a></div>
                 <div class="item" id="i6"><a href="notice">게시판</a></div>
             </div>
-            <c:if test="${ not empty login }">
+<%--             <c:if test="${ not empty login }"> --%>
 				<div class="right" id="userall">
-					<span class="inb" id="user">${ login.user_name }님</span>
+					<span class="inb" id="user">김승환님</span>
 	                <span class="material-symbols-outlined">person</span>
 				</div>
-			</c:if>
+<%-- 			</c:if> --%>
         </div>
     </header>
 </body>

@@ -50,9 +50,13 @@
 					${ read.notice_contents }
 				</div>
 				
-				<div style="border: 1px solid lightgray; whidth: 300px; height: 150px;">
-					<span>댓글창</span>
+				<div style="border: 1px solid lightgray; whidth: 300px;">
+					<span>김승환 : 넵!</span>
 				</div>
+				<br>
+				
+				<input type="button" value="댓글쓰기">
+				<br>
 				<br>
 				<a href="/mmes_page/notice_update?notice_id=${ read.notice_id }"><input type=button value="수정"></a>
 				<a href="/mmes_page/notice_delete?notice_id=${ read.notice_id }"><input type="button" value="삭제"></a>
