@@ -12,7 +12,7 @@
     aside #items #i3 .material-symbols-outlined{
 	background-color: rgb(165, 224, 144);	
 	
-}
+	}
 
 	h1 {
     border: 1px solid #ccc;
@@ -40,12 +40,14 @@ th, td {
 button {
 	width : 50px;
 }
+
+
     </style>
 </head>
 <body>
     <%@ include file="/WEB-INF/admin/base/a.header.jsp"%>
     <div id="wrap">
-        <%@ include file="/WEB-INF/admin/notification/noti_side.jsp"%>
+        <%@ include file="/WEB-INF/admin/notification/noti_side2.jsp"%>
         <section>
             <h1>공지사항 게시판</h1>
 

@@ -5,12 +5,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-</head>
 <style>
+
 header #menu #items #i2 {
     font-weight: 900;
     text-decoration: underline;
+
 </style>
+</head>
 <body>
 	<aside class="clearfix" id="side">
 		<div id="sideleft">
@@ -21,6 +23,7 @@ header #menu #items #i2 {
 						class="material-symbols-outlined">arrow_forward_ios</span>
 					</a>
 				</div>
+
 				<div class="item" id="i2">
 					<a href="app"> <span>도서 신청 관리</span> <span
 						class="material-symbols-outlined">arrow_forward_ios</span>
@@ -31,6 +34,7 @@ header #menu #items #i2 {
 						class="material-symbols-outlined">arrow_forward_ios</span>
 					</a>
 				</div>
+
 			</div>
 		</div>
 	</aside>
