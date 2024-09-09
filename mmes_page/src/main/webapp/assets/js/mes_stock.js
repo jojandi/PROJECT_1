@@ -142,4 +142,15 @@ window.onload = function () {
 	        this.setAttribute('data-asc', !ascending);
 	    });
 	}
+	// 현재 URL의 파라미터 값을 읽습니다.
+    const urlParams = new URLSearchParams(window.location.search);
+    const mainPage = urlParams.get('mainPage') || 1; // mainPage 값이 없으면 기본값 1
+
+    // 모든 메인 페이지를 숨깁니다.
+    document.getElementById('main_page_1').style.display = 'none';
+    document.getElementById('main_page_2').style.display = 'none';
+    document.getElementById('main_page_3').style.display = 'none';
+
+    // 선택한 페이지 번호에 맞는 페이지를 보여줍니다.
+    document.getElementById('main_page_' + mainPage).style.display = 'block';
 };

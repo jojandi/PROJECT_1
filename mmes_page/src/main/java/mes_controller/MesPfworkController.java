@@ -3,6 +3,7 @@ package mes_controller;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,9 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mes_DAO.MesPfworkDAO;
-import mes_DTO.MesNoticeDTO;
 import mes_DTO.MesPfworkDTO;
-import mes_service.MesNoticeService;
 import mes_service.MesPfworkService;
 
 @WebServlet("/pfwork")
@@ -25,17 +24,31 @@ public class MesPfworkController extends HttpServlet {
 
 		System.out.println("pfwork doGet 실행");
 		
+		// 한 페이지당 개수
+		String countPerPage = request.getParameter("countPerPage");
+		// 현재 페이지 
+		String page = request.getParameter("page");
+		
+		if( countPerPage == null ) countPerPage = "10";
+		if(page == null) page = "1";
+		
 
 		MesPfworkService PfworkService = new MesPfworkService();
 		MesPfworkDTO pfDTO = new MesPfworkDTO();
 		MesPfworkDAO PfworkDAO = new MesPfworkDAO();
+		
+		Map map = PfworkService.getPwPage(countPerPage, page);
+		
+		request.setAttribute("map", map);
+		request.setAttribute("countPerPage", countPerPage);
+		request.setAttribute("page", page);
 
 		// ------------------------ pfwork 주문현황-------------------------
-		List list = PfworkService.getPfwork();
+//		List list = PfworkService.getPfwork();
 
-		request.setAttribute("list", list);
+//		request.setAttribute("list", list);
 
-		System.out.println(pfDTO.toString());
+//		System.out.println(pfDTO.toString());
 
 		// 발주처id를 셀렉트 옵션을 jsp로 전달해주는놈~
 

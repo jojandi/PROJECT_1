@@ -23,6 +23,8 @@ public class MesPfworkDTO {
 	private java.sql.Date ds_date;
 	
 	private String ds_con;
+	
+	private int rnum;
 
 	
 	@Override
@@ -32,6 +34,16 @@ public class MesPfworkDTO {
 				+ user_seq + ", emp_name=" + emp_name + ", ds_date=" + ds_date + ", ds_con=" + ds_con + "]";
 	}
 	
+
+	public int getRnum() {
+		return rnum;
+	}
+
+
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
+
 
 	public java.sql.Date getDs_date() {
 		return ds_date;
