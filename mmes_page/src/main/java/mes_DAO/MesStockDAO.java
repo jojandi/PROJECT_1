@@ -431,7 +431,8 @@ public class MesStockDAO {
             	   query += " book.book_author,";
             	   query += " book.book_pub,";
             	   query += " mes_book.book_count,";
-            	   query += " mes_book.wh_code";
+            	   query += " mes_book.wh_code,";
+            	   query += " mes_book.mes_book_code";
             	   query += " FROM mes_book";
             	   query += " LEFT JOIN book ON mes_book.book_isbn = book.book_isbn";
             	   query += " ORDER BY mes_book.book_isbn";
@@ -457,6 +458,7 @@ public class MesStockDAO {
                 dto.setBook_pub(rs.getString("book_pub"));
                 dto.setBook_count(rs.getLong("book_count"));
                 dto.setWh_code(rs.getString("wh_code"));  // 정확한 wh_code 사용
+                dto.setMes_book_code(rs.getLong("mes_book_code"));  // 정확한 wh_code 사용
                 dto.setRnum(rs.getInt("rnum"));
                 
                 list.add(dto);
