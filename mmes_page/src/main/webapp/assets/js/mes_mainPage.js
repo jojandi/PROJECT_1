@@ -251,3 +251,91 @@ function loadForecastStatistics() {
             console.error('Error fetching forecast statistics:', error);
         });
 }
+
+
+		//------------모달창------------
+	  document.addEventListener('DOMContentLoaded', function () {
+            const modalButtons = document.querySelectorAll('.open-modal');
+            const closeButtons = document.querySelectorAll('.close');
+            const modals = document.querySelectorAll('.modal');
+
+            // 모달 열기 이벤트
+            modalButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const modalId = button.getAttribute('data-modal');
+                    const modal = document.getElementById(modalId);
+
+                    // 데이터를 불러오는 부분 (API 호출은 각 모달마다 다름)
+                    if (modalId === 'bookStatisticsModal') {
+                        fetchBookStatistics();
+                    } else if (modalId === 'demandStatisticsModal') {
+                        fetchDemandStatistics();
+                    } else if (modalId === 'forecastStatisticsModal') {
+                        fetchForecastStatistics();
+                    }
+
+                    // 모달을 보여줌
+                    modal.style.display = 'block';
+                });
+            });
+
+            // 모달 닫기 이벤트
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    modals.forEach(modal => modal.style.display = 'none');
+                });
+            });
+
+            // 모달 외부 클릭 시 닫기
+            window.onclick = function (event) {
+                if (event.target.classList.contains('modal')) {
+                    modals.forEach(modal => modal.style.display = 'none');
+                }
+            };
+        });
+
+        // 데이터 불러오기 함수
+        function fetchBookStatistics() {
+            fetch(`/mmes_page/getBookStatistics?year=2023&month=9`)
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#bookStatisticsTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${item.genre}</td><td>${item.total}</td>`;
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('출고 통계 데이터 처리 중 오류 발생:', error));
+        }
+
+        function fetchDemandStatistics() {
+            fetch(`getDemandStatistics?year=${selectedYear}&month=${selectedMonth}`)
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#demandStatisticsTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${item.genre}</td><td>${item.demand}</td>`;
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('수요 통계 데이터 처리 중 오류 발생:', error));
+        }
+
+        function fetchForecastStatistics() {
+            fetch(`/mmes_page/demandForecast?year=2023&month=9`)
+                .then(response => response.json())
+                .then(data => {
+                    const tbody = document.querySelector('#forecastStatisticsTable tbody');
+                    tbody.innerHTML = '';
+                    data.forEach(item => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `<td>${item.genre}</td><td>${item.expectedDemand}</td>`;
+                        tbody.appendChild(row);
+                    });
+                })
+                .catch(error => console.error('수요 예측 통계 데이터 처리 중 오류 발생:', error));
+        }

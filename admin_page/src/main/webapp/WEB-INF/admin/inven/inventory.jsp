@@ -27,6 +27,9 @@ aside #items #i1 .material-symbols-outlined {
 			<div class="main_page" id="main_page_1">
 				<h3>실시간 재고 현황</h3>
 				<div>
+					<div id="bookAdd">
+						<input type="button" value="도서 추가" class="addBnt">
+					</div>
 					<div class="page_2">
 						<table id="main_library">
 							<colgroup>
@@ -122,6 +125,44 @@ aside #items #i1 .material-symbols-outlined {
 
 					</tbody>
 				</table>
+
+			</div>
+			
+			<div class="insert">
+				<div class="close">
+					<span class="popup-close insert-close">&times;</span>
+				</div>
+				<form method="post">
+				<table>
+					<tr>
+						<th>책 표지 URL</th>
+						<td><input type="text" name="img"></td>
+					</tr>
+					<tr>
+						<th>ISBN</th>
+						<td><input type="text" name="isbn"></td>
+					</tr>
+					<tr>
+						<th>도서명</th>
+						<td><input type="text" name="name"></td>
+					</tr>
+					<tr>
+						<th>출판사</th>
+						<td><input type="text" name="pub"></td>
+					</tr>
+					<tr>
+						<th>저자</th>
+						<td><input type="text" name="athour"></td>
+					</tr>
+					<tr>
+						<th>기본 정보</th>
+						<td><input type="text" name="info"></td>
+					</tr>
+				</table>
+					<div id="submit">
+						<input type="submit" value="추가하기">
+					</div>
+				</form>
 
 			</div>
 

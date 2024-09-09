@@ -6,7 +6,21 @@
 <head>
 <link href="../assets/css/noti/noti3.css" rel="stylesheet">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<style>
+/* 공고 세부 내용 스타일 */
+.bookTitle.book {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  word-wrap: break-word; /* 긴 텍스트 줄바꿈 */
+  white-space: pre-wrap; /* 공백과 줄바꿈 유지 */
+}
+
+
+
+</style>
 
 </head>
 <body>

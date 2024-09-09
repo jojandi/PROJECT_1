@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.util.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -54,7 +55,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<c:forEach var="work" items="${ list }">
+								<c:forEach var="work" items="${ map.list }">
 									<tr>
 										<td class="sortable">${ work.os_id }</td>
 										<td>${ work.bom_name }</td>
@@ -66,6 +67,7 @@
 								</c:forEach>
 							</tbody>
 						</table>
+						
 					</div>
 					<br>
 					<div id="pfworkpush">
@@ -73,6 +75,54 @@
 					</div>
 				</div>
 			</div>
+			
+			<div style="text-align: center;">
+	<%
+		Map map = (Map)request.getAttribute("map");
+		int totalCount = (int)map.get("totalCount");
+		
+		String str_countPerPage = (String)request.getAttribute("countPerPage");
+		int countPerPage = Integer.parseInt(str_countPerPage);
+		
+		String str_pageNo = (String)request.getAttribute("page");
+		int pageNo = Integer.parseInt(str_pageNo);
+		
+		// double로 바꾼 값을 Math.ceil을 사용해서 반올림 해주고, 다시 int 타입으로 형변환
+		int lastPage = (int)Math.ceil( (double)totalCount / countPerPage );
+		
+		// 한 번에 보여줄 페이지의 갯수
+		int countPerSection = 3;	 
+		// 페이지 섹션 위치 
+		int position = (int)Math.ceil( (double)pageNo / countPerSection );
+		int sec_first = ((position - 1) * countPerSection) + 1;
+		int sec_last = position * countPerSection;
+		if(sec_last > lastPage) {
+			sec_last = lastPage;
+		}
+		
+	%>
+	
+	<c:set var="lastPage2" value="<%= lastPage %>" scope='page'/>
+	
+	<c:if test="<%= sec_first == 1 %>">
+		&lt;
+	</c:if>
+	<c:if test="<%= sec_first != 1 %>">
+		<a href="pfwork?page=<%= sec_first-1 %>">&lt;</a> 
+	</c:if>
+	
+	<c:forEach var="i" begin="<%= sec_first %>" end="<%= sec_last %>">
+	<c:if test="${i eq page}"> [<a href="pfwork?page=${ i }"><strong>${ i }</strong></a>] </c:if>
+		<c:if test="${i != page}">[<a href="pfwork?page=${ i }">${ i }</a>]</c:if>
+	</c:forEach>
+	
+	<c:if test="<%= sec_last == lastPage %>">
+		&gt;
+	</c:if>
+	<c:if test="<%= sec_last != lastPage %>">
+		<a href="pfwork?page=<%= sec_last+1 %>">&gt;</a>
+	</c:if>
+	</div>
 
 			<!-- ///////////////////// 출고 현황 ///////////////////////////// -->
 			<div class="main_page" id="main_page_2">

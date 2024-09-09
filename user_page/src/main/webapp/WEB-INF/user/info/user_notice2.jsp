@@ -26,7 +26,7 @@ aside #items #i3 .material-symbols-outlined {
 
         <div id="section">
             <div class="name">
-                <strong>이용시간 안내</strong>
+                <strong>이용안내</strong>
             </div>
 
             <div id="table">

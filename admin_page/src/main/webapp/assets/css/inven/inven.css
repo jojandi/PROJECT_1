@@ -160,6 +160,10 @@ section h3{
     box-sizing: border-box;
 }
 
+#bookAdd{
+	text-align: right;
+}
+
 .page {
     /* border: 1px solid red; */
     width: 100%;
@@ -229,7 +233,7 @@ th.sorted-desc::after {
     font-size: 16px;
 }
 
-.popup .close{
+.close{
 	text-align: right;
     cursor: pointer;
   	font-size: 30px;
@@ -279,4 +283,38 @@ section #movepage .chap{
 
 section #movepage .material-symbols-outlined{
     font-size: 21px;
+}
+
+
+section .insert{
+	display: none;
+	width: 500px;
+	position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 5px 20px 20px 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+section .insert table input{
+	width: 80%;
+}
+
+section .insert table td{
+	text-align: center;
+}
+
+section .insert table th{
+	width: 35%;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+section .insert #submit{
+	margin-top: 10px;
+	text-align: right;
 }

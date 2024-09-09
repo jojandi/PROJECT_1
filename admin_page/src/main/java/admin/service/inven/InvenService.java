@@ -35,4 +35,11 @@ public class InvenService {
 	public InvenDTO bookCount(long book_isbn) {
 		return new InvenDAO().bookCount(book_isbn);
 	}
+	
+	public int insertBook(InvenDTO dto) {
+		return new InvenDAO().insertdBook(dto);
+	}
+	public int insertisbn(InvenDTO dto) {
+		return new InvenDAO().insertISBN(dto);
+	}
 }

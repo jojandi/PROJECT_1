@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,22 +26,27 @@
                 <a href="inventory" class="item" id="i0">재고 현황</a>
                 <a href="member" class="item" id="i1">회원관리</a>
                 <a href="noti" class="item" id="i2">정보광장관리</a>
-               <!--  <a href="notice" class="item" id="i3">정보광장</a> -->
-               <!-- <a href="mypage_use" class="item" id="i4">마이페이지</a> -->
             </div>
 
-            <div class="right" id="userall">
-                <a href="login" class="inb" id="login">로그인</a>
-                <div class="inb">|</div>
-                <a href="join" class="inb" id="userin">회원가입</a>
-            </div>
 
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-            <!-- <div class="right" id="userall">
-                <a href="./02.mypage_info.html" class="inb" id="user">조잔디님</a>
+            <div class="right" id="userall">
+                <a href="http://localhost:8080/user_page/user/main" class="inb" id="user">조잔디님</a>
                 <span class="material-symbols-outlined">person</span>
-            </div> -->
+            </div>
         </div>
+        
+        <script>
+	        document.getElementById("userall").addEventListener('click', function(){
+	            let c = confirm("로그아웃 하시겠습니까?");
+
+	            if(c){
+	                window.location.href="http://localhost:8080/user_page/user/main"
+	            } else{
+	                window.location.href="main"
+	            }
+	        })
+        </script>
         
     </header>
 </body>

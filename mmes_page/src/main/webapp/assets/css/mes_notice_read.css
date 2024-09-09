@@ -90,4 +90,5 @@ section #content img{
 textarea{
 	width: 98%;
 	height: 200px;
+	resize: none;
 }

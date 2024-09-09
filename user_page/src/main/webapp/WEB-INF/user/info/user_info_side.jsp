@@ -30,7 +30,7 @@
 				
 				<div class="item" id="i3">
 				<a href = notice2>
-					<span>이용시간</span> <span class="material-symbols-outlined">arrow_forward_ios</span>
+					<span>이용안내</span> <span class="material-symbols-outlined">arrow_forward_ios</span>
 				</a>
 				</div>
 

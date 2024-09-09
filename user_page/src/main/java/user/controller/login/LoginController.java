@@ -45,6 +45,7 @@ public class LoginController extends HttpServlet {
 		
 		JoinDTO user = service.login(dto);
 		JoinDTO admin = service.loginAdmin(dto);
+		JoinDTO mes = service.loginMes(dto);
 		
 		if(user != null) {
 			HttpSession session = request.getSession();
@@ -66,6 +67,16 @@ public class LoginController extends HttpServlet {
 			
 			// 관리자 main 페이지로 sendRedirect
 			response.sendRedirect("http://localhost:8080/admin_page/admin/main");
+		} else if(mes != null) {
+			HttpSession session = request.getSession();
+			// 세션 타임 제한, 초단위
+			session.setMaxInactiveInterval(60 * 60 * 60);
+
+			session.setAttribute("login", mes);
+			session.setAttribute("isLogin", true);
+			
+			// 관리자 main 페이지로 sendRedirect
+			response.sendRedirect("http://localhost:8080/mmes_page/main");
 		} else {
 			// login 페이지로 sendRedirect
 			response.sendRedirect(request.getContextPath() +"/user/login?code=LO01");

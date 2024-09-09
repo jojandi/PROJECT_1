@@ -41,7 +41,7 @@ public class MesPfworkDAO {
 		return con;
 	}
 
-	public List selectpfwork() {
+	public List selectpfwork(int start, int end) {
 		List list = new ArrayList();
 
 		try {
@@ -52,15 +52,19 @@ public class MesPfworkDAO {
 
 			String query = null;
 
-			query = " select o.os_id, b.bom_name, t.user_id, o.os_date, e.emp_name";
+			query = " select * from (";
+			query += " select rownum rnum, o.os_id, b.bom_name, t.user_id, o.os_date, e.emp_name";
 			query += " from orderstatus o";
 			query += " join bom b on o.bom_code = b.bom_code";
 			query += " join bookflix_user f on o.buser_seq = f.buser_seq";
 			query += " join employee e on o.emp_id = e.emp_id";
 			query += " join tbl_user t on f.user_seq = t.user_seq";
 			query += " order by os_id desc";
+			query += " ) where rnum >= ? and rnum <= ?";
 
 			PreparedStatement ps = new LoggableStatement(con, query);
+			ps.setInt(1, start);
+		    ps.setInt(2, end);
 
 			System.out.println(((LoggableStatement) ps).getQueryString());
 
@@ -84,6 +88,8 @@ public class MesPfworkDAO {
 
 				String emp_name = rs.getString("emp_name");
 				PfworkDTO.setEmp_name(emp_name);
+				
+				PfworkDTO.setRnum(rs.getInt("rnum"));
 
 				list.add(PfworkDTO);
 
@@ -94,6 +100,40 @@ public class MesPfworkDAO {
 		}
 
 		return list;
+	}
+	
+	public int totalPwPage() {
+		int result = -1;
+		
+		try {
+			// DB 접속
+			Context ctx = new InitialContext();
+			DataSource dateSource = (DataSource) ctx.lookup("java:/comp/env/jdbc/oracle");
+			Connection con = dateSource.getConnection();
+
+			// SQL 준비
+			String  query =  " SELECT count(*) cnt FROM orderstatus ";
+		            
+		    PreparedStatement ps = new LoggableStatement(con, query);
+		    
+		    System.out.println( ( (LoggableStatement)ps ).getQueryString() );
+			
+			// SQL 실행 및 결과 확보
+		    ResultSet rs = ps.executeQuery();
+		    
+		    while ( rs.next() ) {
+				result = rs.getInt("cnt");
+			}
+		    
+		    rs.close();
+		    ps.close();
+		    con.close();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 
 	public int insert(MesPfworkDTO PfworkDTO) {
