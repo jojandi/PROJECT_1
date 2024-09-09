@@ -87,7 +87,23 @@ document.getElementById('searchAll').addEventListener('keyup', function() {
         }
     }
 });
+document.getElementById('searchBom').addEventListener('keyup', function() {
+    let filter = this.value.toUpperCase();
+    let table = document.getElementById('main_library');
+    let tr = table.getElementsByTagName('tr');
 
+    for (let i = 1; i < tr.length; i++) {
+        let td = tr[i].getElementsByTagName('td')[2];
+        if (td) {
+            let txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
 
 }
 
