@@ -7,7 +7,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link href="./assets/css/admin_table.css" rel="stylesheet">
@@ -43,12 +42,6 @@
 			<div class="main_page" id="main_page_1">
 				<h3>BOM 생성</h3>
 				<div>
-					<div class="bot_btn">
-						<div class="search-container">
-							<input type="text" id="searchInput" placeholder="도서명 검색...">
-						</div>
-						<input type="button" id="addbom" value="bom생성">
-					</div>
 					<form>
 					<div class="page_2">
 						<table id="main_library">
@@ -69,6 +62,7 @@
 								 <c:forEach var="dto" items="${list}">
 				                <tr>
 				                    <td><input type="checkbox" class="bom_checkbox"></td>				                     
+									<td>${dto.mes_book_code}</td>
 									<td id = "book_code">${dto.mes_book_code}</td>
 									<td>${dto.book_name}</td>
 				                    <td>${dto.book_isbn}</td>
@@ -81,7 +75,12 @@
 							</tbody>
 						</table>
 					</div>
-					
+					<div class="bot_btn">
+						<div class="search-container">
+							<input type="text" id="searchInput" placeholder="도서명 검색...">
+						</div>
+						<input type="button" id="addbom" value="bom생성">
+					</div>
 					</form>
 				</div>
 			</div>
@@ -102,24 +101,19 @@
                 <div class="modal-div_">
                 </div>
 	            <div id="table">
+                	
                 	 <form id="bomForm" action="register" method="post">
 		                <input type="hidden" name="mes_book_code1" id="mes_book_code1">
 		                <input type="hidden" name="mes_book_code2" id="mes_book_code2">
 		                <input type="hidden" name="mes_book_code3" id="mes_book_code3">
-		                <table style="width: 80%">
-		                	<colgroup>
-		                		<col width="30%"/>
-					    		<col width="60%"/>
-		                	</colgroup>
-		                	<tr>
-			                    <td><label for="bom_code">BOM 코드</label></td>
-			                    <td><input type="text" id="bomCode" name="bom_code" required></td>
-		                	</tr>
-		                	<tr>
-			                    <td><label for="bom_name">BOM 이름</label></td>
-		                    	<td><input type="text" id="bomName" name="bom_name" required></td>
-		                	</tr>
-		                </table>
+		                <p>
+		                    <label for="bom_code">BOM 코드:</label>
+		                    <input type="text" id="bomCode" name="bom_code" required>
+		                </p>
+		                <p>
+		                    <label for="bom_name">BOM 이름:</label>
+		                    <input type="text" id="bomName" name="bom_name" required>
+		                </p>
 		                <button type="submit">등록</button>
             		</form>
                 </div>
