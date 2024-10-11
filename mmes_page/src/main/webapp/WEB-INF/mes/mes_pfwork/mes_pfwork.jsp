@@ -74,8 +74,6 @@
 						<input type="button" id="addpf" value="주문추가">
 					</div>
 				</div>
-			</div>
-			
 			<div style="text-align: center;">
 	<%
 		Map map = (Map)request.getAttribute("map");
@@ -123,6 +121,8 @@
 		<a href="pfwork?page=<%= sec_last+1 %>">&gt;</a>
 	</c:if>
 	</div>
+			</div>
+			
 
 			<!-- ///////////////////// 출고 현황 ///////////////////////////// -->
 			<div class="main_page" id="main_page_2">

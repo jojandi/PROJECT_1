@@ -92,6 +92,9 @@
         header #menu #userall #user{
             font-size: 16px;
             font-weight: 600;
+            border: none;
+            background-color:transparent;
+
         }
 
         header #menu #userall .material-symbols-outlined {

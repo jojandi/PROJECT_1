@@ -25,23 +25,10 @@ function logout(){
         let c = confirm("회원 탈퇴 하시겠습니까?");
 
         if(c){
-            c = confirm("정말로 회원 탈퇴 하시겠습니까?");
-            if(c){
-                c = confirm("정말 정말로 회원 탈퇴 하시겠습니까?");
-                if(c){
-                    c = confirm("진짜 정말 정말로 회원 탈퇴 하시겠습니까?");
-                    if(c){
-                        alert("탈퇴되었습니다. 감사했습니다. ")
-                        window.location.href="main"
-                    } else{
-                        alert("감사합니다. 앞으로 잘 모시겠습니다. ")
-                    }
-                } else{
-                    alert("감사합니다. 앞으로 잘 모시겠습니다. ")
-                }
-            } else{
-                alert("감사합니다. 앞으로 잘 모시겠습니다. ")
-            }
+            
+	        alert("탈퇴되었습니다. 감사했습니다. ")
+	        window.location.href="main"
+                    
         } else{
             window.location.href="mypage_info"
         }
@@ -51,23 +38,10 @@ function logout(){
         let c = confirm("북플릭스 회원 탈퇴 하시겠습니까?");
 
         if(c){
-            c = confirm("정말로 북플릭스 회원 탈퇴 하시겠습니까?");
-            if(c){
-                c = confirm("정말 정말로 북플릭스 회원 탈퇴 하시겠습니까?");
-                if(c){
-                    c = confirm("진짜 정말 정말로 북플릭스 회원 탈퇴 하시겠습니까?");
-                    if(c){
-                        alert("탈퇴되었습니다. 감사했습니다. ")
-                        window.location.href="bookflix"
-                    } else{
-                        alert("감사합니다. 앞으로 잘 모시겠습니다. ")
-                    }
-                } else{
-                    alert("감사합니다. 앞으로 잘 모시겠습니다. ")
-                }
-            } else{
-                alert("감사합니다. 앞으로 잘 모시겠습니다. ")
-            }
+
+	        alert("탈퇴되었습니다. 감사했습니다. ")
+	        window.location.href="bookflix"
+
         } else{
             window.location.href="mypage_info"
         }

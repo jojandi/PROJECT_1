@@ -29,6 +29,7 @@ function ajax(i) {
     
     xhr.onload = function(){
 		alert("수정되었습니다. ")
+		location.href="res"; // spring으로 옮길 때 파라미터값 가져와서 링크에 넣어주기 -> 현재페이지 새로고침 효과
     }
     
 }

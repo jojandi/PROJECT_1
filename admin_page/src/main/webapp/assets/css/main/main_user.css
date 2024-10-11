@@ -72,10 +72,12 @@
 }
 
 .section1 #calendar #dates .toDay{
+    box-sizing: border-box;
     border: 2px solid rgb(106, 170, 82);
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
 }
-
 .section1 #calendar #dates .toDay:after{
     font-size: 10px;
     content:"TODAY";

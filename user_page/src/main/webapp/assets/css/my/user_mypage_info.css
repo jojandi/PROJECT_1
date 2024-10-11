@@ -112,7 +112,8 @@ section #information #miniInfo #logout{
     margin-right: 10px;
 }
 
-section #information #realout{
+section #information #realout,
+section #information #bookout{
     font-size: 13px;
     text-decoration: underline;
     cursor: pointer;

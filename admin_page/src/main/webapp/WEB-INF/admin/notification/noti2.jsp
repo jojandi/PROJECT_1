@@ -61,6 +61,7 @@ button {
                 <th>조회수</th>
                 <th>첨부파일</th>
                 <th>삭제</th>
+                <th>수정</th>
             </tr>
         </thead>
         <tbody>
@@ -79,6 +80,13 @@ button {
                           	
                             <input type="hidden" name="ann_seq" value="${notice.ann_seq}" />                           
                             <button type="submit">삭제</button>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="${pageContext.request.contextPath}/notice/update" method="post" onsubmit="return confirm('정말로 삭제하시겠습니까?');">
+                          	
+                            <input type="hidden" name="ann_seq" value="${notice.ann_seq}" />                           
+                            <button type="submit">수정</button>
                         </form>
                     </td>
                 </tr>

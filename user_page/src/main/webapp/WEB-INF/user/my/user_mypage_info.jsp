@@ -68,7 +68,7 @@
 	                           <form method="post" action="bookflix_use">
 				                    <input type="hidden" name="user" value="${login.user_seq}">
 				                    <input type="hidden" name="bseq" value="${list[0].buser_seq}">
-		                    		<input type="submit" value="구독 취소" id="realout">
+		                    		<input type="submit" value="구독 취소" id="bookout">
 		                    	</form>
 	                       </div>
 	                   </div>
